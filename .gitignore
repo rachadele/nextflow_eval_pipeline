@@ -1,5 +1,9 @@
+homo_sapiens-2024-07-01/
 work/
+scvi-human-2024-07-01/
+bin/__pycache__/*
 *h5ad
 *rds
 *log*
-*.nextflow*
+.nextflow/
+*model.pt
