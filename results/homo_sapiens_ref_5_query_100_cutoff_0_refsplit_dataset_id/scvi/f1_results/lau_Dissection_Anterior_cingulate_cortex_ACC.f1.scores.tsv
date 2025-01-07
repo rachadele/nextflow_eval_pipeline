@@ -1,0 +1,20 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.7191011235955056	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	0.6666666666666666	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.9655172413793104	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	VIP	nan	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.7619047619047619	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8181818181818182	0.6164214514660078		0.7797256508182505	rachel_subclass	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.7191011235955056	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	CGE	nan	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Vascular	0.6666666666666666	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.7619047619047619	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8181818181818182	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.9655172413793104	0.6164214514660078		0.7797256508182505	rachel_class	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.7191011235955056	0.7505699397492265		0.7365925744992672	rachel_family	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.75	0.7505699397492265		0.7365925744992672	rachel_family	0.0
+lau	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.782608695652174	0.7505699397492265		0.7365925744992672	rachel_family	0.0

@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	LAMP5	1.0	0.420275090283147
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	VIP	0.9869791666666666	0.191078646432786
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	Astrocyte	0.9600000000000001	0.52914806018023
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	Endothelial	1.0	0.451158949100869
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	Microglia	1.0	0.710446790662822
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	Oligodendrocyte	0.9908069458631256	0.505476228293937
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	OPC	0.9989785495403474	0.754120611305662
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	L2/3-6 IT	0.9895104895104894	0.0671645934447605
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	SST	0.9957894736842106	0.131661231835521
+Dissection_Primary_auditory_cortexA1	velmeshev	rachel_subclass	PVALB	0.9024822695035462	0.0719621617423046

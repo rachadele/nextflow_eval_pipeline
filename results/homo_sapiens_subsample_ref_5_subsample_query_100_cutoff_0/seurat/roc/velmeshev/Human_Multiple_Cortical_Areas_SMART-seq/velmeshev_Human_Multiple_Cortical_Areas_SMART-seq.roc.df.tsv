@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	Endothelial	0.663265306122449	0.478666193015044
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	VIP	0.9687500000000001	0.328761087011071
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	PVALB	0.99822695035461	0.186618605140807
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	OPC	1.0	0.661518968129509
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	L2/3-6 IT	0.8703379953379954	0.0225942158130805
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	Astrocyte	0.9552941176470588	0.582945583680796
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	Microglia	1.0	0.83856291665782
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	LAMP5	1.0	0.486847912935846
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	SST	0.991578947368421	0.233322943881916
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev	rachel_subclass	Oligodendrocyte	0.9908069458631257	0.776166416352979

@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	VIP	1.0	0.158939548687011
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	L5 ET	0.8252631578947368	0.0764960097507054
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	L6b	0.9828178694158075	0.203825047443822
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	Astrocyte	1.0	0.541610672715373
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	Microglia	1.0	0.620380182627443
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	Oligodendrocyte	1.0	0.306014364754566
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	OPC	1.0	0.319806232160547
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	L2/3-6 IT	0.9681611435997401	0.144988513303011
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	Chandelier	1.0	0.404855964170868
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	PVALB	1.0	0.395740769085888
+Dissection_Anterior_cingulate_cortex_ACC	pineda	rachel_subclass	SST	1.0	0.40122542235078

@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	Astrocyte	1.0	0.35
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	Endothelial	0.9955673758865249	0.09
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	L2/3-6 IT	0.7228915662650601	0.14
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	L5/6 NP	0.6966145833333334	0.01
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	Microglia	1.0	0.42
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	OPC	1.0	0.19
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	Oligodendrocyte	1.0	0.19
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	PVALB	0.9609375	0.07
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	SST	1.0	0.39
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	velmeshev_ACC	rachel_subclass	VIP	0.8955453149001535	0.07

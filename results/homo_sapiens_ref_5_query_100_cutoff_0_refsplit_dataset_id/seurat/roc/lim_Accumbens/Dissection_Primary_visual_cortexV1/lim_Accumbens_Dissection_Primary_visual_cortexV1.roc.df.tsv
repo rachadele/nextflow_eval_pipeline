@@ -1,0 +1,8 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	L5 ET	0.7703804347826086	0.0431635402119643
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	Astrocyte	0.9443309499489275	0.285823182172156
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	Endothelial	0.6442105263157895	0.13304976810278
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	Microglia	1.0	0.493055526099165
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	Oligodendrocyte	0.9761904761904763	0.478041287036665
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	OPC	1.0	0.329085338119326
+Dissection_Primary_visual_cortexV1	lim_Accumbens	rachel_subclass	L2/3-6 IT	0.982316534040672	0.249528771129279

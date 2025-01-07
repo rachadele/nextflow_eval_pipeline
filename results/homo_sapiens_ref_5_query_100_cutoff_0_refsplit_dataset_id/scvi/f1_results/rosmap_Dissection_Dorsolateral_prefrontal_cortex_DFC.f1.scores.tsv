@@ -1,0 +1,17 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.5641025641025641	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	1.0	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	1.0	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	1.0	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	1.0	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.5526315789473685	0.7309620204357046		0.7061133603238866	rachel_subclass	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.5641025641025641	0.6861223571749887		0.7061133603238866	rachel_class	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.6861223571749887		0.7061133603238866	rachel_class	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	1.0	0.6861223571749887		0.7061133603238866	rachel_class	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	1.0	0.6861223571749887		0.7061133603238866	rachel_class	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	1.0	0.6861223571749887		0.7061133603238866	rachel_class	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.5526315789473685	0.6861223571749887		0.7061133603238866	rachel_class	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.5641025641025641	0.6389113810166442		0.6381133603238867	rachel_family	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.8	0.6389113810166442		0.6381133603238867	rachel_family	0.0
+rosmap	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.5526315789473685	0.6389113810166442		0.6381133603238867	rachel_family	0.0

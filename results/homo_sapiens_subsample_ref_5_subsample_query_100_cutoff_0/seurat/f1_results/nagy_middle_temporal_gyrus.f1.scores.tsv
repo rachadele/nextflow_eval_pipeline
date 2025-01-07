@@ -1,0 +1,35 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	middle_temporal_gyrus	Microglia	1.0	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	Oligodendrocyte	0.9565217391304348	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	L5 ET	0.13333333333333333	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	VIP	0.0	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	PVALB	0.0	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	L5/6 NP	0.0	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	CGE	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	LAMP5	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	SST	0.0	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	L5 6 NP	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	Glutamatergic	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	Astrocyte	0.8571428571428571	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	SNCG	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	L6 CT	0.0	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	GABAergic	0.9230769230769231	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	L6b	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	Pericyte	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	Chandelier	nan	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	L2/3-6 IT	0.4927536231884058	0.22962255136168183		0.5228707219553902	rachel_subclass	0.0
+nagy	middle_temporal_gyrus	Microglia	1.0	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	MGE	0.375	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	unknown	nan	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	CGE	0.4444444444444444	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	Vascular	nan	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	Glutamatergic	nan	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	Oligodendrocyte lineage	0.9565217391304348	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	Astrocyte	0.8571428571428571	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	deep layer non-IT	0.2777777777777778	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	GABAergic	0.9230769230769231	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	L2/3-6 IT	0.4927536231884058	0.48424703316007667		0.5828122424232265	rachel_class	0.0
+nagy	middle_temporal_gyrus	unknown	nan	0.5988828202581926		0.8076485653060158	rachel_family	0.0
+nagy	middle_temporal_gyrus	Non-neuron	0.9	0.5988828202581926		0.8076485653060158	rachel_family	0.0
+nagy	middle_temporal_gyrus	Glutamatergic	0.8113207547169812	0.5988828202581926		0.8076485653060158	rachel_family	0.0
+nagy	middle_temporal_gyrus	GABAergic	0.6842105263157895	0.5988828202581926		0.8076485653060158	rachel_family	0.0

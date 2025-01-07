@@ -1,0 +1,15 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	whole_cortex	Glutamatergic	0.9908256880733946	0.9912245712006382		0.9898284802552852	rachel_subclass	0.0
+rosmap	whole_cortex	Oligodendrocyte	1.0	0.9912245712006382		0.9898284802552852	rachel_subclass	0.0
+rosmap	whole_cortex	OPC	1.0	0.9912245712006382		0.9898284802552852	rachel_subclass	0.0
+rosmap	whole_cortex	Microglia	1.0	0.9912245712006382		0.9898284802552852	rachel_subclass	0.0
+rosmap	whole_cortex	Astrocyte	1.0	0.9912245712006382		0.9898284802552852	rachel_subclass	0.0
+rosmap	whole_cortex	GABAergic	0.9565217391304348	0.9912245712006382		0.9898284802552852	rachel_subclass	0.0
+rosmap	whole_cortex	Glutamatergic	0.9908256880733946	0.9894694854407659		0.9898284802552852	rachel_class	0.0
+rosmap	whole_cortex	Oligodendrocyte lineage	1.0	0.9894694854407659		0.9898284802552852	rachel_class	0.0
+rosmap	whole_cortex	Microglia	1.0	0.9894694854407659		0.9898284802552852	rachel_class	0.0
+rosmap	whole_cortex	Astrocyte	1.0	0.9894694854407659		0.9898284802552852	rachel_class	0.0
+rosmap	whole_cortex	GABAergic	0.9565217391304348	0.9894694854407659		0.9898284802552852	rachel_class	0.0
+rosmap	whole_cortex	Non-neuron	1.0	0.9824491424012765		0.9898284802552852	rachel_family	0.0
+rosmap	whole_cortex	Glutamatergic	0.9908256880733946	0.9824491424012765		0.9898284802552852	rachel_family	0.0
+rosmap	whole_cortex	GABAergic	0.9565217391304348	0.9824491424012765		0.9898284802552852	rachel_family	0.0

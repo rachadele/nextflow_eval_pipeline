@@ -1,0 +1,31 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.0	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	SST	0.5714285714285714	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	VIP	0.3333333333333333	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	L6 CT	0.0	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.7252747252747253	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.5	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8888888888888888	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	VLMC	nan	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.8	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	PVALB	0.0	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	L5/6 NP	0.2857142857142857	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Chandelier	nan	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	LAMP5	nan	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	unknown	0.0	0.31903998778998777		0.6206214896214897	rachel_subclass	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	MGE	0.6666666666666666	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.2608695652173913	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.8	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.7252747252747253	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.5	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Vascular	nan	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	CGE	0.4444444444444444	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8888888888888888	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	unknown	0.0	0.5286144290492116		0.6586132080479906	rachel_class	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	unknown	0.0	0.6191110397946085		0.8154152759948652	rachel_family	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.85	0.6191110397946085		0.8154152759948652	rachel_family	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.8947368421052632	0.6191110397946085		0.8154152759948652	rachel_family	0.0
+nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.7317073170731707	0.6191110397946085		0.8154152759948652	rachel_family	0.0

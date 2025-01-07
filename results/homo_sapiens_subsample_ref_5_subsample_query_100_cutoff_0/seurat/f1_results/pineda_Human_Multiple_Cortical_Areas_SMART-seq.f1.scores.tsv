@@ -1,0 +1,32 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.7692307692307693	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	SST	1.0	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	VIP	0.5	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L6b	0.5714285714285714	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	PVALB	0.75	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L6 CT	nan	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	CGE	nan	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.6666666666666666	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	LAMP5	nan	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L5/6 NP	0.0	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Chandelier	0.0	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	0.7671232876712328	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L5 ET	0.0	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	nan	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Endothelial	nan	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L5 6 NP	nan	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	OPC	1.0	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.3902471830554022		0.7201688494154248	rachel_subclass	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.7692307692307693	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	MGE	0.8571428571428571	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	deep layer non-IT	0.4444444444444444	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	CGE	0.75	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.6666666666666666	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	0.7901234567901234	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	nan	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.5864009104749844		0.7754968796635464	rachel_class	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	1.0	0.7456140350877193		0.9949122807017544	rachel_family	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	1.0	0.7456140350877193		0.9949122807017544	rachel_family	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.7456140350877193		0.9949122807017544	rachel_family	0.0
+pineda	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9824561403508771	0.7456140350877193		0.9949122807017544	rachel_family	0.0

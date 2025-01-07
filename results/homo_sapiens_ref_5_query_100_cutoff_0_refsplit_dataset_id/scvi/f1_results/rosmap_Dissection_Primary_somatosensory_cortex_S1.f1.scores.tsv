@@ -1,0 +1,17 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9306930693069307	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.96	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	1.0	0.8415275813295615		0.9577742574257426	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.8151155115511551		0.9577742574257426	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.8151155115511551		0.9577742574257426	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9306930693069307	0.8151155115511551		0.9577742574257426	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.8151155115511551		0.9577742574257426	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	1.0	0.8151155115511551		0.9577742574257426	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.96	0.8151155115511551		0.9577742574257426	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.918918918918919	0.9365373294086167		0.9302066898581751	rachel_family	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9306930693069307	0.9365373294086167		0.9302066898581751	rachel_family	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.96	0.9365373294086167		0.9302066898581751	rachel_family	0.0

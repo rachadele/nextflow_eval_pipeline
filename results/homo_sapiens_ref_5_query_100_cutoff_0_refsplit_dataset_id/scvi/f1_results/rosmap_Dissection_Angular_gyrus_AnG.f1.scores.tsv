@@ -1,0 +1,19 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	OPC	1.0	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9743589743589743	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	1.0	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9811320754716981	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.744436381228834		0.9846831156265119	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	1.0	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9811320754716981	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9795918367346939	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.7086748446009131		0.9847092799383904	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9719626168224299	0.9761614519842882		0.9700772043884599	rachel_family	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	0.9565217391304348	0.9761614519842882		0.9700772043884599	rachel_family	0.0
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	1.0	0.9761614519842882		0.9700772043884599	rachel_family	0.0

@@ -1,0 +1,21 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	whole_cortex	Oligodendrocyte	1.0	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	GABAergic	0.8695652173913043	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	Glutamatergic	0.88	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	Astrocyte	0.96	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	Microglia	1.0	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	Endothelial	0.8	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	L2/3-6 IT	nan	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	VLMC	nan	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	Non-neuron	nan	0.6121739130434782		0.9084521739130434	rachel_subclass	0.0
+lau	whole_cortex	GABAergic	0.8695652173913043	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	Glutamatergic	0.88	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	Astrocyte	0.96	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	Microglia	1.0	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	Oligodendrocyte lineage	1.0	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	L2/3-6 IT	nan	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	Vascular	1.0	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	Non-neuron	nan	0.7136956521739131		0.9144521739130436	rachel_class	0.0
+lau	whole_cortex	GABAergic	0.8695652173913043	0.8697577995785849		0.8701232525998596	rachel_family	0.0
+lau	whole_cortex	Glutamatergic	0.8712871287128713	0.8697577995785849		0.8701232525998596	rachel_family	0.0
+lau	whole_cortex	Non-neuron	0.868421052631579	0.8697577995785849		0.8701232525998596	rachel_family	0.0

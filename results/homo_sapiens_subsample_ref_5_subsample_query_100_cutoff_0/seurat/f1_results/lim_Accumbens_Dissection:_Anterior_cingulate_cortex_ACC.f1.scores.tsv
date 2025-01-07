@@ -1,0 +1,28 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	L6 CT	nan	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	GABAergic	0.47058823529411764	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Glutamatergic	0.5263157894736842	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.8	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Astrocyte	0.8333333333333334	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	unknown	nan	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Endothelial	0.0	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.9411764705882353	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	OPC	1.0	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	VLMC	nan	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	L5 ET	0.3333333333333333	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.45421132015559257		0.6409482857470473	rachel_subclass	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	unknown	nan	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	deep layer non-IT	0.7058823529411765	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Vascular	0.3333333333333333	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	GABAergic	0.47058823529411764	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Glutamatergic	0.5263157894736842	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.8	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Astrocyte	0.8333333333333334	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.95	0.5619453044375644		0.6924842334594656	rachel_class	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	unknown	nan	0.5710215531816303		0.7867792124301284	rachel_family	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	GABAergic	0.47058823529411764	0.5710215531816303		0.7867792124301284	rachel_family	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Glutamatergic	0.8524590163934426	0.5710215531816303		0.7867792124301284	rachel_family	0.0
+lim_Accumbens	Dissection:_Anterior_cingulate_cortex_ACC	Non-neuron	0.961038961038961	0.5710215531816303		0.7867792124301284	rachel_family	0.0

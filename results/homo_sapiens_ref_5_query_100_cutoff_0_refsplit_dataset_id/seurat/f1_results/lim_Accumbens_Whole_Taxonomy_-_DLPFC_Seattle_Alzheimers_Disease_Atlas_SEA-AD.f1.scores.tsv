@@ -1,0 +1,34 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	0.0	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6b	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7111111111111111	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.782608695652174	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	0.25	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	1.0	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.0	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VLMC	nan	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.9142857142857143	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.0	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.4	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 ET	0.4	0.2622356188852353		0.5157615596963424	rachel_subclass	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	nan	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	0.0	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7111111111111111	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.782608695652174	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.5714285714285714	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.0	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	0.2222222222222222	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	nan	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.0	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.4	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	0.926829268292683	0.3011833223922301		0.5278988032116346	rachel_class	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.75	0.5668384579548101		0.6975058234334963	rachel_family	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.6037735849056604	0.5668384579548101		0.6975058234334963	rachel_family	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.9135802469135802	0.5668384579548101		0.6975058234334963	rachel_family	0.0
+lim_Accumbens	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	0.0	0.5668384579548101		0.6975058234334963	rachel_family	0.0

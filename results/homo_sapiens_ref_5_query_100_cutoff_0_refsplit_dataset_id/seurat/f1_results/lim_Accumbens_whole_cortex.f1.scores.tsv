@@ -1,0 +1,37 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	whole_cortex	OPC	0.75	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	L5 ET	0.0	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Oligodendrocyte	0.8333333333333334	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Non-neuron	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	L6 CT	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	L2/3-6 IT	0.26666666666666666	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	PVALB	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	LAMP5	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	unknown	0.0	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	L6b	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	GABAergic	0.6	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Pericyte	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Endothelial	0.2857142857142857	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Microglia	1.0	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	SST	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Glutamatergic	0.4	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	L5 6 NP	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	VLMC	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	SNCG	nan	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Astrocyte	0.8695652173913043	0.25026397515527954		0.5004378881987577	rachel_subclass	0.0
+lim_Accumbens	whole_cortex	Vascular	0.4444444444444444	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	Non-neuron	nan	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	Oligodendrocyte lineage	0.8181818181818182	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	L2/3-6 IT	0.26666666666666666	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	MGE	nan	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	unknown	0.0	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	CGE	nan	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	GABAergic	0.6	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	deep layer non-IT	0.75	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	Microglia	1.0	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	Glutamatergic	0.4	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	Astrocyte	0.8695652173913043	0.42907151222368617		0.5679956082564779	rachel_class	0.0
+lim_Accumbens	whole_cortex	GABAergic	0.48	0.46307846076961523		0.5803822088955523	rachel_family	0.0
+lim_Accumbens	whole_cortex	Non-neuron	0.8505747126436781	0.46307846076961523		0.5803822088955523	rachel_family	0.0
+lim_Accumbens	whole_cortex	Glutamatergic	0.5217391304347826	0.46307846076961523		0.5803822088955523	rachel_family	0.0
+lim_Accumbens	whole_cortex	unknown	0.0	0.46307846076961523		0.5803822088955523	rachel_family	0.0

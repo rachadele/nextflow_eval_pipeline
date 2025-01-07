@@ -1,0 +1,39 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_ACC	middle_temporal_gyrus	Pericyte	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.0	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Endothelial	0.6666666666666666	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	L6b	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	L5 6 NP	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	LAMP5	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Non-neuron	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	VLMC	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Microglia	0.8	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	PVALB	0.8571428571428571	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	GABAergic	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	VIP	0.7692307692307693	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	L6 CT	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	L5 ET	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Astrocyte	1.0	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	SST	0.75	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	SNCG	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	OPC	1.0	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	L2/3-6 IT	0.38095238095238093	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Chandelier	nan	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	L5/6 NP	0.0	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Oligodendrocyte	0.9565217391304348	0.3263870187783231		0.5541111641981207	rachel_subclass	0.0
+velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.0	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	deep layer non-IT	0.5	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	Non-neuron	nan	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	Oligodendrocyte lineage	0.972972972972973	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	Microglia	0.8	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	GABAergic	nan	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	Astrocyte	1.0	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	CGE	0.75	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	MGE	0.875	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	unknown	nan	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	Vascular	0.9090909090909091	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	L2/3-6 IT	0.38095238095238093	0.5156680219180219		0.5929424944424945	rachel_class	0.0
+velmeshev_ACC	middle_temporal_gyrus	Non-neuron	0.7692307692307693	0.535576445412511		0.6710306087355268	rachel_family	0.0
+velmeshev_ACC	middle_temporal_gyrus	unknown	nan	0.535576445412511		0.6710306087355268	rachel_family	0.0
+velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.5245901639344263	0.535576445412511		0.6710306087355268	rachel_family	0.0
+velmeshev_ACC	middle_temporal_gyrus	GABAergic	0.8484848484848485	0.535576445412511		0.6710306087355268	rachel_family	0.0

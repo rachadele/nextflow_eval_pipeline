@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_ACC	primary_auditory_cortex	L5/6 NP	0.0	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Glutamatergic	0.15384615384615385	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Microglia	0.6666666666666666	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Non-neuron	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	L6 CT	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	CGE	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Chandelier	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Endothelial	0.6666666666666666	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	L2/3-6 IT	0.5217391304347826	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Oligodendrocyte	0.9523809523809523	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	L5 ET	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	OPC	1.0	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	VLMC	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Astrocyte	1.0	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	SST	0.6666666666666666	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	VIP	0.7272727272727273	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	PVALB	0.75	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	L6b	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	LAMP5	nan	0.3739599454702429		0.6012897247679857	rachel_subclass	0.0
+velmeshev_ACC	primary_auditory_cortex	Glutamatergic	0.15384615384615385	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	Microglia	0.6666666666666666	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	Non-neuron	nan	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	CGE	0.9333333333333333	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	deep layer non-IT	0.4444444444444444	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	Vascular	1.0	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	L2/3-6 IT	0.5217391304347826	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	Oligodendrocyte lineage	0.9714285714285714	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	Astrocyte	1.0	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	MGE	0.9333333333333333	0.6624791633487286		0.6715869830652439	rachel_class	0.0
+velmeshev_ACC	primary_auditory_cortex	GABAergic	0.9333333333333333	0.7889162601233316		0.746201999710187	rachel_family	0.0
+velmeshev_ACC	primary_auditory_cortex	Glutamatergic	0.6567164179104478	0.7889162601233316		0.746201999710187	rachel_family	0.0
+velmeshev_ACC	primary_auditory_cortex	Non-neuron	0.7766990291262136	0.7889162601233316		0.746201999710187	rachel_family	0.0

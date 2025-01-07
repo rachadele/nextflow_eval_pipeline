@@ -1,0 +1,8 @@
+ref	query	key	label	auc	optimal threshold
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	Astrocyte	0.9506578947368421	0.09
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	Endothelial	0.5980113636363636	0.16
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.8814102564102564	0.18
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	L5 ET	0.5833333333333334	0.02
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	OPC	1.0	0.9
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9281705948372615	0.19
+dorsolateral_prefrontal_cortex	lim_Cingulate	rachel_subclass	PVALB	0.989010989010989	0.49

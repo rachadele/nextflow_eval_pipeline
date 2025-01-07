@@ -1,0 +1,8 @@
+ref	query	key	label	auc	optimal threshold
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	Oligodendrocyte	0.984375	0.361309563818959
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	Astrocyte	0.9978738483345145	0.0481182720902543
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	Microglia	0.9914529914529915	0.0324712765785938
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	L2/3-6 IT	0.9662058371735791	0.19138431326601
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	Endothelial	0.70446735395189	0.0416726737120912
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	L5 ET	0.7411347517730498	0.0673639376808691
+Human_Multiple_Cortical_Areas_SMART-seq	lim_Caudate	rachel_subclass	OPC	1.0	0.625427909687294

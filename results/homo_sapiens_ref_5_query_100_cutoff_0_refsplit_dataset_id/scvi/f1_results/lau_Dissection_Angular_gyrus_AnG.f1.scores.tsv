@@ -1,0 +1,21 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	Dissection_Angular_gyrus_AnG	VLMC	nan	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Astrocyte	0.8695652173913043	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Oligodendrocyte	1.0	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	GABAergic	0.6086956521739131	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8041237113402062	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Endothelial	0.5714285714285714	0.539312572481555		0.8194108983799704	rachel_subclass	0.0
+lau	Dissection_Angular_gyrus_AnG	Astrocyte	0.8695652173913043	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	GABAergic	0.6086956521739131	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8041237113402062	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	1.0	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	Vascular	0.75	0.629048072613178		0.8247680412371133	rachel_class	0.0
+lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.7959183673469388	0.7466856858318452		0.7887622566913393	rachel_family	0.0
+lau	Dissection_Angular_gyrus_AnG	GABAergic	0.6086956521739131	0.7466856858318452		0.7887622566913393	rachel_family	0.0
+lau	Dissection_Angular_gyrus_AnG	Non-neuron	0.8354430379746836	0.7466856858318452		0.7887622566913393	rachel_family	0.0

@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	Astrocyte	0.9929411764705882	0.13
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	Endothelial	1.0	0.12
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	L2/3-6 IT	0.8965617715617715	0.16
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	L5/6 NP	0.7560137457044673	0.07
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	LAMP5	1.0	0.41
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	Microglia	0.9845360824742267	0.13
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	OPC	1.0	0.25
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	Oligodendrocyte	0.9897854954034729	0.14
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	PVALB	0.9946808510638299	0.15
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	SST	0.98	0.08
+Dissection_Primary_somatosensory_cortex_S1	velmeshev	rachel_subclass	VIP	0.8658854166666666	0.22

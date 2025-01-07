@@ -1,0 +1,22 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	primary_visual_cortex	Astrocyte	0.9166666666666666	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	unknown	nan	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	Oligodendrocyte	1.0	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	Microglia	1.0	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	VLMC	nan	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	Non-neuron	nan	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	Glutamatergic	0.8043478260869565	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	Endothelial	0.8	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	GABAergic	0.8	0.5912238325281803		0.8535579710144927	rachel_subclass	0.0
+lau	primary_visual_cortex	Astrocyte	0.9166666666666666	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	unknown	nan	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	Microglia	1.0	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	Non-neuron	nan	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	Oligodendrocyte lineage	1.0	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	Vascular	0.75	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	Glutamatergic	0.8043478260869565	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	GABAergic	0.8	0.658876811594203		0.8520579710144928	rachel_class	0.0
+lau	primary_visual_cortex	Glutamatergic	0.8043478260869565	0.6109634997316157		0.8158234031132581	rachel_family	0.0
+lau	primary_visual_cortex	Non-neuron	0.8395061728395061	0.6109634997316157		0.8158234031132581	rachel_family	0.0
+lau	primary_visual_cortex	GABAergic	0.8	0.6109634997316157		0.8158234031132581	rachel_family	0.0
+lau	primary_visual_cortex	unknown	nan	0.6109634997316157		0.8158234031132581	rachel_family	0.0

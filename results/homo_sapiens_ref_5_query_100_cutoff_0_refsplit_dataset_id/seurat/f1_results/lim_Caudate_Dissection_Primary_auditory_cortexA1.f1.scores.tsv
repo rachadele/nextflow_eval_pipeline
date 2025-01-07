@@ -1,0 +1,30 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Caudate	Dissection_Primary_auditory_cortexA1	unknown	0.0	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Endothelial	0.0	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	L6 CT	nan	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	L5 6 NP	nan	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	L5 ET	0.5	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Microglia	0.875	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.926829268292683	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	OPC	1.0	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.0	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.0	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	L6b	nan	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Astrocyte	0.7142857142857143	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	VLMC	nan	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	GABAergic	0.30303030303030304	0.28794301904058		0.530392909935593	rachel_subclass	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9361702127659575	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	unknown	0.16666666666666666	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Microglia	0.875	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	deep layer non-IT	0.631578947368421	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.0	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.0	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Vascular	0.0	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Astrocyte	0.7142857142857143	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	GABAergic	0.30303030303030304	0.36267318441170626		0.541574275388665	rachel_class	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	unknown	0.16666666666666666	0.48504329004329		0.6896294372294371	rachel_family	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.48	0.48504329004329		0.6896294372294371	rachel_family	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	Non-neuron	0.9904761904761905	0.48504329004329		0.6896294372294371	rachel_family	0.0
+lim_Caudate	Dissection_Primary_auditory_cortexA1	GABAergic	0.30303030303030304	0.48504329004329		0.6896294372294371	rachel_family	0.0

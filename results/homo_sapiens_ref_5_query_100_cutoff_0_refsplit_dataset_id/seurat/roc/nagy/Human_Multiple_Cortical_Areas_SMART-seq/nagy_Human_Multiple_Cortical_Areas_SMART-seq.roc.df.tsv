@@ -1,0 +1,10 @@
+ref	query	key	label	auc	optimal threshold
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	PVALB	0.9183673469387754	0.217277516582029
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	L6 CT	0.7346938775510203	0.111192638728934
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	VIP	0.9896907216494846	0.170025742466793
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	Oligodendrocyte	0.9053030303030304	0.486794027632473
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	Astrocyte	1.0	0.210634633881256
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	SST	0.9088541666666666	0.0449178659200592
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	Microglia	1.0	0.497015783447619
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	L2/3-6 IT	0.882	0.0713353624007363
+Human_Multiple_Cortical_Areas_SMART-seq	nagy	rachel_subclass	L5 ET	0.30315789473684207	0.0

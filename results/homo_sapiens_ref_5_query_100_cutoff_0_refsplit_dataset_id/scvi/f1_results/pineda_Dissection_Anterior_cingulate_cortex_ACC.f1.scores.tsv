@@ -1,0 +1,27 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L6 CT	nan	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	VIP	0.8	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.989010989010989	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.8235294117647058	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	SNCG	nan	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	nan	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L6b	0.2857142857142857	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L5 ET	0.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L5/6 NP	0.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	SST	1.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Chandelier	1.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	OPC	1.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	PVALB	1.0	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.918918918918919	0.5878115736939267		0.8645739093974387	rachel_subclass	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	deep layer non-IT	0.631578947368421	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Vascular	nan	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	CGE	1.0	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	MGE	1.0	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.8235294117647058	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.98989898989899	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.918918918918919	0.7954907834938795		0.9251559355584124	rachel_class	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.9652615144418423		0.9596135831381732	rachel_family	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9285714285714286	0.9652615144418423		0.9596135831381732	rachel_family	0.0
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.9672131147540983	0.9652615144418423		0.9596135831381732	rachel_family	0.0

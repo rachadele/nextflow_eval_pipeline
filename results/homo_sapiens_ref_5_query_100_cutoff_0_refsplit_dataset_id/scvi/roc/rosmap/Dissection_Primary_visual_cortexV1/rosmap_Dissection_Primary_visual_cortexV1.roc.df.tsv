@@ -1,0 +1,5 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_visual_cortexV1	rosmap	rachel_subclass	Astrocyte	1.0	0.44
+Dissection_Primary_visual_cortexV1	rosmap	rachel_subclass	Microglia	0.9999999999999999	0.55
+Dissection_Primary_visual_cortexV1	rosmap	rachel_subclass	OPC	1.0	0.45
+Dissection_Primary_visual_cortexV1	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.31

@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.5263157894736842	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.7619047619047619	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	0.5	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	nan	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.0	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.8181818181818182	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	0.0	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.4	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.6666666666666666	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.16666666666666666	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	SNCG	nan	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	VLMC	nan	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.2857142857142857	0.2578406242879927		0.5102781954887218	rachel_subclass	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.5263157894736842	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.7058823529411765	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.782608695652174	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	nan	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.8181818181818182	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	0.0	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.4	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.25	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.6666666666666666	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.16666666666666666	0.35969349913184884		0.5767539597074528	rachel_class	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7391304347826086	0.5283191940615057		0.6382432661717921	rachel_family	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.6341463414634146	0.5283191940615057		0.6382432661717921	rachel_family	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.74	0.5283191940615057		0.6382432661717921	rachel_family	0.0
+lim_Accumbens	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	0.0	0.5283191940615057		0.6382432661717921	rachel_family	0.0

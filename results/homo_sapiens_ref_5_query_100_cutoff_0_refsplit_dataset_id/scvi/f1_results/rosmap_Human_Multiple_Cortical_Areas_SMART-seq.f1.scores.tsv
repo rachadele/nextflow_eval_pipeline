@@ -1,0 +1,21 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	L6b	nan	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8686868686868687	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	1.0	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	1.0	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.6451612903225806	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	VIP	nan	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.0	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	OPC	1.0	0.5015386843343832		0.8065102639296188	rachel_subclass	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8686868686868687	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	1.0	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	deep layer non-IT	nan	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	CGE	nan	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.6451612903225806	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	1.0	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.0	0.4392310198761812		0.8065102639296188	rachel_class	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8113207547169812	0.7583434773787787		0.7982744978697505	rachel_family	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.625	0.7583434773787787		0.7982744978697505	rachel_family	0.0
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	0.8387096774193549	0.7583434773787787		0.7982744978697505	rachel_family	0.0
