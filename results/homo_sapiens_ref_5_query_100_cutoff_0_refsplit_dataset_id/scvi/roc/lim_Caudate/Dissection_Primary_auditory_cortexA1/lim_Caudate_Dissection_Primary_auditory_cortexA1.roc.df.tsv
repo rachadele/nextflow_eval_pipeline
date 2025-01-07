@@ -1,0 +1,8 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	Astrocyte	0.9939759036144579	0.1
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	Endothelial	0.4072164948453608	0.0
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	L2/3-6 IT	0.8179723502304147	0.09
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	L5 ET	0.8289007092198581	0.01
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	Microglia	0.9413919413919414	0.37
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	OPC	1.0	0.71
+Dissection_Primary_auditory_cortexA1	lim_Caudate	rachel_subclass	Oligodendrocyte	0.9818749999999999	0.47

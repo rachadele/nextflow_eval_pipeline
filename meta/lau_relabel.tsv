@@ -1,0 +1,7 @@
+Cell_type	rachel_subclass	rachel_class	rachel_family
+Astro	Astrocyte	Astrocyte	Non-neuron
+Endo	Endothelial	Vascular	Non-neuron
+Excit	Glutamatergic	Glutamatergic	Glutamatergic
+Inhit	GABAergic	GABAergic	GABAergic
+Mic	Microglia	Microglia	Non-neuron
+Oligo	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron

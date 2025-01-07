@@ -1,0 +1,15 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.9767195767195768		0.9712380952380951	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.9767195767195768		0.9712380952380951	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8888888888888888	0.9767195767195768		0.9712380952380951	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9714285714285714	0.9767195767195768		0.9712380952380951	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	OPC	1.0	0.9767195767195768		0.9712380952380951	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.9767195767195768		0.9712380952380951	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.972063492063492		0.9712380952380951	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.972063492063492		0.9712380952380951	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.972063492063492		0.9712380952380951	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8888888888888888	0.972063492063492		0.9712380952380951	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9714285714285714	0.972063492063492		0.9712380952380951	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.9534391534391534		0.9712380952380952	rachel_family	0.0
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9714285714285714	0.9534391534391534		0.9712380952380952	rachel_family	0.0
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8888888888888888	0.9534391534391534		0.9712380952380952	rachel_family	0.0

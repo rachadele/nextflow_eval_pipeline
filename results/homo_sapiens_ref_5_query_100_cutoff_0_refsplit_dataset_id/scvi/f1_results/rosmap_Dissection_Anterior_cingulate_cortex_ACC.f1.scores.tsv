@@ -1,0 +1,17 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.8260869565217391	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	OPC	1.0	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	1.0	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.96	0.8265838509316771		0.9012869565217391	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.8260869565217391	0.7976811594202898		0.9012869565217391	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	1.0	0.7976811594202898		0.9012869565217391	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.7976811594202898		0.9012869565217391	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.7976811594202898		0.9012869565217391	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.7976811594202898		0.9012869565217391	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.96	0.7976811594202898		0.9012869565217391	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.96	0.8684546883184914		0.8398411733892089	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.8260869565217391	0.8684546883184914		0.8398411733892089	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.8192771084337349	0.8684546883184914		0.8398411733892089	rachel_family	0.0

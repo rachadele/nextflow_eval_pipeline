@@ -1,0 +1,25 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.8085106382978723	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	nan	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.5	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8695652173913043	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	VLMC	nan	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	VIP	nan	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	SST	nan	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	1.0	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.8	0.45255235051719783		0.8407243293246993	rachel_subclass	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.8085106382978723	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	nan	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8695652173913043	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	1.0	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.6666666666666666	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	MGE	nan	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.8	0.5144742522355843		0.8457243293246993	rachel_class	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.7407407407407407	0.7785375118708452		0.7917378917378918	rachel_family	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.8	0.7785375118708452		0.7917378917378918	rachel_family	0.0
+lau	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.7948717948717948	0.7785375118708452		0.7917378917378918	rachel_family	0.0

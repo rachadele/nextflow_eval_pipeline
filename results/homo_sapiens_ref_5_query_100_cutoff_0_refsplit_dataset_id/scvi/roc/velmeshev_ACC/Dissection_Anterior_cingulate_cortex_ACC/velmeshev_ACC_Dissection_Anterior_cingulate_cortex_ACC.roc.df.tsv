@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	Astrocyte	0.9941860465116279	0.18
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	Endothelial	0.87322695035461	0.15
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	L2/3-6 IT	0.6977321048901488	0.17
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	L5/6 NP	0.55078125	0.02
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	Microglia	1.0	0.37
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	OPC	1.0	0.13
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	Oligodendrocyte	0.9979570990806946	0.22
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	PVALB	0.8450520833333334	0.26
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	SST	1.0	0.23
+Dissection_Anterior_cingulate_cortex_ACC	velmeshev_ACC	rachel_subclass	VIP	0.9723502304147466	0.19

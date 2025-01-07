@@ -1,0 +1,37 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Chandelier	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L5/6 NP	0.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L6b	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L6 CT	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.8571428571428571	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L5 ET	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.7083333333333334	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	VIP	1.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	GABAergic	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.42857142857142855	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	PVALB	0.8	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L5 6 NP	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	LAMP5	1.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	VLMC	nan	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	1.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	SST	0.9090909090909091	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.48515692640692637		0.7555573593073593	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.46153846153846156	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.7083333333333334	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	MGE	1.0	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Vascular	1.0	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	GABAergic	nan	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.42857142857142855	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	1.0	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	CGE	1.0	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.6332036019536019		0.8090338827838829	rachel_class	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.6815745758936858		0.9073520732024203	rachel_family	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.9032258064516129	0.6815745758936858		0.9073520732024203	rachel_family	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.8863636363636364	0.6815745758936858		0.9073520732024203	rachel_family	0.0
+velmeshev_PFC	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.9367088607594937	0.6815745758936858		0.9073520732024203	rachel_family	0.0

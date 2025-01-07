@@ -1,0 +1,21 @@
+organism: homo_sapiens
+census_version: 2024-07-01
+tree_file: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline_1/meta/master_hierarchy.json
+ref_keys: [rachel_subclass, rachel_class, rachel_family]
+subsample_ref: 5
+subsample_query: 100
+relabel_r: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline_1/meta/census_map_human.tsv
+relabel_q: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline_1/meta/*_relabel.tsv
+cutoff: 0
+remove_unknown: false
+queries_adata: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline_1/queries/*h5ad
+batch_keys: [lau:sample, pineda:Batch, lim:batch, velmeshev:sample, rosmap:batch, nagy:batch]
+ref_split: dataset_id
+ref_collections: [Transcriptomic cytoarchitecture reveals principles of human neocortex organization, SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas]
+integration_method: pcaproject
+dims: 50
+max_features: 200
+k_anchor: 10
+k_score: 30
+k_weight: 20
+outdir: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline_1/results/homo_sapiens_ref_5_query_100_cutoff_0_refsplit_dataset_id

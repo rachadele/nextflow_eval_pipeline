@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	VIP	1.0	0.246372336594901
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	PVALB	0.9973958333333333	0.368567767582578
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	OPC	1.0	0.351406372256812
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	L2/3-6 IT	0.9805068226120858	0.297826676658077
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	L5 ET	0.8231578947368421	0.108774020384945
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	Astrocyte	1.0	0.511598181900894
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	Microglia	1.0	0.816175677511361
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	SST	1.0	0.311016370389525
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	Oligodendrocyte	0.9963636363636365	0.193842567822293
+Human_Multiple_Cortical_Areas_SMART-seq	pineda	rachel_subclass	L6b	0.9759450171821306	0.274567141782814

@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	Astrocyte	0.9655555555555556	0.18
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	Chandelier	1.0	0.36
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	L2/3-6 IT	0.910006497725796	0.06
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	L5 ET	0.6989473684210527	0.01
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	L5/6 NP	0.3112244897959184	0.0
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	L6b	0.9501718213058419	0.08
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	Microglia	1.0	0.71
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	OPC	0.9999999999999999	0.52
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	Oligodendrocyte	1.0	0.25
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	PVALB	1.0	0.24
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	SST	1.0	0.23
+Dissection_Dorsolateral_prefrontal_cortex_DFC	pineda	rachel_subclass	VIP	0.9725085910652921	0.15

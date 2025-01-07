@@ -1,0 +1,17 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Primary_visual_cortexV1	Oligodendrocyte	1.0	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Astrocyte	1.0	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Microglia	1.0	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	OPC	1.0	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	GABAergic	0.9090909090909091	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9724770642201835	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.8402239961872989		0.9742285237698082	rachel_subclass	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Astrocyte	1.0	0.8135946622185154		0.9742285237698082	rachel_class	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	1.0	0.8135946622185154		0.9742285237698082	rachel_class	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Microglia	1.0	0.8135946622185154		0.9742285237698082	rachel_class	0.0
+rosmap	Dissection_Primary_visual_cortexV1	GABAergic	0.9090909090909091	0.8135946622185154		0.9742285237698082	rachel_class	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9724770642201835	0.8135946622185154		0.9742285237698082	rachel_class	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.8135946622185154		0.9742285237698082	rachel_class	0.0
+rosmap	Dissection_Primary_visual_cortexV1	GABAergic	0.9090909090909091	0.955691739895968		0.969300987537924	rachel_family	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9724770642201835	0.955691739895968		0.969300987537924	rachel_family	0.0
+rosmap	Dissection_Primary_visual_cortexV1	Non-neuron	0.9855072463768116	0.955691739895968		0.969300987537924	rachel_family	0.0

@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	Dissection_Primary_auditory_cortexA1	SNCG	nan	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L5 ET	0.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L5 6 NP	nan	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Astrocyte	1.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	CGE	nan	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	PVALB	0.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L5/6 NP	0.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.9090909090909091	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	VIP	0.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Microglia	0.2857142857142857	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.64	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L6b	nan	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Endothelial	nan	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Chandelier	nan	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	unknown	0.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L6 CT	0.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	SST	0.75	0.2547113997113997		0.5776623376623377	rachel_subclass	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Astrocyte	1.0	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	deep layer non-IT	0.17142857142857143	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	CGE	1.0	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	MGE	0.7142857142857143	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Microglia	0.2857142857142857	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.64	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Vascular	nan	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	unknown	0.18181818181818182	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9090909090909091	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.5902337662337663		0.6467532467532467	rachel_class	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.8363636363636363	0.664022578728461		0.7956411170528819	rachel_family	0.0
+nagy	Dissection_Primary_auditory_cortexA1	Non-neuron	0.7555555555555555	0.664022578728461		0.7956411170528819	rachel_family	0.0
+nagy	Dissection_Primary_auditory_cortexA1	unknown	0.18181818181818182	0.664022578728461		0.7956411170528819	rachel_family	0.0
+nagy	Dissection_Primary_auditory_cortexA1	GABAergic	0.8823529411764706	0.664022578728461		0.7956411170528819	rachel_family	0.0

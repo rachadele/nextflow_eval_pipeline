@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	Astrocyte	1.0	0.28
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	L2/3-6 IT	0.8226000000000001	0.14
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	L5 ET	0.6589473684210527	0.03
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	L5/6 NP	0.70446735395189	0.37
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	L6 CT	0.8137755102040817	0.08
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	Microglia	0.9501718213058419	0.09
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	Oligodendrocyte	0.9100378787878788	0.3
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	PVALB	0.9311224489795917	0.12
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	SST	0.9622395833333333	0.15
+Dissection_Primary_somatosensory_cortex_S1	nagy	rachel_subclass	VIP	0.9759450171821306	0.13

@@ -1,0 +1,5 @@
+ref	query	key	label	auc	optimal threshold
+primary_somatosensory_cortex	rosmap	rachel_subclass	Astrocyte	1.0	0.361439491533314
+primary_somatosensory_cortex	rosmap	rachel_subclass	Microglia	1.0	0.750334659434581
+primary_somatosensory_cortex	rosmap	rachel_subclass	OPC	1.0	0.0111839320919096
+primary_somatosensory_cortex	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.308484355417164

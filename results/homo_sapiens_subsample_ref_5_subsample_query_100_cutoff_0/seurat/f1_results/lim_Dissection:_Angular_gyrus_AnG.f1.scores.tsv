@@ -1,0 +1,27 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim	Dissection:_Angular_gyrus_AnG	Microglia	1.0	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	Glutamatergic	0.18181818181818182	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	L6 CT	nan	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	SNCG	nan	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	Non-neuron	nan	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	L5 ET	0.0	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	Oligodendrocyte	0.9056603773584906	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	VLMC	nan	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	L2/3-6 IT	0.0	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	GABAergic	0.6842105263157895	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	Endothelial	0.0	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	Astrocyte	0.9	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	OPC	0.5714285714285714	0.32639366591700253		0.6396591776876591	rachel_subclass	0.0
+lim	Dissection:_Angular_gyrus_AnG	GABAergic	0.6842105263157895	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Microglia	1.0	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Glutamatergic	0.18181818181818182	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Vascular	0.0	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	deep layer non-IT	0.23529411764705882	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Astrocyte	0.9	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Non-neuron	nan	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9333333333333333	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	CGE	nan	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	L2/3-6 IT	0.0	0.3934656159114363		0.6663729382621418	rachel_class	0.0
+lim	Dissection:_Angular_gyrus_AnG	Non-neuron	0.9532710280373832	0.7783261150368513		0.831055972918051	rachel_family	0.0
+lim	Dissection:_Angular_gyrus_AnG	GABAergic	0.65	0.7783261150368513		0.831055972918051	rachel_family	0.0
+lim	Dissection:_Angular_gyrus_AnG	Glutamatergic	0.7317073170731707	0.7783261150368513		0.831055972918051	rachel_family	0.0

@@ -1,0 +1,17 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.9333333333333333	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	OPC	1.0	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	1.0	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	1.0	0.8476190476190476		0.9946666666666667	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.8222222222222223		0.9946666666666667	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.9333333333333333	0.8222222222222223		0.9946666666666667	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.8222222222222223		0.9946666666666667	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	1.0	0.8222222222222223		0.9946666666666667	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	1.0	0.8222222222222223		0.9946666666666667	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Vascular	nan	0.8222222222222223		0.9946666666666667	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	1.0	1.0		1.0	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	1.0	1.0		1.0	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	1.0		1.0	rachel_family	0.0

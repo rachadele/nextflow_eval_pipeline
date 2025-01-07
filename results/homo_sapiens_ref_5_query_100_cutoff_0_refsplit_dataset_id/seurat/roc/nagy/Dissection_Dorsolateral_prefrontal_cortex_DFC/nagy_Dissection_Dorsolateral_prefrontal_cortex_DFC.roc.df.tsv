@@ -1,0 +1,10 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	VIP	0.9415807560137457	0.0818415770451402
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	L5 ET	0.4378947368421053	0.0293000033355497
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	L6 CT	0.846938775510204	0.0979739768937631
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	Astrocyte	1.0	0.344727470016194
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	Microglia	0.9209621993127147	0.178971294672497
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	Oligodendrocyte	0.9081439393939394	0.439914557676188
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	L2/3-6 IT	0.9051999999999999	0.0474494368642029
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	PVALB	0.6785714285714286	0.40720339159043
+Dissection_Dorsolateral_prefrontal_cortex_DFC	nagy	rachel_subclass	SST	0.9296875	0.232816486524131

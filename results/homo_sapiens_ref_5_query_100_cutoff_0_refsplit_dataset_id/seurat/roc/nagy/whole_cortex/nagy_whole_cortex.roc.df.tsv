@@ -1,0 +1,10 @@
+ref	query	key	label	auc	optimal threshold
+whole_cortex	nagy	rachel_subclass	VIP	0.9656357388316151	0.0868718459691807
+whole_cortex	nagy	rachel_subclass	L5 ET	0.49578947368421045	0.163215509196171
+whole_cortex	nagy	rachel_subclass	SST	0.8059895833333334	0.12435677164309
+whole_cortex	nagy	rachel_subclass	L6 CT	0.6377551020408163	0.0888932059907106
+whole_cortex	nagy	rachel_subclass	Astrocyte	1.0	0.203172553408456
+whole_cortex	nagy	rachel_subclass	Microglia	1.0	0.501361894228391
+whole_cortex	nagy	rachel_subclass	L2/3-6 IT	0.9448000000000001	0.143295124231065
+whole_cortex	nagy	rachel_subclass	PVALB	0.846938775510204	0.0331283004867663
+whole_cortex	nagy	rachel_subclass	Oligodendrocyte	0.9109848484848486	0.28640597773857

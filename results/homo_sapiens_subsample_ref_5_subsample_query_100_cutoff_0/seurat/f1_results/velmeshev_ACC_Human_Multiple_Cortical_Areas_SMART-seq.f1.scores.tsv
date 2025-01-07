@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	PVALB	0.8571428571428571	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	1.0	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	OPC	1.0	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L6 CT	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.08	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.43478260869565216	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	SST	0.8571428571428571	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L5/6 NP	0.0	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	VIP	0.4	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.8	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L5 6 NP	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L5 ET	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	CGE	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Endothelial	0.9090909090909091	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L6b	nan	0.38621890695117245		0.5802299265951439	rachel_subclass	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	1.0	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	nan	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	deep layer non-IT	0.35294117647058826	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.08	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	MGE	0.8571428571428571	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.43478260869565216	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	1.0	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.8	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	CGE	0.9333333333333333	0.5381833313035359		0.6371354524418463	rachel_class	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.6153846153846154	0.5813542444610407		0.7276026885735624	rachel_family	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	0.7766990291262136	0.5813542444610407		0.7276026885735624	rachel_family	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.5813542444610407		0.7276026885735624	rachel_family	0.0
+velmeshev_ACC	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9333333333333333	0.5813542444610407		0.7276026885735624	rachel_family	0.0

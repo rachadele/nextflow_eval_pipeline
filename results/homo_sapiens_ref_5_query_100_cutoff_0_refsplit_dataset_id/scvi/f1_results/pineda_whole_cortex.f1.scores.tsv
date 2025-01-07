@@ -1,0 +1,26 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	whole_cortex	SST	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	PVALB	0.8	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	Oligodendrocyte	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	Microglia	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	Astrocyte	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	Pericyte	nan	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	OPC	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	Chandelier	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	L6 CT	nan	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	L5/6 NP	0.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	L5 ET	0.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	L6b	0.5	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	L2/3-6 IT	0.8	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	VIP	1.0	0.65		0.8690000000000001	rachel_subclass	0.0
+pineda	whole_cortex	CGE	1.0	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	Oligodendrocyte lineage	1.0	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	L2/3-6 IT	0.8	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	Microglia	1.0	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	MGE	0.8888888888888888	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	Astrocyte	1.0	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	Vascular	nan	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	deep layer non-IT	0.6666666666666666	0.7944444444444444		0.9197777777777779	rachel_class	0.0
+pineda	whole_cortex	GABAergic	0.9166666666666666	0.9512855831037649		0.970056473829201	rachel_family	0.0
+pineda	whole_cortex	Glutamatergic	0.9454545454545454	0.9512855831037649		0.970056473829201	rachel_family	0.0
+pineda	whole_cortex	Non-neuron	0.9917355371900827	0.9512855831037649		0.970056473829201	rachel_family	0.0

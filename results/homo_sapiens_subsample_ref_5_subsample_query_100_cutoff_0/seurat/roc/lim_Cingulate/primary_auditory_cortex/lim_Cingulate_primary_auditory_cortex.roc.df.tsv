@@ -1,0 +1,8 @@
+ref	query	key	label	auc	optimal threshold
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	L5 ET	0.6458333333333333	0.137813233858236
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	OPC	1.0	0.445538335717435
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	Astrocyte	0.9128289473684211	0.0242757240552238
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	Endothelial	0.5227272727272727	0.076896785818427
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9438832772166106	0.459723851329971
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.47802197802197793	0.0225780027350547
+primary_auditory_cortex	lim_Cingulate	rachel_subclass	PVALB	0.10989010989010989	0.0
