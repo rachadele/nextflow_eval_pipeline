@@ -1,0 +1,24 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Pericyte	0.0	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9640591966173362	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.9959839357429718	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9722222222222222	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	OPC	1.0	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	nan	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.996268656716418	0.5389576373908135		0.9768669679401292	rachel_subclass	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9722222222222222	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.9967637540453075	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9640591966173362	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.9959839357429718	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Vascular	1.0	0.7411286385784798		0.9798664728428002	rachel_class	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9640591966173362	0.731260783090077		0.9683810143746232	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.9959839357429718	0.731260783090077		0.9683810143746232	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.965	0.731260783090077		0.9683810143746232	rachel_family	0.0
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.731260783090077		0.9683810143746232	rachel_family	0.0

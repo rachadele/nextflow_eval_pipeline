@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+middle_temporal_gyrus	pineda	rachel_subclass	VIP	1.0	0.0835142577663888
+middle_temporal_gyrus	pineda	rachel_subclass	Oligodendrocyte	1.0	0.154936350402669
+middle_temporal_gyrus	pineda	rachel_subclass	OPC	1.0	0.64330428309334
+middle_temporal_gyrus	pineda	rachel_subclass	Microglia	1.0	0.723711705880425
+middle_temporal_gyrus	pineda	rachel_subclass	PVALB	0.9862542955326461	0.386433348376181
+middle_temporal_gyrus	pineda	rachel_subclass	L5 ET	0.9473684210526316	0.045212320228149
+middle_temporal_gyrus	pineda	rachel_subclass	SST	1.0	0.409195657792092
+middle_temporal_gyrus	pineda	rachel_subclass	Astrocyte	1.0	0.270209133669858
+middle_temporal_gyrus	pineda	rachel_subclass	Endothelial	1.0	0.562826649354505
+middle_temporal_gyrus	pineda	rachel_subclass	Chandelier	1.0	0.444815221508865
+middle_temporal_gyrus	pineda	rachel_subclass	L6b	0.989795918367347	0.179394861783759
+middle_temporal_gyrus	pineda	rachel_subclass	L2/3-6 IT	0.9902319902319903	0.248065457155792

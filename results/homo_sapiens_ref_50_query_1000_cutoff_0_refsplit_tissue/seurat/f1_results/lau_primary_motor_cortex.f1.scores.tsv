@@ -1,0 +1,28 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	primary_motor_cortex	Endothelial	0.64	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	Non-neuron	nan	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	Pericyte	nan	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	Oligodendrocyte	0.9960159362549801	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	PVALB	nan	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	Astrocyte	0.9818181818181818	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	GABAergic	0.8373702422145328	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	L2/3-6 IT	nan	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	VIP	nan	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	Glutamatergic	0.8089591567852438	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	unknown	nan	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	Microglia	0.9583333333333334	0.4352080708671893		0.8828072789957647	rachel_subclass	0.0
+lau	primary_motor_cortex	MGE	nan	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	Oligodendrocyte lineage	0.9960159362549801	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	Non-neuron	nan	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	Astrocyte	0.9818181818181818	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	GABAergic	0.8373702422145328	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	Vascular	0.8666666666666667	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	L2/3-6 IT	nan	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	CGE	nan	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	Glutamatergic	0.8089591567852438	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	unknown	nan	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	Microglia	0.9583333333333334	0.49537850155208535		0.8866606123290982	rachel_class	0.0
+lau	primary_motor_cortex	GABAergic	0.8287671232876712	0.633633550138827		0.8488759890472319	rachel_family	0.0
+lau	primary_motor_cortex	Glutamatergic	0.8078947368421052	0.633633550138827		0.8488759890472319	rachel_family	0.0
+lau	primary_motor_cortex	unknown	nan	0.633633550138827		0.8488759890472319	rachel_family	0.0
+lau	primary_motor_cortex	Non-neuron	0.8978723404255319	0.633633550138827		0.8488759890472319	rachel_family	0.0

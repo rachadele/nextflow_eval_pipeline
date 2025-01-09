@@ -1,0 +1,23 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	primary_visual_cortex	Microglia	1.0	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	Astrocyte	0.8333333333333334	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	Glutamatergic	0.9183673469387755	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	unknown	nan	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	GABAergic	0.75	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	VLMC	nan	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	Oligodendrocyte	0.9565217391304348	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	Non-neuron	nan	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	Pericyte	0.0	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	OPC	1.0	0.5458222419402544		0.8954665779355221	rachel_subclass	0.0
+rosmap	primary_visual_cortex	unknown	nan	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	GABAergic	0.75	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	Oligodendrocyte lineage	0.9583333333333334	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	Non-neuron	nan	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	Microglia	1.0	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	Astrocyte	0.8333333333333334	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	Vascular	1.0	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	Glutamatergic	0.9183673469387755	0.6825042517006803		0.905484693877551	rachel_class	0.0
+rosmap	primary_visual_cortex	unknown	nan	0.6634686483288967		0.919307157645667	rachel_family	0.0
+rosmap	primary_visual_cortex	GABAergic	0.75	0.6634686483288967		0.919307157645667	rachel_family	0.0
+rosmap	primary_visual_cortex	Glutamatergic	0.9183673469387755	0.6634686483288967		0.919307157645667	rachel_family	0.0
+rosmap	primary_visual_cortex	Non-neuron	0.9855072463768116	0.6634686483288967		0.919307157645667	rachel_family	0.0

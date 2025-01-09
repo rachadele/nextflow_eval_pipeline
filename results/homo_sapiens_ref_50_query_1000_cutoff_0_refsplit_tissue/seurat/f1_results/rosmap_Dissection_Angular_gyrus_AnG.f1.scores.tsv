@@ -1,0 +1,26 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Angular_gyrus_AnG	Microglia	0.9583333333333334	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9591623036649215	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	VLMC	nan	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9980952380952381	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	OPC	1.0	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.945054945054945	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Pericyte	0.0	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Endothelial	1.0	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	0.9787234042553191	0.5699474353669798		0.9650954286187616	rachel_subclass	0.0
+rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Microglia	0.9583333333333334	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9983079526226735	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.945054945054945	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9591623036649215	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	0.9787234042553191	0.6488424376590215		0.9700953222614979	rachel_class	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9581589958158996	0.7195943348909137		0.9628282199437012	rachel_family	0.0
+rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.7195943348909137		0.9628282199437012	rachel_family	0.0
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	0.9751633986928104	0.7195943348909137		0.9628282199437012	rachel_family	0.0
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.945054945054945	0.7195943348909137		0.9628282199437012	rachel_family	0.0

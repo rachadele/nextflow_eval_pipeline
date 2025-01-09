@@ -51,6 +51,13 @@ def parse_arguments():
     
     
 def main():
+    SEED = 42
+    random.seed(SEED)         # For `random`
+    np.random.seed(SEED)      # For `numpy`
+    # For `torch`'
+    scvi.settings.seed = SEED # For `scvi`
+    # Parse command line arguments
+    args = parse_arguments()
     # Parse command line arguments
     args = parse_arguments()
     # query_name = args.query_name

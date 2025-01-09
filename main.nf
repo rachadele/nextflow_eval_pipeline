@@ -75,67 +75,19 @@ python $projectDir/bin/process_query.py \\
                         --batch_key ${batch_key} \\
                         --subsample_query ${params.subsample_query} \\
                         --ref_keys ${ref_keys} \\
+                        --seed ${params.seed} \\
                         ${params.remove_unknown ? '--remove_unknown' : ''}
 """
 
 }
 
-//process processQuerySeurat {
-    //conda '/home/rschwartz/anaconda3/envs/r4.3'
-
-    //input:
-    //tuple val(query_name), path(relabel_q), path(query_file), val(batch_key)
-    //// val subsample_query
-    //val ref_keys
-
-    //output:
-    //path "${query_file.getName().toString().replace('.rds','_processed.rds')}"
-
-
-    //script:
-    //"""
-    //Rscript $projectDir/bin/process_query.R \\
-                        //--relabel_path ${relabel_q} \\
-                        //--query_path ${query_file} \\
-                        //--subsample_query ${params.subsample_query} \\
-                        //--ref_keys ${ref_keys}
-    //"""
-    // 
-
-//}
-
-//process getCensusSeurat {
-    //conda '/home/rschwartz/anaconda3/envs/r4.3'
-
- //input:
-    //val organism
-    //val census_version
-    //val subsample_ref
-    //val relabel_r
-    //val ref_split
-    //val ref_collections
-
-    //output:
-    //path "refs/*rds", emit: ref_paths_seurat
-
-
-    //script:
-
-    //"""
-    //# Run the python script to generate the files
-    //Rscript $projectDir/bin/get_census_seurat.R \\
-        //--organism ${organism} \\
-        //--census_version ${census_version} \\
-        //--subsample_ref ${subsample_ref} \\
-        //--relabel_path ${relabel_r} \\
-        //--split_column ${ref_split} \\
-        //--ref_collections ${ref_collections}
-    //"""
-//}
-
-
 process getCensusAdata {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+
+    // publishDir (
+        // path: "${params.outdir}",
+        // mode: "copy"
+    // )
 
     input:
     val organism
@@ -147,8 +99,10 @@ process getCensusAdata {
 
     output:
     path "refs/*.h5ad", emit: ref_paths_adata
+    path "refs/*.obs.tsv"
 
     script:
+    ref_keys = params.ref_keys.join(' ')
     """
     # Run the python script to generate the files
     python $projectDir/bin/get_census_adata.py \\
@@ -157,7 +111,9 @@ process getCensusAdata {
         --subsample_ref ${subsample_ref} \\
         --relabel_path ${relabel_r} \\
         --split_column ${ref_split} \\
-        --ref_collections ${ref_collections}
+        --ref_collections ${ref_collections} \\
+        --ref_keys ${ref_keys} \\
+        --seed ${params.seed}
 
     # After running the python script, all .h5ad files will be saved in the refs/ directory inside a work directory
     """
@@ -420,34 +376,6 @@ workflow {
         def batch_key = params.batch_keys[query_key]
         [query_key, relabel_q_path, query_path, batch_key]
     }
-
-    //Channel.fromPath(params.queries_seurat)
-    //.set { query_paths_seurat }
-
-    //getCensusSeurat(params.organism, params.census_version, params.subsample_ref, params.relabel_r, params.ref_split, ref_collections)
-    //getCensusSeurat.out.ref_paths_seurat.flatten()
-    //.set { ref_paths_seurat }
-
-    // Map relabeling files to query files
-    //query_paths_seurat = query_paths_seurat.map { query_path -> 
-        //def query_name = query_path.getName().split('.rds')[0]
-        //[query_name, query_path]
-    //}
-
-    // Combine the query paths with the relabel paths
-    // Map to batch key parameter
-    // Returns a tuple with the query prefix (author name only, e.g. Lim), paths and batch key for scvi model
-
-
-    //combined_query_paths_seurat = relabel_q_paths
-    //.join(query_paths_seurat)
-    //.map { query_name, relabel_q_path, query_path ->
-        //def query_key = query_name.split('_')[0]
-        //def batch_key = params.batch_keys[query_key]
-        //[query_key, relabel_q_path, query_path, batch_key]
-    //}
-
-    // processed_queries_seurat = processQuerySeurat(combined_query_paths_seurat, params.ref_keys.join(' '))
 
     // Process each query by relabeling, subsampling, and passing through scvi model
     processed_queries_adata = mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' ')) 

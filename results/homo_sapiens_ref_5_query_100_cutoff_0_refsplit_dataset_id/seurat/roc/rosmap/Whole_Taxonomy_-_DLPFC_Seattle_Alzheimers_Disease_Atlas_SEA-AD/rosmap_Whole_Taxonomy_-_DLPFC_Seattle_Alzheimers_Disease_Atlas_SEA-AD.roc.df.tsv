@@ -1,5 +1,5 @@
 ref	query	key	label	auc	optimal threshold
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	Astrocyte	1.0	0.433994992703337
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.367564297102996
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	OPC	1.0	0.549916636043474
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	Microglia	1.0	0.706370698193943
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	OPC	1.0	0.714876171986895
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.375103970921051
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	Astrocyte	1.0	0.775696062842351
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	rosmap	rachel_subclass	Microglia	1.0	0.62367025753309

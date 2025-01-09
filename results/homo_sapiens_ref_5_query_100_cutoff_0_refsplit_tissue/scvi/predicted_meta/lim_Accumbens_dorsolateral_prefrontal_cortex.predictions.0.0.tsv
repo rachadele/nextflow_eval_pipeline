@@ -1,0 +1,101 @@
+orig.ident	nCount_RNA	nFeature_RNA	cellid	case_num	Location	Condition	Cluster	Lineage	batch	rachel_subclass	rachel_class	rachel_family	n_counts	joinid	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+0	21767.0	5828	ACTTCGCGTACGTGTT.1.H4161A	H4161A	Accumbens	HD	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	21767.0	0	7396	0	VIP	0.24	CGE	GABAergic
+0	7375.0	2962	GAAATGAAGATGGTCG.1.H5608A	H5608A	Accumbens	HD	Astro_1	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	7375.0	1	7396	0	Astrocyte	0.25	Astrocyte	Non-neuron
+0	488.0	392	TGACGCGAGCTGTGCC.1.C5227A	C5227A	Accumbens	Con	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	488.0	2	7396	0	L2/3-6 IT	0.31	L2/3-6 IT	Glutamatergic
+0	5498.0	2318	CCTCAACAGACGTCCC.1.H5263A	H5263A	Accumbens	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	5498.0	3	7396	0	Oligodendrocyte	0.14	Oligodendrocyte lineage	Non-neuron
+0	5665.0	2697	TGGTAGTGTCGTAATC.1.H4161A	H4161A	Accumbens	HD	oligo_3	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	5665.0	4	7396	0	Oligodendrocyte	0.4	Oligodendrocyte lineage	Non-neuron
+0	5301.0	2141	GGCAGTCGTGCAACGA.1.H5575A	H5575A	Accumbens	HD	Unclassified	Neuron	B2	unknown	unknown	unknown	5301.0	5	7395	0	OPC	0.34	Oligodendrocyte lineage	Non-neuron
+0	16157.0	5714	TCATTTGCAGTTCCAA.1.H5109A	H5109A	Accumbens	HD	GABA_TAC3	Neuron	B3	GABAergic	GABAergic	GABAergic	16157.0	6	7396	0	Oligodendrocyte	0.17	Oligodendrocyte lineage	Non-neuron
+0	1134.0	798	CAATTTCGTAGGGAGG.1.H5263A	H5263A	Accumbens	HD	Glut_SEMA3E	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	1134.0	7	7396	0	L6b	0.3	deep layer non-IT	Glutamatergic
+0	848.0	635	TTACAGGAGTGCTAGG.1.H5263A	H5263A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	848.0	8	7396	0	Oligodendrocyte	0.2	Oligodendrocyte lineage	Non-neuron
+0	811.0	615	TTGGTTTAGCGATGAC.1.H5263A	H5263A	Accumbens	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	811.0	9	7396	0	SST	0.18	MGE	GABAergic
+0	1257.0	862	TGATGCAGTGGCTGAA.1.H5263A	H5263A	Accumbens	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1257.0	10	7396	0	L2/3-6 IT	0.26	L2/3-6 IT	Glutamatergic
+0	5701.0	2636	TCGTGGGTCGGCCAAC.1.H5608A	H5608A	Accumbens	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	5701.0	11	7396	0	Astrocyte	0.48	Astrocyte	Non-neuron
+0	72808.0	10234	ATATCCTCAGACCTGC.1.H5608A	H5608A	Accumbens	HD	N_inh6	Neuron	B3	GABAergic	GABAergic	GABAergic	72808.0	12	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+0	35407.0	7706	AGGAGGTTCAAGTGTC.1.H4161A	H4161A	Accumbens	HD	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	35407.0	13	7396	0	L6b	0.24	deep layer non-IT	Glutamatergic
+0	927.0	631	TTAGGGTTCTATACTC.1.H5263A	H5263A	Accumbens	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	927.0	14	7396	0	SNCG	0.29	CGE	GABAergic
+0	1084.0	719	CATCGTCAGACTACCT.1.H5263A	H5263A	Accumbens	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	1084.0	15	7396	0	PVALB	0.42	MGE	GABAergic
+0	3157.0	1708	AGTACTGAGGCAATGC.1.H5493A	H5493A	Accumbens	HD	Endothelial	Endothelial	B2	Endothelial	Vascular	Non-neuron	3157.0	16	7395	0	Oligodendrocyte	0.41	Oligodendrocyte lineage	Non-neuron
+0	862.0	611	GGGATCCAGTAGCAAT.1.H5263A	H5263A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	862.0	17	7396	0	VIP	0.2	CGE	GABAergic
+0	354.0	296	ACACGCGTCAGATTGC.1.C5227A	C5227A	Accumbens	Con	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	354.0	18	7396	0	L2/3-6 IT	0.23	L2/3-6 IT	Glutamatergic
+0	12938.0	4407	TCCATGCTCACTCCGT.1.H5109A	H5109A	Accumbens	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	12938.0	19	7396	0	Astrocyte	0.39	Astrocyte	Non-neuron
+0	775.0	592	TTGCTGCAGGCCACTC.1.H5263A	H5263A	Accumbens	HD	Astro_2	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	775.0	20	7396	0	Astrocyte	0.48	Astrocyte	Non-neuron
+0	1608.0	1037	TACACCCAGTTGGAAT.1.H5263A	H5263A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	1608.0	21	7396	0	L2/3-6 IT	0.27	L2/3-6 IT	Glutamatergic
+0	11216.0	4308	CGCCAGAGTACTGCGC.1.H5109A	H5109A	Accumbens	HD	Ependymal_2	Ependymal	B3	Endothelial	Vascular	Non-neuron	11216.0	22	7396	0	Astrocyte	0.17	Astrocyte	Non-neuron
+0	1701.0	1057	AAGGAATAGTAGGATT.1.H5263A	H5263A	Accumbens	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	1701.0	23	7396	0	LAMP5	0.25	CGE	GABAergic
+0	10275.0	3573	CGTCAAATCCAAGCCG.1.C5700A	C5700A	Accumbens	Con	oligo_4	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	10275.0	24	7395	0	Oligodendrocyte	0.33	Oligodendrocyte lineage	Non-neuron
+0	511.0	380	TTCAATCCATGTGTCA.1.C5227A	C5227A	Accumbens	Con	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	511.0	25	7396	0	L2/3-6 IT	0.24	L2/3-6 IT	Glutamatergic
+0	705.0	518	CTCAATTAGAGTGTGC.1.C5227A	C5227A	Accumbens	Con	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	705.0	26	7396	0	L2/3-6 IT	0.28	L2/3-6 IT	Glutamatergic
+0	4012.0	1966	TGATGCAAGTAAGCAT.1.H5493A	H5493A	Accumbens	HD	oligo_3	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	4012.0	27	7395	0	Oligodendrocyte	0.34	Oligodendrocyte lineage	Non-neuron
+0	12486.0	3845	GTGATGTCAGATCCTA.1.C5596A	C5596A	Accumbens	Con	oligo_5	OPC	B2	OPC	Oligodendrocyte lineage	Non-neuron	12486.0	28	7395	0	OPC	0.65	Oligodendrocyte lineage	Non-neuron
+0	721.0	541	AGCTTCCCATGAAAGT.1.H4161A	H4161A	Accumbens	HD	Glut_SEMA3E	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	721.0	29	7396	0	L6 CT	0.32	deep layer non-IT	Glutamatergic
+0	597.0	452	GCTGGGTGTTTCGACA.1.H5608A	H5608A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	597.0	30	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+0	7296.0	2859	AGAGCCCAGGACTAAT.1.H5608A	H5608A	Accumbens	HD	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	7296.0	31	7396	0	L2/3-6 IT	0.19	L2/3-6 IT	Glutamatergic
+0	6751.0	2836	TCGGGCACACCACTGG.1.H5263A	H5263A	Accumbens	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	6751.0	32	7396	0	L6 CT	0.25	deep layer non-IT	Glutamatergic
+0	9013.0	3342	CTCACTGAGCAACCAG.1.H5263A	H5263A	Accumbens	HD	GABA_DRD1_KCNJ3	Neuron	B3	GABAergic	GABAergic	GABAergic	9013.0	33	7396	0	VIP	0.19	CGE	GABAergic
+0	773.0	583	AAAGGGCCAGGACGAT.1.H5608A	H5608A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	773.0	34	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+0	535.0	425	CTAACCCTCCATTGCC.1.H4161A	H4161A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	535.0	35	7396	0	L2/3-6 IT	0.38	L2/3-6 IT	Glutamatergic
+0	1447.0	979	CAGATTGCACACGTGC.1.H5263A	H5263A	Accumbens	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1447.0	36	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+0	1718.0	1158	AGACCCGAGTGATGGC.1.H5263A	H5263A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	1718.0	37	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+0	2895.0	1594	TAGTGCACAGACACAG.1.H5493A	H5493A	Accumbens	HD	oligo_2	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	2895.0	38	7395	0	Oligodendrocyte	0.49	Oligodendrocyte lineage	Non-neuron
+0	10532.0	3269	AACACACTCTACTATC.1.C5227A	C5227A	Accumbens	Con	oligo_1	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	10532.0	39	7396	0	OPC	0.31	Oligodendrocyte lineage	Non-neuron
+0	3003.0	1421	CAGCCAGCAACAACAA.1.H5263A	H5263A	Accumbens	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	3003.0	40	7396	0	L6 CT	0.39	deep layer non-IT	Glutamatergic
+0	747.0	570	TCATTCACAGAAGCTG.1.H5608A	H5608A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	747.0	41	7396	0	L6b	0.18	deep layer non-IT	Glutamatergic
+0	2131.0	1213	CTGGACGAGGACGCTA.1.H5263A	H5263A	Accumbens	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	2131.0	42	7396	0	Astrocyte	0.47	Astrocyte	Non-neuron
+0	771.0	552	TCTATACGTGTTACTG.1.H5608A	H5608A	Accumbens	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	771.0	43	7396	0	PVALB	0.54	MGE	GABAergic
+0	8314.0	3128	GCTACCTGTCCCACGA.1.H5109A	H5109A	Accumbens	HD	Astro_1	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	8314.0	44	7396	0	Astrocyte	0.46	Astrocyte	Non-neuron
+0	1796.0	1081	ATTCGTTAGTCATGAA.1.C5227A	C5227A	Accumbens	Con	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1796.0	45	7396	0	L2/3-6 IT	0.33	L2/3-6 IT	Glutamatergic
+0	664.0	541	AGTTCCCCAAGCACAG.1.H5263A	H5263A	Accumbens	HD	Ependymal_2	Ependymal	B3	Endothelial	Vascular	Non-neuron	664.0	46	7396	0	Astrocyte	0.44	Astrocyte	Non-neuron
+0	2755.0	1447	GCTACCTGTCACGTGC.1.H5109A	H5109A	Accumbens	HD	oligo_2	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	2755.0	47	7396	0	Oligodendrocyte	0.39	Oligodendrocyte lineage	Non-neuron
+0	7512.0	3274	CTTGAGATCTTTGGAG.1.H5109A	H5109A	Accumbens	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	7512.0	48	7396	0	Oligodendrocyte	0.29	Oligodendrocyte lineage	Non-neuron
+0	1110.0	774	ACCTACCAGGGAGGTG.1.H5263A	H5263A	Accumbens	HD	Glut_SEMA3E	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	1110.0	49	7396	0	L6 CT	0.32	deep layer non-IT	Glutamatergic
+0	1679.0	1008	TTCCGTGTCAGACATC.1.H5263A	H5263A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1679.0	50	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+0	3238.0	1751	CCCGGAAAGGGATCAC.1.H5608A	H5608A	Accumbens	HD	oligo_2	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	3238.0	51	7396	0	Oligodendrocyte	0.38	Oligodendrocyte lineage	Non-neuron
+0	553.0	427	TGGTGATGTTACAGCT.1.C5227A	C5227A	Accumbens	Con	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	553.0	52	7396	0	L2/3-6 IT	0.36	L2/3-6 IT	Glutamatergic
+0	901.0	642	TGTTACTTCTCCCTAG.1.H5263A	H5263A	Accumbens	HD	Glut_HTR2C	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	901.0	53	7396	0	L5/6 NP	0.14	deep layer non-IT	Glutamatergic
+0	1910.0	1152	ACTGTGAGTCCAGGTC.1.H5263A	H5263A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1910.0	54	7396	0	L2/3-6 IT	0.34	L2/3-6 IT	Glutamatergic
+0	598.0	457	CCAAGCGAGATGAATC.1.H5608A	H5608A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	598.0	55	7396	0	L2/3-6 IT	0.34	L2/3-6 IT	Glutamatergic
+0	852.0	654	TGGCGTGTCCAGCTCT.1.H5263A	H5263A	Accumbens	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	852.0	56	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+0	24918.0	6224	GTACAGTTCCAATCCC.1.H5109A	H5109A	Accumbens	HD	Astro_1	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	24918.0	57	7396	0	Oligodendrocyte	0.34	Oligodendrocyte lineage	Non-neuron
+0	5250.0	2365	TACTTCACAATTGAGA.1.H5109A	H5109A	Accumbens	HD	Microglia_1	Microglia	B3	Microglia	Microglia	Non-neuron	5250.0	58	7396	0	Microglia	0.4	Microglia	Non-neuron
+0	12410.0	4102	TCAGTTTGTCTGCAAT.1.H5608A	H5608A	Accumbens	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	12410.0	59	7396	0	Astrocyte	0.4	Astrocyte	Non-neuron
+0	824.0	620	ACGTAACGTGGCCCAT.1.H5608A	H5608A	Accumbens	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	824.0	60	7396	0	L2/3-6 IT	0.16	L2/3-6 IT	Glutamatergic
+0	1532.0	1004	GGGCTACAGAGTCTTC.1.H5263A	H5263A	Accumbens	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1532.0	61	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+0	649.0	469	TGGATCACAACCGTAT.1.H5608A	H5608A	Accumbens	HD	Astro_2	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	649.0	62	7396	0	Astrocyte	0.42	Astrocyte	Non-neuron
+0	4409.0	2135	ATAGGCTAGATTAGTG.1.H5493A	H5493A	Accumbens	HD	oligo_3	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	4409.0	63	7395	0	Oligodendrocyte	0.49	Oligodendrocyte lineage	Non-neuron
+0	8229.0	2926	TGACCCTAGGTGCATG.1.C5700A	C5700A	Accumbens	Con	oligo_4	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	8229.0	64	7395	0	Oligodendrocyte	0.38	Oligodendrocyte lineage	Non-neuron
+0	1301.0	924	ACCCTCAAGCGCACAA.1.H5263A	H5263A	Accumbens	HD	Ependymal_2	Ependymal	B3	Endothelial	Vascular	Non-neuron	1301.0	65	7396	0	Astrocyte	0.26	Astrocyte	Non-neuron
+0	30302.0	6245	CTCAGTCAGTCGGCCT.1.H5608A	H5608A	Accumbens	HD	Glut_NWD2	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	30302.0	66	7396	0	L6 CT	0.3	deep layer non-IT	Glutamatergic
+0	6506.0	2567	CTGTACCAGGCCCACT.1.H5109A	H5109A	Accumbens	HD	oligo_5	OPC	B3	OPC	Oligodendrocyte lineage	Non-neuron	6506.0	67	7396	0	OPC	0.76	Oligodendrocyte lineage	Non-neuron
+0	634.0	484	TAGGAGGGTTGGCTAT.1.H5608A	H5608A	Accumbens	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	634.0	68	7396	0	VIP	0.17	CGE	GABAergic
+0	27016.0	5680	GATGCTATCTTGTTAC.1.H5109A	H5109A	Accumbens	HD	Astro_1	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	27016.0	69	7396	0	Astrocyte	0.47	Astrocyte	Non-neuron
+0	1203.0	830	CTGCATCGTTACGGAG.1.H4161A	H4161A	Accumbens	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	1203.0	70	7396	0	L2/3-6 IT	0.23	L2/3-6 IT	Glutamatergic
+0	2911.0	1598	GCCAGTGCATGCGTGC.1.H5493A	H5493A	Accumbens	HD	Microglia_1	Microglia	B2	Microglia	Microglia	Non-neuron	2911.0	71	7395	0	Microglia	0.4	Microglia	Non-neuron
+0	60399.0	8815	GATGACTGTGGGTCAA.1.H5493A	H5493A	Accumbens	HD	GABA_DRD1_LRP4	Neuron	B2	GABAergic	GABAergic	GABAergic	60399.0	72	7395	0	Oligodendrocyte	0.16	Oligodendrocyte lineage	Non-neuron
+0	5119.0	2289	TCCTTTCAGTGCAACG.1.H5109A	H5109A	Accumbens	HD	oligo_2	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	5119.0	73	7396	0	Oligodendrocyte	0.34	Oligodendrocyte lineage	Non-neuron
+0	803.0	585	CTGTAGATCGGTTGTA.1.H5263A	H5263A	Accumbens	HD	Glut_SEMA3E	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	803.0	74	7396	0	L6b	0.29	deep layer non-IT	Glutamatergic
+0	934.0	664	CTTTCGGTCCAACTGA.1.H4161A	H4161A	Accumbens	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	934.0	75	7396	0	L6 CT	0.22	deep layer non-IT	Glutamatergic
+0	43247.0	7056	AGATGCTCAGCCCAGT.1.C5227A	C5227A	Accumbens	Con	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	43247.0	76	7396	0	L2/3-6 IT	0.17	L2/3-6 IT	Glutamatergic
+0	4448.0	2024	GAGGGTATCGGAAACG.1.C5700A	C5700A	Accumbens	Con	oligo_1	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	4448.0	77	7395	0	Oligodendrocyte	0.44	Oligodendrocyte lineage	Non-neuron
+0	4768.0	2465	ATCGTGAAGAGCAGCT.1.H5608A	H5608A	Accumbens	HD	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	4768.0	78	7396	0	VIP	0.31	CGE	GABAergic
+0	9085.0	3500	TAGGTTGTCAACGTGT.1.H5109A	H5109A	Accumbens	HD	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	9085.0	79	7396	0	VIP	0.17	CGE	GABAergic
+0	798.0	606	ACCACAACAATGCTCA.1.H5263A	H5263A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	798.0	80	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+0	9802.0	3967	GTGCTGGCACAGTCCG.1.H5608A	H5608A	Accumbens	HD	Ependymal_2	Ependymal	B3	Endothelial	Vascular	Non-neuron	9802.0	81	7396	0	Astrocyte	0.17	Astrocyte	Non-neuron
+0	506.0	391	CTGTGAACATGCCATA.1.H5608A	H5608A	Accumbens	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	506.0	82	7396	0	L2/3-6 IT	0.24	L2/3-6 IT	Glutamatergic
+0	890.0	626	CTATCTATCACCTACC.1.H5263A	H5263A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	890.0	83	7396	0	L2/3-6 IT	0.27	L2/3-6 IT	Glutamatergic
+0	744.0	564	CTCAACCTCAATCTCT.1.H5263A	H5263A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	744.0	84	7396	0	L2/3-6 IT	0.21	L2/3-6 IT	Glutamatergic
+0	2180.0	1147	CAACAACCAATGAACA.1.H5493A	H5493A	Accumbens	HD	oligo_2	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	2180.0	85	7395	0	Oligodendrocyte	0.51	Oligodendrocyte lineage	Non-neuron
+0	949.0	670	AACCATGTCGAAGTGG.1.H5263A	H5263A	Accumbens	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	949.0	86	7396	0	Oligodendrocyte	0.18	Oligodendrocyte lineage	Non-neuron
+0	454.0	359	ATTCCCGAGAAGCGCT.1.H4161A	H4161A	Accumbens	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	454.0	87	7396	0	L2/3-6 IT	0.3	L2/3-6 IT	Glutamatergic
+0	1094.0	794	TTCACCGAGATGACAT.1.H5608A	H5608A	Accumbens	HD	Unclassified	Neuron	B3	unknown	unknown	unknown	1094.0	88	7396	0	L2/3-6 IT	0.29	L2/3-6 IT	Glutamatergic
+0	11633.0	4008	CAGGTATAGTACAGAT.1.C5227A	C5227A	Accumbens	Con	oligo_5	OPC	B3	OPC	Oligodendrocyte lineage	Non-neuron	11633.0	89	7396	0	OPC	0.55	Oligodendrocyte lineage	Non-neuron
+0	5621.0	2318	GCAGCTGTCAAGAGTA.1.C5227A	C5227A	Accumbens	Con	oligo_4	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	5621.0	90	7396	0	Oligodendrocyte	0.45	Oligodendrocyte lineage	Non-neuron
+0	3260.0	1492	TCATCCGGTGATTCTG.1.C5596A	C5596A	Accumbens	Con	oligo_1	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	3260.0	91	7395	0	Oligodendrocyte	0.39	Oligodendrocyte lineage	Non-neuron
+0	5080.0	2165	AGGTTGTTCCCTAGGG.1.H5109A	H5109A	Accumbens	HD	oligo_3	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	5080.0	92	7396	0	Oligodendrocyte	0.31	Oligodendrocyte lineage	Non-neuron
+0	1588.0	1057	TATCGCCGTTTGCAGT.1.H5608A	H5608A	Accumbens	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1588.0	93	7396	0	Oligodendrocyte	0.19	Oligodendrocyte lineage	Non-neuron
+0	60295.0	8618	CCTAAGACACGTCTCT.1.H5493A	H5493A	Accumbens	HD	GABA_DRD1_LRP4	Neuron	B2	GABAergic	GABAergic	GABAergic	60295.0	94	7395	0	L6b	0.22	deep layer non-IT	Glutamatergic
+0	46411.0	7569	GTCAAACAGCGCTTCG.1.C5227A	C5227A	Accumbens	Con	GABA_DRD1_SLC22A9	Neuron	B3	GABAergic	GABAergic	GABAergic	46411.0	95	7396	0	L6b	0.18	deep layer non-IT	Glutamatergic
+0	47591.0	8450	TCACGCTCATGACTCA.1.H4161A	H4161A	Accumbens	HD	N_inh6	Neuron	B3	GABAergic	GABAergic	GABAergic	47591.0	96	7396	0	L6b	0.15	deep layer non-IT	Glutamatergic
+0	6411.0	2419	CCGATGGTCTCCCTAG.1.C5596A	C5596A	Accumbens	Con	N_inh8_D1	Neuron	B2	GABAergic	GABAergic	GABAergic	6411.0	97	7395	0	Oligodendrocyte	0.56	Oligodendrocyte lineage	Non-neuron
+0	22757.0	5331	CTGCTCAGTTAAAGTG.1.C5700A	C5700A	Accumbens	Con	oligo_4	Oligodendrocyte	B2	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	22757.0	98	7395	0	OPC	0.23	Oligodendrocyte lineage	Non-neuron
+0	802.0	603	CTAACTTTCTGCAGCG.1.H5608A	H5608A	Accumbens	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	802.0	99	7396	0	L2/3-6 IT	0.25	L2/3-6 IT	Glutamatergic

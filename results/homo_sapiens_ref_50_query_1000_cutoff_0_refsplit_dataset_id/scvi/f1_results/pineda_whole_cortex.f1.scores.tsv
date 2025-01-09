@@ -1,0 +1,35 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	whole_cortex	L5 ET	0.2222222222222222	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	PVALB	0.9841269841269841	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Non-neuron	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	CGE	nan	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	SNCG	nan	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Astrocyte	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	L2/3-6 IT	0.8136645962732919	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	VLMC	nan	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Microglia	0.9791666666666666	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	L6b	0.8095238095238095	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Endothelial	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	VIP	0.8070175438596491	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	L5/6 NP	0.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	SST	0.9841269841269841	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	GABAergic	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Oligodendrocyte	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	OPC	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	LAMP5	nan	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Chandelier	1.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	L6 CT	nan	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	Pericyte	0.0	0.5999928003237908		0.8986903649522356	rachel_subclass	0.0
+pineda	whole_cortex	MGE	1.0	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	Vascular	0.8888888888888888	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	Non-neuron	1.0	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	Oligodendrocyte lineage	1.0	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	CGE	1.0	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	L2/3-6 IT	0.8136645962732919	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	Astrocyte	1.0	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	Microglia	0.9791666666666666	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	GABAergic	1.0	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	deep layer non-IT	0.5714285714285714	0.9253148723257418		0.9308231970324361	rachel_class	0.0
+pineda	whole_cortex	Glutamatergic	1.0	1.0		1.0	rachel_family	0.0
+pineda	whole_cortex	GABAergic	1.0	1.0		1.0	rachel_family	0.0
+pineda	whole_cortex	Non-neuron	1.0	1.0		1.0	rachel_family	0.0

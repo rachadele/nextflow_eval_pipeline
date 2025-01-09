@@ -1,0 +1,40 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L6b	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.979381443298969	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	VIP	0.7126436781609196	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Chandelier	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	OPC	0.9865470852017937	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.5898617511520737	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	LAMP5	0.75	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L6 CT	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	SST	0.9555555555555556	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.9815950920245399	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L5/6 NP	0.0	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.9871794871794872	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	PVALB	0.819672131147541	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L5 6 NP	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	CGE	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9354838709677419	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L5 ET	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	SNCG	nan	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	0.7346938775510204	0.4101136509669409		0.8654559196189953	rachel_subclass	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.979381443298969	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	nan	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Vascular	0.9666666666666667	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.5898617511520737	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	MGE	0.9936305732484076	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	CGE	0.9929078014184397	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9354838709677419	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.9869158878504672	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.9815950920245399	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	deep layer non-IT	0.72	0.6788702572189421		0.9164773973926683	rachel_class	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.6676343776947399		0.9058517964932453	rachel_family	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.873015873015873	0.6676343776947399		0.9058517964932453	rachel_family	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8338028169014085	0.6676343776947399		0.9058517964932453	rachel_family	0.0
+velmeshev	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.963718820861678	0.6676343776947399		0.9058517964932453	rachel_family	0.0

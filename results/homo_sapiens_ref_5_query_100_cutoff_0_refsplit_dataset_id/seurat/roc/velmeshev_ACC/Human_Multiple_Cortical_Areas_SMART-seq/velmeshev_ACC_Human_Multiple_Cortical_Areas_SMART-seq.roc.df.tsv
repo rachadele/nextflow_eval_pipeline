@@ -1,10 +1,11 @@
 ref	query	key	label	auc	optimal threshold
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	PVALB	1.0	0.362511753046719
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	VIP	1.0	0.300470798052263
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Oligodendrocyte	1.0	0.521114575380372
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Astrocyte	1.0	0.685923862545183
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	SST	1.0	0.132343617241329
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Microglia	0.8928571428571428	0.583166140672106
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	L2/3-6 IT	0.9936215450035435	0.106363156159207
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Endothelial	0.7801418439716312	0.332023957307683
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	OPC	1.0	0.5168203359845
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	L2/3-6 IT	0.7349333333333333	0.0186340360587147
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Astrocyte	1.0	0.579478315736345
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	VIP	1.0	0.325239897359168
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	OPC	1.0	0.37634366063602
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Microglia	1.0	0.615814018654305
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Oligodendrocyte	1.0	0.501727476272879
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	PVALB	1.0	0.421385230343346
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	LAMP5	0.9898989898989898	0.382233635163096
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	SST	1.0	0.269401207280811
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_ACC	rachel_subclass	Endothelial	0.8359375	0.381630400700849

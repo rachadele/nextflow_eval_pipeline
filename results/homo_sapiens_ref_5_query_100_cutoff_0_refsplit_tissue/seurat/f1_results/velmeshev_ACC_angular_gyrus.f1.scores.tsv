@@ -1,0 +1,35 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_ACC	angular_gyrus	SNCG	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	L2/3-6 IT	0.48484848484848486	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Non-neuron	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	OPC	1.0	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	L5 ET	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	L6b	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	SST	0.8571428571428571	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	PVALB	1.0	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	L5 6 NP	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	L5/6 NP	0.0	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Glutamatergic	0.16666666666666666	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	L6 CT	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	VIP	0.6	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Astrocyte	1.0	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Oligodendrocyte	0.9696969696969697	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Endothelial	0.8571428571428571	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	VLMC	nan	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	LAMP5	1.0	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Microglia	1.0	0.4702893597630439		0.6336017316017315	rachel_subclass	0.0
+velmeshev_ACC	angular_gyrus	Non-neuron	nan	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	L2/3-6 IT	0.48484848484848486	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	Oligodendrocyte lineage	0.9743589743589743	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	Vascular	1.0	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	CGE	0.9411764705882353	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	unknown	nan	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	deep layer non-IT	0.0	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	Glutamatergic	0.16666666666666666	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	Astrocyte	1.0	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	MGE	0.8888888888888888	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	Microglia	1.0	0.5869035895773863		0.6627455550984962	rachel_class	0.0
+velmeshev_ACC	angular_gyrus	Non-neuron	0.7878787878787878	0.6226453726453727		0.7745700245700246	rachel_family	0.0
+velmeshev_ACC	angular_gyrus	Glutamatergic	0.7027027027027027	0.6226453726453727		0.7745700245700246	rachel_family	0.0
+velmeshev_ACC	angular_gyrus	unknown	nan	0.6226453726453727		0.7745700245700246	rachel_family	0.0
+velmeshev_ACC	angular_gyrus	GABAergic	1.0	0.6226453726453727		0.7745700245700246	rachel_family	0.0

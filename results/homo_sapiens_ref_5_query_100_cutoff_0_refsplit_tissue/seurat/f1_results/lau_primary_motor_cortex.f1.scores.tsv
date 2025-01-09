@@ -1,0 +1,21 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	primary_motor_cortex	Endothelial	0.5	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	unknown	nan	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	Astrocyte	1.0	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	Oligodendrocyte	0.9583333333333334	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	Non-neuron	nan	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	GABAergic	0.6875	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	Microglia	1.0	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	Glutamatergic	0.6388888888888888	0.5980902777777778		0.7701388888888888	rachel_subclass	0.0
+lau	primary_motor_cortex	unknown	nan	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Astrocyte	1.0	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Vascular	0.5	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Oligodendrocyte lineage	0.9583333333333334	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Non-neuron	nan	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	GABAergic	0.6875	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Microglia	1.0	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Glutamatergic	0.6388888888888888	0.5980902777777778		0.7701388888888888	rachel_class	0.0
+lau	primary_motor_cortex	Non-neuron	0.8764044943820225	0.5506983458177278		0.7373533083645444	rachel_family	0.0
+lau	primary_motor_cortex	GABAergic	0.6875	0.5506983458177278		0.7373533083645444	rachel_family	0.0
+lau	primary_motor_cortex	unknown	nan	0.5506983458177278		0.7373533083645444	rachel_family	0.0
+lau	primary_motor_cortex	Glutamatergic	0.6388888888888888	0.5506983458177278		0.7373533083645444	rachel_family	0.0

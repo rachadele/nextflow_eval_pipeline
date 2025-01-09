@@ -1,0 +1,5 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Angular_gyrus_AnG	rosmap	rachel_subclass	Astrocyte	1.0	0.455266714870907
+Dissection_Angular_gyrus_AnG	rosmap	rachel_subclass	Microglia	0.9751773049645389	0.463943476909206
+Dissection_Angular_gyrus_AnG	rosmap	rachel_subclass	OPC	1.0	0.393066733991966
+Dissection_Angular_gyrus_AnG	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.558500238773253

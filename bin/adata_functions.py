@@ -15,7 +15,6 @@ from sklearn.preprocessing import label_binarize
 from collections import defaultdict
 import seaborn as sns
 import matplotlib.pyplot as plt
-scvi.settings.seed = 0
 from pathlib import Path
 #current_directory = Path.cwd()
 projPath = "/space/grp/rschwartz/rschwartz/cpsc545_proj/"
@@ -65,7 +64,12 @@ def subsample_and_save(dataset_path, n_cells=1000):
     
 # Subsample x cells from each cell type if there are n>x cells present
 #ensures equal representation of cell types in reference
-def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv"):
+def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv", 
+                    ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42):
+    random.seed(seed)         # For `random`
+    np.random.seed(seed)      # For `numpy`
+    scvi.settings.seed = seed # For `scvi`
+    
     # Filter data based on filtered_ids
     obs = data[data['soma_joinid'].isin(filtered_ids)]
     relabel_df = pd.read_csv(relabel_path, sep='\t')  # Adjust the separator as needed
@@ -78,10 +82,10 @@ def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_pr
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
     # Perform the left join to update the metadata
     obs = obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
-    celltypes = obs["rachel_subclass"].unique()
+    celltypes = obs[ref_keys[0]].unique()
     final_idx = []
     for celltype in celltypes:
-        celltype_ids = obs[obs['rachel_subclass'] == celltype]['soma_joinid'].values
+        celltype_ids = obs[obs[ref_keys[0]] == celltype]['soma_joinid'].values
         # Sample if there are enough observations, otherwise take all
         if len(celltype_ids) > subsample:
             subsampled_cell_idx = random.sample(list(celltype_ids), subsample)
@@ -112,9 +116,10 @@ def relabel(adata, relabel_path, join_key="", sep="\t"):
 
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
-    obs_filter=None, cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'"):
+    obs_filter=None, cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
+    ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42):
     
-    brain_cell_subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path)
+    brain_cell_subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
     # Assuming get_seurat is defined to return an AnnData object
     adata = cellxgene_census.get_anndata(
         census=census,
@@ -134,7 +139,8 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
     return adata
 
 def split_and_extract_data(data, split_column, subsample=500, organism=None, census=None, 
-                           cell_columns=None, dataset_info=None, dims=20, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv"):
+                           cell_columns=None, dataset_info=None, dims=20, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv",
+                           ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42):
     # Get unique split values from the specified column
     unique_values = data[split_column].unique()
     refs = {}
@@ -145,21 +151,23 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
         obs_filter = f"{split_column} == '{split_value}'"
         
         adata = extract_data(data, filtered_ids, subsample, organism, census, obs_filter, 
-                             cell_columns, dataset_info, dims=dims, relabel_path=relabel_path)
+                             cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
         dataset_titles = adata.obs['dataset_title'].unique()
 
-        if len(dataset_titles) > 1:
+        if split_column == "tissue": 
             name_to_use = split_value
-        else:
+        elif split_column == "dataset_id":
             name_to_use = dataset_titles[0]
+        else:
+            name_to_use = split_value
 
         refs[name_to_use] = adata
 
     return refs
 
-def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=10, split_column="tissue", dims=20, 
-               ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"],
-               relabel_path=f"{projPath}meta/census_map_human.tsv"):
+def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=20, 
+               ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
+               relabel_path=f"{projPath}meta/census_map_human.tsv", seed=42, ref_keys=["rachel_subclass","rachel_class","rachel_family"]):
 
     census = cellxgene_census.open_soma(census_version=census_version)
     dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
@@ -172,7 +180,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=1
     
     brain_obs = brain_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
     brain_obs.drop(columns=['soma_joinid_y'], inplace=True)
-    brain_obs_filtered = brain_obs
+    #brain_obs_filtered = brain_obs
     # Filter based on organism
     if organism == "homo_sapiens":
         brain_obs_filtered = brain_obs[
@@ -204,7 +212,8 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=1
         subsample=subsample, organism=organism,
         census=census, cell_columns=cell_columns,
         dataset_info=dataset_info, dims=dims,
-        relabel_path=relabel_path
+        relabel_path=relabel_path,
+        ref_keys=ref_keys, seed=seed
     )
     # Get embeddings for all data together
     filtered_ids = brain_obs_filtered['soma_joinid'].values
@@ -213,10 +222,9 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=1
         subsample=subsample, organism=organism,
         census=census, obs_filter=None,
         cell_columns=cell_columns, dataset_info=dataset_info, dims=dims,
-        relabel_path=relabel_path
+        relabel_path=relabel_path, ref_keys=ref_keys, seed = seed
     )
     refs["whole cortex"] = adata
-
     for name, ref in refs.items():
         dataset_title = name.replace(" ", "_")
         for col in ref.obs.columns:
@@ -351,7 +359,7 @@ def get_subclasses(node, colname):
     return subclasses
 
 
-def rfc_pred(ref, query, ref_keys):
+def rfc_pred(ref, query, ref_keys, seed):
     """
     Fit a RandomForestClassifier at the most granular level and aggregate probabilities for higher levels.
     
@@ -370,7 +378,7 @@ def rfc_pred(ref, query, ref_keys):
     granular_key = ref_keys[0]
     
     # Initialize and fit the RandomForestClassifier at the most granular level
-    rfc = RandomForestClassifier(class_weight='balanced', random_state=42, max_depth=20, )
+    rfc = RandomForestClassifier(class_weight='balanced', random_state=seed)
     rfc.fit(ref.obsm["scvi"], ref.obs[granular_key].values)
     # Predict probabilities at e most granular level
     probs_granular = rfc.predict_proba(query.obsm["scvi"])
@@ -485,8 +493,45 @@ def process_roc(rocs, ref_name, query_name):
 def plot_distribution(df, var, outdir, split="label", facet=None):
     # Set up the figure size
     plt.figure(figsize=(17, 6))
+    
     # Create the violin plot with faceting by the 'query' column
-    sns.violinplot(data=df, y=var, x=split, palette="Set2", hue=facet, split=False)
+    sns.violinplot(data=df, y=var, x=split, palette="Set2", hue=facet, split=False, dodge=True)
+    
+    means = df.groupby([split] + ([facet] if facet else []))[var].mean().reset_index()
+    ax = plt.gca()
+
+# Annotate the means on the plot
+    for i, split_value in enumerate(df[split].unique()):
+        for j, facet_value in enumerate(df[facet].unique() if facet else [None]):
+            # Select the mean value for this group
+            if facet:
+                mean_value = means[(means[split] == split_value) & (means[facet] == facet_value)][var].values[0]
+            else:
+                mean_value = means[means[split] == split_value][var].values[0]
+
+            # Adjust the x position for each facet group (left, center, right)
+            if facet:
+                # Left, center, and right positions for the facet groups
+                x_pos = i + (j - 1) * 0.3  # j-1 to shift positions: -0.2, 0, +0.2
+            else:
+                # Only one position (center) when there's no facet
+                x_pos = i 
+
+            # Adjust y_pos based on mean value to place the text inside or above the violin plot
+            y_pos = mean_value  # You can adjust this as needed for better placement
+
+            # Add mean text at the appropriate location
+            ax.text(
+            x_pos, 
+            y_pos, 
+            f"{mean_value:.2f}", 
+            horizontalalignment='center', 
+            fontsize=8, 
+            color='red', 
+           # fontweight='bold',
+            bbox=dict(facecolor='yellow', alpha=0.5, boxstyle='round,pad=0.2')  # Highlighted background
+        )
+
     # Set the labels and title
     plt.xlabel('Key', fontsize=14)
     plt.ylabel(f"{var}", fontsize=14)
@@ -494,9 +539,10 @@ def plot_distribution(df, var, outdir, split="label", facet=None):
     # Rotate x-axis labels for better readability
     plt.xticks(rotation=45, ha="right")
     # Move the legend outside the plot
-    plt.legend(title=split, loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
+    plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
     # Adjust layout to ensure everything fits
     plt.tight_layout()
+    
     # Save the plot as a PNG file
     os.makedirs(outdir, exist_ok=True)
     var = var.replace(" ", "_")
@@ -919,52 +965,6 @@ def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys):
 
     
  
-def get_test_data(census_version, test_name, subsample=10, 
-                  organism="homo_sapiens", 
-                  split_key="dataset_title"):
-    census = cellxgene_census.open_soma(census_version=census_version)
-    dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
-    brain_obs = cellxgene_census.get_obs(census, organism,
-        value_filter=(
-            "tissue_general == 'brain' and "
-            "is_primary_data == True and "
-            "tissue == 'frontal cortex' " # putting this in to speed things up for docker
-        ))
-    
-    brain_obs = brain_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
-    brain_obs.drop(columns=['soma_joinid_y'], inplace=True)
-    # Filter based on organism
-    test_obs = brain_obs[brain_obs[split_key].isin([test_name])]
-    filtered_ids = list(test_obs["soma_joinid"])
-    subsample_ids = random.sample(filtered_ids, subsample)
-    # Adjust organism naming for compatibility
-    organism_name_mapping = {
-        "homo_sapiens": "Homo sapiens",
-        "mus_musculus": "Mus musculus"
-    }
-    organism = organism_name_mapping.get(organism, organism)
-    cell_columns = [
-        "assay", "cell_type", "tissue",
-        "tissue_general", "suspension_type",
-        "disease", "dataset_id", "development_stage",
-        "soma_joinid"
-    ]
-    
-
-    random.seed(1)
-    test = cellxgene_census.get_anndata(
-            census=census,
-            organism=organism,
-           # obs_value_filter= "development_stage"  
-           # need to filter out fetal potentially?
-            var_value_filter = "nnz > 50",
-          #  obs_column_names=cell_columns,
-            obs_coords=subsample_ids)
-    test.obs= test.obs.merge(dataset_info,  on="dataset_id", suffixes=(None,"_y"))
-    columns_to_drop = [col for col in test.obs.columns if col.endswith('_y')]
-    test.obs.drop(columns=columns_to_drop, inplace=True)
-    return test
-
 def split_anndata_by_obs(adata, obs_key="dataset_title"):
     """
     Split an AnnData object into multiple AnnData objects based on unique values in an obs key.

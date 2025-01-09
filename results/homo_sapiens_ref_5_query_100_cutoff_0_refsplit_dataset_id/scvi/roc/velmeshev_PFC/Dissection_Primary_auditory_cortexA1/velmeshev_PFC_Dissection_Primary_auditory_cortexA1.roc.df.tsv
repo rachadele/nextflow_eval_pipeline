@@ -1,12 +1,12 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Astrocyte	0.9944444444444445	0.13
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Endothelial	0.9934895833333334	0.1
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.809724170172978	0.12
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	L5/6 NP	0.7265745007680492	0.02
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	LAMP5	1.0	0.57
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Astrocyte	0.9946949602122016	0.16
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Endothelial	0.9982817869415808	0.16
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.9621333333333333	0.16
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	L5/6 NP	0.6313131313131313	0.01
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	LAMP5	1.0	0.37
 Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Microglia	1.0	0.39
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	OPC	0.9968421052631579	0.09
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Oligodendrocyte	1.0	0.31
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	PVALB	1.0	0.26
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	SST	1.0	0.36
-Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	VIP	1.0	0.47
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	OPC	1.0	0.2
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9815340909090909	0.15
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	PVALB	0.803030303030303	0.05
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	SST	1.0	0.18
+Dissection_Primary_auditory_cortexA1	velmeshev_PFC	rachel_subclass	VIP	0.9787234042553192	0.13

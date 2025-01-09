@@ -1,12 +1,13 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	VIP	1.0	0.27274526421155
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	L5 ET	0.888421052631579	0.033873718941463
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	L6b	0.9896907216494846	0.233281957912137
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Astrocyte	1.0	0.551534166420784
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Microglia	1.0	0.531215613341292
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Oligodendrocyte	1.0	0.261936860973206
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	OPC	1.0	0.382936768364605
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	L2/3-6 IT	0.9772579597141001	0.119264556366327
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Chandelier	1.0	0.498508621038675
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	SST	1.0	0.369576388470359
-Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	PVALB	1.0	0.403281976636448
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	VIP	1.0	0.160397181948746
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	L5 ET	0.951578947368421	0.150235745464311
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	L6b	1.0	0.267115119855237
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Astrocyte	1.0	0.398819512656587
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Endothelial	1.0	0.615632618393008
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Microglia	1.0	0.718399899028549
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Oligodendrocyte	1.0	0.352948648581319
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	OPC	1.0	0.885166174699662
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	L2/3-6 IT	0.9536019536019535	0.0976980626572969
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	Chandelier	1.0	0.467044710853344
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	PVALB	1.0	0.334081872551896
+Dissection_Primary_auditory_cortexA1	pineda	rachel_subclass	SST	1.0	0.458673876831304

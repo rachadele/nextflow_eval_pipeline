@@ -1,0 +1,19 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	middle_temporal_gyrus	Non-neuron	nan	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Oligodendrocyte	1.0	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Glutamatergic	0.94	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	OPC	1.0	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Pericyte	1.0	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	GABAergic	0.7741935483870968	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Microglia	1.0	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.8392741935483872		0.9388451612903225	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Oligodendrocyte lineage	1.0	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Non-neuron	nan	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Glutamatergic	0.94	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	GABAergic	0.7741935483870968	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Microglia	1.0	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Vascular	1.0	0.8163133640552995		0.9388451612903225	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Non-neuron	0.9855072463768116	0.8999002649213028		0.9339176250584384	rachel_family	0.0
+rosmap	middle_temporal_gyrus	GABAergic	0.7741935483870968	0.8999002649213028		0.9339176250584384	rachel_family	0.0
+rosmap	middle_temporal_gyrus	Glutamatergic	0.94	0.8999002649213028		0.9339176250584384	rachel_family	0.0

@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Caudate	primary_visual_cortex	Microglia	0.967741935483871	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	Oligodendrocyte	0.9395770392749244	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	Non-neuron	nan	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	VIP	nan	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	Endothelial	0.038461538461538464	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	L6b	nan	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	VLMC	nan	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	L5 ET	0.0	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	SST	nan	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	unknown	0.0	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	GABAergic	0.3106796116504854	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	OPC	0.9333333333333333	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	L2/3-6 IT	0.7116564417177914	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	Astrocyte	0.9398496240601504	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	Glutamatergic	0.20242914979757085	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	L6 CT	nan	0.3152330421112291		0.6318165926418228	rachel_subclass	0.0
+lim_Caudate	primary_visual_cortex	Microglia	0.967741935483871	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	CGE	nan	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	Non-neuron	nan	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	Oligodendrocyte lineage	0.9501385041551247	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	unknown	0.0	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	Vascular	0.037037037037037035	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	GABAergic	0.3106796116504854	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	MGE	nan	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	L2/3-6 IT	0.7116564417177914	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	deep layer non-IT	0.7142857142857143	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	Astrocyte	0.9398496240601504	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	Glutamatergic	0.20242914979757085	0.40281816818231214		0.6598270635751609	rachel_class	0.0
+lim_Caudate	primary_visual_cortex	unknown	0.0	0.44545704022386823		0.7070497262609727	rachel_family	0.0
+lim_Caudate	primary_visual_cortex	GABAergic	0.30670926517571884	0.44545704022386823		0.7070497262609727	rachel_family	0.0
+lim_Caudate	primary_visual_cortex	Non-neuron	0.972972972972973	0.44545704022386823		0.7070497262609727	rachel_family	0.0
+lim_Caudate	primary_visual_cortex	Glutamatergic	0.5021459227467812	0.44545704022386823		0.7070497262609727	rachel_family	0.0

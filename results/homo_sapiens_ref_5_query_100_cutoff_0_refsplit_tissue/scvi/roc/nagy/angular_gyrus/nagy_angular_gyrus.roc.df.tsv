@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+angular_gyrus	nagy	rachel_subclass	Astrocyte	0.8592017738359201	0.1
+angular_gyrus	nagy	rachel_subclass	Endothelial	0.1141304347826087	0.04
+angular_gyrus	nagy	rachel_subclass	L2/3-6 IT	0.8304843304843306	0.12
+angular_gyrus	nagy	rachel_subclass	L5 ET	0.8420177383592018	0.08
+angular_gyrus	nagy	rachel_subclass	L5/6 NP	0.5384615384615384	0.01
+angular_gyrus	nagy	rachel_subclass	Microglia	1.0	0.46
+angular_gyrus	nagy	rachel_subclass	Oligodendrocyte	0.9517045454545455	0.08
+angular_gyrus	nagy	rachel_subclass	PVALB	0.967391304347826	0.17
+angular_gyrus	nagy	rachel_subclass	SST	0.47777777777777775	0.17
+angular_gyrus	nagy	rachel_subclass	VIP	0.9537037037037037	0.08

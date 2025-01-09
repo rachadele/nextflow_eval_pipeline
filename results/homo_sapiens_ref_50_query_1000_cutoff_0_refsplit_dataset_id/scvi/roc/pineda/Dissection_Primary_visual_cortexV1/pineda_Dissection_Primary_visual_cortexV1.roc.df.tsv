@@ -1,0 +1,14 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Astrocyte	1.0	0.37
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Chandelier	1.0	0.81
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Endothelial	1.0	0.75
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L2/3-6 IT	0.9588717399133865	0.21
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L5 ET	0.7799447639225182	0.01
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L5/6 NP	0.5389505874778691	0.01
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L6b	0.975425641025641	0.05
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Microglia	0.9983046846498851	0.56
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	OPC	1.0	0.74
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Oligodendrocyte	1.0	0.24
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	PVALB	0.9998834848030893	0.11
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	SST	0.9999515754132232	0.32
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	VIP	0.9378425283156742	0.07

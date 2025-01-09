@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	Astrocyte	0.9857954545454546	0.06
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	Endothelial	0.9934895833333334	0.11
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	L2/3-6 IT	0.6432	0.1
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	L5/6 NP	1.0	0.53
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	LAMP5	1.0	0.22
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	Microglia	1.0	0.16
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	OPC	0.9948453608247423	0.06
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	Oligodendrocyte	0.9795386904761905	0.12
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	PVALB	1.0	0.43
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	SST	0.9908854166666667	0.13
+anterior_cingulate_gyrus	velmeshev_ACC	rachel_subclass	VIP	0.9815668202764977	0.24

@@ -1,0 +1,20 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	middle_temporal_gyrus	Pericyte	0.0	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Oligodendrocyte	1.0	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Microglia	1.0	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	OPC	1.0	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	VLMC	nan	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Non-neuron	nan	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	GABAergic	0.9230769230769231	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Glutamatergic	0.9714285714285714	0.654945054945055		0.964857142857143	rachel_subclass	0.0
+rosmap	middle_temporal_gyrus	Vascular	1.0	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Microglia	1.0	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Non-neuron	nan	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Oligodendrocyte lineage	1.0	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	GABAergic	0.9230769230769231	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Glutamatergic	0.9714285714285714	0.842072213500785		0.974857142857143	rachel_class	0.0
+rosmap	middle_temporal_gyrus	Glutamatergic	0.9714285714285714	0.9600042469607687		0.9699296066252588	rachel_family	0.0
+rosmap	middle_temporal_gyrus	GABAergic	0.9230769230769231	0.9600042469607687		0.9699296066252588	rachel_family	0.0
+rosmap	middle_temporal_gyrus	Non-neuron	0.9855072463768116	0.9600042469607687		0.9699296066252588	rachel_family	0.0

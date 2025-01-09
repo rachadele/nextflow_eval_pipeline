@@ -1,33 +1,32 @@
 query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 6 NP	nan	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	0.6666666666666666	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	0.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	1.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	0.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.9090909090909091	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.23529411764705882	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	1.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	0.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.5142857142857142	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	nan	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Chandelier	nan	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5/6 NP	0.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SNCG	nan	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	PVALB	0.0	0.2402965226494638		0.5099592564298446	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	0.0	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	nan	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	1.0	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.23529411764705882	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	0.6666666666666666	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	1.0	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.5142857142857142	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.9090909090909091	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.16666666666666666	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	0.5714285714285714	0.5063432645785586		0.5542449707155589	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7083333333333334	0.5778992435832059		0.7397847611762707	rachel_family	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.8108108108108109	0.5778992435832059		0.7397847611762707	rachel_family	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	0.0	0.5778992435832059		0.7397847611762707	rachel_family	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7924528301886793	0.5778992435832059		0.7397847611762707	rachel_family	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.5333333333333333	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	LAMP5	nan	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.0	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	1.0	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	1.0	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	nan	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.0	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	0.0	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.6774193548387096	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5/6 NP	0.0	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 6 NP	nan	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.8148148148148148	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	PVALB	0.5	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.2222222222222222	0.2792817485417106		0.5811320512326409	rachel_subclass	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.5333333333333333	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.0	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	1.0	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.6774193548387096	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	0.2857142857142857	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.9333333333333333	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	0.6666666666666666	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.16666666666666666	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.2222222222222222	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	nan	0.44853558627752177		0.6209795792522118	rachel_class	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7323943661971831	0.5999143339464335		0.7635917646800648	rachel_family	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7441860465116279	0.5999143339464335		0.7635917646800648	rachel_family	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.9230769230769231	0.5999143339464335		0.7635917646800648	rachel_family	0.0
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	unknown	nan	0.5999143339464335		0.7635917646800648	rachel_family	0.0

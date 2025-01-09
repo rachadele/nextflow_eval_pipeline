@@ -1,0 +1,101 @@
+orig.ident	nCount_RNA	nFeature_RNA	cell_type	batch	rachel_subclass	rachel_class	rachel_family	n_counts	joinid	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+35	557.0	487	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	557.0	0	7396	0	L2/3-6 IT	0.26	L2/3-6 IT	Glutamatergic
+35	13303.0	5029	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	13303.0	1	7396	0	L2/3-6 IT	0.28	L2/3-6 IT	Glutamatergic
+70	348.0	304	Oligos_3	batch_70	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	348.0	2	7401	0	Endothelial	0.26	Vascular	Non-neuron
+36	3252.0	2200	Inhib_1	batch_36	GABAergic	GABAergic	GABAergic	3252.0	3	7397	0	LAMP5	0.45	CGE	GABAergic
+35	4078.0	2474	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	4078.0	4	7396	0	L6 CT	0.48	deep layer non-IT	Glutamatergic
+36	2917.0	2033	Inhib_1	batch_36	GABAergic	GABAergic	GABAergic	2917.0	5	7397	0	LAMP5	0.16	CGE	GABAergic
+69	562.0	473	Mix_5	batch_69	unknown	unknown	unknown	562.0	6	7400	0	VIP	0.18	CGE	GABAergic
+35	1857.0	1357	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1857.0	7	7396	0	L6 CT	0.25	deep layer non-IT	Glutamatergic
+35	1681.0	1235	Ex_2_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	1681.0	8	7396	0	L2/3-6 IT	0.19	L2/3-6 IT	Glutamatergic
+35	4889.0	2248	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	4889.0	9	7396	0	L6b	0.46	deep layer non-IT	Glutamatergic
+35	1612.0	1155	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1612.0	10	7396	0	L2/3-6 IT	0.4	L2/3-6 IT	Glutamatergic
+35	5221.0	2709	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	5221.0	11	7396	0	L2/3-6 IT	0.37	L2/3-6 IT	Glutamatergic
+35	5324.0	2744	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	5324.0	12	7396	0	L5 ET	0.25	deep layer non-IT	Glutamatergic
+35	548.0	472	Ex_5_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	548.0	13	7396	0	L2/3-6 IT	0.27	L2/3-6 IT	Glutamatergic
+36	3782.0	2505	Inhib_8_PVALB	batch_36	PVALB	MGE	GABAergic	3782.0	14	7397	0	LAMP5	0.18	CGE	GABAergic
+35	2562.0	1774	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2562.0	15	7396	0	L2/3-6 IT	0.39	L2/3-6 IT	Glutamatergic
+35	2260.0	1552	Ex_2_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	2260.0	16	7396	0	L2/3-6 IT	0.32	L2/3-6 IT	Glutamatergic
+35	3977.0	1971	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3977.0	17	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+35	2621.0	1487	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	2621.0	18	7396	0	L6 CT	0.39	deep layer non-IT	Glutamatergic
+0	1530.0	1213	Astros_1	batch_0	Astrocyte	Astrocyte	Non-neuron	1530.0	19	7395	0	Astrocyte	0.27	Astrocyte	Non-neuron
+35	3770.0	2116	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3770.0	20	7396	0	L2/3-6 IT	0.17	L2/3-6 IT	Glutamatergic
+35	2550.0	1512	Ex_6_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2550.0	21	7396	0	Oligodendrocyte	0.17	Oligodendrocyte lineage	Non-neuron
+36	5692.0	3109	Inhib_6_SST	batch_36	SST	MGE	GABAergic	5692.0	22	7397	0	SST	0.28	MGE	GABAergic
+35	2410.0	1718	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2410.0	23	7396	0	L2/3-6 IT	0.28	L2/3-6 IT	Glutamatergic
+35	6690.0	3445	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	6690.0	24	7396	0	L2/3-6 IT	0.34	L2/3-6 IT	Glutamatergic
+35	1552.0	1115	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1552.0	25	7396	0	L2/3-6 IT	0.3	L2/3-6 IT	Glutamatergic
+35	1812.0	1249	Ex_2_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	1812.0	26	7396	0	L2/3-6 IT	0.15	L2/3-6 IT	Glutamatergic
+35	398.0	333	Ex_5_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	398.0	27	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+35	402.0	351	Ex_5_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	402.0	28	7396	0	L2/3-6 IT	0.19	L2/3-6 IT	Glutamatergic
+35	8138.0	3337	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	8138.0	29	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+35	1481.0	1016	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1481.0	30	7396	0	L2/3-6 IT	0.35	L2/3-6 IT	Glutamatergic
+35	3575.0	2218	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3575.0	31	7396	0	L2/3-6 IT	0.26	L2/3-6 IT	Glutamatergic
+69	557.0	485	Mix_2	batch_69	unknown	unknown	unknown	557.0	32	7400	0	L2/3-6 IT	0.17	L2/3-6 IT	Glutamatergic
+35	534.0	456	Ex_5_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	534.0	33	7396	0	L2/3-6 IT	0.22	L2/3-6 IT	Glutamatergic
+35	2039.0	1285	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2039.0	34	7396	0	L2/3-6 IT	0.35	L2/3-6 IT	Glutamatergic
+35	2223.0	1556	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2223.0	35	7396	0	L2/3-6 IT	0.23	L2/3-6 IT	Glutamatergic
+36	1668.0	1195	Inhib_6_SST	batch_36	SST	MGE	GABAergic	1668.0	36	7397	0	SST	0.28	MGE	GABAergic
+35	5302.0	3055	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	5302.0	37	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+35	3275.0	1979	Ex_2_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	3275.0	38	7396	0	L2/3-6 IT	0.2	L2/3-6 IT	Glutamatergic
+52	360.0	316	Micro/Macro	batch_52	Microglia	Microglia	Non-neuron	360.0	39	7398	0	Microglia	0.35	Microglia	Non-neuron
+35	3557.0	2263	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3557.0	40	7396	0	L2/3-6 IT	0.33	L2/3-6 IT	Glutamatergic
+0	3498.0	2499	Astros_3	batch_0	Astrocyte	Astrocyte	Non-neuron	3498.0	41	7395	0	L2/3-6 IT	0.24	L2/3-6 IT	Glutamatergic
+35	3182.0	2037	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	3182.0	42	7396	0	L2/3-6 IT	0.21	L2/3-6 IT	Glutamatergic
+69	433.0	387	Mix_2	batch_69	unknown	unknown	unknown	433.0	43	7400	0	L2/3-6 IT	0.2	L2/3-6 IT	Glutamatergic
+35	7262.0	3476	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	7262.0	44	7396	0	SST	0.2	MGE	GABAergic
+36	5699.0	2990	Inhib_7_PVALB	batch_36	PVALB	MGE	GABAergic	5699.0	45	7397	0	PVALB	0.33	MGE	GABAergic
+36	4174.0	2411	Inhib_5	batch_36	GABAergic	GABAergic	GABAergic	4174.0	46	7397	0	PVALB	0.26	MGE	GABAergic
+35	1437.0	1093	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	1437.0	47	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+35	8666.0	3816	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	8666.0	48	7396	0	SNCG	0.14	CGE	GABAergic
+35	13598.0	4930	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	13598.0	49	7396	0	L2/3-6 IT	0.19	L2/3-6 IT	Glutamatergic
+35	2032.0	1309	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2032.0	50	7396	0	L2/3-6 IT	0.21	L2/3-6 IT	Glutamatergic
+36	3239.0	1953	Inhib_1	batch_36	GABAergic	GABAergic	GABAergic	3239.0	51	7397	0	L5 ET	0.21	deep layer non-IT	Glutamatergic
+35	2358.0	1567	Ex_6_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2358.0	52	7396	0	Endothelial	0.18	Vascular	Non-neuron
+35	1922.0	1469	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1922.0	53	7396	0	L2/3-6 IT	0.31	L2/3-6 IT	Glutamatergic
+35	9319.0	4255	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	9319.0	54	7396	0	Endothelial	0.15	Vascular	Non-neuron
+69	365.0	333	Mix_2	batch_69	unknown	unknown	unknown	365.0	55	7400	0	L2/3-6 IT	0.24	L2/3-6 IT	Glutamatergic
+36	1688.0	1284	Inhib_2_VIP	batch_36	VIP	CGE	GABAergic	1688.0	56	7397	0	VIP	0.17	CGE	GABAergic
+35	4097.0	2491	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	4097.0	57	7396	0	L2/3-6 IT	0.36	L2/3-6 IT	Glutamatergic
+35	2052.0	1501	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2052.0	58	7396	0	Endothelial	0.25	Vascular	Non-neuron
+35	2265.0	1433	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2265.0	59	7396	0	L2/3-6 IT	0.16	L2/3-6 IT	Glutamatergic
+36	4487.0	2382	Inhib_4_SST	batch_36	SST	MGE	GABAergic	4487.0	60	7397	0	PVALB	0.36	MGE	GABAergic
+36	3214.0	2148	Inhib_2_VIP	batch_36	VIP	CGE	GABAergic	3214.0	61	7397	0	Endothelial	0.13	Vascular	Non-neuron
+70	440.0	384	Oligos_3	batch_70	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	440.0	62	7401	0	Oligodendrocyte	0.29	Oligodendrocyte lineage	Non-neuron
+35	4199.0	2357	Ex_2_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	4199.0	63	7396	0	L5 ET	0.18	deep layer non-IT	Glutamatergic
+35	12504.0	4691	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	12504.0	64	7396	0	L6 CT	0.2	deep layer non-IT	Glutamatergic
+35	2011.0	1368	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2011.0	65	7396	0	L2/3-6 IT	0.26	L2/3-6 IT	Glutamatergic
+36	481.0	397	Inhib_2_VIP	batch_36	VIP	CGE	GABAergic	481.0	66	7397	0	VIP	0.23	CGE	GABAergic
+35	401.0	361	Ex_5_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	401.0	67	7396	0	L2/3-6 IT	0.23	L2/3-6 IT	Glutamatergic
+35	3055.0	1953	Ex_6_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3055.0	68	7396	0	Endothelial	0.19	Vascular	Non-neuron
+70	1647.0	1196	Oligos_3	batch_70	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	1647.0	69	7401	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+35	9727.0	4208	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	9727.0	70	7396	0	Endothelial	0.15	Vascular	Non-neuron
+35	2227.0	1582	Ex_2_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	2227.0	71	7396	0	L2/3-6 IT	0.17	L2/3-6 IT	Glutamatergic
+35	3490.0	2477	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3490.0	72	7396	0	L2/3-6 IT	0.2	L2/3-6 IT	Glutamatergic
+35	1780.0	1146	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	1780.0	73	7396	0	L6 CT	0.27	deep layer non-IT	Glutamatergic
+35	9700.0	4438	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	9700.0	74	7396	0	L2/3-6 IT	0.21	L2/3-6 IT	Glutamatergic
+0	358.0	303	Astros_2	batch_0	Astrocyte	Astrocyte	Non-neuron	358.0	75	7395	0	Astrocyte	0.31	Astrocyte	Non-neuron
+35	2518.0	1668	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2518.0	76	7396	0	Endothelial	0.18	Vascular	Non-neuron
+35	546.0	468	Ex_5_L5	batch_35	L5 ET	deep layer non-IT	Glutamatergic	546.0	77	7396	0	L2/3-6 IT	0.18	L2/3-6 IT	Glutamatergic
+36	5097.0	2860	Inhib_5	batch_36	GABAergic	GABAergic	GABAergic	5097.0	78	7397	0	PVALB	0.4	MGE	GABAergic
+36	1614.0	1189	Inhib_7_PVALB	batch_36	PVALB	MGE	GABAergic	1614.0	79	7397	0	LAMP5	0.26	CGE	GABAergic
+35	4736.0	2165	Ex_7_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	4736.0	80	7396	0	L6 CT	0.2	deep layer non-IT	Glutamatergic
+70	2122.0	1511	Oligos_3	batch_70	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	2122.0	81	7401	0	L2/3-6 IT	0.3	L2/3-6 IT	Glutamatergic
+35	2229.0	1405	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2229.0	82	7396	0	L2/3-6 IT	0.52	L2/3-6 IT	Glutamatergic
+35	457.0	397	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	457.0	83	7396	0	Microglia	0.22	Microglia	Non-neuron
+35	4325.0	2407	Ex_3_L4_5	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	4325.0	84	7396	0	L2/3-6 IT	0.3	L2/3-6 IT	Glutamatergic
+36	3475.0	2047	Inhib_2_VIP	batch_36	VIP	CGE	GABAergic	3475.0	85	7397	0	CGE	0.23	CGE	GABAergic
+35	3257.0	2131	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3257.0	86	7396	0	L2/3-6 IT	0.37	L2/3-6 IT	Glutamatergic
+35	2322.0	1653	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2322.0	87	7396	0	L2/3-6 IT	0.29	L2/3-6 IT	Glutamatergic
+35	3314.0	2249	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	3314.0	88	7396	0	Endothelial	0.23	Vascular	Non-neuron
+36	2593.0	1825	Inhib_3_SST	batch_36	SST	MGE	GABAergic	2593.0	89	7397	0	SNCG	0.27	CGE	GABAergic
+36	4183.0	2511	Inhib_7_PVALB	batch_36	PVALB	MGE	GABAergic	4183.0	90	7397	0	LAMP5	0.32	CGE	GABAergic
+36	415.0	378	Inhib_1	batch_36	GABAergic	GABAergic	GABAergic	415.0	91	7397	0	Endothelial	0.14	Vascular	Non-neuron
+36	1644.0	1227	Inhib_2_VIP	batch_36	VIP	CGE	GABAergic	1644.0	92	7397	0	VIP	0.36	CGE	GABAergic
+65	1515.0	1139	Micro/Macro	batch_65	Microglia	Microglia	Non-neuron	1515.0	93	7399	0	Microglia	0.3	Microglia	Non-neuron
+35	4821.0	2568	Ex_8_L5_6	batch_35	L5/6 NP	deep layer non-IT	Glutamatergic	4821.0	94	7396	0	L6b	0.25	deep layer non-IT	Glutamatergic
+35	1912.0	1303	Ex_6_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1912.0	95	7396	0	L2/3-6 IT	0.19	L2/3-6 IT	Glutamatergic
+36	8365.0	4106	Inhib_5	batch_36	GABAergic	GABAergic	GABAergic	8365.0	96	7397	0	SST	0.16	MGE	GABAergic
+36	1405.0	1020	Inhib_5	batch_36	GABAergic	GABAergic	GABAergic	1405.0	97	7397	0	SST	0.31	MGE	GABAergic
+35	7731.0	3599	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	7731.0	98	7396	0	L6 CT	0.23	deep layer non-IT	Glutamatergic
+36	2171.0	1469	Inhib_5	batch_36	GABAergic	GABAergic	GABAergic	2171.0	99	7397	0	PVALB	0.27	MGE	GABAergic

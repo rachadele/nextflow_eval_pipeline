@@ -1,0 +1,88 @@
+orig.ident	nCount_RNA	nFeature_RNA	cellid	case_num	Location	Condition	Cluster	Lineage	batch	rachel_subclass	rachel_class	rachel_family	nCounts_RNA	joinid	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+0	404	174	CCCAACTGTGGTGATG.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1448	0	7396	0	LAMP5	0.366292524921636	CGE	GABAergic
+0	310	149	AAAGTGATCAGACCGC.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	963	1	7396	0	VIP	0.265419340194723	CGE	GABAergic
+0	314	156	GAGTTTGCACTAGTAC.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	879	2	7396	0	Chandelier	0.248862337383905	MGE	GABAergic
+0	3919	566	TTTAGTCCATCATTGG.1.C5227Cin	C5227Cin	Cingulate	Con	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	12404	3	7396	0	Astrocyte	0.516960262619991	Astrocyte	Non-neuron
+0	349	147	TGACCCTGTTGACGGA.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	983	4	7396	0	SNCG	0.355251004609768	CGE	GABAergic
+0	243	127	GTGTGATCAGATTTCG.1.H5263Cin	H5263Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	760	5	7396	0	PVALB	0.310418497217908	MGE	GABAergic
+0	567	293	ATGTCCCGTCATATGC.1.H5286Cin	H5286Cin	Cingulate	HD	Ependymal_1	Ependymal	B3	Endothelial	Vascular	Non-neuron	2205	6	7396	0	L6b	0.573575584715518	deep layer non-IT	Glutamatergic
+0	254	125	AAAGTGATCAGACCGC.1.H4161Cin	H4161Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	806	7	7396	0	VIP	0.26619452688867	CGE	GABAergic
+0	1869	368	CAGTCCTTCCTCGCAT.1.5404	C5404Cin	Cingulate	Con	N_inh5_NPY	Neuron	B1	GABAergic	GABAergic	GABAergic	5013	8	7395	0	VLMC	0.19356878765051	Vascular	Non-neuron
+0	1354	323	GCACGGTTCTGCACCT.1.C5227Cin	C5227Cin	Cingulate	Con	oligo_4	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	4512	9	7396	0	Oligodendrocyte	0.744585751322114	Oligodendrocyte lineage	Non-neuron
+0	198	116	GGAACCCAGGTACCTT.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	678	10	7396	0	LAMP5	0.223277516769715	CGE	GABAergic
+0	12720	938	TGTTCTAAGCGAAACC.1.C5700Cin	C5700Cin	Cingulate	Con	Glut_CTGF	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	40442	11	7396	0	L5 ET	0.270387088651656	deep layer non-IT	Glutamatergic
+0	1467	493	TATCGCCTCACGATAC.1.H5286Cin	H5286Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	5537	12	7396	0	Oligodendrocyte	0.658211897077173	Oligodendrocyte lineage	Non-neuron
+0	174	102	ATTGTTCAGGGTAGCT.1.C5596Cin	C5596Cin	Cingulate	Con	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	639	13	7396	0	Chandelier	0.395781958468896	MGE	GABAergic
+0	219	115	TAGAGCTGTAAATGTG.1.5493	H5493Cin	Cingulate	HD	oligo_2	Oligodendrocyte	B1	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	783	14	7395	0	Oligodendrocyte	0.530520674618029	Oligodendrocyte lineage	Non-neuron
+0	286	145	CACGTGGTCATCACCC.1.C5227Cin	C5227Cin	Cingulate	Con	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1001	15	7396	0	PVALB	0.397663797441398	MGE	GABAergic
+0	2478	437	ATTACTCTCAGGACAG.1.H5263Cin	H5263Cin	Cingulate	HD	oligo_5	OPC	B3	OPC	Oligodendrocyte lineage	Non-neuron	7722	16	7396	0	OPC	0.573754365315055	Oligodendrocyte lineage	Non-neuron
+0	328	188	CGGGCATTCCCATTCG.1.C5700Cin	C5700Cin	Cingulate	Con	Ependymal_2	Ependymal	B3	Endothelial	Vascular	Non-neuron	1315	17	7396	0	Astrocyte	0.410495592944644	Astrocyte	Non-neuron
+0	180	107	GTACAACAGACGATAT.1.C5227Cin	C5227Cin	Cingulate	Con	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	642	18	7396	0	Chandelier	0.469156482193871	MGE	GABAergic
+0	8650	791	TTCTGTAGTAAGACCG.1.H5109Cin	H5109Cin	Cingulate	HD	GABA_CCK	Neuron	B3	GABAergic	GABAergic	GABAergic	27514	19	7396	0	CGE	0.214768179489466	CGE	GABAergic
+0	444	209	ACTATGGCATGACTGT.1.H5608Cin	H5608Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	1492	20	7396	0	LAMP5	0.517866716123849	CGE	GABAergic
+0	1137	328	TAGGGTTAGGGACACT.1.H5608Cin	H5608Cin	Cingulate	HD	oligo_3	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	4214	21	7396	0	Oligodendrocyte	0.727009942326827	Oligodendrocyte lineage	Non-neuron
+0	2977	523	TCGATTTCAGGACTAG.1.C5700Cin	C5700Cin	Cingulate	Con	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	10289	22	7396	0	Astrocyte	0.674001229254973	Astrocyte	Non-neuron
+0	289	143	CGGACACTCCTACAAG.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	875	23	7396	0	L2/3-6 IT	0.242790082964846	L2/3-6 IT	Glutamatergic
+0	556	234	TCGAACAAGCACCGAA.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1877	24	7396	0	LAMP5	0.219876691026816	CGE	GABAergic
+0	184	103	CATACTTCACCGTCGA.1.H5263Cin	H5263Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	679	25	7396	0	L2/3-6 IT	0.45385527925156	L2/3-6 IT	Glutamatergic
+0	347	148	TACCCGTCAATTAGGA.1.H5286Cin	H5286Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	983	26	7396	0	PVALB	0.572291075999797	MGE	GABAergic
+0	431	198	ACTTCCGGTGTTGCCG.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1285	27	7396	0	L5 ET	0.300232932723546	deep layer non-IT	Glutamatergic
+0	340	177	TATATCCTCGTTATCT.1.C5700Cin	C5700Cin	Cingulate	Con	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1055	28	7396	0	SNCG	0.263455699172965	CGE	GABAergic
+0	1346	369	GTGGTTAGTTCTTCAT.1.C5700Cin	C5700Cin	Cingulate	Con	oligo_4	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	4971	29	7396	0	Oligodendrocyte	0.652186354412445	Oligodendrocyte lineage	Non-neuron
+0	743	244	AGCGCTGCAAGAGCTG.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2190	30	7396	0	L2/3-6 IT	0.450305279533461	L2/3-6 IT	Glutamatergic
+0	207	131	TCAGCAACAACAGAGC.1.H4161Cin	H4161Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	678	31	7396	0	Chandelier	0.310954736440931	MGE	GABAergic
+0	182	104	ATCGCCTGTTGCGGAA.1.H5608Cin	H5608Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	535	32	7396	0	L6 CT	0.324705300528459	deep layer non-IT	Glutamatergic
+0	252	142	TTCTGTAGTTCGGCTG.1.C5227Cin	C5227Cin	Cingulate	Con	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	799	33	7396	0	Chandelier	0.397407182480025	MGE	GABAergic
+0	731	249	GGACGTCTCGGAATGG.1.C5227Cin	C5227Cin	Cingulate	Con	Microglia_1	Microglia	B3	Microglia	Microglia	Non-neuron	3653	34	7396	0	Microglia	0.634458399632737	Microglia	Non-neuron
+0	145	92	TGTAACGTCCCTTGGT.1.H4161Cin	H4161Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	487	35	7396	0	Pericyte	0.535346562530255	Vascular	Non-neuron
+0	318	140	TGGGCGTAGAATTCCC.1.5493	H5493Cin	Cingulate	HD	oligo_3	Oligodendrocyte	B1	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	1059	36	7395	0	Oligodendrocyte	0.684826251180586	Oligodendrocyte lineage	Non-neuron
+0	308	152	CGTGCTTCACGCTGTG.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	942	37	7396	0	Chandelier	0.313137118369738	MGE	GABAergic
+0	14273	1001	TTAATCCTCCGAACGC.1.C5596Cin	C5596Cin	Cingulate	Con	Glut_CTGF	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	46626	38	7396	0	L6 CT	0.462084020128683	deep layer non-IT	Glutamatergic
+0	256	136	TCAGTCCGTTACACTG.1.H5109Cin	H5109Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	734	39	7396	0	Chandelier	0.395602616559465	MGE	GABAergic
+0	1240	387	TTTCCTCAGATGAGAG.1.5493	H5493Cin	Cingulate	HD	Glut_GUCY1B3	Neuron	B1	Glutamatergic	Glutamatergic	Glutamatergic	5265	40	7395	0	SST	0.276518105637022	MGE	GABAergic
+0	172	101	ATAGGCTTCGAGCCAC.1.H5608Cin	H5608Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	607	41	7396	0	LAMP5	0.651419585194724	CGE	GABAergic
+0	5222	585	CATAGACCACTCAAGT.1.H5109Cin	H5109Cin	Cingulate	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	14507	42	7396	0	Astrocyte	0.515968224333052	Astrocyte	Non-neuron
+0	145	95	AATGCCATCATGTCAG.1.C5596Cin	C5596Cin	Cingulate	Con	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	423	43	7396	0	Chandelier	0.404052264527866	MGE	GABAergic
+0	185	123	TTTGGAGTCCGTGTCT.1.H4161Cin	H4161Cin	Cingulate	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	601	44	7396	0	Chandelier	0.398169784334771	MGE	GABAergic
+0	210	121	AAGTACCGTGATACCT.1.H5608Cin	H5608Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	727	45	7396	0	Chandelier	0.380843395944532	MGE	GABAergic
+0	312	155	GGAATCTTCGAGGCAA.1.H4161Cin	H4161Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	964	46	7396	0	Chandelier	0.332017717267556	MGE	GABAergic
+0	175	103	GACGTTATCTCGAACA.1.C5227Cin	C5227Cin	Cingulate	Con	oligo_6	OPC	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	573	47	7396	0	Chandelier	0.400215902472744	MGE	GABAergic
+0	173	101	AAGGAGCTCGTTTATC.1.5493	H5493Cin	Cingulate	HD	oligo_3	Oligodendrocyte	B1	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	637	48	7395	0	Oligodendrocyte	0.51980226232615	Oligodendrocyte lineage	Non-neuron
+0	12704	1191	TCTCTGGAGCGTTCCG.1.C5700Cin	C5700Cin	Cingulate	Con	Glut_NWD2	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	43506	49	7396	0	Astrocyte	0.383805359018033	Astrocyte	Non-neuron
+0	678	141	AGCGTATTCATGCATG.1.5575	H5575Cin	Cingulate	HD	oligo_1	Oligodendrocyte	B1	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	1502	50	7395	0	Oligodendrocyte	0.601597028808723	Oligodendrocyte lineage	Non-neuron
+0	4408	638	ATCGTAGCATCACGGC.1.H5109Cin	H5109Cin	Cingulate	HD	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	14480	51	7396	0	Astrocyte	0.612824250918283	Astrocyte	Non-neuron
+0	425	188	ATCCGTCTCTGGCTGG.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1324	52	7396	0	L2/3-6 IT	0.267934339837392	L2/3-6 IT	Glutamatergic
+0	524	215	CTGAGGCTCGCGGTAC.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	1581	53	7396	0	PVALB	0.587996650832544	MGE	GABAergic
+0	117	86	CCTCATGTCACGGAGA.1.H4161Cin	H4161Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	412	54	7396	0	L6 CT	0.293789471284551	deep layer non-IT	Glutamatergic
+0	242	103	AAGCCGCTCGTCACGG.1.5575	H5575Cin	Cingulate	HD	oligo_1	Oligodendrocyte	B1	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	752	55	7395	0	Oligodendrocyte	0.482952845051928	Oligodendrocyte lineage	Non-neuron
+0	1648	359	GTCATGAAGCTGGTGA.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	5035	56	7396	0	L2/3-6 IT	0.382490708226344	L2/3-6 IT	Glutamatergic
+0	2277	431	CTCATTACACCATTCC.1.H5109Cin	H5109Cin	Cingulate	HD	oligo_2	Oligodendrocyte	B3	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	9898	57	7396	0	Oligodendrocyte	0.589615702011894	Oligodendrocyte lineage	Non-neuron
+0	160	94	GTCGAATTCCTACCGT.1.H5109Cin	H5109Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	502	58	7396	0	Chandelier	0.427916683527677	MGE	GABAergic
+0	1236	343	GTGGCGTCACGTAGAG.1.C5700Cin	C5700Cin	Cingulate	Con	Astro_4	Astrocyte	B3	Astrocyte	Astrocyte	Non-neuron	4261	59	7396	0	Astrocyte	0.566950757544064	Astrocyte	Non-neuron
+0	167	106	GCAACATAGCTGGCCT.1.H5608Cin	H5608Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	560	60	7396	0	Chandelier	0.386385153965343	MGE	GABAergic
+0	194	114	TGTCCTGGTTGGGCCT.1.C5596Cin	C5596Cin	Cingulate	Con	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	578	61	7396	0	Chandelier	0.397764562436309	MGE	GABAergic
+0	179	109	GGTCTGGAGCTAGTTC.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	554	62	7396	0	PVALB	0.374235332679447	MGE	GABAergic
+0	2179	523	TTTACTGAGCTTCTAG.1.C5596Cin	C5596Cin	Cingulate	Con	Glut_NWD2	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	8024	63	7396	0	LAMP5	0.441480859242371	CGE	GABAergic
+0	3399	631	TCCGATCTCAAACCTG.1.C5227Cin	C5227Cin	Cingulate	Con	oligo_5	OPC	B3	OPC	Oligodendrocyte lineage	Non-neuron	12902	64	7396	0	OPC	0.604369467012557	Oligodendrocyte lineage	Non-neuron
+0	476	196	GCAGTTATCAACACCA.1.5404	C5404Cin	Cingulate	Con	Astro_4	Astrocyte	B1	Astrocyte	Astrocyte	Non-neuron	1618	65	7395	0	Astrocyte	0.409902779552876	Astrocyte	Non-neuron
+0	399	165	TATTTCGCACCTATCC.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_SEMA3E	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	1151	66	7396	0	PVALB	0.568003062802468	MGE	GABAergic
+0	232	128	CAGCACGGTCAGCTTA.1.C5700Cin	C5700Cin	Cingulate	Con	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	712	67	7396	0	L6 CT	0.427741682152475	deep layer non-IT	Glutamatergic
+0	322	140	ACTTCCGGTATCAAGA.1.H5263Cin	H5263Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	1013	68	7396	0	Chandelier	0.397432384074134	MGE	GABAergic
+0	189	112	CAGCACGGTACGATTC.1.H5109Cin	H5109Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	557	69	7396	0	LAMP5	0.430617046156324	CGE	GABAergic
+0	93	68	ATTCGTTAGTGCAAAT.1.H4161Cin	H4161Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	349	70	7396	0	Chandelier	0.396472223817707	MGE	GABAergic
+0	7123	761	GGTTAACGTTGTCAGT.1.C5700Cin	C5700Cin	Cingulate	Con	Glut_CTGF	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	23629	71	7396	0	L5 ET	0.437577540614356	deep layer non-IT	Glutamatergic
+0	762	166	TATCTCAGTGCACTTA.1.5493	H5493Cin	Cingulate	HD	Astro_4	Astrocyte	B1	Astrocyte	Astrocyte	Non-neuron	1564	72	7395	0	Astrocyte	0.519296154886633	Astrocyte	Non-neuron
+0	270	140	CAATGACTCCGACATA.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	795	73	7396	0	PVALB	0.354751481842112	MGE	GABAergic
+0	319	148	GCAGCCATCCGTGTAA.1.H4161Cin	H4161Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	930	74	7396	0	SNCG	0.307469743442966	CGE	GABAergic
+0	496	201	CTTCGGTGTATACCTG.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_SEMA3E	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	1466	75	7396	0	Chandelier	0.399431742691115	MGE	GABAergic
+0	149	94	CATGCAACAGGTACGA.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	542	76	7396	0	Pericyte	0.363227229987557	Vascular	Non-neuron
+0	367	172	TGTGTTTAGTCTCAAC.1.5404	C5404Cin	Cingulate	Con	oligo_1	Oligodendrocyte	B1	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	1377	77	7395	0	Oligodendrocyte	0.622538651153772	Oligodendrocyte lineage	Non-neuron
+0	364	160	TGCACGGTCACCGGGT.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1178	78	7396	0	LAMP5	0.763510504849001	CGE	GABAergic
+0	164	118	CGTCAGGAGAAGGTGA.1.5404	C5404Cin	Cingulate	Con	Glut_GUCY1B3	Neuron	B1	Glutamatergic	Glutamatergic	Glutamatergic	717	79	7395	0	Pericyte	0.674787758282	Vascular	Non-neuron
+0	211	127	TTCTGTACATTCACAG.1.C5700Cin	C5700Cin	Cingulate	Con	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	618	80	7396	0	Chandelier	0.336762742828986	MGE	GABAergic
+0	291	163	CACACAAGTTATCACG.1.5404	C5404Cin	Cingulate	Con	Microglia_1	Microglia	B1	Microglia	Microglia	Non-neuron	1114	81	7395	0	Microglia	0.337757963538644	Microglia	Non-neuron
+0	137	97	AGTAGTCCAACAACAA.1.H5263Cin	H5263Cin	Cingulate	HD	N_inh5_NPY	Neuron	B3	GABAergic	GABAergic	GABAergic	543	82	7396	0	LAMP5	0.495298704450287	CGE	GABAergic
+0	526	271	CATGCTCTCAGCCTCT.1.H5286Cin	H5286Cin	Cingulate	HD	Ependymal_2	Ependymal	B3	Endothelial	Vascular	Non-neuron	2261	83	7396	0	Astrocyte	0.540438058288137	Astrocyte	Non-neuron
+0	298	134	GCACATAAGGCTCACC.1.H5263Cin	H5263Cin	Cingulate	HD	N_inh4	Neuron	B3	GABAergic	GABAergic	GABAergic	973	84	7396	0	LAMP5	0.346300468193652	CGE	GABAergic
+0	1915	473	AACTCTTGTAACGTTC.1.5493	H5493Cin	Cingulate	HD	Glut_GUCY1B3	Neuron	B1	Glutamatergic	Glutamatergic	Glutamatergic	6419	85	7395	0	Astrocyte	0.202269698613084	Astrocyte	Non-neuron
+0	377	175	CAGGCCACAATGTTGC.1.H5286Cin	H5286Cin	Cingulate	HD	Glut_RORB	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	1088	86	7396	0	Chandelier	0.399327488609732	MGE	GABAergic

@@ -1,0 +1,14 @@
+ref	query	key	label	auc	optimal threshold
+primary_auditory_cortex	pineda	rachel_subclass	Astrocyte	0.9920424403183024	0.14
+primary_auditory_cortex	pineda	rachel_subclass	Chandelier	0.9999999999999999	0.73
+primary_auditory_cortex	pineda	rachel_subclass	Endothelial	1.0	0.56
+primary_auditory_cortex	pineda	rachel_subclass	L2/3-6 IT	0.9273504273504273	0.13
+primary_auditory_cortex	pineda	rachel_subclass	L5 ET	0.6947368421052632	0.04
+primary_auditory_cortex	pineda	rachel_subclass	L5/6 NP	0.5510204081632653	0.01
+primary_auditory_cortex	pineda	rachel_subclass	L6b	0.8469387755102041	0.05
+primary_auditory_cortex	pineda	rachel_subclass	Microglia	1.0	0.34
+primary_auditory_cortex	pineda	rachel_subclass	OPC	1.0	0.68
+primary_auditory_cortex	pineda	rachel_subclass	Oligodendrocyte	1.0	0.35
+primary_auditory_cortex	pineda	rachel_subclass	PVALB	1.0	0.18
+primary_auditory_cortex	pineda	rachel_subclass	SST	1.0	0.14
+primary_auditory_cortex	pineda	rachel_subclass	VIP	0.9224664224664225	0.19

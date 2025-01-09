@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+angular_gyrus	velmeshev_PFC	rachel_subclass	Astrocyte	0.9988257575757575	0.26
+angular_gyrus	velmeshev_PFC	rachel_subclass	Endothelial	0.9990524534686972	0.1
+angular_gyrus	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.9490150727650728	0.28
+angular_gyrus	velmeshev_PFC	rachel_subclass	L5/6 NP	0.6286927937158471	0.01
+angular_gyrus	velmeshev_PFC	rachel_subclass	LAMP5	0.998951981707317	0.07
+angular_gyrus	velmeshev_PFC	rachel_subclass	Microglia	0.9999179341284604	0.25
+angular_gyrus	velmeshev_PFC	rachel_subclass	OPC	0.9976661678056745	0.07
+angular_gyrus	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9999379344587885	0.2
+angular_gyrus	velmeshev_PFC	rachel_subclass	PVALB	0.9572905271148222	0.07
+angular_gyrus	velmeshev_PFC	rachel_subclass	SST	0.9994227994227993	0.19
+angular_gyrus	velmeshev_PFC	rachel_subclass	VIP	0.9899274778404512	0.09

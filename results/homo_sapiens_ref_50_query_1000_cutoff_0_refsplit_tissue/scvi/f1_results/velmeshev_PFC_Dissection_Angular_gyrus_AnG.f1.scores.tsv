@@ -1,0 +1,34 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	VLMC	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Chandelier	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	LAMP5	0.9142857142857143	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	VIP	0.8	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	SNCG	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	CGE	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Endothelial	0.8125	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	L6 CT	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	SST	0.9795918367346939	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	L5/6 NP	0.3125	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	GABAergic	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	PVALB	0.9473684210526315	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9818181818181818	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9773755656108597	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	L6b	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	OPC	0.9789473684210527	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Microglia	0.9879518072289156	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	L5 ET	nan	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.9927272727272727	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Astrocyte	0.9957081545064378	0.534038716119288		0.9544575460692107	rachel_subclass	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9923076923076923	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	deep layer non-IT	0.9629629629629629	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	GABAergic	nan	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	MGE	0.9943502824858758	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9773755656108597	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	CGE	0.9915966386554622	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Microglia	0.9879518072289156	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.9927272727272727	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Astrocyte	0.9957081545064378	0.889498037648548		0.9904482743291616	rachel_class	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Non-neuron	0.9977116704805492	0.9886570026807374		0.9920431239326369	rachel_family	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9915151515151515	0.9886570026807374		0.9920431239326369	rachel_family	0.0
+velmeshev_PFC	Dissection_Angular_gyrus_AnG	GABAergic	0.9767441860465116	0.9886570026807374		0.9920431239326369	rachel_family	0.0

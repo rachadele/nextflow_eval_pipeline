@@ -1,6 +1,7 @@
 #!/user/bin/python3
 
 from pathlib import Path
+import random
 import os
 import sys
 import scanpy as sc
@@ -39,7 +40,8 @@ def parse_arguments():
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = ["Transcriptomic cytoarchitecture reveals principles of human neocortex organization",
                                                                                "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"]) 
     parser.add_argument('--split_column', type=str, default="tissue")
-    
+    parser.add_argument('--ref_keys', type=str, nargs="+", default=["rachel_subclass","rachel_class","rachel_family"])
+    parser.add_argument('--seed', type=int, default=42)
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
@@ -56,9 +58,15 @@ def main():
    relabel_path = args.relabel_path
    ref_collections=args.ref_collections
    split_column=args.split_column
+   ref_keys=args.ref_keys
+   SEED = args.seed
+   #random.seed(seed)         # For `random`
+   #np.random.seed(seed)      # For `numpy`
+  # scvi.settings.seed = seed # For `scvi`
+    
    refs=adata_functions.get_census(organism=organism, 
                                  subsample=subsample_ref, split_column=split_column, census_version=census_version, 
-                                 relabel_path=relabel_path, ref_collections=ref_collections)
+                                 relabel_path=relabel_path, ref_collections=ref_collections, seed=SEED, ref_keys=ref_keys)
 
    print("finished fetching anndata")
    outdir="refs"
@@ -70,8 +78,22 @@ def main():
          .replace("\\", "") \
         .replace("'", "") \
         .replace(":", "")
-   # Create the directory if it doesn't exist
       ref.write(os.path.join(outdir,f"{new_ref_name}.h5ad"))
+      ref.obs.to_csv(os.path.join(outdir,f"{new_ref_name}.obs.tsv"), sep="\t")
+      # data_summary = refs["whole cortex"].obs[["collection_name","dataset_title","tissue"]].value_counts().reset_index(name="count")
+
+    #  sc.pp.neighbors(ref, use_rep="scvi")
+      #sc.tl.umap(ref, min_dist=0.3)
+      
+   #sc.settings.figdir = outdir
+
+    #  sc.pl.umap(
+     # ref,
+     # color=["rachel_subclass", "cell_type"],
+     # save=f"_{new_ref_name}_umap.png"  # File will save in the working directory or `sc.settings.figdir`.
+     # )
+
+      
       
 if __name__ == "__main__":
     main()

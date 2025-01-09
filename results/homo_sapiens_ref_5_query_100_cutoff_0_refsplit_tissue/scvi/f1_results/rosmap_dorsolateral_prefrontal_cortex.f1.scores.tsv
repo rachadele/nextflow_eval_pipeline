@@ -1,0 +1,20 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	OPC	1.0	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	VLMC	nan	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	Pericyte	0.0	0.6453999075358299		0.9457004160887656	rachel_subclass	0.0
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Vascular	1.0	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.8297998811174956		0.9557004160887655	rachel_class	0.0
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.9313688047330935		0.9507728798568814	rachel_family	0.0
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	0.9855072463768116	0.9313688047330935		0.9507728798568814	rachel_family	0.0
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.9313688047330935		0.9507728798568814	rachel_family	0.0

@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	Astrocyte	0.9223679209426073	0.1
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	Endothelial	0.8494635193133047	0.16
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	L2/3-6 IT	0.9544793006852628	0.36
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	L5 ET	0.9216490816725283	0.08
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	L5/6 NP	0.6119603110753553	0.06
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	L6 CT	0.7366792249730894	0.02
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	Microglia	0.9264819687354898	0.4
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	OPC	0.9976652298850575	0.16
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	Oligodendrocyte	0.932809518761925	0.1
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	PVALB	0.9230089415678935	0.11
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	SST	0.8838288288288288	0.17
+Dissection_Anterior_cingulate_cortex_ACC	nagy	rachel_subclass	VIP	0.9835866131648596	0.15

@@ -1,0 +1,23 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	primary_visual_cortex	PVALB	nan	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Endothelial	0.56	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Glutamatergic	0.8817733990147784	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	GABAergic	0.9402390438247012	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Microglia	0.9574468085106383	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Astrocyte	0.9863013698630136	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Oligodendrocyte	0.9980119284294234	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	VLMC	nan	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	L2/3-6 IT	nan	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Non-neuron	nan	0.5323772549642556		0.9280058048932179	rachel_subclass	0.0
+lau	primary_visual_cortex	Glutamatergic	0.8817733990147784	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	GABAergic	0.9402390438247012	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	Microglia	0.9574468085106383	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	MGE	nan	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	L2/3-6 IT	nan	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	Oligodendrocyte lineage	0.9980119284294234	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	Vascular	0.8484848484848485	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	Non-neuron	nan	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	Astrocyte	0.9863013698630136	0.6235841553474893		0.9329100473174604	rachel_class	0.0
+lau	primary_visual_cortex	Glutamatergic	0.8806888068880688	0.9064255718603939		0.897997254873142	rachel_family	0.0
+lau	primary_visual_cortex	Non-neuron	0.9057815845824411	0.9064255718603939		0.897997254873142	rachel_family	0.0
+lau	primary_visual_cortex	GABAergic	0.932806324110672	0.9064255718603939		0.897997254873142	rachel_family	0.0

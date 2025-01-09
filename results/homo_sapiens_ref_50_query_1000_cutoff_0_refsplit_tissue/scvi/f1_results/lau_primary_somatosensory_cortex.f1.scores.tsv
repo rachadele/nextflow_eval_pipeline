@@ -1,0 +1,23 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	primary_somatosensory_cortex	Astrocyte	0.9819819819819819	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	Non-neuron	nan	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	VLMC	nan	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	Glutamatergic	0.8809815950920246	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	Oligodendrocyte	0.9940119760479041	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	PVALB	nan	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	L2/3-6 IT	nan	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	Endothelial	0.45454545454545453	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	Microglia	0.9473684210526315	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	GABAergic	0.9354838709677419	0.5194373299687739		0.9232865920019498	rachel_subclass	0.0
+lau	primary_somatosensory_cortex	MGE	nan	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Astrocyte	0.9819819819819819	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Non-neuron	nan	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	L2/3-6 IT	nan	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Glutamatergic	0.8809815950920246	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Vascular	0.7857142857142857	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Microglia	0.9473684210526315	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	GABAergic	0.9354838709677419	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Oligodendrocyte lineage	0.9940119760479041	0.61394912565073		0.92891646213182	rachel_class	0.0
+lau	primary_somatosensory_cortex	Non-neuron	0.9022556390977443	0.9023115052588736		0.8940923601310969	rachel_family	0.0
+lau	primary_somatosensory_cortex	GABAergic	0.928	0.9023115052588736		0.8940923601310969	rachel_family	0.0
+lau	primary_somatosensory_cortex	Glutamatergic	0.8766788766788767	0.9023115052588736		0.8940923601310969	rachel_family	0.0

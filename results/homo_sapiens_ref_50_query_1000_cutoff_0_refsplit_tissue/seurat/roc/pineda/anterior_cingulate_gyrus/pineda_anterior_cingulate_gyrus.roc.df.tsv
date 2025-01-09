@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+anterior_cingulate_gyrus	pineda	rachel_subclass	OPC	1.0	1.0
+anterior_cingulate_gyrus	pineda	rachel_subclass	Oligodendrocyte	1.0	0.873734644265636
+anterior_cingulate_gyrus	pineda	rachel_subclass	L6b	0.9590974358974359	0.0725727715288485
+anterior_cingulate_gyrus	pineda	rachel_subclass	PVALB	0.9974200206398349	1.0
+anterior_cingulate_gyrus	pineda	rachel_subclass	Endothelial	1.0	0.913233804205653
+anterior_cingulate_gyrus	pineda	rachel_subclass	L2/3-6 IT	0.8959231897680057	0.0062096477587519
+anterior_cingulate_gyrus	pineda	rachel_subclass	L5 ET	0.888572563559322	0.363468676077867
+anterior_cingulate_gyrus	pineda	rachel_subclass	SST	0.9843427169421487	0.501478358812404
+anterior_cingulate_gyrus	pineda	rachel_subclass	VIP	0.9705882352941176	0.128095651180266
+anterior_cingulate_gyrus	pineda	rachel_subclass	Microglia	0.9790446146913023	1.0
+anterior_cingulate_gyrus	pineda	rachel_subclass	Astrocyte	1.0	0.758180767673065
+anterior_cingulate_gyrus	pineda	rachel_subclass	Pericyte	1.0	0.0645808908965037

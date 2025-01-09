@@ -1,11 +1,11 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Astrocyte	1.0	0.3
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L2/3-6 IT	0.7906	0.11
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L5 ET	0.8810526315789474	0.04
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L5/6 NP	0.4467353951890034	0.47
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L6 CT	0.6785714285714286	0.05
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Microglia	0.9570446735395189	0.12
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Oligodendrocyte	0.9455492424242424	0.29
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	PVALB	0.9438775510204082	0.21
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	SST	0.95703125	0.13
-Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	VIP	0.9742268041237113	0.15
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Astrocyte	0.803769401330377	0.2
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Endothelial	0.4782608695652174	0.04
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L2/3-6 IT	0.9195156695156695	0.12
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L5 ET	0.8492239467849224	0.03
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	L5/6 NP	0.15384615384615385	0.0
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Microglia	1.0	0.59
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	Oligodendrocyte	0.9655032467532468	0.04
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	PVALB	0.9619565217391305	0.15
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	SST	0.6425925925925926	0.08
+Dissection_Primary_auditory_cortexA1	nagy	rachel_subclass	VIP	0.9851851851851852	0.16

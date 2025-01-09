@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	Dissection_Angular_gyrus_AnG	L6b	0.7368421052631579	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Chandelier	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	OPC	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Endothelial	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.7910863509749304	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	SST	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Non-neuron	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	L5 ET	0.09090909090909091	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	GABAergic	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	VLMC	nan	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Pericyte	0.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	LAMP5	nan	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	L5/6 NP	0.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	L6 CT	nan	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Oligodendrocyte	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	PVALB	1.0	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	SNCG	nan	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	CGE	nan	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	VIP	0.8571428571428571	0.6125445638313654		0.8804459223520945	rachel_subclass	0.0
+pineda	Dissection_Angular_gyrus_AnG	Non-neuron	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	GABAergic	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	deep layer non-IT	0.4755244755244755	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	CGE	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	MGE	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.7910863509749304	0.9266610826499406		0.9134819915460585	rachel_class	0.0
+pineda	Dissection_Angular_gyrus_AnG	Glutamatergic	1.0	1.0		1.0	rachel_family	0.0
+pineda	Dissection_Angular_gyrus_AnG	Non-neuron	1.0	1.0		1.0	rachel_family	0.0
+pineda	Dissection_Angular_gyrus_AnG	GABAergic	1.0	1.0		1.0	rachel_family	0.0

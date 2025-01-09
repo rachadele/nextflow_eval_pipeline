@@ -1,0 +1,31 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	0.0	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.720626631853786	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.8151658767772512	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	L6b	nan	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	PVALB	1.0	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	L5 ET	0.0	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.8148148148148148	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.7872340425531915	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.7639257294429708	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.6946107784431138	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	SNCG	nan	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	OPC	0.5714285714285714	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	SST	1.0	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	L6 CT	nan	0.4479879028321062		0.6523511976534523	rachel_subclass	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	MGE	1.0	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.720626631853786	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	CGE	nan	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.8148148148148148	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Vascular	0.0	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.7872340425531915	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.7639257294429708	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.6946107784431138	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	deep layer non-IT	0.40336134453781514	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.8769230769230769	0.5510451289607972		0.7037798726312556	rachel_class	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.8144578313253013	0.808445176858175		0.8147498127691691	rachel_family	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.8854368932038835	0.808445176858175		0.8147498127691691	rachel_family	0.0
+lim_Cingulate	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.72544080604534	0.808445176858175		0.8147498127691691	rachel_family	0.0

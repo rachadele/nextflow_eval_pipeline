@@ -1,31 +1,33 @@
 query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	Dissection_Angular_gyrus_AnG	OPC	1.0	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.0	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	VLMC	nan	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	L5 ET	0.36363636363636365	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	unknown	0.0	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Endothelial	0.4	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Glutamatergic	0.47619047619047616	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	PVALB	1.0	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	SNCG	nan	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	GABAergic	0.8085106382978723	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Microglia	nan	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Astrocyte	0.8148148148148148	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9090909090909091	0.4123030858593169		0.5414389896943088	rachel_subclass	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Vascular	0.2857142857142857	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.0	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	CGE	nan	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9166666666666666	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	MGE	1.0	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	unknown	0.0	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Glutamatergic	0.47619047619047616	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	GABAergic	0.8085106382978723	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Microglia	nan	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	deep layer non-IT	0.36363636363636365	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Astrocyte	0.8148148148148148	0.38879443711003997		0.5368675611228803	rachel_class	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Non-neuron	0.8888888888888888	0.43529548011382435		0.5206445635629673	rachel_family	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	unknown	0.0	0.43529548011382435		0.5206445635629673	rachel_family	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	Glutamatergic	0.30434782608695654	0.43529548011382435		0.5206445635629673	rachel_family	0.0
-lim_Cingulate	Dissection_Angular_gyrus_AnG	GABAergic	0.547945205479452	0.43529548011382435		0.5206445635629673	rachel_family	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	L6 CT	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Glutamatergic	0.56	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	L6b	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	L5 ET	0.0	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	SST	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	OPC	0.8	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	unknown	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	LAMP5	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9523809523809523	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	GABAergic	0.6153846153846154	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Endothelial	0.0	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Astrocyte	0.875	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.38095238095238093	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	L5 6 NP	nan	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Microglia	0.5	0.2927323717948718		0.5547557997557998	rachel_subclass	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	MGE	nan	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Glutamatergic	0.56	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	CGE	nan	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	unknown	nan	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	GABAergic	0.6153846153846154	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Vascular	0.0	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Astrocyte	0.875	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	deep layer non-IT	0.47619047619047616	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.38095238095238093	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	1.0	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Microglia	0.5	0.3672939560439561		0.609161930023999	rachel_class	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Non-neuron	0.8214285714285714	0.5457284570180456		0.7365176101948506	rachel_family	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	GABAergic	0.5853658536585366	0.5457284570180456		0.7365176101948506	rachel_family	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	Glutamatergic	0.7761194029850746	0.5457284570180456		0.7365176101948506	rachel_family	0.0
+lim_Cingulate	Dissection_Angular_gyrus_AnG	unknown	nan	0.5457284570180456		0.7365176101948506	rachel_family	0.0

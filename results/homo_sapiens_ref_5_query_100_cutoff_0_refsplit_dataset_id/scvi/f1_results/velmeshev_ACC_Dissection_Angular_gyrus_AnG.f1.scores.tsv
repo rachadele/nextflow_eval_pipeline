@@ -1,33 +1,33 @@
 query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	SST	0.6666666666666666	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Endothelial	0.8	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9523809523809523	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	GABAergic	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	L6b	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	L6 CT	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	SNCG	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	L5/6 NP	0.0	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	PVALB	0.8571428571428571	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.8125	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	VLMC	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9565217391304348	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Chandelier	nan	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	VIP	0.7692307692307693	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	OPC	1.0	0.48969127691953773		0.8652506569517439	rachel_subclass	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	GABAergic	nan	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	deep layer non-IT	1.0	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9714285714285714	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.8125	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9565217391304348	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	CGE	0.75	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	MGE	0.8235294117647058	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.7558163383930647		0.9209297131896237	rachel_class	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9069767441860465	0.9018353853169175		0.9216689466484269	rachel_family	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	GABAergic	0.8235294117647058	0.9018353853169175		0.9216689466484269	rachel_family	0.0
-velmeshev_ACC	Dissection_Angular_gyrus_AnG	Non-neuron	0.975	0.9018353853169175		0.9216689466484269	rachel_family	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	SST	0.8	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	VLMC	nan	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	GABAergic	nan	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	PVALB	1.0	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.967741935483871	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	OPC	1.0	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	VIP	0.6	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	CGE	nan	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.7777777777777778	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Astrocyte	0.9090909090909091	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.8695652173913043	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	L5/6 NP	1.0	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	SNCG	nan	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	L5 ET	nan	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	LAMP5	1.0	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Endothelial	0.4	0.5735653244302147		0.8424320342272655	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	GABAergic	nan	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	MGE	0.8333333333333334	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	deep layer non-IT	0.6666666666666666	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	CGE	1.0	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.7777777777777778	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Astrocyte	0.9090909090909091	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.972972972972973	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	L2/3-6 IT	0.8695652173913043	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Microglia	1.0	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Vascular	0.6666666666666666	0.699643049445421		0.8774581894147111	rachel_class	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	GABAergic	0.8387096774193549	0.8635101352368905		0.8684776362157766	rachel_family	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Non-neuron	0.9047619047619048	0.8635101352368905		0.8684776362157766	rachel_family	0.0
+velmeshev_ACC	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8470588235294118	0.8635101352368905		0.8684776362157766	rachel_family	0.0

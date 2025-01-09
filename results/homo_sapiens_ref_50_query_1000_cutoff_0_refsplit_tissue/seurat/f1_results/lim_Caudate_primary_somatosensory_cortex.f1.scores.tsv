@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Caudate	primary_somatosensory_cortex	Microglia	1.0	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	L2/3-6 IT	0.7857142857142857	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	Oligodendrocyte	0.9422492401215805	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	L6 CT	nan	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	OPC	0.9333333333333333	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	L5 ET	0.0	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	SST	nan	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	L6b	nan	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	VIP	nan	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	Astrocyte	0.8960573476702509	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	Glutamatergic	0.026845637583892617	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	GABAergic	0.4735376044568245	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	Endothelial	0.03773584905660377	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	unknown	0.0	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	Non-neuron	nan	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	VLMC	nan	0.3184670811210482		0.6715219849298546	rachel_subclass	0.0
+lim_Caudate	primary_somatosensory_cortex	Microglia	1.0	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	L2/3-6 IT	0.7857142857142857	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	MGE	nan	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	Oligodendrocyte lineage	0.9526462395543176	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	deep layer non-IT	0.6666666666666666	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	CGE	nan	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	Astrocyte	0.8960573476702509	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	Vascular	0.07142857142857142	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	Glutamatergic	0.026845637583892617	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	GABAergic	0.4735376044568245	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	unknown	0.0	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	Non-neuron	nan	0.4060746960895674		0.6997227966329913	rachel_class	0.0
+lim_Caudate	primary_somatosensory_cortex	Glutamatergic	0.5545722713864307	0.4904518327519982		0.7412132010623136	rachel_family	0.0
+lim_Caudate	primary_somatosensory_cortex	GABAergic	0.4509283819628647	0.4904518327519982		0.7412132010623136	rachel_family	0.0
+lim_Caudate	primary_somatosensory_cortex	unknown	0.0	0.4904518327519982		0.7412132010623136	rachel_family	0.0
+lim_Caudate	primary_somatosensory_cortex	Non-neuron	0.9563066776586975	0.4904518327519982		0.7412132010623136	rachel_family	0.0

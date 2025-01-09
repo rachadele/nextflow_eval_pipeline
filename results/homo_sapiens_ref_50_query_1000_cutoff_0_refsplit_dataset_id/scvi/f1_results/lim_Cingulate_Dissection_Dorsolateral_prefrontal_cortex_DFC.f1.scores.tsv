@@ -1,0 +1,30 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.7241379310344828	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.0	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	PVALB	1.0	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.684085510688836	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.0	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	nan	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.75	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	0.8	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.6759002770083102	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	0.5581395348837209	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.6535211267605634	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.7244897959183674	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.43801827841961866		0.5984503713279122	rachel_subclass	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.7241379310344828	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.684085510688836	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.75	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.6759002770083102	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.3669724770642202	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.6535211267605634	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.7782426778242678	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.0	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	0.9230769230769231	0.5050851748597821		0.6434616268097528	rachel_class	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7721661054994389	0.7375829128508866		0.7469451931564897	rachel_family	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7899159663865546	0.7375829128508866		0.7469451931564897	rachel_family	0.0
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.6506666666666666	0.7375829128508866		0.7469451931564897	rachel_family	0.0

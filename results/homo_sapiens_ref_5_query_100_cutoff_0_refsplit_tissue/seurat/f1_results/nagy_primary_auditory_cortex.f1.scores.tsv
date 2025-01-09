@@ -1,0 +1,37 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	primary_auditory_cortex	Microglia	1.0	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	CGE	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Non-neuron	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	L5/6 NP	0.0	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Astrocyte	0.7058823529411765	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	L5 ET	0.0	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	L6 CT	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Oligodendrocyte	0.7586206896551724	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	PVALB	0.0	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	GABAergic	0.75	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	SNCG	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	VIP	0.5	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	L2/3-6 IT	0.34615384615384615	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	L5 6 NP	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	OPC	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	LAMP5	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Endothelial	0.0	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	SST	0.0	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	L6b	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Chandelier	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Pericyte	nan	0.1933646137500093		0.4263724399659753	rachel_subclass	0.0
+nagy	primary_auditory_cortex	Microglia	1.0	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	CGE	0.19047619047619047	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	Non-neuron	nan	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	Astrocyte	0.7058823529411765	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	GABAergic	0.75	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	unknown	nan	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	L2/3-6 IT	0.34615384615384615	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	deep layer non-IT	0.11428571428571428	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	MGE	0.0	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	Vascular	0.0	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	Oligodendrocyte lineage	0.8387096774193549	0.35868252557057106		0.4461419739591987	rachel_class	0.0
+nagy	primary_auditory_cortex	unknown	nan	0.45072161582973974		0.6692696731346078	rachel_family	0.0
+nagy	primary_auditory_cortex	Non-neuron	0.711864406779661	0.45072161582973974		0.6692696731346078	rachel_family	0.0
+nagy	primary_auditory_cortex	GABAergic	0.3783783783783784	0.45072161582973974		0.6692696731346078	rachel_family	0.0
+nagy	primary_auditory_cortex	Glutamatergic	0.7126436781609196	0.45072161582973974		0.6692696731346078	rachel_family	0.0

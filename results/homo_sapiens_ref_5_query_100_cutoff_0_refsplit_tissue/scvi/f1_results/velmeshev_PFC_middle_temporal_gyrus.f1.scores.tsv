@@ -1,0 +1,31 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_PFC	middle_temporal_gyrus	Glutamatergic	0.9285714285714286	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	PVALB	0.0	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	OPC	0.9285714285714286	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Non-neuron	nan	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	LAMP5	1.0	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Endothelial	0.8571428571428571	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	SST	1.0	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	L6b	nan	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	L6 CT	nan	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Microglia	1.0	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	L2/3-6 IT	0.8181818181818182	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	VIP	0.8333333333333334	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	L5/6 NP	0.0	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Oligodendrocyte	0.8888888888888888	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Chandelier	nan	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Astrocyte	0.9629629629629629	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	CGE	nan	0.5422148657442776		0.8806830206830207	rachel_subclass	0.0
+velmeshev_PFC	middle_temporal_gyrus	Glutamatergic	0.9285714285714286	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	Vascular	0.8571428571428571	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	deep layer non-IT	0.5	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	Non-neuron	nan	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	MGE	1.0	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	Microglia	1.0	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	L2/3-6 IT	0.8181818181818182	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	Oligodendrocyte lineage	0.9454545454545454	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	Astrocyte	0.9629629629629629	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	CGE	0.9333333333333333	0.7945646945646946		0.9103367003367003	rachel_class	0.0
+velmeshev_PFC	middle_temporal_gyrus	Non-neuron	0.9292929292929293	0.9280099237993974		0.9188097820308346	rachel_family	0.0
+velmeshev_PFC	middle_temporal_gyrus	Glutamatergic	0.8947368421052632	0.9280099237993974		0.9188097820308346	rachel_family	0.0
+velmeshev_PFC	middle_temporal_gyrus	GABAergic	0.96	0.9280099237993974		0.9188097820308346	rachel_family	0.0

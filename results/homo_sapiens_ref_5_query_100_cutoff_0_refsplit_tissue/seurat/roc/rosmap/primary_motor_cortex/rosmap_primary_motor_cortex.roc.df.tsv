@@ -1,0 +1,6 @@
+ref	query	key	label	auc	optimal threshold
+primary_motor_cortex	rosmap	rachel_subclass	Oligodendrocyte	0.9994517543859649	0.27996870514624
+primary_motor_cortex	rosmap	rachel_subclass	Microglia	1.0	0.543787703663168
+primary_motor_cortex	rosmap	rachel_subclass	OPC	1.0	0.747058412716487
+primary_motor_cortex	rosmap	rachel_subclass	Astrocyte	1.0	0.727223288943415
+primary_motor_cortex	rosmap	rachel_subclass	Pericyte	1.0	0.489657205167578

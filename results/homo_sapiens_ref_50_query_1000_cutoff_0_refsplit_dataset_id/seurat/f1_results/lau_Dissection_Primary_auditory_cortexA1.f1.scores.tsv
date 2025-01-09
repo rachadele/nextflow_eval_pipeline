@@ -1,0 +1,26 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	Dissection_Primary_auditory_cortexA1	unknown	nan	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	PVALB	nan	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	Astrocyte	0.9818181818181818	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	L5 ET	nan	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	Endothelial	0.64	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.9940357852882704	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.8335483870967741	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	Microglia	0.9583333333333334	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	GABAergic	0.8962962962962963	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	VLMC	nan	0.48218472580298694		0.9007852559207585	rachel_subclass	0.0
+lau	Dissection_Primary_auditory_cortexA1	unknown	nan	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	Astrocyte	0.9818181818181818	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	MGE	nan	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.8335483870967741	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	Microglia	0.9583333333333334	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	Vascular	0.8666666666666667	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	deep layer non-IT	nan	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	GABAergic	0.8962962962962963	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9940357852882704	0.5530698650499523		0.904638589254092	rachel_class	0.0
+lau	Dissection_Primary_auditory_cortexA1	unknown	nan	0.6545916374587578		0.8668840501690804	rachel_family	0.0
+lau	Dissection_Primary_auditory_cortexA1	GABAergic	0.8897058823529411	0.6545916374587578		0.8668840501690804	rachel_family	0.0
+lau	Dissection_Primary_auditory_cortexA1	Non-neuron	0.8961864406779662	0.6545916374587578		0.8668840501690804	rachel_family	0.0
+lau	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.8324742268041238	0.6545916374587578		0.8668840501690804	rachel_family	0.0

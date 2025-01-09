@@ -1,0 +1,32 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	primary_motor_cortex	L6b	0.5	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	OPC	1.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	Astrocyte	1.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	PVALB	0.6666666666666666	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	L5 ET	0.5333333333333333	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	Chandelier	0.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	L6 CT	nan	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	Endothelial	1.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	L5 6 NP	nan	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	L5/6 NP	0.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	VIP	0.8	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	SST	0.8571428571428571	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	CGE	nan	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	Oligodendrocyte	1.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	L2/3-6 IT	0.46153846153846156	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	GABAergic	1.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	Microglia	1.0	0.5775694893341952		0.855919413919414	rachel_subclass	0.0
+pineda	primary_motor_cortex	Astrocyte	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	unknown	nan	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	deep layer non-IT	0.6363636363636364	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	Vascular	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	CGE	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	L2/3-6 IT	0.46153846153846156	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	GABAergic	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	MGE	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	Oligodendrocyte lineage	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	Microglia	1.0	0.8097902097902099		0.9188111888111888	rachel_class	0.0
+pineda	primary_motor_cortex	GABAergic	1.0	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	primary_motor_cortex	unknown	nan	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	primary_motor_cortex	Glutamatergic	0.9714285714285714	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	primary_motor_cortex	Non-neuron	1.0	0.7428571428571429		0.9948571428571428	rachel_family	0.0

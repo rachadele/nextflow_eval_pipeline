@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	VIP	0.864026116242071	0.593630315054153
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	LAMP5	0.9684324186991871	0.312035987263662
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	Endothelial	0.965989847715736	0.153044760508017
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	SST	0.9989610389610389	0.309326233693408
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.9813721413721413	0.483329192086957
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	Astrocyte	0.9956818181818182	0.86294469313593
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	Microglia	1.0	1.0
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9994064982621648	0.964363854442911
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	OPC	0.9946939330828563	0.4239495581573
+dorsolateral_prefrontal_cortex	velmeshev_PFC	rachel_subclass	PVALB	0.9245160858208121	0.0007452767501688

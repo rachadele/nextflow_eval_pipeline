@@ -42,15 +42,20 @@ def parse_arguments():
   parser.add_argument('--subset_values', type=str, nargs='+', help='Values to subset the query by')
   parser.add_argument('--ref_keys', type=str, nargs='+', default=["rachel_subclass", "rachel_class", "rachel_family"])
   parser.add_argument('--remove_unknown', action='store_true', help='Remove cells with unknown labels')
-  
+  parser.add_argument('--seed', type=int, default=42)
+   
   if __name__ == "__main__":
     known_args, _ = parser.parse_known_args()
     return known_args
 
 def main():
+
   # Parse command line arguments
   args = parse_arguments()
-
+  SEED = args.seed
+  random.seed(SEED)         # For `random`
+  np.random.seed(SEED)      # For `numpy`
+  scvi.settings.seed = SEED # For `scvi`
   # Set organism and census_version from arguments
   model_path = args.model_path
   subsample_query = args.subsample_query

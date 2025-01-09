@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+primary_motor_cortex	pineda	rachel_subclass	Astrocyte	0.9969053934571176	0.14
+primary_motor_cortex	pineda	rachel_subclass	Endothelial	1.0	0.29
+primary_motor_cortex	pineda	rachel_subclass	L2/3-6 IT	0.5439560439560439	0.1
+primary_motor_cortex	pineda	rachel_subclass	L5 ET	0.8757894736842106	0.04
+primary_motor_cortex	pineda	rachel_subclass	L5/6 NP	0.5153061224489796	0.01
+primary_motor_cortex	pineda	rachel_subclass	L6b	0.9183673469387755	0.11
+primary_motor_cortex	pineda	rachel_subclass	Microglia	0.9905263157894737	0.14
+primary_motor_cortex	pineda	rachel_subclass	OPC	1.0	0.36
+primary_motor_cortex	pineda	rachel_subclass	Oligodendrocyte	0.9910416666666666	0.26
+primary_motor_cortex	pineda	rachel_subclass	PVALB	1.0	0.23
+primary_motor_cortex	pineda	rachel_subclass	SST	1.0	0.3
+primary_motor_cortex	pineda	rachel_subclass	VIP	0.9761904761904762	0.09

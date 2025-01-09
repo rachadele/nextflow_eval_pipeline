@@ -1,0 +1,5 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Dorsolateral_prefrontal_cortex_DFC	rosmap	rachel_subclass	Astrocyte	1.0	0.757206278716942
+Dissection_Dorsolateral_prefrontal_cortex_DFC	rosmap	rachel_subclass	Microglia	0.9864864864864865	0.359825416816038
+Dissection_Dorsolateral_prefrontal_cortex_DFC	rosmap	rachel_subclass	Oligodendrocyte	0.9972714870395635	1.0
+Dissection_Dorsolateral_prefrontal_cortex_DFC	rosmap	rachel_subclass	OPC	1.0	0.618137283051232

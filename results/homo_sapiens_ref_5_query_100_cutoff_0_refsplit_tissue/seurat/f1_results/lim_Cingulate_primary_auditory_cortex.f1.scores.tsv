@@ -1,0 +1,35 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Cingulate	primary_auditory_cortex	Endothelial	0.0	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	GABAergic	0.7555555555555555	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Glutamatergic	0.5925925925925926	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	PVALB	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	unknown	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	VIP	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	SST	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Oligodendrocyte	0.9523809523809523	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Astrocyte	0.875	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	L2/3-6 IT	0.3333333333333333	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Non-neuron	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	L6b	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	L5 ET	0.2222222222222222	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	OPC	0.8	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	L6 CT	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Microglia	0.6666666666666666	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	SNCG	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Pericyte	nan	0.2887639623750735		0.6160204950434836	rachel_subclass	0.0
+lim_Cingulate	primary_auditory_cortex	Vascular	0.0	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	GABAergic	0.7555555555555555	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	Glutamatergic	0.5925925925925926	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	CGE	nan	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	unknown	nan	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	Astrocyte	0.875	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	L2/3-6 IT	0.3333333333333333	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	Non-neuron	nan	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	Oligodendrocyte lineage	1.0	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	MGE	nan	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	Microglia	0.6666666666666666	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	deep layer non-IT	0.5454545454545454	0.39738355780022444		0.6563615077982894	rachel_class	0.0
+lim_Cingulate	primary_auditory_cortex	Non-neuron	0.8571428571428571	0.5708528784648188		0.7598480503884518	rachel_family	0.0
+lim_Cingulate	primary_auditory_cortex	GABAergic	0.68	0.5708528784648188		0.7598480503884518	rachel_family	0.0
+lim_Cingulate	primary_auditory_cortex	Glutamatergic	0.746268656716418	0.5708528784648188		0.7598480503884518	rachel_family	0.0
+lim_Cingulate	primary_auditory_cortex	unknown	nan	0.5708528784648188		0.7598480503884518	rachel_family	0.0

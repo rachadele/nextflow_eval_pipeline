@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	L5 ET	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	SNCG	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	OPC	0.9863013698630136	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	GABAergic	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	CGE	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Microglia	0.9230769230769231	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Glutamatergic	0.953168044077135	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.9826302729528535	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	L6b	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.9788732394366197	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	VIP	0.7647058823529411	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	VLMC	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	LAMP5	0.9818181818181818	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Endothelial	0.84375	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	SST	0.9107142857142857	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	L5/6 NP	0.3333333333333333	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Chandelier	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	PVALB	0.7666666666666667	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Astrocyte	0.9954337899543378	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.4962129518688711		0.9201424397530955	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	GABAergic	nan	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	CGE	0.994475138121547	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	0.986046511627907	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Microglia	0.9230769230769231	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Glutamatergic	0.953168044077135	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.9826302729528535	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Astrocyte	0.9954337899543378	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	MGE	0.9943502824858758	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.9411764705882353	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Vascular	0.9863013698630136	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.7960598911588935		0.9782590162990717	rachel_class	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	GABAergic	0.9544235924932976	0.9747883197432744		0.9792122174462897	rachel_family	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9776733254994124	0.9747883197432744		0.9792122174462897	rachel_family	0.0
+velmeshev_ACC	Dissection_Primary_visual_cortexV1	Non-neuron	0.9922680412371134	0.9747883197432744		0.9792122174462897	rachel_family	0.0

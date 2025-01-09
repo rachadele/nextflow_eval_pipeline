@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	middle_temporal_gyrus	OPC	0.9333333333333333	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	SST	0.0	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	Astrocyte	0.9523809523809523	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	Glutamatergic	0.23030303030303031	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	SNCG	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	LAMP5	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	Microglia	0.9508196721311475	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	Endothelial	0.0	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	CGE	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	Oligodendrocyte	0.933920704845815	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	GABAergic	0.6397849462365591	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	Non-neuron	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	unknown	0.0	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	L2/3-6 IT	0.7835820895522388	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	VLMC	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	L6 CT	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	L6b	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	L5 6 NP	nan	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	L5 ET	0.16842105263157894	0.2943445148112976		0.6450919551828593	rachel_subclass	0.0
+lim_Accumbens	middle_temporal_gyrus	deep layer non-IT	0.6470588235294118	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	Astrocyte	0.9523809523809523	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	Glutamatergic	0.23030303030303031	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	Oligodendrocyte lineage	0.9489603024574669	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	MGE	0.0	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	Microglia	0.9508196721311475	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	CGE	nan	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	GABAergic	0.6397849462365591	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	Non-neuron	nan	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	unknown	0.16071428571428573	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	Vascular	0.32653061224489793	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	L2/3-6 IT	0.7835820895522388	0.4700112262124992		0.7081647888080054	rachel_class	0.0
+lim_Accumbens	middle_temporal_gyrus	unknown	0.16071428571428573	0.6125558099813642		0.7616040425413134	rachel_family	0.0
+lim_Accumbens	middle_temporal_gyrus	Glutamatergic	0.7311072056239016	0.6125558099813642		0.7616040425413134	rachel_family	0.0
+lim_Accumbens	middle_temporal_gyrus	GABAergic	0.5783132530120482	0.6125558099813642		0.7616040425413134	rachel_family	0.0
+lim_Accumbens	middle_temporal_gyrus	Non-neuron	0.9800884955752213	0.6125558099813642		0.7616040425413134	rachel_family	0.0

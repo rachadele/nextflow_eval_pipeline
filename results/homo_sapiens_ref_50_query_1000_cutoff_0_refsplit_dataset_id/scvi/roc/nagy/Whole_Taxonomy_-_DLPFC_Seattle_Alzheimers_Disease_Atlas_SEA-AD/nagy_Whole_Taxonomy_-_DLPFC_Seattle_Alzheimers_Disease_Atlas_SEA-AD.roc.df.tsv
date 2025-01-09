@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	Astrocyte	0.9470733561383504	0.06
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	Endothelial	0.8376609442060086	0.21
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	L2/3-6 IT	0.9495884773662552	0.3
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	L5 ET	0.8884329816334505	0.04
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	L5/6 NP	0.6464367122552964	0.11
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	L6 CT	0.9352798708288482	0.12
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	Microglia	0.9329051230459681	0.29
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	OPC	0.996647509578544	0.23
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	Oligodendrocyte	0.9099997350010599	0.06
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	PVALB	0.9594510293200249	0.11
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	SST	0.8913813813813813	0.14
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	nagy	rachel_subclass	VIP	0.9879941091095363	0.19

@@ -1,0 +1,20 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	anterior_cingulate_cortex	Glutamatergic	0.7865168539325843	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	Astrocyte	1.0	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	VLMC	nan	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	Oligodendrocyte	1.0	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	Pericyte	0.0	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	OPC	1.0	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	GABAergic	0.8	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	Microglia	1.0	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	Non-neuron	nan	0.6207240948813983		0.8508539325842698	rachel_subclass	0.0
+rosmap	anterior_cingulate_cortex	Glutamatergic	0.7865168539325843	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	Astrocyte	1.0	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	Vascular	1.0	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	Oligodendrocyte lineage	1.0	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	GABAergic	0.8	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	Microglia	1.0	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	Non-neuron	nan	0.7980738362760835		0.8608539325842698	rachel_class	0.0
+rosmap	anterior_cingulate_cortex	GABAergic	0.8	0.8086743422573633		0.8062860313497018	rachel_family	0.0
+rosmap	anterior_cingulate_cortex	Glutamatergic	0.7865168539325843	0.8086743422573633		0.8062860313497018	rachel_family	0.0
+rosmap	anterior_cingulate_cortex	Non-neuron	0.8395061728395061	0.8086743422573633		0.8062860313497018	rachel_family	0.0

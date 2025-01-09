@@ -1,0 +1,28 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	dorsolateral_prefrontal_cortex	Microglia	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	SNCG	nan	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	Endothelial	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	L5/6 NP	0.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	OPC	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	PVALB	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	L5 ET	0.5714285714285714	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	L6b	0.5	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7619047619047619	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	Astrocyte	0.96	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	VIP	0.8235294117647058	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	Chandelier	1.0	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	SST	0.75	0.7577908496732026		0.8985605042016807	rachel_subclass	0.0
+pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	Microglia	1.0	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	MGE	0.875	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	deep layer non-IT	0.5714285714285714	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7619047619047619	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	Astrocyte	0.96	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	Vascular	1.0	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	CGE	0.8888888888888888	0.8952469135802469		0.91605	rachel_class	0.0
+pineda	dorsolateral_prefrontal_cortex	Glutamatergic	0.9142857142857143	0.9337161802143153		0.9605846900716358	rachel_family	0.0
+pineda	dorsolateral_prefrontal_cortex	GABAergic	0.8947368421052632	0.9337161802143153		0.9605846900716358	rachel_family	0.0
+pineda	dorsolateral_prefrontal_cortex	Non-neuron	0.9921259842519685	0.9337161802143153		0.9605846900716358	rachel_family	0.0

@@ -92,9 +92,9 @@ def main():
         f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
     #need to flatten all_f1_scores into data frame
     
-    plot_distribution(f1_df,var="f1_score",outdir="dists",split="label",facet="reference")
-    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference", facet=None)
-    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="query", facet=None)
+    #plot_distribution(f1_df,var="f1_score",outdir="dists",split="label",facet="reference")
+    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference", facet="key")
+    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="query", facet="key")
 
 if __name__ == "__main__":
     main()

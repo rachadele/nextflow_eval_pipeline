@@ -1,5 +1,5 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	Astrocyte	1.0	0.328679767186028
-Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	Microglia	1.0	0.652420287149269
-Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.506763009835119
-Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	OPC	1.0	0.276411412704556
+Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	Astrocyte	1.0	0.767336704453704
+Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	Microglia	1.0	0.506297798091649
+Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	Oligodendrocyte	1.0	0.385353772247144
+Dissection_Anterior_cingulate_cortex_ACC	rosmap	rachel_subclass	OPC	1.0	0.549097528381061

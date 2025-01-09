@@ -46,6 +46,11 @@ def parse_arguments():
     
     
 def main():
+    SEED = 42
+    random.seed(SEED)         # For `random`
+    np.random.seed(SEED)      # For `numpy`
+    # For `torch`'
+    scvi.settings.seed = SEED # For `scvi`
     # Parse command line arguments
     args = parse_arguments()
 
@@ -64,7 +69,7 @@ def main():
     ref_name = os.path.basename(ref_path).replace(".h5ad", "")
 
     # Run classification and ROC analysis
-    probs = rfc_pred(ref=ref, query=query, ref_keys=ref_keys)
+    probs = rfc_pred(ref=ref, query=query, ref_keys=ref_keys, seed=SEED)
     
     # eventually make this a data frame and save to disk, then make ROC another script
     

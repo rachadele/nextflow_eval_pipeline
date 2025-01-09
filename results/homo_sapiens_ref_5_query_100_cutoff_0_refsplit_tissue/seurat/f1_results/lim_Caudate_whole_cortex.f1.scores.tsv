@@ -1,0 +1,32 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Caudate	whole_cortex	VLMC	nan	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Astrocyte	0.8	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Microglia	1.0	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	OPC	1.0	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	L5 ET	0.2222222222222222	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	SST	nan	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Non-neuron	nan	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Pericyte	nan	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Glutamatergic	0.0	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	GABAergic	0.3902439024390244	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Oligodendrocyte	0.95	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	L5 6 NP	nan	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	L2/3-6 IT	0.2222222222222222	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Endothelial	0.0	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	unknown	0.0	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	L6 CT	nan	0.28654302168021684		0.5841571815718157	rachel_subclass	0.0
+lim_Caudate	whole_cortex	Astrocyte	0.8	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	Microglia	1.0	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	Non-neuron	nan	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	Oligodendrocyte lineage	0.9565217391304348	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	Glutamatergic	0.0	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	GABAergic	0.3902439024390244	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	MGE	nan	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	Vascular	0.2	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	L2/3-6 IT	0.2222222222222222	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	deep layer non-IT	0.6153846153846154	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	unknown	0.0	0.38039749810693607		0.6137469251615593	rachel_class	0.0
+lim_Caudate	whole_cortex	Glutamatergic	0.38095238095238093	0.4298136645962733		0.6810103519668738	rachel_family	0.0
+lim_Caudate	whole_cortex	GABAergic	0.34782608695652173	0.4298136645962733		0.6810103519668738	rachel_family	0.0
+lim_Caudate	whole_cortex	Non-neuron	0.9904761904761905	0.4298136645962733		0.6810103519668738	rachel_family	0.0
+lim_Caudate	whole_cortex	unknown	0.0	0.4298136645962733		0.6810103519668738	rachel_family	0.0
