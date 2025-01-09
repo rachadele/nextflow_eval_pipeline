@@ -1,12 +1,13 @@
 ref	query	key	label	auc	optimal threshold
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	L6b	1.0	0.304166920708773
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Astrocyte	1.0	0.426215542494993
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	OPC	1.0	0.61483192172304
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	VIP	1.0	0.156874448934149
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	L2/3-6 IT	0.98635477582846	0.120963345273686
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	L5 ET	0.8231578947368421	0.0817639047965871
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Oligodendrocyte	1.0	0.267649104174433
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Microglia	1.0	0.559718196988566
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Chandelier	1.0	0.468315421048102
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	SST	1.0	0.258140322942062
-Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	PVALB	1.0	0.50253762826597
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Microglia	1.0	0.707062580390926
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Oligodendrocyte	1.0	0.442666294054708
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Chandelier	1.0	0.470187517893706
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	OPC	1.0	0.785948062632292
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	L6b	1.0	0.328623912442287
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	SST	1.0	0.339456724876633
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	L5 ET	0.9221052631578948	0.0668064002397459
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	PVALB	0.993127147766323	0.378739101301475
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	L2/3-6 IT	0.9609279609279608	0.122854399371542
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Endothelial	1.0	0.653839306300228
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	VIP	1.0	0.0773855277219399
+Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	pineda	rachel_subclass	Astrocyte	1.0	0.244177450576185

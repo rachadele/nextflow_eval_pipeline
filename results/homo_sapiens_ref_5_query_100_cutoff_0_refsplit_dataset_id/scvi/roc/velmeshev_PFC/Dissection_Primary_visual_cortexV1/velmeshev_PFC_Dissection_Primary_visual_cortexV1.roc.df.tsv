@@ -1,12 +1,12 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Astrocyte	1.0	0.39
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Endothelial	0.9518229166666666	0.05
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.9167835437120149	0.2
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	L5/6 NP	0.8940092165898618	0.03
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	LAMP5	0.9999999999999999	0.56
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Microglia	1.0	0.32
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	OPC	0.991578947368421	0.06
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9977678571428572	0.2
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	PVALB	1.0	0.32
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	SST	0.9911347517730497	0.2
-Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	VIP	1.0	0.37
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Astrocyte	0.9893899204244031	0.13
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Endothelial	1.0	0.22
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.8474666666666667	0.1
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	L5/6 NP	0.3181818181818182	0.0
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	LAMP5	0.9999999999999999	0.24
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Microglia	1.0	0.28
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	OPC	1.0	0.23
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9990530303030303	0.26
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	PVALB	0.8131313131313131	0.06
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	SST	0.9869791666666666	0.17
+Dissection_Primary_visual_cortexV1	velmeshev_PFC	rachel_subclass	VIP	0.9671985815602837	0.12

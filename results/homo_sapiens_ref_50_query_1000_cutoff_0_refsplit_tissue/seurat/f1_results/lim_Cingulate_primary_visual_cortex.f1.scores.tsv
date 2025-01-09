@@ -1,0 +1,37 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Cingulate	primary_visual_cortex	unknown	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	L2/3-6 IT	0.47115384615384615	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	L6 CT	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Non-neuron	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	SST	0.0	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Chandelier	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	SNCG	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Endothelial	0.0	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	L5 6 NP	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	L5 ET	0.0625	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	VLMC	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Glutamatergic	0.5	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	GABAergic	0.6836027713625866	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	LAMP5	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Astrocyte	0.8436018957345972	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	PVALB	0.17391304347826086	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Microglia	0.75	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	OPC	0.5384615384615384	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	L6b	nan	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Oligodendrocyte	0.8699551569506726	0.24465941260707513		0.5736108701325857	rachel_subclass	0.0
+lim_Cingulate	primary_visual_cortex	Vascular	0.0	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	unknown	nan	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	L2/3-6 IT	0.47115384615384615	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	Non-neuron	nan	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	Oligodendrocyte lineage	0.9309090909090909	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	Glutamatergic	0.5	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	GABAergic	0.6836027713625866	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	Astrocyte	0.8436018957345972	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	CGE	nan	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	MGE	0.044444444444444446	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	Microglia	0.75	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	deep layer non-IT	0.5034013605442177	0.3939261174290652		0.6299019835883195	rachel_class	0.0
+lim_Cingulate	primary_visual_cortex	Glutamatergic	0.6243739565943238	0.5287418504734044		0.7062483480581422	rachel_family	0.0
+lim_Cingulate	primary_visual_cortex	unknown	nan	0.5287418504734044		0.7062483480581422	rachel_family	0.0
+lim_Cingulate	primary_visual_cortex	GABAergic	0.5725047080979284	0.5287418504734044		0.7062483480581422	rachel_family	0.0
+lim_Cingulate	primary_visual_cortex	Non-neuron	0.9180887372013652	0.5287418504734044		0.7062483480581422	rachel_family	0.0

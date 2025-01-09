@@ -1,0 +1,24 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Endothelial	nan	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.9722222222222222	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9727463312368972	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.9981308411214953	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.9763779527559056	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Pericyte	0.0	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	VLMC	nan	0.5381343043033201		0.9791897252494735	rachel_subclass	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.9722222222222222	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9727463312368972	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.9763779527559056	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.9983792544570502	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.8571428571428571	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.7221085772268665		0.9817610296142341	rachel_class	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.9809402795425667	0.7325161408838423		0.9763595163512427	rachel_family	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.7325161408838423		0.9763595163512427	rachel_family	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9727463312368972	0.7325161408838423		0.9763595163512427	rachel_family	0.0
+rosmap	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.9763779527559056	0.7325161408838423		0.9763595163512427	rachel_family	0.0

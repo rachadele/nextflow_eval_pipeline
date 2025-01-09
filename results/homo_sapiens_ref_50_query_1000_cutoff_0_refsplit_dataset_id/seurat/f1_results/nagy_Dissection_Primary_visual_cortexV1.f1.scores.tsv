@@ -1,0 +1,37 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	Dissection_Primary_visual_cortexV1	Astrocyte	0.918918918918919	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	VLMC	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.77665544332211	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	L5/6 NP	0.0	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	CGE	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	L5 6 NP	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	Glutamatergic	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	PVALB	0.7804878048780488	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	VIP	0.8260869565217391	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	L5 ET	0.0	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	SNCG	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	Chandelier	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	Endothelial	0.5714285714285714	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	L6b	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	SST	0.7333333333333333	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.7755102040816326	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	LAMP5	nan	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	GABAergic	0.9861111111111112	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	L6 CT	0.0	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	OPC	0.46153846153846156	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	Microglia	0.88	0.36714622881590125		0.6969588412915654	rachel_subclass	0.0
+nagy	Dissection_Primary_visual_cortexV1	Astrocyte	0.918918918918919	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	unknown	nan	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.77665544332211	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	Vascular	1.0	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	CGE	0.7894736842105263	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	MGE	0.822429906542056	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	Glutamatergic	nan	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	GABAergic	0.9861111111111112	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	0.9354838709677419	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	Microglia	0.88	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.2783882783882784	0.6715873830418857		0.7585185113986004	rachel_class	0.0
+nagy	Dissection_Primary_visual_cortexV1	Non-neuron	0.9337349397590361	0.7145000193919313		0.96041124649064	rachel_family	0.0
+nagy	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9708404802744426	0.7145000193919313		0.96041124649064	rachel_family	0.0
+nagy	Dissection_Primary_visual_cortexV1	GABAergic	0.9534246575342465	0.7145000193919313		0.96041124649064	rachel_family	0.0
+nagy	Dissection_Primary_visual_cortexV1	unknown	nan	0.7145000193919313		0.96041124649064	rachel_family	0.0

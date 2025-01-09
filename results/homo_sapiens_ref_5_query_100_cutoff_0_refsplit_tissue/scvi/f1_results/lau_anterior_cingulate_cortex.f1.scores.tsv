@@ -1,0 +1,21 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	anterior_cingulate_cortex	Astrocyte	0.9333333333333333	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	Non-neuron	nan	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	Endothelial	0.0	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	Microglia	1.0	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	Glutamatergic	0.8333333333333334	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	VLMC	nan	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	Oligodendrocyte	1.0	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	GABAergic	0.88	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	L2/3-6 IT	nan	0.5162962962962963		0.8886000000000002	rachel_subclass	0.0
+lau	anterior_cingulate_cortex	Astrocyte	0.9333333333333333	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	Non-neuron	nan	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	Microglia	1.0	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	Vascular	1.0	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	Glutamatergic	0.8333333333333334	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	Oligodendrocyte lineage	1.0	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	GABAergic	0.88	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	L2/3-6 IT	nan	0.7058333333333333		0.8986000000000002	rachel_class	0.0
+lau	anterior_cingulate_cortex	Glutamatergic	0.8235294117647058	0.8493246187363833		0.8384627450980392	rachel_family	0.0
+lau	anterior_cingulate_cortex	Non-neuron	0.8444444444444444	0.8493246187363833		0.8384627450980392	rachel_family	0.0
+lau	anterior_cingulate_cortex	GABAergic	0.88	0.8493246187363833		0.8384627450980392	rachel_family	0.0

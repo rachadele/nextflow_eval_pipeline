@@ -1,0 +1,27 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	dorsolateral_prefrontal_cortex	Microglia	0.9583333333333334	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	SST	nan	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Glutamatergic	0.8425096030729834	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Astrocyte	0.9863013698630136	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	PVALB	nan	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	GABAergic	0.8864468864468864	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.9980119284294234	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	unknown	nan	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	VLMC	nan	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	L2/3-6 IT	nan	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Endothelial	0.64	0.4426335934288033		0.9050267238365653	rachel_subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Microglia	0.9583333333333334	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	Glutamatergic	0.8425096030729834	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	Astrocyte	0.9863013698630136	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.9980119284294234	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	GABAergic	0.8864468864468864	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	MGE	nan	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	Vascular	0.8666666666666667	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	unknown	nan	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	L2/3-6 IT	nan	0.5538269787812308		0.9088800571698986	rachel_class	0.0
+lau	dorsolateral_prefrontal_cortex	Non-neuron	0.9036402569593148	0.655471019056538		0.8724260265320168	rachel_family	0.0
+lau	dorsolateral_prefrontal_cortex	Glutamatergic	0.8414322250639387	0.655471019056538		0.8724260265320168	rachel_family	0.0
+lau	dorsolateral_prefrontal_cortex	unknown	nan	0.655471019056538		0.8724260265320168	rachel_family	0.0
+lau	dorsolateral_prefrontal_cortex	GABAergic	0.8768115942028986	0.655471019056538		0.8724260265320168	rachel_family	0.0

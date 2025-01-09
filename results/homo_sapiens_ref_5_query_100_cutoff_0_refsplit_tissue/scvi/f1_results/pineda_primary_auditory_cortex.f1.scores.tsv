@@ -1,0 +1,30 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	primary_auditory_cortex	Oligodendrocyte	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	SST	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	Chandelier	0.6666666666666666	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	Astrocyte	0.9166666666666666	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	L6 CT	nan	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	PVALB	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	SNCG	nan	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	Microglia	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	OPC	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	L5/6 NP	0.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	Endothelial	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	GABAergic	1.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	VIP	0.8235294117647058	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	L6b	0.6666666666666666	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	CGE	nan	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	L2/3-6 IT	0.6363636363636364	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	L5 ET	0.0	0.629993708713432		0.8605570409982174	rachel_subclass	0.0
+pineda	primary_auditory_cortex	GABAergic	1.0	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	Astrocyte	0.9166666666666666	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	CGE	0.9473684210526315	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	Vascular	1.0	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	Microglia	1.0	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	deep layer non-IT	0.7142857142857143	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	L2/3-6 IT	0.6363636363636364	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	Oligodendrocyte lineage	1.0	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	MGE	0.9333333333333333	0.9053353079668869		0.9213215994531784	rachel_class	0.0
+pineda	primary_auditory_cortex	GABAergic	0.9473684210526315	0.9401280980228348		0.9603675856307434	rachel_family	0.0
+pineda	primary_auditory_cortex	Non-neuron	0.9841269841269841	0.9401280980228348		0.9603675856307434	rachel_family	0.0
+pineda	primary_auditory_cortex	Glutamatergic	0.8888888888888888	0.9401280980228348		0.9603675856307434	rachel_family	0.0

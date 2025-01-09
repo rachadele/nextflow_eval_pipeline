@@ -1,12 +1,12 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Astrocyte	1.0	0.23
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Endothelial	0.9830729166666667	0.13
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.9315100514258999	0.21
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	L5/6 NP	0.7964669738863287	0.03
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	LAMP5	1.0	0.52
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Microglia	1.0	0.39
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	OPC	0.991578947368421	0.09
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Oligodendrocyte	1.0	0.27
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	PVALB	1.0	0.32
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	SST	0.9645390070921986	0.1
-Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	VIP	1.0	0.38
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Astrocyte	0.9725906277630415	0.09
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Endothelial	0.9896907216494846	0.25
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.8429333333333333	0.12
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	L5/6 NP	0.40404040404040403	0.0
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	LAMP5	1.0	0.45
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Microglia	1.0	0.44
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	OPC	1.0	0.13
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9971590909090909	0.22
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	PVALB	0.8232323232323232	0.05
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	SST	0.9895833333333333	0.17
+Dissection_Angular_gyrus_AnG	velmeshev_PFC	rachel_subclass	VIP	0.9556737588652483	0.17

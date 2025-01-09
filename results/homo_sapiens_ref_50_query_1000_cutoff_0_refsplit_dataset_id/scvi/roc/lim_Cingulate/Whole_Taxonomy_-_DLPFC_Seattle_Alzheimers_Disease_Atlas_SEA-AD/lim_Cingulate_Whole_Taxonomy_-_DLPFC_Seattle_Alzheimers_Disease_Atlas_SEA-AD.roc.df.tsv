@@ -1,0 +1,10 @@
+ref	query	key	label	auc	optimal threshold
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	Astrocyte	0.9736989724368291	0.11
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	Endothelial	0.6457836710369487	0.02
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.9338462861072904	0.43
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	L5 ET	0.5407249329065218	0.02
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	Microglia	0.9630841121495327	0.19
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	OPC	0.8651260504201681	0.19
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9021739130434783	0.12
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	PVALB	0.9969723183391004	0.67
+Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lim_Cingulate	rachel_subclass	SST	0.9988492520138089	0.73

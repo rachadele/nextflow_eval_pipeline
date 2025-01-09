@@ -1,0 +1,20 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	middle_temporal_gyrus	Glutamatergic	0.8604651162790697	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	Endothelial	1.0	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	Oligodendrocyte	0.9795918367346939	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	Astrocyte	1.0	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	GABAergic	0.8461538461538461	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	L2/3-6 IT	nan	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	Microglia	1.0	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	Non-neuron	nan	0.7107763498959512		0.9080643276988792	rachel_subclass	0.0
+lau	middle_temporal_gyrus	Vascular	1.0	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	Glutamatergic	0.8604651162790697	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	Astrocyte	1.0	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	GABAergic	0.8461538461538461	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	L2/3-6 IT	nan	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	Microglia	1.0	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	Non-neuron	nan	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	Oligodendrocyte lineage	0.9795918367346939	0.7107763498959513		0.9080643276988792	rachel_class	0.0
+lau	middle_temporal_gyrus	Glutamatergic	0.8505747126436781	0.8567639257294429		0.8590097259062776	rachel_family	0.0
+lau	middle_temporal_gyrus	Non-neuron	0.8735632183908046	0.8567639257294429		0.8590097259062776	rachel_family	0.0
+lau	middle_temporal_gyrus	GABAergic	0.8461538461538461	0.8567639257294429		0.8590097259062776	rachel_family	0.0

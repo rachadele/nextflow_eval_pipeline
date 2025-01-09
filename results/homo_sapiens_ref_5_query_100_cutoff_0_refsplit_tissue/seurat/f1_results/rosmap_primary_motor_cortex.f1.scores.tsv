@@ -1,0 +1,23 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	primary_motor_cortex	Astrocyte	1.0	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	GABAergic	0.75	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Pericyte	1.0	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	unknown	nan	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Oligodendrocyte	0.9787234042553191	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Endothelial	nan	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Glutamatergic	0.9183673469387755	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Microglia	1.0	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Non-neuron	nan	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	OPC	1.0	0.6647090751194094		0.9191283108988276	rachel_subclass	0.0
+rosmap	primary_motor_cortex	Astrocyte	1.0	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	unknown	nan	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	Glutamatergic	0.9183673469387755	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	Microglia	1.0	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	Vascular	0.6666666666666666	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	Non-neuron	nan	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	GABAergic	0.75	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	Oligodendrocyte lineage	0.9795918367346939	0.664328231292517		0.9157993197278913	rachel_class	0.0
+rosmap	primary_motor_cortex	Non-neuron	0.9855072463768116	0.6634686483288967		0.919307157645667	rachel_family	0.0
+rosmap	primary_motor_cortex	unknown	nan	0.6634686483288967		0.919307157645667	rachel_family	0.0
+rosmap	primary_motor_cortex	GABAergic	0.75	0.6634686483288967		0.919307157645667	rachel_family	0.0
+rosmap	primary_motor_cortex	Glutamatergic	0.9183673469387755	0.6634686483288967		0.919307157645667	rachel_family	0.0

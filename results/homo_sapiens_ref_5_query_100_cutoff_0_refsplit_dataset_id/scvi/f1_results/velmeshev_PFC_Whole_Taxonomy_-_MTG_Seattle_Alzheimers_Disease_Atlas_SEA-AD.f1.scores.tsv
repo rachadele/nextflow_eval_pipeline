@@ -1,31 +1,29 @@
 query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5/6 NP	0.25	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	nan	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VLMC	nan	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	1.0	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.8518518518518519	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	nan	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	1.0	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	1.0	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.8571428571428571	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.9696969696969697	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	0.8888888888888888	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6b	nan	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VIP	1.0	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	1.0	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.9	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	0.75	0.6157400333870922		0.8558843193843194	rachel_subclass	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	nan	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.8518518518518519	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.8	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	0.8571428571428571	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	1.0	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.8571428571428571	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	1.0	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	0.6153846153846154	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.9	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	1.0	0.7881522181522181		0.8951180301180302	rachel_class	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.9032258064516129	0.9090340703153318		0.909151051105473	rachel_family	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.898876404494382	0.9090340703153318		0.909151051105473	rachel_family	0.0
-velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.925	0.9090340703153318		0.909151051105473	rachel_family	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.9285714285714286	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.9565217391304348	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.896551724137931	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VIP	0.0	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	0.0	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Chandelier	nan	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.7659574468085106	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5/6 NP	0.0	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	0.9655172413793104	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.8	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	1.0	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	1.0	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	0.75	0.5375413053351744		0.8089369950283217	rachel_subclass	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	0.9090909090909091	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.9285714285714286	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	1.0	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	0.16666666666666666	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.0	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.896551724137931	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	0.9615384615384616	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.7659574468085106	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.8	0.6428376636813907		0.8260633968623696	rachel_class	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.5217391304347826	0.7657286352938527		0.8462994493429276	rachel_family	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.8461538461538461	0.7657286352938527		0.8462994493429276	rachel_family	0.0
+velmeshev_PFC	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.9292929292929293	0.7657286352938527		0.8462994493429276	rachel_family	0.0

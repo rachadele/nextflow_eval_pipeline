@@ -1,0 +1,11 @@
+ref	query	key	label	auc	optimal threshold
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	VIP	1.0	0.208090388301561
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	Oligodendrocyte	1.0	0.639830393950701
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	OPC	1.0	0.563812633967439
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	Microglia	1.0	0.609524232564519
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	LAMP5	1.0	0.27914214629304
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	PVALB	1.0	0.516016140061782
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	SST	1.0	0.300778715834697
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	Astrocyte	1.0	0.359549446054494
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	Endothelial	0.9713541666666667	0.097924965184032
+middle_temporal_gyrus	velmeshev_ACC	rachel_subclass	L2/3-6 IT	0.9205333333333333	0.0395682961582613

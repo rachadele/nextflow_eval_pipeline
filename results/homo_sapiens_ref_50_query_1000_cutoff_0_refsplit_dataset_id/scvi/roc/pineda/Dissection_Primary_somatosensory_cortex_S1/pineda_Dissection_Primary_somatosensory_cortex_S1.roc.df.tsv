@@ -1,0 +1,14 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	Astrocyte	1.0	0.39
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	Chandelier	1.0	0.84
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	Endothelial	1.0	0.42
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	L2/3-6 IT	0.9809555600453271	0.4
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	L5 ET	0.8316907536319613	0.01
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	L5/6 NP	0.47706422018348627	0.0
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	L6b	0.9499282051282052	0.13
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	Microglia	0.9998068628082147	0.08
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	OPC	1.0	0.71
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	Oligodendrocyte	1.0	0.31
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	PVALB	1.0	0.28
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	SST	1.0	0.41
+Dissection_Primary_somatosensory_cortex_S1	pineda	rachel_subclass	VIP	0.921827426622823	0.06

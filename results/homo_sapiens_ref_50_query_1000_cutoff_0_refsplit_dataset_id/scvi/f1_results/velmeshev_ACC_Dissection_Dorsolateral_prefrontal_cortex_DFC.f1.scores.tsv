@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	0.9433962264150944	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.96	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	0.8854961832061069	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.9701897018970189	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	VLMC	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.7666666666666667	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.9862068965517241	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.9813084112149533	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.963855421686747	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	PVALB	0.84375	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Chandelier	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	0.7213114754098361	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	SNCG	nan	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	LAMP5	0.9310344827586207	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5/6 NP	0.3333333333333333	0.48983565710190957		0.9102150436917913	rachel_subclass	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.95	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.9701897018970189	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.96	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.9813084112149533	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.9596199524940617	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.9428571428571428	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.963855421686747	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	0.9885057471264368	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	nan	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	0.9183673469387755	0.7849730658377397		0.962685741686309	rachel_class	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.9745370370370371	0.9585162924252413		0.9643863486946356	rachel_family	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.9669749009247027	0.9585162924252413		0.9643863486946356	rachel_family	0.0
+velmeshev_ACC	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.9340369393139841	0.9585162924252413		0.9643863486946356	rachel_family	0.0

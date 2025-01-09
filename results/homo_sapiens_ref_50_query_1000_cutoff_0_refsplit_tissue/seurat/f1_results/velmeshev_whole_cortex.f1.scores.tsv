@@ -1,0 +1,41 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev	whole_cortex	Astrocyte	0.979381443298969	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	VIP	0.7692307692307693	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Non-neuron	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	L6 CT	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Oligodendrocyte	0.9903536977491961	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	VLMC	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	LAMP5	0.9655172413793104	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	L6b	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	OPC	0.9865470852017937	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Pericyte	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Glutamatergic	0.9448275862068966	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Endothelial	0.7346938775510204	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	L2/3-6 IT	0.9293361884368309	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	SST	0.9555555555555556	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	CGE	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	PVALB	0.8387096774193549	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	GABAergic	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	L5/6 NP	0.0	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Chandelier	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	L5 6 NP	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	SNCG	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	unknown	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Microglia	0.9508196721311475	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	L5 ET	nan	0.4185405330900352		0.9145196595684424	rachel_subclass	0.0
+velmeshev	whole_cortex	Astrocyte	0.979381443298969	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	Oligodendrocyte lineage	0.9887640449438202	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	CGE	0.9857142857142858	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	MGE	0.9873417721518988	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	Non-neuron	nan	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	GABAergic	nan	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	L2/3-6 IT	0.9293361884368309	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	Vascular	0.9836065573770492	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	Glutamatergic	0.9448275862068966	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	unknown	nan	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	Microglia	0.9508196721311475	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	deep layer non-IT	0.4931506849315068	0.6869118529327003		0.9528167637641972	rachel_class	0.0
+velmeshev	whole_cortex	unknown	nan	0.7300153455785097		0.9785009875754579	rachel_family	0.0
+velmeshev	whole_cortex	GABAergic	0.9548387096774194	0.7300153455785097		0.9785009875754579	rachel_family	0.0
+velmeshev	whole_cortex	Non-neuron	0.9941383352872216	0.7300153455785097		0.9785009875754579	rachel_family	0.0
+velmeshev	whole_cortex	Glutamatergic	0.9710843373493976	0.7300153455785097		0.9785009875754579	rachel_family	0.0

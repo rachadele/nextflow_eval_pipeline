@@ -25,6 +25,9 @@ parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label
 parser$add_argument("--ref_path", type="character", help="path to references")
 parser$add_argument("--query_path", type="character", help="path to query")
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=20)
+parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
+parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
+
 
 args <- parser$parse_args()
 # Extract arguments from the parsed list    
@@ -40,6 +43,8 @@ project.query <- NULL
 k.weight <- args$k.weight
 ref_path <- args$ref_path
 query_path <- args$query_path
+normalization_method <- args$normalization_method
+nfeatures <- args$nfeatures
 
 ref = readRDS(ref_path)
 query = readRDS(query_path)
@@ -55,8 +60,8 @@ query = readRDS(query_path)
 #rename features in reference to match ensembl ID
 ref <- rename_features(ref, column_name="feature_id")
 
-ref <- ref %>% NormalizeData() %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
-query <- query %>% NormalizeData() %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
+ref <- ref %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData(nfeatures = nfeatures) %>% RunPCA(npcs=dims)
+query <- query %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData(nfeatures = nfeatures) %>% RunPCA(npcs=dims)
 
 prediction_scores <- transfer_multiple_labels(
         query=query, reference=ref, reduction=integration_method, 

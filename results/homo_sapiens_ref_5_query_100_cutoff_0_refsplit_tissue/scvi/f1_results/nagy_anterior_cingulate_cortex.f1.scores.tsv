@@ -1,0 +1,29 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	anterior_cingulate_cortex	OPC	nan	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	VIP	0.8	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	Endothelial	0.0	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	LAMP5	nan	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	SST	0.4	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	L6b	nan	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	L5 ET	0.0	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	Astrocyte	0.625	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	SNCG	nan	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	GABAergic	1.0	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	Microglia	0.3333333333333333	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	PVALB	0.6666666666666666	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	L2/3-6 IT	0.6753246753246753	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	Oligodendrocyte	0.7407407407407407	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	L5/6 NP	0.0	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	CGE	nan	0.3275665885040885		0.5877904751560665	rachel_subclass	0.0
+nagy	anterior_cingulate_cortex	MGE	0.5	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	Astrocyte	0.625	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	GABAergic	1.0	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	Microglia	0.3333333333333333	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	Vascular	0.0	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	L2/3-6 IT	0.6753246753246753	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	Oligodendrocyte lineage	0.9032258064516129	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	deep layer non-IT	0.18181818181818182	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	CGE	0.46153846153846156	0.5200267176073627		0.6316759174459486	rachel_class	0.0
+nagy	anterior_cingulate_cortex	GABAergic	0.7096774193548387	0.8066649598907664		0.8447288153323533	rachel_family	0.0
+nagy	anterior_cingulate_cortex	Glutamatergic	0.8888888888888888	0.8066649598907664		0.8447288153323533	rachel_family	0.0
+nagy	anterior_cingulate_cortex	Non-neuron	0.8214285714285714	0.8066649598907664		0.8447288153323533	rachel_family	0.0

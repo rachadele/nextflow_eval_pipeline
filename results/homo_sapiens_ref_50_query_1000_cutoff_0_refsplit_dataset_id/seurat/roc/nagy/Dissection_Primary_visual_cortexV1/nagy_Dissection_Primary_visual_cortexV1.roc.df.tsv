@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	VIP	0.9333646375821737	0.0390800823881698
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	L5 ET	0.2562245296711885	0.0
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	L6 CT	0.6309876210979548	0.017634132744669
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	Astrocyte	0.9416001520334474	0.124712124544996
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	OPC	0.990301724137931	1.0
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	Endothelial	0.7991416309012875	0.0017824703525002
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	Microglia	0.8926249806531497	0.53347466065369
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	Oligodendrocyte	0.81999947000212	0.612197032343291
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	L2/3-6 IT	0.8662665498708859	0.0390641526212966
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	PVALB	0.8468496568933249	0.702469747459565
+Dissection_Primary_visual_cortexV1	nagy	rachel_subclass	SST	0.8076276276276275	0.278173281329256

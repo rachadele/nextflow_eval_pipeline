@@ -1,0 +1,5 @@
+ref	query	key	label	auc	optimal threshold
+primary_somatosensory_cortex	lau	rachel_subclass	Astrocyte	0.999737435517252	0.29
+primary_somatosensory_cortex	lau	rachel_subclass	Endothelial	0.8576087606965472	0.05
+primary_somatosensory_cortex	lau	rachel_subclass	Microglia	0.9935728234511471	0.13
+primary_somatosensory_cortex	lau	rachel_subclass	Oligodendrocyte	0.9995159548721003	0.26

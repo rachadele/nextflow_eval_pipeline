@@ -1,0 +1,8 @@
+ref	query	key	label	auc	optimal threshold
+whole_cortex	lim_Caudate	rachel_subclass	L5 ET	0.9645390070921985	0.153362487647201
+whole_cortex	lim_Caudate	rachel_subclass	Endothelial	0.7147766323024055	0.0298493525081745
+whole_cortex	lim_Caudate	rachel_subclass	Microglia	1.0	0.342040445554114
+whole_cortex	lim_Caudate	rachel_subclass	Astrocyte	0.9978738483345144	0.0800829549322156
+whole_cortex	lim_Caudate	rachel_subclass	L2/3-6 IT	0.8003072196620583	0.0687768056511685
+whole_cortex	lim_Caudate	rachel_subclass	Oligodendrocyte	0.9868750000000001	0.379515141556779
+whole_cortex	lim_Caudate	rachel_subclass	OPC	1.0	0.301995137940839

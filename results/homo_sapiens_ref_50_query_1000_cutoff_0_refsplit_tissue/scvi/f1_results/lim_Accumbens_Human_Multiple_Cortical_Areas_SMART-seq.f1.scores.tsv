@@ -1,0 +1,32 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.9473684210526315	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	OPC	0.9295774647887324	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9461538461538461	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Endothelial	0.0	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	L6 CT	nan	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.14893617021276595	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	L5 ET	0.0	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	unknown	0.0	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	SST	0.015625	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	VIP	nan	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.7974137931034483	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	L6b	nan	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.5420560747663551	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	0.9217391304347826	0.34992466003417083		0.631914206531292	rachel_subclass	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.9473684210526315	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9461538461538461	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	0.9378531073446328	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	0.0	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	MGE	0.015625	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	deep layer non-IT	0.5535714285714286	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.14893617021276595	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	unknown	0.0	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	CGE	nan	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.7974137931034483	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.5420560747663551	0.40741482010042573		0.674450587010186	rachel_class	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.6523809523809524	0.5617021180022523		0.7361937573427292	rachel_family	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	0.9733924611973392	0.5617021180022523		0.7361937573427292	rachel_family	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	unknown	0.0	0.5617021180022523		0.7361937573427292	rachel_family	0.0
+lim_Accumbens	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.6210350584307178	0.5617021180022523		0.7361937573427292	rachel_family	0.0

@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	VIP	0.8172043010752689	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	SST	0.6021505376344086	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9925925925925926	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L5/6 NP	0.0	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L6 CT	0.0	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L5 6 NP	nan	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.8108108108108109	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9397590361445783	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.7028493894165536	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Endothelial	0.8	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	PVALB	0.6666666666666666	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L5 ET	0.015037593984962405	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	LAMP5	nan	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	unknown	0.0	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	CGE	nan	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L6b	nan	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	0.78125	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	OPC	0.55	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	nan	0.38391604641629207		0.6103080914054425	rachel_subclass	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.8108108108108109	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	MGE	0.6666666666666666	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9397590361445783	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	0.7028493894165536	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	0.9411764705882353	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	unknown	0.021052631578947368	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	CGE	0.782608695652174	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9925925925925926	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	deep layer non-IT	0.3459715639810427	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	0.896551724137931	0.6454581437790484		0.6683593712702268	rachel_class	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	unknown	0.021052631578947368	0.6900763755512898		0.8430806722497285	rachel_family	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9214840379637619	0.6900763755512898		0.8430806722497285	rachel_family	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	0.9135135135135135	0.6900763755512898		0.8430806722497285	rachel_family	0.0
+nagy	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9042553191489362	0.6900763755512898		0.8430806722497285	rachel_family	0.0

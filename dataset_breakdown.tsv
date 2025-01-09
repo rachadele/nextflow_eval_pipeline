@@ -1,0 +1,15 @@
+	collection_name	dataset_title	tissue	count
+0	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	dorsolateral prefrontal cortex	741446
+1	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	middle temporal gyrus	665698
+2	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Dissection: Primary visual cortex(V1)	primary visual cortex	241077
+3	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Dissection: Primary somatosensory cortex (S1)	primary somatosensory cortex	153159
+4	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Dissection: Primary auditory cortex(A1)	primary auditory cortex	139054
+5	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Dissection: Anterior cingulate cortex (ACC)	anterior cingulate cortex	135462
+6	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Dissection: Angular gyrus (AnG)	angular gyrus	110752
+7	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Dissection: Dorsolateral prefrontal cortex (DFC)	dorsolateral prefrontal cortex	18400
+8	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Human Multiple Cortical Areas SMART-seq	middle temporal gyrus	6581
+9	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Human Multiple Cortical Areas SMART-seq	primary visual cortex	5505
+10	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Human Multiple Cortical Areas SMART-seq	anterior cingulate gyrus	3552
+11	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Human Multiple Cortical Areas SMART-seq	primary motor cortex	3385
+12	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Human Multiple Cortical Areas SMART-seq	primary auditory cortex	3383
+13	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	Human Multiple Cortical Areas SMART-seq	primary somatosensory cortex	3185

@@ -1,0 +1,34 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Accumbens	dorsolateral_prefrontal_cortex	Microglia	0.9666666666666667	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	L6b	nan	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Glutamatergic	0.23728813559322035	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Astrocyte	0.932806324110672	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	GABAergic	0.6421052631578947	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	L5 6 NP	nan	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	unknown	0.0	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.9318681318681319	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	OPC	0.9333333333333333	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Endothelial	0.0	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	SST	0.2222222222222222	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	VIP	nan	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	L5 ET	0.07058823529411765	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	L6 CT	nan	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	VLMC	nan	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.8064516129032258	0.3378429367734991		0.6397508665866015	rachel_subclass	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Microglia	0.9666666666666667	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Glutamatergic	0.23728813559322035	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Astrocyte	0.932806324110672	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	deep layer non-IT	0.5833333333333334	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	MGE	0.2222222222222222	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	CGE	nan	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	GABAergic	0.6421052631578947	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.9471698113207547	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	unknown	0.12571428571428572	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Vascular	0.20408163265306123	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.8064516129032258	0.4723199406396113		0.6975424584976766	rachel_class	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	unknown	0.12571428571428572	0.602962268709015		0.7584827503067698	rachel_family	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Non-neuron	0.9811738648947951	0.602962268709015		0.7584827503067698	rachel_family	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	Glutamatergic	0.7407407407407407	0.602962268709015		0.7584827503067698	rachel_family	0.0
+lim_Accumbens	dorsolateral_prefrontal_cortex	GABAergic	0.5642201834862385	0.602962268709015		0.7584827503067698	rachel_family	0.0

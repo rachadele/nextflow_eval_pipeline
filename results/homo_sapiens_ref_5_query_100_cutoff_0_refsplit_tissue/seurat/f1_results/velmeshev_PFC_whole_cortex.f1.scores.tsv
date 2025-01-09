@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_PFC	whole_cortex	Chandelier	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	L5 ET	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	SST	0.4	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	Non-neuron	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	L5/6 NP	0.0	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	SNCG	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	Microglia	0.8	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	Glutamatergic	0.0	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	L2/3-6 IT	0.6486486486486487	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	CGE	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	L6b	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	Endothelial	1.0	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	L6 CT	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	Oligodendrocyte	0.9565217391304348	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	OPC	0.9032258064516129	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	Astrocyte	0.9629629629629629	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	L5 6 NP	nan	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	VIP	0.8	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	LAMP5	1.0	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	PVALB	0.0	0.37356795785968294		0.6736138270107415	rachel_subclass	0.0
+velmeshev_PFC	whole_cortex	MGE	0.8888888888888888	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Vascular	1.0	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Non-neuron	nan	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Oligodendrocyte lineage	0.9259259259259259	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Microglia	0.8	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Glutamatergic	0.0	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	CGE	1.0	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	L2/3-6 IT	0.6486486486486487	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	unknown	nan	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	deep layer non-IT	0.16666666666666666	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Astrocyte	0.9629629629629629	0.5811902811902813		0.7154584584584583	rachel_class	0.0
+velmeshev_PFC	whole_cortex	Non-neuron	0.8392857142857143	0.6286393633540373		0.8039343944099379	rachel_family	0.0
+velmeshev_PFC	whole_cortex	unknown	nan	0.6286393633540373		0.8039343944099379	rachel_family	0.0
+velmeshev_PFC	whole_cortex	Glutamatergic	0.71875	0.6286393633540373		0.8039343944099379	rachel_family	0.0
+velmeshev_PFC	whole_cortex	GABAergic	0.9565217391304348	0.6286393633540373		0.8039343944099379	rachel_family	0.0

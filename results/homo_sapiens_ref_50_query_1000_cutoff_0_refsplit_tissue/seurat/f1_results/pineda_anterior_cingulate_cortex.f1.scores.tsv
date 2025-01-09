@@ -1,0 +1,38 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	anterior_cingulate_cortex	VLMC	nan	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	L6 CT	nan	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	L5 6 NP	nan	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	LAMP5	nan	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Oligodendrocyte	0.9989235737351991	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Pericyte	0.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	VIP	0.6923076923076923	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	OPC	1.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Chandelier	1.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	L6b	0.8888888888888888	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	L5 ET	0.21621621621621623	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Astrocyte	1.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	SST	0.967741935483871	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	CGE	nan	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Microglia	0.9791666666666666	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	L5/6 NP	0.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	L2/3-6 IT	0.7781350482315113	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Non-neuron	1.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Endothelial	1.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	GABAergic	1.0	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	PVALB	0.96875	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	SNCG	nan	0.5677331827968203		0.8902821035761378	rachel_subclass	0.0
+pineda	anterior_cingulate_cortex	Oligodendrocyte lineage	0.9990281827016521	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	unknown	nan	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	Astrocyte	1.0	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	CGE	1.0	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	Microglia	0.9791666666666666	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	L2/3-6 IT	0.7781350482315113	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	deep layer non-IT	0.46153846153846156	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	MGE	1.0	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	Non-neuron	1.0	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	Vascular	0.8421052631578947	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	GABAergic	1.0	0.8236339656632897		0.9143050603354547	rachel_class	0.0
+pineda	anterior_cingulate_cortex	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
+pineda	anterior_cingulate_cortex	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	rachel_family	0.0
+pineda	anterior_cingulate_cortex	GABAergic	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
+pineda	anterior_cingulate_cortex	unknown	nan	0.7455947136563876		0.9959295154185022	rachel_family	0.0

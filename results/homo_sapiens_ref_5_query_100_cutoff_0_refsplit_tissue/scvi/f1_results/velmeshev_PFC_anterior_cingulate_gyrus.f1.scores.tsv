@@ -1,0 +1,30 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_PFC	anterior_cingulate_gyrus	Endothelial	0.8	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	VIP	0.22641509433962265	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	L6b	nan	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	PVALB	1.0	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	LAMP5	1.0	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	OPC	0.23529411764705882	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Microglia	1.0	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	L2/3-6 IT	0.48484848484848486	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Glutamatergic	0.42105263157894735	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	L5 ET	nan	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Oligodendrocyte	0.5263157894736842	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Astrocyte	0.0	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	GABAergic	nan	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	L5/6 NP	0.0	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	SST	0.8571428571428571	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	L6 CT	nan	0.40944181093941595		0.41469264827895586	rachel_subclass	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	L2/3-6 IT	0.48484848484848486	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Glutamatergic	0.42105263157894735	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	MGE	0.8888888888888888	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Astrocyte	0.0	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	CGE	0.2545454545454545	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	GABAergic	nan	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.3888888888888889	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Vascular	0.8	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Microglia	1.0	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	deep layer non-IT	0.18181818181818182	0.4420042530568846		0.41745082402977135	rachel_class	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Non-neuron	0.45161290322580644	0.4688445127154805		0.5109755248335894	rachel_family	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	Glutamatergic	0.6349206349206349	0.4688445127154805		0.5109755248335894	rachel_family	0.0
+velmeshev_PFC	anterior_cingulate_gyrus	GABAergic	0.32	0.4688445127154805		0.5109755248335894	rachel_family	0.0

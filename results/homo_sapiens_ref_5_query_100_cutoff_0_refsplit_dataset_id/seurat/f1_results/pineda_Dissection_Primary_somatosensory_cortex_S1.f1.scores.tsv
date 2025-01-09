@@ -1,31 +1,33 @@
 query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	Dissection_Primary_somatosensory_cortex_S1	VIP	0.8	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	SST	1.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.6285714285714286	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Chandelier	1.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	PVALB	1.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L6 CT	nan	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L5/6 NP	0.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.0	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.9655172413793104	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	SNCG	nan	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Endothelial	nan	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	VLMC	nan	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L6b	0.4444444444444444	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L5 6 NP	nan	0.5199137126114813		0.8212446633825944	rachel_subclass	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Vascular	nan	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	CGE	1.0	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.36363636363636365	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.6285714285714286	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	MGE	1.0	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.968421052631579	0.6622920938710413		0.8503185235816815	rachel_class	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.7456140350877193		0.9949122807017544	rachel_family	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9824561403508771	0.7456140350877193		0.9949122807017544	rachel_family	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.7456140350877193		0.9949122807017544	rachel_family	0.0
-pineda	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	1.0	0.7456140350877193		0.9949122807017544	rachel_family	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L5/6 NP	0.0	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L6 CT	nan	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.5882352941176471	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L6b	0.25	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.5714285714285714	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	SST	1.0	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L5 6 NP	nan	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.6666666666666666	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Chandelier	0.6666666666666666	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	VIP	0.8	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	PVALB	0.8	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	SNCG	nan	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.9873417721518988	0.5739077206128583		0.8707826472361098	rachel_subclass	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.9887640449438202	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	CGE	1.0	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.5882352941176471	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	MGE	1.0	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.5555555555555556	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	1.0	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.6666666666666666	0.779922156128369		0.9145516633619741	rachel_class	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	unknown	nan	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9714285714285714	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	1.0	0.7428571428571429		0.9948571428571428	rachel_family	0.0

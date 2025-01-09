@@ -1,0 +1,22 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	whole_cortex	GABAergic	0.9166666666666666	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Glutamatergic	0.7901234567901234	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Non-neuron	nan	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Endothelial	0.0	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Astrocyte	1.0	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	VLMC	nan	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Microglia	1.0	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	unknown	nan	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Oligodendrocyte	0.9795918367346939	0.5207091066879426		0.872058453010834	rachel_subclass	0.0
+lau	whole_cortex	Glutamatergic	0.7901234567901234	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	Oligodendrocyte lineage	0.9795918367346939	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	GABAergic	0.9166666666666666	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	Astrocyte	1.0	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	Vascular	0.6666666666666666	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	Microglia	1.0	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	unknown	nan	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	Non-neuron	nan	0.6691310783572688		0.8787251196775007	rachel_class	0.0
+lau	whole_cortex	Glutamatergic	0.7901234567901234	0.638654052603328		0.8278126677402039	rachel_family	0.0
+lau	whole_cortex	GABAergic	0.9166666666666666	0.638654052603328		0.8278126677402039	rachel_family	0.0
+lau	whole_cortex	Non-neuron	0.8478260869565217	0.638654052603328		0.8278126677402039	rachel_family	0.0
+lau	whole_cortex	unknown	nan	0.638654052603328		0.8278126677402039	rachel_family	0.0

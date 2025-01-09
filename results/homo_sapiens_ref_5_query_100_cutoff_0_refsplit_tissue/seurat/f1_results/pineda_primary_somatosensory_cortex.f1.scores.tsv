@@ -1,0 +1,34 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	primary_somatosensory_cortex	L5 ET	0.2222222222222222	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	SNCG	nan	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	SST	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	Chandelier	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	Astrocyte	0.96	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	L2/3-6 IT	0.4444444444444444	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	L6b	0.5	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	L6 CT	nan	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	CGE	nan	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	Endothelial	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	VIP	0.6153846153846154	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	Pericyte	nan	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	GABAergic	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	L5 6 NP	nan	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	OPC	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	Microglia	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	L5/6 NP	0.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	PVALB	1.0	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	Oligodendrocyte	0.9743589743589743	0.564021592442645		0.8310393162393163	rachel_subclass	0.0
+pineda	primary_somatosensory_cortex	deep layer non-IT	0.35294117647058826	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	CGE	1.0	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	MGE	1.0	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	unknown	nan	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	Astrocyte	0.96	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	GABAergic	1.0	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	L2/3-6 IT	0.4444444444444444	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	Vascular	0.4	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	Microglia	1.0	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	Oligodendrocyte lineage	0.9772727272727273	0.713465834818776		0.8703374331550802	rachel_class	0.0
+pineda	primary_somatosensory_cortex	Non-neuron	1.0	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	primary_somatosensory_cortex	unknown	nan	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	primary_somatosensory_cortex	GABAergic	1.0	0.7428571428571429		0.9948571428571428	rachel_family	0.0
+pineda	primary_somatosensory_cortex	Glutamatergic	0.9714285714285714	0.7428571428571429		0.9948571428571428	rachel_family	0.0

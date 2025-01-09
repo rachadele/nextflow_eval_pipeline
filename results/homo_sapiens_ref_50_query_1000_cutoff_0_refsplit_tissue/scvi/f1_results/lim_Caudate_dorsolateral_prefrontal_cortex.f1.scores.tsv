@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Caudate	dorsolateral_prefrontal_cortex	Microglia	0.9682539682539683	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	unknown	0.0	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	L6b	nan	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	VIP	nan	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	L6 CT	nan	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Endothelial	0.038461538461538464	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	VLMC	nan	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	OPC	0.9491525423728814	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	GABAergic	0.3051948051948052	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Astrocyte	0.9429657794676806	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	SST	nan	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	L5 ET	0.0	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.6783625730994152	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Glutamatergic	0.20233463035019456	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.9395770392749244	0.314018929779713		0.629283489779109	rachel_subclass	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Microglia	0.9682539682539683	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Glutamatergic	0.20233463035019456	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	unknown	0.0	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	CGE	nan	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	GABAergic	0.3051948051948052	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Astrocyte	0.9429657794676806	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.9486823855755895	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.6783625730994152	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Vascular	0.07272727272727272	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	deep layer non-IT	0.5833333333333334	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	MGE	nan	0.3918212290001882		0.6537193952543803	rachel_class	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	GABAergic	0.3003194888178914	0.44391871949807515		0.708465158302083	rachel_family	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	unknown	0.0	0.44391871949807515		0.708465158302083	rachel_family	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Glutamatergic	0.4957983193277311	0.44391871949807515		0.708465158302083	rachel_family	0.0
+lim_Caudate	dorsolateral_prefrontal_cortex	Non-neuron	0.979557069846678	0.44391871949807515		0.708465158302083	rachel_family	0.0

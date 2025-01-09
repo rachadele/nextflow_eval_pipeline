@@ -1,12 +1,12 @@
 ref	query	key	label	auc	optimal threshold
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Astrocyte	0.9838888888888889	0.09
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Endothelial	0.9700520833333333	0.05
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.7744273024777933	0.14
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	L5/6 NP	0.510752688172043	0.03
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	LAMP5	1.0	0.28
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Microglia	0.9948979591836735	0.11
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	OPC	0.991578947368421	0.09
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Oligodendrocyte	0.9970238095238095	0.17
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	PVALB	1.0	0.17
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	SST	0.9982269503546098	0.27
-Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	VIP	1.0	0.29
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Astrocyte	1.0	0.2
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Endothelial	0.9965635738831615	0.1
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	L2/3-6 IT	0.7864000000000001	0.14
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	L5/6 NP	0.7272727272727273	0.01
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	LAMP5	1.0	0.19
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Microglia	1.0	0.19
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	OPC	0.9996078431372549	0.06
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	Oligodendrocyte	1.0	0.31
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	PVALB	1.0	0.26
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	SST	1.0	0.16
+Human_Multiple_Cortical_Areas_SMART-seq	velmeshev_PFC	rachel_subclass	VIP	0.9060283687943264	0.18

@@ -1,13 +1,14 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Astrocyte	1.0	0.39
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Chandelier	1.0	0.34
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L2/3-6 IT	0.8820662768031189	0.13
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L5 ET	0.6252631578947369	0.01
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L5/6 NP	0.3163265306122449	0.0
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L6b	0.7422680412371134	0.16
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Microglia	1.0	0.53
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	OPC	1.0	0.42
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Oligodendrocyte	1.0	0.4
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	PVALB	1.0	0.32
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	SST	1.0	0.48
-Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	VIP	0.9914089347079038	0.13
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Astrocyte	0.9717064544650751	0.26
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Chandelier	1.0	0.74
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Endothelial	1.0	0.44
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L2/3-6 IT	0.934065934065934	0.13
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L5 ET	0.6157894736842106	0.05
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L5/6 NP	0.6632653061224489	0.03
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	L6b	0.9795918367346939	0.1
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Microglia	1.0	0.27
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	OPC	1.0	0.65
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	Oligodendrocyte	1.0	0.31
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	PVALB	0.9965635738831615	0.17
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	SST	1.0	0.24
+Dissection_Primary_visual_cortexV1	pineda	rachel_subclass	VIP	0.9804639804639805	0.17

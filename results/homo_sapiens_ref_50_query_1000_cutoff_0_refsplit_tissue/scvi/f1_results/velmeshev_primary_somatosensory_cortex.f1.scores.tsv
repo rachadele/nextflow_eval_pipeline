@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev	primary_somatosensory_cortex	Endothelial	0.5581395348837209	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Glutamatergic	0.9731543624161074	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	L5/6 NP	0.4	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	VLMC	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	PVALB	0.8	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	SST	0.9473684210526315	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Non-neuron	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	SNCG	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	OPC	0.9955555555555555	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	L2/3-6 IT	0.976	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Chandelier	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	CGE	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	L5 ET	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	L6 CT	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	GABAergic	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	L6b	nan	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	LAMP5	0.8	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	VIP	0.7555555555555555	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Microglia	0.967741935483871	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Astrocyte	0.9948186528497409	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Oligodendrocyte	0.9902912621359223	0.4837440609491955		0.9328842238893261	rachel_subclass	0.0
+velmeshev	primary_somatosensory_cortex	Glutamatergic	0.9731543624161074	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	Oligodendrocyte lineage	0.9925093632958801	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	Non-neuron	nan	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	MGE	0.9871794871794872	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	GABAergic	nan	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	L2/3-6 IT	0.976	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	Microglia	0.967741935483871	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	Astrocyte	0.9948186528497409	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	deep layer non-IT	0.8163265306122449	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	Vascular	0.9836065573770492	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	CGE	0.9928057553956835	0.7894675131463695		0.9800188370949816	rachel_class	0.0
+velmeshev	primary_somatosensory_cortex	Non-neuron	0.9953051643192489	0.9863541124595825		0.9890256720024162	rachel_family	0.0
+velmeshev	primary_somatosensory_cortex	GABAergic	0.9767441860465116	0.9863541124595825		0.9890256720024162	rachel_family	0.0
+velmeshev	primary_somatosensory_cortex	Glutamatergic	0.987012987012987	0.9863541124595825		0.9890256720024162	rachel_family	0.0

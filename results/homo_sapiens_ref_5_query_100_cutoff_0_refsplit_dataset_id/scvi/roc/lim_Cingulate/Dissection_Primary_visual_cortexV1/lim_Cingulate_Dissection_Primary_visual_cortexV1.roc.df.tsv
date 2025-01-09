@@ -1,8 +1,8 @@
 ref	query	key	label	auc	optimal threshold
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Astrocyte	0.9866071428571429	0.18
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Endothelial	0.4427083333333333	0.14
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.9530730897009967	0.21
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	L5 ET	0.6813858695652174	0.02
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	OPC	1.0	0.73
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9856996935648622	0.21
-Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	PVALB	0.98989898989899	0.51
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Astrocyte	0.9571428571428572	0.15
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Endothelial	0.876984126984127	0.04
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.9432485322896282	0.19
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	L5 ET	0.4912974683544304	0.01
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Microglia	0.6617647058823529	0.52
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	OPC	1.0	0.62
+Dissection_Primary_visual_cortexV1	lim_Cingulate	rachel_subclass	Oligodendrocyte	1.0	0.16
