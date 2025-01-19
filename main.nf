@@ -44,7 +44,7 @@ process runSetup {
     val census_version
 
     output:
-    path "scvi-human-${census_version}/"
+    path "scvi-${params.organism}-${census_version}/"
 
     script:
     """

@@ -34,7 +34,6 @@ from types import SimpleNamespace
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
-  #  parser.add_argument('--organism', type=str, default='homo_sapiens', help='Organism name (e.g., homo_sapiens)')
   #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--tree_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/master_hierarchy.json")
     parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/60/ed91620a1659a23ba5b68f8c21028c/lim_Cingulate.obs.relabel.tsv")
@@ -43,6 +42,7 @@ def parse_arguments():
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
     parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/4a/164f6559104b8e872e88bc617411a2/probs/lim_Cingulate_processed_Dissection:_Anterior_cingulate_cortex_ACC.prob.df.tsv")
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
+
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -67,6 +67,7 @@ def main():
     ref_name = args.ref_name
     ref_keys = args.ref_keys
     cutoff = args.cutoff
+
     
     prob_df = pd.read_csv(args.probs, sep="\t")
     mapping_df = pd.read_csv(args.mapping_file, sep="\t")

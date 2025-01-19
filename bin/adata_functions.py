@@ -25,7 +25,7 @@ import subprocess
 def setup(organism="homo_sapiens", version="2024-07-01"):
     organism=organism.replace(" ", "_") 
     #census = cellxgene_census.open_soma(census_version=version)
-    outdir = f"scvi-human-{version}"  # Concatenate strings using f-string
+    outdir = f"scvi-{organism}-{version}"  # Concatenate strings using f-string
     
     # Create the output directory if it doesn't exist
     if not os.path.exists(outdir):
@@ -180,16 +180,16 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     
     brain_obs = brain_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
     brain_obs.drop(columns=['soma_joinid_y'], inplace=True)
-    #brain_obs_filtered = brain_obs
+    brain_obs_filtered = brain_obs[brain_obs['collection_name'].isin(ref_collections)] 
     # Filter based on organism
     if organism == "homo_sapiens":
-        brain_obs_filtered = brain_obs[
-            brain_obs['collection_name'].isin(ref_collections)]
-        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])]
+        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
     elif organism == "mus_musculus":
-        brain_obs_filtered = brain_obs[
-            brain_obs['collection_name'].isin(ref_collections) 
-        ]
+        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin([# remove non specific cells
+                                                                                    "hippocampal neuron", 
+                                                                                    "cortical interneuron", 
+                                                                                    "meis2 expressing cortical GABAergic cell", 
+                                                                                    "glutamatergic neuron"])]
     else:
        raise ValueError("Unsupported organism")
 
