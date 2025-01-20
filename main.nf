@@ -73,7 +73,7 @@ python $projectDir/bin/process_query.py \\
                         --relabel_path ${relabel_q} \\
                         --query_path ${query_file} \\
                         --batch_key ${batch_key} \\
-                        --subsample_query ${params.subsample_query} \\
+                        ${params.subsample_query != null ? "--subsample_query ${params.subsample_query}" : ""} \
                         --ref_keys ${ref_keys} \\
                         --seed ${params.seed} \\
                         ${params.remove_unknown ? '--remove_unknown' : ''}
