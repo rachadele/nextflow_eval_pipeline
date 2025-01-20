@@ -7,3 +7,4 @@ scvi-human-2024-07-01/
 .nextflow/
 *model.pt
 *pyc
+results/
