@@ -33,7 +33,7 @@ import json
 def parse_arguments():
   parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
   parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/biof501_proj/scvi-human-2024-07-01", help='Path to the scvi model file')
-  parser.add_argument('--subsample_query', type=int, default=100)
+  parser.add_argument('--subsample_query', type=int, help='Number of cells to subsample from the query')
   parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/pineda_relabel.tsv.gz")
   parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/queries/pineda.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
@@ -75,8 +75,9 @@ def main():
   
   query = relabel(query,relabel_path=relabel_path, join_key=join_key,sep="\t")
 
-  query= query[np.random.choice(query.n_obs, size=subsample_query, replace=False), :] if query.n_obs > subsample_query else query
-  query.obs.index = query.obs.index.astype(str)
+  if subsample_query:
+    query= query[np.random.choice(query.n_obs, size=subsample_query, replace=False), :] if query.n_obs > subsample_query else query
+    query.obs.index = query.obs.index.astype(str)
  
   if args.remove_unknown:
     query = query[query.obs[ref_keys[0]] != "unknown"]
