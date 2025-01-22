@@ -1,6 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-primary_auditory_cortex	rosmap	subclass	Astrocyte	0.9999179341284604	0.23
-primary_auditory_cortex	rosmap	subclass	Microglia	0.9998035418596166	0.18
-primary_auditory_cortex	rosmap	subclass	OPC	1.0	0.1
-primary_auditory_cortex	rosmap	subclass	Oligodendrocyte	1.0	0.3
-primary_auditory_cortex	rosmap	subclass	Pericyte	0.6439317953861584	0.01

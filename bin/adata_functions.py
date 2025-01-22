@@ -527,27 +527,27 @@ def plot_distribution(df, var, outdir, split="label", facet=None, acronym_mappin
     means = df.groupby([split] + ([facet] if facet else []))[var].mean().reset_index()
     ax = plt.gca()
 
-    for i, split_value in enumerate(df[split].unique()):
-        for j, facet_value in enumerate(df[facet].unique() if facet else [None]):
-            if facet:
-                mean_value = means[(means[split] == split_value) & (means[facet] == facet_value)][var].values[0]
-            else:
-                mean_value = means[means[split] == split_value][var].values[0]
+    #for i, split_value in enumerate(df[split].unique()):
+     #   for j, facet_value in enumerate(df[facet].unique() if facet else [None]):
+      #      if facet:
+       #         mean_value = means[(means[split] == split_value) & (means[facet] == facet_value)][var].values[0]
+        #    else:
+         #       mean_value = means[means[split] == split_value][var].values[0]
 
             # Adjust the x position for each facet group
-            x_pos = i + (j - (len(df[facet].unique()) - 1) / 2) * 0.3 if facet else i
-            y_pos = mean_value
+          #  x_pos = i + (j - (len(df[facet].unique()) - 1) / 2) * 0.3 if facet else i
+           # y_pos = mean_value
 
             # Add mean text at the appropriate location
-            ax.text(
-                x_pos, 
-                y_pos, 
-                f"{mean_value:.2f}", 
-                horizontalalignment='center', 
-                fontsize=8, 
-                color='red',
-                bbox=dict(facecolor='yellow', alpha=0.5, boxstyle='round,pad=0.1')
-            )
+            #ax.text(
+             #   x_pos, 
+              #  y_pos, 
+               # f"{mean_value:.2f}", 
+                #horizontalalignment='center', 
+                #fontsize=8, 
+                #color='red',
+                #bbox=dict(facecolor='yellow', alpha=0.5, boxstyle='round,pad=0.1')
+            #)
 
     # Set the labels and title
     plt.xlabel('Key', fontsize=25)
@@ -928,7 +928,7 @@ def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5]
                 # Only add y-axis labels to the leftmost subplot
                 if i == 0:
                     axes[i].set_ylabel('Reference', fontsize=25)
-                    axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=20, rotation=90)  # Set font size for y-axis labels
+                    axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=20)  # Set font size for y-axis labels
                     if acronym_mapping:
                         legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
                         axes[i].text(

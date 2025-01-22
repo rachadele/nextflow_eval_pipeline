@@ -1,6 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-anterior_cingulate_gyrus	rosmap	subclass	OPC	1.0	0.622845084599724
-anterior_cingulate_gyrus	rosmap	subclass	Oligodendrocyte	1.0	0.999999999999999
-anterior_cingulate_gyrus	rosmap	subclass	Microglia	1.0	0.223890702418206
-anterior_cingulate_gyrus	rosmap	subclass	Astrocyte	1.0	0.824885674547212
-anterior_cingulate_gyrus	rosmap	subclass	Pericyte	1.0	0.165219569670437
