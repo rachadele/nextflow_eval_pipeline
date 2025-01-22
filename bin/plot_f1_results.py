@@ -14,21 +14,16 @@ import warnings
 import cellxgene_census
 import cellxgene_census.experimental
 import scvi
-from sklearn.ensemble import RandomForestClassifier
-import adata_functions
-from adata_functions import *
+#import adata_functions
+#from adata_functions import *
 from pathlib import Path
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, auc
-from sklearn.preprocessing import label_binarize
+
 import matplotlib.pyplot as plt
 import seaborn as sns
-import json
+
 import argparse
 import os
 import json
-import ast
 
 # Function to parse command line arguments
 def parse_arguments():
@@ -40,6 +35,224 @@ def parse_arguments():
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
+    
+def setup_plot(var, split):
+    """Set up the basic plot structure."""
+    plt.figure(figsize=(17, 6))
+    plt.xlabel('Key', fontsize=25)
+    var = var.replace("_", " ")
+    plt.ylabel(f"{var}", fontsize=25)
+    plt.title(f'Distribution of {var} across {split}', fontsize=25)
+
+def add_violin_plot(df, var, split, facet):
+    """Add a violin plot to the figure."""
+    sns.violinplot(
+        data=df, 
+        y=var, 
+        x=split, 
+        palette="Set2", 
+        hue=facet, 
+        split=False, 
+        dodge=True
+    )
+
+def add_strip_plot(df, var, split, facet):
+    """Add a strip plot to the figure."""
+    sns.stripplot(
+        data=df,
+        y=var,
+        x=split,
+        hue=facet,
+        dodge=True,
+        palette="dark:.3",
+        size=2,
+        alpha=0.5,
+        jitter=True
+    )
+
+def add_acronym_legend(acronym_mapping, figure=None, x=1.05, y=0.5):
+    if acronym_mapping:
+        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+        figure = figure or plt.gcf()
+        figure.text(
+            x, y, legend_text,
+            fontsize=14,
+            verticalalignment='center',
+            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
+        )
+
+def save_plot(var, split, facet, outdir):
+    """Save the plot to the specified directory."""
+    os.makedirs(outdir, exist_ok=True)
+    var = var.replace(" ", "_")
+    save_path = os.path.join(outdir, f"{var}_{split}_{facet}_distribution.png")
+    plt.savefig(save_path, bbox_inches="tight")
+    plt.close()
+
+def plot_distribution(df, var, outdir, split="label", facet=None, acronym_mapping=None):
+    """
+    Create a violin and strip plot for the given variable across groups.
+    
+    Parameters:
+        df (pd.DataFrame): Data to plot.
+        var (str): Column name for the variable to plot.
+        outdir (str): Directory to save the plot.
+        split (str): Column name to split the x-axis.
+        facet (str): Column name for facet grouping (optional).
+        acronym_mapping (dict): Mapping for acronyms to add as a legend (optional).
+    """
+    setup_plot(var, split)
+    add_violin_plot(df, var, split, facet)
+    add_strip_plot(df, var, split, facet)
+    plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
+    plt.xticks(rotation=90, ha="right", fontsize=25)
+    plt.yticks(fontsize=25)
+    add_acronym_legend(acronym_mapping)
+    plt.tight_layout()
+    save_plot(var, split, facet, outdir)
+    
+def calculate_global_f1_range(all_f1_scores):
+    """Determine the global F1 score range."""
+    all_scores = pd.concat([df['f1_score'] for df in all_f1_scores.values()])
+    return all_scores.min(), all_scores.max()
+
+def prepare_queries_and_keys(all_f1_scores):
+    """Extract unique queries and keys from the F1 scores dictionary."""
+    queries = set()
+    keys = list(all_f1_scores.keys())
+    for key, df in all_f1_scores.items():
+        queries.update(df['query'].unique())
+    return sorted(queries), keys
+
+def plot_heatmap(data, ax, vmin, vmax, show_cbar, mask=None, title=None, 
+                 x_fontsize=20, y_fontsize=20, leftmost=False):
+    sns.heatmap(
+        data,
+        annot=True,
+        cmap='YlOrRd',
+        cbar=show_cbar,
+        cbar_kws={'label': 'F1 Score'} if show_cbar else None,
+        mask=mask,
+        ax=ax,
+        linewidths=0.5,
+        annot_kws={"size": 8},
+        vmin=vmin,
+        vmax=vmax,
+    )
+    if title:
+        ax.set_title(title, fontsize=25)
+    
+    ax.set_xlabel('', fontsize=x_fontsize)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=90, fontsize=x_fontsize)
+    
+    return ax
+
+
+
+def save_heatmap(fig, outpath, filename):
+    """Save the heatmap figure."""
+    fig.savefig(os.path.join(outpath, filename), bbox_inches='tight')
+    plt.close(fig)
+
+def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1, 0.8, 0.5], acronym_mapping=None, fontsize=20):
+    """Main function to plot label-level F1 heatmaps."""
+    sns.set(style="whitegrid")
+    os.makedirs(outpath, exist_ok=True)
+
+    vmin, vmax = calculate_global_f1_range(all_f1_scores)
+    queries, keys = prepare_queries_and_keys(all_f1_scores)
+
+    if widths is None:
+        widths = [1] * len(keys)
+
+    for query in queries:
+        fig, axes = plt.subplots(
+            nrows=1,
+            ncols=len(keys),
+            figsize=(sum(widths) * 10, 8),
+            gridspec_kw={'width_ratios': widths},
+            constrained_layout=True
+        )
+        fig.suptitle(f'Class-level F1 for Query: {query}\nThreshold = {threshold:.2f}', fontsize=fontsize+5, y=1.1)
+
+        for i, key in enumerate(keys):
+            if key not in all_f1_scores:
+                continue
+
+            query_df = all_f1_scores[key][all_f1_scores[key]['query'] == query]
+            pivot_df = query_df.pivot_table(index='reference_acronym', columns='label', values='f1_score')
+            mask = pivot_df.isnull() | (pivot_df == "nan")
+
+            plot_heatmap(pivot_df, axes[i], vmin, vmax, show_cbar=(i == len(keys) - 1), 
+                         mask=mask, title=key)
+            if i == 0:
+                axes[i].set_ylabel('Reference', fontsize=fontsize)
+                axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=fontsize, 
+                                        rotation=45)
+                if acronym_mapping:
+                    legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+                    axes[i].text(
+                        0.1, 0.5, legend_text,  # Position text to the left of the subplot
+                        fontsize=14,
+                        verticalalignment='center',
+                        horizontalalignment='right',
+                        transform=axes[i].transAxes,  # Use subplot's coordinate system
+                        bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
+                    )
+            else:
+                axes[i].set_ylabel("", fontsize=11)
+                axes[i].set_yticks([]) # Hide y-axis labels
+        save_heatmap(fig, outpath, f'f1_heatmaps_{query}_threshold_{threshold:.2f}.png')
+        
+        
+        
+
+def plot_f1_heatmap_for_level(data, vmin, vmax, level, threshold, outpath, acronym_mapping=None, fontsize=25):
+    """Plot a single level heatmap."""
+    pivot_f1 = data.pivot_table(index='reference_acronym', columns='query', values='weighted_f1')
+
+    plt.figure(figsize=(20, 15))
+    sns.heatmap(
+        pivot_f1,
+        annot=True,
+        cmap='YlOrRd',
+        cbar_kws={'label': 'Weighted F1 Score'},
+        fmt='.3f',
+        annot_kws={"size": 15},
+        vmin=vmin,
+        vmax=vmax
+    )
+    plt.title(f'Weighted F1 Scores for {level}\nThreshold = {threshold:.2f}', fontsize=fontsize)
+    plt.ylabel('Reference', fontsize=fontsize)
+    plt.xlabel('Query', fontsize=fontsize)
+    plt.xticks(rotation=90, ha='right', fontsize=fontsize)
+    plt.yticks(fontsize=fontsize, rotation=45)
+
+    if acronym_mapping:
+        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+        plt.gcf().text(
+            0.85, 0.5, legend_text,
+            fontsize=15,
+            verticalalignment='center',
+            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
+        )
+
+    plt.tight_layout()
+    plt.savefig(os.path.join(outpath, f'{level}_weighted_f1_heatmap_threshold_{threshold:.2f}.png'))
+    plt.close()
+
+def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys, acronym_mapping=None):
+    """Main function to plot F1 heatmaps by level."""
+    sns.set(style="whitegrid")
+    os.makedirs(outpath, exist_ok=True)
+
+    vmin, vmax = weighted_f1_data['weighted_f1'].min(), weighted_f1_data['weighted_f1'].max()
+
+    for level in ref_keys:
+        level_data = weighted_f1_data[weighted_f1_data['key'] == level]
+        plot_f1_heatmap_for_level(level_data, vmin, vmax, level, threshold, outpath, acronym_mapping)
+
+
     
 def make_acronym(ref_name):
     # Split on "_" and replace with spaces
@@ -72,6 +285,7 @@ def main():
     
     acronym_mapping_ref = f1_df[["reference", "reference_acronym"]].drop_duplicates().set_index("reference")["reference_acronym"].to_dict()
     acronym_mapping_query = f1_df[["query", "query_acronym"]].drop_duplicates().set_index("query")["query_acronym"].to_dict()
+    
     #plot_distribution(f1_df,var="f1_score",outdir="dists",split="label",facet="reference")
     plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference_acronym", facet="key", 
                       acronym_mapping = acronym_mapping_ref)
@@ -102,7 +316,8 @@ def main():
                 # If the key already exists, concatenate the new subset to the existing DataFrame
                 all_f1_scores[key] = pd.concat([all_f1_scores[key], subset], ignore_index=True)
     
-    plot_label_f1_heatmaps(all_f1_scores, threshold=cutoff, outpath="f1_plots", widths=[1,0.8,0.5], acronym_mapping=acronym_mapping_ref)
+    plot_label_f1_heatmaps(all_f1_scores, threshold=cutoff, outpath="f1_plots", widths=[1,0.8,0.5], 
+                           acronym_mapping=None)
     
     final_f1_data = pd.DataFrame()
     for key, df in all_f1_scores.items():
@@ -111,7 +326,8 @@ def main():
         final_f1_data = pd.concat([final_f1_data, macro], ignore_index=True)
     weighted_f1_data = final_f1_data[['reference', 'reference_acronym','key', 'query', 'weighted_f1']]
  
-    plot_f1_heatmaps_by_level(weighted_f1_data, threshold=cutoff, outpath="f1_plots", ref_keys=ref_keys, acronym_mapping=acronym_mapping_ref)
+    plot_f1_heatmaps_by_level(weighted_f1_data, threshold=cutoff, outpath="f1_plots", 
+                              ref_keys=ref_keys, acronym_mapping=None)
     
 
 
