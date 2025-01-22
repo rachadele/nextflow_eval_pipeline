@@ -1,0 +1,27 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	primary_auditory_cortex	unknown	nan	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	Astrocyte	0.9864253393665159	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	Non-neuron	nan	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	L2/3-6 IT	nan	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	PVALB	nan	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	GABAergic	0.9166666666666666	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	VLMC	nan	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	Endothelial	0.6153846153846154	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	L5 6 NP	nan	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	Microglia	0.9583333333333334	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	Glutamatergic	0.8425096030729834	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	Oligodendrocyte	0.996	0.44294329648534286		0.9079546930261123	subclass	0.0
+lau	primary_auditory_cortex	unknown	nan	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	Astrocyte	0.9864253393665159	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	MGE	nan	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	Non-neuron	nan	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	GABAergic	0.9166666666666666	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	Vascular	0.8387096774193549	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	Microglia	0.9583333333333334	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	Glutamatergic	0.8425096030729834	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	L2/3-6 IT	nan	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	Oligodendrocyte lineage	0.996	0.5538644619858853		0.9117512190807029	class	0.0
+lau	primary_auditory_cortex	GABAergic	0.9097744360902256	0.663470114486402		0.8762005954201944	family	0.0
+lau	primary_auditory_cortex	Non-neuron	0.9026737967914439	0.663470114486402		0.8762005954201944	family	0.0
+lau	primary_auditory_cortex	unknown	nan	0.663470114486402		0.8762005954201944	family	0.0
+lau	primary_auditory_cortex	Glutamatergic	0.8414322250639387	0.663470114486402		0.8762005954201944	family	0.0

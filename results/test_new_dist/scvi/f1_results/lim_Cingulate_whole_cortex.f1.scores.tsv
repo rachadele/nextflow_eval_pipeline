@@ -1,0 +1,31 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Cingulate	whole_cortex	CGE	nan	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	GABAergic	0.5980707395498392	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	SST	1.0	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	Endothelial	0.0	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	Astrocyte	0.8140703517587939	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	OPC	0.5306122448979592	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	VLMC	nan	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	Microglia	0.8	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	L2/3-6 IT	0.8044692737430168	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	L5 ET	0.0	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	PVALB	1.0	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	L6 CT	nan	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	L6b	nan	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	Glutamatergic	0.7061728395061728	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	Non-neuron	nan	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	Oligodendrocyte	0.8401826484018264	0.4433486311161005		0.6357065517031153	subclass	0.0
+lim_Cingulate	whole_cortex	CGE	nan	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	MGE	1.0	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	Vascular	0.0	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	Glutamatergic	0.7061728395061728	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	GABAergic	0.5980707395498392	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	Astrocyte	0.8140703517587939	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	deep layer non-IT	0.4628099173553719	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	Microglia	0.8	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	L2/3-6 IT	0.8044692737430168	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	Oligodendrocyte lineage	0.9029850746268657	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	Non-neuron	nan	0.5535071087763691		0.6942058338101538	class	0.0
+lim_Cingulate	whole_cortex	GABAergic	0.6111111111111112	0.7860837603071577		0.8020120576871369	family	0.0
+lim_Cingulate	whole_cortex	Glutamatergic	0.8257918552036199	0.7860837603071577		0.8020120576871369	family	0.0
+lim_Cingulate	whole_cortex	Non-neuron	0.9213483146067416	0.7860837603071577		0.8020120576871369	family	0.0

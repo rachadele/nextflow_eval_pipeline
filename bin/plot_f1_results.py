@@ -41,6 +41,13 @@ def parse_arguments():
         known_args, _ = parser.parse_known_args()
         return known_args
     
+def make_acronym(ref_name):
+    # Split on "_" and replace with spaces
+    words = ref_name.split("_")
+    # Create acronym from the first letter of each word
+    acronym = "".join(word[0].upper() for word in words if word)
+    return acronym
+    
 def main():
     # Parse command line arguments
     args = parse_arguments()
@@ -52,6 +59,24 @@ def main():
     cutoff=args.cutoff
 
     all_f1_scores = {}
+    
+    f1_df = pd.DataFrame()
+    for file in f1_results:
+        temp_df = pd.read_csv(os.path.join(file),sep="\t")
+        f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
+    #need to flatten all_f1_scores into data frame
+
+
+    f1_df["reference_acronym"] = f1_df["reference"].apply(make_acronym)
+    f1_df["query_acronym"] = f1_df["query"].apply(make_acronym)
+    
+    acronym_mapping_ref = f1_df[["reference", "reference_acronym"]].drop_duplicates().set_index("reference")["reference_acronym"].to_dict()
+    acronym_mapping_query = f1_df[["query", "query_acronym"]].drop_duplicates().set_index("query")["query_acronym"].to_dict()
+    #plot_distribution(f1_df,var="f1_score",outdir="dists",split="label",facet="reference")
+    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference_acronym", facet="key", 
+                      acronym_mapping = acronym_mapping_ref)
+    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="query_acronym", facet="key", 
+                      acronym_mapping = acronym_mapping_query)
 
     for file in f1_results:
         # Get the full path of the file
@@ -68,6 +93,8 @@ def main():
             # Filter rows where the 'key' matches
             subset = x[x["key"] == key]
             subset["query"] = subset["query"].str.replace("_processed_", "")
+            subset["query_acronym"] = subset["query"].apply(make_acronym)
+            subset["reference_acronym"] = subset["reference"].apply(make_acronym)
             # If this key doesn't exist in the dictionary, initialize an empty DataFrame
             if key not in all_f1_scores:
                 all_f1_scores[key] = subset
@@ -75,26 +102,18 @@ def main():
                 # If the key already exists, concatenate the new subset to the existing DataFrame
                 all_f1_scores[key] = pd.concat([all_f1_scores[key], subset], ignore_index=True)
     
-    plot_label_f1_heatmaps(all_f1_scores, threshold=cutoff, outpath="f1_plots", widths=[1,0.8,0.5])
+    plot_label_f1_heatmaps(all_f1_scores, threshold=cutoff, outpath="f1_plots", widths=[1,0.8,0.5], acronym_mapping=acronym_mapping_ref)
     
     final_f1_data = pd.DataFrame()
     for key, df in all_f1_scores.items():
         macro = df.drop(columns=['label', 'f1_score'])
         macro["key"] = key
         final_f1_data = pd.concat([final_f1_data, macro], ignore_index=True)
-    weighted_f1_data = final_f1_data[['reference', 'key', 'query', 'weighted_f1']]
+    weighted_f1_data = final_f1_data[['reference', 'reference_acronym','key', 'query', 'weighted_f1']]
  
-    plot_f1_heatmaps_by_level(weighted_f1_data, threshold=cutoff, outpath="f1_plots", ref_keys=ref_keys)
+    plot_f1_heatmaps_by_level(weighted_f1_data, threshold=cutoff, outpath="f1_plots", ref_keys=ref_keys, acronym_mapping=acronym_mapping_ref)
     
-    f1_df = pd.DataFrame()
-    for file in f1_results:
-        temp_df = pd.read_csv(os.path.join(file),sep="\t")
-        f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
-    #need to flatten all_f1_scores into data frame
-    
-    #plot_distribution(f1_df,var="f1_score",outdir="dists",split="label",facet="reference")
-    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference", facet="key")
-    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="query", facet="key")
+
 
 if __name__ == "__main__":
     main()

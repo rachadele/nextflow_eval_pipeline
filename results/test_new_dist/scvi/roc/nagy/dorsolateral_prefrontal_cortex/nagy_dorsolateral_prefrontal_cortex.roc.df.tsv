@@ -1,0 +1,13 @@
+ref	query	key	label	auc	optimal threshold
+dorsolateral_prefrontal_cortex	nagy	subclass	Astrocyte	0.909521094640821	0.15
+dorsolateral_prefrontal_cortex	nagy	subclass	Endothelial	0.8348712446351932	0.27
+dorsolateral_prefrontal_cortex	nagy	subclass	L2/3-6 IT	0.9411595631107826	0.34
+dorsolateral_prefrontal_cortex	nagy	subclass	L5 ET	0.7686526544967341	0.02
+dorsolateral_prefrontal_cortex	nagy	subclass	L5/6 NP	0.6441908018235453	0.02
+dorsolateral_prefrontal_cortex	nagy	subclass	L6 CT	0.8337594187298171	0.04
+dorsolateral_prefrontal_cortex	nagy	subclass	Microglia	0.9458288190682557	0.12
+dorsolateral_prefrontal_cortex	nagy	subclass	OPC	0.9977849616858236	0.17
+dorsolateral_prefrontal_cortex	nagy	subclass	Oligodendrocyte	0.9296361564553741	0.07
+dorsolateral_prefrontal_cortex	nagy	subclass	PVALB	0.9486639634019546	0.06
+dorsolateral_prefrontal_cortex	nagy	subclass	SST	0.9120720720720721	0.16
+dorsolateral_prefrontal_cortex	nagy	subclass	VIP	0.9956245197643644	0.14

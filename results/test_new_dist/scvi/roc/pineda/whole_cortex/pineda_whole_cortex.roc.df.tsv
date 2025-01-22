@@ -1,0 +1,15 @@
+ref	query	key	label	auc	optimal threshold
+whole_cortex	pineda	subclass	Astrocyte	1.0	0.41
+whole_cortex	pineda	subclass	Chandelier	1.0	0.83
+whole_cortex	pineda	subclass	Endothelial	1.0	0.81
+whole_cortex	pineda	subclass	L2/3-6 IT	0.9813991690018359	0.32
+whole_cortex	pineda	subclass	L5 ET	0.8937367584745761	0.01
+whole_cortex	pineda	subclass	L5/6 NP	0.5674392403025914	0.01
+whole_cortex	pineda	subclass	L6b	0.9771076923076922	0.09
+whole_cortex	pineda	subclass	Microglia	0.9816090474044508	0.66
+whole_cortex	pineda	subclass	OPC	1.0	0.79
+whole_cortex	pineda	subclass	Oligodendrocyte	1.0	0.44
+whole_cortex	pineda	subclass	PVALB	0.9998834848030893	0.51
+whole_cortex	pineda	subclass	Pericyte	0.9034034034034034	0.01
+whole_cortex	pineda	subclass	SST	0.9997578770661156	0.11
+whole_cortex	pineda	subclass	VIP	0.951178297405919	0.08

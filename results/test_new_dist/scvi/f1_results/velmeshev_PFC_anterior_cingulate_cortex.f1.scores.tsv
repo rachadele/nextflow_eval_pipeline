@@ -1,0 +1,36 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+velmeshev_PFC	anterior_cingulate_cortex	L2/3-6 IT	0.9865125240847784	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	PVALB	0.8604651162790697	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	CGE	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	SST	0.9298245614035088	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Astrocyte	0.99581589958159	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Endothelial	0.8461538461538461	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	SNCG	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	LAMP5	0.9333333333333333	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Non-neuron	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	GABAergic	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	L6b	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Microglia	0.987012987012987	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	L5/6 NP	0.3448275862068966	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	L5 ET	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Oligodendrocyte	0.9869281045751634	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	VLMC	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	L6 CT	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	OPC	0.985781990521327	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Glutamatergic	0.963963963963964	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	VIP	0.8275862068965517	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Chandelier	nan	0.5070574342863341		0.9495358694440295	subclass	0.0
+velmeshev_PFC	anterior_cingulate_cortex	MGE	0.9855072463768116	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	deep layer non-IT	0.9583333333333334	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	L2/3-6 IT	0.9865125240847784	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Microglia	0.987012987012987	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	CGE	0.9924812030075187	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Astrocyte	0.99581589958159	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Oligodendrocyte lineage	0.9941972920696325	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Non-neuron	nan	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Vascular	1.0	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Glutamatergic	0.963963963963964	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	GABAergic	nan	0.8058022226755106		0.9868685919521559	class	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Non-neuron	0.9930875576036866	0.9854009472467183		0.9869907008062638	family	0.0
+velmeshev_PFC	anterior_cingulate_cortex	Glutamatergic	0.9835234474017744	0.9854009472467183		0.9869907008062638	family	0.0
+velmeshev_PFC	anterior_cingulate_cortex	GABAergic	0.9795918367346939	0.9854009472467183		0.9869907008062638	family	0.0

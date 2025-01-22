@@ -490,64 +490,92 @@ def process_roc(rocs, ref_name, query_name):
     roc_df = pd.DataFrame(data)
     return roc_df 
 
-def plot_distribution(df, var, outdir, split="label", facet=None):
+import seaborn as sns
+import matplotlib.pyplot as plt
+import os
+
+def plot_distribution(df, var, outdir, split="label", facet=None, acronym_mapping=None):
     # Set up the figure size
     plt.figure(figsize=(17, 6))
     
     # Create the violin plot with faceting by the 'query' column
-    sns.violinplot(data=df, y=var, x=split, palette="Set2", hue=facet, split=False, dodge=True)
-    
+    sns.violinplot(
+        data=df, 
+        y=var, 
+        x=split, 
+        palette="Set2", 
+        hue=facet, 
+        split=False, 
+        dodge=True
+    )
+
+    # Add points to the plot
+    sns.stripplot(
+        data=df,
+        y=var,
+        x=split,
+        hue=facet,
+        dodge=True,
+        palette="dark:.3",
+        size=2,
+        alpha=0.5,
+        jitter=True
+    )
+
+    plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
+    # Compute and annotate means
     means = df.groupby([split] + ([facet] if facet else []))[var].mean().reset_index()
     ax = plt.gca()
 
-# Annotate the means on the plot
     for i, split_value in enumerate(df[split].unique()):
         for j, facet_value in enumerate(df[facet].unique() if facet else [None]):
-            # Select the mean value for this group
             if facet:
                 mean_value = means[(means[split] == split_value) & (means[facet] == facet_value)][var].values[0]
             else:
                 mean_value = means[means[split] == split_value][var].values[0]
 
-            # Adjust the x position for each facet group (left, center, right)
-            if facet:
-                # Left, center, and right positions for the facet groups
-                x_pos = i + (j - 1) * 0.3  # j-1 to shift positions: -0.2, 0, +0.2
-            else:
-                # Only one position (center) when there's no facet
-                x_pos = i 
-
-            # Adjust y_pos based on mean value to place the text inside or above the violin plot
-            y_pos = mean_value  # You can adjust this as needed for better placement
+            # Adjust the x position for each facet group
+            x_pos = i + (j - (len(df[facet].unique()) - 1) / 2) * 0.3 if facet else i
+            y_pos = mean_value
 
             # Add mean text at the appropriate location
             ax.text(
-            x_pos, 
-            y_pos, 
-            f"{mean_value:.2f}", 
-            horizontalalignment='center', 
-            fontsize=8, 
-            color='red', 
-           # fontweight='bold',
-            bbox=dict(facecolor='yellow', alpha=0.5, boxstyle='round,pad=0.2')  # Highlighted background
-        )
+                x_pos, 
+                y_pos, 
+                f"{mean_value:.2f}", 
+                horizontalalignment='center', 
+                fontsize=8, 
+                color='red',
+                bbox=dict(facecolor='yellow', alpha=0.5, boxstyle='round,pad=0.1')
+            )
 
     # Set the labels and title
-    plt.xlabel('Key', fontsize=14)
-    plt.ylabel(f"{var}", fontsize=14)
-    plt.title(f'Distribution of {var} across {split}', fontsize=20)
-    # Rotate x-axis labels for better readability
-    plt.xticks(rotation=45, ha="right")
-    # Move the legend outside the plot
-    plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
-    # Adjust layout to ensure everything fits
+    plt.xlabel('Key', fontsize=25)
+    plt.ylabel(f"{var}", fontsize=25)
+    plt.title(f'Distribution of {var} across {split}', fontsize=25)
+
+     # Set the font size for x-axis and y-axis tick labels
+    plt.xticks(rotation=90, ha="right", fontsize=25)
+    plt.yticks(fontsize=25)
+
+    # Add the acronym mapping legend as an annotation box
+    if acronym_mapping:
+        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+        plt.gcf().text(
+            0.9, 0.4, legend_text, 
+            fontsize=14, 
+            verticalalignment='center', 
+            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
+        )
+
+    # Adjust layout and move the legend outside the plot
     plt.tight_layout()
-    
-    # Save the plot as a PNG file
+
+    # Save the plot
     os.makedirs(outdir, exist_ok=True)
     var = var.replace(" ", "_")
     save_path = os.path.join(outdir, f"{var}_{split}_{facet}_distribution.png")
-    plt.savefig(save_path, bbox_inches="tight")  # Use bbox_inches="tight" to ensure the legend is included
+    plt.savefig(save_path, bbox_inches="tight")
     plt.close()
 
 
@@ -822,7 +850,7 @@ def combine_f1_scores(class_metrics, ref_keys):
 
 
 
-def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5]):
+def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5], acronym_mapping=None):
     """
     Plot horizontally stacked heatmaps for label-level F1 scores for each query across multiple keys with variable widths,
     shared y-axis labels, a shared color bar, and a title for the query.
@@ -855,13 +883,13 @@ def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5]
         fig, axes = plt.subplots(
             nrows=1,
             ncols=len(keys),
-            figsize=(sum(widths) * 10, 8),
+            figsize=(sum(widths) * 15, 8),
             gridspec_kw={'width_ratios': widths},
             constrained_layout=True
         )
 
         # Add a figure title for the query
-        fig.suptitle(f'Class-level F1 for Query: {query}\nThreshold = {threshold:.2f}', fontsize=20, y=1.1)
+        fig.suptitle(f'Class-level F1 for Query: {query}\nThreshold = {threshold:.2f}', fontsize=25, y=1.1)
 
         if len(keys) == 1:
             axes = [axes]  # Ensure axes is always iterable
@@ -874,7 +902,7 @@ def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5]
             query_df = df[df['query'] == query]
 
             # Pivot DataFrame to create the heatmap
-            pivot_df = query_df.pivot_table(index='reference', columns='label', values='f1_score')
+            pivot_df = query_df.pivot_table(index='reference_acronym', columns='label', values='f1_score')
             mask = pivot_df.isnull() | (pivot_df == "nan")
 
             sns.heatmap(
@@ -891,26 +919,35 @@ def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5]
                 vmax=vmax   # Use global vmax
             )
 
-            axes[i].set_title(f'{key}', fontsize=15)
-            axes[i].set_xticklabels(axes[i].get_xticklabels(), rotation=90, fontsize=14)
+            for i, key in enumerate(keys):
+                axes[i].set_title(f'{key}', fontsize=25)
+                
+                # Set x-axis tick labels and rotation
+                axes[i].set_xticklabels(axes[i].get_xticklabels(), rotation=90, fontsize=20)
 
-            # Only add y-axis labels to the leftmost subplot
-            if i == 0:
-                axes[i].set_ylabel('Reference', fontsize=10)
-                axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=14)
-            else:
-                axes[i].set_ylabel("", fontsize=11)
-                axes[i].set_yticks([])  # Remove y-axis labels for other subplots
-
-        # Save the figure
+                # Only add y-axis labels to the leftmost subplot
+                if i == 0:
+                    axes[i].set_ylabel('Reference', fontsize=25)
+                    axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=20, rotation=90)  # Set font size for y-axis labels
+                    if acronym_mapping:
+                        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+                        axes[i].text(
+                            0.1, 0.5, legend_text,  # Position text to the left of the subplot
+                            fontsize=14,
+                            verticalalignment='center',
+                            horizontalalignment='right',
+                            transform=axes[i].transAxes,  # Use subplot's coordinate system
+                            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
+                        )
+                else:
+                    axes[i].set_ylabel("", fontsize=11)
+                    axes[i].set_yticks([])  # Remove y-axis labels for other subplots
+                    # Save the figure
         plt.savefig(os.path.join(outpath, f'f1_heatmaps_{query}_threshold_{threshold:.2f}.png'), bbox_inches='tight')
         plt.close()
 
-import os
-import seaborn as sns
-import matplotlib.pyplot as plt
 
-def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys):
+def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys, acronym_mapping=None):
     """
     Plot one heatmap for each level of the hierarchy with references as rows and queries as columns.
 
@@ -931,7 +968,7 @@ def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys):
 
         # Pivot the data for heatmap
         pivot_f1 = level_data.pivot_table(
-            index='reference',
+            index='reference_acronym',
             columns='query',
             values='weighted_f1'
         )
@@ -954,10 +991,22 @@ def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys):
         )
 
         # Add title and axis labels
-        plt.title(f'Weighted F1 Scores for {level}\nThreshold = {threshold:.2f}', fontsize=16)
-        plt.ylabel('Reference', fontsize=15)
-        plt.xlabel('Query', fontsize=15)
-
+        plt.title(f'Weighted F1 Scores for {level}\nThreshold = {threshold:.2f}', fontsize=25)
+        plt.ylabel('Reference', fontsize=25)
+        plt.xlabel('Query', fontsize=25)
+        plt.xticks(rotation=90, ha='right', fontsize=25)
+        plt.yticks(fontsize=25, rotation=90)
+        
+        if acronym_mapping:
+            # Add an annotation box with the acronym legend
+            legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+            plt.gcf().text(
+                0.85, 0.5, legend_text, 
+                fontsize=14, 
+                verticalalignment='center', 
+                bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
+            )
+        
         plt.tight_layout()
         # Save the heatmap
         plt.savefig(os.path.join(outpath, f'{level}_weighted_f1_heatmap_threshold_{threshold:.2f}.png'))
