@@ -1,94 +1,94 @@
 {
     "GABAergic": {
-        "colname": "rachel_family",
+        "colname": "family",
         "CGE": {
-            "colname": "rachel_class",
+            "colname": "class",
             "LAMP5": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "VIP": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "SNCG": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "CGE": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
         },
         "MGE": {
-            "colname": "rachel_class",
+            "colname": "class",
             "PVALB": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "SST": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "Chandelier": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
         }
     },
     "Glutamatergic": {
-        "colname": "rachel_family",
+        "colname": "family",
         "L2/3-6 IT": {
-            "colname": "rachel_class",
+            "colname": "class",
              "L2/3-6 IT": {
-            "colname": "rachel_subclass" 
+            "colname": "subclass" 
              }
         },
         "deep layer non-IT": {
-            "colname": "rachel_class",
+            "colname": "class",
             "L5 ET": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "L5/6 NP": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "L6 CT": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "L6b": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
         }
     },
     "Non-neuron": {
-        "colname": "rachel_family",
+        "colname": "family",
 
         "Oligodendrocyte lineage": {
-            "colname": "rachel_class",
+            "colname": "class",
             "Oligodendrocyte": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "OPC": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
         },
 
         "Microglia": {
-            "colname": "rachel_class",
+            "colname": "class",
             "Microglia": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
         },
         "Astrocyte": {
-            "colname": "rachel_class",
+            "colname": "class",
             "Astrocyte": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
 
         },
         "Vascular": {
-            "colname": "rachel_class",
+            "colname": "class",
             "Pericyte": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "VLMC": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             },
             "Endothelial": {
-                "colname": "rachel_subclass"
+                "colname": "subclass"
             }
         }
     }

@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+whole_cortex	nagy	subclass	VIP	0.9700119525313755	0.052762156300096
+whole_cortex	nagy	subclass	L6 CT	0.7927206673842842	0.0641281020007504
+whole_cortex	nagy	subclass	L5 ET	0.8818944342097919	0.0068822725776035
+whole_cortex	nagy	subclass	Endothelial	0.8940987124463519	0.0077627748835695
+whole_cortex	nagy	subclass	Microglia	0.892508899551153	0.71779568705047
+whole_cortex	nagy	subclass	OPC	0.9908405172413792	1.0
+whole_cortex	nagy	subclass	Astrocyte	0.925	0.43569658734229
+whole_cortex	nagy	subclass	Oligodendrocyte	0.8252331990672038	0.409454186419744
+whole_cortex	nagy	subclass	L2/3-6 IT	0.9643635998649549	0.180252129161545
+whole_cortex	nagy	subclass	SST	0.7973273273273273	0.286978261650603
+whole_cortex	nagy	subclass	PVALB	0.8512164691203992	0.905918591470751

@@ -1,0 +1,24 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	primary_visual_cortex	Microglia	0.9722222222222222	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Astrocyte	1.0	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Glutamatergic	0.984488107549121	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Pericyte	0.0	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Endothelial	nan	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	OPC	1.0	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Non-neuron	nan	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	GABAergic	0.9919354838709677	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Oligodendrocyte	0.9981308411214953	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	unknown	nan	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	VLMC	nan	0.5406160595239823		0.9868723295007308	subclass	0.0
+rosmap	primary_visual_cortex	Vascular	0.8571428571428571	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	Non-neuron	nan	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	Astrocyte	1.0	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	Microglia	0.9722222222222222	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	Glutamatergic	0.984488107549121	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	GABAergic	0.9919354838709677	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	Oligodendrocyte lineage	0.9983792544570502	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	unknown	nan	0.7255209906552773		0.9894436338654916	class	0.0
+rosmap	primary_visual_cortex	unknown	nan	0.7418594280219029		0.987930623276733	family	0.0
+rosmap	primary_visual_cortex	Non-neuron	0.9910141206675225	0.7418594280219029		0.987930623276733	family	0.0
+rosmap	primary_visual_cortex	Glutamatergic	0.984488107549121	0.7418594280219029		0.987930623276733	family	0.0
+rosmap	primary_visual_cortex	GABAergic	0.9919354838709677	0.7418594280219029		0.987930623276733	family	0.0

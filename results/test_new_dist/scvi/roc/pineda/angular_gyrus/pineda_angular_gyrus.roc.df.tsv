@@ -1,0 +1,14 @@
+ref	query	key	label	auc	optimal threshold
+angular_gyrus	pineda	subclass	Astrocyte	1.0	0.42
+angular_gyrus	pineda	subclass	Chandelier	1.0	0.84
+angular_gyrus	pineda	subclass	Endothelial	1.0	0.69
+angular_gyrus	pineda	subclass	L2/3-6 IT	0.9660573265752511	0.21
+angular_gyrus	pineda	subclass	L5 ET	0.7634779812348669	0.01
+angular_gyrus	pineda	subclass	L5/6 NP	0.5791351467353398	0.01
+angular_gyrus	pineda	subclass	L6b	0.9552820512820512	0.05
+angular_gyrus	pineda	subclass	Microglia	0.9921350243567459	0.59
+angular_gyrus	pineda	subclass	OPC	1.0	0.79
+angular_gyrus	pineda	subclass	Oligodendrocyte	1.0	0.36
+angular_gyrus	pineda	subclass	PVALB	0.99998335497187	0.43
+angular_gyrus	pineda	subclass	SST	0.9998708677685951	0.17
+angular_gyrus	pineda	subclass	VIP	0.9671020582145902	0.09

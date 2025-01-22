@@ -1,0 +1,12 @@
+ref	query	key	label	auc	optimal threshold
+whole_cortex	velmeshev_PFC	subclass	Astrocyte	0.9998768939393939	0.42
+whole_cortex	velmeshev_PFC	subclass	Endothelial	0.9915736040609138	0.28
+whole_cortex	velmeshev_PFC	subclass	L2/3-6 IT	0.9657276507276508	0.28
+whole_cortex	velmeshev_PFC	subclass	L5/6 NP	0.6506574453551913	0.01
+whole_cortex	velmeshev_PFC	subclass	LAMP5	0.9991107723577236	0.07
+whole_cortex	velmeshev_PFC	subclass	Microglia	0.9998221906116643	0.14
+whole_cortex	velmeshev_PFC	subclass	OPC	0.9996964971585854	0.04
+whole_cortex	velmeshev_PFC	subclass	Oligodendrocyte	0.999984483614697	0.34
+whole_cortex	velmeshev_PFC	subclass	PVALB	0.9765689535844255	0.14
+whole_cortex	velmeshev_PFC	subclass	SST	0.9998749398749399	0.21
+whole_cortex	velmeshev_PFC	subclass	VIP	0.9804541416144962	0.09

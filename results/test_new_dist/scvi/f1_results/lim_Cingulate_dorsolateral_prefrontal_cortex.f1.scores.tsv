@@ -1,0 +1,32 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lim_Cingulate	dorsolateral_prefrontal_cortex	Glutamatergic	0.7007299270072993	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	GABAergic	0.5484949832775919	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Astrocyte	0.8102564102564103	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	L6b	nan	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	OPC	0.5416666666666666	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.8135593220338984	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Microglia	0.6666666666666666	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	VLMC	nan	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	SST	1.0	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	VIP	nan	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	L6 CT	nan	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	SNCG	nan	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	PVALB	1.0	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.8387096774193549	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	L5 ET	0.0	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Endothelial	0.0	0.40706374431340514		0.6213432099816547	subclass	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Glutamatergic	0.7007299270072993	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	GABAergic	0.5484949832775919	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Astrocyte	0.8102564102564103	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Vascular	0.0	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.8135593220338984	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Microglia	0.6666666666666666	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	deep layer non-IT	0.5203252032520326	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	CGE	nan	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.8981132075471698	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	MGE	1.0	0.5416496109128245		0.6841720717341971	class	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Glutamatergic	0.8220720720720721	0.7645997928739626		0.7841441236833174	family	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	GABAergic	0.5623003194888179	0.7645997928739626		0.7841441236833174	family	0.0
+lim_Cingulate	dorsolateral_prefrontal_cortex	Non-neuron	0.9094269870609981	0.7645997928739626		0.7841441236833174	family	0.0

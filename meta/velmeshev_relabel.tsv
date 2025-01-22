@@ -1,4 +1,4 @@
-cluster	rachel_subclass	rachel_class	rachel_family
+cluster	subclass	class	family
 AST-FB	Astrocyte	Astrocyte	Non-neuron
 AST-PP	Astrocyte	Astrocyte	Non-neuron
 Endothelial	Endothelial	Vascular	Non-neuron

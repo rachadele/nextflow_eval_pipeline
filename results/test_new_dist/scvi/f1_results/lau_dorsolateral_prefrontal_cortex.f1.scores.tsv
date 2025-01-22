@@ -1,0 +1,23 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+lau	dorsolateral_prefrontal_cortex	Microglia	0.9583333333333334	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	GABAergic	0.9306122448979591	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Glutamatergic	0.8788249694002448	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Endothelial	0.64	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	VLMC	nan	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.994059405940594	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	PVALB	nan	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	L2/3-6 IT	nan	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Astrocyte	0.9953917050691244	0.5397221658641256		0.9268674565009072	subclass	0.0
+lau	dorsolateral_prefrontal_cortex	Microglia	0.9583333333333334	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	Vascular	0.8666666666666667	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	MGE	nan	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	GABAergic	0.9306122448979591	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.994059405940594	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	Glutamatergic	0.8788249694002448	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	L2/3-6 IT	nan	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	Astrocyte	0.9953917050691244	0.6248764805897692		0.9307207898342406	class	0.0
+lau	dorsolateral_prefrontal_cortex	GABAergic	0.9230769230769231	0.9011320189050381		0.8940569765708951	family	0.0
+lau	dorsolateral_prefrontal_cortex	Non-neuron	0.9036402569593148	0.9011320189050381		0.8940569765708951	family	0.0
+lau	dorsolateral_prefrontal_cortex	Glutamatergic	0.8766788766788767	0.9011320189050381		0.8940569765708951	family	0.0

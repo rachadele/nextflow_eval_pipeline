@@ -1,0 +1,33 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+pineda	anterior_cingulate_gyrus	Oligodendrocyte	0.9978540772532188	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Microglia	0.9690721649484536	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	GABAergic	1.0	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	L2/3-6 IT	0.5771144278606966	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	OPC	1.0	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	CGE	nan	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Endothelial	0.4444444444444444	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Non-neuron	1.0	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	SST	0.7848101265822784	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Pericyte	0.0	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	LAMP5	nan	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	L5 ET	0.4715447154471545	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	L6 CT	nan	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Chandelier	0.0	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	L6b	0.7391304347826086	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	PVALB	0.9117647058823529	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	VIP	0.6739130434782609	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Astrocyte	0.9879518072289156	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	L5/6 NP	0.0	0.5556631551530729		0.856376221511936	subclass	0.0
+pineda	anterior_cingulate_gyrus	Microglia	0.9690721649484536	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	GABAergic	1.0	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	L2/3-6 IT	0.5771144278606966	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	CGE	0.7010309278350515	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	deep layer non-IT	0.7272727272727273	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	Non-neuron	1.0	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	MGE	0.8874172185430463	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	Vascular	0.4	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.998062015503876	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	Astrocyte	0.9879518072289156	0.8247921289192768		0.8913077420327702	class	0.0
+pineda	anterior_cingulate_gyrus	Glutamatergic	0.8836104513064132	0.9025356019259373		0.94948650513796	family	0.0
+pineda	anterior_cingulate_gyrus	Non-neuron	0.9931140015302219	0.9025356019259373		0.94948650513796	family	0.0
+pineda	anterior_cingulate_gyrus	GABAergic	0.8308823529411765	0.9025356019259373		0.94948650513796	family	0.0

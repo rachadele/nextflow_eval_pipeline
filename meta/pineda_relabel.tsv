@@ -1,4 +1,4 @@
-SubType	rachel_subclass	rachel_class	rachel_family
+SubType	subclass	class	family
 Astrocyte.PP	Astrocyte	Astrocyte	Non-neuron
 Astrocyte.IL_VP	Astrocyte	Astrocyte	Non-neuron
 Endo.Venous	Endothelial	Vascular	Non-neuron

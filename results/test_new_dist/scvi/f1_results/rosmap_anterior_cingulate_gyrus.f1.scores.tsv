@@ -1,0 +1,28 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	anterior_cingulate_gyrus	L6 CT	nan	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	Non-neuron	nan	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	Microglia	0.9428571428571428	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	GABAergic	0.6	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	L2/3-6 IT	nan	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	VIP	nan	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	Glutamatergic	0.7936117936117936	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	L5 ET	nan	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	Astrocyte	0.9736842105263158	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	Pericyte	0.0	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	PVALB	nan	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	Oligodendrocyte	0.994392523364486	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	OPC	0.975	0.40611889771997983		0.8406332968938109	subclass	0.0
+rosmap	anterior_cingulate_gyrus	MGE	nan	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Vascular	0.0	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Non-neuron	nan	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	CGE	nan	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Microglia	0.9428571428571428	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	GABAergic	0.6	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	L2/3-6 IT	nan	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Glutamatergic	0.7936117936117936	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	deep layer non-IT	nan	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Astrocyte	0.9736842105263158	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.991869918699187	0.39109300597222174		0.8406514281148427	class	0.0
+rosmap	anterior_cingulate_gyrus	Glutamatergic	0.7897310513447433	0.7894363166318227		0.840618124579214	family	0.0
+rosmap	anterior_cingulate_gyrus	GABAergic	0.5942028985507246	0.7894363166318227		0.840618124579214	family	0.0
+rosmap	anterior_cingulate_gyrus	Non-neuron	0.984375	0.7894363166318227		0.840618124579214	family	0.0

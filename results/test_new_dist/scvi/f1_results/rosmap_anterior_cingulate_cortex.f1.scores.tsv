@@ -1,0 +1,22 @@
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
+rosmap	anterior_cingulate_cortex	Microglia	1.0	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	GABAergic	0.992	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	L2/3-6 IT	nan	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	Glutamatergic	0.9959016393442623	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	Pericyte	0.0	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	Non-neuron	nan	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	OPC	1.0	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	Astrocyte	0.9866666666666667	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	VLMC	nan	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	Oligodendrocyte	1.0	0.5974568306010929		0.9934931366120219	subclass	0.0
+rosmap	anterior_cingulate_cortex	Vascular	1.0	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	Non-neuron	nan	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	Microglia	1.0	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	GABAergic	0.992	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	Astrocyte	0.9866666666666667	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	Glutamatergic	0.9959016393442623	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	Oligodendrocyte lineage	1.0	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	L2/3-6 IT	nan	0.7468210382513661		0.9964931366120218	class	0.0
+rosmap	anterior_cingulate_cortex	Non-neuron	0.9961190168175937	0.9943337698501499		0.9950022639306905	family	0.0
+rosmap	anterior_cingulate_cortex	GABAergic	0.992	0.9943337698501499		0.9950022639306905	family	0.0
+rosmap	anterior_cingulate_cortex	Glutamatergic	0.9948822927328557	0.9943337698501499		0.9950022639306905	family	0.0

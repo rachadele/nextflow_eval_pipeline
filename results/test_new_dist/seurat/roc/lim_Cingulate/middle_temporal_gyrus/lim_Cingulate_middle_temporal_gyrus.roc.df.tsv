@@ -1,0 +1,10 @@
+ref	query	key	label	auc	optimal threshold
+middle_temporal_gyrus	lim_Cingulate	subclass	Oligodendrocyte	0.9156020609824957	0.803082781702315
+middle_temporal_gyrus	lim_Cingulate	subclass	PVALB	0.9933679354094579	0.489684548987078
+middle_temporal_gyrus	lim_Cingulate	subclass	L5 ET	0.5619280887250622	0.014118663616555
+middle_temporal_gyrus	lim_Cingulate	subclass	Astrocyte	0.9432035493000841	0.0447428596073462
+middle_temporal_gyrus	lim_Cingulate	subclass	Microglia	0.8924844236760124	0.0651690316422911
+middle_temporal_gyrus	lim_Cingulate	subclass	SST	0.9677790563866513	0.195357870921129
+middle_temporal_gyrus	lim_Cingulate	subclass	Endothelial	0.46187797973778305	0.0
+middle_temporal_gyrus	lim_Cingulate	subclass	OPC	0.8404201680672269	0.0039210972179141
+middle_temporal_gyrus	lim_Cingulate	subclass	L2/3-6 IT	0.7998433440317898	0.0499635811886097

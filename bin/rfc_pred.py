@@ -73,8 +73,8 @@ def main():
     
     # eventually make this a data frame and save to disk, then make ROC another script
     
-    probabilities = probs['rachel_subclass']['probabilities']
-    class_labels = probs['rachel_subclass']['class_labels']
+    probabilities = probs[ref_keys[0]]['probabilities']
+    class_labels = probs[ref_keys[0]]['class_labels']
 
     # Create a DataFrame
     prob_df = pd.DataFrame(probabilities, columns=class_labels)

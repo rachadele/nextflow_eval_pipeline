@@ -1,0 +1,5 @@
+ref	query	key	label	auc	optimal threshold
+whole_cortex	lau	subclass	Endothelial	0.7347555502363713	0.883216719051694
+whole_cortex	lau	subclass	Microglia	0.9688083435266852	0.786405797783589
+whole_cortex	lau	subclass	Astrocyte	0.9971478289521103	0.342347543719287
+whole_cortex	lau	subclass	Oligodendrocyte	0.9965771094527098	1.0
