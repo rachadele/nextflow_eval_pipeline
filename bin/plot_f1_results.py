@@ -39,13 +39,18 @@ def parse_arguments():
 def setup_plot(var, split):
     """Set up the basic plot structure."""
     plt.figure(figsize=(17, 6))
-    plt.xlabel('Key', fontsize=25)
+    plt.xlabel('Reference', fontsize=25)
     var = var.replace("_", " ")
-    plt.ylabel(f"{var}", fontsize=25)
-    plt.title(f'Distribution of {var} across {split}', fontsize=25)
+    #plt.ylabel(f"{var}", fontsize=25)
+    plt.ylabel("Performance (weighted F1)", fontsize=25)
+    #plt.title(f'Distribution of {var} across {split}', fontsize=25)
+
 
 def add_violin_plot(df, var, split, facet):
     """Add a violin plot to the figure."""
+    # remove extra weighted f1 values
+    
+    df = df.drop_duplicates(subset=[split, facet, var])
     sns.violinplot(
         data=df, 
         y=var, 
@@ -58,6 +63,10 @@ def add_violin_plot(df, var, split, facet):
 
 def add_strip_plot(df, var, split, facet):
     """Add a strip plot to the figure."""
+    # remove extra weighted f1 values
+    # doesn't change overall values
+    df = df.drop_duplicates(subset=[split, facet, var])
+    
     sns.stripplot(
         data=df,
         y=var,
@@ -65,14 +74,14 @@ def add_strip_plot(df, var, split, facet):
         hue=facet,
         dodge=True,
         palette="dark:.3",
-        size=2,
-        alpha=0.5,
+        size=3,
+        alpha=0.8,
         jitter=True
     )
 
-def add_acronym_legend(acronym_mapping, figure=None, x=1.05, y=0.5):
+def add_acronym_legend(acronym_mapping, figure=None, x=1.05, y=0.5, title=None):
     if acronym_mapping:
-        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
+        legend_text = f"{title}\n" + "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])        
         figure = figure or plt.gcf()
         figure.text(
             x, y, legend_text,
@@ -89,7 +98,7 @@ def save_plot(var, split, facet, outdir):
     plt.savefig(save_path, bbox_inches="tight")
     plt.close()
 
-def plot_distribution(df, var, outdir, split="label", facet=None, acronym_mapping=None):
+def plot_distribution(df, var, outdir, split=None, facet="key", acronym_mapping=None):
     """
     Create a violin and strip plot for the given variable across groups.
     
@@ -107,7 +116,8 @@ def plot_distribution(df, var, outdir, split="label", facet=None, acronym_mappin
     plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
     plt.xticks(rotation=90, ha="right", fontsize=25)
     plt.yticks(fontsize=25)
-    add_acronym_legend(acronym_mapping)
+    
+    add_acronym_legend(acronym_mapping, title=split.split("_")[0].capitalize())
     plt.tight_layout()
     save_plot(var, split, facet, outdir)
     
@@ -207,7 +217,8 @@ def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1, 0.8, 0.
         
         
 
-def plot_f1_heatmap_for_level(data, vmin, vmax, level, threshold, outpath, acronym_mapping=None, fontsize=25):
+def plot_f1_heatmap_for_level(data, vmin, vmax, level, threshold, outpath, 
+                              acronym_mapping=None, fontsize=25):
     """Plot a single level heatmap."""
     pivot_f1 = data.pivot_table(index='reference_acronym', columns='query', values='weighted_f1')
 
@@ -275,7 +286,7 @@ def main():
     
     f1_df = pd.DataFrame()
     for file in f1_results:
-        temp_df = pd.read_csv(os.path.join(file),sep="\t")
+        temp_df = pd.read_csv(file,sep="\t")
         f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
     #need to flatten all_f1_scores into data frame
 

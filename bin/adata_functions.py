@@ -524,8 +524,8 @@ def plot_distribution(df, var, outdir, split="label", facet=None, acronym_mappin
 
     plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
     # Compute and annotate means
-    means = df.groupby([split] + ([facet] if facet else []))[var].mean().reset_index()
-    ax = plt.gca()
+    #means = df.groupby([split] + ([facet] if facet else []))[var].mean().reset_index()
+    #ax = plt.gca()
 
     #for i, split_value in enumerate(df[split].unique()):
      #   for j, facet_value in enumerate(df[facet].unique() if facet else [None]):
