@@ -45,6 +45,9 @@ def parse_arguments():
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--query_tissue', type=str, default="anterior cingulate cortex")
     parser.add_argument('--ref_tissue_mapping', type=str)
+    parser.add_argument('--disease', type=str)
+    parser.add_argument('--sex', type=str)
+    parser.add_argument('--dev_stage', type=str)
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -69,7 +72,10 @@ def main():
     cutoff = args.cutoff
     query_tissue = args.query_tissue.replace("_", " ")
     ref_tissue_mapping = args.ref_tissue_mapping
-    
+    disease = args.disease
+    sex = args.sex
+    dev_stage = args.dev_stage
+        
     # Load data
     ref_tissue_mapping = yaml.load(open(ref_tissue_mapping), Loader=yaml.FullLoader)
     ref_tissue=ref_tissue_mapping[ref_name]
@@ -83,7 +89,7 @@ def main():
     # Read the JSON tree file
     with open(tree_file, 'r') as file:
         tree = json.load(file)
-        
+ 
     #rocs = roc_analysis(probabilities=prob_df, query=query, key=ref_keys[0])
     #outdir = os.path.join("roc", query_name, ref_name)
   #  os.makedirs(outdir, exist_ok=True)
@@ -116,16 +122,17 @@ def main():
                     'reference': ref_name,
                     'label': label,
                     'f1_score': metrics['f1-score'],
-                   # 'macro_f1': classification_report.get('macro avg', {}).get('f1-score', None),
-                   # 'micro_f1': classification_report.get('micro avg', {}).get('f1-score', None),
                     'weighted_f1': classification_report.get('weighted avg', {}).get('f1-score', None),
                     'key': key,
                     'cutoff': cutoff,
                     'query_tissue': query_tissue,
                     'ref_tissue': ref_tissue
-                    # 'disease': disease,
-                    # 'sex': sex
-                })
+                }
+                    # Add optional arguments if they are not None
+        )
+                
+    for field, value in [('disease', disease), ('sex', sex), ('dev_stage', dev_stage)]:
+        f1_data[field] = value if value is not None else np.nan
 
     # Save F1 scores to a file
     df = pd.DataFrame(f1_data)

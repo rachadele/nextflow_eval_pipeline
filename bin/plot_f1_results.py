@@ -66,18 +66,18 @@ def add_strip_plot(df, var, split, facet):
     # remove extra weighted f1 values
     # doesn't change overall values
     df = df.drop_duplicates(subset=[split, facet, var])
-    df['match_tissue'] = df.apply(lambda row: row['query_tissue'] in row['ref_tissue'], axis=1)
-    # Map match_tissue to colors before plotting
-    df['color'] = df['match_tissue'].map({True: 'red', False: 'grey'})
+    df['match_region'] = df.apply(lambda row: row['query_region'] in row['ref_region'], axis=1)
+    # Map match_region to colors before plotting
+    df['color'] = df['match_region'].map({True: 'red', False: 'grey'})
     
-    # Separate data into two groups based on 'match_tissue'
-    mask = df['match_tissue']
-    match_tissue_df = df[mask]
-    non_match_tissue_df = df[~mask]
+    # Separate data into two groups based on 'match_region'
+    mask = df['match_region']
+    match_region_df = df[mask]
+    non_match_region_df = df[~mask]
     
-    # Create the strip plot for non-matching tissue data
+    # Create the strip plot for non-matching region data
     ax = sns.stripplot(
-        data=non_match_tissue_df,
+        data=non_match_region_df,
         y=var,
         x=split,
         hue=facet,
@@ -91,9 +91,9 @@ def add_strip_plot(df, var, split, facet):
         linewidth=2
     )
 
-    # Create the strip plot for matching tissue data with customized edgecolor
+    # Create the strip plot for matching region data with customized edgecolor
     sns.stripplot(
-        data=match_tissue_df,
+        data=match_region_df,
         y=var,
         x=split,
         hue=facet,
@@ -103,7 +103,7 @@ def add_strip_plot(df, var, split, facet):
         alpha=0.8,           
         jitter=True,
         marker="o",
-        edgecolor='r',       # Red edge color for match tissue
+        edgecolor='r',       # Red edge color for match region
         linewidth=2,         
         legend=None,         # Disable legend for second plot
         ax=ax                # Add to same axis
@@ -148,11 +148,11 @@ def plot_distribution(df, var, outdir, split=None, facet="key", acronym_mapping=
     plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
     plt.xticks(rotation=90, ha="right", fontsize=25)
     plt.yticks(fontsize=25)
-    red_patch = mlines.Line2D([], [], color='red', marker='o', markersize=7, label='Matching Tissue')
-    grey_patch = mlines.Line2D([], [], color='grey', marker='o', markersize=7, label='Non-Matching Tissue')
+    red_patch = mlines.Line2D([], [], color='red', marker='o', markersize=7, label='Matching region')
+    grey_patch = mlines.Line2D([], [], color='grey', marker='o', markersize=7, label='Non-Matching region')
 
     # Add the custom legend to the plot
-    plt.legend(handles=[red_patch, grey_patch], title="Match Tissue", loc='upper left', bbox_to_anchor=(1, 1.02))
+    plt.legend(handles=[red_patch, grey_patch], title="Match region", loc='upper left', bbox_to_anchor=(1, 1.02))
 
     # Move the legend to the desired location
     #sns.move_legend(plt, bbox_to_anchor=(1, 1.02), loc='upper left')

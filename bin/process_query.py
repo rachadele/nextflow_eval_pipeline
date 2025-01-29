@@ -37,8 +37,8 @@ def parse_arguments():
   parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/queries/pineda.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
   parser.add_argument('--join_key', type=str, default="")
-  #parser.add_argument('--subset_columns', type=str, nargs='+', help='Column names to subset the query')
-  #parser.add_argument('--subset_values', type=str, nargs='+', help='Values to subset the query by')
+  #parser.add_argument('--split_sex', action='store_true', help='Split by sex')
+  #parser.add_argument('--split_disease', action='store_true', help='Split by disease')
   parser.add_argument('--ref_keys', type=str, nargs='+', default=["rachel_subclass", "rachel_class", "rachel_family"])
   parser.add_argument('--remove_unknown', action='store_true', help='Remove cells with unknown labels')
   parser.add_argument('--seed', type=int, default=42)
@@ -62,15 +62,9 @@ def main():
   relabel_path = args.relabel_path
   batch_key = args.batch_key
   join_key = args.join_key
-  #subset_columns = args.subset_columns
-  #subset_values = args.subset_values
   ref_keys = args.ref_keys
   query = ad.read_h5ad(query_path)
 
-  # Subset query by specific columns and values if provided
-  #if subset_columns and subset_values:
-    #for col, val in zip(subset_columns, subset_values):
-      #query = query[query.obs[col] == val]
   
   query = relabel(query,relabel_path=relabel_path, join_key=join_key,sep="\t")
 
