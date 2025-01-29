@@ -1,33 +1,33 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	0.5714285714285714	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.0	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.8888888888888888	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.16666666666666666	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SNCG	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.5625	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	LAMP5	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	1.0	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7631578947368421	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.7142857142857143	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	PVALB	0.0	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5/6 NP	0.0	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	0.0	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	VLMC	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	nan	0.24562777557929913		0.6061429334986211	rachel_subclass	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	0.0	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.8888888888888888	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	0.6	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.5625	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7631578947368421	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.23529411764705882	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.0	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.8	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	1.0	0.484984090127279		0.6349884501999251	rachel_class	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.72	0.76730339447607		0.7882913359585944	rachel_family	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7647058823529411	0.76730339447607		0.7882913359585944	rachel_family	0.0
-nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.8172043010752689	0.76730339447607		0.7882913359585944	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	0.0	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.5625	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6b	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.16666666666666666	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	VLMC	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	PVALB	0.0	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7631578947368421	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.8888888888888888	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	0.5714285714285714	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.0	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	LAMP5	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.7142857142857143	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	1.0	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	SNCG	nan	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5/6 NP	0.0	0.24562777557929913		0.606142933498621	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.23529411764705882	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	0.8	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.5625	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	0.6	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7631578947368421	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.8888888888888888	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.0	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	0.0	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	1.0	0.484984090127279		0.6349884501999253	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.72	0.76730339447607		0.7882913359585944	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7647058823529411	0.76730339447607		0.7882913359585944	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.8172043010752689	0.76730339447607		0.7882913359585944	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex

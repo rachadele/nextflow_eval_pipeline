@@ -1,30 +1,30 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.5714285714285714	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6b	nan	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	nan	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	0.0	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	0.0	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.725	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VLMC	nan	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	0.6666666666666666	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.5833333333333334	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	nan	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VIP	0.4444444444444444	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5/6 NP	0.0	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.5	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	nan	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 ET	0.2857142857142857	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	1.0	0.2809757236227824		0.5864183307731695	rachel_subclass	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.5714285714285714	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	0.2222222222222222	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.4	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	0.64	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	0.36363636363636365	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.5	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	0.0	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.725	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	1.0	0.49136523969857304		0.6180700243603469	rachel_class	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.88	0.7877777777777778		0.8205376344086021	rachel_family	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.75	0.7877777777777778		0.8205376344086021	rachel_family	0.0
-nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7333333333333333	0.7877777777777778		0.8205376344086021	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.5833333333333334	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VIP	0.4444444444444444	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.5714285714285714	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.725	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	0.0	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6b	nan	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	0.0	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	nan	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	nan	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VLMC	nan	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	0.6666666666666666	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5/6 NP	0.0	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.5	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 ET	0.2857142857142857	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	1.0	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	nan	0.2809757236227824		0.5864183307731695	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	0.0	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	0.36363636363636365	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	0.2222222222222222	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	0.64	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.5	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.5714285714285714	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.4	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.725	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	1.0	0.49136523969857293		0.618070024360347	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.75	0.7877777777777778		0.8205376344086021	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.88	0.7877777777777778		0.8205376344086021	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7333333333333333	0.7877777777777778		0.8205376344086021	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex

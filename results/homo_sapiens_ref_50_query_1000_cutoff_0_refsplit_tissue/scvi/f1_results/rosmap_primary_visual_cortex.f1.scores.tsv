@@ -1,23 +1,23 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	primary_visual_cortex	Non-neuron	nan	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	VLMC	nan	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	VIP	nan	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	OPC	0.9876543209876543	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Glutamatergic	0.9959100204498977	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Microglia	0.972972972972973	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	GABAergic	0.9879518072289156	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Pericyte	0.0	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Endothelial	nan	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Astrocyte	1.0	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Oligodendrocyte	0.99812382739212	0.5402375408210509		0.9914948231910252	rachel_subclass	0.0
-rosmap	primary_visual_cortex	Non-neuron	nan	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	Oligodendrocyte lineage	0.996742671009772	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	CGE	nan	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	Glutamatergic	0.9959100204498977	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	Microglia	0.972972972972973	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	GABAergic	0.9879518072289156	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	Astrocyte	1.0	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	Vascular	0.8571428571428571	0.726340041100552		0.9940701053592738	rachel_class	0.0
-rosmap	primary_visual_cortex	Non-neuron	0.9974093264248705	0.9924397822915894		0.99501191002045	rachel_family	0.0
-rosmap	primary_visual_cortex	GABAergic	0.984	0.9924397822915894		0.99501191002045	rachel_family	0.0
-rosmap	primary_visual_cortex	Glutamatergic	0.9959100204498977	0.9924397822915894		0.99501191002045	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	primary_visual_cortex	Glutamatergic	0.9959100204498977	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Oligodendrocyte	0.99812382739212	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	OPC	0.9876543209876543	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Non-neuron	nan	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Endothelial	nan	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Pericyte	0.0	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	VLMC	nan	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	GABAergic	0.9879518072289156	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Microglia	0.972972972972973	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	VIP	nan	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Astrocyte	1.0	0.5402375408210509		0.9914948231910252	subclass	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Glutamatergic	0.9959100204498977	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	CGE	nan	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Microglia	0.972972972972973	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Non-neuron	nan	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Astrocyte	1.0	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Oligodendrocyte lineage	0.996742671009772	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Vascular	0.8571428571428571	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	GABAergic	0.9879518072289156	0.726340041100552		0.9940701053592738	class	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Glutamatergic	0.9959100204498977	0.9924397822915894		0.99501191002045	family	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	GABAergic	0.984	0.9924397822915894		0.99501191002045	family	0.0	prefrontal cortex	primary visual cortex
+rosmap	primary_visual_cortex	Non-neuron	0.9974093264248705	0.9924397822915894		0.99501191002045	family	0.0	prefrontal cortex	primary visual cortex

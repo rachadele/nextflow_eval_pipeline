@@ -1,5 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Dissection_Primary_auditory_cortexA1	rosmap	rachel_subclass	Astrocyte	1.0	0.685432542532605
-Dissection_Primary_auditory_cortexA1	rosmap	rachel_subclass	Microglia	0.9864864864864865	0.402567852749374
-Dissection_Primary_auditory_cortexA1	rosmap	rachel_subclass	Oligodendrocyte	0.999317871759891	1.0
-Dissection_Primary_auditory_cortexA1	rosmap	rachel_subclass	OPC	1.0	0.75524785347515

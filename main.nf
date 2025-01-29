@@ -7,33 +7,36 @@ process save_params_to_file {
     )
 
     output:
-    file "params.txt"
+    file "params.yaml"
 
     script:
     """
-    echo "organism: ${params.organism}" > params.txt
-    echo "census_version: ${params.census_version}" >> params.txt
-    echo "tree_file: ${params.tree_file}" >> params.txt
-    echo "ref_keys: ${params.ref_keys}" >> params.txt
-    echo "subsample_ref: ${params.subsample_ref}" >> params.txt
-    echo "subsample_query: ${params.subsample_query}" >> params.txt
-    echo "relabel_r: ${params.relabel_r}" >> params.txt
-    echo "relabel_q: ${params.relabel_q}" >> params.txt
-    echo "cutoff: ${params.cutoff}" >> params.txt
-    echo "remove_unknown: ${params.remove_unknown}" >> params.txt
-    echo "queries_adata: ${params.queries_adata}" >> params.txt
-    echo "batch_keys: ${params.batch_keys}" >> params.txt
-    echo "ref_split: ${params.ref_split}" >> params.txt
-    echo "ref_collections: ${params.ref_collections}" >> params.txt
-    echo "integration_method: ${params.integration_method}" >> params.txt
-    echo "dims: ${params.dims}" >> params.txt
-    echo "max_features: ${params.max_features}" >> params.txt
-    echo "k_anchor: ${params.k_anchor}" >> params.txt
-    echo "k_score: ${params.k_score}" >> params.txt
-    echo "k_weight: ${params.k_weight}" >> params.txt
-    echo "outdir: ${params.outdir}" >> params.txt
+    cat <<EOF > params.yaml
+    organism: ${params.organism}
+    census_version: ${params.census_version}
+    tree_file: ${params.tree_file}
+    ref_keys: ${params.ref_keys}
+    subsample_ref: ${params.subsample_ref}
+    subsample_query: ${params.subsample_query}
+    relabel_r: ${params.relabel_r}
+    relabel_q: ${params.relabel_q}
+    cutoff: ${params.cutoff}
+    remove_unknown: ${params.remove_unknown}
+    queries_adata: ${params.queries_adata}
+    batch_keys: ${params.batch_keys}
+    ref_split: ${params.ref_split}
+    ref_collections: ${params.ref_collections}
+    integration_method: ${params.integration_method}
+    dims: ${params.dims}
+    max_features: ${params.max_features}
+    k_anchor: ${params.k_anchor}
+    k_score: ${params.k_score}
+    k_weight: ${params.k_weight}
+    outdir: ${params.outdir}
+    EOF
     """
 }
+
 
 
 process runSetup {
@@ -99,7 +102,8 @@ process getCensusAdata {
 
     output:
     path "refs/*.h5ad", emit: ref_paths_adata
-    path "refs/*.obs.tsv"
+    // path "refs/*.obs.tsv"
+    path "refs/*yaml", emit: ref_tissue_mapping
 
     script:
     ref_keys = params.ref_keys.join(' ')
@@ -217,13 +221,14 @@ process classifyAllAdata {
     val tree_file
     val ref_keys
     val cutoff
-    tuple val(query_path), path(ref_path), path(probs_path)
+    tuple val(query_path), path(ref_path), path(probs_path), val(query_tissue)
     val mapping_file
+    val ref_tissue_mapping
 
     output:
     path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
-    path "roc/**tsv", emit: auc_channel
-    path "roc/**png"
+   // path "roc/**tsv", emit: auc_channel
+    //path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
 
@@ -235,11 +240,13 @@ process classifyAllAdata {
     python $projectDir/bin/classify_all.py \\
         --tree_file ${tree_file} \\
         --query_path ${query_path} \\
+        --query_tissue ${query_tissue} \\
         --ref_name ${ref_name} \\
         --ref_keys ${ref_keys} \\
         --cutoff ${cutoff} \\
         --probs ${probs_path} \\
-        --mapping_file ${mapping_file}
+        --mapping_file ${mapping_file} \\
+        --ref_tissue_mapping ${ref_tissue_mapping}
     """
 
 }
@@ -256,13 +263,14 @@ process classifyAllSeurat {
     val tree_file
     val ref_keys
     val cutoff
-    tuple val(query_path), path(ref_path), path(scores_path)
+    tuple val(query_path), path(ref_path), path(scores_path), val(query_tissue)
     val mapping_file
+    val ref_tissue_mapping
 
     output:
     path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
-    path "roc/**tsv", emit: auc_channel
-    path "roc/**png"
+    //path "roc/**tsv", emit: auc_channel
+   // path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
 
@@ -273,11 +281,13 @@ process classifyAllSeurat {
     """
     python $projectDir/bin/classify_all.py --tree_file ${tree_file} \\
         --query_path ${query_path} \\
+        --query_tissue ${query_tissue} \\
         --ref_name ${ref_name} \\
         --ref_keys ${ref_keys} \\
         --cutoff ${cutoff} \\
         --probs ${scores_path} \\
-        --mapping_file ${mapping_file}
+        --mapping_file ${mapping_file} \\
+        --ref_tissue_mapping ${ref_tissue_mapping}
     """
 
 }
@@ -351,6 +361,7 @@ workflow {
     getCensusAdata(params.organism, params.census_version, params.subsample_ref, params.relabel_r, params.ref_split, ref_collections)
     getCensusAdata.out.ref_paths_adata.flatten()
     .set { ref_paths_adata }
+    getCensusAdata.out.ref_tissue_mapping.set { ref_tissue_mapping }
 
     // Convert h5ad files to rds files
      h5adConvertRefs(ref_paths_adata)
@@ -395,11 +406,23 @@ workflow {
     seurat_scores_channel = predictSeurat.out.pred_scores_channel
 
 
+    adata_probs_channel = adata_probs_channel.map { query_path, ref_path, probs_path ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        query_tissue = params.query_tissue[query_name]
+        [query_path, ref_path, probs_path, query_tissue]
+    }
+
+    seurat_scores_channel = seurat_scores_channel.map { query_path, ref_path, scores_path ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        query_tissue = params.query_tissue[query_name]
+        [query_path, ref_path, scores_path, query_tissue]
+    }
+
     // Classify all cells based on prediction scores at most granular level
-    classifyAllAdata(params.tree_file, params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r)
+    classifyAllAdata(params.tree_file, params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_tissue_mapping)
     f1_scores_adata = classifyAllAdata.out.f1_score_channel
 
-    classifyAllSeurat(params.tree_file, params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r)
+    classifyAllSeurat(params.tree_file, params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_tissue_mapping)
     f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
 
     // Flatten f1 scores files into a list

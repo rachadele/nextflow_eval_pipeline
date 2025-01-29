@@ -1,37 +1,37 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	whole_cortex	Oligodendrocyte	0.7755102040816326	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	SST	0.7333333333333333	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Glutamatergic	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	L5 ET	0.4864864864864865	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	GABAergic	0.9861111111111112	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Chandelier	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Endothelial	0.5714285714285714	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	LAMP5	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	SNCG	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	L5/6 NP	0.0	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	CGE	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	VIP	0.851063829787234	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	OPC	0.43902439024390244	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	L5 6 NP	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	L6 CT	0.0	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	L6b	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Microglia	0.88	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	PVALB	0.7619047619047619	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Pericyte	nan	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	L2/3-6 IT	0.9169435215946844	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Astrocyte	0.9090909090909091	0.3957570056696489		0.8082459398135466	rachel_subclass	0.0
-nagy	whole_cortex	Vascular	0.8888888888888888	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	Microglia	0.88	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	Glutamatergic	nan	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	MGE	0.8148148148148148	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	GABAergic	0.9861111111111112	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	Oligodendrocyte lineage	0.925531914893617	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	CGE	0.8103448275862069	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	unknown	nan	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	L2/3-6 IT	0.9169435215946844	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	deep layer non-IT	0.754863813229572	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	Astrocyte	0.9090909090909091	0.7169627092008913		0.8880524842847511	rachel_class	0.0
-nagy	whole_cortex	unknown	nan	0.7156794881388909		0.9620157715784621	rachel_family	0.0
-nagy	whole_cortex	GABAergic	0.9565217391304348	0.7156794881388909		0.9620157715784621	rachel_family	0.0
-nagy	whole_cortex	Non-neuron	0.9337349397590361	0.7156794881388909		0.9620157715784621	rachel_family	0.0
-nagy	whole_cortex	Glutamatergic	0.9724612736660929	0.7156794881388909		0.9620157715784621	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	whole_cortex	L6b	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	SNCG	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Astrocyte	0.9090909090909091	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Microglia	0.88	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	L6 CT	0.0	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Endothelial	0.5714285714285714	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Pericyte	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	VIP	0.851063829787234	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	L5 6 NP	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Glutamatergic	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Oligodendrocyte	0.7755102040816326	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	SST	0.7333333333333333	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	L2/3-6 IT	0.9169435215946844	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	LAMP5	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	L5 ET	0.4864864864864865	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	GABAergic	0.9861111111111112	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Chandelier	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	L5/6 NP	0.0	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	PVALB	0.7619047619047619	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	OPC	0.43902439024390244	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	CGE	nan	0.3957570056696489		0.8082459398135466	subclass	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Oligodendrocyte lineage	0.925531914893617	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	GABAergic	0.9861111111111112	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Astrocyte	0.9090909090909091	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Microglia	0.88	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	unknown	nan	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	MGE	0.8148148148148148	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Glutamatergic	nan	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	CGE	0.8103448275862069	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	L2/3-6 IT	0.9169435215946844	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	deep layer non-IT	0.754863813229572	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Vascular	0.8888888888888888	0.7169627092008913		0.8880524842847514	class	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	unknown	nan	0.715679488138891		0.9620157715784621	family	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Non-neuron	0.9337349397590361	0.715679488138891		0.9620157715784621	family	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	Glutamatergic	0.9724612736660929	0.715679488138891		0.9620157715784621	family	0.0	dorsolateral prefrontal cortex	multiple tissues
+nagy	whole_cortex	GABAergic	0.9565217391304348	0.715679488138891		0.9620157715784621	family	0.0	dorsolateral prefrontal cortex	multiple tissues

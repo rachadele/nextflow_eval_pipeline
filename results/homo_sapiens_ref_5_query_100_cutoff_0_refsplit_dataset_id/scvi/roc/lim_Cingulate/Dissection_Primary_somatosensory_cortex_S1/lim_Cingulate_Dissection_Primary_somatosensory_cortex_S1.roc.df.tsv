@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	Astrocyte	0.9589285714285715	0.11
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	Endothelial	0.8511904761904762	0.03
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.6061643835616438	0.16
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	L5 ET	0.5110759493670887	0.02
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	Microglia	0.6205882352941177	0.6
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	OPC	1.0	0.57
-Dissection_Primary_somatosensory_cortex_S1	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9976076555023924	0.16

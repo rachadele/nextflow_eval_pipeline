@@ -1,22 +1,22 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	primary_somatosensory_cortex	GABAergic	0.9959839357429718	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	Astrocyte	1.0	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	Pericyte	0.0	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	Microglia	0.9866666666666667	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	VLMC	nan	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	Glutamatergic	0.9979550102249489	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	L2/3-6 IT	nan	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	OPC	1.0	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	Oligodendrocyte	0.9962406015037594	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	Non-neuron	nan	0.5976846214138346		0.994002870310524	rachel_subclass	0.0
-rosmap	primary_somatosensory_cortex	GABAergic	0.9959839357429718	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	Astrocyte	1.0	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	Glutamatergic	0.9979550102249489	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	Oligodendrocyte lineage	0.996742671009772	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	Microglia	0.9866666666666667	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	L2/3-6 IT	nan	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	Vascular	1.0	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	Non-neuron	nan	0.747168535455545		0.99700337238003	rachel_class	0.0
-rosmap	primary_somatosensory_cortex	GABAergic	0.9959839357429718	0.9967763035962948		0.997000475856439	rachel_family	0.0
-rosmap	primary_somatosensory_cortex	Glutamatergic	0.9969356486210419	0.9967763035962948		0.997000475856439	rachel_family	0.0
-rosmap	primary_somatosensory_cortex	Non-neuron	0.9974093264248705	0.9967763035962948		0.997000475856439	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	primary_somatosensory_cortex	Pericyte	0.0	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Oligodendrocyte	0.9962406015037594	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Microglia	0.9866666666666667	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	VLMC	nan	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Non-neuron	nan	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	OPC	1.0	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Glutamatergic	0.9979550102249489	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	GABAergic	0.9959839357429718	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	L2/3-6 IT	nan	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Astrocyte	1.0	0.5976846214138347		0.994002870310524	subclass	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Non-neuron	nan	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Glutamatergic	0.9979550102249489	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Oligodendrocyte lineage	0.996742671009772	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	GABAergic	0.9959839357429718	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Vascular	1.0	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	L2/3-6 IT	nan	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Astrocyte	1.0	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Microglia	0.9866666666666667	0.747168535455545		0.99700337238003	class	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	GABAergic	0.9959839357429718	0.9967763035962948		0.997000475856439	family	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Non-neuron	0.9974093264248705	0.9967763035962948		0.997000475856439	family	0.0	prefrontal cortex	primary somatosensory cortex
+rosmap	primary_somatosensory_cortex	Glutamatergic	0.9969356486210419	0.9967763035962948		0.997000475856439	family	0.0	prefrontal cortex	primary somatosensory cortex

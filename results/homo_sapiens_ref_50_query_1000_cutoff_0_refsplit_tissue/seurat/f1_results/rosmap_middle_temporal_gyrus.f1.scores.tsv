@@ -1,24 +1,24 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	middle_temporal_gyrus	GABAergic	0.992	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Non-neuron	nan	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Endothelial	nan	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Pericyte	0.0	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Microglia	0.9863013698630136	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	VLMC	nan	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	unknown	nan	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Glutamatergic	0.9802289281997919	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	OPC	1.0	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Oligodendrocyte	0.9981308411214953	0.5415146490167547		0.9853142600822689	rachel_subclass	0.0
-rosmap	middle_temporal_gyrus	Oligodendrocyte lineage	0.9983792544570502	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	GABAergic	0.992	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	Non-neuron	nan	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	Glutamatergic	0.9802289281997919	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	Microglia	0.9863013698630136	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	Vascular	1.0	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	unknown	nan	0.7446136940649819		0.988314135875601	rachel_class	0.0
-rosmap	middle_temporal_gyrus	GABAergic	0.992	0.7395450992274704		0.9838974417399925	rachel_family	0.0
-rosmap	middle_temporal_gyrus	Non-neuron	0.9859514687100894	0.7395450992274704		0.9838974417399925	rachel_family	0.0
-rosmap	middle_temporal_gyrus	Glutamatergic	0.9802289281997919	0.7395450992274704		0.9838974417399925	rachel_family	0.0
-rosmap	middle_temporal_gyrus	unknown	nan	0.7395450992274704		0.9838974417399925	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	middle_temporal_gyrus	Oligodendrocyte	0.9981308411214953	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	VLMC	nan	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	GABAergic	0.992	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	unknown	nan	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Glutamatergic	0.9802289281997919	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Microglia	0.9863013698630136	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Pericyte	0.0	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Non-neuron	nan	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Endothelial	nan	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	OPC	1.0	0.5415146490167546		0.9853142600822687	subclass	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	unknown	nan	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Glutamatergic	0.9802289281997919	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Microglia	0.9863013698630136	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Oligodendrocyte lineage	0.9983792544570502	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Non-neuron	nan	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Vascular	1.0	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	GABAergic	0.992	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Astrocyte	1.0	0.7446136940649819		0.9883141358756011	class	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	unknown	nan	0.7395450992274704		0.9838974417399926	family	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Glutamatergic	0.9802289281997919	0.7395450992274704		0.9838974417399926	family	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	Non-neuron	0.9859514687100894	0.7395450992274704		0.9838974417399926	family	0.0	prefrontal cortex	middle temporal gyrus
+rosmap	middle_temporal_gyrus	GABAergic	0.992	0.7395450992274704		0.9838974417399926	family	0.0	prefrontal cortex	middle temporal gyrus

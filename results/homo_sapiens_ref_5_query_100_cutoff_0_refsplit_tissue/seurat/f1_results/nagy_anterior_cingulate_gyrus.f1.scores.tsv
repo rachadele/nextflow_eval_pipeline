@@ -1,29 +1,29 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	anterior_cingulate_gyrus	CGE	nan	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	LAMP5	nan	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	Oligodendrocyte	0.7586206896551724	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	SST	0.0	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	Astrocyte	0.8421052631578947	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	L5 ET	0.0	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	PVALB	0.6666666666666666	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	OPC	nan	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	L6 CT	nan	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	L2/3-6 IT	0.2222222222222222	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	Microglia	0.14285714285714285	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	GABAergic	1.0	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	L6b	nan	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	VIP	1.0	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	Endothelial	0.0	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	L5/6 NP	0.0	0.2895294990349436		0.4180352624237642	rachel_subclass	0.0
-nagy	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.8648648648648649	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	CGE	0.75	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	L2/3-6 IT	0.2222222222222222	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	Microglia	0.14285714285714285	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	Vascular	0.0	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	GABAergic	1.0	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	MGE	0.3333333333333333	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	Astrocyte	0.8421052631578947	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	deep layer non-IT	0.08695652173913043	0.47137103868606545		0.4475729855703282	rachel_class	0.0
-nagy	anterior_cingulate_gyrus	Non-neuron	0.7323943661971831	0.8134232746908804		0.7890569221782305	rachel_family	0.0
-nagy	anterior_cingulate_gyrus	GABAergic	0.9166666666666666	0.8134232746908804		0.7890569221782305	rachel_family	0.0
-nagy	anterior_cingulate_gyrus	Glutamatergic	0.7912087912087912	0.8134232746908804		0.7890569221782305	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	anterior_cingulate_gyrus	Astrocyte	0.8421052631578947	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	GABAergic	1.0	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	CGE	nan	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Oligodendrocyte	0.7586206896551724	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	VIP	1.0	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Microglia	0.14285714285714285	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	L2/3-6 IT	0.2222222222222222	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	OPC	nan	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	L6b	nan	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	SST	0.0	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Endothelial	0.0	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	LAMP5	nan	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	L6 CT	nan	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	PVALB	0.6666666666666666	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	L5 ET	0.0	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	L5/6 NP	0.0	0.2895294990349437		0.41803526242376426	subclass	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Astrocyte	0.8421052631578947	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	GABAergic	1.0	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	deep layer non-IT	0.08695652173913043	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.8648648648648649	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Vascular	0.0	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	CGE	0.75	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Microglia	0.14285714285714285	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	MGE	0.3333333333333333	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	L2/3-6 IT	0.2222222222222222	0.47137103868606534		0.4475729855703281	class	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Non-neuron	0.7323943661971831	0.8134232746908804		0.7890569221782305	family	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	GABAergic	0.9166666666666666	0.8134232746908804		0.7890569221782305	family	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus
+nagy	anterior_cingulate_gyrus	Glutamatergic	0.7912087912087912	0.8134232746908804		0.7890569221782305	family	0.0	dorsolateral prefrontal cortex	anterior cingulate gyrus

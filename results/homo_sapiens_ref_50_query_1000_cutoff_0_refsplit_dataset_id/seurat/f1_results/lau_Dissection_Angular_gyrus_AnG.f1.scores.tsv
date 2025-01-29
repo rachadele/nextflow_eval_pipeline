@@ -1,27 +1,27 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lau	Dissection_Angular_gyrus_AnG	PVALB	nan	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	GABAergic	0.8897058823529411	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	Microglia	0.9583333333333334	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	SST	nan	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	unknown	nan	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8380462724935732	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9960159362549801	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	Endothelial	0.64	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	Astrocyte	0.9818181818181818	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	VLMC	nan	0.4419933005210841		0.9024558460149659	rachel_subclass	0.0
-lau	Dissection_Angular_gyrus_AnG	GABAergic	0.8897058823529411	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	Microglia	0.9583333333333334	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	MGE	nan	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	unknown	nan	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	Vascular	0.8666666666666667	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8380462724935732	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	Astrocyte	0.9818181818181818	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9960159362549801	0.5530586272919676		0.9063091793482992	rachel_class	0.0
-lau	Dissection_Angular_gyrus_AnG	GABAergic	0.88	0.6541893138379258		0.8691949707541514	rachel_family	0.0
-lau	Dissection_Angular_gyrus_AnG	unknown	nan	0.6541893138379258		0.8691949707541514	rachel_family	0.0
-lau	Dissection_Angular_gyrus_AnG	Non-neuron	0.8997867803837953	0.6541893138379258		0.8691949707541514	rachel_family	0.0
-lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8369704749679076	0.6541893138379258		0.8691949707541514	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lau	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9960159362549801	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Astrocyte	0.9818181818181818	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Endothelial	0.64	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Microglia	0.9583333333333334	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	unknown	nan	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	GABAergic	0.8897058823529411	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	PVALB	nan	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	VLMC	nan	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	SST	nan	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8380462724935732	0.4419933005210841		0.9024558460149658	subclass	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Astrocyte	0.9818181818181818	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	MGE	nan	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Microglia	0.9583333333333334	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	unknown	nan	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	L2/3-6 IT	nan	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	GABAergic	0.8897058823529411	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Vascular	0.8666666666666667	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9960159362549801	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8380462724935732	0.5530586272919675		0.9063091793482992	class	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	unknown	nan	0.6541893138379258		0.8691949707541514	family	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Glutamatergic	0.8369704749679076	0.6541893138379258		0.8691949707541514	family	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	GABAergic	0.88	0.6541893138379258		0.8691949707541514	family	0.0	prefrontal cortex	angular gyrus
+lau	Dissection_Angular_gyrus_AnG	Non-neuron	0.8997867803837953	0.6541893138379258		0.8691949707541514	family	0.0	prefrontal cortex	angular gyrus

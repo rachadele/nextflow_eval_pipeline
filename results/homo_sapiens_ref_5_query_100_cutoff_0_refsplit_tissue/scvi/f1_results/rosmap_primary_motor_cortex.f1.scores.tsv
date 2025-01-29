@@ -1,24 +1,24 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	primary_motor_cortex	L2/3-6 IT	nan	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	L6b	nan	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Endothelial	nan	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Astrocyte	1.0	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	GABAergic	0.7272727272727273	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Pericyte	0.0	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Oligodendrocyte	1.0	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	OPC	1.0	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Non-neuron	nan	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Glutamatergic	0.7865168539325843	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Microglia	0.5	0.4557990528368465		0.8263993871297243	rachel_subclass	0.0
-rosmap	primary_motor_cortex	Non-neuron	nan	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	L2/3-6 IT	nan	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	Vascular	1.0	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	deep layer non-IT	nan	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	Glutamatergic	0.7865168539325843	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	Oligodendrocyte lineage	1.0	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	Astrocyte	1.0	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	Microglia	0.5	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	GABAergic	0.7272727272727273	0.5570877312450346		0.8363993871297243	rachel_class	0.0
-rosmap	primary_motor_cortex	Non-neuron	0.8421052631578947	0.7795362532204638		0.7885535517114464	rachel_family	0.0
-rosmap	primary_motor_cortex	Glutamatergic	0.7692307692307693	0.7795362532204638		0.7885535517114464	rachel_family	0.0
-rosmap	primary_motor_cortex	GABAergic	0.7272727272727273	0.7795362532204638		0.7885535517114464	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	primary_motor_cortex	Microglia	0.5	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	OPC	1.0	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	GABAergic	0.7272727272727273	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Pericyte	0.0	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	L2/3-6 IT	nan	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	L6b	nan	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Glutamatergic	0.7865168539325843	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Oligodendrocyte	1.0	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Endothelial	nan	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Non-neuron	nan	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Astrocyte	1.0	0.4557990528368466		0.8263993871297243	subclass	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Microglia	0.5	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	GABAergic	0.7272727272727273	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Non-neuron	nan	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	L2/3-6 IT	nan	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Vascular	1.0	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	deep layer non-IT	nan	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Glutamatergic	0.7865168539325843	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Oligodendrocyte lineage	1.0	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Astrocyte	1.0	0.5570877312450346		0.8363993871297243	class	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	GABAergic	0.7272727272727273	0.7795362532204638		0.7885535517114465	family	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Glutamatergic	0.7692307692307693	0.7795362532204638		0.7885535517114465	family	0.0	prefrontal cortex	primary motor cortex
+rosmap	primary_motor_cortex	Non-neuron	0.8421052631578947	0.7795362532204638		0.7885535517114465	family	0.0	prefrontal cortex	primary motor cortex

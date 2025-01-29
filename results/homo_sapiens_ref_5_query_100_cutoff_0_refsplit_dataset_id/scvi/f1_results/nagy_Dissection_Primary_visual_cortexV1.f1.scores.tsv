@@ -1,29 +1,29 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	Dissection_Primary_visual_cortexV1	Endothelial	0.0	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	OPC	nan	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	SNCG	nan	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.8571428571428571	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	L5/6 NP	0.0	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	SST	0.0	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	L6b	nan	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	Astrocyte	0.7272727272727273	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	Microglia	0.5	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	PVALB	0.0	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	L5 ET	0.0	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	CGE	nan	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6923076923076923	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	VIP	0.8	0.2860452047952048		0.6087557603686636	rachel_subclass	0.0
-nagy	Dissection_Primary_visual_cortexV1	Astrocyte	0.7272727272727273	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.24	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	Microglia	0.5	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	CGE	0.75	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6923076923076923	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	0.9333333333333333	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	MGE	0.0	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	Vascular	0.0	0.5381015281015281		0.653799283154122	rachel_class	0.0
-nagy	Dissection_Primary_visual_cortexV1	GABAergic	0.7692307692307693	0.846542545060685		0.8722147060617728	rachel_family	0.0
-nagy	Dissection_Primary_visual_cortexV1	Non-neuron	0.8771929824561403	0.846542545060685		0.8722147060617728	rachel_family	0.0
-nagy	Dissection_Primary_visual_cortexV1	Glutamatergic	0.8932038834951457	0.846542545060685		0.8722147060617728	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	Dissection_Primary_visual_cortexV1	Endothelial	0.0	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.8571428571428571	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	VIP	0.8	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	L6b	nan	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	PVALB	0.0	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6923076923076923	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Astrocyte	0.7272727272727273	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	L5/6 NP	0.0	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	OPC	nan	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	L5 ET	0.0	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	SNCG	nan	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	SST	0.0	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	CGE	nan	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Microglia	0.5	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.2860452047952048		0.6087557603686636	subclass	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	MGE	0.0	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.24	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	0.9333333333333333	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	CGE	0.75	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Microglia	0.5	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Vascular	0.0	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6923076923076923	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Astrocyte	0.7272727272727273	0.5381015281015281		0.6537992831541218	class	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	GABAergic	0.7692307692307693	0.846542545060685		0.8722147060617728	family	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Non-neuron	0.8771929824561403	0.846542545060685		0.8722147060617728	family	0.0	dorsolateral prefrontal cortex	primary visual cortex
+nagy	Dissection_Primary_visual_cortexV1	Glutamatergic	0.8932038834951457	0.846542545060685		0.8722147060617728	family	0.0	dorsolateral prefrontal cortex	primary visual cortex

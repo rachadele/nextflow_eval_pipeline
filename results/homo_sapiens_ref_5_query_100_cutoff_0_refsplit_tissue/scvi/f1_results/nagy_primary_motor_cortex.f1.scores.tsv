@@ -1,29 +1,29 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	primary_motor_cortex	Astrocyte	0.7368421052631579	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	SST	0.0	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	Microglia	1.0	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	L5 ET	0.0	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	GABAergic	1.0	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	PVALB	0.6666666666666666	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	L6 CT	nan	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	OPC	nan	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	L5/6 NP	0.0	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	L2/3-6 IT	0.5084745762711864	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	Oligodendrocyte	0.5641025641025641	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	L6b	nan	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	VIP	0.8	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	Endothelial	0.0	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	LAMP5	nan	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	CGE	nan	0.32975536951897344		0.4949255841374054	rachel_subclass	0.0
-nagy	primary_motor_cortex	Astrocyte	0.7368421052631579	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	Oligodendrocyte lineage	0.6976744186046512	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	Microglia	1.0	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	MGE	0.18181818181818182	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	Vascular	0.0	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	deep layer non-IT	0.2608695652173913	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	GABAergic	1.0	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	L2/3-6 IT	0.5084745762711864	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	CGE	0.3333333333333333	0.5243346867231001		0.5399692409166047	rachel_class	0.0
-nagy	primary_motor_cortex	Glutamatergic	0.6341463414634146	0.6626641651031896		0.6642538683451351	rachel_family	0.0
-nagy	primary_motor_cortex	GABAergic	0.6153846153846154	0.6626641651031896		0.6642538683451351	rachel_family	0.0
-nagy	primary_motor_cortex	Non-neuron	0.7384615384615385	0.6626641651031896		0.6642538683451351	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	primary_motor_cortex	LAMP5	nan	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Endothelial	0.0	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Oligodendrocyte	0.5641025641025641	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	L6 CT	nan	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	CGE	nan	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	SST	0.0	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	VIP	0.8	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	PVALB	0.6666666666666666	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Microglia	1.0	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	L5 ET	0.0	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	GABAergic	1.0	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	L2/3-6 IT	0.5084745762711864	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	L6b	nan	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Astrocyte	0.7368421052631579	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	OPC	nan	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	L5/6 NP	0.0	0.32975536951897344		0.4949255841374054	subclass	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	MGE	0.18181818181818182	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Microglia	1.0	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Vascular	0.0	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	GABAergic	1.0	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	CGE	0.3333333333333333	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	L2/3-6 IT	0.5084745762711864	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Astrocyte	0.7368421052631579	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	deep layer non-IT	0.2608695652173913	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Oligodendrocyte lineage	0.6976744186046512	0.5243346867231002		0.5399692409166047	class	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Non-neuron	0.7384615384615385	0.6626641651031896		0.6642538683451351	family	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	Glutamatergic	0.6341463414634146	0.6626641651031896		0.6642538683451351	family	0.0	dorsolateral prefrontal cortex	primary motor cortex
+nagy	primary_motor_cortex	GABAergic	0.6153846153846154	0.6626641651031896		0.6642538683451351	family	0.0	dorsolateral prefrontal cortex	primary motor cortex

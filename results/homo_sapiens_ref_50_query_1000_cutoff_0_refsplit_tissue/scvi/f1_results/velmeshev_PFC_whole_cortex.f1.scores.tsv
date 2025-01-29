@@ -1,36 +1,36 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_PFC	whole_cortex	CGE	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	GABAergic	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Glutamatergic	0.9823008849557522	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	L6 CT	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Astrocyte	0.9916666666666667	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Chandelier	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Microglia	0.9866666666666667	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Oligodendrocyte	0.9838187702265372	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	L5/6 NP	0.3448275862068966	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	LAMP5	0.9375	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	L6b	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	L5 ET	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	VIP	0.8275862068965517	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	PVALB	0.9111111111111111	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	VLMC	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	L2/3-6 IT	0.9922779922779923	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	OPC	0.9760765550239234	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	SNCG	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	SST	0.9724770642201835	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Endothelial	0.896551724137931	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	Non-neuron	nan	0.5144219632566768		0.9566703527946072	rachel_subclass	0.0
-velmeshev_PFC	whole_cortex	MGE	0.9951219512195122	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	CGE	0.9924812030075187	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	GABAergic	nan	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	L2/3-6 IT	0.9922779922779923	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Vascular	0.967741935483871	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Glutamatergic	0.9823008849557522	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Astrocyte	0.9916666666666667	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Oligodendrocyte lineage	0.9961389961389961	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	deep layer non-IT	0.96	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Microglia	0.9866666666666667	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Non-neuron	nan	0.8058542087651795		0.9910050217536748	rachel_class	0.0
-velmeshev_PFC	whole_cortex	Non-neuron	0.9965397923875432	0.9933778532674823		0.9939945017400538	rachel_family	0.0
-velmeshev_PFC	whole_cortex	Glutamatergic	0.9924433249370277	0.9933778532674823		0.9939945017400538	rachel_family	0.0
-velmeshev_PFC	whole_cortex	GABAergic	0.9911504424778761	0.9933778532674823		0.9939945017400538	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+velmeshev_PFC	whole_cortex	PVALB	0.9111111111111111	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	GABAergic	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Glutamatergic	0.9823008849557522	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Chandelier	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	L5 ET	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	CGE	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Non-neuron	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	OPC	0.9760765550239234	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Microglia	0.9866666666666667	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	L2/3-6 IT	0.9922779922779923	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	SNCG	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	L5/6 NP	0.3448275862068966	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	L6b	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	VIP	0.8275862068965517	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	L6 CT	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Oligodendrocyte	0.9838187702265372	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	LAMP5	0.9375	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	SST	0.9724770642201835	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Astrocyte	0.9916666666666667	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	VLMC	nan	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Endothelial	0.896551724137931	0.5144219632566769		0.9566703527946071	subclass	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	MGE	0.9951219512195122	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	deep layer non-IT	0.96	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	GABAergic	nan	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Glutamatergic	0.9823008849557522	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	CGE	0.9924812030075187	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Non-neuron	nan	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Microglia	0.9866666666666667	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	L2/3-6 IT	0.9922779922779923	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Oligodendrocyte lineage	0.9961389961389961	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Astrocyte	0.9916666666666667	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Vascular	0.967741935483871	0.8058542087651798		0.9910050217536749	class	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Non-neuron	0.9965397923875432	0.9933778532674823		0.9939945017400538	family	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	GABAergic	0.9911504424778761	0.9933778532674823		0.9939945017400538	family	0.0	prefrontal cortex	multiple tissues
+velmeshev_PFC	whole_cortex	Glutamatergic	0.9924433249370277	0.9933778532674823		0.9939945017400538	family	0.0	prefrontal cortex	multiple tissues

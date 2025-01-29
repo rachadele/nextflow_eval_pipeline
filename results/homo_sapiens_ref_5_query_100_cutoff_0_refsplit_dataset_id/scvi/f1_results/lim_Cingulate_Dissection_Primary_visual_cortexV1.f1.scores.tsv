@@ -1,26 +1,26 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	GABAergic	0.5142857142857142	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.9523809523809523	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	OPC	0.8	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6875	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Glutamatergic	0.75	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Astrocyte	0.7142857142857143	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Endothelial	0.0	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	L5 ET	0.0	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	SNCG	nan	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Microglia	0.6666666666666666	0.4237599206349207		0.6020388615216201	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	GABAergic	0.5142857142857142	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	CGE	nan	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Glutamatergic	0.75	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Astrocyte	0.7142857142857143	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Vascular	0.0	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6875	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.26666666666666666	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Microglia	0.6666666666666666	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	1.0	0.4599404761904761		0.6371784345922277	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	GABAergic	0.5	0.6908746334835157		0.7184536888389104	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Glutamatergic	0.8607594936708861	0.6908746334835157		0.7184536888389104	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_visual_cortexV1	Non-neuron	0.711864406779661	0.6908746334835157		0.7184536888389104	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6875	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.9523809523809523	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	OPC	0.8	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	L5 ET	0.0	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	GABAergic	0.5142857142857142	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	SNCG	nan	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Microglia	0.6666666666666666	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Endothelial	0.0	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Glutamatergic	0.75	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Astrocyte	0.7142857142857143	0.4237599206349207		0.6020388615216201	subclass	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Non-neuron	nan	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.6875	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.26666666666666666	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Microglia	0.6666666666666666	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Vascular	0.0	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	CGE	nan	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	GABAergic	0.5142857142857142	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Glutamatergic	0.75	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Astrocyte	0.7142857142857143	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	1.0	0.45994047619047623		0.6371784345922277	class	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Non-neuron	0.711864406779661	0.6908746334835157		0.7184536888389104	family	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	GABAergic	0.5	0.6908746334835157		0.7184536888389104	family	0.0	anterior cingulate cortex	primary visual cortex
+lim_Cingulate	Dissection_Primary_visual_cortexV1	Glutamatergic	0.8607594936708861	0.6908746334835157		0.7184536888389104	family	0.0	anterior cingulate cortex	primary visual cortex

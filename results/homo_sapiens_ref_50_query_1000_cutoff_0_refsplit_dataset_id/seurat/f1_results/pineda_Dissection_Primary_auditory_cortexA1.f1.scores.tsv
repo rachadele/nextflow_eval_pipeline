@@ -1,37 +1,37 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	Dissection_Primary_auditory_cortexA1	L5 ET	0.2597402597402597	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	PVALB	0.9841269841269841	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	L6 CT	nan	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	OPC	1.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	L5 6 NP	nan	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	SNCG	nan	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Microglia	0.9791666666666666	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Non-neuron	1.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Endothelial	1.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.7792207792207793	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	VIP	0.6923076923076923	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Astrocyte	1.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	L6b	0.8636363636363636	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	L5/6 NP	0.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Pericyte	0.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	VLMC	nan	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Chandelier	1.0	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	CGE	nan	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	SST	0.9841269841269841	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.9989235737351991	0.5972023477886157		0.8932313757062815	rachel_subclass	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9990281827016521	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	deep layer non-IT	0.4794520547945205	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Non-neuron	1.0	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	unknown	nan	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Astrocyte	1.0	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Vascular	0.8421052631578947	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Microglia	0.9791666666666666	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	CGE	1.0	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.7792207792207793	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	MGE	1.0	0.8253611769583192		0.9162386504206548	rachel_class	0.0
-pineda	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	Dissection_Primary_auditory_cortexA1	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	Dissection_Primary_auditory_cortexA1	unknown	nan	0.7455947136563876		0.9959295154185022	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+pineda	Dissection_Primary_auditory_cortexA1	L5/6 NP	0.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	CGE	nan	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	OPC	1.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	PVALB	0.9841269841269841	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	SNCG	nan	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Endothelial	1.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Microglia	0.9791666666666666	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Pericyte	0.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.9989235737351991	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	L5 ET	0.2597402597402597	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Astrocyte	1.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	L5 6 NP	nan	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Chandelier	1.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	VLMC	nan	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	L6 CT	nan	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Non-neuron	1.0	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.7792207792207793	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	SST	0.9841269841269841	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	L6b	0.8636363636363636	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	VIP	0.6923076923076923	0.5972023477886156		0.8932313757062815	subclass	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	CGE	1.0	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Microglia	0.9791666666666666	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Astrocyte	1.0	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9990281827016521	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	MGE	1.0	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	unknown	nan	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Non-neuron	1.0	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	deep layer non-IT	0.4794520547945205	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.7792207792207793	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Vascular	0.8421052631578947	0.8253611769583192		0.9162386504206546	class	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	GABAergic	1.0	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	unknown	nan	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	primary auditory cortex
+pineda	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	primary auditory cortex

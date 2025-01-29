@@ -1,38 +1,38 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	dorsolateral_prefrontal_cortex	SST	0.967741935483871	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Endothelial	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	L5 6 NP	nan	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	OPC	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	L5/6 NP	0.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Pericyte	0.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	SNCG	nan	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	VLMC	nan	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Microglia	0.9791666666666666	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	LAMP5	nan	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	CGE	nan	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7746031746031746	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	L6b	0.8636363636363636	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	L6 CT	nan	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	PVALB	0.96875	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	L5 ET	0.14492753623188406	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	VIP	0.6923076923076923	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	Chandelier	1.0	0.5632333349513478		0.8856964871335226	rachel_subclass	0.0
-pineda	dorsolateral_prefrontal_cortex	MGE	1.0	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	deep layer non-IT	0.4316546762589928	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	Microglia	0.9791666666666666	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	CGE	1.0	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7746031746031746	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	unknown	nan	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	Vascular	0.8888888888888888	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.8249375824016112		0.9117287612766929	rachel_class	0.0
-pineda	dorsolateral_prefrontal_cortex	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	dorsolateral_prefrontal_cortex	unknown	nan	0.7455947136563876		0.9959295154185022	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+pineda	dorsolateral_prefrontal_cortex	CGE	nan	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L5/6 NP	0.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L6 CT	nan	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L6b	0.8636363636363636	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	PVALB	0.96875	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7746031746031746	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Endothelial	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	OPC	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L5 6 NP	nan	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L5 ET	0.14492753623188406	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	VIP	0.6923076923076923	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	SNCG	nan	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Microglia	0.9791666666666666	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	LAMP5	nan	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	SST	0.967741935483871	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	VLMC	nan	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Pericyte	0.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Chandelier	1.0	0.5632333349513478		0.8856964871335227	subclass	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	CGE	1.0	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Vascular	0.8888888888888888	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	deep layer non-IT	0.4316546762589928	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7746031746031746	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	MGE	1.0	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Microglia	0.9791666666666666	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	unknown	nan	0.8249375824016112		0.9117287612766928	class	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	unknown	nan	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	dorsolateral prefrontal cortex
+pineda	dorsolateral_prefrontal_cortex	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	dorsolateral prefrontal cortex

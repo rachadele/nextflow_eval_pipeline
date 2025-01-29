@@ -1,23 +1,23 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	OPC	1.0	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8275862068965517	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	1.0	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9183673469387755	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Pericyte	0.0	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.5745953553835327		0.9243209007741028	rachel_subclass	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Vascular	1.0	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8275862068965517	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9183673469387755	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	1.0	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.7182441942294159		0.9343209007741028	rachel_class	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9183673469387755	0.6725994995699429		0.9154320118852138	rachel_family	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.6725994995699429		0.9154320118852138	rachel_family	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.9444444444444444	0.6725994995699429		0.9154320118852138	rachel_family	0.0
-rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8275862068965517	0.6725994995699429		0.9154320118852138	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	OPC	1.0	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8275862068965517	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9183673469387755	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	1.0	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Pericyte	0.0	0.5745953553835327		0.9243209007741028	subclass	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Microglia	1.0	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	1.0	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Vascular	1.0	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8275862068965517	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	1.0	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9183673469387755	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	nan	0.7182441942294159		0.9343209007741028	class	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	0.8275862068965517	0.6725994995699429		0.9154320118852138	family	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.6725994995699429		0.9154320118852138	family	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9183673469387755	0.6725994995699429		0.9154320118852138	family	0.0	prefrontal cortex	anterior cingulate cortex
+rosmap	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	0.9444444444444444	0.6725994995699429		0.9154320118852138	family	0.0	prefrontal cortex	anterior cingulate cortex

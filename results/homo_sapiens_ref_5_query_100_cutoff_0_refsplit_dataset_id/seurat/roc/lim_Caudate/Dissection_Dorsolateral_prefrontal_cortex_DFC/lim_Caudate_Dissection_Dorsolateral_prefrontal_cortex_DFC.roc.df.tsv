@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	L5 ET	0.7074468085106382	0.126444976840688
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	Astrocyte	1.0	0.355715675059476
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	Endothelial	0.3350515463917526	0.0
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	Microglia	0.9426129426129426	0.283744196800513
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	Oligodendrocyte	0.981875	0.468918385044035
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	OPC	1.0	0.333270818582183
-Dissection_Dorsolateral_prefrontal_cortex_DFC	lim_Caudate	rachel_subclass	L2/3-6 IT	0.8602150537634409	0.090606883430978

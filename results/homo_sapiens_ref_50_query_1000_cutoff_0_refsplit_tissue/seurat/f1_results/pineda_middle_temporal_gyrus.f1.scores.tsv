@@ -1,38 +1,38 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	middle_temporal_gyrus	SST	0.967741935483871	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	L5/6 NP	0.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Non-neuron	1.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	PVALB	0.96875	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	L6b	0.8888888888888888	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	OPC	1.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Chandelier	1.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	VLMC	nan	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	CGE	nan	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	GABAergic	1.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	SNCG	nan	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	L5 ET	0.10526315789473684	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Astrocyte	0.9939393939393939	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	L5 6 NP	nan	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	L6 CT	nan	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Oligodendrocyte	0.9978494623655914	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	VIP	0.7169811320754716	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	L2/3-6 IT	0.7361563517915309	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	LAMP5	nan	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Pericyte	0.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Endothelial	1.0	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Microglia	0.9791666666666666	0.5615789540502796		0.8784059279387042	rachel_subclass	0.0
-pineda	middle_temporal_gyrus	Oligodendrocyte lineage	0.9980582524271845	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	Vascular	0.8421052631578947	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	MGE	1.0	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	unknown	nan	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	Non-neuron	1.0	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	CGE	1.0	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	GABAergic	1.0	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	deep layer non-IT	0.3945578231292517	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	Astrocyte	0.9939393939393939	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	L2/3-6 IT	0.7361563517915309	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	Microglia	0.9791666666666666	0.8130894319192656		0.9011052428665152	rachel_class	0.0
-pineda	middle_temporal_gyrus	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	middle_temporal_gyrus	unknown	nan	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	middle_temporal_gyrus	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	rachel_family	0.0
-pineda	middle_temporal_gyrus	GABAergic	1.0	0.7455947136563876		0.9959295154185022	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+pineda	middle_temporal_gyrus	OPC	1.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Microglia	0.9791666666666666	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Endothelial	1.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Chandelier	1.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	SST	0.967741935483871	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Pericyte	0.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	GABAergic	1.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	PVALB	0.96875	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Non-neuron	1.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L6 CT	nan	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	CGE	nan	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L5 6 NP	nan	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	VIP	0.7169811320754716	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L6b	0.8888888888888888	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L5/6 NP	0.0	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Oligodendrocyte	0.9978494623655914	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L2/3-6 IT	0.7361563517915309	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	VLMC	nan	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	SNCG	nan	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	LAMP5	nan	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L5 ET	0.10526315789473684	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Astrocyte	0.9939393939393939	0.5615789540502796		0.8784059279387043	subclass	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Microglia	0.9791666666666666	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	MGE	1.0	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	GABAergic	1.0	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Non-neuron	1.0	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	CGE	1.0	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Vascular	0.8421052631578947	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Oligodendrocyte lineage	0.9980582524271845	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	deep layer non-IT	0.3945578231292517	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	unknown	nan	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	L2/3-6 IT	0.7361563517915309	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Astrocyte	0.9939393939393939	0.8130894319192656		0.9011052428665152	class	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Glutamatergic	0.9823788546255506	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	GABAergic	1.0	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	Non-neuron	1.0	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	middle temporal gyrus
+pineda	middle_temporal_gyrus	unknown	nan	0.7455947136563876		0.9959295154185022	family	0.0	primary motor cortex	middle temporal gyrus

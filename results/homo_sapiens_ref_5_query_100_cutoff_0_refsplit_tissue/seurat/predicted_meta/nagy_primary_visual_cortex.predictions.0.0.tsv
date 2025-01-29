@@ -1,4 +1,4 @@
-orig.ident	nCount_RNA	nFeature_RNA	cell_type	batch	rachel_subclass	rachel_class	rachel_family	nCounts_RNA	joinid	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+orig.ident	nCount_RNA	nFeature_RNA	cell_type	batch	subclass	class	family	nCounts_RNA	joinid	_scvi_batch	_scvi_labels	predicted_subclass	confidence	predicted_class	predicted_family
 35	726	296	Ex_6_L4_6	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	2328	0	7397	0	Microglia	0.258928856020373	Microglia	Non-neuron
 35	2385	550	Ex_10_L2_4	batch_35	L2/3-6 IT	L2/3-6 IT	Glutamatergic	7284	1	7397	0	L2/3-6 IT	0.280679507598976	L2/3-6 IT	Glutamatergic
 19	850	318	Endo	batch_19	Endothelial	Vascular	Non-neuron	2461	2	7396	0	PVALB	0.216691509297085	MGE	GABAergic

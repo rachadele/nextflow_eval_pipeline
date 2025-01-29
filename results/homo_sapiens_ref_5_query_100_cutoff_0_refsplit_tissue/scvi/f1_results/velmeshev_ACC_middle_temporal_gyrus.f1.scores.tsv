@@ -1,34 +1,34 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_ACC	middle_temporal_gyrus	SNCG	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	L2/3-6 IT	0.7804878048780488	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	L6 CT	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Microglia	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	LAMP5	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	SST	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	PVALB	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	L5 ET	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	L5/6 NP	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	VIP	0.5	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Astrocyte	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Non-neuron	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	L6b	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	GABAergic	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	VLMC	nan	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.926829268292683	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Endothelial	0.8571428571428571	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Oligodendrocyte	0.9411764705882353	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	OPC	1.0	0.579244021100096		0.8788983398237344	rachel_subclass	0.0
-velmeshev_ACC	middle_temporal_gyrus	Oligodendrocyte lineage	0.95	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	L2/3-6 IT	0.7804878048780488	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	CGE	0.8888888888888888	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	Microglia	1.0	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	deep layer non-IT	0.2857142857142857	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	Astrocyte	1.0	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	Non-neuron	nan	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	GABAergic	nan	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.926829268292683	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	Vascular	1.0	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	MGE	1.0	0.7119927497976278		0.9034926442121565	rachel_class	0.0
-velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.9213483146067416	0.9230398503132649		0.9297745249052645	rachel_family	0.0
-velmeshev_ACC	middle_temporal_gyrus	Non-neuron	0.9512195121951219	0.9230398503132649		0.9297745249052645	rachel_family	0.0
-velmeshev_ACC	middle_temporal_gyrus	GABAergic	0.896551724137931	0.9230398503132649		0.9297745249052645	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+velmeshev_ACC	middle_temporal_gyrus	L5 ET	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Astrocyte	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	SST	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	L6 CT	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Oligodendrocyte	0.9411764705882353	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.926829268292683	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	GABAergic	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	L2/3-6 IT	0.7804878048780488	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	L5/6 NP	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	VLMC	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	SNCG	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	PVALB	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	OPC	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Endothelial	0.8571428571428571	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	L6b	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Non-neuron	nan	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	LAMP5	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	VIP	0.5	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Microglia	1.0	0.579244021100096		0.8788983398237343	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Astrocyte	1.0	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Vascular	1.0	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.926829268292683	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	MGE	1.0	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	GABAergic	nan	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	L2/3-6 IT	0.7804878048780488	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	CGE	0.8888888888888888	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Non-neuron	nan	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Oligodendrocyte lineage	0.95	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Microglia	1.0	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	deep layer non-IT	0.2857142857142857	0.7119927497976278		0.9034926442121565	class	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Glutamatergic	0.9213483146067416	0.9230398503132649		0.9297745249052645	family	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	GABAergic	0.896551724137931	0.9230398503132649		0.9297745249052645	family	0.0	anterior cingulate cortex	middle temporal gyrus
+velmeshev_ACC	middle_temporal_gyrus	Non-neuron	0.9512195121951219	0.9230398503132649		0.9297745249052645	family	0.0	anterior cingulate cortex	middle temporal gyrus

@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	L5 ET	0.6455696202531647	0.0308945643354074
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	Astrocyte	0.9803571428571428	0.583472560524582
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	Endothelial	0.33730158730158727	0.0
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	Microglia	0.9764705882352941	0.301461669642832
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9503588516746413	0.583124548651567
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	OPC	1.0	0.938952757809265
-Dissection_Anterior_cingulate_cortex_ACC	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.75440313111546	0.135978909088175

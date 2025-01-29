@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	Astrocyte	0.99936	0.27
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	Endothelial	0.63652141573173	0.09
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	L2/3-6 IT	0.9593832741944198	0.51
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	L5 ET	0.7770977956399951	0.01
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	Microglia	0.9999666132478633	0.21
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	OPC	0.9998530276308054	0.64
-Dissection_Angular_gyrus_AnG	lim_Caudate	rachel_subclass	Oligodendrocyte	0.9745151199165798	0.29
