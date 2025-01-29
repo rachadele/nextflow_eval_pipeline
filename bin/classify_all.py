@@ -116,13 +116,15 @@ def main():
                     'reference': ref_name,
                     'label': label,
                     'f1_score': metrics['f1-score'],
-                    'macro_f1': classification_report.get('macro avg', {}).get('f1-score', None),
-                    'micro_f1': classification_report.get('micro avg', {}).get('f1-score', None),
+                   # 'macro_f1': classification_report.get('macro avg', {}).get('f1-score', None),
+                   # 'micro_f1': classification_report.get('micro avg', {}).get('f1-score', None),
                     'weighted_f1': classification_report.get('weighted avg', {}).get('f1-score', None),
                     'key': key,
                     'cutoff': cutoff,
                     'query_tissue': query_tissue,
                     'ref_tissue': ref_tissue
+                    # 'disease': disease,
+                    # 'sex': sex
                 })
 
     # Save F1 scores to a file
