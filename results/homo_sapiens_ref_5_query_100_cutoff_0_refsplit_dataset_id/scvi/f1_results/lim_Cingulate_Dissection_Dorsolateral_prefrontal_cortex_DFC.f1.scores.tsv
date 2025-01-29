@@ -1,29 +1,29 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	VLMC	nan	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.6666666666666666	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.6666666666666666	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	nan	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.3448275862068966	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	nan	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.0	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.9523809523809523	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	0.8	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7272727272727273	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.0	0.34698675708527926		0.5486651807698181	rachel_subclass	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.6666666666666666	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	1.0	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	nan	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.6666666666666666	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.36363636363636365	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.3448275862068966	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.0	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7272727272727273	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.40627909185902916		0.5927215075847656	rachel_class	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.8095238095238095	0.6259557221831689		0.6568725062343208	rachel_family	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.3225806451612903	0.6259557221831689		0.6568725062343208	rachel_family	0.0
-lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7457627118644068	0.6259557221831689		0.6568725062343208	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	VIP	nan	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L6 CT	nan	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.3448275862068966	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.6666666666666666	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte	0.9523809523809523	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7272727272727273	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L5 ET	0.0	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	SST	nan	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.6666666666666666	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	OPC	0.8	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Endothelial	0.0	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	VLMC	nan	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.34698675708527926		0.5486651807698181	subclass	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Oligodendrocyte lineage	1.0	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.3448275862068966	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	CGE	nan	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Astrocyte	0.6666666666666666	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Vascular	0.0	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	L2/3-6 IT	0.7272727272727273	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	deep layer non-IT	0.36363636363636365	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Microglia	0.6666666666666666	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.7	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	MGE	nan	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	nan	0.40627909185902916		0.5927215075847656	class	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Glutamatergic	0.8095238095238095	0.6259557221831689		0.6568725062343208	family	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	GABAergic	0.3225806451612903	0.6259557221831689		0.6568725062343208	family	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex
+lim_Cingulate	Dissection_Dorsolateral_prefrontal_cortex_DFC	Non-neuron	0.7457627118644068	0.6259557221831689		0.6568725062343208	family	0.0	anterior cingulate cortex	dorsolateral prefrontal cortex

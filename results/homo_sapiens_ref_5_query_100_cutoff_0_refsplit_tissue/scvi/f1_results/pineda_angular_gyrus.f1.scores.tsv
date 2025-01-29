@@ -1,29 +1,29 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	angular_gyrus	Astrocyte	0.96	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	L6b	0.6666666666666666	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	L2/3-6 IT	0.6	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	Endothelial	0.4	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	OPC	1.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	GABAergic	1.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	L5 ET	0.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	SNCG	nan	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	VIP	0.8235294117647058	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	Chandelier	0.5	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	Microglia	1.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	PVALB	0.8	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	Oligodendrocyte	1.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	L5/6 NP	0.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	SST	1.0	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	LAMP5	nan	0.6093872549019608		0.8492509803921569	rachel_subclass	0.0
-pineda	angular_gyrus	Astrocyte	0.96	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	Microglia	1.0	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	L2/3-6 IT	0.6	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	Vascular	0.4	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	Oligodendrocyte lineage	1.0	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	CGE	0.9	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	GABAergic	1.0	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	MGE	0.9333333333333333	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	deep layer non-IT	0.36363636363636365	0.7952188552188552		0.8818606060606059	rachel_class	0.0
-pineda	angular_gyrus	Glutamatergic	0.8387096774193549	0.9103391232423491		0.9374292803970223	rachel_family	0.0
-pineda	angular_gyrus	Non-neuron	0.9692307692307692	0.9103391232423491		0.9374292803970223	rachel_family	0.0
-pineda	angular_gyrus	GABAergic	0.9230769230769231	0.9103391232423491		0.9374292803970223	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+pineda	angular_gyrus	PVALB	0.8	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	L5/6 NP	0.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	L6b	0.6666666666666666	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Chandelier	0.5	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Astrocyte	0.96	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	VIP	0.8235294117647058	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	SNCG	nan	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Microglia	1.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	L2/3-6 IT	0.6	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	L5 ET	0.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Oligodendrocyte	1.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Endothelial	0.4	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	SST	1.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	GABAergic	1.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	LAMP5	nan	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	OPC	1.0	0.6093872549019608		0.8492509803921569	subclass	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	CGE	0.9	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Oligodendrocyte lineage	1.0	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	MGE	0.9333333333333333	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Vascular	0.4	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Astrocyte	0.96	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	deep layer non-IT	0.36363636363636365	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Microglia	1.0	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	GABAergic	1.0	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	L2/3-6 IT	0.6	0.7952188552188552		0.8818606060606061	class	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Non-neuron	0.9692307692307692	0.9103391232423491		0.9374292803970223	family	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	Glutamatergic	0.8387096774193549	0.9103391232423491		0.9374292803970223	family	0.0	primary motor cortex	angular gyrus
+pineda	angular_gyrus	GABAergic	0.9230769230769231	0.9103391232423491		0.9374292803970223	family	0.0	primary motor cortex	angular gyrus

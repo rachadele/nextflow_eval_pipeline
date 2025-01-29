@@ -1,28 +1,28 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	Dissection_Primary_somatosensory_cortex_S1	PVALB	0.6666666666666666	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	VIP	0.6666666666666666	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	SST	0.0	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.967741935483871	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8571428571428571	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.8192771084337349	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	SNCG	nan	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	L6b	nan	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	L5/6 NP	0.0	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	LAMP5	nan	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.0	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.42857142857142855	0.42707111086434835		0.7553247527546387	rachel_subclass	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	MGE	0.2222222222222222	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8571428571428571	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.8192771084337349	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.967741935483871	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	CGE	0.6	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.0	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.5263157894736842	0.6658555458618188		0.778443481476084	rachel_class	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9215686274509803	0.875214620853566		0.9079913841020953	rachel_family	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.9454545454545454	0.875214620853566		0.9079913841020953	rachel_family	0.0
-nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.7586206896551724	0.875214620853566		0.9079913841020953	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	Dissection_Primary_somatosensory_cortex_S1	VIP	0.6666666666666666	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.967741935483871	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8571428571428571	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.42857142857142855	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	SNCG	nan	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	PVALB	0.6666666666666666	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	LAMP5	nan	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	L6b	nan	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	SST	0.0	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	L5/6 NP	0.0	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.0	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.8192771084337349	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.42707111086434835		0.7553247527546388	subclass	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	1.0	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	MGE	0.2222222222222222	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8571428571428571	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.967741935483871	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Microglia	1.0	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.0	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.8192771084337349	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.5263157894736842	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	CGE	0.6	0.6658555458618188		0.778443481476084	class	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.9215686274509803	0.875214620853566		0.9079913841020953	family	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.7586206896551724	0.875214620853566		0.9079913841020953	family	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex
+nagy	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.9454545454545454	0.875214620853566		0.9079913841020953	family	0.0	dorsolateral prefrontal cortex	primary somatosensory cortex

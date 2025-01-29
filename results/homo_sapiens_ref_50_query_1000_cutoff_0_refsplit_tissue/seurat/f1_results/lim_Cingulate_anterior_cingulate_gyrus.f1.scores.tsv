@@ -1,33 +1,33 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	anterior_cingulate_gyrus	L5 6 NP	nan	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	unknown	nan	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Glutamatergic	0.6076923076923076	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	PVALB	0.6666666666666666	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Microglia	0.8275862068965517	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	OPC	0.5882352941176471	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Endothelial	0.0	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	SST	0.2857142857142857	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	L5 ET	0.0	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Astrocyte	0.8930232558139535	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	VIP	nan	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	L2/3-6 IT	0.8089171974522293	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	GABAergic	0.7645687645687645	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	L6 CT	nan	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Non-neuron	nan	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Oligodendrocyte	0.8546255506607929	0.3935643455989499		0.6711338432610848	rachel_subclass	0.0
-lim_Cingulate	anterior_cingulate_gyrus	deep layer non-IT	0.5546218487394958	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	unknown	nan	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Glutamatergic	0.6076923076923076	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Microglia	0.8275862068965517	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.9424460431654677	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	CGE	nan	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Astrocyte	0.8930232558139535	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	MGE	0.46153846153846156	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Non-neuron	nan	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	L2/3-6 IT	0.8089171974522293	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	GABAergic	0.7645687645687645	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Vascular	0.0	0.48836617382226927		0.740095910566876	rachel_class	0.0
-lim_Cingulate	anterior_cingulate_gyrus	GABAergic	0.7439824945295405	0.6335636228641321		0.8506492282590465	rachel_family	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Non-neuron	0.9562171628721541	0.6335636228641321		0.8506492282590465	rachel_family	0.0
-lim_Cingulate	anterior_cingulate_gyrus	unknown	nan	0.6335636228641321		0.8506492282590465	rachel_family	0.0
-lim_Cingulate	anterior_cingulate_gyrus	Glutamatergic	0.834054834054834	0.6335636228641321		0.8506492282590465	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	anterior_cingulate_gyrus	OPC	0.5882352941176471	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Astrocyte	0.8930232558139535	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	GABAergic	0.7645687645687645	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	L6 CT	nan	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	L5 ET	0.0	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Microglia	0.8275862068965517	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	PVALB	0.6666666666666666	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Glutamatergic	0.6076923076923076	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	VIP	nan	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	L5 6 NP	nan	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	L2/3-6 IT	0.8089171974522293	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	SST	0.2857142857142857	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Non-neuron	nan	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	unknown	nan	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Endothelial	0.0	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Oligodendrocyte	0.8546255506607929	0.3935643455989499		0.6711338432610848	subclass	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Oligodendrocyte lineage	0.9424460431654677	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Astrocyte	0.8930232558139535	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	GABAergic	0.7645687645687645	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Microglia	0.8275862068965517	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Glutamatergic	0.6076923076923076	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	L2/3-6 IT	0.8089171974522293	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Non-neuron	nan	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Vascular	0.0	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	deep layer non-IT	0.5546218487394958	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	MGE	0.46153846153846156	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	CGE	nan	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	unknown	nan	0.4883661738222693		0.740095910566876	class	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Non-neuron	0.9562171628721541	0.6335636228641321		0.8506492282590465	family	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	unknown	nan	0.6335636228641321		0.8506492282590465	family	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	GABAergic	0.7439824945295405	0.6335636228641321		0.8506492282590465	family	0.0	anterior cingulate cortex	anterior cingulate gyrus
+lim_Cingulate	anterior_cingulate_gyrus	Glutamatergic	0.834054834054834	0.6335636228641321		0.8506492282590465	family	0.0	anterior cingulate cortex	anterior cingulate gyrus

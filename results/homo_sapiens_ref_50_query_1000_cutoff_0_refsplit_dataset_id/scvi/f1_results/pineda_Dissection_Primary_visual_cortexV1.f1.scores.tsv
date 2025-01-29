@@ -1,35 +1,35 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	Dissection_Primary_visual_cortexV1	Endothelial	1.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	LAMP5	nan	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Microglia	0.9791666666666666	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	SNCG	nan	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	PVALB	0.9491525423728814	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.9989235737351991	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	VIP	0.75	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Pericyte	0.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Non-neuron	1.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	VLMC	nan	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	L5/6 NP	0.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	L6b	0.8095238095238095	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	OPC	1.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	L5 ET	0.1875	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Astrocyte	1.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.7975077881619937	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Chandelier	1.0	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	CGE	nan	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	SST	0.9552238805970149	0.5917618219551221		0.8901811369335145	rachel_subclass	0.0
-pineda	Dissection_Primary_visual_cortexV1	Microglia	0.9791666666666666	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	Vascular	0.8888888888888888	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	0.9990281827016521	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	Non-neuron	1.0	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	CGE	0.9855072463768116	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	Astrocyte	1.0	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.7975077881619937	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.5531914893617021	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	MGE	1.0	0.9203290262157715		0.9258897074313315	rachel_class	0.0
-pineda	Dissection_Primary_visual_cortexV1	Non-neuron	0.9992372234935164	0.9968343109403		0.9980018212549185	rachel_family	0.0
-pineda	Dissection_Primary_visual_cortexV1	GABAergic	0.9955947136563876	0.9968343109403		0.9980018212549185	rachel_family	0.0
-pineda	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9956709956709957	0.9968343109403		0.9980018212549185	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+pineda	Dissection_Primary_visual_cortexV1	CGE	nan	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	LAMP5	nan	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	L6b	0.8095238095238095	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Oligodendrocyte	0.9989235737351991	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	VIP	0.75	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Non-neuron	1.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	L5 ET	0.1875	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	SST	0.9552238805970149	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	VLMC	nan	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	L5/6 NP	0.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	PVALB	0.9491525423728814	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Pericyte	0.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	SNCG	nan	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Microglia	0.9791666666666666	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	L6 CT	nan	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.7975077881619937	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Chandelier	1.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Astrocyte	1.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	OPC	1.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Endothelial	1.0	0.5917618219551222		0.8901811369335145	subclass	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	CGE	0.9855072463768116	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Non-neuron	1.0	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Vascular	0.8888888888888888	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	MGE	1.0	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	GABAergic	1.0	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	deep layer non-IT	0.5531914893617021	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Microglia	0.9791666666666666	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	L2/3-6 IT	0.7975077881619937	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Astrocyte	1.0	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Oligodendrocyte lineage	0.9990281827016521	0.9203290262157715		0.9258897074313316	class	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Glutamatergic	0.9956709956709957	0.9968343109403		0.9980018212549185	family	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	GABAergic	0.9955947136563876	0.9968343109403		0.9980018212549185	family	0.0	primary motor cortex	primary visual cortex
+pineda	Dissection_Primary_visual_cortexV1	Non-neuron	0.9992372234935164	0.9968343109403		0.9980018212549185	family	0.0	primary motor cortex	primary visual cortex

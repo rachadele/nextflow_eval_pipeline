@@ -8,3 +8,8 @@ scvi-human-2024-07-01/
 *model.pt
 *pyc
 results/
+slurm*
+bash*
+.nfs*
+*.swp
+params.hs.json

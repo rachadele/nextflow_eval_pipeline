@@ -1,31 +1,31 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_PFC	primary_motor_cortex	GABAergic	nan	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	SST	0.5454545454545454	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	VIP	0.5	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	L6 CT	nan	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	Glutamatergic	0.3333333333333333	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	Astrocyte	0.88	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	CGE	nan	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	PVALB	0.6666666666666666	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	Microglia	0.8571428571428571	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	Endothelial	1.0	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	L2/3-6 IT	0.4	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	L5/6 NP	0.0	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	LAMP5	0.6666666666666666	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	Non-neuron	nan	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	OPC	1.0	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	Oligodendrocyte	0.7741935483870968	0.47646610110319787		0.6367404552436811	rachel_subclass	0.0
-velmeshev_PFC	primary_motor_cortex	GABAergic	nan	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	Oligodendrocyte lineage	0.8852459016393442	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	MGE	0.7142857142857143	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	Glutamatergic	0.3333333333333333	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	CGE	0.7058823529411765	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	Astrocyte	0.88	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	Microglia	0.8571428571428571	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	L2/3-6 IT	0.4	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	deep layer non-IT	0.4	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	Non-neuron	nan	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	Vascular	1.0	0.5614445599402206		0.6568281581485053	rachel_class	0.0
-velmeshev_PFC	primary_motor_cortex	GABAergic	0.6111111111111112	0.6476421118581172		0.6703209715896769	rachel_family	0.0
-velmeshev_PFC	primary_motor_cortex	Glutamatergic	0.4827586206896552	0.6476421118581172		0.6703209715896769	rachel_family	0.0
-velmeshev_PFC	primary_motor_cortex	Non-neuron	0.8490566037735849	0.6476421118581172		0.6703209715896769	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+velmeshev_PFC	primary_motor_cortex	GABAergic	nan	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	L2/3-6 IT	0.4	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	SST	0.5454545454545454	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	CGE	nan	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	PVALB	0.6666666666666666	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Oligodendrocyte	0.7741935483870968	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Endothelial	1.0	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	L6 CT	nan	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	VIP	0.5	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Non-neuron	nan	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	LAMP5	0.6666666666666666	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	OPC	1.0	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	L5/6 NP	0.0	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Microglia	0.8571428571428571	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Glutamatergic	0.3333333333333333	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Astrocyte	0.88	0.47646610110319787		0.636740455243681	subclass	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	GABAergic	nan	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	L2/3-6 IT	0.4	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	MGE	0.7142857142857143	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	CGE	0.7058823529411765	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Oligodendrocyte lineage	0.8852459016393442	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Non-neuron	nan	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Vascular	1.0	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Astrocyte	0.88	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Microglia	0.8571428571428571	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Glutamatergic	0.3333333333333333	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	deep layer non-IT	0.4	0.5614445599402205		0.6568281581485054	class	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Non-neuron	0.8490566037735849	0.6476421118581172		0.6703209715896769	family	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	GABAergic	0.6111111111111112	0.6476421118581172		0.6703209715896769	family	0.0	prefrontal cortex	primary motor cortex
+velmeshev_PFC	primary_motor_cortex	Glutamatergic	0.4827586206896552	0.6476421118581172		0.6703209715896769	family	0.0	prefrontal cortex	primary motor cortex

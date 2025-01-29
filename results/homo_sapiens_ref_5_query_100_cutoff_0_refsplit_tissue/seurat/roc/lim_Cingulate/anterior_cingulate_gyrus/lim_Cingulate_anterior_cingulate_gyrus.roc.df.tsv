@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	Endothelial	0.46428571428571425	0.0068301404271573
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.8028375733855186	0.121716002329538
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	OPC	1.0	0.459884575426983
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9533492822966508	0.412197816741161
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	L5 ET	0.7389240506329114	0.214229179816549
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	Astrocyte	0.9803571428571428	0.392423497146079
-anterior_cingulate_gyrus	lim_Cingulate	rachel_subclass	Microglia	0.9294117647058823	0.52570377895359

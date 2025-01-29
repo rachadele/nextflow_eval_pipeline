@@ -1,20 +1,20 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	1.0	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	1.0	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	1.0	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9629629629629629	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9807692307692307	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	OPC	1.0	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.8679665242165242		0.9849928774928774	rachel_subclass	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	1.0	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9629629629629629	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9807692307692307	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	1.0	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	1.0	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.8491045991045991		0.9849928774928774	rachel_class	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	1.0	0.7359330484330484		0.9849928774928774	rachel_family	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9629629629629629	0.7359330484330484		0.9849928774928774	rachel_family	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.7359330484330484		0.9849928774928774	rachel_family	0.0
-rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9807692307692307	0.7359330484330484		0.9849928774928774	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9807692307692307	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	1.0	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	OPC	1.0	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	1.0	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9629629629629629	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	1.0	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.8679665242165242		0.9849928774928774	subclass	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9807692307692307	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	1.0	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	1.0	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9629629629629629	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	1.0	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	1.0	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.8491045991045991		0.9849928774928774	class	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.9807692307692307	0.7359330484330484		0.9849928774928774	family	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.9629629629629629	0.7359330484330484		0.9849928774928774	family	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	unknown	nan	0.7359330484330484		0.9849928774928774	family	0.0	prefrontal cortex	multiple tissues
+rosmap	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	1.0	0.7359330484330484		0.9849928774928774	family	0.0	prefrontal cortex	multiple tissues

@@ -1,28 +1,28 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.5	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.6530612244897959	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.9	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	SST	nan	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.0	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.0	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	LAMP5	nan	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.6060606060606061	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.3448275862068966	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L6 CT	nan	0.3695345705197922		0.5253987373063302	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.5	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.6530612244897959	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.0	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.9166666666666666	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	MGE	nan	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.3448275862068966	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.2	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.6060606060606061	0.36551055303854235		0.5439811127852575	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.29411764705882354	0.6360826939471441		0.6554112649557574	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.7391304347826086	0.6360826939471441		0.6554112649557574	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.875	0.6360826939471441		0.6554112649557574	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	SST	nan	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	LAMP5	nan	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.3448275862068966	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L5 ET	0.0	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L6 CT	nan	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.6060606060606061	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.5	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	OPC	1.0	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Endothelial	0.0	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte	0.9	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.6530612244897959	0.36953457051979216		0.5253987373063302	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	nan	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	deep layer non-IT	0.2	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	L2/3-6 IT	0.6060606060606061	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Oligodendrocyte lineage	0.9166666666666666	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Microglia	0.5	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.3448275862068966	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Vascular	0.0	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	CGE	nan	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Astrocyte	0.8	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.6530612244897959	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	MGE	nan	0.3655105530385423		0.5439811127852575	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Non-neuron	0.875	0.6360826939471441		0.6554112649557574	family	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	GABAergic	0.29411764705882354	0.6360826939471441		0.6554112649557574	family	0.0	anterior cingulate cortex	primary somatosensory cortex
+lim_Cingulate	Dissection_Primary_somatosensory_cortex_S1	Glutamatergic	0.7391304347826086	0.6360826939471441		0.6554112649557574	family	0.0	anterior cingulate cortex	primary somatosensory cortex

@@ -1,22 +1,22 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lau	primary_auditory_cortex	unknown	nan	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Microglia	1.0	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Endothelial	0.0	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Oligodendrocyte	0.9583333333333334	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	GABAergic	0.9565217391304348	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Non-neuron	nan	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	VLMC	nan	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Astrocyte	1.0	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Glutamatergic	0.8333333333333334	0.5275764895330113		0.8926992753623189	rachel_subclass	0.0
-lau	primary_auditory_cortex	Oligodendrocyte lineage	0.9583333333333334	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	unknown	nan	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	Microglia	1.0	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	GABAergic	0.9565217391304348	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	Non-neuron	nan	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	Vascular	0.5	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	Astrocyte	1.0	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	Glutamatergic	0.8333333333333334	0.6560235507246377		0.8976992753623189	rachel_class	0.0
-lau	primary_auditory_cortex	GABAergic	0.9565217391304348	0.6617494824016563		0.8574016563146998	rachel_family	0.0
-lau	primary_auditory_cortex	Non-neuron	0.8571428571428571	0.6617494824016563		0.8574016563146998	rachel_family	0.0
-lau	primary_auditory_cortex	unknown	nan	0.6617494824016563		0.8574016563146998	rachel_family	0.0
-lau	primary_auditory_cortex	Glutamatergic	0.8333333333333334	0.6617494824016563		0.8574016563146998	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lau	primary_auditory_cortex	VLMC	nan	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	unknown	nan	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Endothelial	0.0	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Glutamatergic	0.8333333333333334	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Astrocyte	1.0	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	GABAergic	0.9565217391304348	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Non-neuron	nan	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Microglia	1.0	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Oligodendrocyte	0.9583333333333334	0.5275764895330113		0.8926992753623191	subclass	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Vascular	0.5	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	unknown	nan	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Microglia	1.0	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Glutamatergic	0.8333333333333334	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Oligodendrocyte lineage	0.9583333333333334	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Non-neuron	nan	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	GABAergic	0.9565217391304348	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Astrocyte	1.0	0.6560235507246377		0.8976992753623189	class	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Non-neuron	0.8571428571428571	0.6617494824016563		0.8574016563146998	family	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	GABAergic	0.9565217391304348	0.6617494824016563		0.8574016563146998	family	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	unknown	nan	0.6617494824016563		0.8574016563146998	family	0.0	prefrontal cortex	primary auditory cortex
+lau	primary_auditory_cortex	Glutamatergic	0.8333333333333334	0.6617494824016563		0.8574016563146998	family	0.0	prefrontal cortex	primary auditory cortex

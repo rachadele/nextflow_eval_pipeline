@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-primary_motor_cortex	lim_Cingulate	rachel_subclass	Endothelial	0.369047619047619	0.0
-primary_motor_cortex	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9892344497607655	0.46529079557835
-primary_motor_cortex	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.776908023483366	0.0531234423626984
-primary_motor_cortex	lim_Cingulate	rachel_subclass	Microglia	1.0	0.476771153626758
-primary_motor_cortex	lim_Cingulate	rachel_subclass	OPC	1.0	0.426477317708567
-primary_motor_cortex	lim_Cingulate	rachel_subclass	Astrocyte	0.9875	0.481227762550593
-primary_motor_cortex	lim_Cingulate	rachel_subclass	L5 ET	0.6487341772151899	0.114583234311171

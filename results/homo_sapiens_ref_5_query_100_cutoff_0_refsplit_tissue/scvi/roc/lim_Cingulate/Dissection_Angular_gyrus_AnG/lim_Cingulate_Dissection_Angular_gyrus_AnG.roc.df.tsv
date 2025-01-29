@@ -1,7 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Dissection_Angular_gyrus_AnG	lim_Cingulate	rachel_subclass	Astrocyte	0.799284984678243	0.1
-Dissection_Angular_gyrus_AnG	lim_Cingulate	rachel_subclass	Endothelial	0.75	0.07
-Dissection_Angular_gyrus_AnG	lim_Cingulate	rachel_subclass	L2/3-6 IT	0.6870588235294118	0.15
-Dissection_Angular_gyrus_AnG	lim_Cingulate	rachel_subclass	L5 ET	0.4673913043478261	0.04
-Dissection_Angular_gyrus_AnG	lim_Cingulate	rachel_subclass	OPC	1.0	0.74
-Dissection_Angular_gyrus_AnG	lim_Cingulate	rachel_subclass	Oligodendrocyte	0.9811764705882353	0.15

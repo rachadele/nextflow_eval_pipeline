@@ -17,7 +17,7 @@ import scvi
 #import adata_functions
 #from adata_functions import *
 from pathlib import Path
-
+import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -38,8 +38,8 @@ def parse_arguments():
     
 def setup_plot(var, split):
     """Set up the basic plot structure."""
-    plt.figure(figsize=(17, 6))
-    plt.xlabel('Reference', fontsize=25)
+    plt.figure(figsize=(17, 8))
+    plt.xlabel(split.split("_")[0].capitalize(), fontsize=25)
     var = var.replace("_", " ")
     #plt.ylabel(f"{var}", fontsize=25)
     plt.ylabel("Performance (weighted F1)", fontsize=25)
@@ -66,18 +66,50 @@ def add_strip_plot(df, var, split, facet):
     # remove extra weighted f1 values
     # doesn't change overall values
     df = df.drop_duplicates(subset=[split, facet, var])
+    df['match_tissue'] = df.apply(lambda row: row['query_tissue'] in row['ref_tissue'], axis=1)
+    # Map match_tissue to colors before plotting
+    df['color'] = df['match_tissue'].map({True: 'red', False: 'grey'})
     
-    sns.stripplot(
-        data=df,
+    # Separate data into two groups based on 'match_tissue'
+    mask = df['match_tissue']
+    match_tissue_df = df[mask]
+    non_match_tissue_df = df[~mask]
+    
+    # Create the strip plot for non-matching tissue data
+    ax = sns.stripplot(
+        data=non_match_tissue_df,
         y=var,
         x=split,
         hue=facet,
-        dodge=True,
-        palette="dark:.3",
+        dodge=True,          
+        palette="Set2",      
         size=3,
-        alpha=0.8,
-        jitter=True
+        alpha=0.8,           
+        jitter=True,
+        marker="o",
+        edgecolor='black',   
+        linewidth=2
     )
+
+    # Create the strip plot for matching tissue data with customized edgecolor
+    sns.stripplot(
+        data=match_tissue_df,
+        y=var,
+        x=split,
+        hue=facet,
+        dodge=True,          
+        palette="Set2",      
+        size=3,
+        alpha=0.8,           
+        jitter=True,
+        marker="o",
+        edgecolor='r',       # Red edge color for match tissue
+        linewidth=2,         
+        legend=None,         # Disable legend for second plot
+        ax=ax                # Add to same axis
+    )
+     # Create custom legend handles for edge color
+          
 
 def add_acronym_legend(acronym_mapping, figure=None, x=1.05, y=0.5, title=None):
     if acronym_mapping:
@@ -116,10 +148,19 @@ def plot_distribution(df, var, outdir, split=None, facet="key", acronym_mapping=
     plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
     plt.xticks(rotation=90, ha="right", fontsize=25)
     plt.yticks(fontsize=25)
-    
+    red_patch = mlines.Line2D([], [], color='red', marker='o', markersize=7, label='Matching Tissue')
+    grey_patch = mlines.Line2D([], [], color='grey', marker='o', markersize=7, label='Non-Matching Tissue')
+
+    # Add the custom legend to the plot
+    plt.legend(handles=[red_patch, grey_patch], title="Match Tissue", loc='upper left', bbox_to_anchor=(1, 1.02))
+
+    # Move the legend to the desired location
+    #sns.move_legend(plt, bbox_to_anchor=(1, 1.02), loc='upper left')
+
     add_acronym_legend(acronym_mapping, title=split.split("_")[0].capitalize())
     plt.tight_layout()
     save_plot(var, split, facet, outdir)
+    
     
 def calculate_global_f1_range(all_f1_scores):
     """Determine the global F1 score range."""
@@ -198,7 +239,7 @@ def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1, 0.8, 0.
             if i == 0:
                 axes[i].set_ylabel('Reference', fontsize=fontsize)
                 axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=fontsize, 
-                                        rotation=45)
+                                        rotation=0)
                 if acronym_mapping:
                     legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
                     axes[i].text(
@@ -289,11 +330,10 @@ def main():
         temp_df = pd.read_csv(file,sep="\t")
         f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
     #need to flatten all_f1_scores into data frame
-
-
     f1_df["reference_acronym"] = f1_df["reference"].apply(make_acronym)
     f1_df["query_acronym"] = f1_df["query"].apply(make_acronym)
-    
+    f1_df["reference"] = f1_df["reference"].str.replace("_", " ")
+ 
     acronym_mapping_ref = f1_df[["reference", "reference_acronym"]].drop_duplicates().set_index("reference")["reference_acronym"].to_dict()
     acronym_mapping_query = f1_df[["query", "query_acronym"]].drop_duplicates().set_index("query")["query_acronym"].to_dict()
     
@@ -320,6 +360,7 @@ def main():
             subset["query"] = subset["query"].str.replace("_processed_", "")
             subset["query_acronym"] = subset["query"].apply(make_acronym)
             subset["reference_acronym"] = subset["reference"].apply(make_acronym)
+            subset["reference"] = subset["reference"].str.replace("_", " ")
             # If this key doesn't exist in the dictionary, initialize an empty DataFrame
             if key not in all_f1_scores:
                 all_f1_scores[key] = subset

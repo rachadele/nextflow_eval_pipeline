@@ -1,5 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lau	rachel_subclass	Astrocyte	1.0	0.35
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lau	rachel_subclass	Endothelial	1.0	0.16
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lau	rachel_subclass	Microglia	0.9999999999999999	0.32
-Whole_Taxonomy_-_DLPFC_Seattle_Alzheimers_Disease_Atlas_SEA-AD	lau	rachel_subclass	Oligodendrocyte	0.9928	0.22

@@ -1,24 +1,24 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	Dissection_Angular_gyrus_AnG	VLMC	nan	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	OPC	1.0	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9981308411214953	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Pericyte	0.0	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.9959839357429718	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9695057833859095	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Microglia	0.9863013698630136	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Endothelial	nan	0.5409019936466719		0.9805539271555951	rachel_subclass	0.0
-rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.9959839357429718	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9983792544570502	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9695057833859095	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Microglia	0.9863013698630136	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.7437712929311182		0.9835538029489272	rachel_class	0.0
-rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.9959839357429718	0.7344454776411624		0.9738646277854307	rachel_family	0.0
-rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.7344454776411624		0.9738646277854307	rachel_family	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	0.9722921914357683	0.7344454776411624		0.9738646277854307	rachel_family	0.0
-rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9695057833859095	0.7344454776411624		0.9738646277854307	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.9959839357429718	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	OPC	1.0	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9695057833859095	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Pericyte	0.0	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	VLMC	nan	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte	0.9981308411214953	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Endothelial	nan	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Microglia	0.9863013698630136	0.5409019936466719		0.9805539271555951	subclass	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.9959839357429718	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9695057833859095	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Vascular	1.0	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	nan	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Oligodendrocyte lineage	0.9983792544570502	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Astrocyte	1.0	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Microglia	0.9863013698630136	0.7437712929311182		0.9835538029489271	class	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	unknown	nan	0.7344454776411624		0.9738646277854307	family	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	GABAergic	0.9959839357429718	0.7344454776411624		0.9738646277854307	family	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Glutamatergic	0.9695057833859095	0.7344454776411624		0.9738646277854307	family	0.0	prefrontal cortex	angular gyrus
+rosmap	Dissection_Angular_gyrus_AnG	Non-neuron	0.9722921914357683	0.7344454776411624		0.9738646277854307	family	0.0	prefrontal cortex	angular gyrus

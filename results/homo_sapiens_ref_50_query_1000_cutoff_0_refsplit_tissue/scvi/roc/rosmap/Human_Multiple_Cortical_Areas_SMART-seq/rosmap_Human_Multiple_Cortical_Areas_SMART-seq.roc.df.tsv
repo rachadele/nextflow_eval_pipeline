@@ -1,7 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-Human_Multiple_Cortical_Areas_SMART-seq	rosmap	rachel_subclass	Astrocyte	0.9996389180672268	0.19
-Human_Multiple_Cortical_Areas_SMART-seq	rosmap	rachel_subclass	Endothelial	0.877004008016032	0.01
-Human_Multiple_Cortical_Areas_SMART-seq	rosmap	rachel_subclass	Microglia	0.9999999999999999	0.27
-Human_Multiple_Cortical_Areas_SMART-seq	rosmap	rachel_subclass	OPC	1.0	0.2
-Human_Multiple_Cortical_Areas_SMART-seq	rosmap	rachel_subclass	Oligodendrocyte	0.9999999999999999	0.4
-Human_Multiple_Cortical_Areas_SMART-seq	rosmap	rachel_subclass	Pericyte	0.9995979899497487	0.02

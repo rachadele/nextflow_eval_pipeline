@@ -1,36 +1,36 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.8687782805429864	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VLMC	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6b	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7272727272727273	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.8085106382978723	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.8514851485148515	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SNCG	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.49514563106796117	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	0.8888888888888888	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 6 NP	nan	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	0.0	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	0.5384615384615384	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.8235294117647058	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	0.1111111111111111	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 ET	0.025	0.323062282943297		0.6416252828265523	rachel_subclass	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	0.26666666666666666	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	0.9230769230769231	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7272727272727273	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	nan	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.628099173553719	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.8085106382978723	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.8514851485148515	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.49514563106796117	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	nan	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.8235294117647058	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	0.0	0.4603155266846189		0.7093891505649407	rachel_class	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.6756756756756757	0.5865275023144092		0.7870783475210134	rachel_family	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.9118136439267887	0.5865275023144092		0.7870783475210134	rachel_family	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.7586206896551724	0.5865275023144092		0.7870783475210134	rachel_family	0.0
-lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	nan	0.5865275023144092		0.7870783475210134	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6 CT	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	PVALB	0.8888888888888888	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SST	0.1111111111111111	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L6b	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.49514563106796117	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 6 NP	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.8514851485148515	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	SNCG	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.8085106382978723	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Endothelial	0.0	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	LAMP5	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	OPC	0.5384615384615384	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	VLMC	nan	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7272727272727273	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.8235294117647058	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte	0.8687782805429864	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L5 ET	0.025	0.32306228294329703		0.6416252828265525	subclass	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	nan	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.49514563106796117	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Oligodendrocyte lineage	0.9230769230769231	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	MGE	0.26666666666666666	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Astrocyte	0.8514851485148515	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	L2/3-6 IT	0.8085106382978723	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	CGE	nan	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Vascular	0.0	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	deep layer non-IT	0.628099173553719	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.7272727272727273	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Microglia	0.8235294117647058	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	nan	0.4603155266846189		0.7093891505649407	class	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	GABAergic	0.6756756756756757	0.5865275023144092		0.7870783475210134	family	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	unknown	nan	0.5865275023144092		0.7870783475210134	family	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Non-neuron	0.9118136439267887	0.5865275023144092		0.7870783475210134	family	0.0	anterior cingulate cortex	middle temporal gyrus
+lim_Cingulate	Whole_Taxonomy_-_MTG_Seattle_Alzheimers_Disease_Atlas_SEA-AD	Glutamatergic	0.7586206896551724	0.5865275023144092		0.7870783475210134	family	0.0	anterior cingulate cortex	middle temporal gyrus

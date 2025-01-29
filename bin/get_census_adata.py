@@ -29,6 +29,7 @@ import json
 import argparse
 import os
 import json
+import yaml
 
 # Function to parse command line arguments
 def parse_arguments():
@@ -45,7 +46,25 @@ def parse_arguments():
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
+        
+     
+def create_ref_tissue_yaml(refs, outdir):
+    ref_names = list(refs.keys())
+    ref_tissue_yaml = {}
 
+    for ref_name in ref_names:
+        unique_tissues = refs[ref_name].obs["tissue"].unique().tolist()
+        
+        # If there are multiple tissue types, handle them by including them as a list
+        if len(unique_tissues) == 1:
+            ref_tissue_yaml[ref_name.replace(" ","_").replace("(","").replace(")","").replace(":","").replace("'","")] = unique_tissues[0]
+        else:
+            ref_tissue_yaml[ref_name.replace(" ","_").replace("(","").replace(")","").replace(":","").replace("'","")] = "multiple tissues"
+    
+    with open(os.path.join(outdir, "ref_tissue.yaml"), 'w') as file:
+        yaml.dump(ref_tissue_yaml, file)
+         
+         
 def main():
    # Parse command line arguments
    args = parse_arguments()
@@ -81,7 +100,8 @@ def main():
       ref.write(os.path.join(outdir,f"{new_ref_name}.h5ad"))
       ref.obs.to_csv(os.path.join(outdir,f"{new_ref_name}.obs.tsv"), sep="\t")
       # data_summary = refs["whole cortex"].obs[["collection_name","dataset_title","tissue"]].value_counts().reset_index(name="count")
-
+      
+   create_ref_tissue_yaml(refs, outdir)
     #  sc.pp.neighbors(ref, use_rep="scvi")
       #sc.tl.umap(ref, min_dist=0.3)
       

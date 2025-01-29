@@ -30,6 +30,7 @@ import argparse
 import os
 import json
 from types import SimpleNamespace
+import yaml
 
 # Function to parse command line arguments
 def parse_arguments():
@@ -42,7 +43,8 @@ def parse_arguments():
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
     parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/4a/164f6559104b8e872e88bc617411a2/probs/lim_Cingulate_processed_Dissection:_Anterior_cingulate_cortex_ACC.prob.df.tsv")
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
-
+    parser.add_argument('--query_tissue', type=str, default="anterior cingulate cortex")
+    parser.add_argument('--ref_tissue_mapping', type=str)
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -58,8 +60,6 @@ def main():
     scvi.settings.seed = SEED # For `scvi`
     # Parse command line arguments
     args = parse_arguments()
-    # Parse command line arguments
-    args = parse_arguments()
     # query_name = args.query_name
    # ref_name = args.ref_name
     tree_file = args.tree_file
@@ -67,7 +67,12 @@ def main():
     ref_name = args.ref_name
     ref_keys = args.ref_keys
     cutoff = args.cutoff
-
+    query_tissue = args.query_tissue.replace("_", " ")
+    ref_tissue_mapping = args.ref_tissue_mapping
+    
+    # Load data
+    ref_tissue_mapping = yaml.load(open(ref_tissue_mapping), Loader=yaml.FullLoader)
+    ref_tissue=ref_tissue_mapping[ref_name]
     
     prob_df = pd.read_csv(args.probs, sep="\t")
     mapping_df = pd.read_csv(args.mapping_file, sep="\t")
@@ -79,12 +84,12 @@ def main():
     with open(tree_file, 'r') as file:
         tree = json.load(file)
         
-    rocs = roc_analysis(probabilities=prob_df, query=query, key=ref_keys[0])
-    outdir = os.path.join("roc", query_name, ref_name)
-    os.makedirs(outdir, exist_ok=True)
-    plot_roc_curves(metrics=rocs, title=f"{query_name} vs {ref_name}", save_path=os.path.join(outdir, "roc_results.png"))
-    roc_df = process_roc(rocs, ref_name=ref_name, query_name=query_name)
-    roc_df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.roc.df.tsv"),sep="\t", index=False)
+    #rocs = roc_analysis(probabilities=prob_df, query=query, key=ref_keys[0])
+    #outdir = os.path.join("roc", query_name, ref_name)
+  #  os.makedirs(outdir, exist_ok=True)
+   # plot_roc_curves(metrics=rocs, title=f"{query_name} vs {ref_name}", save_path=os.path.join(outdir, "roc_results.png"))
+    #roc_df = process_roc(rocs, ref_name=ref_name, query_name=query_name)
+    #roc_df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.roc.df.tsv"),sep="\t", index=False)
         
     # Classify cells and evaluate
     query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, tree=tree)
@@ -115,7 +120,9 @@ def main():
                     'micro_f1': classification_report.get('micro avg', {}).get('f1-score', None),
                     'weighted_f1': classification_report.get('weighted avg', {}).get('f1-score', None),
                     'key': key,
-                    'cutoff': cutoff
+                    'cutoff': cutoff,
+                    'query_tissue': query_tissue,
+                    'ref_tissue': ref_tissue
                 })
 
     # Save F1 scores to a file

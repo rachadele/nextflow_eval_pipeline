@@ -1,23 +1,23 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8678304239401496	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Endothelial	0.45454545454545453	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.8880597014925373	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	PVALB	nan	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9775784753363229	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	nan	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	0.9940357852882704	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.9574468085106383	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	nan	0.5139496649113373		0.9114049838541082	rachel_subclass	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	0.7857142857142857	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	MGE	nan	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	0.9940357852882704	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8678304239401496	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.8880597014925373	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9775784753363229	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	nan	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.9574468085106383	0.607851720031356		0.9170348539839783	rachel_class	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	0.9114470842332614	0.8862000691685958		0.8871798299121144	rachel_family	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8656716417910447	0.8862000691685958		0.8871798299121144	rachel_family	0.0
-lau	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.8814814814814815	0.8862000691685958		0.8871798299121144	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9775784753363229	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8678304239401496	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.9574468085106383	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Endothelial	0.45454545454545453	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	PVALB	nan	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Pericyte	nan	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte	0.9940357852882704	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.8880597014925373	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	nan	0.5139496649113373		0.9114049838541082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Microglia	0.9574468085106383	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Astrocyte	0.9775784753363229	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	nan	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Oligodendrocyte lineage	0.9940357852882704	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8678304239401496	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	MGE	nan	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.8880597014925373	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Vascular	0.7857142857142857	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	L2/3-6 IT	nan	0.607851720031356		0.9170348539839783	class	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Glutamatergic	0.8656716417910447	0.8862000691685958		0.8871798299121144	family	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	Non-neuron	0.9114470842332614	0.8862000691685958		0.8871798299121144	family	0.0	prefrontal cortex	multiple tissues
+lau	Human_Multiple_Cortical_Areas_SMART-seq	GABAergic	0.8814814814814815	0.8862000691685958		0.8871798299121144	family	0.0	prefrontal cortex	multiple tissues

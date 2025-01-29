@@ -1,23 +1,23 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lau	angular_gyrus	Glutamatergic	0.8907766990291263	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	Non-neuron	nan	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	L2/3-6 IT	nan	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	PVALB	nan	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	Astrocyte	0.9863013698630136	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	Microglia	0.9473684210526315	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	GABAergic	0.9349593495934959	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	Oligodendrocyte	0.9940357852882704	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	Endothelial	0.64	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	VLMC	nan	0.5393441624826537		0.9312279059183967	rachel_subclass	0.0
-lau	angular_gyrus	Glutamatergic	0.8907766990291263	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	Non-neuron	nan	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	Vascular	0.8666666666666667	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	GABAergic	0.9349593495934959	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	L2/3-6 IT	nan	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	MGE	nan	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	Oligodendrocyte lineage	0.9940357852882704	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	Astrocyte	0.9863013698630136	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	Microglia	0.9473684210526315	0.6244564768325783		0.93508123925173	rachel_class	0.0
-lau	angular_gyrus	GABAergic	0.9274193548387096	0.9084116565760283		0.9022901622443913	rachel_family	0.0
-lau	angular_gyrus	Glutamatergic	0.8875453446191052	0.9084116565760283		0.9022901622443913	rachel_family	0.0
-lau	angular_gyrus	Non-neuron	0.9102702702702703	0.9084116565760283		0.9022901622443913	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lau	angular_gyrus	Oligodendrocyte	0.9940357852882704	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	VLMC	nan	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Non-neuron	nan	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Microglia	0.9473684210526315	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Glutamatergic	0.8907766990291263	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Astrocyte	0.9863013698630136	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Endothelial	0.64	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	L2/3-6 IT	nan	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	GABAergic	0.9349593495934959	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	PVALB	nan	0.5393441624826537		0.9312279059183968	subclass	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Non-neuron	nan	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Microglia	0.9473684210526315	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Glutamatergic	0.8907766990291263	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Astrocyte	0.9863013698630136	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	MGE	nan	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Oligodendrocyte lineage	0.9940357852882704	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	L2/3-6 IT	nan	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	GABAergic	0.9349593495934959	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Vascular	0.8666666666666667	0.6244564768325783		0.93508123925173	class	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Non-neuron	0.9102702702702703	0.9084116565760283		0.9022901622443913	family	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	GABAergic	0.9274193548387096	0.9084116565760283		0.9022901622443913	family	0.0	prefrontal cortex	angular gyrus
+lau	angular_gyrus	Glutamatergic	0.8875453446191052	0.9084116565760283		0.9022901622443913	family	0.0	prefrontal cortex	angular gyrus

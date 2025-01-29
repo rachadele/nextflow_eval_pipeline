@@ -1,32 +1,32 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_PFC	primary_auditory_cortex	OPC	0.9655172413793104	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	L6 CT	nan	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	L5/6 NP	0.0	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	VIP	0.6666666666666666	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Oligodendrocyte	1.0	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Microglia	1.0	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	SST	0.8571428571428571	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	CGE	nan	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Chandelier	nan	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	PVALB	0.0	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Glutamatergic	0.9655172413793104	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	L2/3-6 IT	0.8163265306122449	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	GABAergic	nan	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Astrocyte	0.782608695652174	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	LAMP5	1.0	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	SNCG	nan	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	L6b	nan	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Endothelial	1.0	0.5029877351573647		0.8697616497873513	rachel_subclass	0.0
-velmeshev_PFC	primary_auditory_cortex	Oligodendrocyte lineage	0.9811320754716981	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	Microglia	1.0	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	MGE	1.0	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	CGE	0.875	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	deep layer non-IT	0.4	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	Glutamatergic	0.9655172413793104	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	L2/3-6 IT	0.8163265306122449	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	Vascular	1.0	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	GABAergic	nan	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	Astrocyte	0.782608695652174	0.7820584543115426		0.9008040096720988	rachel_class	0.0
-velmeshev_PFC	primary_auditory_cortex	Non-neuron	0.9555555555555556	0.9200356983489514		0.9311994645247659	rachel_family	0.0
-velmeshev_PFC	primary_auditory_cortex	Glutamatergic	0.9156626506024096	0.9200356983489514		0.9311994645247659	rachel_family	0.0
-velmeshev_PFC	primary_auditory_cortex	GABAergic	0.8888888888888888	0.9200356983489514		0.9311994645247659	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+velmeshev_PFC	primary_auditory_cortex	GABAergic	nan	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	SST	0.8571428571428571	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	L2/3-6 IT	0.8163265306122449	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	L5/6 NP	0.0	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	CGE	nan	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	OPC	0.9655172413793104	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Astrocyte	0.782608695652174	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Endothelial	1.0	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Microglia	1.0	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Glutamatergic	0.9655172413793104	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	L6b	nan	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Oligodendrocyte	1.0	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	LAMP5	1.0	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	PVALB	0.0	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	L6 CT	nan	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	VIP	0.6666666666666666	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	SNCG	nan	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Chandelier	nan	0.5029877351573647		0.8697616497873513	subclass	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	GABAergic	nan	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	L2/3-6 IT	0.8163265306122449	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	CGE	0.875	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	deep layer non-IT	0.4	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Astrocyte	0.782608695652174	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Microglia	1.0	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Vascular	1.0	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Glutamatergic	0.9655172413793104	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	MGE	1.0	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Oligodendrocyte lineage	0.9811320754716981	0.7820584543115428		0.9008040096720988	class	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	GABAergic	0.8888888888888888	0.9200356983489514		0.9311994645247657	family	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Non-neuron	0.9555555555555556	0.9200356983489514		0.9311994645247657	family	0.0	prefrontal cortex	primary auditory cortex
+velmeshev_PFC	primary_auditory_cortex	Glutamatergic	0.9156626506024096	0.9200356983489514		0.9311994645247657	family	0.0	prefrontal cortex	primary auditory cortex

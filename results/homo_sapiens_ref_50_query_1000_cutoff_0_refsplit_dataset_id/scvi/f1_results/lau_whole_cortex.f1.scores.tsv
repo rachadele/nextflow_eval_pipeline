@@ -1,24 +1,24 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lau	whole_cortex	Astrocyte	0.9863013698630136	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Oligodendrocyte	0.996031746031746	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Endothelial	0.64	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	L2/3-6 IT	nan	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	VLMC	nan	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Microglia	0.9473684210526315	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	PVALB	nan	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Chandelier	nan	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	GABAergic	0.9397590361445783	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Glutamatergic	0.8793103448275862	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Non-neuron	nan	0.4898882652654141		0.9272129919289082	rachel_subclass	0.0
-lau	whole_cortex	Vascular	0.8666666666666667	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	MGE	nan	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	Astrocyte	0.9863013698630136	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	Microglia	0.9473684210526315	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	GABAergic	0.9397590361445783	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	Glutamatergic	0.8793103448275862	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	Non-neuron	nan	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	Oligodendrocyte lineage	0.996031746031746	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	L2/3-6 IT	nan	0.6239375093984693		0.9310663252622414	rachel_class	0.0
-lau	whole_cortex	Glutamatergic	0.8771498771498771	0.9040315300919941		0.8950234388936521	rachel_family	0.0
-lau	whole_cortex	Non-neuron	0.9026737967914439	0.9040315300919941		0.8950234388936521	rachel_family	0.0
-lau	whole_cortex	GABAergic	0.9322709163346613	0.9040315300919941		0.8950234388936521	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lau	whole_cortex	PVALB	nan	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	GABAergic	0.9397590361445783	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Oligodendrocyte	0.996031746031746	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Microglia	0.9473684210526315	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Glutamatergic	0.8793103448275862	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Chandelier	nan	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	VLMC	nan	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Astrocyte	0.9863013698630136	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Non-neuron	nan	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Endothelial	0.64	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	L2/3-6 IT	nan	0.4898882652654141		0.9272129919289082	subclass	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	GABAergic	0.9397590361445783	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Glutamatergic	0.8793103448275862	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Oligodendrocyte lineage	0.996031746031746	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Microglia	0.9473684210526315	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	MGE	nan	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Astrocyte	0.9863013698630136	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Non-neuron	nan	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	L2/3-6 IT	nan	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Vascular	0.8666666666666667	0.6239375093984693		0.9310663252622415	class	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	GABAergic	0.9322709163346613	0.9040315300919941		0.8950234388936521	family	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Non-neuron	0.9026737967914439	0.9040315300919941		0.8950234388936521	family	0.0	prefrontal cortex	multiple tissues
+lau	whole_cortex	Glutamatergic	0.8771498771498771	0.9040315300919941		0.8950234388936521	family	0.0	prefrontal cortex	multiple tissues

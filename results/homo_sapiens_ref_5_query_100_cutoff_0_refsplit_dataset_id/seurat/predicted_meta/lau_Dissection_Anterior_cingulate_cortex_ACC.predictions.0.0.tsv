@@ -1,4 +1,4 @@
-orig.ident	nCount_RNA	nFeature_RNA	active.ident	sample	ID	Cell_type	rachel_subclass	rachel_class	rachel_family	nCounts_RNA	joinid	batch	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+orig.ident	nCount_RNA	nFeature_RNA	active.ident	sample	ID	Cell_type	subclass	class	family	nCounts_RNA	joinid	batch	_scvi_batch	_scvi_labels	predicted_subclass	confidence	predicted_class	predicted_family
 TTCTAACCATGACAAA_8	296	139	AD8	GSM4775566	TTCTAACCATGACAAA_8	Oligo	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	1070	0	GSM4775566	7399	0	Oligodendrocyte	0.60882974725533	Oligodendrocyte lineage	Non-neuron
 AATCACGAGTTCTCTT_8	1757	371	AD8	GSM4775566	AATCACGAGTTCTCTT_8	Excit	Glutamatergic	Glutamatergic	Glutamatergic	4277	1	GSM4775566	7399	0	L2/3-6 IT	0.313896566141015	L2/3-6 IT	Glutamatergic
 CTGTACCCACCCTTGT_10	374	183	AD10	GSM4775568	CTGTACCCACCCTTGT_10	Inhit	GABAergic	GABAergic	GABAergic	1234	2	GSM4775568	7401	0	VIP	0.508985375490894	CGE	GABAergic

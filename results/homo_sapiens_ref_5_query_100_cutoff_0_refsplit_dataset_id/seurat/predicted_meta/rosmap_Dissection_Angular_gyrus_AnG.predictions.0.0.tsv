@@ -1,4 +1,4 @@
-orig.ident	nCount_RNA	nFeature_RNA	projid	tsne1	tsne2	pre.cluster	broad.cell.type	Subcluster	batch	rachel_subclass	rachel_class	rachel_family	nCounts_RNA	joinid	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+orig.ident	nCount_RNA	nFeature_RNA	projid	tsne1	tsne2	pre.cluster	broad.cell.type	Subcluster	batch	subclass	class	family	nCounts_RNA	joinid	_scvi_batch	_scvi_labels	predicted_subclass	confidence	predicted_class	predicted_family
 0	482	273	20963866	32.0151437951308	3.39445523805025	2	Ex	Ex0	batch_20963866	Glutamatergic	Glutamatergic	Glutamatergic	1985	0	7424	0	L6 CT	0.417828053273817	deep layer non-IT	Glutamatergic
 0	1764	525	11200645	24.5163223477979	26.7235358385396	3	Ex	Ex0	batch_11200645	Glutamatergic	Glutamatergic	Glutamatergic	7170	1	7406	0	L2/3-6 IT	0.327810598247073	L2/3-6 IT	Glutamatergic
 0	286	165	20104101	-32.6486287361972	-30.4307952622644	1	Oli	Oli1	batch_20104101	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron	1277	2	7413	0	Oligodendrocyte	0.673068463375189	Oligodendrocyte lineage	Non-neuron

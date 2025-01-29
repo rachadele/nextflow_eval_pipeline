@@ -1,7 +1,7 @@
 organism: homo_sapiens
 census_version: 2024-07-01
 tree_file: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/master_hierarchy.json
-ref_keys: [rachel_subclass, rachel_class, rachel_family]
+ref_keys: [subclass, class, family]
 subsample_ref: 50
 subsample_query: 1000
 relabel_r: /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv

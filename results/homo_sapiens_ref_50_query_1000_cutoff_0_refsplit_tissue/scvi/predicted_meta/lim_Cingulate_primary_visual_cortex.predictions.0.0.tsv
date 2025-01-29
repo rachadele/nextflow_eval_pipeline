@@ -1,4 +1,4 @@
-orig.ident	nCount_RNA	nFeature_RNA	cellid	case_num	Location	Condition	Cluster	Lineage	batch	rachel_subclass	rachel_class	rachel_family	n_counts	joinid	_scvi_batch	_scvi_labels	predicted_rachel_subclass	confidence	predicted_rachel_class	predicted_rachel_family
+orig.ident	nCount_RNA	nFeature_RNA	cellid	case_num	Location	Condition	Cluster	Lineage	batch	subclass	class	family	n_counts	joinid	_scvi_batch	_scvi_labels	predicted_subclass	confidence	predicted_class	predicted_family
 0	1448.0	932	CCCAACTGTGGTGATG.1.H5263Cin	H5263Cin	Cingulate	HD	Glut_EYA1	Neuron	B3	Glutamatergic	Glutamatergic	Glutamatergic	1448.0	0	7396	0	SST	0.3	MGE	GABAergic
 0	963.0	671	AAAGTGATCAGACCGC.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_THEMIS	Neuron	B3	L5 ET	deep layer non-IT	Glutamatergic	963.0	1	7396	0	L2/3-6 IT	0.61	L2/3-6 IT	Glutamatergic
 0	879.0	601	GAGTTTGCACTAGTAC.1.H5608Cin	H5608Cin	Cingulate	HD	Glut_CUX2	Neuron	B3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	879.0	2	7396	0	L2/3-6 IT	0.72	L2/3-6 IT	Glutamatergic

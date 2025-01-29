@@ -1,33 +1,33 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-velmeshev_ACC	primary_somatosensory_cortex	L6b	nan	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	VLMC	nan	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	SST	0.5	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Endothelial	0.75	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Non-neuron	nan	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Microglia	0.8888888888888888	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	L2/3-6 IT	0.6111111111111112	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	L5 ET	nan	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	OPC	1.0	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	LAMP5	0.0	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	GABAergic	nan	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	SNCG	nan	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Glutamatergic	0.7058823529411765	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	VIP	0.6	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	L5/6 NP	1.0	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Oligodendrocyte	0.9032258064516129	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	PVALB	1.0	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Astrocyte	0.96	0.4955060088551549		0.7453435800126502	rachel_subclass	0.0
-velmeshev_ACC	primary_somatosensory_cortex	CGE	1.0	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	MGE	0.5555555555555556	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Oligodendrocyte lineage	0.918918918918919	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	deep layer non-IT	0.3333333333333333	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Non-neuron	nan	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Microglia	0.8888888888888888	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	L2/3-6 IT	0.6111111111111112	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Glutamatergic	0.7058823529411765	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	GABAergic	nan	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Astrocyte	0.96	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Vascular	0.8888888888888888	0.623870822694352		0.7800887122416534	rachel_class	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Glutamatergic	0.7368421052631579	0.7702491609570502		0.8026292590129452	rachel_family	0.0
-velmeshev_ACC	primary_somatosensory_cortex	GABAergic	0.6341463414634146	0.7702491609570502		0.8026292590129452	rachel_family	0.0
-velmeshev_ACC	primary_somatosensory_cortex	Non-neuron	0.9397590361445783	0.7702491609570502		0.8026292590129452	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+velmeshev_ACC	primary_somatosensory_cortex	L6b	nan	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	SNCG	nan	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Oligodendrocyte	0.9032258064516129	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	L5 ET	nan	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	LAMP5	0.0	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	VLMC	nan	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	L2/3-6 IT	0.6111111111111112	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	SST	0.5	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Glutamatergic	0.7058823529411765	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Endothelial	0.75	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	VIP	0.6	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	L5/6 NP	1.0	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	PVALB	1.0	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Microglia	0.8888888888888888	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Astrocyte	0.96	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	OPC	1.0	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Non-neuron	nan	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	GABAergic	nan	0.4955060088551549		0.7453435800126502	subclass	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	MGE	0.5555555555555556	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	deep layer non-IT	0.3333333333333333	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	L2/3-6 IT	0.6111111111111112	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Vascular	0.8888888888888888	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Glutamatergic	0.7058823529411765	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Microglia	0.8888888888888888	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Astrocyte	0.96	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Non-neuron	nan	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Oligodendrocyte lineage	0.918918918918919	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	GABAergic	nan	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	CGE	1.0	0.6238708226943521		0.7800887122416534	class	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Glutamatergic	0.7368421052631579	0.7702491609570502		0.8026292590129452	family	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	Non-neuron	0.9397590361445783	0.7702491609570502		0.8026292590129452	family	0.0	anterior cingulate cortex	primary somatosensory cortex
+velmeshev_ACC	primary_somatosensory_cortex	GABAergic	0.6341463414634146	0.7702491609570502		0.8026292590129452	family	0.0	anterior cingulate cortex	primary somatosensory cortex

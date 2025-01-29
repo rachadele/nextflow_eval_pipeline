@@ -1,20 +1,20 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-rosmap	primary_auditory_cortex	Oligodendrocyte	0.9787234042553191	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	L2/3-6 IT	nan	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	GABAergic	0.9166666666666666	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	Astrocyte	1.0	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	Microglia	1.0	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	OPC	1.0	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	Pericyte	0.0	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	VLMC	nan	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	Glutamatergic	0.9814814814814815	0.6529857280448297		0.9642454688731285	rachel_subclass	0.0
-rosmap	primary_auditory_cortex	Oligodendrocyte lineage	0.9795918367346939	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	L2/3-6 IT	nan	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	Vascular	1.0	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	GABAergic	0.9166666666666666	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	Astrocyte	1.0	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	Microglia	1.0	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	Glutamatergic	0.9814814814814815	0.839677140697549		0.9742498110355254	rachel_class	0.0
-rosmap	primary_auditory_cortex	Non-neuron	0.9850746268656716	0.9580727859175072		0.9695048838376924	rachel_family	0.0
-rosmap	primary_auditory_cortex	Glutamatergic	0.9724770642201835	0.9580727859175072		0.9695048838376924	rachel_family	0.0
-rosmap	primary_auditory_cortex	GABAergic	0.9166666666666666	0.9580727859175072		0.9695048838376924	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+rosmap	primary_auditory_cortex	Pericyte	0.0	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	L2/3-6 IT	nan	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	OPC	1.0	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Glutamatergic	0.9814814814814815	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Microglia	1.0	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Astrocyte	1.0	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Oligodendrocyte	0.9787234042553191	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	GABAergic	0.9166666666666666	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	VLMC	nan	0.6529857280448296		0.9642454688731285	subclass	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	L2/3-6 IT	nan	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Glutamatergic	0.9814814814814815	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Microglia	1.0	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Astrocyte	1.0	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Vascular	1.0	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	GABAergic	0.9166666666666666	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Oligodendrocyte lineage	0.9795918367346939	0.8396771406975488		0.9742498110355254	class	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Non-neuron	0.9850746268656716	0.9580727859175072		0.9695048838376924	family	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	Glutamatergic	0.9724770642201835	0.9580727859175072		0.9695048838376924	family	0.0	prefrontal cortex	primary auditory cortex
+rosmap	primary_auditory_cortex	GABAergic	0.9166666666666666	0.9580727859175072		0.9695048838376924	family	0.0	prefrontal cortex	primary auditory cortex

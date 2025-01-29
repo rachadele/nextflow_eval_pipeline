@@ -1,6 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-middle_temporal_gyrus	rosmap	rachel_subclass	Astrocyte	0.9999179341284604	0.15
-middle_temporal_gyrus	rosmap	rachel_subclass	Microglia	1.0	0.3
-middle_temporal_gyrus	rosmap	rachel_subclass	OPC	1.0	0.13
-middle_temporal_gyrus	rosmap	rachel_subclass	Oligodendrocyte	0.9999744521258386	0.42
-middle_temporal_gyrus	rosmap	rachel_subclass	Pericyte	0.4744232698094283	0.0

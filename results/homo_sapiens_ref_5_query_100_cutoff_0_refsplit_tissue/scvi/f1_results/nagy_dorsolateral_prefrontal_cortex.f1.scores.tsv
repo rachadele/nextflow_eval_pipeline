@@ -1,28 +1,28 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-nagy	dorsolateral_prefrontal_cortex	Endothelial	0.0	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	VLMC	nan	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	PVALB	0.6666666666666666	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	VIP	0.6666666666666666	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	Microglia	1.0	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	Astrocyte	0.7777777777777778	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	L5/6 NP	0.0	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	OPC	nan	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	CGE	nan	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7027027027027027	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	L6b	nan	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	L5 ET	0.13333333333333333	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.8387096774193549	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	SST	0.2857142857142857	0.4047714073520525		0.6491483009693207	rachel_subclass	0.0
-nagy	dorsolateral_prefrontal_cortex	Astrocyte	0.7777777777777778	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	CGE	0.5714285714285714	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	MGE	0.4	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7027027027027027	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.9411764705882353	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	Vascular	0.0	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	deep layer non-IT	0.2608695652173913	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	Microglia	1.0	0.6282172319682976		0.685219081209511	rachel_class	0.0
-nagy	dorsolateral_prefrontal_cortex	Non-neuron	0.8064516129032258	0.8222090841534362		0.8292864240706372	rachel_family	0.0
-nagy	dorsolateral_prefrontal_cortex	Glutamatergic	0.845360824742268	0.8222090841534362		0.8292864240706372	rachel_family	0.0
-nagy	dorsolateral_prefrontal_cortex	GABAergic	0.8148148148148148	0.8222090841534362		0.8292864240706372	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+nagy	dorsolateral_prefrontal_cortex	VIP	0.6666666666666666	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Astrocyte	0.7777777777777778	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Oligodendrocyte	0.8387096774193549	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	L5 ET	0.13333333333333333	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	OPC	nan	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	SST	0.2857142857142857	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	PVALB	0.6666666666666666	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	CGE	nan	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	L6b	nan	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Microglia	1.0	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	VLMC	nan	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	L5/6 NP	0.0	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Endothelial	0.0	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7027027027027027	0.40477140735205247		0.6491483009693207	subclass	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Astrocyte	0.7777777777777778	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	MGE	0.4	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Microglia	1.0	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	deep layer non-IT	0.2608695652173913	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Vascular	0.0	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	0.9411764705882353	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	L2/3-6 IT	0.7027027027027027	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	GABAergic	1.0	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	CGE	0.5714285714285714	0.6282172319682976		0.6852190812095111	class	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Non-neuron	0.8064516129032258	0.8222090841534362		0.8292864240706372	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	Glutamatergic	0.845360824742268	0.8222090841534362		0.8292864240706372	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex
+nagy	dorsolateral_prefrontal_cortex	GABAergic	0.8148148148148148	0.8222090841534362		0.8292864240706372	family	0.0	dorsolateral prefrontal cortex	dorsolateral prefrontal cortex

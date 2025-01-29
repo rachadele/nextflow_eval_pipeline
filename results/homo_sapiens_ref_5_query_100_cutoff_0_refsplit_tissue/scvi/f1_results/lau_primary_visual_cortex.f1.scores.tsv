@@ -1,19 +1,19 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lau	primary_visual_cortex	Non-neuron	nan	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	Glutamatergic	0.8735632183908046	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	Astrocyte	0.9411764705882353	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	VLMC	nan	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	GABAergic	0.8695652173913043	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	Microglia	1.0	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	Endothelial	0.0	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	Oligodendrocyte	0.9795918367346939	0.5829870928881298		0.902585879929183	rachel_subclass	0.0
-lau	primary_visual_cortex	Non-neuron	nan	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	Vascular	1.0	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	Glutamatergic	0.8735632183908046	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	Astrocyte	0.9411764705882353	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	GABAergic	0.8695652173913043	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	Microglia	1.0	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	Oligodendrocyte lineage	0.9795918367346939	0.8091281061578626		0.912585879929183	rachel_class	0.0
-lau	primary_visual_cortex	Non-neuron	0.8666666666666667	0.8699317008162586		0.8703938030984508	rachel_family	0.0
-lau	primary_visual_cortex	GABAergic	0.8695652173913043	0.8699317008162586		0.8703938030984508	rachel_family	0.0
-lau	primary_visual_cortex	Glutamatergic	0.8735632183908046	0.8699317008162586		0.8703938030984508	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lau	primary_visual_cortex	VLMC	nan	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Microglia	1.0	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Oligodendrocyte	0.9795918367346939	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	GABAergic	0.8695652173913043	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Endothelial	0.0	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Glutamatergic	0.8735632183908046	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Astrocyte	0.9411764705882353	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Non-neuron	nan	0.5829870928881298		0.902585879929183	subclass	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Microglia	1.0	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	GABAergic	0.8695652173913043	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Glutamatergic	0.8735632183908046	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Astrocyte	0.9411764705882353	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Non-neuron	nan	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Vascular	1.0	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Oligodendrocyte lineage	0.9795918367346939	0.8091281061578626		0.912585879929183	class	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	GABAergic	0.8695652173913043	0.8699317008162586		0.8703938030984508	family	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Glutamatergic	0.8735632183908046	0.8699317008162586		0.8703938030984508	family	0.0	prefrontal cortex	primary visual cortex
+lau	primary_visual_cortex	Non-neuron	0.8666666666666667	0.8699317008162586		0.8703938030984508	family	0.0	prefrontal cortex	primary visual cortex

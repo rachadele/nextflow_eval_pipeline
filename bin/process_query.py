@@ -13,7 +13,6 @@ from scipy.sparse import csr_matrix
 import warnings
 import cellxgene_census
 import cellxgene_census.experimental
-import scvi
 from sklearn.ensemble import RandomForestClassifier
 import adata_functions
 from adata_functions import *

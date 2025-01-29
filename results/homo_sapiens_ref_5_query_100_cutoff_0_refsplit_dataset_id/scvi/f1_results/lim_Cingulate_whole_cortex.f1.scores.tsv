@@ -1,26 +1,26 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	whole_cortex	L6 CT	nan	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Astrocyte	0.8	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Glutamatergic	0.6511627906976745	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Non-neuron	nan	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	L2/3-6 IT	0.7777777777777778	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Microglia	0.6666666666666666	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	SNCG	nan	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Endothelial	0.0	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Oligodendrocyte	0.8421052631578947	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	OPC	0.8	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	L5 ET	0.0	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	GABAergic	0.5294117647058824	0.4222603552504913		0.5955157140352073	rachel_subclass	0.0
-lim_Cingulate	whole_cortex	Astrocyte	0.8	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	Oligodendrocyte lineage	0.9166666666666666	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	deep layer non-IT	0.3333333333333333	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	Glutamatergic	0.6511627906976745	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	CGE	nan	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	Non-neuron	nan	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	L2/3-6 IT	0.7777777777777778	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	Microglia	0.6666666666666666	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	Vascular	0.0	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	GABAergic	0.5294117647058824	0.46750189998480013		0.6382763512604542	rachel_class	0.0
-lim_Cingulate	whole_cortex	Glutamatergic	0.7912087912087912	0.712942612942613		0.726920971748558	rachel_family	0.0
-lim_Cingulate	whole_cortex	Non-neuron	0.8333333333333334	0.712942612942613		0.726920971748558	rachel_family	0.0
-lim_Cingulate	whole_cortex	GABAergic	0.5142857142857142	0.712942612942613		0.726920971748558	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	whole_cortex	L2/3-6 IT	0.7777777777777778	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	L5 ET	0.0	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Glutamatergic	0.6511627906976745	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Microglia	0.6666666666666666	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	GABAergic	0.5294117647058824	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Astrocyte	0.8	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Oligodendrocyte	0.8421052631578947	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Non-neuron	nan	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	SNCG	nan	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Endothelial	0.0	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	L6 CT	nan	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	OPC	0.8	0.4222603552504913		0.5955157140352074	subclass	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	L2/3-6 IT	0.7777777777777778	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Glutamatergic	0.6511627906976745	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Vascular	0.0	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Microglia	0.6666666666666666	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	GABAergic	0.5294117647058824	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	deep layer non-IT	0.3333333333333333	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Astrocyte	0.8	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Non-neuron	nan	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Oligodendrocyte lineage	0.9166666666666666	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	CGE	nan	0.46750189998480013		0.6382763512604542	class	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	GABAergic	0.5142857142857142	0.712942612942613		0.726920971748558	family	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Non-neuron	0.8333333333333334	0.712942612942613		0.726920971748558	family	0.0	anterior cingulate cortex	multiple tissues
+lim_Cingulate	whole_cortex	Glutamatergic	0.7912087912087912	0.712942612942613		0.726920971748558	family	0.0	anterior cingulate cortex	multiple tissues

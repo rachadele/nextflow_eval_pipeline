@@ -1,34 +1,34 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.8333333333333334	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	L5 ET	0.045454545454545456	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	L6b	nan	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	LAMP5	nan	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	PVALB	1.0	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Astrocyte	0.8981481481481481	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	GABAergic	0.7415730337078652	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	L6 CT	nan	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	unknown	nan	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	L5 6 NP	nan	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Microglia	0.7878787878787878	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	SST	0.16	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Endothelial	0.0	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	OPC	0.5769230769230769	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.8571428571428571	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.7727272727272727	0.39254006207740505		0.7022219999041166	rachel_subclass	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.8333333333333334	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	deep layer non-IT	0.6518518518518519	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	MGE	0.36363636363636365	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Astrocyte	0.8981481481481481	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	GABAergic	0.7415730337078652	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	CGE	nan	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	unknown	nan	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9347826086956522	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Microglia	0.7878787878787878	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Vascular	0.0	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.7727272727272727	0.4986609499982729		0.7726829762783362	rachel_class	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	unknown	nan	0.6321598974246534		0.854433748807763	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	GABAergic	0.7058823529411765	0.6321598974246534		0.854433748807763	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Non-neuron	0.9581881533101045	0.6321598974246534		0.854433748807763	rachel_family	0.0
-lim_Cingulate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.8645690834473324	0.6321598974246534		0.854433748807763	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	L5 6 NP	nan	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Microglia	0.7878787878787878	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	unknown	nan	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	GABAergic	0.7415730337078652	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	L5 ET	0.045454545454545456	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Oligodendrocyte	0.8571428571428571	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	PVALB	1.0	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Endothelial	0.0	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.7727272727272727	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	SST	0.16	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	L6 CT	nan	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	LAMP5	nan	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	L6b	nan	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.8333333333333334	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Astrocyte	0.8981481481481481	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	OPC	0.5769230769230769	0.3925400620774051		0.7022219999041166	subclass	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Microglia	0.7878787878787878	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	unknown	nan	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	GABAergic	0.7415730337078652	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Non-neuron	nan	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.7727272727272727	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Vascular	0.0	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	CGE	nan	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Oligodendrocyte lineage	0.9347826086956522	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	MGE	0.36363636363636365	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	deep layer non-IT	0.6518518518518519	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	L2/3-6 IT	0.8333333333333334	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Astrocyte	0.8981481481481481	0.4986609499982729		0.7726829762783359	class	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	GABAergic	0.7058823529411765	0.6321598974246534		0.854433748807763	family	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Non-neuron	0.9581881533101045	0.6321598974246534		0.854433748807763	family	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	unknown	nan	0.6321598974246534		0.854433748807763	family	0.0	anterior cingulate cortex	primary auditory cortex
+lim_Cingulate	Dissection_Primary_auditory_cortexA1	Glutamatergic	0.8645690834473324	0.6321598974246534		0.854433748807763	family	0.0	anterior cingulate cortex	primary auditory cortex

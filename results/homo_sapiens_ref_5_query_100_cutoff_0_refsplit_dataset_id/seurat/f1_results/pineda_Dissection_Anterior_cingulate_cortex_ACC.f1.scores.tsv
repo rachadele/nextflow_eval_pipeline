@@ -1,34 +1,34 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff
-pineda	Dissection_Anterior_cingulate_cortex_ACC	SNCG	nan	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	OPC	0.9090909090909091	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	CGE	nan	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L6 CT	nan	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.9743589743589743	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.96	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	1.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	VIP	0.7142857142857143	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L5/6 NP	0.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	PVALB	1.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L5 6 NP	nan	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L6b	0.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.3333333333333333	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9090909090909091	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	SST	1.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L5 ET	0.42857142857142855	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Chandelier	1.0	0.5383542773016456		0.8211669663669663	rachel_subclass	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	CGE	1.0	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	MGE	1.0	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Vascular	0.6666666666666666	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	deep layer non-IT	0.5454545454545454	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.9887640449438202	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.3333333333333333	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9090909090909091	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.96	0.7403309499489275		0.8809559414368404	rachel_class	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9411764705882353	0.7352941176470589		0.9894117647058823	rachel_family	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.7352941176470589		0.9894117647058823	rachel_family	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	1.0	0.7352941176470589		0.9894117647058823	rachel_family	0.0
-pineda	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7352941176470589		0.9894117647058823	rachel_family	0.0
+query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
+pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L6b	0.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L5 ET	0.42857142857142855	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	SST	1.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L5 6 NP	nan	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Chandelier	1.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.96	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Endothelial	1.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L5/6 NP	0.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	CGE	nan	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	SNCG	nan	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.3333333333333333	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	VIP	0.7142857142857143	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L6 CT	nan	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	PVALB	1.0	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	OPC	0.9090909090909091	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9090909090909091	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	VLMC	nan	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte	0.9743589743589743	0.5383542773016456		0.8211669663669664	subclass	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Vascular	0.6666666666666666	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Microglia	0.9090909090909091	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	MGE	1.0	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Astrocyte	0.96	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	CGE	1.0	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Oligodendrocyte lineage	0.9887640449438202	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	L2/3-6 IT	0.3333333333333333	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	deep layer non-IT	0.5454545454545454	0.7403309499489275		0.8809559414368402	class	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Non-neuron	1.0	0.7352941176470589		0.9894117647058823	family	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	GABAergic	1.0	0.7352941176470589		0.9894117647058823	family	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	unknown	nan	0.7352941176470589		0.9894117647058823	family	0.0	primary motor cortex	anterior cingulate cortex
+pineda	Dissection_Anterior_cingulate_cortex_ACC	Glutamatergic	0.9411764705882353	0.7352941176470589		0.9894117647058823	family	0.0	primary motor cortex	anterior cingulate cortex

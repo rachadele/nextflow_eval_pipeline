@@ -1,8 +1,0 @@
-ref	query	key	label	auc	optimal threshold
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	Astrocyte	0.9993097142857142	0.25
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	Endothelial	0.6260666542697163	0.03
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	L2/3-6 IT	0.9640303319584286	0.61
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	L5 ET	0.6129734502496651	0.01
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	Microglia	0.9968616452991453	0.1
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	OPC	0.9997795414462081	0.61
-middle_temporal_gyrus	lim_Caudate	rachel_subclass	Oligodendrocyte	0.9699872552427298	0.36
