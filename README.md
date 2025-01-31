@@ -1,3 +1,3 @@
 # nextflow_eval_pipeline
 
-![dag.png]
+![workflow DAG](dag.png)
