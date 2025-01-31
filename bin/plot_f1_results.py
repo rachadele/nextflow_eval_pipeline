@@ -266,11 +266,11 @@ def plot_f1_heatmap_for_level(data, vmin, vmax, level, threshold, outpath,
     plt.figure(figsize=(20, 15))
     sns.heatmap(
         pivot_f1,
-        annot=True,
+        annot=False,
         cmap='YlOrRd',
         cbar_kws={'label': 'Weighted F1 Score'},
-        fmt='.3f',
-        annot_kws={"size": 15},
+        #fmt='.3f',
+       # annot_kws={"size": 15},
         vmin=vmin,
         vmax=vmax
     )

@@ -37,8 +37,6 @@ def parse_arguments():
   parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/queries/pineda.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
   parser.add_argument('--join_key', type=str, default="")
-  #parser.add_argument('--split_sex', action='store_true', help='Split by sex')
-  #parser.add_argument('--split_disease', action='store_true', help='Split by disease')
   parser.add_argument('--ref_keys', type=str, nargs='+', default=["rachel_subclass", "rachel_class", "rachel_family"])
   parser.add_argument('--remove_unknown', action='store_true', help='Remove cells with unknown labels')
   parser.add_argument('--seed', type=int, default=42)

@@ -1,0 +1,234 @@
+digraph "dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v15 [label="query_paths_adata"];
+
+v1 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v14 [label="relabel_q_paths"];
+
+v2 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="runSetup"];
+v2 -> v4 [label="organism"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1];
+v4 [label="runSetup"];
+v3 -> v4 [label="census_version"];
+
+v4 [label="runSetup"];
+v19 [label="mapQuery"];
+v4 -> v19;
+
+v5 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="getCensusAdata"];
+v5 -> v11 [label="organism"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="getCensusAdata"];
+v6 -> v11 [label="census_version"];
+
+v7 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="getCensusAdata"];
+v7 -> v11 [label="subsample_ref"];
+
+v8 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="getCensusAdata"];
+v8 -> v11 [label="relabel_r"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="getCensusAdata"];
+v9 -> v11 [label="ref_split"];
+
+v10 [shape=point,label="",fixedsize=true,width=0.1];
+v11 [label="getCensusAdata"];
+v10 -> v11 [label="ref_collections"];
+
+v11 [label="getCensusAdata"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v11 -> v12;
+
+v11 [label="getCensusAdata"];
+v33 [label="classifyAllAdata"];
+v11 -> v33 [label="ref_region_mapping"];
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v13 [label="h5adConvertRefs"];
+v12 -> v13 [label="ref_paths_adata"];
+
+v13 [label="h5adConvertRefs"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v13 -> v22 [label="ref_paths_seurat"];
+
+v14 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v14 -> v16 [label="relabel_q_paths"];
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v15 -> v16 [label="query_paths_adata"];
+
+v16 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v19 [label="mapQuery"];
+v17 -> v19 [label="combined_query_paths_adata"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1];
+v19 [label="mapQuery"];
+v18 -> v19 [label="ref_keys"];
+
+v19 [label="mapQuery"];
+v20 [label="h5adConvertQuery"];
+v19 -> v20;
+
+v20 [label="h5adConvertQuery"];
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v20 -> v22;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v12 -> v21 [label="ref_paths_adata"];
+
+v19 [label="mapQuery"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v19 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v24 [label="rfPredict"];
+v21 -> v24 [label="combos_adata"];
+
+v22 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v26 [label="predictSeurat"];
+v22 -> v26 [label="combos_seurat"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1];
+v24 [label="rfPredict"];
+v23 -> v24 [label="ref_keys"];
+
+v24 [label="rfPredict"];
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v24 -> v27 [label="adata_probs_channel"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1];
+v26 [label="predictSeurat"];
+v25 -> v26 [label="ref_keys"];
+
+v26 [label="predictSeurat"];
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v26 -> v28 [label="seurat_scores_channel"];
+
+v27 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 [label="classifyAllAdata"];
+v27 -> v33 [label="adata_probs_channel"];
+
+v28 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v40 [label="classifyAllSeurat"];
+v28 -> v40 [label="seurat_scores_channel"];
+
+v29 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="classifyAllAdata"];
+v29 -> v33 [label="tree_file"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="classifyAllAdata"];
+v30 -> v33 [label="ref_keys"];
+
+v31 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="classifyAllAdata"];
+v31 -> v33 [label="cutoff"];
+
+v32 [shape=point,label="",fixedsize=true,width=0.1];
+v33 [label="classifyAllAdata"];
+v32 -> v33 [label="mapping_file"];
+
+v33 [label="classifyAllAdata"];
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v33 -> v43 [label="f1_scores_adata"];
+
+v33 [label="classifyAllAdata"];
+v35 [shape=point];
+v33 -> v35;
+
+v33 [label="classifyAllAdata"];
+v34 [shape=point];
+v33 -> v34;
+
+v36 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="classifyAllSeurat"];
+v36 -> v40 [label="tree_file"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="classifyAllSeurat"];
+v37 -> v40 [label="ref_keys"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="classifyAllSeurat"];
+v38 -> v40 [label="cutoff"];
+
+v39 [shape=point,label="",fixedsize=true,width=0.1];
+v40 [label="classifyAllSeurat"];
+v39 -> v40 [label="mapping_file"];
+
+v11 [label="getCensusAdata"];
+v40 [label="classifyAllSeurat"];
+v11 -> v40 [label="ref_region_mapping"];
+
+v40 [label="classifyAllSeurat"];
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v40 -> v44 [label="f1_scores_seurat"];
+
+v40 [label="classifyAllSeurat"];
+v42 [shape=point];
+v40 -> v42;
+
+v40 [label="classifyAllSeurat"];
+v41 [shape=point];
+v40 -> v41;
+
+v43 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v47 [label="plotF1ResultsAdata"];
+v43 -> v47 [label="f1_scores_adata_files"];
+
+v44 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v52 [label="plotF1ResultsSeurat"];
+v44 -> v52 [label="f1_scores_seurat_files"];
+
+v45 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="plotF1ResultsAdata"];
+v45 -> v47 [label="ref_keys"];
+
+v46 [shape=point,label="",fixedsize=true,width=0.1];
+v47 [label="plotF1ResultsAdata"];
+v46 -> v47 [label="cutoff"];
+
+v47 [label="plotF1ResultsAdata"];
+v49 [shape=point];
+v47 -> v49;
+
+v47 [label="plotF1ResultsAdata"];
+v48 [shape=point];
+v47 -> v48;
+
+v50 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="plotF1ResultsSeurat"];
+v50 -> v52 [label="ref_keys"];
+
+v51 [shape=point,label="",fixedsize=true,width=0.1];
+v52 [label="plotF1ResultsSeurat"];
+v51 -> v52 [label="cutoff"];
+
+v52 [label="plotF1ResultsSeurat"];
+v54 [shape=point];
+v52 -> v54;
+
+v52 [label="plotF1ResultsSeurat"];
+v53 [shape=point];
+v52 -> v53;
+
+v55 [label="save_params_to_file"];
+v56 [shape=point];
+v55 -> v56;
+
+}
