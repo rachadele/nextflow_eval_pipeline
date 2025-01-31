@@ -1,23 +1,23 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
-rosmap	angular_gyrus	Astrocyte	1.0	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Non-neuron	nan	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	unknown	nan	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	VLMC	nan	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Pericyte	0.0	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Microglia	1.0	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	OPC	1.0	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	GABAergic	0.8275862068965517	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Oligodendrocyte	1.0	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Glutamatergic	0.94	0.5767586206896551		0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Astrocyte	1.0	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Non-neuron	nan	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	unknown	nan	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Vascular	1.0	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Oligodendrocyte lineage	1.0	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Glutamatergic	0.94	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Microglia	1.0	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	GABAergic	0.8275862068965517	0.7209482758620689		0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Non-neuron	0.9714285714285714	0.6847536945812808		0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	unknown	nan	0.6847536945812808		0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	Glutamatergic	0.94	0.6847536945812808		0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus
-rosmap	angular_gyrus	GABAergic	0.8275862068965517	0.6847536945812808		0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus
+query	reference	label	f1_score	weighted_f1	key	cutoff	query_region	ref_region	disease	sex	dev_stage
+rosmap	angular_gyrus	OPC	1.0	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Astrocyte	1.0	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Microglia	1.0	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	VLMC	nan	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Pericyte	0.0	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Glutamatergic	0.94	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	unknown	nan	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Non-neuron	nan	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Oligodendrocyte	1.0	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	GABAergic	0.8275862068965517	0.9357862068965517	subclass	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Oligodendrocyte lineage	1.0	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Glutamatergic	0.94	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	unknown	nan	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Astrocyte	1.0	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Vascular	1.0	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Non-neuron	nan	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Microglia	1.0	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	GABAergic	0.8275862068965517	0.9457862068965517	class	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	unknown	nan	0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Non-neuron	0.9714285714285714	0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	Glutamatergic	0.94	0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus			
+rosmap	angular_gyrus	GABAergic	0.8275862068965517	0.9360719211822661	family	0.0	prefrontal cortex	angular gyrus			

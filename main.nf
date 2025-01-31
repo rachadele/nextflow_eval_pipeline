@@ -66,21 +66,21 @@ process mapQuery {
     output:
     path "${query_file.getName().toString().replace('.h5ad','_processed.h5ad')}"
 
-script:
+    script:
 
 
-"""
+    """
 
-python $projectDir/bin/process_query.py \\
-                        --model_path ${model_path} \\
-                        --relabel_path ${relabel_q} \\
-                        --query_path ${query_file} \\
-                        --batch_key ${batch_key} \\
-                        ${params.subsample_query != null ? "--subsample_query ${params.subsample_query}" : ""} \
-                        --ref_keys ${ref_keys} \\
-                        --seed ${params.seed} \\
-                        ${params.remove_unknown ? '--remove_unknown' : ''}
-"""
+    python $projectDir/bin/process_query.py \\
+                            --model_path ${model_path} \\
+                            --relabel_path ${relabel_q} \\
+                            --query_path ${query_file} \\
+                            --batch_key ${batch_key} \\
+                            ${params.subsample_query != null ? "--subsample_query ${params.subsample_query}" : ""} \
+                            --ref_keys ${ref_keys} \\
+                            --seed ${params.seed} \\
+                            ${params.remove_unknown ? '--remove_unknown' : ''}
+    """
 
 }
 
@@ -103,7 +103,7 @@ process getCensusAdata {
     output:
     path "refs/*.h5ad", emit: ref_paths_adata
     // path "refs/*.obs.tsv"
-    path "refs/*yaml", emit: ref_tissue_mapping
+    path "refs/*yaml", emit: ref_region_mapping
 
     script:
     ref_keys = params.ref_keys.join(' ')
@@ -221,9 +221,9 @@ process classifyAllAdata {
     val tree_file
     val ref_keys
     val cutoff
-    tuple val(query_path), path(ref_path), path(probs_path), val(query_tissue)
+    tuple val(query_path), path(ref_path), path(probs_path)
     val mapping_file
-    val ref_tissue_mapping
+    val ref_region_mapping
 
     output:
     path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
@@ -240,13 +240,12 @@ process classifyAllAdata {
     python $projectDir/bin/classify_all.py \\
         --tree_file ${tree_file} \\
         --query_path ${query_path} \\
-        --query_tissue ${query_tissue} \\
         --ref_name ${ref_name} \\
         --ref_keys ${ref_keys} \\
         --cutoff ${cutoff} \\
         --probs ${probs_path} \\
         --mapping_file ${mapping_file} \\
-        --ref_tissue_mapping ${ref_tissue_mapping}
+        --ref_region_mapping ${ref_region_mapping}
     """
 
 }
@@ -263,9 +262,9 @@ process classifyAllSeurat {
     val tree_file
     val ref_keys
     val cutoff
-    tuple val(query_path), path(ref_path), path(scores_path), val(query_tissue)
+    tuple val(query_path), path(ref_path), path(scores_path) 
     val mapping_file
-    val ref_tissue_mapping
+    val ref_region_mapping
 
     output:
     path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
@@ -281,13 +280,12 @@ process classifyAllSeurat {
     """
     python $projectDir/bin/classify_all.py --tree_file ${tree_file} \\
         --query_path ${query_path} \\
-        --query_tissue ${query_tissue} \\
         --ref_name ${ref_name} \\
         --ref_keys ${ref_keys} \\
         --cutoff ${cutoff} \\
         --probs ${scores_path} \\
         --mapping_file ${mapping_file} \\
-        --ref_tissue_mapping ${ref_tissue_mapping}
+        --ref_region_mapping ${ref_region_mapping}
     """
 
 }
@@ -361,7 +359,7 @@ workflow {
     getCensusAdata(params.organism, params.census_version, params.subsample_ref, params.relabel_r, params.ref_split, ref_collections)
     getCensusAdata.out.ref_paths_adata.flatten()
     .set { ref_paths_adata }
-    getCensusAdata.out.ref_tissue_mapping.set { ref_tissue_mapping }
+    getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
 
     // Convert h5ad files to rds files
      h5adConvertRefs(ref_paths_adata)
@@ -370,22 +368,23 @@ workflow {
 
     // Get query name from file (including region, eg. Lim_Cingulate)
     relabel_q_paths = relabel_q_paths.map { relabel_q_path -> 
-        def relabel_key = relabel_q_path.getName().split('_relabel.tsv')[0]
-        [relabel_key, relabel_q_path]
+        def query_key = relabel_q_path.getName().split('_relabel.tsv')[0]
+        [query_key, relabel_q_path]
     }
 
     // Get query names from file (including region)
     query_paths_adata = query_paths_adata.map { query_path -> 
         def query_name = query_path.getName().split('.h5ad')[0]
-        [query_name, query_path]
-    }
-
-    combined_query_paths_adata = relabel_q_paths
-    .join(query_paths_adata)
-    .map { query_name, relabel_q_path, query_path ->
         def query_key = query_name.split('_')[0]
+        [query_key, query_name, query_path]
+    }
+ 
+    combined_query_paths_adata = query_paths_adata
+    .combine(relabel_q_paths, by: 0) // Match query_key
+    .map { query_key, query_name, query_path, relabel_q_path ->
+        //def query_key = query_name.split('_')[0]
         def batch_key = params.batch_keys[query_key]
-        [query_key, relabel_q_path, query_path, batch_key]
+        [query_name, relabel_q_path, query_path, batch_key]
     }
 
     // Process each query by relabeling, subsampling, and passing through scvi model
@@ -408,21 +407,23 @@ workflow {
 
     adata_probs_channel = adata_probs_channel.map { query_path, ref_path, probs_path ->
         query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        query_tissue = params.query_tissue[query_name]
-        [query_path, ref_path, probs_path, query_tissue]
+        //query_region = params.query_region[query_name]
+       // query_sex = params.query_sex[query_name]
+       // query_disease = params.query_disease[query_name]
+        [query_path, ref_path, probs_path]
     }
-
     seurat_scores_channel = seurat_scores_channel.map { query_path, ref_path, scores_path ->
         query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        query_tissue = params.query_tissue[query_name]
-        [query_path, ref_path, scores_path, query_tissue]
+        //query_region = params.query_region[query_name]
+       // query_sex = params.query_sex[query_name]
+       // query_disease = params.query_disease[query_name]
+        [query_path, ref_path, scores_path]
     }
-
     // Classify all cells based on prediction scores at most granular level
-    classifyAllAdata(params.tree_file, params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_tissue_mapping)
+    classifyAllAdata(params.tree_file, params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
     f1_scores_adata = classifyAllAdata.out.f1_score_channel
 
-    classifyAllSeurat(params.tree_file, params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_tissue_mapping)
+    classifyAllSeurat(params.tree_file, params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
     f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
 
     // Flatten f1 scores files into a list

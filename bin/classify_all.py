@@ -43,17 +43,19 @@ def parse_arguments():
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
     parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/4a/164f6559104b8e872e88bc617411a2/probs/lim_Cingulate_processed_Dissection:_Anterior_cingulate_cortex_ACC.prob.df.tsv")
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
-    parser.add_argument('--query_tissue', type=str, default="anterior cingulate cortex")
-    parser.add_argument('--ref_tissue_mapping', type=str)
-    parser.add_argument('--disease', type=str)
-    parser.add_argument('--sex', type=str)
-    parser.add_argument('--dev_stage', type=str)
+    #parser.add_argument('--query_region', type=str, default="anterior cingulate cortex")
+    parser.add_argument('--ref_region_mapping', type=str)
+    #parser.add_argument('--query_disease', type=str)
+    #parser.add_argument('--query_sex', type=str)
+    #parser.add_argument('--query_dev_stage', type=str)
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
 
-    
+def get_unique_value(df, column, default=None):
+    return df[column].unique()[0] if column in df.columns else default
+
     
 def main():
     SEED = 42
@@ -63,27 +65,33 @@ def main():
     scvi.settings.seed = SEED # For `scvi`
     # Parse command line arguments
     args = parse_arguments()
-    # query_name = args.query_name
-   # ref_name = args.ref_name
     tree_file = args.tree_file
     query_path = args.query_path
     ref_name = args.ref_name
     ref_keys = args.ref_keys
     cutoff = args.cutoff
-    query_tissue = args.query_tissue.replace("_", " ")
-    ref_tissue_mapping = args.ref_tissue_mapping
-    disease = args.disease
-    sex = args.sex
-    dev_stage = args.dev_stage
-        
+    #query_region = args.query_region.replace("_", " ")
+    ref_region_mapping = args.ref_region_mapping
+    #disease = args.query_disease
+    #sex = args.query_sex
+    #dev_stage = args.query_dev_stage
+    
+     
     # Load data
-    ref_tissue_mapping = yaml.load(open(ref_tissue_mapping), Loader=yaml.FullLoader)
-    ref_tissue=ref_tissue_mapping[ref_name]
+    ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
+    ref_region=ref_region_mapping[ref_name]
     
     prob_df = pd.read_csv(args.probs, sep="\t")
     mapping_df = pd.read_csv(args.mapping_file, sep="\t")
     query_name = os.path.basename(query_path).replace(".obs.relabel.tsv", "")
     query = pd.read_csv(query_path, sep="\t")
+    #for factor in factors:
+    
+
+    query_region = get_unique_value(query, 'region')
+    disease = get_unique_value(query, 'disease')
+    sex = get_unique_value(query, 'sex')
+    dev_stage = get_unique_value(query, 'dev_stage')
     
     #ref_name = os.path.basename(ref_path).replace(".h5ad", "").replace(".rds", "")
     # Read the JSON tree file
@@ -125,17 +133,21 @@ def main():
                     'weighted_f1': classification_report.get('weighted avg', {}).get('f1-score', None),
                     'key': key,
                     'cutoff': cutoff,
-                    'query_tissue': query_tissue,
-                    'ref_tissue': ref_tissue
+                    'ref_region': ref_region
                 }
                     # Add optional arguments if they are not None
         )
                 
-    for field, value in [('disease', disease), ('sex', sex), ('dev_stage', dev_stage)]:
-        f1_data[field] = value if value is not None else np.nan
+
 
     # Save F1 scores to a file
     df = pd.DataFrame(f1_data)
+    
+    fields_dict = {'disease': disease, 'sex': sex, 'dev_stage': dev_stage, 'query_region': query_region}   
+    for field, value in fields_dict.items():
+        df[field] = value if value is not None else np.nan
+
+
     outdir = "f1_results"
     os.makedirs(outdir, exist_ok=True)
     df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.f1.scores.tsv"), sep="\t", index=False)

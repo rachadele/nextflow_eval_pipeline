@@ -1,20 +1,20 @@
-query	reference	label	f1_score	macro_f1	micro_f1	weighted_f1	key	cutoff	query_tissue	ref_tissue
-rosmap	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	OPC	1.0	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	VLMC	nan	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Pericyte	0.0	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.64539990753583		0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Vascular	1.0	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.8297998811174957		0.9557004160887655	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Non-neuron	0.9855072463768116	0.9313688047330935		0.9507728798568814	family	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.9313688047330935		0.9507728798568814	family	0.0	prefrontal cortex	dorsolateral prefrontal cortex
-rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.9313688047330935		0.9507728798568814	family	0.0	prefrontal cortex	dorsolateral prefrontal cortex
+query	reference	label	f1_score	weighted_f1	key	cutoff	query_region	ref_region	disease	sex	dev_stage
+rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	VLMC	nan	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	OPC	1.0	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte	1.0	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Pericyte	0.0	0.9457004160887655	subclass	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Vascular	1.0	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Astrocyte	1.0	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Microglia	1.0	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	nan	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Oligodendrocyte lineage	1.0	0.9557004160887657	class	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Glutamatergic	0.9514563106796117	0.9507728798568816	family	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	GABAergic	0.8571428571428571	0.9507728798568816	family	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
+rosmap	dorsolateral_prefrontal_cortex	Non-neuron	0.9855072463768116	0.9507728798568816	family	0.0	prefrontal cortex	dorsolateral prefrontal cortex			
