@@ -278,7 +278,7 @@ def plot_f1_heatmap_for_level(data, vmin, vmax, level, threshold, outpath,
     plt.ylabel('Reference', fontsize=fontsize)
     plt.xlabel('Query', fontsize=fontsize)
     plt.xticks(rotation=90, ha='right', fontsize=fontsize)
-    plt.yticks(fontsize=fontsize, rotation=45)
+    plt.yticks(fontsize=fontsize, rotation=0)
 
     if acronym_mapping:
         legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])

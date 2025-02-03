@@ -931,7 +931,7 @@ get_census <- function(organism="homo_sapiens", census_version="2024-07-01", sub
      # names(refs) <- c("whole cortex", unique(brain_obs_filtered$tissue))
     lapply(names(refs), function(x){
       dataset_title <- gsub(" ","_",x)
-      #p <- DimPlot(refs[[x]], group.by=c("rachel_subclass","assay","tissue","dataset_title"),ncol=2, pt.size=2) +
+      #p <- DimPlot(refs[[x]], group.by=c("subclass","assay","tissue","dataset_title"),ncol=2, pt.size=2) +
         #theme(
           #text = element_text(size = 20),  # Adjust the base text size
           #axis.title = element_text(size = 25),  # Adjust axis title size
@@ -949,7 +949,7 @@ get_census <- function(organism="homo_sapiens", census_version="2024-07-01", sub
       dir.create("refs", showWarnings = FALSE)
       new_dataset_title <- gsub("[()]", "", gsub("\\/", "_", gsub(" ", "_", gsub("'","",dataset_title))))
       saveRDS(refs[[x]], file=file.path("refs",paste0(new_dataset_title,".rds")))
-      #meta <- refs[[x]]@meta.data %>% select("cell_type","rachel_class","rachel_subclass","rachel_family") %>% unique()
+      #meta <- refs[[x]]@meta.data %>% select("cell_type","class","subclass","family") %>% unique()
       #write.table(meta, file=file.path(projPath, paste0("/meta/relabel/",dataset_title,"_relabel.tsv")), sep="\t",row.names=FALSE)
   })
       

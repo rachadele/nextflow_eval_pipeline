@@ -23,7 +23,7 @@ parser$add_argument("--k.score", type="integer", help="?", default=30)
 #parser$add_argument("--project.query", type="logical", help="whether to project query on to reference PCA (if unset, determined automatically from size of datasets)")
 parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label transfer prediction scores", default=0)
 parser$add_argument("--ref_path", type="character", help="path to references")
-parser$add_argument("--query_path", type="character", help="path to query")
+parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/a7/27c0ad5ac244cabb2245135b6e6cc7/nagy_M_Control_HsapDv_0000091_processed.rds")
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=20)
 parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
@@ -78,7 +78,7 @@ prediction_scores <- prediction_scores %>% as.data.frame() %>%
         rename_all(~gsub("prediction.score.", "", .)) %>% 
         rename_all(~gsub("\\.", " ", .)) %>%  # Replace dots with spaces
         rename("L2/3-6 IT" = "L2 3 6 IT")  # Correctly rename the column
-
+# need to fix this for mouse
 
 write.table(prediction_scores, file=paste0(query_name,"_",ref_name,"_prediction_scores_seurat.tsv"), sep="\t", row.names=FALSE)
 write.table(query@meta.data, file=paste0(query_name,".obs.relabel.tsv"), row.names=FALSE, sep= "\t")
