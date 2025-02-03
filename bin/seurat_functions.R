@@ -614,6 +614,7 @@ transfer_multiple_labels <- function(
     anchors <- FindTransferAnchors(reference=reference, query=query, npcs=dims, dims=1:dims, reduction = reduction, 
         project.query=project.query, max.features=max.features, k.anchor=k.anchor, k.score=k.score)
     
+    k.weight = min(k.weight, floor(nrow(anchors@anchors) / k.score ))
     key = ref_keys[1] # assumes keys are ordered
     #change the k.weight back to 50 or dynamically set ?
     predictions <- TransferData(anchorset = anchors, refdata=key, reference=reference, weight.reduction=reduction, k.weight = k.weight)

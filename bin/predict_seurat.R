@@ -16,7 +16,7 @@ parser <- ArgumentParser(description = "Process Seurat objects and transfer labe
 #parser$add_argument("--organism", type="character", help="Organism", default="human")
 parser$add_argument("--integration_method", type="character", help="Integration method of query and reference", default="pcaproject")
 parser$add_argument("--ref_keys", type="character", nargs="*", help="List of reference keys to pass to query_transfer", default=c("rachel_subclass", "rachel_class","rachel_family"))
-parser$add_argument("--dims", type="integer", help="Number of dimensions", default=20)
+parser$add_argument("--dims", type="integer", help="Number of dimensions", default=50)
 parser$add_argument("--max.features", type="integer", help="Maximum number of features", default=200)
 parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=5)
 parser$add_argument("--k.score", type="integer", help="?", default=30)
@@ -24,7 +24,7 @@ parser$add_argument("--k.score", type="integer", help="?", default=30)
 parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label transfer prediction scores", default=0)
 parser$add_argument("--ref_path", type="character", help="path to references")
 parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/a7/27c0ad5ac244cabb2245135b6e6cc7/nagy_M_Control_HsapDv_0000091_processed.rds")
-parser$add_argument("--k.weight", type="integer", help="k.weight", default=20)
+parser$add_argument("--k.weight", type="integer", help="k.weight", default=100)
 parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
 
@@ -49,13 +49,6 @@ nfeatures <- args$nfeatures
 ref = readRDS(ref_path)
 query = readRDS(query_path)
 
-#potentially need to add in options
-#default = lognormalize, 2000 variable features
-#using 50 PCs in nextflow
-
-#could also bach correct reference and set harmony embedding to be named "pca"
-#then do pcaproject on harmony embeddings
-# or do the same for SCVI_ embeddings from census
 
 #rename features in reference to match ensembl ID
 ref <- rename_features(ref, column_name="feature_id")
@@ -66,7 +59,7 @@ query <- query %>% NormalizeData(normalization.method=normalization_method) %>% 
 prediction_scores <- transfer_multiple_labels(
         query=query, reference=ref, reduction=integration_method, 
         ref_keys=ref_keys, dims=dims, max.features=max.features, 
-        k.anchor=k.anchor, k.score=k.score, project.query=project.query, k.weight=20)
+        k.anchor=k.anchor, k.score=k.score, project.query=project.query, k.weight=k.weight)
 
 
 
