@@ -14,3 +14,5 @@ bash*
 *.swp
 params.hs.json
 misc/
+queries/
+old_results/
