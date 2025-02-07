@@ -16,15 +16,15 @@ L5/6 near-projecting glutamatergic neuron of the primary motor cortex	L5/6 NP	de
 L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
 L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L6 IT	L2/3-6 IT	Glutamatergic
 L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic
-pyramidal neuron	Neuron	Neuron	Neuron
-astrocyte	Astrocyte	Astrocyte	Non-neuron
-endothelial cell	Endothelial	Vascular	Non-neuron
-microglial cell	Microglia	Microglia	Non-neuron
-oligodendrocyte	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron
-oligodendrocyte precursor cell	OPC	Oligodendrocyte lineage	Non-neuron
+astrocyte	Astrocyte	Glia	Non-neuron
+microglial cell	Microglia	Glia	Non-neuron
+oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
+oligodendrocyte precursor cell	OPC	Glia	Non-neuron
 pericyte	Pericyte	Vascular	Non-neuron
 smooth muscle cell	smooth muscle cell	Vascular	Non-neuron
 leptomeningeal cell	VLMC	Vascular	Non-neuron
 vascular leptomeningeal cell (Mmus)	VLMC	Vascular	Non-neuron
+endothelial cell	Endothelial	Vascular	Non-neuron
 macrophage	Macrophage	Immune	Non-neuron
 central nervous system macrophage	Macrophage	Immune	Non-neuron
+pyramidal neuron	Neuron	Neuron	Neuron
