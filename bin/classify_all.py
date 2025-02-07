@@ -92,6 +92,10 @@ def main():
     disease = get_unique_value(query, 'disease')
     sex = get_unique_value(query, 'sex')
     dev_stage = get_unique_value(query, 'dev_stage')
+    treatment = get_unique_value(query, 'treatment')
+    genotype = get_unique_value(query, 'genotype')
+    strain = get_unique_value(query, 'strain')
+    #age = get_unique_value(query, 'age')
     #age = get_unique_value(query, 'age') 
     #ref_name = os.path.basename(ref_path).replace(".h5ad", "").replace(".rds", "")
     # Read the JSON tree file
@@ -143,7 +147,9 @@ def main():
     # Save F1 scores to a file
     df = pd.DataFrame(f1_data)
     
-    fields_dict = {'disease': disease, 'sex': sex, 'dev_stage': dev_stage, 'query_region': query_region}   
+    fields_dict = {'disease': disease, 'sex': sex, 'dev_stage': dev_stage, 
+                   'query_region': query_region, 
+                   'treatment': treatment, 'genotype': genotype, 'strain': strain}   
     for field, value in fields_dict.items():
         df[field] = value if value is not None else np.nan
 
