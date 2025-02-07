@@ -165,7 +165,7 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
 
     return refs
 
-def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=20, 
+def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, 
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
                relabel_path=f"{projPath}meta/census_map_human.tsv", seed=42, ref_keys=["rachel_subclass","rachel_class","rachel_family"]):
 
@@ -186,10 +186,11 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
         brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
     elif organism == "mus_musculus":
         brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin([# remove non specific cells
-                                                                                    "hippocampal neuron", 
-                                                                                    "cortical interneuron", 
-                                                                                    "meis2 expressing cortical GABAergic cell", 
-                                                                                    "glutamatergic neuron"])]
+                                                                                        "unknown",
+                                                                                        "hippocampal neuron", 
+                                                                                        "cortical interneuron", 
+                                                                                        "glutamatergic neuron",
+                                                                                        "GABAergic neuron"])]
     else:
        raise ValueError("Unsupported organism")
 

@@ -92,7 +92,7 @@ def main():
     disease = get_unique_value(query, 'disease')
     sex = get_unique_value(query, 'sex')
     dev_stage = get_unique_value(query, 'dev_stage')
-    
+    #age = get_unique_value(query, 'age') 
     #ref_name = os.path.basename(ref_path).replace(".h5ad", "").replace(".rds", "")
     # Read the JSON tree file
     with open(tree_file, 'r') as file:
