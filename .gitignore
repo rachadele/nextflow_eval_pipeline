@@ -17,3 +17,5 @@ misc/
 queries/
 old_results/
 reports/
+move_samples.sh
+test_new_hierarchy/
