@@ -1,0 +1,18 @@
+{
+    "organism": "mus_musculus",
+    "census_version": "2024-07-01",
+    "cutoff": 0,
+    "seed": 42,
+    "subsample_ref": 50,
+    "studies_dir": "",
+    "ref_collections": [
+        "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
+        "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
+        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics"
+    ],
+    "queries_adata": ,
+    "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv", 
+    "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv",
+    "tree_file": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/master_hierarchy.json",
+    "outdir": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/rtest_mmus"
+}
