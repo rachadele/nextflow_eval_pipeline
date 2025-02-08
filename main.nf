@@ -345,7 +345,7 @@ workflow {
 
     Channel.fromPath(params.queries_adata)
     .set { query_paths_adata }
-
+    
     Channel.fromPath(params.relabel_q)
     .set { relabel_q_paths }
 
@@ -371,6 +371,7 @@ workflow {
         def query_key = relabel_q_path.getName().split('_relabel.tsv')[0]
         [query_key, relabel_q_path]
     }
+    
 
     // Get query names from file (including region)
     query_paths_adata = query_paths_adata.map { query_path -> 
@@ -386,6 +387,7 @@ workflow {
         def batch_key = params.batch_keys[query_key]
         [query_name, relabel_q_path, query_path, batch_key]
     }
+    
 
     // Process each query by relabeling, subsampling, and passing through scvi model
     processed_queries_adata = mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' ')) 
