@@ -1,7 +1,0 @@
-Cell_type	subclass	class	family
-Astro	Astrocyte	Glia	Non-neuron
-Endo	Endothelial	Vascular	Non-neuron
-Excit	Glutamatergic	Glutamatergic	Glutamatergic
-Inhit	GABAergic	GABAergic	GABAergic
-Mic	Microglia	Glia	Non-neuron
-Oligo	Oligodendrocyte	Glia	Non-neuron

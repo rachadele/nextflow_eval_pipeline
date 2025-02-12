@@ -67,10 +67,11 @@ query_name = basename(query_path) %>% gsub("_processed.rds", "", .)
 ref_name = basename(ref_path) %>% gsub(".rds", "", .)
 
 prediction_scores <- prediction_scores %>% as.data.frame() %>%
-        select(-c("predicted.id","prediction.score.max")) %>%
-        rename_all(~gsub("prediction.score.", "", .)) %>% 
-        rename_all(~gsub("\\.", " ", .)) %>%  # Replace dots with spaces
-        rename("L2/3-6 IT" = "L2 3 6 IT")  # Correctly rename the column
+    select(-c("predicted.id","prediction.score.max")) %>%
+    rename_all(~gsub("prediction.score.", "", .)) %>% 
+    rename_all(~gsub("\\.", " ", .)) %>%  # Replace dots with spaces
+    rename_all(~gsub("L([0-9]+) ([0-9]+) (.*)", "L\\1/\\2 \\3", .))  # General pattern for L{number} {number} {rest of the string}
+
 # need to fix this for mouse
 
 write.table(prediction_scores, file=paste0(query_name,"_",ref_name,"_prediction_scores_seurat.tsv"), sep="\t", row.names=FALSE)
