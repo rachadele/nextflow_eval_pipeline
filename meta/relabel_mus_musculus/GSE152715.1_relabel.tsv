@@ -1,0 +1,17 @@
+cell_type	subclass	class	family
+CA1	unknown	unknown	unknown
+CA3	unknown	unknown	unknown
+Subiculum	unknown	unknown	unknown
+Dentate Gyrus	unknown	unknown	unknown
+SST	SST	MGE	GABAergic
+Astrocyte	Astrocyte	Glia	Non-neuron
+Int. Progenitor	unknown	unknown	unknown
+Entorhinal Cortex	unknown	unknown	unknown
+VIP	VIP	CGE	GABAergic
+Radial Glia	Glia	Glia	Non-neuron
+NSC	Neuron	Neuron	Neuron
+OPC	OPC	Glia	Non-neuron
+Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic
+SMC	Smooth muscle cell	Vascular	Non-neuron
+Microglia	Microglia	Glia	Non-neuron
+Ependymal	Glia	Glia	Non-neuron
