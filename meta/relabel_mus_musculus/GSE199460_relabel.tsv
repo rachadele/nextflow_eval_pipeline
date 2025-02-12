@@ -14,11 +14,11 @@ Choroid Plexus Cells	Vascular	Vascular	Non-neuron
 DCs.1	Immune	Immune	Non-neuron
 Ependymal Cells	Glia	Glia	Non-neuron
 B Cells	Immune	Immune	Non-neuron
-Neuroblasts	Neuron	Neuron	Neuron
+Neuroblasts	unknown	unknown	unknown
 DCs.2	Immune	Immune	Non-neuron
 Fibroblasts	Immune	Immune	Non-neuron
 Neutrophils	Immune	Immune	Non-neuron
 Pericytes	Pericyte	Vascular	Non-neuron
 Unknown	unknown	unknown	unknown
-Neurons	Neuron	Neuron	Neuron
+Neurons	unknown	unknown	unknown
 pDCs	Immune	Immune	Non-neuron

@@ -1,5 +1,4 @@
 cell_type	subclass	class	family
-GABAergic neuron	GABAergic	GABAergic	GABAergic
 sst GABAergic cortical interneuron	SST	MGE	GABAergic
 sst chodl GABAergic cortical interneuron	SST	MGE	GABAergic
 pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic
@@ -20,11 +19,10 @@ astrocyte	Astrocyte	Glia	Non-neuron
 microglial cell	Microglia	Glia	Non-neuron
 oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
 oligodendrocyte precursor cell	OPC	Glia	Non-neuron
+endothelial cell	Endothelial	Vascular	Non-neuron
 pericyte	Pericyte	Vascular	Non-neuron
-smooth muscle cell	smooth muscle cell	Vascular	Non-neuron
+smooth muscle cell	Smooth muscle cell	Vascular	Non-neuron
 leptomeningeal cell	VLMC	Vascular	Non-neuron
 vascular leptomeningeal cell (Mmus)	VLMC	Vascular	Non-neuron
-endothelial cell	Endothelial	Vascular	Non-neuron
 macrophage	Macrophage	Immune	Non-neuron
 central nervous system macrophage	Macrophage	Immune	Non-neuron
-pyramidal neuron	Neuron	Neuron	Neuron

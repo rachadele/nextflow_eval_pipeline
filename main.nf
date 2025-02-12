@@ -87,10 +87,7 @@ process mapQuery {
 process getCensusAdata {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
-    // publishDir (
-        // path: "${params.outdir}",
-        // mode: "copy"
-    // )
+    publishDir "${params.outdir}", pattern: "**obs.tsv", mode: "copy"
 
     input:
     val organism
@@ -102,7 +99,7 @@ process getCensusAdata {
 
     output:
     path "refs/*.h5ad", emit: ref_paths_adata
-    // path "refs/*.obs.tsv"
+    path "**obs.tsv"
     path "refs/*yaml", emit: ref_region_mapping
 
     script:

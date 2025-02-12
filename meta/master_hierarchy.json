@@ -46,7 +46,8 @@
             "colname": "class",
             "Pericyte": { "colname": "subclass" },
             "VLMC": { "colname": "subclass" },
-            "Endothelial": { "colname": "subclass" }
+            "Endothelial": { "colname": "subclass" },
+            "Smooth muscle cell": { "colname": "subclass" }
         },
         "Immune": {
             "colname": "class",

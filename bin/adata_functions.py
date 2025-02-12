@@ -185,12 +185,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     if organism == "homo_sapiens":
         brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
     elif organism == "mus_musculus":
-        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin([# remove non specific cells
-                                                                                        "unknown",
-                                                                                        "hippocampal neuron", 
-                                                                                        "cortical interneuron", 
-                                                                                        "glutamatergic neuron",
-                                                                                        "GABAergic neuron"])]
+        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "pyramidal neuron", "hippocampal neuron", "GABAergic neuron"])]
     else:
        raise ValueError("Unsupported organism")
 
@@ -384,6 +379,7 @@ def rfc_pred(ref, query, ref_keys, seed):
     # Predict probabilities at e most granular level
     probs_granular = rfc.predict_proba(query.obsm["scvi"])
     class_labels_granular = rfc.classes_
+    query.obs[granular_key] = query.obs[granular_key].astype(str)
     base_score = rfc.score(query.obsm["scvi"], query.obs[granular_key].values)
 
     # Store granular level probabilities
@@ -522,7 +518,7 @@ def check_column_ties(probabilities, class_labels):
     
     return tie_rows, tie_columns
 
-def classify_cells(query, ref_keys, cutoff, probabilities, tree):
+def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
     class_metrics = {}
     
     # Only use the first ref_key
@@ -554,37 +550,27 @@ def classify_cells(query, ref_keys, cutoff, probabilities, tree):
     query["confidence"] = np.max(class_probs, axis=1)  # Store max probability as confidence
     
     # Aggregate predictions (you can keep this logic as needed)
-    query = aggregate_preds(query, ref_keys, tree)
+    query = aggregate_preds(query, ref_keys, mapping_df)
     
     return query
 
 
-def aggregate_preds(query, ref_keys, tree):
-    
+def aggregate_preds(query, ref_keys, mapping_df):
     preds = np.array(query["predicted_" + ref_keys[0]])
     query.index = query.index.astype(int)
-    # add something here to re-order ref keys based on tree?
-    # colname attribute of tree stores this information
-    for higher_level_key in ref_keys[1:]: # requires ref keys to be ordered from most granular to highest level 
-        query["predicted_" + higher_level_key] = "unknown"  # Initialize to account for unknowns preds
-        # Skip the first (granular) level
-        ## Get all possible classes for this level (e.g. "GABAergic", "Glutamatergic", "Non-neuron")
-        subclasses = get_subclasses(tree, higher_level_key) 
-        
-        for higher_class in subclasses: # eg "GABAergic"
-            node = find_node(tree, higher_class) # find position in tree dict
-            valid = get_subclasses(node, ref_keys[0]) # get all granular labels falling under this class
-            ## eg all GABAergic subclasses
-            if not valid:
-                print("no valid subclasses")
-                continue  # Skip if no subclasses found   
 
-            # Get the indices of cells in `preds` that match any of the valid subclasses
-            cells_to_agg = np.where(np.isin(preds, valid))[0]
-            cells_to_agg = [int(cell) for cell in cells_to_agg] # Ensure cells_to_agg is in integers (if not already)
+    # Reorder ref_keys based on the order in tree_df columns (ignoring "cell_type")
+    ref_keys = [col for col in mapping_df.columns if col in ref_keys]
 
-            # Assign the higher-level class label to the identified cells
-            query.loc[cells_to_agg, "predicted_" + higher_level_key] = higher_class
+    for higher_level_key in ref_keys[1:]:  # Skip the first (most granular) level
+        # Get mapping from subclass to higher-level class
+        mapping = mapping_df.set_index(ref_keys[0])[higher_level_key].to_dict()
+
+        # Assign higher-level labels based on mapping
+        query["predicted_" + higher_level_key] = query["predicted_" + ref_keys[0]].map(mapping)
+
+        # Fill NA values with original subclass labels
+        query["predicted_" + higher_level_key] = query["predicted_" + higher_level_key].fillna(query["predicted_" + ref_keys[0]])
 
     return query
 
@@ -596,8 +582,8 @@ def eval(query, ref_keys, mapping_df):
         query = map_valid_labels(query, ref_keys, mapping_df)  
         class_labels = query[key].unique()
         pred_classes = query[f"predicted_{key}"].unique()
-        true_labels= query[key]
-        predicted_labels = query["predicted_" + key]
+        true_labels= query[key].astype(str)
+        predicted_labels = query["predicted_" + key].astype(str)
         labels = list(set(class_labels).union(set(pred_classes)))
 
     # Calculate accuracy and confusion matrix after removing "unknown" labels
@@ -615,16 +601,17 @@ def eval(query, ref_keys, mapping_df):
         class_metrics[key]["classification_report"] = classification_report(true_labels, predicted_labels, 
                         labels=labels, output_dict=True, zero_division=np.nan)
         # Add accuracy to classification report
-        #class_metrics[key]["accuracy"] = accuracy
+        class_metrics[key]["accuracy"] = accuracy
         
         ## Calculate accuracy for each label
-        #label_accuracies = {}
-        #for label in labels:
-            #label_mask = true_labels == label
-            #label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
-            #label_accuracies[label] = label_accuracy
-        
-        #class_metrics[key]["label_accuracies"] = label_accuracies
+        label_accuracies = {}
+        for label in labels:
+            if label.isin(true_labels):
+                label_mask = true_labels == label
+                label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
+                label_accuracies[label] = label_accuracy
+            
+        class_metrics[key]["label_accuracies"] = label_accuracies
 
     return class_metrics
 

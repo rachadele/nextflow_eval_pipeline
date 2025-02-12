@@ -4,9 +4,9 @@ Endothelial Cells	Endothelial	Vascular	Non-neuron
 Microglia	Microglia	Glia	Non-neuron
 Astrocyte	Astrocyte	Glia	Non-neuron
 Oligodendrocyte Progenitor	OPC	Glia	Non-neuron
-Neuron	Neuron	Neuron	Neuron
+unknown	unknown	unknown	unknown
 Mural 2	Vascular	Vascular	Non-neuron
-NPC	Neuron	Neuron	Neuron
+NPC	unknown	unknown	unknown
 Mural 3	Vascular	Vascular	Non-neuron
 Immature Oligodendrocyte	OPC	Glia	Non-neuron
 Mural 1	Vascular	Vascular	Non-neuron
@@ -14,5 +14,6 @@ Macrophage	Macrophage	Immune	Non-neuron
 Unknown	unknown	unknown	unknown
 Fibroblast	Vascular	Vascular	Non-neuron
 Ependymal	Glia	Glia	Non-neuron
-Reln+ Neuron	Neuron	Neuron	Neuron
+Reln+ unknown	unknown	unknown	unknown
 Choroid Plexus	Vascular	Vascular	Non-neuron
+neuron    unknown	unknown	unknown
