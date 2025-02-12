@@ -57,9 +57,21 @@ def create_ref_region_yaml(refs, outdir):
         
         # If there are multiple region types, handle them by including them as a list
         if len(unique_regions) == 1:
-            ref_region_yaml[ref_name.replace(" ","_").replace("(","").replace(")","").replace(":","").replace("'","")] = unique_regions[0]
+            ref_region_yaml[ref_name.replace(" ", "_").replace("\\/", "_") \
+                .replace("(","").replace(")","") \
+                .replace("\\", "") \
+                .replace("'", "") \
+                .replace(":", "") \
+                .replace(";", "") \
+                .replace("&", "") ] = unique_regions[0]
         else:
-            ref_region_yaml[ref_name.replace(" ","_").replace("(","").replace(")","").replace(":","").replace("'","")] = "multiple regions"
+            ref_region_yaml[ref_name.replace(" ", "_").replace("\\/", "_") \
+                .replace("(","").replace(")","") \
+                .replace("\\", "") \
+                .replace("'", "") \
+                .replace(":", "") \
+                .replace(";", "") \
+                .replace("&", "") ] = "multiple regions"
     
     with open(os.path.join(outdir, "ref_region.yaml"), 'w') as file:
         yaml.dump(ref_region_yaml, file)
@@ -96,7 +108,9 @@ def main():
          .replace("(","").replace(")","") \
          .replace("\\", "") \
         .replace("'", "") \
-        .replace(":", "")
+        .replace(":", "") \
+        .replace(";", "") \
+        .replace("&", "") 
       ref.write(os.path.join(outdir,f"{new_ref_name}.h5ad"))
       ref.obs.to_csv(os.path.join(outdir,f"{new_ref_name}.obs.tsv"), sep="\t")
       # data_summary = refs["whole cortex"].obs[["collection_name","dataset_title","region"]].value_counts().reset_index(name="count")

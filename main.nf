@@ -345,7 +345,7 @@ workflow {
 
     Channel.fromPath(params.queries_adata)
     .set { query_paths_adata }
-    
+
     Channel.fromPath(params.relabel_q)
     .set { relabel_q_paths }
 
@@ -360,7 +360,7 @@ workflow {
     getCensusAdata.out.ref_paths_adata.flatten()
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
-
+    ref_paths_adata.view()
     // Convert h5ad files to rds files
      h5adConvertRefs(ref_paths_adata)
      h5adConvertRefs.out.ref_paths_seurat.set { ref_paths_seurat }
@@ -379,16 +379,17 @@ workflow {
         def query_key = query_name.split('_')[0]
         [query_key, query_name, query_path]
     }
+
+    
  
     combined_query_paths_adata = query_paths_adata
-    .combine(relabel_q_paths, by: 0) // Match query_key
-    .map { query_key, query_name, query_path, relabel_q_path ->
-        //def query_key = query_name.split('_')[0]
-        def batch_key = params.batch_keys[query_key]
-        [query_name, relabel_q_path, query_path, batch_key]
-    }
-    
+        .combine(relabel_q_paths, by: 0) // Match query_key
+        .map { query_key, query_name, query_path, relabel_q_path ->
+            def batch_key = params.batch_keys.get(query_key, "sample_id")  // Use default if not found
+            [query_name, relabel_q_path, query_path, batch_key]
+        }
 
+    
     // Process each query by relabeling, subsampling, and passing through scvi model
     processed_queries_adata = mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' ')) 
     // Process each query by relabeling and subsampling
