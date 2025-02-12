@@ -70,8 +70,13 @@ prediction_scores <- prediction_scores %>% as.data.frame() %>%
     select(-c("predicted.id","prediction.score.max")) %>%
     rename_all(~gsub("prediction.score.", "", .)) %>% 
     rename_all(~gsub("\\.", " ", .)) %>%  # Replace dots with spaces
-    rename_all(~gsub("L([0-9]+) ([0-9]+) (.*)", "L\\1/\\2 \\3", .))  # General pattern for L{number} {number} {rest of the string}
+    rename_all(~gsub("L([0-9]+) ([0-9]+) (.*)", "L\\1/\\2 \\3", .)) %>%
+    rename_all(~gsub("L2/3 6 IT","L2/3-6 IT", .)) # General pattern for L{number} {number} {rest of the string}
 
+if ("Cajal Retzius cell" %in% colnames(prediction_scores)){
+   prediction_scores <- prediction_scores %>% 
+    rename_all(~gsub("Cajal Retzius", "Cajal-Retzius", .))
+}
 # need to fix this for mouse
 
 write.table(prediction_scores, file=paste0(query_name,"_",ref_name,"_prediction_scores_seurat.tsv"), sep="\t", row.names=FALSE)

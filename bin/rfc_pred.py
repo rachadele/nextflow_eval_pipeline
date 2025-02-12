@@ -37,7 +37,7 @@ def parse_arguments():
   #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/cpsc545_proj/mapped_queries/velmeshev/whole_cortex/subsample_1000/query_mapped.h5ad")
     parser.add_argument('--ref_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/refs/whole_cortex.h5ad") #nargs ="+")
-    parser.add_argument('--ref_keys', type=str, nargs='+', default=["rachel_subclass", "rachel_class", "rachel_family"])
+    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family"])
 
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()

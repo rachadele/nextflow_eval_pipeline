@@ -95,7 +95,7 @@ def main():
     treatment = get_unique_value(query, 'treatment')
     genotype = get_unique_value(query, 'genotype')
     strain = get_unique_value(query, 'strain')
-    #age = get_unique_value(query, 'age')
+    age = get_unique_value(query, 'age')
     #age = get_unique_value(query, 'age') 
     #ref_name = os.path.basename(ref_path).replace(".h5ad", "").replace(".rds", "")
     # Read the JSON tree file
@@ -110,10 +110,12 @@ def main():
     #roc_df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.roc.df.tsv"),sep="\t", index=False)
         
     # Classify cells and evaluate
-    query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, tree=tree)
+    query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
     outdir = "predicted_meta"
     os.makedirs(outdir, exist_ok=True)
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
+    
+    # map valid labels for given query granularity and evaluate
     class_metrics = eval(query, ref_keys, mapping_df)
     class_metrics = update_classification_report(class_metrics, ref_keys)
 
@@ -160,3 +162,5 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
+

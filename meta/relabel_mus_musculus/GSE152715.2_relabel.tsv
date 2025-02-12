@@ -6,8 +6,8 @@ Gad2+ Progen	unknown	unknown	unknown
 IP	unknown	unknown	unknown
 SPN	unknown	unknown	unknown
 NSC	unknown	unknown	unknown
-LGE	unknown	unknown	unknown
-SMC	unknown	unknown	unknown
+LGE	GABAergic	GABAergic	GABAergic
+SMC	Smooth muscle cell	Vascular	Non-neuron
 VIP	VIP	CGE	GABAergic
 Radial Glia	Glia	Glia	Non-neuron
 Astrocyte	Astrocyte	Glia	Non-neuron
@@ -16,3 +16,4 @@ Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic
 Microglia	Microglia	Glia	Non-neuron
 Ependymal	Glia	Glia	Non-neuron
 Endothelial	Endothelial	Vascular	Non-neuron
+			
