@@ -14,7 +14,6 @@ process save_params_to_file {
     cat <<EOF > params.yaml
     organism: ${params.organism}
     census_version: ${params.census_version}
-    tree_file: ${params.tree_file}
     ref_keys: ${params.ref_keys}
     subsample_ref: ${params.subsample_ref}
     subsample_query: ${params.subsample_query}
@@ -215,7 +214,6 @@ process classifyAllAdata {
     )
 
     input:
-    val tree_file
     val ref_keys
     val cutoff
     tuple val(query_path), path(ref_path), path(probs_path)
@@ -235,7 +233,6 @@ process classifyAllAdata {
 
     """
     python $projectDir/bin/classify_all.py \\
-        --tree_file ${tree_file} \\
         --query_path ${query_path} \\
         --ref_name ${ref_name} \\
         --ref_keys ${ref_keys} \\
@@ -256,7 +253,6 @@ process classifyAllSeurat {
     )
 
     input:
-    val tree_file
     val ref_keys
     val cutoff
     tuple val(query_path), path(ref_path), path(scores_path) 
@@ -275,7 +271,7 @@ process classifyAllSeurat {
     ref_name = ref_path.getName().split('.rds')[0]
 
     """
-    python $projectDir/bin/classify_all.py --tree_file ${tree_file} \\
+    python $projectDir/bin/classify_all.py  \\
         --query_path ${query_path} \\
         --ref_name ${ref_name} \\
         --ref_keys ${ref_keys} \\
@@ -357,7 +353,6 @@ workflow {
     getCensusAdata.out.ref_paths_adata.flatten()
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
-    ref_paths_adata.view()
     // Convert h5ad files to rds files
      h5adConvertRefs(ref_paths_adata)
      h5adConvertRefs.out.ref_paths_seurat.set { ref_paths_seurat }
@@ -420,10 +415,10 @@ workflow {
         [query_path, ref_path, scores_path]
     }
     // Classify all cells based on prediction scores at most granular level
-    classifyAllAdata(params.tree_file, params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
+    classifyAllAdata(params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
     f1_scores_adata = classifyAllAdata.out.f1_score_channel
 
-    classifyAllSeurat(params.tree_file, params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
+    classifyAllSeurat(params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
     f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
 
     // Flatten f1 scores files into a list

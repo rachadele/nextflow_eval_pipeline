@@ -98,35 +98,66 @@ def main():
    refs=adata_functions.get_census(organism=organism, 
                                  subsample=subsample_ref, split_column=split_column, census_version=census_version, 
                                  relabel_path=relabel_path, ref_collections=ref_collections, seed=SEED, ref_keys=ref_keys)
+    # only do this for hippocampus - A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation
+    #for ref_name, ref in refs.items():
+
+        #    print(ref_name)
+        # for dataset_title in ref.obs["dataset_title"].unique():
+            # if dataset_title != "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation":
+            #    new_title= new_title = (
+            #    dataset_title.replace(" ", "_")
+                #.replace("\\/", "_")
+                #.replace("(", "")
+                #.replace(")", "")
+                #.replace("\\", "")
+                #.replace("'", "")
+                #.replace(":", "")
+                #.replace(";", "")
+                #.replace("&", "")
+                #)
+                #og_celltypes_dir = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/original_celltypes"
+                #  original_celltypes = pd.read_csv(os.path.join(og_celltypes_dir,f"original_{new_title}.tsv", sep="\t")
+                #  original_celltypes = original_celltypes[["subclass_label", "observation_joinid"]] # whatever barcode
+                #  ref.obs.merge(original_celltypes, on="observation_joinid", how="left")
+                #  need to relabel refs again after merging
+                # only need to relabel the following cell types: 
+                #CA1-ProS
+                #DG
+                #CA3
+                #CA2-IG-FC
+                #SUB-ProS
+                # make a special relabel table for this
+                # need to overwrite the existing subclass, class,class columns for specific cell types
+                # so hard!
+                #  ref.obs = relabel(ref, relabel_path=relabel_path, join_key="subclass_label", sep='\t')
+                #  need a new relabel file for this specific case
+                #  ref.obs = relabel(ref, relabel_path=relabel_path, join_key="subclass_label", sep='\t')
+                # 
+        
 
    print("finished fetching anndata")
    outdir="refs"
    os.makedirs(outdir, exist_ok=True) 
-
    for ref_name, ref in refs.items():
-      new_ref_name = ref_name.replace(" ", "_").replace("\\/", "_") \
-         .replace("(","").replace(")","") \
-         .replace("\\", "") \
-        .replace("'", "") \
-        .replace(":", "") \
-        .replace(";", "") \
-        .replace("&", "") 
-      ref.write(os.path.join(outdir,f"{new_ref_name}.h5ad"))
-      ref.obs.to_csv(os.path.join(outdir,f"{new_ref_name}.obs.tsv"), sep="\t")
-      # data_summary = refs["whole cortex"].obs[["collection_name","dataset_title","region"]].value_counts().reset_index(name="count")
+    if ref.shape[0] < 50:
+        continue
+
+    new_ref_name = (
+        ref_name.replace(" ", "_")
+        .replace("\\/", "_")
+        .replace("(", "")
+        .replace(")", "")
+        .replace("\\", "")
+        .replace("'", "")
+        .replace(":", "")
+        .replace(";", "")
+        .replace("&", "")
+    )
+
+    ref.write(os.path.join(outdir, f"{new_ref_name}.h5ad"))
+    ref.obs.to_csv(os.path.join(outdir, f"{new_ref_name}.obs.tsv"), sep="\t")
       
    create_ref_region_yaml(refs, outdir)
-    #  sc.pp.neighbors(ref, use_rep="scvi")
-      #sc.tl.umap(ref, min_dist=0.3)
-      
-   #sc.settings.figdir = outdir
-
-    #  sc.pl.umap(
-     # ref,
-     # color=["rachel_subclass", "cell_type"],
-     # save=f"_{new_ref_name}_umap.png"  # File will save in the working directory or `sc.settings.figdir`.
-     # )
-
       
       
 if __name__ == "__main__":

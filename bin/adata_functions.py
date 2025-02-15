@@ -165,29 +165,36 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
 
     return refs
 
-def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, 
+def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="normal"):
+    value_filter = (
+        f"tissue_general == '{organ}' and "
+        f"is_primary_data == {str(is_primary)} and "
+        f"disease == '{disease}'"
+    )
+    return cellxgene_census.get_obs(census, organism, value_filter=value_filter)
+
+def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
                relabel_path=f"{projPath}meta/census_map_human.tsv", seed=42, ref_keys=["rachel_subclass","rachel_class","rachel_family"]):
 
     census = cellxgene_census.open_soma(census_version=census_version)
     dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
-    brain_obs = cellxgene_census.get_obs(census, organism,
-        value_filter=(
-            "tissue_general == 'brain' and "
-            "is_primary_data == True and "
-            "disease == 'normal' "
-        ))
+    brain_obs = get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
     
     brain_obs = brain_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
     brain_obs.drop(columns=['soma_joinid_y'], inplace=True)
     brain_obs_filtered = brain_obs[brain_obs['collection_name'].isin(ref_collections)] 
     # Filter based on organism
-    if organism == "homo_sapiens":
-        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
-    elif organism == "mus_musculus":
-        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "pyramidal neuron", "hippocampal neuron", "GABAergic neuron"])]
-    else:
-       raise ValueError("Unsupported organism")
+    #if organism == "homo_sapiens":
+        #brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
+    #elif organism == "mus_musculus":
+        #brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown",
+                                                                                        #"hippocampal neuron", 
+                                                                                        #"cortical interneuron", 
+                                                                                        #"glutamatergic neuron",
+                                                                                        #"GABAergic neuron"])]
+    #else:
+       #raise ValueError("Unsupported organism")
 
     # Adjust organism naming for compatibility
     organism_name_mapping = {
@@ -200,7 +207,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
         "assay", "cell_type", "tissue",
         "tissue_general", "suspension_type",
         "disease", "dataset_id", "development_stage",
-        "soma_joinid"
+        "soma_joinid","observation_joinid"
     ]
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
@@ -588,6 +595,11 @@ def eval(query, ref_keys, mapping_df):
 
     # Calculate accuracy and confusion matrix after removing "unknown" labels
         accuracy = accuracy_score(true_labels, predicted_labels)
+        # Add accuracy to classification report
+        class_metrics[key]["accuracy"] = accuracy
+        
+        ## Calculate accuracy for each label
+              
         conf_matrix = confusion_matrix(
             true_labels, predicted_labels, 
             labels=labels
@@ -600,19 +612,16 @@ def eval(query, ref_keys, mapping_df):
         # Classification report for predictions
         class_metrics[key]["classification_report"] = classification_report(true_labels, predicted_labels, 
                         labels=labels, output_dict=True, zero_division=np.nan)
-        # Add accuracy to classification report
-        class_metrics[key]["accuracy"] = accuracy
-        
-        ## Calculate accuracy for each label
+
         label_accuracies = {}
         for label in labels:
-            if label.isin(true_labels):
-                label_mask = true_labels == label
-                label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
-                label_accuracies[label] = label_accuracy
-            
+            #if label in true_labels:
+            label_mask = true_labels == label
+            label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
+            label_accuracies[label] = label_accuracy
+        
         class_metrics[key]["label_accuracies"] = label_accuracies
-
+  
     return class_metrics
 
 def update_classification_report(class_metrics, ref_keys):

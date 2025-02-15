@@ -1,17 +1,17 @@
-cell_type	subclass	class	family
-CA1	unknown	unknown	unknown
-CA3	unknown	unknown	unknown
-Subiculum	unknown	unknown	unknown
-Dentate Gyrus	unknown	unknown	unknown
-SST	SST	MGE	GABAergic
-Astrocyte	Astrocyte	Glia	Non-neuron
-Int. Progenitor	unknown	unknown	unknown
-Entorhinal Cortex	unknown	unknown	unknown
-VIP	VIP	CGE	GABAergic
-Radial Glia	Glia	Glia	Non-neuron
-NSC	unknown	unknown	unknown
-OPC	OPC	Glia	Non-neuron
-Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic
-SMC	Smooth muscle cell	Vascular	Non-neuron
-Microglia	Microglia	Glia	Non-neuron
-Ependymal	Glia	Glia	Non-neuron
+cell_type	subclass	class	family	global
+CA1	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
+CA3	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
+Subiculum	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
+Dentate Gyrus	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
+SST	SST	MGE	GABAergic	Neuron
+Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+Int. Progenitor	GABAergic	GABAergic	GABAergic	Neuron
+Entorhinal Cortex	unknown	unknown	unknown	unknown
+VIP	VIP	CGE	GABAergic	Neuron
+Radial Glia	Glia	Glia	Non-neuron	Non-neuron
+NSC	Neuron	Neuron	Neuron	Neuron
+OPC	OPC	Glia	Non-neuron	Non-neuron
+Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
+SMC	Smooth muscle cell	Mural	Non-neuron	Non-neuron
+Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Ependymal	Glia	Glia	Non-neuron	Non-neuron

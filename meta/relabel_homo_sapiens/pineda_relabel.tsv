@@ -38,10 +38,10 @@ Astrocyte.PP	Astrocyte	Glia	Non-neuron
 Astrocyte.IL_VP	Astrocyte	Glia	Non-neuron
 Endo.Venous	Endothelial	Vascular	Non-neuron
 Endo.Arterial	Endothelial	Vascular	Non-neuron
-Fibroblast	Non-neuron	Non-neuron	Non-neuron
+Fibroblast	Stromal	Stromal	Non-neuron
 Microglia	Microglia	Glia	Non-neuron
-Mural.Pericyte	Pericyte	Vascular	Non-neuron
-Mural.SMC	Vascular	Vascular	Non-neuron
+Mural.Pericyte	Pericyte	Mural	Non-neuron
+Mural.SMC	Mural	Mural	Non-neuron
 Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
 OPC	OPC	Glia	Non-neuron
 T_Cell	Non-neuron	Non-neuron	Non-neuron

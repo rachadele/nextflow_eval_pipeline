@@ -15,7 +15,9 @@ bash*
 params.hs.json
 misc/
 queries/
-old_results/
 reports/
 move_samples.sh
 test_new_hierarchy/
+test_mmus/
+meta/author_cell_annotations/
+results_hs_factor_subsets/

@@ -13,5 +13,5 @@
     "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv", 
     "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv",
     "tree_file": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/master_hierarchy.json",
-    "outdir": "test_mmus"
+    "ref_keys": ["subclass","class","family","global"]
 }

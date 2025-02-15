@@ -142,6 +142,8 @@ def plot_distribution(df, var, outdir, split=None, facet="key", acronym_mapping=
         facet (str): Column name for facet grouping (optional).
         acronym_mapping (dict): Mapping for acronyms to add as a legend (optional).
     """
+    # sort df by split in alphabetical order
+    df = df.sort_values(by=split)
     setup_plot(var, split)
     add_violin_plot(df, var, split, facet)
     add_strip_plot(df, var, split, facet)
@@ -156,8 +158,8 @@ def plot_distribution(df, var, outdir, split=None, facet="key", acronym_mapping=
 
     # Move the legend to the desired location
     #sns.move_legend(plt, bbox_to_anchor=(1, 1.02), loc='upper left')
-
-    add_acronym_legend(acronym_mapping, title=split.split("_")[0].capitalize())
+    if acronym_mapping:
+        add_acronym_legend(acronym_mapping, title=split.split("_")[0].capitalize())
     plt.tight_layout()
     save_plot(var, split, facet, outdir)
     
@@ -331,17 +333,17 @@ def main():
         f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
     #need to flatten all_f1_scores into data frame
     f1_df["reference_acronym"] = f1_df["reference"].apply(make_acronym)
-    f1_df["query_acronym"] = f1_df["query"].apply(make_acronym)
+    f1_df["study"] = f1_df["query"].str.replace(".", "_").str.split("_").str[0]
     f1_df["reference"] = f1_df["reference"].str.replace("_", " ")
  
     acronym_mapping_ref = f1_df[["reference", "reference_acronym"]].drop_duplicates().set_index("reference")["reference_acronym"].to_dict()
-    acronym_mapping_query = f1_df[["query", "query_acronym"]].drop_duplicates().set_index("query")["query_acronym"].to_dict()
+    #acronym_mapping_query = f1_df[["query", "query_acronym"]].drop_duplicates().set_index("query")["query_acronym"].to_dict()
     
     #plot_distribution(f1_df,var="f1_score",outdir="dists",split="label",facet="reference")
     plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference_acronym", facet="key", 
                       acronym_mapping = acronym_mapping_ref)
-    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="query_acronym", facet="key", 
-                      acronym_mapping = acronym_mapping_query)
+    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="study", facet="key", 
+                      acronym_mapping = None)
 
     for file in f1_results:
         # Get the full path of the file
@@ -358,7 +360,7 @@ def main():
             # Filter rows where the 'key' matches
             subset = x[x["key"] == key]
             subset["query"] = subset["query"].str.replace("_processed_", "")
-            subset["query_acronym"] = subset["query"].apply(make_acronym)
+            #subset["query_acronym"] = subset["query"].apply(make_acronym)
             subset["reference_acronym"] = subset["reference"].apply(make_acronym)
             subset["reference"] = subset["reference"].str.replace("_", " ")
             # If this key doesn't exist in the dictionary, initialize an empty DataFrame
