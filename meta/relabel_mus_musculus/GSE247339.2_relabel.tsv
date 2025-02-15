@@ -1,19 +1,18 @@
-cell_type	subclass	class	family
-Mature Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
-Endothelial Cells	Endothelial	Vascular	Non-neuron
-Microglia	Microglia	Glia	Non-neuron
-Astrocyte	Astrocyte	Glia	Non-neuron
-Oligodendrocyte Progenitor	OPC	Glia	Non-neuron
-unknown	unknown	unknown	unknown
-Mural 2	Vascular	Vascular	Non-neuron
-NPC	unknown	unknown	unknown
-Mural 3	Vascular	Vascular	Non-neuron
-Immature Oligodendrocyte	OPC	Glia	Non-neuron
-Mural 1	Vascular	Vascular	Non-neuron
-Macrophage	Macrophage	Immune	Non-neuron
-Unknown	unknown	unknown	unknown
-Fibroblast	Vascular	Vascular	Non-neuron
-Ependymal	Glia	Glia	Non-neuron
-Reln+ unknown	unknown	unknown	unknown
-Choroid Plexus	Vascular	Vascular	Non-neuron
-neuron    unknown	unknown	unknown
+cell_type	subclass	class	family	global
+Mature Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
+Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+Oligodendrocyte Progenitor	OPC	Glia	Non-neuron	Non-neuron
+Neuron	Neuron	Neuron	Neuron	Neuron
+Mural 2	Mural	Mural	Non-neuron	Non-neuron
+NPC	Neuron	Neuron	Neuron	Neuron
+Mural 3	Mural	Mural	Non-neuron	Non-neuron
+Immature Oligodendrocyte	OPC	Glia	Non-neuron	Non-neuron
+Mural 1	Mural	Mural	Non-neuron	Non-neuron
+Macrophage	Macrophage	Immune	Non-neuron	Non-neuron
+Unknown	unknown	unknown	unknown	unknown
+Fibroblast	Stromal	Stromal	Non-neuron	Non-neuron
+Ependymal	Glia	Glia	Non-neuron	Non-neuron
+Reln+ Neuron	Neuron	Neuron	Neuron	Neuron
+Choroid Plexus	Glia	Glia	Non-neuron	Non-neuron

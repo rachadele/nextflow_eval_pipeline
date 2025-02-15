@@ -1,9 +1,9 @@
-cell_type	subclass	class	family
-Excitatory	Glutamatergic	Glutamatergic	Glutamatergic
-Oligo	Oligodendrocyte	Glia	Non-neuron
-Endothelial	Endothelial	Vascular	Non-neuron
-OPC	OPC	Glia	Non-neuron
-Astro	Astrocyte	Glia	Non-neuron
-Microglia	Microglia	Glia	Non-neuron
-Inhibitory	GABAergic	GABAergic	GABAergic
-NF Oligo	Oligodendrocyte	Glia	Non-neuron
+cell_type	subclass	class	family	global
+Excitatory	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Endothelial	Endothelial	Vascular	Non-neuron	Non-neuron
+OPC	OPC	Glia	Non-neuron	Non-neuron
+Astro	Astrocyte	Glia	Non-neuron	Non-neuron
+Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Inhibitory	GABAergic	GABAergic	GABAergic	Neuron
+NF Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
