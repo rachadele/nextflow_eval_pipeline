@@ -22,8 +22,8 @@ parser$add_argument("--k.anchor", type="integer", help="Number of anchors", defa
 parser$add_argument("--k.score", type="integer", help="?", default=30)
 #parser$add_argument("--project.query", type="logical", help="whether to project query on to reference PCA (if unset, determined automatically from size of datasets)")
 parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label transfer prediction scores", default=0)
-parser$add_argument("--ref_path", type="character", help="path to references")
-parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/a7/27c0ad5ac244cabb2245135b6e6cc7/nagy_M_Control_HsapDv_0000091_processed.rds")
+parser$add_argument("--ref_path", type="character", help="path to references", default="/space/grp/rschwartz/rschwartz/hs_nf_results/3f/360d86ce9fcedb9ffe518a0a1fb90d/whole_cortex.rds")
+parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/hs_nf_results/3a/48b09b36aece477cd81d80559c3932/rosmap_R7944883_processed.rds")
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=50)
 parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
@@ -44,7 +44,7 @@ k.weight <- args$k.weight
 ref_path <- args$ref_path
 query_path <- args$query_path
 normalization_method <- args$normalization_method
-nfeatures <- args$nfeatures
+n_features <- args$nfeatures
 
 ref = readRDS(ref_path)
 query = readRDS(query_path)
@@ -53,8 +53,8 @@ query = readRDS(query_path)
 #rename features in reference to match ensembl ID
 ref <- rename_features(ref, column_name="feature_id")
 
-ref <- ref %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures=nfeatures) %>% ScaleData() %>% RunPCA(npcs=dims)
-query <- query %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures=nfeatures) %>% ScaleData() %>% RunPCA(npcs=dims)
+#ref <- ref %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
+#query <- query %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
 
 prediction_scores <- transfer_multiple_labels(
         query=query, reference=ref, reduction=integration_method, 
