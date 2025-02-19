@@ -130,7 +130,10 @@ process h5adConvertQuery {
 
     script:
     """
-    Rscript $projectDir/bin/h5ad_to_rds.R --h5ad_file ${h5ad_file}
+    Rscript $projectDir/bin/h5ad_to_rds.R --h5ad_file ${h5ad_file} \\
+            --normalization_method ${params.normalization_method} \\
+            --dims ${params.dims}
+
     """
 }
 
@@ -145,7 +148,9 @@ process h5adConvertRefs {
 
     script:
     """
-    Rscript $projectDir/bin/h5ad_to_rds.R --h5ad_file ${h5ad_file}
+    Rscript $projectDir/bin/h5ad_to_rds.R --h5ad_file ${h5ad_file} \\
+            --normalization_method ${params.normalization_method} \\
+            --dims ${params.dims}
     """
 }
 
