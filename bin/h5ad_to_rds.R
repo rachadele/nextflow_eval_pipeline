@@ -3,6 +3,9 @@ library(Seurat)
 library(reticulate)
 use_condaenv("/home/rschwartz/anaconda3/envs/r4.3/")
 library(sceasy)
+library(argparse)
+library(tidyr)
+source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functions.R")
 
 parser = argparse::ArgumentParser(description = "Convert H5AD to H5Seurat.")
 parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/biof501_proj/refs/whole_cortex.h5ad")
@@ -17,6 +20,11 @@ dims = args$dims
 n_features = args$nfeatures
 
 sceasy_seurat <- sceasy::convertFormat(h5ad_file, from="anndata", to="seurat")
+
+if ("feature_id" %in% colnames(sceasy_seurat@assays$RNA[[]])) {
+  sceasy_seurat <- rename_features(sceasy_seurat, column_name="feature_id")
+}
+
 sceasy_seurat <- sceasy_seurat %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures = n_features) %>% ScaleData() %>% RunPCA(npcs=dims)
 
 saveRDS(sceasy_seurat, file = gsub(".h5ad",".rds",h5ad_file))
