@@ -1,8 +1,20 @@
 SubType	subclass	class	family
-Astrocyte.PP	Astrocyte	Astrocyte	Non-neuron
-Astrocyte.IL_VP	Astrocyte	Astrocyte	Non-neuron
-Endo.Venous	Endothelial	Vascular	Non-neuron
-Endo.Arterial	Endothelial	Vascular	Non-neuron
+In.5HT3aR_PLS3_SORCS3	VIP	CGE	GABAergic
+In.5HT3aR_DISC1_CHSY3	VIP	CGE	GABAergic
+In.5HT3aR_TAC3_RYR3	VIP	CGE	GABAergic
+In.5HT3aR_VIP_ALCAM	VIP	CGE	GABAergic
+In.5HT3aR_VIP_TAC3	VIP	CGE	GABAergic
+In.5HT3aR_TAC3_TSHZ2	VIP	CGE	GABAergic
+In.5HT3aR_VIP_DACH2	VIP	CGE	GABAergic
+In.Basket_PVALB_CEMIP	PVALB	MGE	GABAergic
+In.Basket_PVALB_MYBPC1	PVALB	MGE	GABAergic
+In.Chandelier_PVALB	Chandelier	MGE	GABAergic
+In.Rosehip_CA3	GABAergic	GABAergic	GABAergic
+In.Rosehip_PMEPA1	GABAergic	GABAergic	GABAergic
+In.SST_GALNT14	SST	MGE	GABAergic
+In.SST_ADAMTS19	SST	MGE	GABAergic
+In.SST_BRINP3	SST	MGE	GABAergic
+In.SST_NPY	SST	MGE	GABAergic
 Ex.L2_L3_SEMA3C_GNAL	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 Ex.L2_L3_NR4A2_HPSE2	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 Ex.L2_L3_TMEM233_THEMIS	L2/3-6 IT	L2/3-6 IT	Glutamatergic
@@ -22,26 +34,14 @@ Ex.L6b_TRPM3_CNTNAP3	L6b	deep layer non-IT	Glutamatergic
 Ex.L6b_KCNK2_SULF1	L6b	deep layer non-IT	Glutamatergic
 Ex.L6b_NPFFR2_MDFIC	L6b	deep layer non-IT	Glutamatergic
 Ex.L6b_KCNK2_THSD7B	L6b	deep layer non-IT	Glutamatergic
-Fibroblast	Microglia	Microglia	Non-neuron
-In.5HT3aR_PLS3_SORCS3	VIP	CGE	GABAergic
-In.5HT3aR_DISC1_CHSY3	VIP	CGE	GABAergic
-In.5HT3aR_TAC3_RYR3	VIP	CGE	GABAergic
-In.5HT3aR_VIP_ALCAM	VIP	CGE	GABAergic
-In.5HT3aR_VIP_TAC3	VIP	CGE	GABAergic
-In.5HT3aR_TAC3_TSHZ2	VIP	CGE	GABAergic
-In.5HT3aR_VIP_DACH2	VIP	CGE	GABAergic
-In.Basket_PVALB_CEMIP	PVALB	MGE	GABAergic
-In.Basket_PVALB_MYBPC1	PVALB	MGE	GABAergic
-In.Chandelier_PVALB	Chandelier	MGE	GABAergic
-In.Rosehip_CA3	GABAergic	GABAergic	GABAergic
-In.Rosehip_PMEPA1	GABAergic	GABAergic	GABAergic
-In.SST_GALNT14	SST	MGE	GABAergic
-In.SST_ADAMTS19	SST	MGE	GABAergic
-In.SST_BRINP3	SST	MGE	GABAergic
-In.SST_NPY	SST	MGE	GABAergic
-Microglia	Microglia	Microglia	Non-neuron
-Mural.Pericyte	Pericyte	Vascular	Non-neuron
-Mural.SMC	Vascular	Vascular	Non-neuron
-Oligodendrocyte	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron
-OPC	OPC	Oligodendrocyte lineage	Non-neuron
+Astrocyte.PP	Astrocyte	Glia	Non-neuron
+Astrocyte.IL_VP	Astrocyte	Glia	Non-neuron
+Endo.Venous	Endothelial	Vascular	Non-neuron
+Endo.Arterial	Endothelial	Vascular	Non-neuron
+Fibroblast	Stromal	Stromal	Non-neuron
+Microglia	Microglia	Glia	Non-neuron
+Mural.Pericyte	Pericyte	Mural	Non-neuron
+Mural.SMC	Mural	Mural	Non-neuron
+Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
+OPC	OPC	Glia	Non-neuron
 T_Cell	Non-neuron	Non-neuron	Non-neuron

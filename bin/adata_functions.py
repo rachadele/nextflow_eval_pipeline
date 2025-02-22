@@ -129,7 +129,10 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
         obs_coords=brain_cell_subsampled_ids,
         var_value_filter = "nnz > 10",
         obs_embeddings=["scvi"])
+    
     sc.pp.filter_genes(adata, min_cells=3)
+    sc.pp.filter_genes(adata, min_counts=200)
+    
     print("Subsampling successful.")
     newmeta = adata.obs.merge(dataset_info, on="dataset_id", suffixes=(None,"y"))
     adata.obs = newmeta
@@ -165,34 +168,36 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
 
     return refs
 
-def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, 
+def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="normal"):
+    value_filter = (
+        f"tissue_general == '{organ}' and "
+        f"is_primary_data == {str(is_primary)} and "
+        f"disease == '{disease}'"
+    )
+    return cellxgene_census.get_obs(census, organism, value_filter=value_filter)
+
+def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
                relabel_path=f"{projPath}meta/census_map_human.tsv", seed=42, ref_keys=["rachel_subclass","rachel_class","rachel_family"]):
 
     census = cellxgene_census.open_soma(census_version=census_version)
     dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
-    brain_obs = cellxgene_census.get_obs(census, organism,
-        value_filter=(
-            "tissue_general == 'brain' and "
-            "is_primary_data == True and "
-            "disease == 'normal' "
-        ))
+    brain_obs = get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
     
     brain_obs = brain_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
     brain_obs.drop(columns=['soma_joinid_y'], inplace=True)
     brain_obs_filtered = brain_obs[brain_obs['collection_name'].isin(ref_collections)] 
     # Filter based on organism
-    if organism == "homo_sapiens":
-        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
-    elif organism == "mus_musculus":
-        brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin([# remove non specific cells
-                                                                                        "unknown",
-                                                                                        "hippocampal neuron", 
-                                                                                        "cortical interneuron", 
-                                                                                        "glutamatergic neuron",
-                                                                                        "GABAergic neuron"])]
-    else:
-       raise ValueError("Unsupported organism")
+    #if organism == "homo_sapiens":
+        #brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
+    #elif organism == "mus_musculus":
+        #brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown",
+                                                                                        #"hippocampal neuron", 
+                                                                                        #"cortical interneuron", 
+                                                                                        #"glutamatergic neuron",
+                                                                                        #"GABAergic neuron"])]
+    #else:
+       #raise ValueError("Unsupported organism")
 
     # Adjust organism naming for compatibility
     organism_name_mapping = {
@@ -205,7 +210,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
         "assay", "cell_type", "tissue",
         "tissue_general", "suspension_type",
         "disease", "dataset_id", "development_stage",
-        "soma_joinid"
+        "soma_joinid","observation_joinid"
     ]
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
@@ -384,6 +389,7 @@ def rfc_pred(ref, query, ref_keys, seed):
     # Predict probabilities at e most granular level
     probs_granular = rfc.predict_proba(query.obsm["scvi"])
     class_labels_granular = rfc.classes_
+    query.obs[granular_key] = query.obs[granular_key].astype(str)
     base_score = rfc.score(query.obsm["scvi"], query.obs[granular_key].values)
 
     # Store granular level probabilities
@@ -522,7 +528,7 @@ def check_column_ties(probabilities, class_labels):
     
     return tie_rows, tie_columns
 
-def classify_cells(query, ref_keys, cutoff, probabilities, tree):
+def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
     class_metrics = {}
     
     # Only use the first ref_key
@@ -554,37 +560,27 @@ def classify_cells(query, ref_keys, cutoff, probabilities, tree):
     query["confidence"] = np.max(class_probs, axis=1)  # Store max probability as confidence
     
     # Aggregate predictions (you can keep this logic as needed)
-    query = aggregate_preds(query, ref_keys, tree)
+    query = aggregate_preds(query, ref_keys, mapping_df)
     
     return query
 
 
-def aggregate_preds(query, ref_keys, tree):
-    
+def aggregate_preds(query, ref_keys, mapping_df):
     preds = np.array(query["predicted_" + ref_keys[0]])
     query.index = query.index.astype(int)
-    # add something here to re-order ref keys based on tree?
-    # colname attribute of tree stores this information
-    for higher_level_key in ref_keys[1:]: # requires ref keys to be ordered from most granular to highest level 
-        query["predicted_" + higher_level_key] = "unknown"  # Initialize to account for unknowns preds
-        # Skip the first (granular) level
-        ## Get all possible classes for this level (e.g. "GABAergic", "Glutamatergic", "Non-neuron")
-        subclasses = get_subclasses(tree, higher_level_key) 
-        
-        for higher_class in subclasses: # eg "GABAergic"
-            node = find_node(tree, higher_class) # find position in tree dict
-            valid = get_subclasses(node, ref_keys[0]) # get all granular labels falling under this class
-            ## eg all GABAergic subclasses
-            if not valid:
-                print("no valid subclasses")
-                continue  # Skip if no subclasses found   
 
-            # Get the indices of cells in `preds` that match any of the valid subclasses
-            cells_to_agg = np.where(np.isin(preds, valid))[0]
-            cells_to_agg = [int(cell) for cell in cells_to_agg] # Ensure cells_to_agg is in integers (if not already)
+    # Reorder ref_keys based on the order in tree_df columns (ignoring "cell_type")
+    ref_keys = [col for col in mapping_df.columns if col in ref_keys]
 
-            # Assign the higher-level class label to the identified cells
-            query.loc[cells_to_agg, "predicted_" + higher_level_key] = higher_class
+    for higher_level_key in ref_keys[1:]:  # Skip the first (most granular) level
+        # Get mapping from subclass to higher-level class
+        mapping = mapping_df.set_index(ref_keys[0])[higher_level_key].to_dict()
+
+        # Assign higher-level labels based on mapping
+        query["predicted_" + higher_level_key] = query["predicted_" + ref_keys[0]].map(mapping)
+
+        # Fill NA values with original subclass labels
+        query["predicted_" + higher_level_key] = query["predicted_" + higher_level_key].fillna(query["predicted_" + ref_keys[0]])
 
     return query
 
@@ -596,12 +592,17 @@ def eval(query, ref_keys, mapping_df):
         query = map_valid_labels(query, ref_keys, mapping_df)  
         class_labels = query[key].unique()
         pred_classes = query[f"predicted_{key}"].unique()
-        true_labels= query[key]
-        predicted_labels = query["predicted_" + key]
+        true_labels= query[key].astype(str)
+        predicted_labels = query["predicted_" + key].astype(str)
         labels = list(set(class_labels).union(set(pred_classes)))
 
     # Calculate accuracy and confusion matrix after removing "unknown" labels
         accuracy = accuracy_score(true_labels, predicted_labels)
+        # Add accuracy to classification report
+        class_metrics[key]["accuracy"] = accuracy
+        
+        ## Calculate accuracy for each label
+              
         conf_matrix = confusion_matrix(
             true_labels, predicted_labels, 
             labels=labels
@@ -614,18 +615,16 @@ def eval(query, ref_keys, mapping_df):
         # Classification report for predictions
         class_metrics[key]["classification_report"] = classification_report(true_labels, predicted_labels, 
                         labels=labels, output_dict=True, zero_division=np.nan)
-        # Add accuracy to classification report
-        #class_metrics[key]["accuracy"] = accuracy
-        
-        ## Calculate accuracy for each label
-        #label_accuracies = {}
-        #for label in labels:
-            #label_mask = true_labels == label
-            #label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
-            #label_accuracies[label] = label_accuracy
-        
-        #class_metrics[key]["label_accuracies"] = label_accuracies
 
+        label_accuracies = {}
+        for label in labels:
+            #if label in true_labels:
+            label_mask = true_labels == label
+            label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
+            label_accuracies[label] = label_accuracy
+        
+        class_metrics[key]["label_accuracies"] = label_accuracies
+  
     return class_metrics
 
 def update_classification_report(class_metrics, ref_keys):

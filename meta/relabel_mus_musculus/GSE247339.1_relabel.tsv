@@ -1,0 +1,18 @@
+cell_type	subclass	class	family	global
+Mature Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
+Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Oligodendrocyte Progenitor	OPC	Glia	Non-neuron	Non-neuron
+Mural 2	Mural	Mural	Non-neuron	Non-neuron
+Mural 1	Mural	Mural	Non-neuron	Non-neuron
+Mural 3	Mural	Mural	Non-neuron	Non-neuron
+Choroid Plexus	Glia	Glia	Non-neuron	Non-neuron
+Macrophage	Immune	Immune	Non-neuron	Non-neuron
+Immature Oligodendrocyte	OPC	Glia	Non-neuron	Non-neuron
+NPC	Neuron	Neuron	Neuron	Neuron
+Fibroblast	Stromal	Stromal	Non-neuron	Non-neuron
+Reln+ Neuron	unknown	unknown	unknown	Neuron
+Ependymal	Glia	Glia	Non-neuron	Non-neuron
+Unknown	unknown	unknown	unknown	unknown
+Neuron	Neuron	Neuron	Neuron	Neuron
