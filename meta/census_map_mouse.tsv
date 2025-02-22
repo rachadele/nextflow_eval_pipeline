@@ -1,30 +1,31 @@
-cell_type	subclass	class	family
-GABAergic neuron	GABAergic	GABAergic	GABAergic
-sst GABAergic cortical interneuron	SST	MGE	GABAergic
-sst chodl GABAergic cortical interneuron	SST	MGE	GABAergic
-pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic
-sncg GABAergic cortical interneuron	SNCG	CGE	GABAergic
-lamp5 GABAergic cortical interneuron	LAMP5	CGE	GABAergic
-vip GABAergic cortical interneuron	VIP	CGE	GABAergic
-Cajal-Retzius cell	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic
-corticothalamic-projecting glutamatergic cortical neuron	CT	deep layer non-IT	Glutamatergic
-L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L2/3 IT	L2/3-6 IT	Glutamatergic
-L2/3-6 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L4/5 IT	L2/3-6 IT	Glutamatergic
-L5 extratelencephalic projecting glutamatergic cortical neuron	L5 ET	deep layer non-IT	Glutamatergic
-L5/6 near-projecting glutamatergic neuron of the primary motor cortex	L5/6 NP	deep layer non-IT	Glutamatergic
-L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
-L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L6 IT	L2/3-6 IT	Glutamatergic
-L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic
-pyramidal neuron	Neuron	Neuron	Neuron
-astrocyte	Astrocyte	Astrocyte	Non-neuron
-endothelial cell	Endothelial	Vascular	Non-neuron
-microglial cell	Microglia	Microglia	Non-neuron
-oligodendrocyte	Oligodendrocyte	Oligodendrocyte lineage	Non-neuron
-oligodendrocyte precursor cell	OPC	Oligodendrocyte lineage	Non-neuron
-pericyte	Pericyte	Vascular	Non-neuron
-smooth muscle cell	smooth muscle cell	Vascular	Non-neuron
-leptomeningeal cell	VLMC	Vascular	Non-neuron
-vascular leptomeningeal cell (Mmus)	VLMC	Vascular	Non-neuron
-macrophage	Macrophage	Immune	Non-neuron
-central nervous system macrophage	Macrophage	Immune	Non-neuron
+cell_type	subclass	class	family	global
+GABAergic neuron	GABAergic	GABAergic	GABAergic	Neuron
+glutamatergic neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+hippocampal neuron	Hippocampal neuron	Hippocampal neuron	Glutamatergic	Neuron
+sst GABAergic cortical interneuron	SST	MGE	GABAergic	Neuron
+sst chodl GABAergic cortical interneuron	SST	MGE	GABAergic	Neuron
+pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic	Neuron
+sncg GABAergic cortical interneuron	SNCG	CGE	GABAergic	Neuron
+lamp5 GABAergic cortical interneuron	LAMP5	CGE	GABAergic	Neuron
+vip GABAergic cortical interneuron	VIP	CGE	GABAergic	Neuron
+Cajal-Retzius cell	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
+corticothalamic-projecting glutamatergic cortical neuron	CT	deep layer non-IT	Glutamatergic	Neuron
+L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2/3-6 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
+L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L4/5 IT	L2/3-6 IT	Glutamatergic	Neuron
+L5 extratelencephalic projecting glutamatergic cortical neuron	L5 ET	deep layer non-IT	Glutamatergic	Neuron
+L5/6 near-projecting glutamatergic neuron of the primary motor cortex	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
+L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic	Neuron
+L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L6 IT	L2/3-6 IT	Glutamatergic	Neuron
+L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic	Neuron
+astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+microglial cell	Microglia	Glia	Non-neuron	Non-neuron
+oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+oligodendrocyte precursor cell	OPC	Glia	Non-neuron	Non-neuron
+pericyte	Pericyte	Mural	Non-neuron	Non-neuron
+smooth muscle cell	Smooth muscle cell	Mural	Non-neuron	Non-neuron
+leptomeningeal cell	Leptomeningeal cell	Stromal	Non-neuron	Non-neuron
+vascular leptomeningeal cell (Mmus)	VLMC	Stromal	Non-neuron	Non-neuron
+endothelial cell	Endothelial	Vascular	Non-neuron	Non-neuron
+macrophage	Macrophage	Immune	Non-neuron	Non-neuron
+central nervous system macrophage	Macrophage	Immune	Non-neuron	Non-neuron
