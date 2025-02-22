@@ -51,7 +51,7 @@ query = readRDS(query_path)
 
 
 #rename features in reference to match ensembl ID
-ref <- rename_features(ref, column_name="feature_id")
+#ref <- rename_features(ref, column_name="feature_id")
 
 #ref <- ref %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
 #query <- query %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)

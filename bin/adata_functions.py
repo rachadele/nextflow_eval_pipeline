@@ -130,8 +130,9 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
         var_value_filter = "nnz > 10",
         obs_embeddings=["scvi"])
     
-    sc.pp.filter_genes(adata, min_cells=10)
+    sc.pp.filter_genes(adata, min_cells=3)
     sc.pp.filter_genes(adata, min_counts=200)
+    
     print("Subsampling successful.")
     newmeta = adata.obs.merge(dataset_info, on="dataset_id", suffixes=(None,"y"))
     adata.obs = newmeta
