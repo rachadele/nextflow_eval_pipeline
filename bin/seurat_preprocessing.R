@@ -25,7 +25,7 @@ if ("feature_id" %in% colnames(sceasy_seurat@assays$RNA[[]])) {
   sceasy_seurat <- rename_features(sceasy_seurat, column_name="feature_id")
 }
 
-if normalization.method=="LogNormalize" {
+if normalization_method=="LogNormalize" {
   sceasy_seurat <- sceasy_seurat %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures = n_features) %>% ScaleData() %>% RunPCA(npcs=dims)
 } else {
   sceasy_seurat <- sceasy_seurat %>%
