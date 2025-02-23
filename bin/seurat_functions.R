@@ -490,20 +490,6 @@ rename_features <- function(seurat_obj, column_name) {
    return(seurat_obj)
 }
 
-rds_to_h5ad <- function(obj, filepath_prefix) {
-    SaveH5Seurat(obj, filename = file.path(filepath_prefix,"h5Seurat"))
-    Convert(file.path(filepath_prefix,"h5Seurat"), dest = "h5ad")
-}
-
-h5ad_to_rds <- function(h5ad_file_path){
-    SeuratDisk::Convert(h5ad_file_path, dest = "h5seurat", overwrite = FALSE)
-    message("Reading H5Seurat...")
-    h5seurat_file_path <- gsub(".h5ad", ".h5seurat", h5ad_file_path)
-    seurat_obj <- SeuratDisk::LoadH5Seurat(h5seurat_file_path, assays = "RNA")
-    message("Read Seurat object:")
-    return(seurat_obj)
-}
-
 malat1_threshold <- function(seurat_obj) {
 
     malat1_gene <- grep("^(?i)MALAT1$", rownames(seurat_obj[["RNA"]]$data), value = TRUE)
