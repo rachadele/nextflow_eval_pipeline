@@ -82,7 +82,11 @@ transfer_multiple_labels <- function(
             reduction = reduction, 
             project.query=project.query, 
             max.features=max.features, k.anchor=k.anchor, k.score=k.score)
+    
+    } else {
+        stop("Normalization method not recognized.")
     }
+
         k.weight = min(k.weight, floor(nrow(anchors@anchors) / k.score ))
         key = ref_keys[1] # assumes keys are ordered
         #change the k.weight back to 50 or dynamically set ?

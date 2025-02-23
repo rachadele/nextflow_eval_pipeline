@@ -32,6 +32,7 @@ process save_params_to_file {
     k_score: ${params.k_score}
     k_weight: ${params.k_weight}
     outdir: ${params.outdir}
+    normalization_method: ${params.normalization_method}
     EOF
     """
 }
@@ -130,7 +131,7 @@ process h5adConvertQuery {
 
     script:
     """
-    Rscript $projectDir/bin/h5ad_to_rds.R --h5ad_file ${h5ad_file} \\
+    Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
             --normalization_method ${params.normalization_method} \\
             --dims ${params.dims}
 
@@ -148,7 +149,7 @@ process h5adConvertRefs {
 
     script:
     """
-    Rscript $projectDir/bin/h5ad_to_rds.R --h5ad_file ${h5ad_file} \\
+    Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
             --normalization_method ${params.normalization_method} \\
             --dims ${params.dims}
     """
@@ -172,7 +173,7 @@ process rfPredict {
 
     script:
     """
-    python $projectDir/bin/rfc_pred.py --query_path ${query_path} --ref_path ${ref_path} --ref_keys ${ref_keys}        
+    python $projectDir/bin/predict_scvi.py --query_path ${query_path} --ref_path ${ref_path} --ref_keys ${ref_keys}        
  
     """
 
