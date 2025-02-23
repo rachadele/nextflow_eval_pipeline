@@ -25,7 +25,13 @@ if ("feature_id" %in% colnames(sceasy_seurat@assays$RNA[[]])) {
   sceasy_seurat <- rename_features(sceasy_seurat, column_name="feature_id")
 }
 
-sceasy_seurat <- sceasy_seurat %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures = n_features) %>% ScaleData() %>% RunPCA(npcs=dims)
+if normalization.method=="LogNormalize" {
+  sceasy_seurat <- sceasy_seurat %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures = n_features) %>% ScaleData() %>% RunPCA(npcs=dims)
+} else {
+  sceasy_seurat <- sceasy_seurat %>%
+    SCTransform(verbose=FALSE) %>%
+    RunPCA(npcs=dims, assay="SCT")
+}
 
 saveRDS(sceasy_seurat, file = gsub(".h5ad",".rds",h5ad_file))
 message(paste("Converted H5AD to RDS and saved to", gsub(".h5ad",".rds",h5ad_file)))

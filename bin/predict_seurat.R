@@ -1,5 +1,4 @@
-#source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/get_census.R")
-source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functions.R")
+#source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functions.R")
 library(reticulate)
 use_condaenv("~/anaconda3/envs/r4.3/")
 library(Seurat)
@@ -13,14 +12,12 @@ set.seed(123)
 
 parser <- ArgumentParser(description = "Process Seurat objects and transfer labels.")
 #parser$add_argument("--batch_key", type="character", help="Key for integrating dataset", default="sample")
-#parser$add_argument("--organism", type="character", help="Organism", default="human")
 parser$add_argument("--integration_method", type="character", help="Integration method of query and reference", default="pcaproject")
 parser$add_argument("--ref_keys", type="character", nargs="*", help="List of reference keys to pass to query_transfer", default=c("subclass", "class","family","global"))
 parser$add_argument("--dims", type="integer", help="Number of dimensions", default=50)
 parser$add_argument("--max.features", type="integer", help="Maximum number of features", default=200)
 parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=5)
 parser$add_argument("--k.score", type="integer", help="?", default=30)
-#parser$add_argument("--project.query", type="logical", help="whether to project query on to reference PCA (if unset, determined automatically from size of datasets)")
 parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label transfer prediction scores", default=0)
 parser$add_argument("--ref_path", type="character", help="path to references", default="/space/grp/rschwartz/rschwartz/hs_nf_results/3f/360d86ce9fcedb9ffe518a0a1fb90d/whole_cortex.rds")
 parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/hs_nf_results/3a/48b09b36aece477cd81d80559c3932/rosmap_R7944883_processed.rds")
@@ -32,7 +29,6 @@ parser$add_argument("--nfeatures", type="integer", help="Number of variable feat
 args <- parser$parse_args()
 # Extract arguments from the parsed list    
 #batch_key <- args$batch_key
-#organism <- args$organism
 integration_method <- args$integration_method
 ref_keys <- args$ref_keys
 dims <- args$dims
@@ -49,17 +45,59 @@ n_features <- args$nfeatures
 ref = readRDS(ref_path)
 query = readRDS(query_path)
 
+transfer_multiple_labels <- function(
+            query, reference, reduction, normalization_method="SCT",
+            ref_keys, dims, max.features, 
+            k.anchor, k.score, k.weight, project.query=NULL) {
+    
+    #threshold_dims <- 2000
+    if (is.null(project.query)) {
+        if ((ncol(query) > ncol(reference))) {
+            project.query = TRUE
+        } else {
+            project.query = FALSE
+        }
+    }
 
-#rename features in reference to match ensembl ID
-#ref <- rename_features(ref, column_name="feature_id")
+    if (normalization_method == "SCT") {
 
-#ref <- ref %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
-#query <- query %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures() %>% ScaleData() %>% RunPCA(npcs=dims)
+        anchors <- FindTransferAnchors(reference=reference, 
+            normalization.method=normalization_method, 
+            query=query, 
+            reference_assay="SCT", 
+            query_assay="SCT",
+            npcs=dims, dims=1:dims, 
+            reduction = reduction, 
+            project.query=project.query, 
+            max.features=max.features, k.anchor=k.anchor, k.score=k.score)
+        
+
+    } else if (normalization_method == "LogNormalize") {
+        anchors <- FindTransferAnchors(reference=reference, 
+            normalization.method=normalization_method, 
+            query=query, 
+            reference_assay="RNA", 
+            query_assay="RNA",
+            npcs=dims, dims=1:dims, 
+            reduction = reduction, 
+            project.query=project.query, 
+            max.features=max.features, k.anchor=k.anchor, k.score=k.score)
+    }
+        k.weight = min(k.weight, floor(nrow(anchors@anchors) / k.score ))
+        key = ref_keys[1] # assumes keys are ordered
+        #change the k.weight back to 50 or dynamically set ?
+        predictions <- TransferData(anchorset = anchors, refdata=key, reference=reference, weight.reduction=reduction, k.weight = k.weight)
+        return(predictions)
+
+}
+
 
 prediction_scores <- transfer_multiple_labels(
         query=query, reference=ref, reduction=integration_method, 
-        ref_keys=ref_keys, dims=dims, max.features=max.features, 
-        k.anchor=k.anchor, k.score=k.score, project.query=project.query, k.weight=k.weight)
+        ref_keys=ref_keys, dims=dims, 
+        max.features=max.features, 
+        k.anchor=k.anchor, k.score=k.score, 
+        project.query=project.query, k.weight=k.weight)
 
 
 
