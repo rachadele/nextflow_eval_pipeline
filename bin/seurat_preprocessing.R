@@ -6,6 +6,7 @@ library(sceasy)
 library(argparse)
 library(tidyr)
 source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functions.R")
+options(future.globals.maxSize = 3 * 1024^3)  # 2 GB
 
 parser = argparse::ArgumentParser(description = "Convert H5AD to H5Seurat.")
 parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/biof501_proj/refs/whole_cortex.h5ad")

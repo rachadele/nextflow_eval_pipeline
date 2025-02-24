@@ -33,6 +33,7 @@ process save_params_to_file {
     k_weight: ${params.k_weight}
     outdir: ${params.outdir}
     normalization_method: ${params.normalization_method}
+    subset_type: ${params.subset_type}
     EOF
     """
 }
