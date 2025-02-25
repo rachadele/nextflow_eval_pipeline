@@ -59,44 +59,27 @@ transfer_multiple_labels <- function(
         }
     }
 
-    if (normalization_method == "SCT") {
 
-        anchors <- FindTransferAnchors(reference=reference, 
-            normalization.method=normalization_method, 
-            query=query, # ref assay should default to whatever normalization was applied
-            query.assay="SCT",
-            npcs=dims, dims=1:dims, 
-            reduction = reduction, 
-            project.query=project.query, 
-            max.features=max.features, k.anchor=k.anchor, k.score=k.score,
-            reference.reduction="pca") # use precomputed PCA, hopefully this defaults to harmony
-           # not sure if this will work if project.query=TRUE
- 
-    } else if (normalization_method == "LogNormalize") {
-        anchors <- FindTransferAnchors(reference=reference, 
-            normalization.method=normalization_method, 
-            query=query, 
-            query.assay="RNA",
-            npcs=dims, dims=1:dims, 
-            reduction = reduction, 
-            project.query=project.query, 
-            max.features=max.features, k.anchor=k.anchor, k.score=k.score,
-            reference.reduction="pca") # use precomputed PCA, hopefully this defaults to harmony
-    # not sure if this will work if project.query=TRUE
-    } else {
-        stop("Normalization method not recognized.")
-    }
+    anchors <- FindTransferAnchors(reference=reference, 
+        normalization.method=normalization_method, 
+        query=query, 
+        # assay should default to whatever normalization was applied
+        npcs=dims, dims=1:dims, 
+        reduction = reduction, # had to remove project query for SCTransform to work
+        max.features=max.features, k.anchor=k.anchor, k.score=k.score,
+        reference.reduction="pca") # use precomputed PCA from seurat_processing step
 
-        k.weight = min(k.weight, floor(nrow(anchors@anchors) / k.score ))
-        key = ref_keys[1] # assumes keys are ordered
-        #change the k.weight back to 50 or dynamically set ?
-        predictions <- TransferData(anchorset = anchors, refdata=key, reference=reference, weight.reduction=reduction, k.weight = k.weight)
-        return(predictions)
+
+    k.weight = min(k.weight, floor(nrow(anchors@anchors) / k.score ))
+    key = ref_keys[1] # assumes keys are ordered
+    #change the k.weight back to 50 or dynamically set ?
+    predictions <- TransferData(anchorset = anchors, refdata=key, reference=reference, weight.reduction=reduction, k.weight = k.weight)
+    return(predictions)
 
 }
 
 
-prediction_scores <- transfer_multiple_labels(
+prediction_scores <- transfer_multiple_labels(normalization_method=normalization_method,
         query=query, reference=ref, reduction=integration_method, 
         ref_keys=ref_keys, dims=dims, 
         max.features=max.features, 
