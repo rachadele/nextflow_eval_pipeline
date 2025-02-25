@@ -63,26 +63,26 @@ transfer_multiple_labels <- function(
 
         anchors <- FindTransferAnchors(reference=reference, 
             normalization.method=normalization_method, 
-            query=query, 
-            reference.assay="SCT", 
+            query=query, # ref assay should default to whatever normalization was applied
             query.assay="SCT",
             npcs=dims, dims=1:dims, 
             reduction = reduction, 
             project.query=project.query, 
-            max.features=max.features, k.anchor=k.anchor, k.score=k.score)
-        
-
+            max.features=max.features, k.anchor=k.anchor, k.score=k.score,
+            reference.reduction="pca") # use precomputed PCA, hopefully this defaults to harmony
+           # not sure if this will work if project.query=TRUE
+ 
     } else if (normalization_method == "LogNormalize") {
         anchors <- FindTransferAnchors(reference=reference, 
             normalization.method=normalization_method, 
             query=query, 
-            reference.assay="RNA", 
             query.assay="RNA",
             npcs=dims, dims=1:dims, 
             reduction = reduction, 
             project.query=project.query, 
-            max.features=max.features, k.anchor=k.anchor, k.score=k.score)
-    
+            max.features=max.features, k.anchor=k.anchor, k.score=k.score,
+            reference.reduction="pca") # use precomputed PCA, hopefully this defaults to harmony
+    # not sure if this will work if project.query=TRUE
     } else {
         stop("Normalization method not recognized.")
     }
