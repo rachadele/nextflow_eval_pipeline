@@ -6,7 +6,7 @@ library(sceasy)
 library(argparse)
 library(tidyr)
 source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functions.R")
-options(future.globals.maxSize = 3 * 1024^3)  # 2 GB
+options(future.globals.maxSize = 5 * 1024^3)  # 5 GB
 
 parser = argparse::ArgumentParser(description = "Convert H5AD to H5Seurat.")
 parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/hs_nf_results/c6/10de8aba87d83363dcbde1602eb72c/whole_cortex.h5ad")
@@ -14,7 +14,7 @@ parser$add_argument("--normalization_method", type="character", help="Normalizat
 parser$add_argument("--dims", type="integer", help="Number of dimensions", default=30)
 parser$add_argument("--batch_key", type="character", help="Batch key", default="dataset_title")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
-parser$add_argument("--batch_correct", action="store_true", help="Batch correct", default=TRUE)
+parser$add_argument("--batch-correct", action="store_true", help="Batch correct", default=TRUE)
 parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=5)
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=30)
 parser$add_argument("--k.score", type="integer", help="k.score", default=30)
