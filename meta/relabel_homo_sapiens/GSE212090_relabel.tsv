@@ -1,0 +1,7 @@
+cell_type	subclass	class	family
+Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron
+Excitatory neurons	Glutamatergic	Glutamatergic	Glutamatergic
+Astrocytes	Astrocyte	Glia	Non-neuron
+Inhibitory neurons	GABAergic	GABAergic	GABAergic
+Microglia	Microglia	Glia	Non-neuron
+OPC	OPC	Glia	Non-neuron

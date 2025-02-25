@@ -134,7 +134,8 @@ process h5adConvertQuery {
     """
     Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
             --normalization_method ${params.normalization_method} \\
-            --dims ${params.dims}
+            --dims ${params.dims} \\
+            --nfeatures ${params.nfeatures}
 
     """
 }
@@ -152,7 +153,8 @@ process h5adConvertRefs {
     """
     Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
             --normalization_method ${params.normalization_method} \\
-            --dims ${params.dims}
+            --dims ${params.dims} \\
+            --nfeatures ${params.nfeatures}
     """
 }
 
@@ -207,7 +209,8 @@ process predictSeurat {
         --max.features ${params.max_features} \\
         --k.score ${params.k_score} \\
         --k.anchor ${params.k_anchor} \\
-        --k.weight ${params.k_weight}
+        --k.weight ${params.k_weight} \\
+        --normalization_method ${params.normalization_method}
     """
 
 }
