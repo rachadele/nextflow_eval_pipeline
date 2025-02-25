@@ -27,10 +27,12 @@ if ("feature_id" %in% colnames(sceasy_seurat@assays$RNA[[]])) {
 }
 
 if (normalization_method=="LogNormalize") {
-  sceasy_seurat <- sceasy_seurat %>% NormalizeData(normalization.method=normalization_method) %>% FindVariableFeatures(nfeatures = n_features) %>% ScaleData() %>% RunPCA(npcs=dims)
+  sceasy_seurat <- sceasy_seurat %>% NormalizeData(normalization.method=normalization_method) %>% 
+  FindVariableFeatures(nfeatures = n_features) %>% 
+  ScaleData() %>% RunPCA(npcs=dims)
 } else if (normalization_method=="SCT") {
   sceasy_seurat <- sceasy_seurat %>%
-    SCTransform(verbose=FALSE) %>%
+    SCTransform(verbose=FALSE, variable.features.n=n_features) %>%
     RunPCA(npcs=dims, assay="SCT")
 } else {
   stop("Normalization method not recognized.")
