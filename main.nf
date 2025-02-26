@@ -34,6 +34,7 @@ process save_params_to_file {
     outdir: ${params.outdir}
     normalization_method: ${params.normalization_method}
     subset_type: ${params.subset_type}
+    batch_correct: ${params.batch_correct}
     EOF
     """
 }
@@ -121,7 +122,7 @@ process getCensusAdata {
     """
 }
 
-process h5adConvertQuery {
+process queryProcessSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
 
     input:
@@ -140,7 +141,7 @@ process h5adConvertQuery {
     """
 }
 
-process h5adConvertRefs {
+process refProcessSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
 
     input:
@@ -151,27 +152,23 @@ process h5adConvertRefs {
 
     script:
     """
-    Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
+    Rscript $projectDir/bin/ref_preprocessing.R --h5ad_file ${h5ad_file} \\
             --normalization_method ${params.normalization_method} \\
             --dims ${params.dims} \\
-            --nfeatures ${params.nfeatures}
+            --nfeatures ${params.nfeatures} \\
+            ${params.batch_correct ? '--batch_correct' : ''} 
+            
     """
 }
 
 process rfPredict {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
-    // publishDir (
-        // path: "${params.outdir}/scvi",
-        // mode: "copy"
-    // )
-
     input:
     tuple val(query_path), val(ref_path)
     val ref_keys
 
     output:
-    // path "probs/**"
     tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*tsv"), emit: probs_channel
 
     script:
@@ -186,10 +183,6 @@ process rfPredict {
 process predictSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
 
-    // publishDir (
-    //    path "{$params.outdir}/seurat",
-    //    mode: "copy"
-   // )
 
     input:
     tuple val(query_path), val(ref_path)
@@ -364,8 +357,9 @@ workflow {
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
     // Convert h5ad files to rds files
-     h5adConvertRefs(ref_paths_adata)
-     h5adConvertRefs.out.ref_paths_seurat.set { ref_paths_seurat }
+     refProcessSeurat(ref_paths_adata)
+     refProcessSeurat.out.ref_paths_seurat.set { ref_paths_seurat }
+
 
 
     // Get query name from file (including region, eg. Lim_Cingulate)
@@ -373,7 +367,6 @@ workflow {
         def query_key = relabel_q_path.getName().split('_relabel.tsv')[0]
         [query_key, relabel_q_path]
     }
-    
 
     // Get query names from file (including region)
     query_paths_adata = query_paths_adata.map { query_path -> 
@@ -381,8 +374,6 @@ workflow {
         def query_key = query_name.split('_')[0]
         [query_key, query_name, query_path]
     }
-
-    
  
     combined_query_paths_adata = query_paths_adata
         .combine(relabel_q_paths, by: 0) // Match query_key
@@ -390,17 +381,14 @@ workflow {
             def batch_key = params.batch_keys.get(query_key, "sample_id")  // Use default if not found
             [query_name, relabel_q_path, query_path, batch_key]
         }
-
-    
     // Process each query by relabeling, subsampling, and passing through scvi model
     processed_queries_adata = mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' ')) 
     // Process each query by relabeling and subsampling
-    processed_queries_seurat = h5adConvertQuery(processed_queries_adata)
+    processed_queries_seurat = queryProcessSeurat(processed_queries_adata)
 
     // Combine the processed queries with the reference paths
     combos_adata = processed_queries_adata.combine(ref_paths_adata)
     combos_seurat = processed_queries_seurat.combine(ref_paths_seurat)
-    
     // Process each query-reference pair
     rfPredict(combos_adata, params.ref_keys.join(' '))
     predictSeurat(combos_seurat, params.ref_keys.join(' '))

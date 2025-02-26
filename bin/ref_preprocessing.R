@@ -14,7 +14,7 @@ parser$add_argument("--normalization_method", type="character", help="Normalizat
 parser$add_argument("--dims", type="integer", help="Number of dimensions", default=30)
 parser$add_argument("--batch_key", type="character", help="Batch key", default="dataset_title")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
-parser$add_argument("--batch-correct", action="store_true", help="Batch correct", default=TRUE)
+parser$add_argument("--batch_correct", action="store_true", help="Batch correct", default=TRUE)
 parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=5)
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=30)
 parser$add_argument("--k.score", type="integer", help="k.score", default=30)
@@ -37,78 +37,73 @@ if ("feature_id" %in% colnames(sceasy_seurat@assays$RNA[[]])) {
   sceasy_seurat <- rename_features(sceasy_seurat, column_name="feature_id")
 }
 
-# If integration method is not null
+# If batch correction is enabled
 if (batch_correct) {
-
-    # Split by batch for integration
+    # Split by batch
     sceasy_list <- SplitObject(sceasy_seurat, split.by = batch_key)
-	if (length(sceasy_list) > 1) {
-		sceasy_list <- Filter(function(x) ncol(x) > dims, sceasy_list)
+    
+    if (length(sceasy_list) == 1) {
+        message("Only one batch found. Skipping integration.")
+        batch_correct <- FALSE
+    } else {
+        # Filter out datasets with too few cells
+        sceasy_list <- Filter(function(x) ncol(x) > dims, sceasy_list)
 
-		if (normalization_method == "SCT") {
-			assay <- "SCT"
-			sceasy_list <- lapply(sceasy_list, function(x) SCTransform(x, 
-										verbose = FALSE, 
-										variable.features.n = n_features))
+        if (normalization_method == "SCT") {
+            assay <- "SCT"
+            sceasy_list <- lapply(sceasy_list, function(x) SCTransform(x, verbose = FALSE, variable.features.n = n_features))
+            features <- SelectIntegrationFeatures(sceasy_list)
+            sceasy_list <- PrepSCTIntegration(sceasy_list, anchor.features = features)
+        } else if (normalization_method == "LogNormalize") {
+            assay <- "RNA"
+            sceasy_list <- lapply(sceasy_list, function(x) {
+                x <- NormalizeData(x)
+                x <- FindVariableFeatures(x, nfeatures = n_features)
+                x <- ScaleData(x)
+                return(x)
+            })
+            features <- SelectIntegrationFeatures(sceasy_list)
+        }
 
-			# Select integration features
-			features <- SelectIntegrationFeatures(sceasy_list)		
-			# If SCT integration, use PrepSCTIntegration
-			sceasy_list <- PrepSCTIntegration(
-								sceasy_list,
-								anchor.features = features
-								)
+        # Find integration anchors
+        anchors <- FindIntegrationAnchors(
+            object.list = sceasy_list, dims = 1:dims, k.anchor = k.anchor, k.score = k.score,
+            normalization.method = normalization_method, anchor.features = features
+        )
 
-		} else if (normalization_method == "LogNormalize") {
-			assay <- "RNA"
-			sceasy_list <- lapply(sceasy_list, function(x) {
-				x <- NormalizeData(x)
-				x <- FindVariableFeatures(x)
-				x <- ScaleData(x)
-				return(x)
-			})
-			features <- SelectIntegrationFeatures(sceasy_list)
-		}
-		# Find integration anchors
-		anchors <- FindIntegrationAnchors(object.list = sceasy_list, 
-					dims = 1:dims, k.anchor=k.anchor, k.score=k.score,
-					normalization.method = normalization_method, 
-					anchor.features = features)
+        anchors_per_pair <- table(anchors@anchors$dataset1, anchors@anchors$dataset2)
+        min_anchors <- min(anchors_per_pair[anchors_per_pair > 0])  # Ignore zero values
+        k.anchor <- min(min_anchors, k.anchor)
 
-
-		anchors_per_pair <- table(anchors@anchors$dataset1, anchors@anchors$dataset2)		
-		min_anchors <- min(anchors_per_pair[anchors_per_pair > 0])  # Ignore zero values
-		k.anchor <- min(min_anchors, k.anchor)
-		# Integrate data
-		sceasy_seurat <- IntegrateData(anchorset = anchors, 
-				dims = 1:dims, k.weight=k.weight, 
-				normalization.method = normalization_method, 
-				new.assay.name = "integrated")
-		# Run PCA on integrated data
-		sceasy_seurat <- sceasy_seurat %>% ScaleData() %>%
-			RunPCA(npcs = dims, assay = "integrated")
-	} else {
-		message("Only one batch found. Skipping integration.")
-	}
-} else {
-
-    # Normalize and scale data without integration
-    if (normalization_method == "SCT") {
-        sceasy_seurat <- sceasy_seurat %>%
-            SCTransform(verbose = FALSE, variable.features.n = n_features) %>%
-            RunPCA(npcs = dims, assay = "SCT")
-    } else if (normalization_method == "LogNormalize") {
-        sceasy_seurat <- sceasy_seurat %>%
-            NormalizeData(normalization.method = normalization_method) %>%
-            FindVariableFeatures(nfeatures = n_features) %>%
-            ScaleData() %>%
-            RunPCA(npcs = dims)
+        # Integrate data
+        sceasy_seurat <- IntegrateData(
+            anchorset = anchors, dims = 1:dims, k.weight = k.weight,
+            normalization.method = normalization_method, new.assay.name = "integrated"
+        )
+        assay <- "integrated"
     }
 }
 
-sceasy_seurat <- RunUMAP(sceasy_seurat, reduction = "pca", dims = 1:30)
-p <- DimPlot(sceasy_seurat, group.by = batch_key, label = TRUE)
-p
+# If batch correction was skipped, perform normalization
+if (!batch_correct) {
+    if (normalization_method == "SCT") {
+        sceasy_seurat <- SCTransform(sceasy_seurat, verbose = FALSE, variable.features.n = n_features)
+        assay <- "SCT"
+    } else if (normalization_method == "LogNormalize") {
+        sceasy_seurat <- NormalizeData(sceasy_seurat, normalization.method = normalization_method)
+        sceasy_seurat <- FindVariableFeatures(sceasy_seurat, nfeatures = n_features)
+        sceasy_seurat <- ScaleData(sceasy_seurat)
+        assay <- "RNA"
+    }
+}
+
+# Run PCA on the appropriate assay
+sceasy_seurat <- RunPCA(sceasy_seurat, npcs = dims, assay = assay)
+
+
+#sceasy_seurat <- RunUMAP(sceasy_seurat, reduction = "pca", dims = 1:30)
+#p <- DimPlot(sceasy_seurat, group.by = batch_key, label = TRUE)
+#ggplot2::ggsave(paste0(gsub(".h5ad", "_umap.pdf", h5ad_file)), p)
 
 saveRDS(sceasy_seurat, file = gsub(".h5ad", ".rds", h5ad_file))
 message(paste("Converted H5AD to RDS and saved to", gsub(".h5ad", ".rds", h5ad_file)))
