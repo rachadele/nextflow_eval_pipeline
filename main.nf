@@ -32,7 +32,6 @@ process save_params_to_file {
     k_score: ${params.k_score}
     k_weight: ${params.k_weight}
     outdir: ${params.outdir}
-    normalization_method: ${params.normalization_method}
     subset_type: ${params.subset_type}
     batch_correct: ${params.batch_correct}
     EOF
@@ -122,44 +121,84 @@ process getCensusAdata {
     """
 }
 
-process queryProcessSeurat {
+process queryProcessSeurat_SCT {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
 
     input:
     path h5ad_file
 
     output:
-    path "${h5ad_file.getName().toString().replace('.h5ad','.rds')}", emit: query_paths_seurat 
+    path "${h5ad_file.getName().toString().replace('.h5ad','.rds')}", emit: query_paths_seurat_SCT
 
     script:
     """
     Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
-            --normalization_method ${params.normalization_method} \\
+            --normalization_method SCT \\
             --dims ${params.dims} \\
             --nfeatures ${params.nfeatures}
 
     """
 }
 
-process refProcessSeurat {
+process refProcessSeurat_SCT {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
 
     input:
     path h5ad_file
 
     output:
-    path "${h5ad_file.getName().toString().replace('.h5ad','.rds')}", emit: ref_paths_seurat
+    path "${h5ad_file.getName().toString().replace('.h5ad','.rds')}", emit: ref_paths_seurat_SCT
 
     script:
     """
     Rscript $projectDir/bin/ref_preprocessing.R --h5ad_file ${h5ad_file} \\
-            --normalization_method ${params.normalization_method} \\
+            --normalization_method SCT \\
             --dims ${params.dims} \\
             --nfeatures ${params.nfeatures} \\
             ${params.batch_correct ? '--batch_correct' : ''} 
             
     """
 }
+
+process queryProcessSeurat_LogNormalize {
+    conda '/home/rschwartz/anaconda3/envs/r4.3'
+
+    input:
+    path h5ad_file
+
+    output:
+    path "${h5ad_file.getName().toString().replace('.h5ad','.rds')}", emit: query_paths_seurat_LogNormalize
+
+    script:
+    """
+    Rscript $projectDir/bin/seurat_preprocessing.R --h5ad_file ${h5ad_file} \\
+            --normalization_method LogNormalize \\
+            --dims ${params.dims} \\
+            --nfeatures ${params.nfeatures}
+
+    """
+}
+
+process refProcessSeurat_LogNormalize {
+    conda '/home/rschwartz/anaconda3/envs/r4.3'
+
+    input:
+    path h5ad_file
+
+    output:
+    path "${h5ad_file.getName().toString().replace('.h5ad','.rds')}", emit: ref_paths_seurat_LogNormalize
+
+    script:
+    """
+    Rscript $projectDir/bin/ref_preprocessing.R --h5ad_file ${h5ad_file} \\
+            --normalization_method LogNormalize \\
+            --dims ${params.dims} \\
+            --nfeatures ${params.nfeatures} \\
+            ${params.batch_correct ? '--batch_correct' : ''} 
+            
+    """
+}
+
 
 process rfPredict {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
@@ -180,7 +219,7 @@ process rfPredict {
 }
 
 
-process predictSeurat {
+process predictSeurat_SCT{
     conda '/home/rschwartz/anaconda3/envs/r4.3'
 
 
@@ -189,7 +228,7 @@ process predictSeurat {
     val ref_keys
 
     output:
-    tuple path("*obs.relabel.tsv"), val(ref_path), path("*prediction_scores_seurat.tsv"), emit: pred_scores_channel 
+    tuple path("*obs.relabel.tsv"), val(ref_path), path("*prediction_scores_seurat.tsv"), emit: pred_scores_channel_SCT
 
     script:
 
@@ -203,7 +242,35 @@ process predictSeurat {
         --k.score ${params.k_score} \\
         --k.anchor ${params.k_anchor} \\
         --k.weight ${params.k_weight} \\
-        --normalization_method ${params.normalization_method}
+        --normalization_method SCT
+    """
+
+}
+
+process predictSeurat_LogNormalize {
+    conda '/home/rschwartz/anaconda3/envs/r4.3'
+
+
+    input:
+    tuple val(query_path), val(ref_path)
+    val ref_keys
+
+    output:
+    tuple path("*obs.relabel.tsv"), val(ref_path), path("*prediction_scores_seurat.tsv"), emit: pred_scores_channel_LogNormalize
+
+    script:
+
+    """
+    Rscript $projectDir/bin/predict_seurat.R --query_path ${query_path} \\
+        --ref_path ${ref_path} \\
+        --ref_keys ${ref_keys} \\
+        --integration_method ${params.integration_method} \\
+        --dims ${params.dims} \\
+        --max.features ${params.max_features} \\
+        --k.score ${params.k_score} \\
+        --k.anchor ${params.k_anchor} \\
+        --k.weight ${params.k_weight} \\
+        --normalization_method LogNormalize
     """
 
 }
@@ -247,11 +314,11 @@ process classifyAllAdata {
 
 }
 
-process classifyAllSeurat {
+process classifyAllSeurat_SCT {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
     publishDir (
-        path: "${params.outdir}/seurat",
+        path: "${params.outdir}/seurat_SCT",
         mode: "copy"
     )
 
@@ -263,7 +330,46 @@ process classifyAllSeurat {
     val ref_region_mapping
 
     output:
-    path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
+    path "f1_results/*f1.scores.tsv", emit: f1_score_channel_SCT  // Match TSV files in f1_results
+    //path "roc/**tsv", emit: auc_channel
+   // path "roc/**png"
+    path "confusion/**"
+    path "predicted_meta/*tsv"
+
+    script:
+
+    ref_name = ref_path.getName().split('.rds')[0]
+
+    """
+    python $projectDir/bin/classify_all.py  \\
+        --query_path ${query_path} \\
+        --ref_name ${ref_name} \\
+        --ref_keys ${ref_keys} \\
+        --cutoff ${cutoff} \\
+        --probs ${scores_path} \\
+        --mapping_file ${mapping_file} \\
+        --ref_region_mapping ${ref_region_mapping}
+    """
+
+}
+
+process classifyAllSeurat_LogNormalize {
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+
+    publishDir (
+        path: "${params.outdir}/seurat_LogNormalize",
+        mode: "copy"
+    )
+
+    input:
+    val ref_keys
+    val cutoff
+    tuple val(query_path), path(ref_path), path(scores_path) 
+    val mapping_file
+    val ref_region_mapping
+
+    output:
+    path "f1_results/*f1.scores.tsv", emit: f1_score_channel_LogNormalize  // Match TSV files in f1_results
     //path "roc/**tsv", emit: auc_channel
    // path "roc/**png"
     path "confusion/**"
@@ -311,11 +417,11 @@ process plotF1ResultsAdata{
     """ 
 }
 
-process plotF1ResultsSeurat{
+process plotF1ResultsSeurat_SCT{
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
     publishDir (
-        path: "${params.outdir}/seurat",
+        path: "${params.outdir}/seurat_SCT",
         mode: "copy"
         )
 
@@ -335,6 +441,32 @@ process plotF1ResultsSeurat{
  
     """ 
 }
+
+process plotF1ResultsSeurat_LogNormalize{
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+
+    publishDir (
+        path: "${params.outdir}/seurat_LogNormalize",
+        mode: "copy"
+        )
+
+    input:
+    val ref_keys
+    val cutoff
+    file f1_scores
+
+    output:
+    path "f1_plots/*png" // Wildcard to capture all relevant output files
+    path "dists/*distribution.png" // Wildcard to capture all relevant output files
+
+    script:
+    
+    """
+    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+ 
+    """ 
+}
+
 
 // Workflow definition
 workflow {
@@ -356,9 +488,14 @@ workflow {
     getCensusAdata.out.ref_paths_adata.flatten()
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
-    // Convert h5ad files to rds files
-     refProcessSeurat(ref_paths_adata)
-     refProcessSeurat.out.ref_paths_seurat.set { ref_paths_seurat }
+    
+    // preprocess - log normalize
+    refProcessSeurat_LogNormalize(ref_paths_adata)
+    refProcessSeurat_LogNormalize.out.ref_paths_seurat_LogNormalize.set { refProcessSeurat_LogNormalize }
+    // preprocess - SCT
+    refProcessSeurat_SCT(ref_paths_adata)
+    refProcessSeurat_SCT.out.ref_paths_seurat_SCT.set { refProcessSeurat_SCT }
+
 
 
 
@@ -381,56 +518,81 @@ workflow {
             def batch_key = params.batch_keys.get(query_key, "sample_id")  // Use default if not found
             [query_name, relabel_q_path, query_path, batch_key]
         }
+
     // Process each query by relabeling, subsampling, and passing through scvi model
     processed_queries_adata = mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' ')) 
+    
     // Process each query by relabeling and subsampling
-    processed_queries_seurat = queryProcessSeurat(processed_queries_adata)
+    // do this for log normalize and SCT
+    processed_queries_seurat_SCT = queryProcessSeurat_SCT(processed_queries_adata).out.query_paths_seurat_SCT
+    processed_queries_seurat_LogNormalize = queryProcessSeurat_LogNormalize(processed_queries_adata).out.query_paths_seurat_LogNormalize
+
 
     // Combine the processed queries with the reference paths
+    // do this for log normalize and SCT
+    combos_seurat_SCT = processed_queries_seurat_SCT.combine(refProcessSeurat_SCT)
+    combos_seurat_LogNormalize = processed_queries_seurat_LogNormalize.combine(refProcessSeurat_LogNormalize)
+    //keep adata the same
     combos_adata = processed_queries_adata.combine(ref_paths_adata)
-    combos_seurat = processed_queries_seurat.combine(ref_paths_seurat)
+
     // Process each query-reference pair
+    // need to do this for log normalize and SCT
     rfPredict(combos_adata, params.ref_keys.join(' '))
-    predictSeurat(combos_seurat, params.ref_keys.join(' '))
+
+
+    predictSeurat_SCT(combos_seurat_SCT, params.ref_keys.join(' '))
+    predictSeurat_LogNormalize(combos_seurat_LogNormalize, params.ref_keys.join(' '))
 
     // Collect predictions from each query reference pair
     adata_probs_channel = rfPredict.out.probs_channel 
-    seurat_scores_channel = predictSeurat.out.pred_scores_channel
-
+    seurat_SCT_scores_channel = predictSeurat_SCT.out.pred_scores_channel
+    seurat_LogNormalize_scores_channel = predictSeurat_LogNormalize.out.pred_scores_channel
 
     adata_probs_channel = adata_probs_channel.map { query_path, ref_path, probs_path ->
         query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //query_region = params.query_region[query_name]
-       // query_sex = params.query_sex[query_name]
-       // query_disease = params.query_disease[query_name]
         [query_path, ref_path, probs_path]
     }
-    seurat_scores_channel = seurat_scores_channel.map { query_path, ref_path, scores_path ->
+    seurat_SCT_scores_channel = seurat_SCT_scores_channel.map { query_path, ref_path, scores_path ->
         query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //query_region = params.query_region[query_name]
-       // query_sex = params.query_sex[query_name]
-       // query_disease = params.query_disease[query_name]
         [query_path, ref_path, scores_path]
     }
+
+    seurat_LogNormalize_scores_channel = seurat_LogNormalize_scores_channel.map { query_path, ref_path, scores_path ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        [query_path, ref_path, scores_path]
+    }
+
     // Classify all cells based on prediction scores at most granular level
     classifyAllAdata(params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
     f1_scores_adata = classifyAllAdata.out.f1_score_channel
 
-    classifyAllSeurat(params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
-    f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
+    // Classify all cells based on prediction scores at most granular level - SCT
+    classifyAllSeurat_SCT(params.ref_keys.join(' '), params.cutoff, seurat_SCT_scores_channel, params.relabel_r, ref_region_mapping)
+    f1_scores_seurat_SCT = classifyAllSeurat_SCT.out.f1_score_channel_SCT
 
+    // Classify all cells based on prediction scores at most granular level - LogNormalize
+    classifyAllSeurat_LogNormalize(params.ref_keys.join(' '), params.cutoff, seurat_LogNormalize_scores_channel, params.relabel_r, ref_region_mapping)
+    f1_scores_seurat_LogNormalize = classifyAllSeurat_LogNormalize.out.f1_score_channel_LogNormalize
+    
     // Flatten f1 scores files into a list
     f1_scores_adata 
     .toList()
     .set { f1_scores_adata_files }
 
-    f1_scores_seurat
+    f1_scores_seurat_SCT
     .toList()
-    .set { f1_scores_seurat_files }
+    .set { f1_scores_seurat_files_SCT}
+
+    f1_scores_seurat_LogNormalize
+    .toList()
+    .set { f1_scores_seurat_files_LogNormalize}
 
     // Plot f1 score heatmaps using a list of file names from the f1 score channel
     plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata_files)
-    plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_files)
+
+    plotF1ResultsSeurat_SCT(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_SCT)
+
+    plotF1ResultsSeurat_LogNormalize(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_LogNormalize)
 
     save_params_to_file()
 }
