@@ -9,14 +9,14 @@ source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functio
 options(future.globals.maxSize = 5 * 1024^3)  # 5 GB
 
 parser = argparse::ArgumentParser(description = "Convert H5AD to H5Seurat.")
-parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/hs_nf_results/c6/10de8aba87d83363dcbde1602eb72c/whole_cortex.h5ad")
+parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_bothnorm/31/d870f3ff0b119381a9d762e6288ee1/whole_cortex.h5ad")
 parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
-parser$add_argument("--dims", type="integer", help="Number of dimensions", default=30)
+parser$add_argument("--dims", type="integer", help="Number of dimensions", default=50)
 parser$add_argument("--batch_key", type="character", help="Batch key", default="dataset_title")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
 parser$add_argument("--batch_correct", action="store_true", help="Batch correct", default=TRUE)
-parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=5)
-parser$add_argument("--k.weight", type="integer", help="k.weight", default=30)
+parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=10)
+parser$add_argument("--k.weight", type="integer", help="k.weight", default=50)
 parser$add_argument("--k.score", type="integer", help="k.score", default=30)
 args = parser$parse_args()
 normalization_method = args$normalization_method
@@ -31,7 +31,6 @@ k.anchor = args$k.anchor
 k.weight = args$k.weight
 k.score = args$k.score
 
-batch_key_value <- eval(parse(text = paste0("sceasy_seurat$", batch_key)))
 
 if ("feature_id" %in% colnames(sceasy_seurat@assays$RNA[[]])) {
   sceasy_seurat <- rename_features(sceasy_seurat, column_name="feature_id")
@@ -71,9 +70,9 @@ if (batch_correct) {
             normalization.method = normalization_method, anchor.features = features
         )
 
-        anchors_per_pair <- table(anchors@anchors$dataset1, anchors@anchors$dataset2)
-        min_anchors <- min(anchors_per_pair[anchors_per_pair > 0])  # Ignore zero values
-        k.anchor <- min(min_anchors, k.anchor)
+        #anchors_per_pair <- table(anchors@anchors$dataset1, anchors@anchors$dataset2)
+        #min_anchors <- min(anchors_per_pair[anchors_per_pair > 0])  # Ignore zero values
+       # k.weight <- min(min_anchors, k.anchor)
 
         # Integrate data
         sceasy_seurat <- IntegrateData(
@@ -81,6 +80,8 @@ if (batch_correct) {
             normalization.method = normalization_method, new.assay.name = "integrated"
         )
         assay <- "integrated"
+        sceasy_seurat <- sceasy_seurat %>% ScaleData(assay = assay)
+
     }
 }
 

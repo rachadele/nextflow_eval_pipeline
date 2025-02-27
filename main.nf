@@ -155,6 +155,9 @@ process refProcessSeurat_SCT {
             --normalization_method SCT \\
             --dims ${params.dims} \\
             --nfeatures ${params.nfeatures} \\
+            --k.score ${params.k_score} \\
+            --k.anchor ${params.k_anchor} \\
+            --k.weight ${params.k_weight} \\
             ${params.batch_correct ? '--batch_correct' : ''} 
             
     """
@@ -194,6 +197,9 @@ process refProcessSeurat_LogNormalize {
             --normalization_method LogNormalize \\
             --dims ${params.dims} \\
             --nfeatures ${params.nfeatures} \\
+            --k.score ${params.k_score} \\
+            --k.anchor ${params.k_anchor} \\
+            --k.weight ${params.k_weight} \\
             ${params.batch_correct ? '--batch_correct' : ''} 
             
     """
@@ -524,9 +530,11 @@ workflow {
     
     // Process each query by relabeling and subsampling
     // do this for log normalize and SCT
-    processed_queries_seurat_SCT = queryProcessSeurat_SCT(processed_queries_adata).out.query_paths_seurat_SCT
-    processed_queries_seurat_LogNormalize = queryProcessSeurat_LogNormalize(processed_queries_adata).out.query_paths_seurat_LogNormalize
+    queryProcessSeurat_SCT(processed_queries_adata)
+    queryProcessSeurat_SCT.out.query_paths_seurat_SCT.set { processed_queries_seurat_SCT }
 
+    queryProcessSeurat_LogNormalize(processed_queries_adata)
+    queryProcessSeurat_LogNormalize.out.query_paths_seurat_LogNormalize.set { processed_queries_seurat_LogNormalize }
 
     // Combine the processed queries with the reference paths
     // do this for log normalize and SCT
@@ -545,8 +553,8 @@ workflow {
 
     // Collect predictions from each query reference pair
     adata_probs_channel = rfPredict.out.probs_channel 
-    seurat_SCT_scores_channel = predictSeurat_SCT.out.pred_scores_channel
-    seurat_LogNormalize_scores_channel = predictSeurat_LogNormalize.out.pred_scores_channel
+    seurat_SCT_scores_channel = predictSeurat_SCT.out.pred_scores_channel_SCT
+    seurat_LogNormalize_scores_channel = predictSeurat_LogNormalize.out.pred_scores_channel_LogNormalize
 
     adata_probs_channel = adata_probs_channel.map { query_path, ref_path, probs_path ->
         query_name = query_path.getName().split('.obs.relabel.tsv')[0]
@@ -582,17 +590,20 @@ workflow {
     f1_scores_seurat_SCT
     .toList()
     .set { f1_scores_seurat_files_SCT}
+    f1_scores_seurat_files_SCT.view()
 
     f1_scores_seurat_LogNormalize
     .toList()
     .set { f1_scores_seurat_files_LogNormalize}
+    f1_scores_seurat_files_LogNormalize.view()
+
 
     // Plot f1 score heatmaps using a list of file names from the f1 score channel
     plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata_files)
 
-    plotF1ResultsSeurat_SCT(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_SCT)
+    plotF1ResultsSeurat_SCT(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_files_SCT)
 
-    plotF1ResultsSeurat_LogNormalize(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_LogNormalize)
+    plotF1ResultsSeurat_LogNormalize(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_files_LogNormalize)
 
     save_params_to_file()
 }
