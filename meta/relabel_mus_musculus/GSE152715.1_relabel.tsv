@@ -1,8 +1,8 @@
 cell_type	subclass	class	family	global
-CA1	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
-CA3	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
-Subiculum	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
-Dentate Gyrus	Hippocampal neuron	Hippocampal neuron	Neuron	Neuron
+CA1	Neuron	Neuron	Neuron	Neuron
+CA3	Neuron	Neuron	Neuron	Neuron
+Subiculum	Neuron	Neuron	Neuron	Neuron
+Dentate Gyrus	Neuron	Neuron	Neuron	Neuron
 SST	SST	MGE	GABAergic	Neuron
 Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 Int. Progenitor	GABAergic	GABAergic	GABAergic	Neuron
