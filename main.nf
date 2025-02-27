@@ -156,6 +156,9 @@ process refProcessSeurat {
             --normalization_method ${params.normalization_method} \\
             --dims ${params.dims} \\
             --nfeatures ${params.nfeatures} \\
+            --k.score ${params.k_score} \\
+            --k.anchor ${params.k_anchor} \\
+            --k.weight ${params.k_weight} \\
             ${params.batch_correct ? '--batch_correct' : ''} 
             
     """
