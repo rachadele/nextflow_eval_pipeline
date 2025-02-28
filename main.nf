@@ -303,7 +303,7 @@ process plotF1ResultsAdata{
     file f1_scores
 
     output:
-    path "f1_plots/*png" // Wildcard to capture all relevant output files
+   // path "f1_plots/*png" // Wildcard to capture all relevant output files
     path "dists/*distribution.png" // Wildcard to capture all relevant output files
 
     script:
@@ -328,7 +328,7 @@ process plotF1ResultsSeurat{
     file f1_scores
 
     output:
-    path "f1_plots/*png" // Wildcard to capture all relevant output files
+    // path "f1_plots/*png" // Wildcard to capture all relevant output files
     path "dists/*distribution.png" // Wildcard to capture all relevant output files
 
     script:
