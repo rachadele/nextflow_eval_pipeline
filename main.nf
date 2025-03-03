@@ -272,6 +272,7 @@ process classifyAllSeurat {
    // path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
+    path "**pr_curve.png"
 
     script:
 
