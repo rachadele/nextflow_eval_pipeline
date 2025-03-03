@@ -24,3 +24,10 @@ results_hs_factor_subsets/
 sctransform_sample_subsets_dataset_id_only/
 homo_sapiens/
 test_sctransform/
+.vscode/
+mus_musculus/
+new_census_version/
+new_homo_sapiens/
+sctransform_sample_subsets_bothnorm/
+sctransform_sample_subsets_dataset_id_only_hsap/
+sctransform_sample_subsets_dataset_id_only_mmus/

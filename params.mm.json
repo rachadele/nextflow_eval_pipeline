@@ -10,8 +10,13 @@
         "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics"
     ],
     "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/cortex_only/mus_musculus/*h5ad",
-    "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv", 
+    "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv",
     "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv",
     "tree_file": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/master_hierarchy.json",
-    "ref_keys": ["subclass","class","family","global"]
+    "ref_keys": [
+        "subclass",
+        "class",
+        "family",
+        "global"
+    ]
 }
