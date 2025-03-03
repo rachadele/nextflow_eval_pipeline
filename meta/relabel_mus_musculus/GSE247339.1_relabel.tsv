@@ -12,7 +12,7 @@ Macrophage	Immune	Immune	Non-neuron	Non-neuron
 Immature Oligodendrocyte	OPC	Glia	Non-neuron	Non-neuron
 NPC	Neuron	Neuron	Neuron	Neuron
 Fibroblast	Stromal	Stromal	Non-neuron	Non-neuron
-Reln+ Neuron	unknown	unknown	unknown	Neuron
+Reln+ Neuron	Neuron	Neuron	Neuron	Neuron
 Ependymal	Glia	Glia	Non-neuron	Non-neuron
 Unknown	unknown	unknown	unknown	unknown
 Neuron	Neuron	Neuron	Neuron	Neuron

@@ -153,10 +153,15 @@ def plot_distribution(df, var, outdir, split=None, facet="key", acronym_mapping=
     red_patch = mlines.Line2D([], [], color='red', marker='o', markersize=7, label='Matching region')
     grey_patch = mlines.Line2D([], [], color='grey', marker='o', markersize=7, label='Non-Matching region')
 
-    # Add the custom legend to the plot
-    plt.legend(handles=[red_patch, grey_patch], title="Match region", loc='upper left', bbox_to_anchor=(1, 1.02))
-
-    # Move the legend to the desired location
+   # Get current legend handles and labels (including the hue legend from violin plot)
+    handles, labels = plt.gca().get_legend_handles_labels()
+    
+    # Add the custom patches to the legend
+    handles.extend([red_patch, grey_patch])
+    labels.extend(['Matching region', 'Non-Matching region'])
+    
+    # Update the legend with both the existing and custom legend items
+    plt.legend(handles=handles, labels=labels, title="Match region", loc='upper left', bbox_to_anchor=(1, 1.02))
     #sns.move_legend(plt, bbox_to_anchor=(1, 1.02), loc='upper left')
     if acronym_mapping:
         add_acronym_legend(acronym_mapping, title=split.split("_")[0].capitalize())
@@ -370,8 +375,8 @@ def main():
                 # If the key already exists, concatenate the new subset to the existing DataFrame
                 all_f1_scores[key] = pd.concat([all_f1_scores[key], subset], ignore_index=True)
     
-    plot_label_f1_heatmaps(all_f1_scores, threshold=cutoff, outpath="f1_plots", widths=[1,0.8,0.5], 
-                           acronym_mapping=None)
+    #plot_label_f1_heatmaps(all_f1_scores, threshold=cutoff, outpath="f1_plots", widths=[1,0.8,0.5], 
+            #               acronym_mapping=None)
     
     final_f1_data = pd.DataFrame()
     for key, df in all_f1_scores.items():
@@ -380,8 +385,8 @@ def main():
         final_f1_data = pd.concat([final_f1_data, macro], ignore_index=True)
     weighted_f1_data = final_f1_data[['reference', 'reference_acronym','key', 'query', 'weighted_f1']]
  
-    plot_f1_heatmaps_by_level(weighted_f1_data, threshold=cutoff, outpath="f1_plots", 
-                              ref_keys=ref_keys, acronym_mapping=None)
+   # plot_f1_heatmaps_by_level(weighted_f1_data, threshold=cutoff, outpath="f1_plots", 
+      #                        ref_keys=ref_keys, acronym_mapping=None)
     
 
 

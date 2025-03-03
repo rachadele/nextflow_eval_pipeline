@@ -2,6 +2,7 @@ cell_type	subclass	class	family	global
 GABAergic neuron	GABAergic	GABAergic	GABAergic	Neuron
 glutamatergic neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
 hippocampal neuron	Hippocampal neuron	Hippocampal neuron	Glutamatergic	Neuron
+cortical interneuron	CT	deep layer non-IT	Glutamatergic	Neuron
 sst GABAergic cortical interneuron	SST	MGE	GABAergic	Neuron
 sst chodl GABAergic cortical interneuron	SST	MGE	GABAergic	Neuron
 pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic	Neuron
