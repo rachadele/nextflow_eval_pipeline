@@ -452,51 +452,43 @@ def roc_analysis(probabilities, query, key):
     return metrics
 
 
-def process_all_rocs(rocs, queries): 
-    # Populate the list with threshold data
-    data = []
+def pr_analyis(prob_df, query, key):
+    optimal_thresholds = {}
+    metrics={}
 
-    for query_name, query_dict in rocs.items():
-        for ref_name, ref_data in query_dict.items():
-            for key, roc in ref_data.items():
-                if roc:
-                    for class_label, class_data in roc.items():
-                        if class_data:
-                            data.append({
-                                "ref": ref_name,
-                                "query": query_name,
-                                "key": key, 
-                                "label": class_label, 
-                                "auc": class_data["auc"],
-                                "optimal_threshold": class_data["optimal_threshold"]
-                              #   f'{var}': class_data[var]
-                            })
+    probs = np.array(probabilities)
+    class_labels = prob_df.columns.values
+    optimal_thresholds[key] = {}
+    
+    # Binarize the class labels for multiclass ROC computation
+    true_labels = label_binarize(query[key].values, classes=class_labels)
+    
+    # Find the optimal threshold for each class
+    metrics[key] = {}
+    for i, class_label in enumerate(class_labels):
+        optimal_thresholds[key][class_label] = {}
+        positive_samples = np.sum(true_labels[:, i] == 1)
+        if positive_samples == 0:
+            print(f"Warning: No positive samples for class {class_label}, skipping eval and setting threshold to 0.5")
+            optimal_thresholds[key][class_label] = 0.5
+        elif positive_samples > 0:
+            metrics[key][class_label]={}
+            precision, recall, thresholds = precision_recall_curve(true_labels[:, i], probs[:, i])
+            avg_precision = average_precision_score(true_labels[:, i], probs[:, i])
 
-    # Create DataFrame from the collected data
-    df = pd.DataFrame(data)
-    return df
+            # Find optimal threshold as the one maximizing F1 score
+            f1_scores = 2 * (precision * recall) / (precision + recall + 1e-10)
+            optimal_idx = np.argmax(f1_scores)
+            optimal_thresholds[key][class_label] = thresholds[optimal_idx]
 
+            # Store metrics
+            metrics[class_label]["precision"] = precision
+            metrics[class_label]["recall"] = recall
+            metrics[class_label]["average_precision"] = avg_precision
+            metricsclass_label]["optimal_threshold"] = thresholds[optimal_idx]
 
-def process_roc(rocs, ref_name, query_name):
-    data=[]
-    for key, roc in rocs.items():
-        if roc:
-            for class_label, class_data in roc.items():
-                if class_data:
-                        data.append({
-                                "ref": ref_name,
-                                "query": query_name,
-                                "key": key, 
-                                "label": class_label, 
-                                "auc": class_data["auc"],
-                                "optimal threshold": class_data["optimal_threshold"]
-                              #   f'{var}': class_data[var]
-                            })
-
-    # Create DataFrame from the collected data
-    roc_df = pd.DataFrame(data)
-    return roc_df 
-
+    return metrics
+ 
 
 
 def check_column_ties(probabilities, class_labels):

@@ -31,6 +31,7 @@ import os
 import json
 from types import SimpleNamespace
 import yaml
+from sklearn.metrics import precision_recall_curve, average_precision_score, PrecisionRecallDisplay
 
 # Function to parse command line arguments
 def parse_arguments():
@@ -92,7 +93,35 @@ def main():
     strain = get_unique_value(query, 'strain')
     age = get_unique_value(query, 'age')
 
-        
+
+    pr_metrics = pr_analysis(prob_df, query, key=ref_keys[0])
+            plt.figure(figsize=(7, 8))
+    
+    class_labels = prob_df.columns.values
+    # make colors for each class
+    colors = sns.color_palette("husl", len(class_labels))
+    for i, color in zip(range(len(class_labels)), colors):
+        display = PrecisionRecallDisplay(recall=pr_metrics["recall"][i], 
+                                         precision=pr_metrics["precision"][i], 
+                                         average_precision=pr_metrics["average_precision"][i], 
+                                         color=color)
+        display.plot(ax=ax, name=f"Precision-recall for class {i}", color=color, despine=True)
+        plt.annotate(f"AP={pr_metrics['average_precision'][i]:.2f}",
+                       "optimal threshold"={pr_metrics['optimal_threshold'][i]:.2f},)
+   
+    # Add the legend for the iso-F1 curves
+    handles, labels = display.ax_.get_legend_handles_labels()
+
+    # Set the legend and the axes
+    ax.legend(handles=handles, labels=labels, loc="best")
+    ax.set_title("Precision-Recall curve for f{query_name} vs {ref_name}")
+
+    # Show the plot
+    plt.savefig(f"{query_name}_{ref_name}_pr_curve.png")
+    plt.close()
+    
+    
+    
     # Classify cells and evaluate
     query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
     outdir = "predicted_meta"
