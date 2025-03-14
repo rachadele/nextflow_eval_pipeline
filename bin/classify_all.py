@@ -32,18 +32,19 @@ import json
 from types import SimpleNamespace
 import yaml
 from sklearn.metrics import precision_recall_curve, average_precision_score, PrecisionRecallDisplay
+from collections import defaultdict
 
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
   #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/60/ed91620a1659a23ba5b68f8c21028c/lim_Cingulate.obs.relabel.tsv")
-    parser.add_argument('--ref_name', type=str, default="Dissection:_Anterior_cingulate_cortex_ACC.h5ad") #nargs ="+")
-    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family"])
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/1f/0e8727953db2a605a64da16d45558a/GSE247339.2_1051970.obs.relabel.tsv")
+    parser.add_argument('--ref_name', type=str, default="Single-cell_RNA-seq_for_all_cortical__hippocampal_regions_SMART-Seq_v4") #nargs ="+")
+    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family","global"])
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
-    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/work/4a/164f6559104b8e872e88bc617411a2/probs/lim_Cingulate_processed_Dissection:_Anterior_cingulate_cortex_ACC.prob.df.tsv")
-    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
-    parser.add_argument('--ref_region_mapping', type=str)
+    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/ea/138292b60359b9af1ea855fe7bd2d1/GSE247339.2_1051970_Single-cell_RNA-seq_for_all_cortical__hippocampal_regions_SMART-Seq_v4.prob.df.tsv")
+    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv")
+    parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/4c/a6f8162bef802cde2d962242a858ce/refs/ref_region.yaml")
 
     
     if __name__ == "__main__":
@@ -66,13 +67,8 @@ def main():
     ref_name = args.ref_name
     ref_keys = args.ref_keys
     cutoff = args.cutoff
-    #query_region = args.query_region.replace("_", " ")
     ref_region_mapping = args.ref_region_mapping
-    #disease = args.query_disease
-    #sex = args.query_sex
-    #dev_stage = args.query_dev_stage
-    
-     
+
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
     ref_region=ref_region_mapping[ref_name]
@@ -93,34 +89,60 @@ def main():
     strain = get_unique_value(query, 'strain')
     age = get_unique_value(query, 'age')
 
-
-    pr_metrics = pr_analysis(prob_df, query, key=ref_keys[0])
-            plt.figure(figsize=(7, 8))
+    os.makedirs("pr_curves", exist_ok=True)
     
-    class_labels = prob_df.columns.values
-    # make colors for each class
-    colors = sns.color_palette("husl", len(class_labels))
-    for i, color in zip(range(len(class_labels)), colors):
-        display = PrecisionRecallDisplay(recall=pr_metrics["recall"][i], 
-                                         precision=pr_metrics["precision"][i], 
-                                         average_precision=pr_metrics["average_precision"][i], 
-                                         color=color)
-        display.plot(ax=ax, name=f"Precision-recall for class {i}", color=color, despine=True)
-        plt.annotate(f"AP={pr_metrics['average_precision'][i]:.2f}",
-                       "optimal threshold"={pr_metrics['optimal_threshold'][i]:.2f},)
-   
-    # Add the legend for the iso-F1 curves
-    handles, labels = display.ax_.get_legend_handles_labels()
+    pr_metrics = pr_analysis(prob_df, query, key=ref_keys[0], mapping_df = mapping_df)
+    if not pr_metrics:
+        print("No PR metrics to plot")
+        fig, ax = plt.subplots(figsize=(5, 5))  # Create a small dummy figure
+        fig.savefig(os.path.join("pr_curves", f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
+        plt.close(fig)  # Close to free memory
+    else:    
+        # if pr metrics is not empty:
+        _, ax = plt.subplots(figsize=(10, 15))
+        plt.rcParams.update({'font.size': 20})
+        
+        f_scores = np.linspace(0.2, 0.8, num=4)
+        lines, labels = [], []
+        for f_score in f_scores:
+            x = np.linspace(0.01, 1)
+            y = f_score * x / (2 * x - f_score)
+            (l,) = plt.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
+            plt.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
+            
+        class_labels= pr_metrics["recall"].keys()
+        
+        # transform to array
+        class_labels = np.array(list(class_labels))
+        # make colors for each class
+        colors = sns.color_palette("husl", len(class_labels))
+        for class_label, color in zip(class_labels, colors):
 
-    # Set the legend and the axes
-    ax.legend(handles=handles, labels=labels, loc="best")
-    ax.set_title("Precision-Recall curve for f{query_name} vs {ref_name}")
+            display = PrecisionRecallDisplay(recall=pr_metrics["recall"][class_label], 
+                                            precision=pr_metrics["precision"][class_label], 
+                                            average_precision=pr_metrics["average_precision"][class_label])
+            display.plot(ax=ax, name=f"Precision-recall for class {class_label}", color=color)
+            avg_prec = pr_metrics["average_precision"][class_label]
+            opt_thresh = pr_metrics["optimal_threshold"][class_label]
+            # get position of class label
+            class_idx = np.where(class_labels == class_label)[0][0]
+        # plt.annotate(f"Optimal threshold for {class_label}={opt_thresh:.2f}", 
+            #           xy=(0.6, 0.2 + class_idx * 0.05), fontsize=12, color=color)
 
-    # Show the plot
-    plt.savefig(f"{query_name}_{ref_name}_pr_curve.png")
-    plt.close()
-    
-    
+        # Add the legend
+        handles, labels = display.ax_.get_legend_handles_labels()
+        handles.extend([l])
+        labels.extend(["iso-f1 curves"])
+        ax.legend(handles=handles, labels=labels, loc="best", bbox_to_anchor=(1.3, 1), borderaxespad=0., fontsize =12)
+
+        ax.set_xlabel('Recall', fontsize=16)
+        ax.set_ylabel('Precision', fontsize=16)
+        ax.set_title(f"Precision-Recall Curve for {query_name} vs {ref_name}", fontsize=18)
+
+        plt.savefig(os.path.join("pr_curves",f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
+        plt.close()
+
+         
     
     # Classify cells and evaluate
     query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
@@ -130,7 +152,7 @@ def main():
     
     # map valid labels for given query granularity and evaluate
     class_metrics = eval(query, ref_keys, mapping_df)
-    class_metrics = update_classification_report(class_metrics, ref_keys)
+    #class_metrics = update_classification_report(class_metrics, ref_keys)
 
     # Plot confusion matrices
     for key in ref_keys:
@@ -141,27 +163,30 @@ def main():
     # Collect F1 scores
     f1_data = []
     for key in ref_keys:
-        classification_report = class_metrics[key]["classification_report"]
-        accuracy = class_metrics[key]["accuracy"]
-        label_accuracies = class_metrics[key]["label_accuracies"]
-        print(label_accuracies)
-        for label, metrics in classification_report.items():
-            if label not in ["macro avg", "micro avg", "weighted avg", "accuracy"]:
+        label_metrics = class_metrics[key]["label_metrics"]
+        weighted_metrics = class_metrics[key]["weighted_metrics"]
+        for label, metrics in label_metrics.items():
+            #if label not in ["macro avg", "micro avg", "weighted avg", "accuracy"]:
                 f1_data.append({
                     'query': query_name,
                     'reference': ref_name,
                     'label': label,
-                    'f1_score': metrics['f1-score'],
-                    'weighted_f1': classification_report.get('weighted avg', {}).get('f1-score', None),
+                    'f1_score': metrics['f1_score'],
+                    'accuracy': metrics['accuracy'],
+                    'precision': metrics['precision'],
+                    'recall': metrics['recall'],
+                    'support': metrics['support'],
+                    'weighted_f1': weighted_metrics.get('f1_score', None),
+                    'weighted_precision': weighted_metrics.get('precision', None),
+                    'weighted_recall': weighted_metrics.get('recall', None),
                     'key': key,
                     'cutoff': cutoff,
                     'ref_region': ref_region,
-                    'accuracy': accuracy,
-                    'label_accuracy': label_accuracies.get(label, None),
                 }
         )
                 
-
+    #celltype_precisions = class_metrics["precision"]
+    #celltype_recalls = class_metrics["recall"]
 
     # Save F1 scores to a file
     df = pd.DataFrame(f1_data)

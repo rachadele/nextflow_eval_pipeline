@@ -232,7 +232,7 @@ process classifyAllAdata {
     //path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
-    path "**pr_curve.png"
+    path "pr_curves/*png"
 
     script:
 
@@ -272,7 +272,7 @@ process classifyAllSeurat {
    // path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
-    path "**pr_curve.png"
+    path "pr_curves/*png"
 
     script:
 
