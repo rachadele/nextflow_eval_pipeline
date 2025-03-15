@@ -28,5 +28,5 @@ smooth muscle cell	Smooth muscle cell	Mural	Non-neuron	Non-neuron
 leptomeningeal cell	Leptomeningeal cell	Stromal	Non-neuron	Non-neuron
 vascular leptomeningeal cell (Mmus)	VLMC	Stromal	Non-neuron	Non-neuron
 endothelial cell	Endothelial	Vascular	Non-neuron	Non-neuron
-macrophage	central nervous system macrophage	Immune	Non-neuron	Non-neuron
-central nervous system macrophage	Microglia	Immune	Non-neuron	Non-neuron
+macrophage	Macrophage	Immune	Non-neuron	Non-neuron
+central nervous system macrophage	Macrophage	Immune	Non-neuron	Non-neuron

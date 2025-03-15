@@ -3,7 +3,7 @@ Excitatory Neuron - DG	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
 Excitatory Neuron - CA1	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
 Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Excitatory Neuron - CA3	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
-Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Microglia	Microglia	Immune	Non-neuron	Non-neuron
 Inhibitory Neuron	GABAergic	GABAergic	GABAergic	Neuron
 Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 Excitatory Neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron

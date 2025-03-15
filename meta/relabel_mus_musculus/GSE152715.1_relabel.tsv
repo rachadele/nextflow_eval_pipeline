@@ -13,5 +13,5 @@ NSC	Neuron	Neuron	Neuron	Neuron
 OPC	OPC	Glia	Non-neuron	Non-neuron
 Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 SMC	Smooth muscle cell	Mural	Non-neuron	Non-neuron
-Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Microglia	Microglia	Immune	Non-neuron	Non-neuron
 Ependymal	Glia	Glia	Non-neuron	Non-neuron

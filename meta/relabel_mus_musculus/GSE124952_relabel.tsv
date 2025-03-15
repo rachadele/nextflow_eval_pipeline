@@ -4,6 +4,6 @@ Endo	Endothelial	Vascular	Non-neuron	Non-neuron
 Inhibitory	GABAergic	GABAergic	GABAergic	Neuron
 Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Astro	Astrocyte	Glia	Non-neuron	Non-neuron
-Microglia	Microglia	Glia	Non-neuron	Non-neuron
+Microglia	Microglia	Immune	Non-neuron	Non-neuron
 NF Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 OPC	OPC	Glia	Non-neuron	Non-neuron
