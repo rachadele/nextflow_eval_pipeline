@@ -41,7 +41,8 @@ def parse_arguments():
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics"
+        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
+        "Tabula Muris Senis"
     ]) 
     parser.add_argument('--split_column', type=str, default="tissue")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])
@@ -103,7 +104,11 @@ def main():
         seed=SEED,
         ref_keys=ref_keys,
     )
-
+    
+    if "All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2" in refs:
+        refs.pop('All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2')
+    
+    
     print("finished fetching anndata")
     outdir = "refs"
     os.makedirs(outdir, exist_ok=True)
