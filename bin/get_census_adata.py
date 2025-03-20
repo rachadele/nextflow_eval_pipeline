@@ -107,8 +107,9 @@ def main():
     
     if "All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2" in refs:
         refs.pop('All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2')
-    
-    
+   
+   
+        
     print("finished fetching anndata")
     outdir = "refs"
     os.makedirs(outdir, exist_ok=True)
@@ -131,6 +132,12 @@ def main():
 
         ref.write(os.path.join(outdir, f"{new_ref_name}.h5ad"))
         ref.obs.to_csv(os.path.join(outdir, f"{new_ref_name}.obs.tsv"), sep="\t")
+
+
+    for ref_name, ref in refs.items():
+        sc.pp.neighbors(ref, use_rep="scvi")
+        sc.tl.umap(ref)
+        sc.pl.umap(ref, color=["dataset_title","collection_name","subclass","class"], ncols=1, save=f"{ref_name}_umap.png")
 
     create_ref_region_yaml(refs, outdir)
 

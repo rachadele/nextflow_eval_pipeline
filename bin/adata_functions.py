@@ -237,7 +237,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
             if ref.obs[col].dtype.name =='category':
     # Convert to Categorical and remove unused categories
                 ref.obs[col] = pd.Categorical(ref.obs[col].cat.remove_unused_categories())
-    
+     
     return refs
 
 
