@@ -52,7 +52,12 @@ def parse_arguments():
         return known_args
 
 def get_unique_value(df, column, default=None):
-    return df[column].unique()[0] if column in df.columns else default
+    if column in df.columns:
+    # check how many unique values there are
+        if len(df[column].unique()) == 1:
+            return df[column].unique()[0] 
+        else:
+            return default
 
     
 def main():

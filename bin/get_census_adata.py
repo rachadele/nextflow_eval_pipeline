@@ -36,15 +36,16 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
     parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--subsample_ref', type=int, default=10)
-    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
+    parser.add_argument('--subsample_ref', type=int, default=500)
+    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv")
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
         "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
-        "Tabula Muris Senis"
+        "Tabula Muris Senis",
+        "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging"
     ]) 
-    parser.add_argument('--split_column', type=str, default="tissue")
+    parser.add_argument('--split_column', type=str, default="dataset_id")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])
     parser.add_argument('--seed', type=int, default=42)
     if __name__ == "__main__":
@@ -105,11 +106,11 @@ def main():
         ref_keys=ref_keys,
     )
     
-    if "All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2" in refs:
-        refs.pop('All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2')
-   
-   
-        
+    refs.pop('All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2', None)
+    refs.pop('Microglia - 24 months old wild-type and Rag1-KO', None)
+    refs.pop('Single-cell of aged oligodendrocytes', None)
+
+           
     print("finished fetching anndata")
     outdir = "refs"
     os.makedirs(outdir, exist_ok=True)
