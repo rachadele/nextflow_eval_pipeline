@@ -1,0 +1,10 @@
+cell_type	subclass	class	family	global
+Excitatory Neuron - DG	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+Excitatory Neuron - CA1	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Excitatory Neuron - CA3	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+Microglia	Microglia	Immune	Non-neuron	Non-neuron
+Inhibitory Neuron	GABAergic	GABAergic	GABAergic	Neuron
+Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+Excitatory Neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+Oligo-precursor	OPC	Glia	Non-neuron	Non-neuron

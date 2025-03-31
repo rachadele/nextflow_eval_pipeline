@@ -1,6 +1,6 @@
 cell_type	subclass	class	family	global
-GABAergic neuron	GABAergic	GABAergic	GABAergic	Neuron
-glutamatergic neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+GABAergic neuron	Ambiguous GABAergic	Ambiguous GABAergic	GABAergic	Neuron
+glutamatergic neuron	Ambiguous Glutamatergic	Ambiguous Glutamatergic	Glutamatergic	Neuron
 hippocampal neuron	Hippocampal neuron	Hippocampal neuron	Glutamatergic	Neuron
 cortical interneuron	CT	deep layer non-IT	Glutamatergic	Neuron
 sst GABAergic cortical interneuron	SST	MGE	GABAergic	Neuron
@@ -20,7 +20,7 @@ L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non
 L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic	Neuron
 astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
-microglial cell	Microglia	Glia	Non-neuron	Non-neuron
+microglial cell	Microglia	Immune	Non-neuron	Non-neuron
 oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 oligodendrocyte precursor cell	OPC	Glia	Non-neuron	Non-neuron
 pericyte	Pericyte	Mural	Non-neuron	Non-neuron

@@ -237,7 +237,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
             if ref.obs[col].dtype.name =='category':
     # Convert to Categorical and remove unused categories
                 ref.obs[col] = pd.Categorical(ref.obs[col].cat.remove_unused_categories())
-    
+     
     return refs
 
 
@@ -271,52 +271,15 @@ def process_query(query, model_file_path, batch_key="sample"):
     return query
 
 
-# Function to find a node's parent in the tree
-def find_parent_label(tree, target_label, current_path=None):
-    if current_path is None:
-        current_path = []
-    for key, value in tree.items():
-        # Add the current node to the path
-        current_path.append(key)
-        # If we found the target, return the parent label if it exists
-        if key == target_label:
-            if len(current_path) > 1:
-                return current_path[-2]  # Return the parent label
-            else:
-                return None  # No parent if we're at the root
-        # Recurse into nested dictionaries if present
-        if isinstance(value, dict):
-       #     print(value)
-            result = find_parent_label(value, target_label, current_path)
-           # print(result)
-            if result:
-                return result
-        # Remove the current node from the path after processing
-        current_path.pop()
-    return None
-
-# Recursive function to get the closest valid label
-def get_valid_label(original_label, query_labels, tree):
-    # Base case: if the label exists in query, return it
-    if original_label in query_labels:
-        return original_label
-    # Find the parent label in the tree
-    parent_label = find_parent_label(tree, original_label)
-    # Recursively check the parent label if it exists
-    if parent_label:
-        return get_valid_label(parent_label, query_labels, tree)
-    else:
-        return None  # Return None if no valid parent found
-
-# Example usage
-
 def map_valid_labels(query, ref_keys, mapping_df):
     # deal with differing levels of granularity
     for key in ref_keys:
         original=query[key].unique()
         for og in original:
-            if og not in mapping_df[key].unique():
-                level = mapping_df.columns[mapping_df.apply(lambda col: og in col.values, axis=0)] # get level of original label in hierarchy
+            if og not in mapping_df[key].unique(): # this will cause a problem in mouse
+                # need to create dummy labels for mouse
+                level = mapping_df.columns[mapping_df.apply(lambda col: og in col.values, axis=0)]
+                # get the highest level in the hierarchy 
                 if level.empty: # handle cases where original label is not in mapping file- should only be "unknown"
                     # this doesn't handle individual references-
                     # if a reference is missing a label that is present in other references, it will have 0 predictions
@@ -337,32 +300,6 @@ def map_valid_labels(query, ref_keys, mapping_df):
 
 
 
-def find_node(tree, target_key):
-    """
-    Recursively search the tree for the target_key and return the corresponding node. 
-    """
-    for key, value in tree.items():
-        if isinstance(value, dict):
-            if key == target_key:  # If we've found the class at this level
-                return value  # Return the current node
-            else:
-                # Recurse deeper into the tree
-                result = find_node(value, target_key)
-                if result:
-                    return result
-    return None  # Return None if the target key is not found
-
-
-# Helper function to recursively gather all subclasses under a given level
-def get_subclasses(node, colname):
-    subclasses = []
-    if isinstance(node, dict):
-        for key, value in node.items():
-            if isinstance(value, dict) and value.get("colname") == colname:
-                subclasses.append(key)
-            else:
-                subclasses.extend(get_subclasses(value, colname))
-    return subclasses
 
 
 def rfc_pred(ref, query, ref_keys, seed):
@@ -452,52 +389,47 @@ def roc_analysis(probabilities, query, key):
     return metrics
 
 
-def process_all_rocs(rocs, queries): 
-    # Populate the list with threshold data
-    data = []
+def pr_analysis(prob_df, query, key, mapping_df):
 
-    for query_name, query_dict in rocs.items():
-        for ref_name, ref_data in query_dict.items():
-            for key, roc in ref_data.items():
-                if roc:
-                    for class_label, class_data in roc.items():
-                        if class_data:
-                            data.append({
-                                "ref": ref_name,
-                                "query": query_name,
-                                "key": key, 
-                                "label": class_label, 
-                                "auc": class_data["auc"],
-                                "optimal_threshold": class_data["optimal_threshold"]
-                              #   f'{var}': class_data[var]
-                            })
+    metrics = defaultdict(dict)
 
-    # Create DataFrame from the collected data
-    df = pd.DataFrame(data)
-    return df
+    probs = np.array(prob_df)
+    class_labels = prob_df.columns.values         
+    original_labels = query[key].unique()
+    
+    # map back to correct granularity
+    #for label in class_labels:
+        #if label not in original_labels:
+            
+            #parent_label = mapping_df.loc[mapping_df[key] == label, key].values[0]
+            #if parent_label:
+                #probs[:, class_labels == label] = probs[:, class_labels == parent
+                #_label]
+    
+    # Binarize the class labels for multiclass ROC computation 
+    
+    true_labels = label_binarize(query[key].values, classes=class_labels)
+    
+    # Find the optimal threshold for each class
 
+    for i, class_label in enumerate(class_labels):
+        positive_samples = np.sum(true_labels[:, i] == 1)
+        if positive_samples == 0:
+            print(f"Warning: No positive samples for class {class_label}, skipping eval")
+        elif positive_samples > 0:
+            precision, recall, thresholds = precision_recall_curve(true_labels[:, i], probs[:, i])
+            avg_precision = average_precision_score(true_labels[:, i], probs[:, i])
 
-def process_roc(rocs, ref_name, query_name):
-    data=[]
-    for key, roc in rocs.items():
-        if roc:
-            for class_label, class_data in roc.items():
-                if class_data:
-                        data.append({
-                                "ref": ref_name,
-                                "query": query_name,
-                                "key": key, 
-                                "label": class_label, 
-                                "auc": class_data["auc"],
-                                "optimal threshold": class_data["optimal_threshold"]
-                              #   f'{var}': class_data[var]
-                            })
+            # Find optimal threshold as the one maximizing F1 score
+            f1_scores = 2 * (precision * recall) / (precision + recall + 1e-10)
+            optimal_idx = np.argmax(f1_scores)
 
-    # Create DataFrame from the collected data
-    roc_df = pd.DataFrame(data)
-    return roc_df 
-
-
+            # Store metrics
+            metrics["precision"][class_label] = precision
+            metrics["recall"][class_label] = recall
+            metrics["average_precision"][class_label] = avg_precision
+            metrics["optimal_threshold"][class_label] = thresholds[optimal_idx]
+    return metrics
 
 def check_column_ties(probabilities, class_labels):
     """
@@ -612,19 +544,49 @@ def eval(query, ref_keys, mapping_df):
             "labels": labels
             #"accuracy": accuracy
         }
-        # Classification report for predictions
-        class_metrics[key]["classification_report"] = classification_report(true_labels, predicted_labels, 
-                        labels=labels, output_dict=True, zero_division=np.nan)
+            # Compute per-label precision, recall, F1-score, and support
+        precision, recall, f1, support = precision_recall_fscore_support(
+            true_labels, predicted_labels, labels=labels, zero_division=np.nan
+        )
+        # Compute weighted average metrics
+        avg_precision, avg_recall, avg_f1, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="weighted", zero_division=np.nan
+        )
 
-        label_accuracies = {}
-        for label in labels:
-            #if label in true_labels:
+        # Compute per-label accuracy and store all metrics
+        label_metrics = {}
+        for i, label in enumerate(labels):
             label_mask = true_labels == label
-            label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
-            label_accuracies[label] = label_accuracy
-        
-        class_metrics[key]["label_accuracies"] = label_accuracies
-  
+
+            # Handle case where there are no true instances
+            # if label mask is all False
+            if not label_mask.any():
+                label_accuracy = "nan"
+                precision[i] = "nan"
+                recall[i] = "nan"
+                f1[i] = "nan"
+                label_accuracy = "nan"
+            else:
+                label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
+
+            label_metrics[label] = {
+                "accuracy": label_accuracy,
+                "precision": precision[i],
+                "recall": recall[i],
+                "f1_score": f1[i],
+                "support": support[i]
+            } 
+
+        # Store per-label metrics
+        class_metrics[key]["label_metrics"] = label_metrics
+
+        # Store weighted averages
+        class_metrics[key]["weighted_metrics"] = {
+            "precision": avg_precision,
+            "recall": avg_recall,
+            "f1_score": avg_f1
+        } 
+
     return class_metrics
 
 def update_classification_report(class_metrics, ref_keys):
