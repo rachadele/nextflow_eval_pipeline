@@ -21,7 +21,7 @@ Astros_1	Astrocyte	Glia	Non-neuron
 Astros_2	Astrocyte	Glia	Non-neuron
 Astros_3	Astrocyte	Glia	Non-neuron
 Endo	Endothelial	Vascular	Non-neuron
-Micro/Macro	Microglia	Glia	Non-neuron
+Micro/Macro	Microglia	CNS macrophage	Non-neuron
 Oligos_1	Oligodendrocyte	Glia	Non-neuron
 Oligos_2	Oligodendrocyte	Glia	Non-neuron
 Oligos_3	Oligodendrocyte	Glia	Non-neuron
