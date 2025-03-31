@@ -16,7 +16,7 @@ oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
 oligodendrocyte precursor cell	OPC	Glia	Non-neuron
 astrocyte	Astrocyte	Glia	Non-neuron
 astrocyte of the cerebral cortex	Astrocyte	Glia	Non-neuron
-microglial cell	Microglia	Glia	Non-neuron
+microglial cell	Microglia	CNS macrophage	Non-neuron
 vascular leptomeningeal cell	VLMC	Stromal	Non-neuron
 pericyte	Pericyte	Mural	Non-neuron
 cerebral cortex endothelial cell	Endothelial	Vascular	Non-neuron
