@@ -30,10 +30,10 @@ Ast2	Astrocyte	Glia	Non-neuron
 Ast3	Astrocyte	Glia	Non-neuron
 End1	Endothelial	Vascular	Non-neuron
 End2	Endothelial	Vascular	Non-neuron
-Mic0	Microglia	Glia	Non-neuron
-Mic1	Microglia	Glia	Non-neuron
-Mic2	Microglia	Glia	Non-neuron
-Mic3	Microglia	Glia	Non-neuron
+Mic0	Microglia	CNS macrophage	Non-neuron
+Mic1	Microglia	CNS macrophage	Non-neuron
+Mic2	Microglia	CNS macrophage	Non-neuron
+Mic3	Microglia	CNS macrophage	Non-neuron
 Oli0	Oligodendrocyte	Glia	Non-neuron
 Oli1	Oligodendrocyte	Glia	Non-neuron
 Oli3	Oligodendrocyte	Glia	Non-neuron

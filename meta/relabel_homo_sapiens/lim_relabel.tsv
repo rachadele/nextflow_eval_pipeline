@@ -38,7 +38,7 @@ Astro_4	Astrocyte	Glia	Non-neuron
 Endothelial	Endothelial	Vascular	Non-neuron
 Ependymal_1	Glia	Glia	Non-neuron
 Ependymal_2	Glia	Glia	Non-neuron
-Microglia_1	Microglia	Glia	Non-neuron
+Microglia_1	Microglia	CNS macrophage	Non-neuron
 oligo_1	Oligodendrocyte	Glia	Non-neuron
 oligo_10	Oligodendrocyte	Glia	Non-neuron
 oligo_2	Oligodendrocyte	Glia	Non-neuron
