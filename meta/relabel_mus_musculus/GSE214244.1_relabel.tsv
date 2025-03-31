@@ -1,7 +1,7 @@
 cell_type	subclass	class	family	global
 Exc. neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
 Astro1	Astrocyte	Glia	Non-neuron	Non-neuron
-Microglia	Microglia	Immune	Non-neuron	Non-neuron
+Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Interneuron	GABAergic	GABAergic	GABAergic	Neuron
 Astro2	Astrocyte	Glia	Non-neuron	Non-neuron
 Olig1	Oligodendrocyte	Glia	Non-neuron	Non-neuron

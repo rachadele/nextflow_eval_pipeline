@@ -11,10 +11,9 @@
         "Tabula Muris Senis",
         "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging"
     ],
-    "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/forebrain_only/mus_musculus/*h5ad",
+    "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/hsap_mmus_forebrain_small_samples/mus_musculus/*h5ad",
     "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv",
     "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv",
-    "tree_file": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/master_hierarchy.json",
     "ref_keys": [
         "subclass",
         "class",

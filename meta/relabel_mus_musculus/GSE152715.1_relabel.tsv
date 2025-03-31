@@ -5,13 +5,13 @@ Subiculum	Neuron	Neuron	Neuron	Neuron
 Dentate Gyrus	Neuron	Neuron	Neuron	Neuron
 SST	SST	MGE	GABAergic	Neuron
 Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
-Int. Progenitor	GABAergic	GABAergic	GABAergic	Neuron
+Int. Progenitor	Neural stem cell	Neuroblast	Ambiguous neuron	Neuron
 Entorhinal Cortex	unknown	unknown	unknown	unknown
 VIP	VIP	CGE	GABAergic	Neuron
 Radial Glia	Glia	Glia	Non-neuron	Non-neuron
-NSC	Neuron	Neuron	Neuron	Neuron
+NSC	Neural stem cell	Neuroblast	Ambiguous neuron	Neuron
 OPC	OPC	Glia	Non-neuron	Non-neuron
 Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 SMC	Smooth muscle cell	Mural	Non-neuron	Non-neuron
-Microglia	Microglia	Immune	Non-neuron	Non-neuron
-Ependymal	Glia	Glia	Non-neuron	Non-neuron
+Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Ependymal	Ependymal	Glia	Non-neuron	Non-neuron

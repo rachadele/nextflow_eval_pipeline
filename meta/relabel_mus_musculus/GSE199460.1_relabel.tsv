@@ -1,7 +1,7 @@
 cell_type	subclass	class	family	global
-Microglia	Microglia	Immune	Non-neuron	Non-neuron
-Macrophages	Immune	Immune	Non-neuron	Non-neuron
-T Cells	Immune	Immune	Non-neuron	Non-neuron
+Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Macrophages	Macrophage	CNS macrophage	Non-neuron	Non-neuron
+T Cells	T cell	Immune	Non-neuron	Non-neuron
 Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
 Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Astrocytes	Astrocyte	Glia	Non-neuron	Non-neuron
@@ -10,10 +10,10 @@ DCs.1	Immune	Immune	Non-neuron	Non-neuron
 B Cells	Immune	Immune	Non-neuron	Non-neuron
 Neuroblasts	Neuron	Neuron	Neuron	Neuron
 DCs.2	Immune	Immune	Non-neuron	Non-neuron
-Ependymal Cells	Glia	Glia	Non-neuron	Non-neuron
+Ependymal Cells	Ependymal	Glia	Non-neuron	Non-neuron
 Neutrophils	Immune	Immune	Non-neuron	Non-neuron
 Pericytes	Pericyte	Mural	Non-neuron	Non-neuron
 Fibroblasts	Stromal	Stromal	Non-neuron	Non-neuron
 pDCs	Immune	Immune	Non-neuron	Non-neuron
 Neurons	Neuron	Neuron	Neuron	Neuron
-Unknown	unknown	unknown	unknown	unknown
+Unknown	unkown	unkown	unkown	unkown
