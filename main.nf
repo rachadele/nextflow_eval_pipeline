@@ -90,6 +90,7 @@ process getCensusAdata {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
     publishDir "${params.outdir}", pattern: "**obs.tsv", mode: "copy"
+    publishDir "${params.outdir}/refs", pattern: "**_umap.png", mode: "copy"
 
     input:
     val organism
@@ -102,6 +103,7 @@ process getCensusAdata {
     output:
     path "refs/*.h5ad", emit: ref_paths_adata
     path "**obs.tsv"
+    path "**_umap.png"
     path "refs/*yaml", emit: ref_region_mapping
 
     script:
@@ -232,6 +234,7 @@ process classifyAllAdata {
     //path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
+    path "pr_curves/*png"
 
     script:
 
@@ -271,6 +274,7 @@ process classifyAllSeurat {
    // path "roc/**png"
     path "confusion/**"
     path "predicted_meta/*tsv"
+    path "pr_curves/*png"
 
     script:
 
