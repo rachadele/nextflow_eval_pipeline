@@ -9,8 +9,8 @@ source("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/seurat_functio
 options(future.globals.maxSize = 5 * 1024^3)  # 5 GB
 
 parser = argparse::ArgumentParser(description = "Convert H5AD to H5Seurat.")
-parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/biof501_proj/refs/whole_cortex.h5ad")
-parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
+parser$add_argument("--h5ad_file", type="character", help="Path to H5AD file.", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/ba/63263d2b41cd71c11ee2be5a43941d/GSE214244.1_1161367_processed.h5ad")
+parser$add_argument("--normalization_method", type="character", help="Normalization method", default="SCT")
 parser$add_argument("--dims", type="integer", help="Number of dimensions", default=50)
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
 
@@ -32,7 +32,7 @@ if (normalization_method=="LogNormalize") {
   ScaleData() %>% RunPCA(npcs=dims)
 } else if (normalization_method=="SCT") {
   sceasy_seurat <- sceasy_seurat %>%
-    SCTransform(verbose=FALSE, variable.features.n=nfeatures) %>%
+    SCTransform(verbose=TRUE, variable.features.n=nfeatures) %>%
     RunPCA(npcs=dims, assay="SCT")
 } else {
   stop("Normalization method not recognized.")
