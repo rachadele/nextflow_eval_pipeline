@@ -151,7 +151,7 @@ def main():
     
     # Classify cells and evaluate
     query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
-    outdir = "predicted_meta"
+    outdir = os.path.join("predicted_meta",query_name, ref_name)
     os.makedirs(outdir, exist_ok=True)
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
     
