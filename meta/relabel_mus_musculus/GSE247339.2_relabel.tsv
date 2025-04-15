@@ -6,7 +6,7 @@ Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 Oligodendrocyte Progenitor	OPC	Glia	Non-neuron	Non-neuron
 Neuron	Neuron	Neuron	Neuron	Neuron
 Mural 2	Mural	Mural	Non-neuron	Non-neuron
-NPC	Neural stem cell	Neuroblast	Ambiguous neuron	Neuron
+NPC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 Mural 3	Mural	Mural	Non-neuron	Non-neuron
 Immature Oligodendrocyte	OPC	Glia	Non-neuron	Non-neuron
 Mural 1	Mural	Mural	Non-neuron	Non-neuron
@@ -14,5 +14,5 @@ Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Unknown	unknown	unknown	unknown	unknown
 Fibroblast	Stromal	Stromal	Non-neuron	Non-neuron
 Ependymal	Ependymal	Glia	Non-neuron	Non-neuron
-Reln+ Neuron	Neuron	Neuron	Neuron	Neuron
+Reln+ Neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 Choroid Plexus	Glia	Glia	Non-neuron	Non-neuron

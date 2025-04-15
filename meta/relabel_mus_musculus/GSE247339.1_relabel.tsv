@@ -10,9 +10,9 @@ Mural 3	Mural	Mural	Non-neuron	Non-neuron
 Choroid Plexus	Glia	Glia	Non-neuron	Non-neuron
 Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Immature Oligodendrocyte	OPC	Glia	Non-neuron	Non-neuron
-NPC	Neural stem cell	Neuroblast	Ambiguous neuron	Neuron
+NPC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 Fibroblast	Stromal	Stromal	Non-neuron	Non-neuron
-Reln+ Neuron	Neuron	Neuron	Neuron	Neuron
+Reln+ Neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 Ependymal	Ependymal	Glia	Non-neuron	Non-neuron
 Unknown	unknown	unknown	unknown	unknown
 Neuron	Neuron	Neuron	Neuron	Neuron

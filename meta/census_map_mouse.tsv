@@ -1,7 +1,7 @@
 cell_type	subclass	class	family	global
-pyramidal neuron	Pyramial neuron	Ambiguous neuron	Ambiguous neuron	Neuron
-neuroepithelial stem cell	Neuroepithelial stem cell	Neuroblast	Ambiguous neuron	Neuron
-neural stem cell	Neural stem cell	Neuroblast	Ambiguous neuron	Neuron
+pyramidal neuron	Pyramidal neuron	Neuron	Neuron	Neuron
+neuroepithelial stem cell	Neuroepithelial stem cell	Neuroblast	Neuron	Neuron
+neural stem cell	Neural stem cell	Neuroblast	Neuron	Neuron
 GABAergic neuron	Ambiguous GABAergic	Ambiguous GABAergic	GABAergic	Neuron
 sst GABAergic cortical interneuron	SST	MGE	GABAergic	Neuron
 vip GABAergic cortical interneuron	VIP	CGE	GABAergic	Neuron
