@@ -35,6 +35,7 @@ process save_params_to_file {
     normalization_method: ${params.normalization_method}
     subset_type: ${params.subset_type}
     batch_correct: ${params.batch_correct}
+    nmads: ${params.nmads}
     EOF
     """
 }
@@ -81,6 +82,8 @@ process mapQuery {
                             ${params.subsample_query != null ? "--subsample_query ${params.subsample_query}" : ""} \
                             --ref_keys ${ref_keys} \\
                             --seed ${params.seed} \\
+                            --nmads ${params.nmads} \\
+                            --gene_mapping ${params.gene_mapping} \\
                             ${params.remove_unknown ? '--remove_unknown' : ''}
     """
 
@@ -216,24 +219,30 @@ process predictSeurat {
 process classifyAllAdata {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
-    publishDir (
-        path: "${params.outdir}/scvi",
-        mode: "copy"
-    )
+// Publish files matching the 'f1_results**' pattern
+    publishDir path: "${params.outdir}/scvi/", pattern: "f1_results**", mode: 'copy'
+
+    // Publish files matching the 'confusion**' pattern
+    publishDir path: "${params.outdir}/scvi", pattern: "confusion**", mode: 'copy'
+
+    // Publish files matching the 'pr_curves**' pattern
+    publishDir path: "${params.outdir}/scvi", pattern: "pr_curves**", mode: 'copy'
+
+    // Publish files matching the 'predicted_meta**' pattern
+    publishDir path: "${params.outdir}/scvi", pattern: "predicted_meta**", mode: 'copy'
+
 
     input:
     val ref_keys
     val cutoff
-    tuple val(query_path), path(ref_path), path(probs_path)
+    tuple path(query_path), path(ref_path), path(probs_path)
     val mapping_file
     val ref_region_mapping
 
     output:
     path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
-   // path "roc/**tsv", emit: auc_channel
-    //path "roc/**png"
     path "confusion/**"
-    path "predicted_meta/*tsv"
+    tuple path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
     path "pr_curves/*png"
 
     script:
@@ -256,15 +265,23 @@ process classifyAllAdata {
 process classifyAllSeurat {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
-    publishDir (
-        path: "${params.outdir}/seurat",
-        mode: "copy"
-    )
+// Publish files matching the 'f1_results**' pattern
+    publishDir path: "${params.outdir}/seurat", pattern: "f1_results**", mode: 'copy'
+
+    // Publish files matching the 'confusion**' pattern
+    publishDir path: "${params.outdir}/seurat", pattern: "confusion**", mode: 'copy'
+
+    // Publish files matching the 'pr_curves**' pattern
+    publishDir path: "${params.outdir}/seurat", pattern: "pr_curves**", mode: 'copy'
+
+    // Publish files matching the 'predicted_meta**' pattern
+    publishDir path: "${params.outdir}/seurat", pattern: "predicted_meta**", mode: 'copy'
+
 
     input:
     val ref_keys
     val cutoff
-    tuple val(query_path), path(ref_path), path(scores_path) 
+    tuple path(query_path), path(ref_path), path(scores_path)
     val mapping_file
     val ref_region_mapping
 
@@ -273,7 +290,7 @@ process classifyAllSeurat {
     //path "roc/**tsv", emit: auc_channel
    // path "roc/**png"
     path "confusion/**"
-    path "predicted_meta/*tsv"
+    tuple path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
     path "pr_curves/*png"
 
     script:
@@ -341,6 +358,58 @@ process plotF1ResultsSeurat{
     python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
+}
+
+process plotQCSeurat {
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+    
+    publishDir (
+        path: "${params.outdir}/seurat/qc_plots/${query_name}/${ref_name}",
+        mode: "copy"
+        )
+
+    input:
+    tuple val(query_name), val(ref_name), path(predicted_meta), path(query_path)
+
+    output:
+    path "**png" // Wildcard to capture all relevant output files
+
+    script:
+    ref_keys = params.ref_keys.join(' ')
+    """
+    python $projectDir/bin/plot_QC.py --query_path ${query_path} \\
+        --predicted_meta ${predicted_meta} \\
+        --gene_mapping ${params.gene_mapping} \\
+        --ref_keys ${ref_keys} \\
+        --mapping_file ${params.relabel_r}
+    """ 
+}
+
+process plotQCscvi {
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+
+    publishDir (
+        path: "${params.outdir}/scvi/qc_plots/${query_name}/${ref_name}",
+        mode: "copy"
+        )
+
+
+    input:
+    tuple val(query_name), val(ref_name), path(predicted_meta), path(query_path)
+
+    output:
+    path "**png" // Wildcard to capture all relevant output files
+
+    script:
+    ref_keys = params.ref_keys.join(' ')
+    """
+    python $projectDir/bin/plot_QC.py --query_path ${query_path} \\
+        --predicted_meta ${predicted_meta} \\
+        --gene_mapping ${params.gene_mapping} \\
+        --ref_keys ${ref_keys} \\
+        --mapping_file ${params.relabel_r}
+    """ 
+
 }
 
 // Workflow definition
@@ -439,6 +508,43 @@ workflow {
     plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata_files)
     plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_files)
 
+    // Plot confusion matrix and pr curves
+
+    predicted_meta_channel_adata = classifyAllAdata.out.predicted_meta_channel
+    predicted_meta_channel_seurat = classifyAllSeurat.out.predicted_meta_channel
+
+
+    predicted_meta_channel_adata.map { query_path, ref_path, predicted_meta ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        ref_name = ref_path.getName().split('.h5ad')[0]
+        [query_name, ref_name, predicted_meta]
+    }.set { predicted_meta_channel_adata }
+
+
+    predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        ref_name = ref_path.getName().split('.rds')[0]
+        [query_name, ref_name, predicted_meta]
+    }.set { predicted_meta_channel_seurat }
+
+
+    processed_queries_adata.map { query_path ->
+        query_name = query_path.getName().split('_processed.h5ad')[0]
+        [query_name, query_path]
+    }.set {processed_queries_adata_names}
+
+
+    qc_channel_adata = predicted_meta_channel_adata.combine(processed_queries_adata_names, by: 0)
+    //processed_queries_seurat.map { query_path ->
+        //query_name = query_path.getName().split('_processed.rds')[0]
+        //[query_name, query_path]
+    //}.set {processed_queries_seurat_names}
+
+    qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_names, by: 0)
+
+
+    plotQCSeurat(qc_channel_seurat)
+    plotQCscvi(qc_channel_adata)
     save_params_to_file()
 }
 

@@ -9,4 +9,4 @@ Olig2	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 OPC	OPC	Glia	Non-neuron	Non-neuron
 Endothelial	Endothelial	Vascular	Non-neuron	Non-neuron
 Pericyte	Pericyte	Mural	Non-neuron	Non-neuron
-Leptomeningeal	Leptomeningeal cell	Stromal	Non-neuron	Non-neuron
+Leptomeningeal	VLMC	Stromal	Non-neuron	Non-neuron
