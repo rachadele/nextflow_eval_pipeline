@@ -139,8 +139,10 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
     adata.obs = newmeta
     
     # before relabeling, need to map back to author types using new_observation_joinid
-    # huge pain in the ass 
-    adata.obs = map_author_labels(adata.obs, original_celltypes)
+    # huge pain in the ass
+    # only do this if original celltypes passed
+    if original_celltypes is not None: 
+        adata.obs = map_author_labels(adata.obs, original_celltypes)
     # Assuming relabel_wrapper is defined
     adata = relabel(adata, relabel_path=relabel_path, sep='\t')
     # Convert all columns in adata.obs to factors (categorical type in pandas)
@@ -225,8 +227,6 @@ def map_author_labels(obs, original_celltypes):
     return obs
 
 
-
-
 def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="normal"):
     value_filter = (
         f"tissue_general == '{organ}' and "
@@ -237,7 +237,10 @@ def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="
 
 def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
-               relabel_path=f"{projPath}meta/census_map_human.tsv", seed=42, ref_keys=["rachel_subclass","rachel_class","rachel_family"]):
+               relabel_path=f"{projPath}meta/census_map_human.tsv", 
+               seed=42, 
+               ref_keys=["rachel_subclass","rachel_class","rachel_family"],
+               original_celltypes=None):
 
     census = cellxgene_census.open_soma(census_version=census_version)
     dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
@@ -264,9 +267,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # add author_cell_type to obs
     # this will enable proper relabeling and subsampling
     # need to add it back in after getting ids
-    if organism=="Mus musculus":
-        original_celltypes = get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv", 
-                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations")
+    if original_celltypes is not None:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
     
     # Get individual datasets and embeddings
