@@ -94,35 +94,6 @@ def replace_ambiguous_cells(refs, ambiguous_celltypes):
         obs[["subclass","cell_type","new_cell_type","author_cell_type","dataset_title"]].value_counts().reset_index().to_csv(f"refs/{ref_name}_new_celltypes.tsv", sep="\t", index=False)
         
     #return refs
-
-def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv", 
-                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations"):
-    original_celltype_columns = pd.read_csv(columns_file, sep="\t", low_memory=False)
-
-    original_celltypes = {}
-    for file in os.listdir(author_annotations_path):
-        if "obs.tsv" in file:
-            dataset_title = file.split(".")[0]
-            og_obs = pd.read_csv(os.path.join(author_annotations_path, file), sep="\t", low_memory=False)
-            # check if all observation_joinid are unique
-            assert og_obs["observation_joinid"].nunique() == og_obs.shape[0]
-            og_column = original_celltype_columns[original_celltype_columns["dataset_title"] == dataset_title]["author_cell_type"].values[0]
-            og_obs["author_cell_type"] = og_obs[og_column]
-            original_celltypes[dataset_title] = og_obs
-
-    for dataset_title, obs in original_celltypes.items():
-        #original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
-        original_celltypes[dataset_title]["new_observation_joinid"] = original_celltypes[dataset_title]["observation_joinid"].apply(lambda x: f"{dataset_title}_{x}")
-    
-        # concat all original_celltypes
-    aggregate_obs = pd.concat([original_celltypes[ref_name] for ref_name in original_celltypes.keys()])
-    # find duplicate observation_joinid in aggregate_obs
-    duplicate_observation_joinid = aggregate_obs[aggregate_obs["new_observation_joinid"].duplicated()]
-    duplicate_observation_joinid.columns
-    assert aggregate_obs["new_observation_joinid"].nunique() == aggregate_obs.shape[0]
-    original_celltypes["whole_cortex"] = aggregate_obs
-   
-    return original_celltypes
          
 def main():
     # Parse command line arguments
