@@ -78,7 +78,7 @@ def process_adata(query):
     
     return query
 
-
+    
 def plot_jointplots(query, query_name):
 
     # First jointplot
@@ -122,7 +122,7 @@ def plot_jointplots(query, query_name):
 
     
 def plot_umap_qc(query, query_name, subclass_colors):
-    colors = ["subclass", "predicted_subclass", "correct", "pct_counts_mito", "pct_counts_ribo", "pct_counts_hb","predicted_doublet"]
+    colors = ["subclass", "predicted_subclass", "correct", "counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "predicted_doublet"]
 
     for color in colors:
         is_categorical = query.obs[color].dtype.name == "category" or query.obs[color].dtype == object

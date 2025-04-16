@@ -138,9 +138,11 @@ def main():
     ref_keys = args.ref_keys
     SEED = args.seed
 
-    original_celltypes = get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv",
-                                                author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations") 
-  
+    if organism == "mus_musculus":
+        original_celltypes = get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv",
+                                                    author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations") 
+    else:
+        original_celltypes = None
 
     refs = adata_functions.get_census(
         organism=organism,
@@ -151,6 +153,7 @@ def main():
         ref_collections=ref_collections,
         seed=SEED,
         ref_keys=ref_keys,
+        original_celltypes = original_celltypes
     )
     
     refs.pop('All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2', None)
