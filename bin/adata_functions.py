@@ -141,7 +141,7 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
     # before relabeling, need to map back to author types using new_observation_joinid
     # huge pain in the ass
     # only do this if original celltypes passed
-    if original_celltypes is not None: 
+    if not original_celltypes.empty: 
         adata.obs = map_author_labels(adata.obs, original_celltypes)
     # Assuming relabel_wrapper is defined
     adata = relabel(adata, relabel_path=relabel_path, sep='\t')
@@ -159,9 +159,7 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
         # Filter the brain observations based on the split value
         filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
         obs_filter = f"{split_column} == '{split_value}'"
-        
-       # original_celltypes_subset = original_celltypes[original_celltypes[] == split_value] if original_celltypes is not None else None
-        
+                
         adata = extract_data(data, filtered_ids, subsample, organism, census, obs_filter, 
                              cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, 
                              ref_keys=ref_keys, 
@@ -267,7 +265,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # add author_cell_type to obs
     # this will enable proper relabeling and subsampling
     # need to add it back in after getting ids
-    if original_celltypes is not None:
+    if not original_celltypes.empty:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
     
     # Get individual datasets and embeddings
