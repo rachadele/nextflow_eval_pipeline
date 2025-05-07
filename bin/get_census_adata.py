@@ -1,5 +1,7 @@
 #!/user/bin/python3
 
+import warnings
+warnings.filterwarnings("ignore")
 from pathlib import Path
 import random
 import os
@@ -31,8 +33,6 @@ import os
 import json
 import yaml
 
-
-ambiguous_celltypes = ["GABAergic neuron","pyramidal neuron","hippocampal neuron","glutamatergic neuron","cortical interneuron"]
 
 # Function to parse command line arguments
 def parse_arguments():
@@ -83,17 +83,6 @@ def create_ref_region_yaml(refs, outdir):
     with open(os.path.join(outdir, "ref_region.yaml"), 'w') as file:
         yaml.dump(ref_region_yaml, file)
 
-
-def replace_ambiguous_cells(refs, ambiguous_celltypes):
-    for ref_name, ref in refs.items():
-        obs = ref.obs
-        obs["new_cell_type"] = obs["cell_type"]
-        obs["new_cell_type"] = np.where(obs["cell_type"].isin(ambiguous_celltypes), obs["author_cell_type"], obs["cell_type"])
-        ref.obs = obs
-        refs[ref_name] = ref
-        obs[["subclass","cell_type","new_cell_type","author_cell_type","dataset_title"]].value_counts().reset_index().to_csv(f"refs/{ref_name}_new_celltypes.tsv", sep="\t", index=False)
-        
-    #return refs
          
 def main():
     # Parse command line arguments

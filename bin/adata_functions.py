@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings("ignore")
 import pandas as pd
 import numpy as np
 import scanpy as sc
@@ -16,9 +18,6 @@ from collections import defaultdict
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
-#current_directory = Path.cwd()
-projPath = "/space/grp/rschwartz/rschwartz/cpsc545_proj/"
-
 import subprocess
 
 
@@ -108,7 +107,7 @@ def relabel(adata, relabel_path, join_key="", sep="\t"):
         raise ValueError(f"{join_key} not found in AnnData object observations.")
     if join_key not in relabel_df.columns:
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
-    # Perform the left join to update the metadata
+    # Left join = only cell types in relabel file are kept 
     adata.obs = adata.obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
     columns_to_drop = [col for col in adata.obs.columns if col.endswith('_y')]
     adata.obs.drop(columns=columns_to_drop, inplace=True)
@@ -141,7 +140,7 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
     # before relabeling, need to map back to author types using new_observation_joinid
     # huge pain in the ass
     # only do this if original celltypes passed
-    if not original_celltypes.empty: 
+    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty: 
         adata.obs = map_author_labels(adata.obs, original_celltypes)
     # Assuming relabel_wrapper is defined
     adata = relabel(adata, relabel_path=relabel_path, sep='\t')
@@ -235,7 +234,7 @@ def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="
 
 def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
-               relabel_path=f"{projPath}meta/census_map_human.tsv", 
+               relabel_path="../meta/census_map_human.tsv", 
                seed=42, 
                ref_keys=["rachel_subclass","rachel_class","rachel_family"],
                original_celltypes=None):
@@ -265,7 +264,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # add author_cell_type to obs
     # this will enable proper relabeling and subsampling
     # need to add it back in after getting ids
-    if not original_celltypes.empty:
+    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
     
     # Get individual datasets and embeddings
@@ -361,10 +360,6 @@ def map_valid_labels(query, ref_keys, mapping_df):
                         query["predicted_" + key] = query["predicted_" + key].astype("category")
 
     return query            
-
-
-
-
 
 
 def rfc_pred(ref, query, ref_keys, seed):
@@ -690,9 +685,6 @@ def plot_confusion_matrix(query_name, ref_name, key, confusion_data, output_dir)
     # Rotate both x and y tick labels by 90 degrees
     plt.xticks(rotation=45, fontsize=15)  # Rotate x-axis labels by 90 degrees
     plt.yticks(rotation=45, fontsize=15)  # Rotate y-axis labels by 90 degrees
-
-    # Save the plot
-   # output_dir = os.path.join(projPath, 'results', 'confusion')
     
     #os.makedirs(os.path.join(output_dir, new_query_name, new_ref_name), exist_ok=True)  # Create the directory if it doesn't exist
     plt.savefig(os.path.join(output_dir,f"{key}_confusion.png"))
