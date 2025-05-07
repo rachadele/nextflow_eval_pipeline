@@ -96,11 +96,6 @@ process getCensusAdata {
     publishDir "${params.outdir}/refs", pattern: "**_umap.png", mode: "copy"
 
     input:
-    val organism
-    val census_version
-    val subsample_ref
-    val relabel_r
-    val ref_split
     val ref_collections
 
     output:
@@ -114,11 +109,11 @@ process getCensusAdata {
     """
     # Run the python script to generate the files
     python $projectDir/bin/get_census_adata.py \\
-        --organism ${organism} \\
-        --census_version ${census_version} \\
-        --subsample_ref ${subsample_ref} \\
-        --relabel_path ${relabel_r} \\
-        --split_column ${ref_split} \\
+        --organism ${params.organism} \\
+        --census_version ${params.census_version} \\
+        --subsample_ref ${params.subsample_ref} \\
+        --relabel_path ${params.relabel_r} \\
+        --split_column ${params.ref_split} \\
         --ref_collections ${ref_collections} \\
         --ref_keys ${ref_keys} \\
         --seed ${params.seed}
@@ -324,8 +319,9 @@ process plotF1ResultsAdata{
     file f1_scores
 
     output:
-   // path "f1_plots/*png" // Wildcard to capture all relevant output files
-    path "dists/*distribution.png" // Wildcard to capture all relevant output files
+   // path "f1_plots/*png" 
+    path "dists/*distribution.png" 
+    tuple val("scvi"), path("agg_f1_scores.tsv"), emit: agg_f1_scores
 
     script:
     
@@ -349,9 +345,10 @@ process plotF1ResultsSeurat{
     file f1_scores
 
     output:
-    // path "f1_plots/*png" // Wildcard to capture all relevant output files
-    path "dists/*distribution.png" // Wildcard to capture all relevant output files
-
+    // path "f1_plots/*png" 
+    path "dists/*distribution.png" 
+    tuple val("seurat"), path("agg_f1_scores.tsv"), emit: agg_f1_scores
+    
     script:
     
     """
@@ -372,12 +369,17 @@ process plotQCSeurat {
     tuple val(query_name), val(ref_name), path(predicted_meta), path(query_path)
 
     output:
-    path "**png" // Wildcard to capture all relevant output files
-
+    path "**png" 
+    path "**tsv"
+    tuple val("seurat"), val(study_name), path("${study_name}/"), emit: qc_result_seurat
+    
     script:
     ref_keys = params.ref_keys.join(' ')
-    """
+    """ 
     python $projectDir/bin/plot_QC.py --query_path ${query_path} \\
+        --organism ${params.organism} \\
+        --markers_file "/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv" \\
+        --nmads 5 \\
         --predicted_meta ${predicted_meta} \\
         --gene_mapping ${params.gene_mapping} \\
         --ref_keys ${ref_keys} \\
@@ -393,23 +395,44 @@ process plotQCscvi {
         mode: "copy"
         )
 
-
     input:
     tuple val(query_name), val(ref_name), path(predicted_meta), path(query_path)
 
     output:
-    path "**png" // Wildcard to capture all relevant output files
+    path "**png" 
+    path "**tsv"
+    tuple val("scvi"), val(study_name), path("${study_name}/"), emit: qc_result_scvi
 
     script:
     ref_keys = params.ref_keys.join(' ')
     """
     python $projectDir/bin/plot_QC.py --query_path ${query_path} \\
+        --organism ${params.organism} \\
+        --markers_file "/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv" \\
+        --nmads 5 \\
         --predicted_meta ${predicted_meta} \\
         --gene_mapping ${params.gene_mapping} \\
         --ref_keys ${ref_keys} \\
         --mapping_file ${params.relabel_r}
     """ 
 
+}
+
+process runMultiQC {
+    publishDir (
+        "${params.outdir}/multiqc/${method}/${study_name}", mode: 'copy'
+    )
+
+    input:
+        tuple val(method), val(study_name), path(qc_dir)
+
+    output:
+        tuple val(study_name), path("multiqc_report.html"), emit: multiqc_html
+
+    script:
+    """
+    multiqc ${qc_dir} -d --config ${params.multiqc_config}
+    """
 }
 
 // Workflow definition
@@ -428,7 +451,7 @@ workflow {
     ref_collections = params.ref_collections.collect { "\"${it}\"" }.join(' ')
 
     // Get reference data and save to files
-    getCensusAdata(params.organism, params.census_version, params.subsample_ref, params.relabel_r, params.ref_split, ref_collections)
+    getCensusAdata(ref_collections)
     getCensusAdata.out.ref_paths_adata.flatten()
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
@@ -520,31 +543,41 @@ workflow {
         [query_name, ref_name, predicted_meta]
     }.set { predicted_meta_channel_adata }
 
-
-    predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
-        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        ref_name = ref_path.getName().split('.rds')[0]
-        [query_name, ref_name, predicted_meta]
-    }.set { predicted_meta_channel_seurat }
-
-
     processed_queries_adata.map { query_path ->
         query_name = query_path.getName().split('_processed.h5ad')[0]
         [query_name, query_path]
     }.set {processed_queries_adata_names}
 
+   // processed_queries_adata_names.view()
 
     qc_channel_adata = predicted_meta_channel_adata.combine(processed_queries_adata_names, by: 0)
-    //processed_queries_seurat.map { query_path ->
-        //query_name = query_path.getName().split('_processed.rds')[0]
-        //[query_name, query_path]
-    //}.set {processed_queries_seurat_names}
+    qc_channel_adata.view()
+    
+    //predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
+        //query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        //ref_name = ref_path.getName().split('.rds')[0]
+        //[query_name, ref_name, predicted_meta]
+    //}.set { predicted_meta_channel_seurat }
 
-    qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_names, by: 0)
+
+    ////processed_queries_adata.map { query_path ->
+        ////query_name = query_path.getName().split('_processed.h5ad')[0]
+        ////[query_name, query_path]
+    ////}.set {processed_queries_adata_names}
 
 
-    plotQCSeurat(qc_channel_seurat)
+    //qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_names, by: 0)
+    //qc_channel_seurat.view()
+
+    //plotQCSeurat(qc_channel_seurat)
     plotQCscvi(qc_channel_adata)
+
+   // plotQCSeurat.out.qc_result_seurat.concat(plotQCscvi.out.qc_result_scvi)
+   // .set { qc_channel_combined }
+
+    // Run multiqc on the combined QC channels
+   // runMultiQC(qc_channel_combined)
+
     save_params_to_file()
 }
 
