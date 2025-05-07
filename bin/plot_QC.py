@@ -24,6 +24,9 @@ from PIL import Image
 import io
 import os
 import math
+from scipy.stats import median_abs_deviation
+from statsmodels.formula.api import ols
+
 
 # Function to parse command line arguments
 def parse_arguments():
@@ -225,7 +228,7 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_n
 
  
 
-def plot_joint_umap(query, study_name, sample_name):
+def plot_joint_umap(query, study_name):
     x_metric = "log1p_n_genes_by_counts"
     metrics = {
         "log1p_total_counts": "counts_outlier",
@@ -291,7 +294,7 @@ def plot_joint_umap(query, study_name, sample_name):
         combined_img.paste(img, (x_offset, y_offset))
 
     os.makedirs(study_name, exist_ok=True)
-    out_path = f"{study_name}/{sample_name}_combined_mqc.png"
+    out_path = f"{study_name}/outliers_mqc.png"
     combined_img.save(out_path)
 
 
@@ -322,7 +325,7 @@ def main():
     os.makedirs(study_name, exist_ok=True)
      
     query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
-    query.obs.index = query.obs["index"]
+    #query.obs.index = query.obs["index"]
     query.raw = query.copy()
     query = qc_preprocess(query)
     query = is_correct(query, ref_keys, mapping_df)
@@ -332,7 +335,7 @@ def main():
 
     query = get_qc_metrics(query, nmads=args.nmads) 
     
-    plot_joint_umap(query, study_name=study_name, sample_name=sample_name)
+    plot_joint_umap(query, study_name=study_name)
         
     # Count occurrences
     celltype_counts_correct = (
