@@ -2,8 +2,8 @@ cell_type	subclass	class	family	global
 Cortical or hippocampal glutamatergic neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
 Forebrain GABAergic neuron	GABAergic	GABAergic	GABAergic	Neuron
 Others	unknown	unknown	unknown	unknown
-Neuronal intermediate progenitor	Neuron	Neuron	Neuron	Neuron
+Neuronal intermediate progenitor	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 Forebrain GABAergic neuroblast	GABAergic	GABAergic	GABAergic	Neuron
-Forebrain glioblast	Glia	Glia	Non-neuron	Non-neuron
+Forebrain glioblast	Neuroepithelial stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 Cajal-Retzius neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 Forebrain glutamatergic neuroblast	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
