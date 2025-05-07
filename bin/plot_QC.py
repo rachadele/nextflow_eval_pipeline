@@ -1,5 +1,6 @@
 #!/user/bin/python3
-
+import warnings
+warnings.filterwarnings("ignore")
 from pathlib import Path
 import os
 import sys
@@ -8,12 +9,8 @@ import numpy as np
 import pandas as pd
 import anndata as ad
 import re
-from scipy.sparse import csr_matrix
 import warnings
-
-import adata_functions
-from adata_functions import *
-
+from collections import defaultdict
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
@@ -21,29 +18,35 @@ import argparse
 import os
 import json
 from types import SimpleNamespace
-from scipy.stats import median_abs_deviation
+import adata_functions
 from adata_functions import *
+from PIL import Image
+import io
+import os
+import math
 
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
-   # parser.add_argument('--organism', type=str, default='homo_sapiens', help='Organism name (e.g., homo_sapiens)')
-  #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/7f/b447fabc3ba6bd819a1e103ef04f26/GSE124952_483958_processed.h5ad")
-    parser.add_argument('--predicted_meta', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mus_musculus/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/predicted_meta/GSE124952_483958_whole_cortex.predictions.0.0.tsv")
-    parser.add_argument('--markers_file', type=str, default=""),
-    parser.add_argument('--gene_mapping', default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv", type=str),
-    parser.add_argument('--ref_name', type=str),
-    parser.add_argument('--ref_keys', type = str, nargs="+", default = ["subclass","class","family","global"]),
+    parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
+    parser.add_argument('--query_path', type=str, default="")
+    parser.add_argument('--predicted_meta', type=str, default="")
+    parser.add_argument('--markers_file', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv")
+    parser.add_argument('--gene_mapping', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv")
+    parser.add_argument('--nmads',type=int, default=5)
+    parser.add_argument('--ref_keys', nargs="+", type=str)
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
-    parser.add_argument('--color_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/color_mapping.tsv")
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
-
-
     
-def read_adata(query_path, gene_mapping, predicted_meta):
+def is_correct(adata, ref_keys, mapping_df):
+    adata.obs = map_valid_labels(adata.obs, ref_keys = ref_keys, mapping_df = mapping_df) 
+    # change to string type
+    adata.obs["correct"] = adata.obs["predicted_subclass"].astype(str) == adata.obs["subclass"].astype(str)
+    return adata
+
+def read_query(query_path, gene_mapping, predicted_meta):
     
     query = sc.read_h5ad(query_path)
     if "feature_name" not in query.var.columns:
@@ -59,14 +62,22 @@ def read_adata(query_path, gene_mapping, predicted_meta):
     return query
 
 
-def is_correct(adata, ref_keys, mapping_df):
-    adata.obs = map_valid_labels(adata.obs, ref_keys = ref_keys, mapping_df = mapping_df) 
-    # change to string type
-    adata.obs["correct"] = adata.obs["predicted_subclass"].astype(str) == adata.obs["subclass"].astype(str)
-    return adata
-    
-    
-def process_adata(query):
+def is_outlier(query, metric: str, nmads=3):
+    M = query.obs[metric]
+    outlier = (M < np.median(M) - nmads * median_abs_deviation(M)) | (
+        np.median(M) + nmads * median_abs_deviation(M) < M
+    )
+    return outlier
+
+
+def qc_preprocess(query):
+    # check if any sample_id has fewer than 30 associated cwells
+    sample_counts = query.obs["sample_id"].value_counts()
+    if (sample_counts < 30).any():
+        batch_key=None
+    else:
+        batch_key="sample_id"
+   # sc.pp.scrublet(query, batch_key=batch_key)
     # log normalize, comput neighbors and umap
     sc.pp.normalize_total(query, target_sum=1e4)
     sc.pp.log1p(query)
@@ -74,139 +85,317 @@ def process_adata(query):
     sc.pp.pca(query)
     sc.pp.neighbors(query, n_neighbors=10, n_pcs=30)
     sc.tl.umap(query)
-    sc.tl.leiden(query)
+    sc.tl.leiden(query, resolution=0.3)
     
     return query
 
-    
-def plot_jointplots(query, query_name):
+def mad(var, scale='normal'):
+    """Median Absolute Deviation. Set scale='normal' for consistency with R's default."""
+    med = np.median(var)
+    mad = np.median(np.abs(var - med))
+    if scale == 'normal':
+        return mad * 1.4826  # for normally distributed data
+    return mad
 
-    # First jointplot
-    plot1 = sns.jointplot(
-        data=query.obs,
-        x="log1p_total_counts",
-        y="log1p_n_genes_by_counts",
-        hue="counts_outlier",
-        kind="scatter"
-    )
-    plot1.savefig(f"{query_name}_genes_vs_counts.png")
 
-    # Second jointplot
-    plot2 = sns.jointplot(
-        data=query.obs,
-        x="log1p_n_genes_by_counts",
-        y="log1p_total_counts_mito",
-        hue="outlier_mito",
-        kind="scatter"
-    )
-    plot2.savefig(f"{query_name}_mito_counts.png")
+def get_lm(query, nmads=5, scale="normal"):
+    # Assume dataset is an AnnData object
+    # Fit linear model: log10(n_genes_per_cell) ~ log10(counts_per_cell)
+    lm_model = ols(formula='log1p_n_genes_by_counts ~ log1p_total_counts', data=query.obs).fit()
+    # Calculate residuals
+    residuals = lm_model.resid
+    # If data is normally distributed, this is similar to std 
+    mad_residuals = median_abs_deviation(residuals, scale=scale)
+    # Intercept adjustment (add for upper bound, subtract for lower bound)
+    intercept_adjustment = np.median(residuals) + nmads * mad_residuals
+    return {
+        "model": lm_model,
+        "intercept_adjustment": intercept_adjustment
+    }
+    
+def get_qc_metrics(query, nmads):
+    query.var["mito"] = query.var["feature_name"].str.startswith(("MT", "mt", "Mt"))
+    query.var["ribo"] = query.var["feature_name"].str.startswith(("RP", "Rp", "rp"))
+    query.var["hb"] = query.var["feature_name"].str.startswith(("HB", "Hb","hb"))
+    # fill NaN values with False
+    query.var["mito"].fillna(False, inplace=True)
+    query.var["ribo"].fillna(False, inplace=True)
+    query.var["hb"].fillna(False, inplace=True) 
 
-    # Third jointplot
-    plot3 = sns.jointplot(
-        data=query.obs,
-        x="log1p_n_genes_by_counts",
-        y="log1p_total_counts_ribo",
-        hue="outlier_ribo",
-        kind="scatter"
-    )
-    plot3.savefig(f"{query_name}_ribo_counts.png")
-    
-    plot4 = sns.jointplot(
-        data=query.obs,
-        x="log1p_n_genes_by_counts",
-        y="log1p_total_counts_hb",
-        hue="outlier_hb",
-        kind="scatter"
-    )
-    plot4.savefig(f"{query_name}_hb_counts.png")
+    sc.pp.calculate_qc_metrics(query, qc_vars=["mito", "ribo", "hb"], log1p=True, inplace=True, percent_top=[20], use_raw=True)
 
+    metrics = {
+        "log1p_total_counts": "umi_outlier",
+        "log1p_n_genes_by_counts": "genes_outlier",
+        "pct_counts_mito": "outlier_mito",
+        "pct_counts_ribo": "outlier_ribo",
+        "pct_counts_hb": "outlier_hb",
+    }
     
-def plot_umap_qc(query, query_name, subclass_colors):
-    colors = ["subclass", "predicted_subclass", "correct", "counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "predicted_doublet"]
+    for metric, col_name in metrics.items():
+        query.obs[col_name] = is_outlier(query, metric, nmads)
 
-    for color in colors:
-        is_categorical = query.obs[color].dtype.name == "category" or query.obs[color].dtype == object
+    lm_dict = get_lm(query, nmads=nmads)
+    intercept = lm_dict["model"].params[0]
+    slope = lm_dict["model"].params[1]
+    
 
-        sc.pl.umap(
-            query,
-            color=color,
-            use_raw=False,
-            save=f"_{query_name}_{color}_qc_umap.png",
-            show=False,
-            title=f"{color} - {query_name}",
-            palette=subclass_colors if is_categorical else None,
-            color_map="viridis" if not is_categorical else None,
-        )
-
-def make_stable_colors(color_mapping_df):
-    
-    all_subclasses = sorted(color_mapping_df["subclass"])
-    # i need to hardcode a separate color palette based on the mmus mapping file
-    # Generate unique colors for each subclass
-    color_palette = sns.color_palette("husl", n_colors=len(all_subclasses))
-    subclass_colors = dict(zip(all_subclasses, color_palette))
-    return subclass_colors
-    
-    
-def plot_marker_genes(query, marker_file):
-    if not os.path.exists(marker_file):
-        raise ValueError(f"Marker file {marker_file} does not exist.")
-    if "feature_name" not in query.var.columns:
-        raise ValueError("feature_name column not found in query.var")
-    query.var.set_index("feature_name", inplace=True)
-    sc.pl.umap(
-        query,
-        color = ["Olig1", "Cldn5", "Aif1"],
-        use_raw=False,
-        #save=f"qc_metrics_{query_name}_{sample_id}.png",
-        show=True,
-       # title=f"QC Metrics for {query_name} {sample_id}",
-        ncols=1,
-        color_map="viridis")
-    
+    query.obs["counts_outlier"] = (
+        query.obs["log1p_n_genes_by_counts"] < (query.obs["log1p_total_counts"] * slope + (intercept - lm_dict["intercept_adjustment"]))
+        ) | (
+        query.obs["log1p_n_genes_by_counts"] > (query.obs["log1p_total_counts"] * slope + (intercept + lm_dict["intercept_adjustment"]))
+        ) | (
+        query.obs["umi_outlier"] ) | (query.obs["genes_outlier"])
         
+
+    query.obs["total_outlier"] = (
+        query.obs["counts_outlier"] | query.obs["outlier_mito"] | query.obs["outlier_ribo"] | query.obs["outlier_hb"]
+    )
+    
+    query.obs["non_outlier"] = ~query.obs["total_outlier"]
+
+    return query
+
+def map_celltype_hierarchy(query, markers_file):
+    # Load the markers table
+    df = pd.read_csv(markers_file, sep=None, header=0)
+    df.drop(columns="markers", inplace=True)
+    query.obs = query.obs.merge(df, left_on="cell_type", right_on="cell_type", how="left", suffixes=("", "_y"))
+    return query
+
+def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
+    # Read the marker file
+    df = pd.read_csv(markers_file, sep="\t")
+    df = df[df["markers"].notnull()]
+    gene_to_celltype = {}
+
+    for _, row in df.iterrows():
+        cell_type = row["cell_type"]
+        genes = [gene.strip() for gene in row["markers"].split(",")]
+        for gene in genes:
+            if organism == "mus_musculus":
+                gene = gene.lower().capitalize()
+                # Handle multiple cell types mapping to the same gene
+            if gene not in gene_to_celltype:
+                gene_to_celltype[gene] = []
+            gene_to_celltype[gene].append(cell_type)
+
+    # Join multiple cell types into one label if needed
+    gene_ct_dict = {
+        gene: f"{gene}: {'_'.join(set(celltypes))}"
+        for gene, celltypes in gene_to_celltype.items()
+    }
+    return gene_ct_dict
+
+def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_name=""):
+    # Drop vars with NaN feature names
+    query = query[:, ~query.var["feature_name"].isnull()]
+    query.var_names = query.var["feature_name"]
+    
+    #Make raw index match processed var index
+    query.raw.var.index = query.raw.var["feature_name"]
+    
+    # Map cell type hierarchy
+    query = map_celltype_hierarchy(query, markers_file=markers_file)
+
+    # Read marker genes
+    gene_ct_dict = get_gene_to_celltype_map(markers_file, organism=organism)
+    # Collect all unique markers across all families/classes/cell types
+    all_markers = list(gene_ct_dict.keys())
+    valid_markers = [gene for gene in all_markers if gene in query.var_names]
+
+    # Filter raw expression matrix to match query.var_names
+    expr_matrix = query.raw.X.toarray()
+    expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
+    
+    avg_expr = expr_matrix.groupby(query.obs["cell_type"]).mean()
+    avg_expr = avg_expr.loc[:, valid_markers]
+    
+    # Scale expression across genes
+    scaled_expr = (avg_expr - avg_expr.mean()) / avg_expr.std()
+    scaled_exp = scaled_expr.loc[:, valid_markers]
+    scaled_expr.fillna(0, inplace=True)
+
+    # Rename columns: gene -> gene (celltype)
+    scaled_expr.rename(columns=gene_ct_dict, inplace=True)
+
+    # Save matrix
+    os.makedirs(study_name, exist_ok=True)
+    scaled_expr.to_csv(f"{study_name}/heatmap_mqc.tsv", sep="\t")
+
+ 
+
+def plot_joint_umap(query, study_name, sample_name):
+    x_metric = "log1p_n_genes_by_counts"
+    metrics = {
+        "log1p_total_counts": "counts_outlier",
+        "pct_counts_mito": "outlier_mito",
+        "pct_counts_ribo": "outlier_ribo",
+        "pct_counts_hb": "outlier_hb",
+    }
+    
+    data = query.obs
+    images = []
+    for yval, hue in metrics.items():
+        fig_joint = sns.jointplot(
+            data=data,
+            x=x_metric,
+            y=yval,
+            hue=hue,
+            kind="scatter"
+        )
+        
+        
+        umap_fig = sc.pl.umap(
+        query,
+        color=hue,
+        use_raw=False,
+        save=None,
+        show=False,
+        title=f"{hue}",
+        ncols=1,
+        legend_loc="upper right",
+        return_fig=True
+        ) 
+
+
+        joint_buf = io.BytesIO()
+        fig_joint.savefig(joint_buf, format="png", bbox_inches='tight')
+        plt.close(fig_joint.fig) 
+        
+        umap_buf = io.BytesIO()
+        umap_fig.savefig(umap_buf, format="png", bbox_inches='tight')
+        plt.close(umap_fig)
+        
+        joint_buf.seek(0)
+        images.append(Image.open(joint_buf))
+        
+        umap_buf.seek(0)
+        images.append(Image.open(umap_buf))
+    
+    scale = 0.5  # Resize to 50%
+    resized_images = [img.resize((int(img.width * scale), int(img.height * scale))) for img in images]
+
+    # Use resized dimensions
+    img_width, img_height = resized_images[0].size
+    grid_cols = 2
+    grid_rows = math.ceil(len(resized_images) / grid_cols)
+
+    combined_img = Image.new("RGB", (grid_cols * img_width, grid_rows * img_height), "white")
+
+    for idx, img in enumerate(resized_images):
+        row = idx // grid_cols
+        col = idx % grid_cols
+        x_offset = col * img_width
+        y_offset = row * img_height
+        combined_img.paste(img, (x_offset, y_offset))
+
+    os.makedirs(study_name, exist_ok=True)
+    out_path = f"{study_name}/{sample_name}_combined_mqc.png"
+    combined_img.save(out_path)
+
+
 def main():
-    SEED = 42
-    random.seed(SEED)         # For `random`
-    np.random.seed(SEED)      # For `numpy`
-    # For `torch`'
-    scvi.settings.seed = SEED # For `scvi`
     # Parse command line arguments
     args = parse_arguments()
-    color_mapping = args.color_mapping
-    ref_keys = args.ref_keys
-    mapping_file = args.mapping_file
-    # Load the mapping file
-    mapping_df = pd.read_csv(mapping_file, sep="\t", header=0)
-    color_mapping = pd.read_csv(color_mapping, sep="\t", header=0)
-    subclass_colors = make_stable_colors(color_mapping)
-     
     # Set variables from arguments
     query_path = args.query_path
-    query_name = os.path.basename(query_path).replace(".h5ad", "")
     predicted_meta = args.predicted_meta
-    #markers_file = args.markers_file
-    gene_mapping_path = args.gene_mapping
-    gene_mapping = pd.read_csv(gene_mapping_path, sep="\t", header=0)
+    markers_file = args.markers_file
+    gene_mapping_path = args.gene_mapping 
+    organism = args.organism
+    mapping_file = args.mapping_file
+    ref_keys = args.ref_keys
+    # Load the mapping file
+    mapping_df = pd.read_csv(mapping_file, sep="\t", header=0)
+    
+    gene_mapping = pd.read_csv(gene_mapping_path, sep=None, header=0)
     # Drop rows with missing values in the relevant columns
     gene_mapping = gene_mapping.dropna(subset=["ENSEMBL_ID", "OFFICIAL_SYMBOL"])
     # Set the index of gene_mapping to "ENSEMBL_ID" and ensure it's unique
     gene_mapping = gene_mapping.drop_duplicates(subset="ENSEMBL_ID")
-    gene_mapping.set_index("ENSEMBL_ID", inplace=True)
+    gene_mapping.set_index("ENSEMBL_ID", inplace=True) 
+
     # Load query and reference datasets
-    query_name = os.path.basename(query_path).replace(".h5ad", "")
-    predicted_meta = pd.read_csv(predicted_meta, sep="\t", header=0)
-   # markers = pd.read_csv(markers_file, sep="\t", header=0)
-    
-    query = read_adata(query_path, gene_mapping, predicted_meta)
-    query = process_adata(query)
-    #query = get_qc_metrics(query, query_name)
-    # for sample in query.obs["sample_id"].unique():
-    #    query = query[query.obs["sample_id"] == sample]
+    study_name = os.path.basename(query_path).replace(".h5ad", "")
+    assigned_celltypes = pd.read_csv(predicted_meta, sep=None, header=0)
+    os.makedirs(study_name, exist_ok=True)
+     
+    query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
+    query.obs.index = query.obs["index"]
+    query.raw = query.copy()
+    query = qc_preprocess(query)
     query = is_correct(query, ref_keys, mapping_df)
-    plot_jointplots(query, query_name)
-    plot_umap_qc(query, query_name, subclass_colors)
+    #plot_markers(query, markers_file, organism=organism)
+    make_celltype_matrices(query, markers_file, organism=organism, study_name=study_name)
     
 
+    query = get_qc_metrics(query, nmads=args.nmads) 
+    
+    plot_joint_umap(query, study_name=study_name, sample_name=sample_name)
+        
+    # Count occurrences
+    celltype_counts_correct = (
+        query.obs
+        .groupby(["cell_type", "correct"])
+        .size()                             # count cells per (sample, cell_type)
+        .unstack(fill_value=0)              # pivot cell types into columns
+        .reset_index()                      # make sample_name a column
+    )
+    celltype_counts_correct.to_csv(os.path.join(study_name,"celltype_counts_correct_mqc.tsv"), sep="\t", index=False)
+
+    ## make a table of counts by outliers
+    # count all combinations + non-outliers
+    celltype_outlier_counts = (
+        query.obs
+        .groupby("cell_type")[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier"]]
+        .sum()
+        .astype(int)
+    )
+    celltype_outlier_counts.to_csv(os.path.join(study_name, "celltype_outlier_counts_mqc.tsv"), sep="\t", index=True)
+
+    ### cluster by outlier
+    ##cluster_counts = (
+        ##query.obs
+        ##.groupby("leiden")[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "predicted_doublet", "non_outlier"]]
+        ##.sum()
+        ##.astype(int)                     # make sample_name a column
+    ##)
+    ##cluster_counts.to_csv(os.path.join(study_name,"cluster_outlier_counts_mqc.tsv"), sep="\t", index=True)
+    
+    ### cluster by cell type
+    ##cluster_celltypes = (
+        ##query.obs
+        ##.groupby(["leiden", "cell_type"])
+        ##.size() # count cells per (sample, cell_type)
+        ##.unstack(fill_value=0)              # pivot cell types into columns
+        ##.reset_index()                      # make sample_name a column
+    ##)
+    ##cluster_celltypes.to_csv(os.path.join(study_name,"cluster_celltypes_mqc.tsv"), sep="\t", index=False)
+
+
+    # correct by outlier composition
+    correct_outlier_counts = (
+        query.obs
+        .groupby(["correct"])[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier"]]
+        .sum()
+        .astype(int)
+    )
+    correct_outlier_counts.to_csv(os.path.join(study_name,"correct_outlier_counts_mqc.tsv"), sep="\t", index=True)
+    
+    predicted_vs_actual_counts = (
+        query.obs
+        .groupby(["subclass", "predicted_subclass"])
+        .size()                             # count cells per (sample, cell_type)
+        .unstack(fill_value=0)              # pivot cell types into columns
+        .reset_index()                      # make sample_name a column
+    ) 
+    predicted_vs_actual_counts.to_csv(os.path.join(study_name,"predicted_vs_actual_counts_mqc.tsv"), sep="\t", index=False)
+    
 if __name__ == "__main__":
-    main() 
+    main()
+ 
+    
+    
+
+   
