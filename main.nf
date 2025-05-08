@@ -371,7 +371,7 @@ process plotQCSeurat {
     output:
     path "**png" 
     path "**tsv"
-    tuple val("seurat"), val(study_name), path("${study_name}/"), emit: qc_result_seurat
+    tuple val("seurat"), val(query_name), path("${query_name}/"), emit: qc_result_seurat
     
     script:
     ref_keys = params.ref_keys.join(' ')
@@ -401,7 +401,7 @@ process plotQCscvi {
     output:
     path "**png" 
     path "**tsv"
-    tuple val("scvi"), val(study_name), path("${study_name}/"), emit: qc_result_scvi
+    tuple val("scvi"), val(query_name), path("${query_name}/"), emit: qc_result_scvi
 
     script:
     ref_keys = params.ref_keys.join(' ')
@@ -419,6 +419,7 @@ process plotQCscvi {
 }
 
 process runMultiQC {
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     publishDir (
         "${params.outdir}/multiqc/${method}/${study_name}", mode: 'copy'
     )
@@ -548,35 +549,32 @@ workflow {
         [query_name, query_path]
     }.set {processed_queries_adata_names}
 
-   // processed_queries_adata_names.view()
-
     qc_channel_adata = predicted_meta_channel_adata.combine(processed_queries_adata_names, by: 0)
-    qc_channel_adata.view()
     
-    //predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
-        //query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //ref_name = ref_path.getName().split('.rds')[0]
-        //[query_name, ref_name, predicted_meta]
-    //}.set { predicted_meta_channel_seurat }
+    predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        ref_name = ref_path.getName().split('.rds')[0]
+        [query_name, ref_name, predicted_meta]
+    }.set { predicted_meta_channel_seurat }
 
 
-    ////processed_queries_adata.map { query_path ->
-        ////query_name = query_path.getName().split('_processed.h5ad')[0]
-        ////[query_name, query_path]
-    ////}.set {processed_queries_adata_names}
+    //processed_queries_adata.map { query_path ->
+        //query_name = query_path.getName().split('_processed.h5ad')[0]
+        //[query_name, query_path]
+    //}.set {processed_queries_adata_names}
 
 
-    //qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_names, by: 0)
+    qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_names, by: 0)
     //qc_channel_seurat.view()
 
-    //plotQCSeurat(qc_channel_seurat)
+    plotQCSeurat(qc_channel_seurat)
     plotQCscvi(qc_channel_adata)
 
-   // plotQCSeurat.out.qc_result_seurat.concat(plotQCscvi.out.qc_result_scvi)
-   // .set { qc_channel_combined }
+    plotQCSeurat.out.qc_result_seurat.concat(plotQCscvi.out.qc_result_scvi)
+    .set { qc_channel_combined }
 
     // Run multiqc on the combined QC channels
-   // runMultiQC(qc_channel_combined)
+    runMultiQC(qc_channel_combined)
 
     save_params_to_file()
 }
