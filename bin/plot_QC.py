@@ -32,12 +32,12 @@ from statsmodels.formula.api import ols
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
-    parser.add_argument('--query_path', type=str, default="")
-    parser.add_argument('--predicted_meta', type=str, default="")
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/a2/d8c823dc1f2e928a9618a39c1908b8/GSE152715.2_1052352_processed.h5ad")
+    parser.add_argument('--predicted_meta', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/a2/d8c823dc1f2e928a9618a39c1908b8/GSE152715.2_1052352_An_integrated_transcriptomic_and_epigenomic_atlas_of_mouse_primary_motor_cortex_cell_types.predictions.0.0.tsv")
     parser.add_argument('--markers_file', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv")
     parser.add_argument('--gene_mapping', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv")
     parser.add_argument('--nmads',type=int, default=5)
-    parser.add_argument('--ref_keys', nargs="+", type=str)
+    parser.add_argument('--ref_keys', nargs="+", type=str, default = ["subclass","class","family","global"])
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -163,7 +163,7 @@ def map_celltype_hierarchy(query, markers_file):
     # Load the markers table
     df = pd.read_csv(markers_file, sep=None, header=0)
     df.drop(columns="markers", inplace=True)
-    query.obs = query.obs.merge(df, left_on="cell_type", right_on="cell_type", how="left", suffixes=("", "_y"))
+    query.obs = query.obs.merge(df, left_on="subclass", right_on="subclass", how="left", suffixes=("", "_y"))
     return query
 
 def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
@@ -173,7 +173,7 @@ def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
     gene_to_celltype = {}
 
     for _, row in df.iterrows():
-        cell_type = row["cell_type"]
+        subclass = row["cell_type"]
         genes = [gene.strip() for gene in row["markers"].split(",")]
         for gene in genes:
             if organism == "mus_musculus":
@@ -181,7 +181,7 @@ def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
                 # Handle multiple cell types mapping to the same gene
             if gene not in gene_to_celltype:
                 gene_to_celltype[gene] = []
-            gene_to_celltype[gene].append(cell_type)
+            gene_to_celltype[gene].append(subclass)
 
     # Join multiple cell types into one label if needed
     gene_ct_dict = {
@@ -192,14 +192,14 @@ def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
 
 def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_name=""):
     # Drop vars with NaN feature names
+    # Map cell type hierarchy
+   # query = map_celltype_hierarchy(query, markers_file=markers_file)
+    
     query = query[:, ~query.var["feature_name"].isnull()]
     query.var_names = query.var["feature_name"]
     
     #Make raw index match processed var index
     query.raw.var.index = query.raw.var["feature_name"]
-    
-    # Map cell type hierarchy
-    query = map_celltype_hierarchy(query, markers_file=markers_file)
 
     # Read marker genes
     gene_ct_dict = get_gene_to_celltype_map(markers_file, organism=organism)
@@ -211,7 +211,7 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_n
     expr_matrix = query.raw.X.toarray()
     expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
     
-    avg_expr = expr_matrix.groupby(query.obs["cell_type"]).mean()
+    avg_expr = expr_matrix.groupby(query.obs["subclass"]).mean()
     avg_expr = avg_expr.loc[:, valid_markers]
     
     # Scale expression across genes
@@ -297,6 +297,23 @@ def plot_joint_umap(query, study_name):
     out_path = f"{study_name}/outliers_mqc.png"
     combined_img.save(out_path)
 
+def plot_ct_umap(query, study_name):
+    colors = ["predicted_subclass", "subclass"]
+    
+    sc.pl.umap(
+        query,
+        color=colors,
+        use_raw=False,
+        save=None,
+        show=False,
+        title=f"cell type",
+        ncols=1
+       # legend_loc="upper right",
+    )
+    os.makedirs(study_name, exist_ok=True)
+    out_path = f"{study_name}/celltype_umap_mqc.png"
+    plt.savefig(out_path, bbox_inches='tight')
+    plt.close()
 
 def main():
     # Parse command line arguments
@@ -320,7 +337,7 @@ def main():
     gene_mapping.set_index("ENSEMBL_ID", inplace=True) 
 
     # Load query and reference datasets
-    study_name = os.path.basename(query_path).replace(".h5ad", "")
+    study_name = os.path.basename(query_path).replace("_processed.h5ad", "")
     assigned_celltypes = pd.read_csv(predicted_meta, sep=None, header=0)
     os.makedirs(study_name, exist_ok=True)
      
@@ -336,12 +353,12 @@ def main():
     query = get_qc_metrics(query, nmads=args.nmads) 
     
     plot_joint_umap(query, study_name=study_name)
-        
+    plot_ct_umap(query, study_name=study_name)
     # Count occurrences
     celltype_counts_correct = (
         query.obs
-        .groupby(["cell_type", "correct"])
-        .size()                             # count cells per (sample, cell_type)
+        .groupby(["correct", "cell_type"])
+        .size()                             # count cells per (sample, subclass)
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column
     )
@@ -356,27 +373,7 @@ def main():
         .astype(int)
     )
     celltype_outlier_counts.to_csv(os.path.join(study_name, "celltype_outlier_counts_mqc.tsv"), sep="\t", index=True)
-
-    ### cluster by outlier
-    ##cluster_counts = (
-        ##query.obs
-        ##.groupby("leiden")[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "predicted_doublet", "non_outlier"]]
-        ##.sum()
-        ##.astype(int)                     # make sample_name a column
-    ##)
-    ##cluster_counts.to_csv(os.path.join(study_name,"cluster_outlier_counts_mqc.tsv"), sep="\t", index=True)
-    
-    ### cluster by cell type
-    ##cluster_celltypes = (
-        ##query.obs
-        ##.groupby(["leiden", "cell_type"])
-        ##.size() # count cells per (sample, cell_type)
-        ##.unstack(fill_value=0)              # pivot cell types into columns
-        ##.reset_index()                      # make sample_name a column
-    ##)
-    ##cluster_celltypes.to_csv(os.path.join(study_name,"cluster_celltypes_mqc.tsv"), sep="\t", index=False)
-
-
+ 
     # correct by outlier composition
     correct_outlier_counts = (
         query.obs
@@ -389,11 +386,11 @@ def main():
     predicted_vs_actual_counts = (
         query.obs
         .groupby(["subclass", "predicted_subclass"])
-        .size()                             # count cells per (sample, cell_type)
+        .size()                             # count cells per (sample, subclass)
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column
     ) 
-    predicted_vs_actual_counts.to_csv(os.path.join(study_name,"predicted_vs_actual_counts_mqc.tsv"), sep="\t", index=False)
+    predicted_vs_actual_counts.to_csv(os.path.join(study_name,"actual_vs_predicted_counts_mqc.tsv"), sep="\t", index=False)
     
 if __name__ == "__main__":
     main()
