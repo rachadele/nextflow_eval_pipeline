@@ -44,10 +44,10 @@ custom_data:
     file_format: 'tsv'
     plot_type: 'heatmap'
 
-  predicted_vs_actual_counts:
-    section_name: 'Predicted vs actual counts'
+  actual_vs_predicted:
+    section_name: 'Actual vs. predicted counts'
     description: >
-      Predicted vs actual counts of cell types.
+      Actual vs. predicted counts of cell types.
     file_format: 'tsv'
     plot_type: 'barplot'
 
@@ -65,8 +65,8 @@ sp:
   correct_composition_outliers:
     fn: "*correct_outlier_counts_mqc.tsv"
 
-  predicted_vs_actual_counts:
-    fn: "*predicted_vs_actual_counts_mqc.tsv"
+  actual_vs_predicted:
+    fn: "*actual_vs_predicted_mqc.tsv"
 
 
 custom_content:
@@ -74,5 +74,5 @@ custom_content:
     - celltype_composition_correct
     - celltype_composition_outliers
     - correct_composition_outliers
-    - predicted_vs_actual_counts
+    - actual_vs_predicted
     - markers_heatmap
