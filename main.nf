@@ -251,100 +251,6 @@ process classifyAll {
     """ 
 }
 
-process classifyAllAdata {
-    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-
-// Publish files matching the 'f1_results**' pattern
-    publishDir path: "${params.outdir}/scvi/", pattern: "f1_results**", mode: 'copy'
-
-    // Publish files matching the 'confusion**' pattern
-    publishDir path: "${params.outdir}/scvi", pattern: "confusion**", mode: 'copy'
-
-    // Publish files matching the 'pr_curves**' pattern
-    publishDir path: "${params.outdir}/scvi", pattern: "pr_curves**", mode: 'copy'
-
-    // Publish files matching the 'predicted_meta**' pattern
-    publishDir path: "${params.outdir}/scvi", pattern: "predicted_meta**", mode: 'copy'
-
-
-    input:
-    val ref_keys
-    val cutoff
-    tuple path(query_path), path(ref_path), path(probs_path)
-    val mapping_file
-    val ref_region_mapping
-
-    output:
-    path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
-    path "confusion/**"
-    tuple path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
-    path "pr_curves/*png"
-
-    script:
-
-    ref_name = ref_path.getName().split('.h5ad')[0]
-
-    """
-    python $projectDir/bin/classify_all.py \\
-        --query_path ${query_path} \\
-        --ref_name ${ref_name} \\
-        --ref_keys ${ref_keys} \\
-        --cutoff ${cutoff} \\
-        --probs ${probs_path} \\
-        --mapping_file ${mapping_file} \\
-        --ref_region_mapping ${ref_region_mapping}
-    """
-
-}
-
-process classifyAllSeurat {
-    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-
-// Publish files matching the 'f1_results**' pattern
-    publishDir path: "${params.outdir}/seurat", pattern: "f1_results**", mode: 'copy'
-
-    // Publish files matching the 'confusion**' pattern
-    publishDir path: "${params.outdir}/seurat", pattern: "confusion**", mode: 'copy'
-
-    // Publish files matching the 'pr_curves**' pattern
-    publishDir path: "${params.outdir}/seurat", pattern: "pr_curves**", mode: 'copy'
-
-    // Publish files matching the 'predicted_meta**' pattern
-    publishDir path: "${params.outdir}/seurat", pattern: "predicted_meta**", mode: 'copy'
-
-
-    input:
-    val ref_keys
-    val cutoff
-    tuple path(query_path), path(ref_path), path(scores_path)
-    val mapping_file
-    val ref_region_mapping
-
-    output:
-    path "f1_results/*f1.scores.tsv", emit: f1_score_channel  // Match TSV files in f1_results
-    //path "roc/**tsv", emit: auc_channel
-   // path "roc/**png"
-    path "confusion/**"
-    tuple path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
-    path "pr_curves/*png"
-
-    script:
-
-    ref_name = ref_path.getName().split('.rds')[0]
-
-    """
-    python $projectDir/bin/classify_all.py  \\
-        --query_path ${query_path} \\
-        --ref_name ${ref_name} \\
-        --ref_keys ${ref_keys} \\
-        --cutoff ${cutoff} \\
-        --probs ${scores_path} \\
-        --mapping_file ${mapping_file} \\
-        --ref_region_mapping ${ref_region_mapping}
-    """
-
-}
-
 process plotF1ResultsAdata{
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
@@ -550,19 +456,9 @@ workflow {
     // need to pass both seurat_scores_channel and adata_probs_channel to one classifyAll function
     concat_probs_channel = adata_probs_channel.concat(seurat_scores_channel)
     
-   //concat_probs_channel.view{ "PROBS: ${it}" }
 
     classifyAll(params.ref_keys.join(' '), concat_probs_channel, ref_region_mapping)
-
-    // Classify all cells based on prediction scores at most granular level
-    //classifyAllAdata(params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
-    //f1_scores_adata = classifyAllAdata.out.f1_score_channel
-
-    //classifyAllSeurat(params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
-    //f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
-
     predicted_meta_channel = classifyAll.out.predicted_meta_channel
-    //predicted_meta_channel.view{ "PREDICTED: ${it}" }
 
     f1_scores_all = classifyAll.out.f1_score_channel
 
@@ -584,15 +480,6 @@ workflow {
     
     predicted_meta_channel_adata = predicted_meta_channel.filter { it[0] == "scvi" }
     predicted_meta_channel_seurat = predicted_meta_channel.filter { it[0] == "seurat" }
-
-    //// Flatten f1 scores files into a list
-    //f1_scores_adata 
-    //.toList()
-    //.set { f1_scores_adata_files }
-
-    //f1_scores_seurat
-    //.toList()
-    //.set { f1_scores_seurat_files }
 
     //// Plot f1 score heatmaps using a list of file names from the f1 score channel
     plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
