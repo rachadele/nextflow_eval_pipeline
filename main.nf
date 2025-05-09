@@ -211,6 +211,46 @@ process predictSeurat {
 
 }
 
+process classifyAll {
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+
+    publishDir path: "${params.outdir}/${method}", pattern: "f1_results**", mode: 'copy'
+
+    // Publish files matching the 'confusion**' pattern
+    publishDir path: "${params.outdir}/${method}", pattern: "confusion**", mode: 'copy'
+
+    // Publish files matching the 'pr_curves**' pattern
+    publishDir path: "${params.outdir}/${method}", pattern: "pr_curves**", mode: 'copy'
+
+    // Publish files matching the 'predicted_meta**' pattern
+    publishDir path: "${params.outdir}/${method}", pattern: "predicted_meta**", mode: 'copy'
+    
+    input:
+    val ref_keys
+    tuple val(method), path(query_path), path(ref_path), path(probs_path)
+    val ref_region_mapping
+
+    output:
+    tuple val(method), path("f1_results/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in f1_results
+    path "confusion/**"
+    tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
+    path "pr_curves/*png"
+
+    script:
+    ref_name = ref_path.getName().split('\\.')[0]
+
+    """
+    python $projectDir/bin/classify_all.py \\
+        --query_path ${query_path} \\
+        --ref_name ${ref_name} \\
+        --ref_keys ${ref_keys} \\
+        --cutoff ${params.cutoff} \\
+        --probs ${probs_path} \\
+        --mapping_file ${params.relabel_r} \\
+        --ref_region_mapping ${ref_region_mapping}
+    """ 
+}
+
 process classifyAllAdata {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
@@ -499,82 +539,107 @@ workflow {
 
 
     adata_probs_channel = adata_probs_channel.map { query_path, ref_path, probs_path ->
-        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //query_region = params.query_region[query_name]
-       // query_sex = params.query_sex[query_name]
-       // query_disease = params.query_disease[query_name]
-        [query_path, ref_path, probs_path]
+        def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        ["scvi", query_path, ref_path, probs_path]
     }
     seurat_scores_channel = seurat_scores_channel.map { query_path, ref_path, scores_path ->
-        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //query_region = params.query_region[query_name]
-       // query_sex = params.query_sex[query_name]
-       // query_disease = params.query_disease[query_name]
-        [query_path, ref_path, scores_path]
+        def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        ["seurat", query_path, ref_path, scores_path]
     }
-    // Classify all cells based on prediction scores at most granular level
-    classifyAllAdata(params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
-    f1_scores_adata = classifyAllAdata.out.f1_score_channel
 
-    classifyAllSeurat(params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
-    f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
-
-    // Flatten f1 scores files into a list
-    f1_scores_adata 
-    .toList()
-    .set { f1_scores_adata_files }
-
-    f1_scores_seurat
-    .toList()
-    .set { f1_scores_seurat_files }
-
-    // Plot f1 score heatmaps using a list of file names from the f1 score channel
-    plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata_files)
-    plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat_files)
-
-    // Plot confusion matrix and pr curves
-
-    predicted_meta_channel_adata = classifyAllAdata.out.predicted_meta_channel
-    predicted_meta_channel_seurat = classifyAllSeurat.out.predicted_meta_channel
-
-
-    predicted_meta_channel_adata.map { query_path, ref_path, predicted_meta ->
-        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        ref_name = ref_path.getName().split('.h5ad')[0]
-        [query_name, ref_name, predicted_meta]
-    }.set { predicted_meta_channel_adata }
-
-    processed_queries_adata.map { query_path ->
-        query_name = query_path.getName().split('_processed.h5ad')[0]
-        [query_name, query_path]
-    }.set {processed_queries_adata_names}
-
-    qc_channel_adata = predicted_meta_channel_adata.combine(processed_queries_adata_names, by: 0)
+    // need to pass both seurat_scores_channel and adata_probs_channel to one classifyAll function
+    concat_probs_channel = adata_probs_channel.concat(seurat_scores_channel)
     
-    predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
-        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        ref_name = ref_path.getName().split('.rds')[0]
-        [query_name, ref_name, predicted_meta]
-    }.set { predicted_meta_channel_seurat }
+   //concat_probs_channel.view{ "PROBS: ${it}" }
 
+    classifyAll(params.ref_keys.join(' '), concat_probs_channel, ref_region_mapping)
+
+    // Classify all cells based on prediction scores at most granular level
+    //classifyAllAdata(params.ref_keys.join(' '), params.cutoff, adata_probs_channel, params.relabel_r, ref_region_mapping)
+    //f1_scores_adata = classifyAllAdata.out.f1_score_channel
+
+    //classifyAllSeurat(params.ref_keys.join(' '), params.cutoff, seurat_scores_channel, params.relabel_r, ref_region_mapping)
+    //f1_scores_seurat = classifyAllSeurat.out.f1_score_channel
+
+    predicted_meta_channel = classifyAll.out.predicted_meta_channel
+    //predicted_meta_channel.view{ "PREDICTED: ${it}" }
+
+    f1_scores_all = classifyAll.out.f1_score_channel
+
+    // flatten f1 scores files into a list for scvi and seurat
+    f1_scores_all
+        .filter { it[0] == 'scvi' }
+        .map { it[1] }
+        .collect()
+        .set { f1_scores_adata }
+
+    f1_scores_all.
+        filter { it[0] == "seurat" }.
+        map { it[1] }
+        .collect()
+        .set { f1_scores_seurat }
+
+    f1_scores_adata.view{ "F1 SCORES ADATA: ${it}" }
+    f1_scores_seurat.view{ "F1 SCORES SEURAT: ${it}" }
+    
+    predicted_meta_channel_adata = predicted_meta_channel.filter { it[0] == "scvi" }
+    predicted_meta_channel_seurat = predicted_meta_channel.filter { it[0] == "seurat" }
+
+    //// Flatten f1 scores files into a list
+    //f1_scores_adata 
+    //.toList()
+    //.set { f1_scores_adata_files }
+
+    //f1_scores_seurat
+    //.toList()
+    //.set { f1_scores_seurat_files }
+
+    //// Plot f1 score heatmaps using a list of file names from the f1 score channel
+    plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
+    plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
+
+
+    //// Plot confusion matrix and pr curves
+
+    //predicted_meta_channel_adata = classifyAllAdata.out.predicted_meta_channel
+    //predicted_meta_channel_seurat = classifyAllSeurat.out.predicted_meta_channel
+
+
+    //predicted_meta_channel_adata.map { query_path, ref_path, predicted_meta ->
+        //def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        //def ref_name = ref_path.getName().split('.h5ad')[0]
+        //[ query_name: query_name, ref_name: ref_name, predicted_meta: predicted_meta ]
+    //}.set { predicted_meta_channel_adata }
 
     //processed_queries_adata.map { query_path ->
-        //query_name = query_path.getName().split('_processed.h5ad')[0]
-        //[query_name, query_path]
-    //}.set {processed_queries_adata_names}
+        //def query_name = query_path.getName().split('_processed.h5ad')[0]
+        //[ query_name: query_name, query_path: query_path ]
+    //}.set { processed_queries_adata_map }
+
+    //predicted_meta_channel_adata.view { "PREDICTED: ${it}" }
+    ////processed_queries_adata_map.view { "PROCESSED: ${it}" }
 
 
-    qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_names, by: 0)
-    //qc_channel_seurat.view()
+    //// combined by query_name
 
-    plotQCSeurat(qc_channel_seurat)
-    plotQCscvi(qc_channel_adata)
 
-    plotQCSeurat.out.qc_result_seurat.concat(plotQCscvi.out.qc_result_scvi)
-    .set { qc_channel_combined }
+   //// qc_channel_adata= predicted_meta_channel_adata.combine(processed_queries_adata_map, by: 0)
 
-    // Run multiqc on the combined QC channels
-    runMultiQC(qc_channel_combined)
+    //predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
+        //query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        //ref_name = ref_path.getName().split('.rds')[0]
+        //[ query_name: query_name, ref_name: ref_name, predicted_meta: predicted_meta ]
+    //}.set { predicted_meta_channel_seurat }
+
+   // qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_map, by: 0) 
+
+  //  plotQCSeurat(qc_channel_seurat)
+   // plotQCscvi(qc_channel_adata)
+
+   // plotQCSeurat.out.qc_result_seurat.combine(plotQCscvi.out.qc_result_scvi)
+   // .set { qc_channel_combined }
+
+   // runMultiQC(qc_channel_combined)
 
     save_params_to_file()
 }
