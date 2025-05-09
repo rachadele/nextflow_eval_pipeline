@@ -469,64 +469,55 @@ workflow {
         .collect()
         .set { f1_scores_adata }
 
-    f1_scores_all.
-        filter { it[0] == "seurat" }.
-        map { it[1] }
+    f1_scores_all
+        .filter { it[0] == "seurat" }
+        .map { it[1] }
         .collect()
         .set { f1_scores_seurat }
 
-    f1_scores_adata.view{ "F1 SCORES ADATA: ${it}" }
-    f1_scores_seurat.view{ "F1 SCORES SEURAT: ${it}" }
-    
+    //view both
+
+    //// Plot distributions from filtered file paths
+    plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
+    plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
+ 
     predicted_meta_channel_adata = predicted_meta_channel.filter { it[0] == "scvi" }
     predicted_meta_channel_seurat = predicted_meta_channel.filter { it[0] == "seurat" }
 
-    //// Plot f1 score heatmaps using a list of file names from the f1 score channel
-    plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
-    plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
+    predicted_meta_channel_adata.map { method, query_path, ref_path, predicted_meta ->
+        def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        def ref_name = ref_path.getName().split('.h5ad')[0]
+        [ query_name: query_name, ref_name: ref_name, predicted_meta: predicted_meta ]
+    }.set { predicted_meta_channel_adata_map }
 
+    predicted_meta_channel_seurat.map { method, query_path, ref_path, predicted_meta ->
+        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        ref_name = ref_path.getName().split('.rds')[0]
+        [ query_name, ref_name, predicted_meta ]
+    }.set { predicted_meta_channel_seurat_map }
 
-    //// Plot confusion matrix and pr curves
+    processed_queries_adata.map { query_path ->
+        def query_name = query_path.getName().split('_processed.h5ad')[0]
+        [ query_name, query_path ]
+    }.set { processed_queries_adata_map }
 
-    //predicted_meta_channel_adata = classifyAllAdata.out.predicted_meta_channel
-    //predicted_meta_channel_seurat = classifyAllSeurat.out.predicted_meta_channel
+    processed_queries_adata_map.view{ "Processed Queries Adata: ${it}" }
+    // combined by query_name
+    // this is broken
+    qc_channel_adata = predicted_meta_channel_adata_map.combine(processed_queries_adata_map, by: 0)
+    qc_channel_seurat = predicted_meta_channel_seurat_map.combine(processed_queries_adata_map, by: 0)
 
+    //view bot
+    qc_channel_adata.view()
+    qc_channel_seurat.view()
 
-    //predicted_meta_channel_adata.map { query_path, ref_path, predicted_meta ->
-        //def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //def ref_name = ref_path.getName().split('.h5ad')[0]
-        //[ query_name: query_name, ref_name: ref_name, predicted_meta: predicted_meta ]
-    //}.set { predicted_meta_channel_adata }
+    plotQCSeurat(qc_channel_seurat)
+    plotQCscvi(qc_channel_adata)
 
-    //processed_queries_adata.map { query_path ->
-        //def query_name = query_path.getName().split('_processed.h5ad')[0]
-        //[ query_name: query_name, query_path: query_path ]
-    //}.set { processed_queries_adata_map }
+    plotQCSeurat.out.qc_result_seurat.concat(plotQCscvi.out.qc_result_scvi)
+    .set { qc_channel }
 
-    //predicted_meta_channel_adata.view { "PREDICTED: ${it}" }
-    ////processed_queries_adata_map.view { "PROCESSED: ${it}" }
-
-
-    //// combined by query_name
-
-
-   //// qc_channel_adata= predicted_meta_channel_adata.combine(processed_queries_adata_map, by: 0)
-
-    //predicted_meta_channel_seurat.map { query_path, ref_path, predicted_meta ->
-        //query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        //ref_name = ref_path.getName().split('.rds')[0]
-        //[ query_name: query_name, ref_name: ref_name, predicted_meta: predicted_meta ]
-    //}.set { predicted_meta_channel_seurat }
-
-   // qc_channel_seurat = predicted_meta_channel_seurat.combine(processed_queries_adata_map, by: 0) 
-
-  //  plotQCSeurat(qc_channel_seurat)
-   // plotQCscvi(qc_channel_adata)
-
-   // plotQCSeurat.out.qc_result_seurat.combine(plotQCscvi.out.qc_result_scvi)
-   // .set { qc_channel_combined }
-
-   // runMultiQC(qc_channel_combined)
+    runMultiQC(qc_channel)
 
     save_params_to_file()
 }
