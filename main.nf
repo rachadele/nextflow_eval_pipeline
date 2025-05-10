@@ -303,51 +303,21 @@ process plotF1ResultsSeurat{
     """ 
 }
 
-process plotQCSeurat {
+process plotQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     
     publishDir (
-        path: "${params.outdir}/seurat/qc_plots/${query_name}/${ref_name}",
-        mode: "copy"
-        )
+    path: "${params.outdir}/${method}/qc_plots/${query_name}/${ref_name}",
+    mode: "copy"
+    )
 
     input:
-    tuple val(query_name), val(ref_name), path(predicted_meta), path(query_path)
+    tuple val(query_name), val(method), val(ref_name), path(predicted_meta), path(query_path)
 
     output:
-    path "**png" 
+    path "**png"
     path "**tsv"
-    tuple val("seurat"), val(query_name), path("${query_name}/"), emit: qc_result_seurat
-    
-    script:
-    ref_keys = params.ref_keys.join(' ')
-    """ 
-    python $projectDir/bin/plot_QC.py --query_path ${query_path} \\
-        --organism ${params.organism} \\
-        --markers_file "/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv" \\
-        --nmads 5 \\
-        --predicted_meta ${predicted_meta} \\
-        --gene_mapping ${params.gene_mapping} \\
-        --ref_keys ${ref_keys} \\
-        --mapping_file ${params.relabel_r}
-    """ 
-}
-
-process plotQCscvi {
-    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-
-    publishDir (
-        path: "${params.outdir}/scvi/qc_plots/${query_name}/${ref_name}",
-        mode: "copy"
-        )
-
-    input:
-    tuple val(query_name), val(ref_name), path(predicted_meta), path(query_path)
-
-    output:
-    path "**png" 
-    path "**tsv"
-    tuple val("scvi"), val(query_name), path("${query_name}/"), emit: qc_result_scvi
+    tuple val(method), val(query_name), path("${query_name}/"), emit: qc_result
 
     script:
     ref_keys = params.ref_keys.join(' ')
@@ -360,9 +330,10 @@ process plotQCscvi {
         --gene_mapping ${params.gene_mapping} \\
         --ref_keys ${ref_keys} \\
         --mapping_file ${params.relabel_r}
-    """ 
+    """
 
 }
+
 
 process runMultiQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
@@ -458,7 +429,6 @@ workflow {
     
 
     classifyAll(params.ref_keys.join(' '), concat_probs_channel, ref_region_mapping)
-    predicted_meta_channel = classifyAll.out.predicted_meta_channel
 
     f1_scores_all = classifyAll.out.f1_score_channel
 
@@ -480,44 +450,33 @@ workflow {
     //// Plot distributions from filtered file paths
     plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
     plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
- 
-    predicted_meta_channel_adata = predicted_meta_channel.filter { it[0] == "scvi" }
-    predicted_meta_channel_seurat = predicted_meta_channel.filter { it[0] == "seurat" }
-
-    predicted_meta_channel_adata.map { method, query_path, ref_path, predicted_meta ->
-        def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        def ref_name = ref_path.getName().split('.h5ad')[0]
-        [ query_name: query_name, ref_name: ref_name, predicted_meta: predicted_meta ]
-    }.set { predicted_meta_channel_adata_map }
-
-    predicted_meta_channel_seurat.map { method, query_path, ref_path, predicted_meta ->
-        query_name = query_path.getName().split('.obs.relabel.tsv')[0]
-        ref_name = ref_path.getName().split('.rds')[0]
-        [ query_name, ref_name, predicted_meta ]
-    }.set { predicted_meta_channel_seurat_map }
 
     processed_queries_adata.map { query_path ->
         def query_name = query_path.getName().split('_processed.h5ad')[0]
         [ query_name, query_path ]
     }.set { processed_queries_adata_map }
 
-    processed_queries_adata_map.view{ "Processed Queries Adata: ${it}" }
+    predicted_meta_channel = classifyAll.out.predicted_meta_channel
+
+    // parse predicted meta
+    //this is failing
+    predicted_meta_channel.map { method, query_path, ref_path, predicted_meta ->
+        def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        def ref_name = ref_path.getName().split('\\.')[0]
+        [ query_name, method, ref_name, predicted_meta ]
+    }.set { predicted_meta_combined }
+   
+
+    // combine with original anndata object
+    qc_channel_combined = predicted_meta_combined.combine(processed_queries_adata_map, by: 0)
+
     // combined by query_name
-    // this is broken
-    qc_channel_adata = predicted_meta_channel_adata_map.combine(processed_queries_adata_map, by: 0)
-    qc_channel_seurat = predicted_meta_channel_seurat_map.combine(processed_queries_adata_map, by: 0)
+    plotQC(qc_channel_combined)
 
-    //view bot
-    qc_channel_adata.view()
-    qc_channel_seurat.view()
+    // pass html dirs and method to runMultiQC
+    multiqc_channel = plotQC.out.qc_result
+    runMultiQC(multiqc_channel)
 
-    plotQCSeurat(qc_channel_seurat)
-    plotQCscvi(qc_channel_adata)
-
-    plotQCSeurat.out.qc_result_seurat.concat(plotQCscvi.out.qc_result_scvi)
-    .set { qc_channel }
-
-    runMultiQC(qc_channel)
 
     save_params_to_file()
 }
