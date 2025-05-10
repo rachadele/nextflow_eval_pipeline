@@ -73,6 +73,6 @@ custom_content:
   order:
     - celltype_composition_correct
     - celltype_composition_outliers
-    - correct_composition_outliers
     - actual_vs_predicted
+    - correct_composition_outliers
     - markers_heatmap
