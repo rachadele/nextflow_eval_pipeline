@@ -298,7 +298,7 @@ def plot_joint_umap(query, study_name):
     combined_img.save(out_path)
 
 def plot_ct_umap(query, study_name):
-    colors = ["predicted_subclass", "subclass"]
+    colors = ["predicted_subclass", "subclass", "correct"]
     
     sc.pl.umap(
         query,
@@ -306,7 +306,6 @@ def plot_ct_umap(query, study_name):
         use_raw=False,
         save=None,
         show=False,
-        title=f"cell type",
         ncols=1
        # legend_loc="upper right",
     )
