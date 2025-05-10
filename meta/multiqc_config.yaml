@@ -12,7 +12,7 @@ custom_data:
     section_name: 'Cell type correctness'
     description: 'Composition per cell type of correctly predicted cells'
     file_format: 'tsv'
-    plot_type: 'violinplot'
+    plot_type: 'barplot'
 
   celltype_composition_outliers:
     section_name: 'Cell type outlier composition'
