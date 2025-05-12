@@ -356,7 +356,7 @@ def main():
     # Count occurrences
     celltype_counts_correct = (
         query.obs
-        .groupby(["correct", "cell_type"])
+        .groupby(["cell_type", "correct"])
         .size()                             # count cells per (sample, subclass)
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column

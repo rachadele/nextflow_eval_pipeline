@@ -214,16 +214,16 @@ process predictSeurat {
 process classifyAll {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
-    publishDir path: "${params.outdir}/${method}", pattern: "f1_results**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "f1_results**", mode: 'copy'
 
     // Publish files matching the 'confusion**' pattern
-    publishDir path: "${params.outdir}/${method}", pattern: "confusion**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "confusion**", mode: 'copy'
 
     // Publish files matching the 'pr_curves**' pattern
-    publishDir path: "${params.outdir}/${method}", pattern: "pr_curves**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "pr_curves**", mode: 'copy'
 
     // Publish files matching the 'predicted_meta**' pattern
-    publishDir path: "${params.outdir}/${method}", pattern: "predicted_meta**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "predicted_meta**", mode: 'copy'
     
     input:
     val ref_keys
@@ -238,7 +238,7 @@ process classifyAll {
 
     script:
     ref_name = ref_path.getName().split('\\.')[0]
-
+    query_name = query_path.getName().split('\\.obs.relabel.tsv')[0]
     """
     python $projectDir/bin/classify_all.py \\
         --query_path ${query_path} \\
@@ -317,7 +317,7 @@ process plotQC {
     output:
     path "**png"
     path "**tsv"
-    tuple val(method), val(query_name), path("${query_name}/"), emit: qc_result
+    tuple val(method), val(query_name), val(ref_name), path("${query_name}/"), emit: qc_result
 
     script:
     ref_keys = params.ref_keys.join(' ')
@@ -338,11 +338,11 @@ process plotQC {
 process runMultiQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     publishDir (
-        "${params.outdir}/multiqc/${method}/${study_name}", mode: 'copy'
+        "${params.outdir}/${method}/multiqc/${study_name}/${ref_name}", mode: 'copy'
     )
 
     input:
-        tuple val(method), val(study_name), path(qc_dir)
+        tuple val(method), val(study_name), val(ref_name), path(qc_dir)
 
     output:
         tuple val(study_name), path("multiqc_report.html"), emit: multiqc_html
