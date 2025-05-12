@@ -307,7 +307,7 @@ process plotQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     
     publishDir (
-    path: "${params.outdir}/${method}/qc_plots/${query_name}/${ref_name}",
+    path: "${params.outdir}/${method}/${query_name}/${ref_name}/qc_plots",
     mode: "copy"
     )
 
@@ -338,7 +338,7 @@ process plotQC {
 process runMultiQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     publishDir (
-        "${params.outdir}/${method}/multiqc/${study_name}/${ref_name}", mode: 'copy'
+        "${params.outdir}/${method}/${study_name}/${ref_name}/multiqc", mode: 'copy'
     )
 
     input:
