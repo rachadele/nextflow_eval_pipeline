@@ -363,7 +363,7 @@ def main():
     # Count occurrences
     celltype_counts_correct = (
         query.obs
-        .groupby(["cell_type", "correct"])
+        .groupby(["subclass", "correct"])
         .size()                             # count cells per (sample, subclass)
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column
@@ -374,7 +374,7 @@ def main():
     # count all combinations + non-outliers
     celltype_outlier_counts = (
         query.obs
-        .groupby("cell_type")[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier"]]
+        .groupby("subclass")[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier"]]
         .sum()
         .astype(int)
     )
