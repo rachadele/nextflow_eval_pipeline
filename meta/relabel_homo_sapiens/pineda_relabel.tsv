@@ -39,7 +39,7 @@ Astrocyte.IL_VP	Astrocyte	Glia	Non-neuron
 Endo.Venous	Endothelial	Vascular	Non-neuron
 Endo.Arterial	Endothelial	Vascular	Non-neuron
 Fibroblast	Stromal	Stromal	Non-neuron
-Microglia	Microglia	Glia	Non-neuron
+Microglia	Microglia	CNS macrophage	Non-neuron
 Mural.Pericyte	Pericyte	Mural	Non-neuron
 Mural.SMC	Mural	Mural	Non-neuron
 Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron

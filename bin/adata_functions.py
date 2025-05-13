@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings("ignore")
 import pandas as pd
 import numpy as np
 import scanpy as sc
@@ -16,9 +18,6 @@ from collections import defaultdict
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
-#current_directory = Path.cwd()
-projPath = "/space/grp/rschwartz/rschwartz/cpsc545_proj/"
-
 import subprocess
 
 
@@ -108,7 +107,7 @@ def relabel(adata, relabel_path, join_key="", sep="\t"):
         raise ValueError(f"{join_key} not found in AnnData object observations.")
     if join_key not in relabel_df.columns:
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
-    # Perform the left join to update the metadata
+    # Left join = only cell types in relabel file are kept 
     adata.obs = adata.obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
     columns_to_drop = [col for col in adata.obs.columns if col.endswith('_y')]
     adata.obs.drop(columns=columns_to_drop, inplace=True)
@@ -117,7 +116,7 @@ def relabel(adata, relabel_path, join_key="", sep="\t"):
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
     obs_filter=None, cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
-    ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42):
+    ref_keys=["rachel_subclass","rachel_class","rachel_family"], original_celltypes=None, seed=42):
     
     brain_cell_subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
     # Assuming get_seurat is defined to return an AnnData object
@@ -129,21 +128,28 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
         obs_coords=brain_cell_subsampled_ids,
         var_value_filter = "nnz > 10",
         obs_embeddings=["scvi"])
-    
+   
+    # Filter the AnnData object to include only the specified cell types 
     sc.pp.filter_genes(adata, min_cells=3)
     sc.pp.filter_genes(adata, min_counts=200)
-    
+
     print("Subsampling successful.")
     newmeta = adata.obs.merge(dataset_info, on="dataset_id", suffixes=(None,"y"))
     adata.obs = newmeta
+    
+    # before relabeling, need to map back to author types using new_observation_joinid
+    # huge pain in the ass
+    # only do this if original celltypes passed
+    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty: 
+        adata.obs = map_author_labels(adata.obs, original_celltypes)
     # Assuming relabel_wrapper is defined
-    adata = relabel(adata, relabel_path=relabel_path, join_key="cell_type", sep='\t')
+    adata = relabel(adata, relabel_path=relabel_path, sep='\t')
     # Convert all columns in adata.obs to factors (categorical type in pandas)
     return adata
 
 def split_and_extract_data(data, split_column, subsample=500, organism=None, census=None, 
                            cell_columns=None, dataset_info=None, dims=20, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv",
-                           ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42):
+                           ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42, original_celltypes=None):
     # Get unique split values from the specified column
     unique_values = data[split_column].unique()
     refs = {}
@@ -152,9 +158,12 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
         # Filter the brain observations based on the split value
         filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
         obs_filter = f"{split_column} == '{split_value}'"
-        
+                
         adata = extract_data(data, filtered_ids, subsample, organism, census, obs_filter, 
-                             cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
+                             cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, 
+                             ref_keys=ref_keys, 
+                             original_celltypes = original_celltypes, 
+                             seed=seed)
         dataset_titles = adata.obs['dataset_title'].unique()
 
         if split_column == "tissue": 
@@ -168,6 +177,53 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
 
     return refs
 
+
+def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv", 
+                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations"):
+    original_celltype_columns = pd.read_csv(columns_file, sep="\t", low_memory=False)
+
+    original_celltypes = {}
+    for file in os.listdir(author_annotations_path):
+        if "obs.tsv" in file:
+            dataset_title = file.split(".")[0]
+            og_obs = pd.read_csv(os.path.join(author_annotations_path, file), sep="\t", low_memory=False)
+            # check if all observation_joinid are unique
+            assert og_obs["observation_joinid"].nunique() == og_obs.shape[0]
+            og_column = original_celltype_columns[original_celltype_columns["dataset_title"] == dataset_title]["author_cell_type"].values[0]
+            og_obs["author_cell_type"] = og_obs[og_column]
+            original_celltypes[dataset_title] = og_obs
+            original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
+            
+    for dataset_title, obs in original_celltypes.items():
+        #original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
+        original_celltypes[dataset_title]["new_observation_joinid"] = original_celltypes[dataset_title]["observation_joinid"].apply(lambda x: f"{dataset_title}_{x}")
+    
+        # concat all original_celltypes
+    aggregate_obs = pd.concat([original_celltypes[ref_name] for ref_name in original_celltypes.keys()])
+    # prevent duplicate observation_joinid in aggregate_obs
+    assert aggregate_obs["new_observation_joinid"].nunique() == aggregate_obs.shape[0]
+    
+    return aggregate_obs
+
+def map_author_labels(obs, original_celltypes):
+    obs["new_dataset_title"] = obs["dataset_title"].apply(lambda x: x.replace(" ", "_")
+                                                                .replace("\\/", "_")
+                                                                .replace("(", "")
+                                                                .replace(")", "")
+                                                                .replace("\\", "")
+                                                                .replace("'", "")
+                                                                .replace(":", "")
+                                                                .replace(";", "")
+                                                                .replace("&", ""))
+
+    obs["new_observation_joinid"] = obs["new_dataset_title"].astype(str) + "_" + obs["observation_joinid"].astype(str)
+    
+    mapping = dict(zip(original_celltypes["new_observation_joinid"], original_celltypes["author_cell_type"]))
+    obs["author_cell_type"] = obs["new_observation_joinid"].map(mapping)
+
+    return obs
+
+
 def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="normal"):
     value_filter = (
         f"tissue_general == '{organ}' and "
@@ -178,26 +234,18 @@ def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="
 
 def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
-               relabel_path=f"{projPath}meta/census_map_human.tsv", seed=42, ref_keys=["rachel_subclass","rachel_class","rachel_family"]):
+               relabel_path="../meta/census_map_human.tsv", 
+               seed=42, 
+               ref_keys=["rachel_subclass","rachel_class","rachel_family"],
+               original_celltypes=None):
 
     census = cellxgene_census.open_soma(census_version=census_version)
     dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
-    brain_obs = get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
+    cellxgene_obs = get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
     
-    brain_obs = brain_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
-    brain_obs.drop(columns=['soma_joinid_y'], inplace=True)
-    brain_obs_filtered = brain_obs[brain_obs['collection_name'].isin(ref_collections)] 
-    # Filter based on organism
-    #if organism == "homo_sapiens":
-        #brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown", "glutamatergic neuron"])] # remove non specific cells
-    #elif organism == "mus_musculus":
-        #brain_obs_filtered = brain_obs_filtered[~brain_obs_filtered['cell_type'].isin(["unknown",
-                                                                                        #"hippocampal neuron", 
-                                                                                        #"cortical interneuron", 
-                                                                                        #"glutamatergic neuron",
-                                                                                        #"GABAergic neuron"])]
-    #else:
-       #raise ValueError("Unsupported organism")
+    cellxgene_obs = cellxgene_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
+    cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
+    cellxgene_obs_filtered = cellxgene_obs[cellxgene_obs['collection_name'].isin(ref_collections)] 
 
     # Adjust organism naming for compatibility
     organism_name_mapping = {
@@ -212,23 +260,34 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
         "disease", "dataset_id", "development_stage",
         "soma_joinid","observation_joinid"
     ]
+    
+    # add author_cell_type to obs
+    # this will enable proper relabeling and subsampling
+    # need to add it back in after getting ids
+    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
+        cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
+    
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
-        brain_obs_filtered, split_column=split_column,
+        cellxgene_obs_filtered, split_column=split_column,
         subsample=subsample, organism=organism,
         census=census, cell_columns=cell_columns,
         dataset_info=dataset_info, dims=dims,
         relabel_path=relabel_path,
-        ref_keys=ref_keys, seed=seed
+        ref_keys=ref_keys, seed=seed, 
+        original_celltypes=original_celltypes
     )
     # Get embeddings for all data together
-    filtered_ids = brain_obs_filtered['soma_joinid'].values
+    filtered_ids = cellxgene_obs_filtered['soma_joinid'].values
     adata = extract_data(
-        brain_obs_filtered, filtered_ids,
+        cellxgene_obs_filtered, filtered_ids,
         subsample=subsample, organism=organism,
         census=census, obs_filter=None,
-        cell_columns=cell_columns, dataset_info=dataset_info, dims=dims,
-        relabel_path=relabel_path, ref_keys=ref_keys, seed = seed
+        cell_columns=cell_columns, 
+        dataset_info=dataset_info, dims=dims,
+        relabel_path=relabel_path, 
+        ref_keys=ref_keys, seed = seed, 
+        original_celltypes=original_celltypes
     )
     refs["whole cortex"] = adata
     for name, ref in refs.items():
@@ -242,7 +301,8 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
 
 
 
-def process_query(query, model_file_path, batch_key="sample"):
+def process_query(query, model_file_path, batch_key="sample", seed=42):
+    scvi.settings.seed = seed # For `scvi`
     # Ensure the input AnnData object is valid
     if not isinstance(query, ad.AnnData):
         raise ValueError("Input must be an AnnData object.")
@@ -274,32 +334,32 @@ def process_query(query, model_file_path, batch_key="sample"):
 def map_valid_labels(query, ref_keys, mapping_df):
     # deal with differing levels of granularity
     for key in ref_keys:
+        print(key)
         original=query[key].unique()
+        print(original)
         for og in original:
-            if og not in mapping_df[key].unique(): # this will cause a problem in mouse
-                # need to create dummy labels for mouse
-                level = mapping_df.columns[mapping_df.apply(lambda col: og in col.values, axis=0)]
-                # get the highest level in the hierarchy 
-                if level.empty: # handle cases where original label is not in mapping file- should only be "unknown"
-                    # this doesn't handle individual references-
-                    # if a reference is missing a label that is present in other references, it will have 0 predictions
-                    # this will therefore penalize references with missing labels
-                    continue
-                og_index = query.index[query[key] == og]
-                # Replace the value in "predicted_" column with corresponding predicted value at `level`
-                for idx in og_index:
-                    # Find the replacement value from `mapping_df` for this level
-                    replacement = query.loc[idx, "predicted_" + level]
-                    # replace predicted id with appropriate level
-                    query["predicted_" + key] = query["predicted_" + key].astype("object")
-                    query.loc[idx, "predicted_" + key] = replacement.iloc[0]
-                    query["predicted_" + key] = query["predicted_" + key].astype("category")
+            # get the highest level in the hierarchy 
+            matching_cols = mapping_df.columns[mapping_df.apply(lambda col: og in col.values, axis=0)]
+            print(f"Matching columns for {og}: {matching_cols}")
+            if len(matching_cols) == 0:
+                continue  # likely "unknown", skip
+            else:
+                level = matching_cols[-1]
+                # Check if level is above key in the hierarchy
+                if mapping_df.columns.get_loc(level) > mapping_df.columns.get_loc(key):
+                    print(f"Level {level} is above level {key} in the hierarchy.")        
+                    og_index = query.index[query[key] == og]
+                    # Replace the value in "predicted_" column with corresponding predicted value at `level`
+                    for idx in og_index:
+                        # Find the replacement value from `mapping_df` for this level
+                        replacement = query.loc[idx, "predicted_" + level]
+                        print(f"Replacing {key} with {replacement} to match {level}")
+                        # replace predicted id with appropriate level
+                        query["predicted_" + key] = query["predicted_" + key].astype("object")
+                        query.loc[idx, "predicted_" + key] = replacement#.iloc[0]
+                        query["predicted_" + key] = query["predicted_" + key].astype("category")
 
     return query            
-
-
-
-
 
 
 def rfc_pred(ref, query, ref_keys, seed):
@@ -548,6 +608,8 @@ def eval(query, ref_keys, mapping_df):
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
+        support_proportions = support / np.sum(support)
+
         # Compute weighted average metrics
         avg_precision, avg_recall, avg_f1, _ = precision_recall_fscore_support(
             true_labels, predicted_labels, average="weighted", zero_division=np.nan
@@ -566,6 +628,8 @@ def eval(query, ref_keys, mapping_df):
                 recall[i] = "nan"
                 f1[i] = "nan"
                 label_accuracy = "nan"
+                support_proportions[i] = "nan"
+
             else:
                 label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
 
@@ -574,7 +638,7 @@ def eval(query, ref_keys, mapping_df):
                 "precision": precision[i],
                 "recall": recall[i],
                 "f1_score": f1[i],
-                "support": support[i]
+                "support": support_proportions[i]
             } 
 
         # Store per-label metrics
@@ -621,9 +685,6 @@ def plot_confusion_matrix(query_name, ref_name, key, confusion_data, output_dir)
     # Rotate both x and y tick labels by 90 degrees
     plt.xticks(rotation=45, fontsize=15)  # Rotate x-axis labels by 90 degrees
     plt.yticks(rotation=45, fontsize=15)  # Rotate y-axis labels by 90 degrees
-
-    # Save the plot
-   # output_dir = os.path.join(projPath, 'results', 'confusion')
     
     #os.makedirs(os.path.join(output_dir, new_query_name, new_ref_name), exist_ok=True)  # Create the directory if it doesn't exist
     plt.savefig(os.path.join(output_dir,f"{key}_confusion.png"))

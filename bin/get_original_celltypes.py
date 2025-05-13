@@ -31,14 +31,16 @@ from adata_functions import *
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description="Download model file based on organism, census version, and tree file."
+        description="."
     )
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
     parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--ref_collections', type=str, nargs='+', default=[
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics"
+        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
+        "Tabula Muris Senis",
+        "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging"
     ])
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--outdir', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations")
@@ -120,17 +122,17 @@ def main():
     #check if file exists
     # if f"original_{new_title}.h5ad") exists, skip
     # else download
-        if not os.path.exists(os.path.join(outdir,f"original_{new_title}.h5ad")): 
+        if not os.path.exists(os.path.join(outdir,f"{new_title}.h5ad")): 
             cellxgene_census.download_source_h5ad(
                 dataset_id=dataset_id, 
-                to_path=os.path.join(outdir,f"original_{new_title}.h5ad"), 
+                to_path=os.path.join(outdir,f"{new_title}.h5ad"), 
                 census_version=census_version
             )
 
     #for dataset_title in all_collection_obs["dataset_title"].unique():
-        og = sc.read_h5ad(os.path.join(outdir,f"original_{new_title}.h5ad"))
+        og = sc.read_h5ad(os.path.join(outdir,f"{new_title}.h5ad"))
         #write to file
-        og.obs.to_csv(os.path.join(outdir,f"original_{new_title}.obs.tsv"), sep="\t")
+        og.obs.to_csv(os.path.join(outdir,f"{new_title}.obs.tsv"), sep="\t")
 
 
 if __name__ == "__main__":

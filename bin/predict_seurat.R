@@ -91,18 +91,20 @@ prediction_scores <- transfer_multiple_labels(normalization_method=normalization
 query_name = basename(query_path) %>% gsub("_processed.rds", "", .)
 ref_name = basename(ref_path) %>% gsub(".rds", "", .)
 
-prediction_scores <- prediction_scores %>% as.data.frame() %>%
-    select(-c("predicted.id","prediction.score.max")) %>%
-    rename_all(~gsub("prediction.score.", "", .)) %>% 
-    rename_all(~gsub("\\.", " ", .)) %>%  # Replace dots with spaces
-    rename_all(~gsub("L([0-9]+) ([0-9]+) (.*)", "L\\1/\\2 \\3", .)) %>%
-    rename_all(~gsub("L2/3 6 IT","L2/3-6 IT", .)) # General pattern for L{number} {number} {rest of the string}
+prediction_scores <- prediction_scores %>%
+  as.data.frame() %>%
+  select(-any_of(c("predicted.id", "prediction.score.max"))) %>%
+  rename_with(~ gsub("prediction.score.", "", .)) %>%
+  rename_with(~ gsub("\\.", " ", .)) %>%
+  rename_with(~ gsub("L([0-9]+) ([0-9]+) (.*)", "L\\1/\\2 \\3", .)) %>%
+  rename_with(~ gsub("L2/3 6 IT", "L2/3-6 IT", .)) %>%
+  rename_with(~ gsub("CA1 ProS", "CA1-ProS", .)) %>%
+  rename_with(~ gsub("L4 RSP ACA", "L4 RSP-ACA", .)) %>%
+  rename_with(~ gsub("CA2 IG FC", "CA2-IG-FC", .)) %>%
+  rename_with(~ gsub("SUB ProS", "SUB-ProS", .)) %>%
+  rename_with(~ gsub("L4 IT ET", "L4 IT/ET", .)) %>%
+  rename_with(~ gsub("Cajal Retzius", "Cajal-Retzius", .))
 
-if ("Cajal Retzius cell" %in% colnames(prediction_scores)){
-   prediction_scores <- prediction_scores %>% 
-    rename_all(~gsub("Cajal Retzius", "Cajal-Retzius", .))
-}
-# need to fix this for mouse
 
 write.table(prediction_scores, file=paste0(query_name,"_",ref_name,"_prediction_scores_seurat.tsv"), sep="\t", row.names=FALSE)
 write.table(query@meta.data, file=paste0(query_name,".obs.relabel.tsv"), row.names=FALSE, sep= "\t")
