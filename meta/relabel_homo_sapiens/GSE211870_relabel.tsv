@@ -3,5 +3,5 @@ Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron
 Excitatory neurons	Glutamatergic	Glutamatergic	Glutamatergic
 Astrocytes	Astrocyte	Glia	Non-neuron
 Inhibitory neurons	GABAergic	GABAergic	GABAergic
-Microglia	Microglia	Glia	Non-neuron
+Microglia	Microglia	CNS macrophage	Non-neuron
 OPC	OPC	Glia	Non-neuron

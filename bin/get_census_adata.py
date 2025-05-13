@@ -1,5 +1,7 @@
 #!/user/bin/python3
 
+import warnings
+warnings.filterwarnings("ignore")
 from pathlib import Path
 import random
 import os
@@ -31,13 +33,14 @@ import os
 import json
 import yaml
 
+
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
     parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--subsample_ref', type=int, default=500)
-    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv")
+    parser.add_argument('--subsample_ref', type=int, default=50)
+    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
@@ -79,7 +82,7 @@ def create_ref_region_yaml(refs, outdir):
     
     with open(os.path.join(outdir, "ref_region.yaml"), 'w') as file:
         yaml.dump(ref_region_yaml, file)
-         
+
          
 def main():
     # Parse command line arguments
@@ -95,6 +98,12 @@ def main():
     ref_keys = args.ref_keys
     SEED = args.seed
 
+    if organism == "mus_musculus":
+        original_celltypes = get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv",
+                                                    author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations") 
+    else:
+        original_celltypes = None
+
     refs = adata_functions.get_census(
         organism=organism,
         subsample=subsample_ref,
@@ -104,13 +113,13 @@ def main():
         ref_collections=ref_collections,
         seed=SEED,
         ref_keys=ref_keys,
+        original_celltypes = original_celltypes
     )
     
     refs.pop('All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2', None)
     refs.pop('Microglia - 24 months old wild-type and Rag1-KO', None)
     refs.pop('Single-cell of aged oligodendrocytes', None)
 
-           
     print("finished fetching anndata")
     outdir = "refs"
     os.makedirs(outdir, exist_ok=True)
@@ -119,7 +128,7 @@ def main():
         if ref.shape[0] < 50:
             continue
 
-        new_ref_name = (
+        new_dataset_title = (
             ref_name.replace(" ", "_")
             .replace("\\/", "_")
             .replace("(", "")
@@ -130,15 +139,46 @@ def main():
             .replace(";", "")
             .replace("&", "")
         )
+        #if organism == "mus_musculus": 
+            #ref.obs["new_dataset_title"] = ref.obs["dataset_title"].apply(lambda x:x.replace(" ", "_")
+                                                                            #.replace("\\/", "_")
+                                                                            #.replace("(", "")
+                                                                            #.replace(")", "")
+                                                                            #.replace("\\", "")
+                                                                            #.replace("'", "")
+                                                                            #.replace(":", "")
+                                                                            #.replace(";", "")
+                                                                            #.replace("&", "")
+                                                                        #)
+            #if new_dataset_title in original_celltypes.keys():
+                #og_obs = original_celltypes[new_dataset_title]
+                #ref.obs["new_observation_joinid"] = ref.obs["new_dataset_title"].astype(str) + "_" + ref.obs["observation_joinid"].astype(str)
+                ## merge left, only keep leftmost observation_joinid
+                ## instead of merging, create a dict and map using new_observation_joinid
+                #mapping = dict(zip(og_obs["new_observation_joinid"], og_obs["author_cell_type"]))
+                #ref.obs["author_cell_type"] = ref.obs["new_observation_joinid"].map(mapping)
+                #ref.obs[["subclass","cell_type","author_cell_type","dataset_title"]].value_counts().reset_index().to_csv(f"refs/{ref_name}_new_celltypes.tsv", sep="\t", index=False)
 
-        ref.write(os.path.join(outdir, f"{new_ref_name}.h5ad"))
-        ref.obs.to_csv(os.path.join(outdir, f"{new_ref_name}.obs.tsv"), sep="\t")
+                #refs[ref_name] = ref
+            
+        ref.write(os.path.join(outdir, f"{new_dataset_title}.h5ad"))
+        ref.obs.to_csv(os.path.join(outdir, f"{new_dataset_title}.obs.tsv"), sep="\t")
 
+  #  if organism == "mus_musculus":
 
+   #    replace_ambiguous_cells(refs, ambiguous_celltypes)
+        
     for ref_name, ref in refs.items():
         sc.pp.neighbors(ref, use_rep="scvi")
         sc.tl.umap(ref)
-        sc.pl.umap(ref, color=["dataset_title","collection_name","subclass","class"], ncols=1, save=f"{ref_name}_umap.png")
+        colors = ["dataset_title","collection_name","subclass","class"]
+        if "author_cell_type" in ref.obs.columns:
+            colors = colors + ["author_cell_type"]
+        if "new_cell_type" in ref.obs.columns:
+            colors = colors + ["new_cell_type"]
+        sc.pl.umap(ref, color=colors, ncols=1, save=f"{ref_name}_umap.png")
+        
+
 
     create_ref_region_yaml(refs, outdir)
 

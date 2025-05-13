@@ -3,5 +3,5 @@ Astro	Astrocyte	Glia	Non-neuron
 Endo	Endothelial	Vascular	Non-neuron
 Excit	Glutamatergic	Glutamatergic	Glutamatergic
 Inhit	GABAergic	GABAergic	GABAergic
-Mic	Microglia	Glia	Non-neuron
+Mic	Microglia	CNS macrophage	Non-neuron
 Oligo	Oligodendrocyte	Glia	Non-neuron
