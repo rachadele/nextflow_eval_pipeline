@@ -267,7 +267,7 @@ process plotF1ResultsAdata{
     output:
    // path "f1_plots/*png" 
     path "dists/*distribution.png" 
-    tuple val("scvi"), path("agg_f1_scores.tsv"), emit: agg_f1_scores
+    //tuple val("scvi"), path("agg_f1_scores.tsv"), emit: agg_f1_scores
 
     script:
     
@@ -293,7 +293,7 @@ process plotF1ResultsSeurat{
     output:
     // path "f1_plots/*png" 
     path "dists/*distribution.png" 
-    tuple val("seurat"), path("agg_f1_scores.tsv"), emit: agg_f1_scores
+    //tuple val("seurat"), path("agg_f1_scores.tsv"), emit: agg_f1_scores
     
     script:
     
