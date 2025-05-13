@@ -213,7 +213,7 @@ def main():
     plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="study", facet="key", 
                       acronym_mapping = None)
 
-    f1_df.to_csv("agg_f1_scores.tsv", index=False, sep="\t")
+    #f1_df.to_csv("agg_f1_scores.tsv", index=False, sep="\t")
 
 if __name__ == "__main__":
     main()
