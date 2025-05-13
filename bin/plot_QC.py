@@ -32,13 +32,14 @@ from statsmodels.formula.api import ols
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/a2/d8c823dc1f2e928a9618a39c1908b8/GSE152715.2_1052352_processed.h5ad")
-    parser.add_argument('--predicted_meta', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/a2/d8c823dc1f2e928a9618a39c1908b8/GSE152715.2_1052352_An_integrated_transcriptomic_and_epigenomic_atlas_of_mouse_primary_motor_cortex_cell_types.predictions.0.0.tsv")
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/fc/928406f842fb7357c49eefb0328834/rosmap_R9426782_processed.h5ad")
+    parser.add_argument('--predicted_meta', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/fc/928406f842fb7357c49eefb0328834/rosmap_R9426782_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv")
     parser.add_argument('--markers_file', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv")
     parser.add_argument('--gene_mapping', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv")
     parser.add_argument('--nmads',type=int, default=5)
-    parser.add_argument('--ref_keys', nargs="+", type=str, default = ["subclass","class","family","global"])
-    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
+    parser.add_argument('--ref_keys', nargs="+", type=str, default = ["subclass","class","family"])
+    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
+    #parser.add_argument('--sample_key', type=str, default="sample_id")
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
@@ -56,10 +57,15 @@ def read_query(query_path, gene_mapping, predicted_meta):
         query.var = query.var.merge(gene_mapping["OFFICIAL_SYMBOL"], left_index=True, right_index=True, how="left")
         query.var.rename(columns={"OFFICIAL_SYMBOL": "feature_name"}, inplace=True)
 
-    query.obs["full_barcode"] = query.obs["sample_id"].astype(str) + "_" + query.obs["cell_id"].astype(str)
-    predicted_meta["full_barcode"] = predicted_meta["sample_id"].astype(str) + "_" + predicted_meta["cell_id"].astype(str)
+    if "sample_id" in query.obs.columns and "cell_id" in query.obs.columns:
+        query.obs["full_barcode"] = query.obs["sample_id"].astype(str) + "_" + query.obs["cell_id"].astype(str)
+        predicted_meta["full_barcode"] = predicted_meta["sample_id"].astype(str) + "_" + predicted_meta["cell_id"].astype(str)
+        query.obs = query.obs.merge(predicted_meta, left_on="full_barcode", right_on="full_barcode", how="left", suffixes=("", "_y"))
     
-    query.obs = query.obs.merge(predicted_meta, left_on="full_barcode", right_on="full_barcode", how="left", suffixes=("", "_y"))
+    else:
+        # they should be in the same order
+        query.obs = query.obs.merge(predicted_meta, left_index=True, right_index=True, how="left", suffixes=("", "_y"))
+        
     columns_to_drop = [col for col in query.obs.columns if col.endswith("_y")]
     query.obs.drop(columns=columns_to_drop, inplace=True)
     return query
@@ -74,12 +80,12 @@ def is_outlier(query, metric: str, nmads=3):
 
 
 def qc_preprocess(query):
-    # check if any sample_id has fewer than 30 associated cwells
-    sample_counts = query.obs["sample_id"].value_counts()
-    if (sample_counts < 30).any():
-        batch_key=None
-    else:
-        batch_key="sample_id"
+    # check if any sample_id has fewer than 30 associated cells
+    #sample_counts = query.obs["sample_id"].value_counts()
+    #if (sample_counts < 30).any():
+        #batch_key=None
+    #else:
+        #batch_key="sample_id"
    # sc.pp.scrublet(query, batch_key=batch_key)
     # log normalize, comput neighbors and umap
     sc.pp.normalize_total(query, target_sum=1e4)
@@ -325,6 +331,7 @@ def main():
     organism = args.organism
     mapping_file = args.mapping_file
     ref_keys = args.ref_keys
+    #sample_key = args.sample_key
     # Load the mapping file
     mapping_df = pd.read_csv(mapping_file, sep="\t", header=0)
     
