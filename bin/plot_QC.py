@@ -196,7 +196,7 @@ def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
     }
     return gene_ct_dict
 
-def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_name=""):
+def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=""):
     # Drop vars with NaN feature names
     # Map cell type hierarchy
    # query = map_celltype_hierarchy(query, markers_file=markers_file)
@@ -229,12 +229,11 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_n
     scaled_expr.rename(columns=gene_ct_dict, inplace=True)
 
     # Save matrix
-    os.makedirs(study_name, exist_ok=True)
-    scaled_expr.to_csv(f"{study_name}/heatmap_mqc.tsv", sep="\t")
+    scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
 
  
 
-def plot_joint_umap(query, study_name):
+def plot_joint_umap(query, outdir):
     x_metric = "log1p_n_genes_by_counts"
     metrics = {
         "log1p_total_counts": "counts_outlier",
@@ -299,11 +298,11 @@ def plot_joint_umap(query, study_name):
         y_offset = row * img_height
         combined_img.paste(img, (x_offset, y_offset))
 
-    os.makedirs(study_name, exist_ok=True)
-    out_path = f"{study_name}/outliers_mqc.png"
+    os.makedirs(outdir, exist_ok=True)
+    out_path = f"{outdir}/outliers_mqc.png"
     combined_img.save(out_path)
 
-def plot_ct_umap(query, study_name):
+def plot_ct_umap(query, outdir):
     colors = ["predicted_subclass", "subclass", "correct"]
     
     sc.pl.umap(
@@ -315,8 +314,8 @@ def plot_ct_umap(query, study_name):
         ncols=1
        # legend_loc="upper right",
     )
-    os.makedirs(study_name, exist_ok=True)
-    out_path = f"{study_name}/celltype_umap_mqc.png"
+    os.makedirs(outdir, exist_ok=True)
+    out_path = f"{outdir}/celltype_umap_mqc.png"
     plt.savefig(out_path, bbox_inches='tight')
     plt.close()
 
@@ -344,22 +343,29 @@ def main():
 
     # Load query and reference datasets
     study_name = os.path.basename(query_path).replace("_processed.h5ad", "")
-    assigned_celltypes = pd.read_csv(predicted_meta, sep=None, header=0)
     os.makedirs(study_name, exist_ok=True)
+    assigned_celltypes = pd.read_csv(predicted_meta, sep=None, header=0)
      
     query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
-    #query.obs.index = query.obs["index"]
+    
+    gemma_sample_names = query.obs["sample_id"].unique()
+    if len(gemma_sample_name) > 1:
+        gemma_sample_name = "_".join(gemma_sample_names)
+    else:
+        gemma_sample_name = gemma_sample_names[0]
+    outdir = os.path.join(study_name, gemma_sample_name)
+    os.makedirs(outdir, exist_ok=True)
+     
+    query.obs.index = query.obs["index"]
     query.raw = query.copy()
     query = qc_preprocess(query)
     query = is_correct(query, ref_keys, mapping_df)
     #plot_markers(query, markers_file, organism=organism)
-    make_celltype_matrices(query, markers_file, organism=organism, study_name=study_name)
-    
-
+    make_celltype_matrices(query, markers_file, organism=organism, outdir=outdir)
     query = get_qc_metrics(query, nmads=args.nmads) 
     
-    plot_joint_umap(query, study_name=study_name)
-    plot_ct_umap(query, study_name=study_name)
+    plot_joint_umap(query, outdir=outdir)
+    plot_ct_umap(query, outdir=outdir)
     # Count occurrences
     celltype_counts_correct = (
         query.obs
@@ -368,7 +374,7 @@ def main():
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column
     )
-    celltype_counts_correct.to_csv(os.path.join(study_name,"celltype_counts_correct_mqc.tsv"), sep="\t", index=False)
+    celltype_counts_correct.to_csv(os.path.join(outdir,"celltype_counts_correct_mqc.tsv"), sep="\t", index=False)
 
     ## make a table of counts by outliers
     # count all combinations + non-outliers
@@ -378,7 +384,7 @@ def main():
         .sum()
         .astype(int)
     )
-    celltype_outlier_counts.to_csv(os.path.join(study_name, "celltype_outlier_counts_mqc.tsv"), sep="\t", index=True)
+    celltype_outlier_counts.to_csv(os.path.join(outdir, "celltype_outlier_counts_mqc.tsv"), sep="\t", index=True)
  
     # correct by outlier composition
     correct_outlier_counts = (
@@ -387,7 +393,7 @@ def main():
         .sum()
         .astype(int)
     )
-    correct_outlier_counts.to_csv(os.path.join(study_name,"correct_outlier_counts_mqc.tsv"), sep="\t", index=True)
+    correct_outlier_counts.to_csv(os.path.join(outdir,"correct_outlier_counts_mqc.tsv"), sep="\t", index=True)
     
     predicted_vs_actual_counts = (
         query.obs
@@ -396,7 +402,7 @@ def main():
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column
     ) 
-    predicted_vs_actual_counts.to_csv(os.path.join(study_name,"actual_vs_predicted_counts_mqc.tsv"), sep="\t", index=False)
+    predicted_vs_actual_counts.to_csv(os.path.join(outdir,"actual_vs_predicted_counts_mqc.tsv"), sep="\t", index=False)
     
 if __name__ == "__main__":
     main()
