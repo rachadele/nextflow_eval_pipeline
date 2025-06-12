@@ -343,19 +343,14 @@ def main():
 
     # Load query and reference datasets
     study_name = os.path.basename(query_path).replace("_processed.h5ad", "")
+    
     os.makedirs(study_name, exist_ok=True)
+    outdir = study_name
+    
     assigned_celltypes = pd.read_csv(predicted_meta, sep=None, header=0)
      
     query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
-    
-    gemma_sample_names = query.obs["sample_id"].unique()
-    if len(gemma_sample_name) > 1:
-        gemma_sample_name = "_".join(gemma_sample_names)
-    else:
-        gemma_sample_name = gemma_sample_names[0]
-    outdir = os.path.join(study_name, gemma_sample_name)
-    os.makedirs(outdir, exist_ok=True)
-     
+
     query.obs.index = query.obs["index"]
     query.raw = query.copy()
     query = qc_preprocess(query)
