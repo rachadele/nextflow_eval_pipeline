@@ -334,6 +334,44 @@ process plotQC {
 
 }
 
+process plotQC_combined {
+
+    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+
+
+    publishDir (
+        path: "${params.outdir}/${method}/${study_name}/${ref_name}/qc_plots",
+        mode: "copy"
+    )
+
+    input:
+    tuple val(study_name), val(method), val(ref_name), val(samples)
+
+
+    output:
+    tuple val(study_name), val(method), val(ref_name), path("${study_name}/"), emit: qc_result
+    path "**_mqc.png"                     // PNGs anywhere
+    path "**.tsv"                            // TSVs anywhere
+
+
+    script:
+    //unpack tuples
+    def predicted_meta_list = samples.collect { it[1] }.join(" ")
+    def query_path_list = samples.collect { it[2] }.join(" ")
+
+    """
+    python $projectDir/bin/plot_QC_combined.py \\
+        --query_paths ${query_path_list} \\
+        --predicted_meta_files ${predicted_meta_list} \\
+        --organism ${params.organism} \\
+        --markers_file "/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv" \\
+        --nmads 5 \\
+        --gene_mapping ${params.gene_mapping} \\
+        --ref_keys ${params.ref_keys.join(' ')} \\
+        --mapping_file ${params.relabel_r} \\
+        --study_name ${study_name}
+    """
+}
 
 process runMultiQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
@@ -342,7 +380,7 @@ process runMultiQC {
     )
 
     input:
-        tuple val(method), val(study_name), val(ref_name), path(qc_dir)
+        tuple val(study_name), val(method), val(ref_name), path(qc_dir)
 
     output:
         tuple val(study_name), path("multiqc_report.html"), emit: multiqc_html
@@ -453,7 +491,8 @@ workflow {
 
     processed_queries_adata.map { query_path ->
         def query_name = query_path.getName().split('_processed.h5ad')[0]
-        [ query_name, query_path ]
+        def study_name = query_name.split('_')[0] // Extract study name from query name
+        [ query_name, study_name, query_path ]
     }.set { processed_queries_adata_map }
 
     predicted_meta_channel = classifyAll.out.predicted_meta_channel
@@ -462,19 +501,37 @@ workflow {
     //this is failing
     predicted_meta_channel.map { method, query_path, ref_path, predicted_meta ->
         def query_name = query_path.getName().split('.obs.relabel.tsv')[0]
+        def study_name = query_name.split('_')[0] // Extract study name from query name
         def ref_name = ref_path.getName().split('\\.')[0]
-        [ query_name, method, ref_name, predicted_meta ]
+        [ query_name, study_name, method, ref_name, predicted_meta ]
     }.set { predicted_meta_combined }
    
+    
+    qc_channel_combined = predicted_meta_combined.combine(processed_queries_adata_map, by: [0,1])
+    
+    qc_channel_combined
+        .map { query_name, study_name, method, ref_name, predicted_meta_path, processed_h5ad_path ->
+            // use a tuple key: (study, method, ref)
+            tuple(
+                [study_name, method, ref_name],
+                [query_name, predicted_meta_path, processed_h5ad_path]
+            )
+        }
+        .groupTuple(by: 0).map
+        { key, samples ->
+        def study_name = key[0]
+        def method = key[1]
+        def ref_name = key[2]
+        [study_name, method, ref_name, samples]
+        }
+        .set { qc_channel_grouped }
 
-    // combine with original anndata object
-    qc_channel_combined = predicted_meta_combined.combine(processed_queries_adata_map, by: 0)
 
     // combined by query_name
-    plotQC(qc_channel_combined)
+    plotQC_combined(qc_channel_grouped)
 
     // pass html dirs and method to runMultiQC
-    multiqc_channel = plotQC.out.qc_result
+    multiqc_channel = plotQC_combined.out.qc_result
     runMultiQC(multiqc_channel)
 
 
