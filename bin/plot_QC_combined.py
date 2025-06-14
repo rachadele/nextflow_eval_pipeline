@@ -28,21 +28,24 @@ from scipy.stats import median_abs_deviation
 from statsmodels.formula.api import ols
 
 # make these the new defaults
-#--query_paths /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/b9/a47c8c16c2164771bc87291030fba8/nagy_B6_processed.h5ad /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/e7/f0143039af496113d063c825a392d3/nagy_B2_processed.h5ad /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/4f/5fcf989ea94a7a79565f07b67e7d21/nagy_B3_processed.h5ad /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/48/377fb868d398a2e988ff1d1f6b97d2/nagy_B1_processed.h5ad /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/87/601fe0d9792bd2da30a30e7b10d42f/nagy_B5_processed.h5ad /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/b6/22e6747946e1391aab7f9d1f5649b5/nagy_B4_processed.h5ad \
-#    --predicted_meta_files /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/02/8351791008ffb7ca498faea7572422/predicted_meta/nagy_B6_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv 
-# /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/62/fc8ca5db1c7f6e808f910b03e841cb/predicted_meta/nagy_B2_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv 
-# /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/77/bc79e0943541dee403b3cf4f2ee6cb/predicted_meta/nagy_B3_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/95/b13b74683b06545b7325871949fe35/predicted_meta/nagy_B1_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/91/364ada2558c43f5483da07aa15d216/predicted_meta/nagy_B5_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/b3/cfdea00493aebe127fbaf755906b4f/predicted_meta/nagy_B4_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv \
-    
-
+#/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203506/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203506_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
+#/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203507/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203507_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
+#/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203508/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203508_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
+#/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203506.h5ad
+#/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203507.h5ad
+#/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203508.h5ad
+#get original files
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
-    parser.add_argument('--study_name', type=str, default="study", help='Name of the study')
+    parser.add_argument('--study_name', type=str, default="PTSDBrainomics", help='Name of the study')
     parser.add_argument('--organism', type=str, default='homo_sapiens', help='Organism name (e.g., homo_sapiens)')
-    parser.add_argument('--query_paths', type=str, nargs="+", default = ["/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/b9/a47c8c16c2164771bc87291030fba8/nagy_B6_processed.h5ad",
-                                                                         "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/e7/f0143039af496113d063c825a392d3/nagy_B2_processed.h5ad"])
-    parser.add_argument('--predicted_meta_files', type=str, nargs="+", default=["/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/02/8351791008ffb7ca498faea7572422/predicted_meta/nagy_B6_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv",
-                                                                                "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/62/fc8ca5db1c7f6e808f910b03e841cb/predicted_meta/nagy_B2_Human_Multiple_Cortical_Areas_SMART-seq.predictions.0.0.tsv"])
+    parser.add_argument('--predicted_meta_files', type=str, nargs="+", default = ["/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203506/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203506_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv",
+                                                                         "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203507/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203507_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv",
+                                                                         "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203508/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203508_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv"])
+    parser.add_argument('--query_paths', type=str, nargs="+", default=["/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203506.h5ad",
+                                                                                "/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203507.h5ad",
+                                                                                "/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203508.h5ad"])
     parser.add_argument('--markers_file', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv")
     parser.add_argument('--gene_mapping', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv")
     parser.add_argument('--nmads',type=int, default=5)
@@ -271,7 +274,7 @@ def plot_joint_umap(query, outdir):
     combined_img.save(out_path)
 
 def plot_ct_umap(query, outdir):
-    colors = ["predicted_subclass", "subclass", "correct"]
+    colors = ["predicted_subclass", "subclass", "correct","sample_id"]
     
     sc.pl.umap(
         query,
@@ -322,21 +325,25 @@ def main():
     if len(query_paths) != len(predicted_meta_files):
         raise ValueError("Number of query paths must match number of predicted meta files")
    
-    
+    predicted_meta = {}
+    for file in predicted_meta_files:
+        sample_id = os.path.basename(file).split("_")[1]
+        predicted_meta[sample_id] = pd.read_csv(file, sep=None, header=0)
+        
     all_query_samples = {}
     for query_path in query_paths:
         # Extract sample name from query path
         sample_id = os.path.basename(query_path).split("_")[1]
+       # sample_id = os.path.basename(query_path).split("_")[1].split(".")[0]
+
         # print to std err
         if not sample_id:
             raise ValueError(f"Sample ID could not be extracted from query path: {query_path}")
-        predicted_meta = [f for f in predicted_meta_files if sample_id in f]
+        assigned_celltypes = predicted_meta.get(sample_id, []) 
         if not predicted_meta:
             raise ValueError(f"No predicted meta file found for sample {sample_id}")
-        predicted_meta = predicted_meta[0]
-        assigned_celltypes = pd.read_csv(predicted_meta, sep=None, header=0)
         query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
-
+        query = is_correct(query, ref_keys, mapping_df)
         all_query_samples[str(sample_id)] = query
 
 
@@ -352,7 +359,6 @@ def main():
     # print to std err
     #query.obs.index = query.obs["cell_id"]
     query.raw = query.copy()
-    query = is_correct(query, ref_keys, mapping_df)
     
 
     query=qc_preprocess(query)
