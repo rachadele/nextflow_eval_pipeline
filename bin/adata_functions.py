@@ -353,7 +353,7 @@ def map_valid_labels(query, ref_keys, mapping_df):
                     for idx in og_index:
                         # Find the replacement value from `mapping_df` for this level
                         replacement = query.loc[idx, "predicted_" + level]
-                        print(f"Replacing {key} with {replacement} to match {level}")
+                        print(f"Replacing predictions for {og} with {replacement} to match {level}")
                         # replace predicted id with appropriate level
                         query["predicted_" + key] = query["predicted_" + key].astype("object")
                         query.loc[idx, "predicted_" + key] = replacement#.iloc[0]

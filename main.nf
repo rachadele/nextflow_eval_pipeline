@@ -213,17 +213,17 @@ process predictSeurat {
 
 process classifyAll {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-
-    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "f1_results**", mode: 'copy'
+// extract study name fromquery_name
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
 
     // Publish files matching the 'confusion**' pattern
-    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "confusion**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
 
     // Publish files matching the 'pr_curves**' pattern
-    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "pr_curves**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
 
     // Publish files matching the 'predicted_meta**' pattern
-    publishDir path: "${params.outdir}/${method}/${query_name}/${ref_name}", pattern: "predicted_meta**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "predicted_meta**", mode: 'copy'
     
     input:
     val ref_keys
@@ -239,6 +239,7 @@ process classifyAll {
     script:
     ref_name = ref_path.getName().split('\\.')[0]
     query_name = query_path.getName().split('\\.obs.relabel.tsv')[0]
+    study_name = query_name.split('_')[0] // Extract study name from query name
     """
     python $projectDir/bin/classify_all.py \\
         --query_path ${query_path} \\
@@ -364,7 +365,7 @@ process plotQC_combined {
         --query_paths ${query_path_list} \\
         --predicted_meta_files ${predicted_meta_list} \\
         --organism ${params.organism} \\
-        --markers_file "/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv" \\
+        --markers_file ${params.markers_file} \\
         --nmads 5 \\
         --gene_mapping ${params.gene_mapping} \\
         --ref_keys ${params.ref_keys.join(' ')} \\
