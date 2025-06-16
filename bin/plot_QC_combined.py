@@ -158,7 +158,7 @@ def get_gene_to_celltype_map(df, organism="mus_musculus"):
     return gene_ct_dict
 
 
-def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_name=""):
+def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=""):
     # Drop vars with NaN feature names
     query = query[:, ~query.var["feature_name"].isnull()]
     query.var_names = query.var["feature_name"]
@@ -178,7 +178,7 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_n
     expr_matrix = query.raw.X.toarray()
     expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
     
-    avg_expr = expr_matrix.groupby(query.obs["cell_type"]).mean()
+    avg_expr = expr_matrix.groupby(query.obs["predicted_subclass"]).mean()
     avg_expr = avg_expr.loc[:, valid_markers]
     
     # Scale expression across genes
@@ -194,16 +194,16 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_n
     scaled_expr = scaled_expr[sorted_columns]
     
     ## get ontology mapping from file
-    cell_types = markers_df["cell_type"]
-    overlap = set(cell_types).intersection(scaled_expr.index)
+    #cell_types = markers_df["cell_type"]
+   # overlap = set(cell_types).intersection(scaled_expr.index)
 
-    sorted_cell_types = sorted(overlap, key=lambda x: ontology_mapping.get(x, x)) 
+   # sorted_cell_types = sorted(overlap, key=lambda x: ontology_mapping.get(x, x)) 
     # sort rows
-    scaled_expr = scaled_expr.loc[sorted_cell_types, :]
+    #scaled_expr = scaled_expr.loc[sorted_cell_types, :]
 
     # Save matrix
-    os.makedirs(study_name, exist_ok=True)
-    scaled_expr.to_csv(f"{study_name}/heatmap_mqc.tsv", sep="\t")
+    os.makedirs(outdir, exist_ok=True)
+    scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
 
  
 
