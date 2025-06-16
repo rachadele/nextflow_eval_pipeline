@@ -134,14 +134,13 @@ def map_celltype_hierarchy(query, markers_file):
     query.obs = query.obs.merge(df, left_on="subclass", right_on="subclass", how="left", suffixes=("", "_y"))
     return query
 
-def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
+def get_gene_to_celltype_map(df, organism="mus_musculus"):
     # Read the marker file
-    df = pd.read_csv(markers_file, sep="\t")
     df = df[df["markers"].notnull()]
     gene_to_celltype = {}
 
     for _, row in df.iterrows():
-        subclass = row["cell_type"]
+        cell_type = row["shortname"]
         genes = [gene.strip() for gene in row["markers"].split(",")]
         for gene in genes:
             if organism == "mus_musculus":
@@ -149,30 +148,28 @@ def get_gene_to_celltype_map(markers_file, organism="mus_musculus"):
                 # Handle multiple cell types mapping to the same gene
             if gene not in gene_to_celltype:
                 gene_to_celltype[gene] = []
-            gene_to_celltype[gene].append(subclass)
+            gene_to_celltype[gene].append(cell_type)
 
     # Join multiple cell types into one label if needed
     gene_ct_dict = {
-        #gene: f"{gene}: {'_'.join(set(celltypes))}"
-        # switch
         gene: f"{'_'.join(set(celltypes))}: {gene}"
         for gene, celltypes in gene_to_celltype.items()
     }
     return gene_ct_dict
 
-def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=""):
+
+def make_celltype_matrices(query, markers_file, organism="mus_musculus", study_name=""):
     # Drop vars with NaN feature names
-    # Map cell type hierarchy
-   # query = map_celltype_hierarchy(query, markers_file=markers_file)
-    
     query = query[:, ~query.var["feature_name"].isnull()]
     query.var_names = query.var["feature_name"]
     
-    #Make raw index match processed var index
+    markers_df = pd.read_csv(markers_file, sep="\t")
+    markers_df = markers_df[markers_df["organism"] == organism]
+    ontology_mapping = markers_df.set_index("cell_type")["shortname"].to_dict()
     query.raw.var.index = query.raw.var["feature_name"]
 
     # Read marker genes
-    gene_ct_dict = get_gene_to_celltype_map(markers_file, organism=organism)
+    gene_ct_dict = get_gene_to_celltype_map(markers_df, organism=organism)
     # Collect all unique markers across all families/classes/cell types
     all_markers = list(gene_ct_dict.keys())
     valid_markers = [gene for gene in all_markers if gene in query.var_names]
@@ -181,26 +178,32 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
     expr_matrix = query.raw.X.toarray()
     expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
     
-    avg_expr = expr_matrix.groupby(query.obs["subclass"]).mean()
+    avg_expr = expr_matrix.groupby(query.obs["cell_type"]).mean()
     avg_expr = avg_expr.loc[:, valid_markers]
     
     # Scale expression across genes
     scaled_expr = (avg_expr - avg_expr.mean()) / avg_expr.std()
-    scaled_exp = scaled_expr.loc[:, valid_markers]
+    scaled_expr = scaled_expr.loc[:, valid_markers]
     scaled_expr.fillna(0, inplace=True)
 
     # Rename columns: gene -> gene (celltype)
     scaled_expr.rename(columns=gene_ct_dict, inplace=True)
-    # sort rows and columns by cell type
-    # order is defined by the order in the markers file
-    cell_types = pd.read_csv(markers_file, sep="\t")["cell_type"].unique()
-    scaled_expr = scaled_expr.reindex(cell_types, axis=0)
-    # sort columns by cell type
-    sorted_columns = sorted(scaled_expr.columns, key=lambda x: x.split("_")[0])  # Sort by the first part of the column name
+    sorted_columns = sorted(scaled_expr.columns, key=lambda x: x.split(":")[0])  
+    
+    # Sort by the first part of the column name
     scaled_expr = scaled_expr[sorted_columns]
     
+    ## get ontology mapping from file
+    cell_types = markers_df["cell_type"]
+    overlap = set(cell_types).intersection(scaled_expr.index)
+
+    sorted_cell_types = sorted(overlap, key=lambda x: ontology_mapping.get(x, x)) 
+    # sort rows
+    scaled_expr = scaled_expr.loc[sorted_cell_types, :]
+
     # Save matrix
-    scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
+    os.makedirs(study_name, exist_ok=True)
+    scaled_expr.to_csv(f"{study_name}/heatmap_mqc.tsv", sep="\t")
 
  
 
@@ -274,21 +277,28 @@ def plot_joint_umap(query, outdir):
     combined_img.save(out_path)
 
 def plot_ct_umap(query, outdir):
-    colors = ["predicted_subclass", "subclass", "correct","sample_id"]
     
-    sc.pl.umap(
-        query,
-        color=colors,
-        use_raw=False,
-        save=None,
-        show=False,
-        ncols=1
-       # legend_loc="upper right",
-    )
+    all_subclasses = sorted(set(query.obs["subclass"].unique()) | 
+                            set(query.obs["predicted_subclass"].unique()))
+
+    # Generate unique colors for each subclass
+    color_palette = sns.color_palette("husl", n_colors=len(all_subclasses))
+    subclass_colors = dict(zip(all_subclasses, color_palette))
     os.makedirs(outdir, exist_ok=True)
-    out_path = os.path.join(outdir, "ct_umap_mqc.png") 
-    plt.savefig(out_path, bbox_inches='tight')
-    plt.close()
+
+    for col in ["predicted_subclass", "subclass", "correct", "sample_id"]:
+        sc.pl.umap(
+            query,
+            color=col,
+            use_raw=False,
+            palette=subclass_colors if col in ["subclass", "predicted_subclass"] else None,
+            save=None,
+            show=False,
+        )
+
+        out_path = os.path.join(outdir, f"{col}_umap_mqc.png") 
+        plt.savefig(out_path, bbox_inches='tight')
+        plt.close()
 
 def main():
     # Parse command line arguments
