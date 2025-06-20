@@ -132,8 +132,12 @@ def main():
   query.obs.index = range(query.n_obs)
   
   sc.pp.scrublet(query, batch_key=None)
-  query = process_query(query, model_path, batch_key, seed=SEED)
   query = get_qc_metrics(query, nmads)
+  raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw") 
+  query.write_h5ad(f"{raw_query_name}.h5ad")
+
+  query = process_query(query, model_path, batch_key, seed=SEED)
+
   new_query_name = os.path.basename(query_path).replace(".h5ad","_processed")
   query.write_h5ad(f"{new_query_name}.h5ad")
   

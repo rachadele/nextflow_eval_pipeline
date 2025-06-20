@@ -60,14 +60,15 @@ process runSetup {
 
 process mapQuery {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-
+    
     input:
     val model_path
     tuple val(query_name), val(relabel_q), val(query_file), val(batch_key)
     val ref_keys
 
     output:
-    path "${query_file.getName().toString().replace('.h5ad','_processed.h5ad')}"
+    path "${query_file.getName().toString().replace('.h5ad','_processed.h5ad')}", emit: processed_query_adata
+    path "${query_file.getName().toString().replace('.h5ad','_raw.h5ad')}", emit: raw_query_adata
 
     script:
 
@@ -304,37 +305,6 @@ process plotF1ResultsSeurat{
     """ 
 }
 
-process plotQC {
-    conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-    
-    publishDir (
-    path: "${params.outdir}/${method}/${query_name}/${ref_name}/qc_plots",
-    mode: "copy"
-    )
-
-    input:
-    tuple val(query_name), val(method), val(ref_name), path(predicted_meta), path(query_path)
-
-    output:
-    path "**png"
-    path "**tsv"
-    tuple val(method), val(query_name), val(ref_name), path("${query_name}/"), emit: qc_result
-
-    script:
-    ref_keys = params.ref_keys.join(' ')
-    """
-    python $projectDir/bin/plot_QC.py --query_path ${query_path} \\
-        --organism ${params.organism} \\
-        --markers_file "/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/cell_type_markers.tsv" \\
-        --nmads 5 \\
-        --predicted_meta ${predicted_meta} \\
-        --gene_mapping ${params.gene_mapping} \\
-        --ref_keys ${ref_keys} \\
-        --mapping_file ${params.relabel_r}
-    """
-
-}
-
 process plotQC_combined {
 
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
@@ -352,7 +322,8 @@ process plotQC_combined {
     output:
     tuple val(study_name), val(method), val(ref_name), path("${study_name}/"), emit: qc_result
     path "**_mqc.png"                     // PNGs anywhere
-    path "**.tsv"                            // TSVs anywhere
+    path "**.tsv"
+    path "**.txt"                            
 
 
     script:
@@ -438,7 +409,9 @@ workflow {
             [query_name, relabel_q_path, query_path, batch_key]
         }
     // Process each query by relabeling, subsampling, and passing through scvi model
-    processed_queries_adata = mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' ')) 
+    mapQuery(model_path, combined_query_paths_adata, params.ref_keys.join(' '))
+    mapQuery.out.processed_query_adata.set { processed_queries_adata }
+    mapQuery.out.raw_query_adata.set { raw_queries_adata }
     // Process each query by relabeling and subsampling
     processed_queries_seurat = queryProcessSeurat(processed_queries_adata)
 
@@ -490,11 +463,11 @@ workflow {
     plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
     plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
 
-    processed_queries_adata.map { query_path ->
-        def query_name = query_path.getName().split('_processed.h5ad')[0]
+    raw_queries_adata.map { query_path ->
+        def query_name = query_path.getName().split('_raw.h5ad')[0]
         def study_name = query_name.split('_')[0] // Extract study name from query name
         [ query_name, study_name, query_path ]
-    }.set { processed_queries_adata_map }
+    }.set { raw_queries_adata_map }
 
     predicted_meta_channel = classifyAll.out.predicted_meta_channel
 
@@ -508,7 +481,7 @@ workflow {
     }.set { predicted_meta_combined }
    
     
-    qc_channel_combined = predicted_meta_combined.combine(processed_queries_adata_map, by: [0,1])
+    qc_channel_combined = predicted_meta_combined.combine(raw_queries_adata_map, by: [0,1])
     
     qc_channel_combined
         .map { query_name, study_name, method, ref_name, predicted_meta_path, processed_h5ad_path ->
