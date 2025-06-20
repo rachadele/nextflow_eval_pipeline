@@ -173,7 +173,11 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
     # Collect all unique markers across all families/classes/cell types
     all_markers = list(gene_ct_dict.keys())
     valid_markers = [gene for gene in all_markers if gene in query.var_names]
-
+    removed_markers = [gene for gene in all_markers if gene not in query.var_names]
+    # Write removed markers to a text file, one per line
+    with open("removed_markers.txt", "w") as f:
+        for gene in removed_markers:
+            f.write(f"{gene}\n")
     # Filter raw expression matrix to match query.var_names
     expr_matrix = query.raw.X.toarray()
     expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
@@ -431,6 +435,16 @@ def main():
         .reset_index()                      # make sample_name a column
     ) 
     predicted_vs_actual_counts.to_csv(os.path.join(study_name,"actual_vs_predicted_counts_mqc.tsv"), sep="\t", index=False)
+    
+    
+    sample_correct_counts = (
+        query.obs.groupby(["sample_id","correct"])
+        .size()
+        .unstack(fill_value=0)
+        .reset_index()
+    )
+    sample_correct_counts.to_csv(os.path.join(study_name,"sample_correct_counts_mqc.tsv"), sep="\t", index=False)
+    
     
 if __name__ == "__main__":
     main()
