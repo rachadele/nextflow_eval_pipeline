@@ -578,10 +578,8 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
 def eval(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
-    for key in ref_keys:
-        
+    for key in ref_keys: 
        #threshold = kwargs.get('threshold', True)  # Or some other default value    
-        query = map_valid_labels(query, ref_keys, mapping_df)  
         class_labels = query[key].unique()
         pred_classes = query[f"predicted_{key}"].unique()
         true_labels= query[key].astype(str)
