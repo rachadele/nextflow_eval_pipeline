@@ -57,7 +57,7 @@ def parse_arguments():
         return known_args
     
 def is_correct(adata, ref_keys, mapping_df):
-    adata.obs = map_valid_labels(adata.obs, ref_keys = ref_keys, mapping_df = mapping_df) 
+   # adata.obs = map_valid_labels(adata.obs, ref_keys = ref_keys, mapping_df = mapping_df) 
     # change to string type
     adata.obs["correct"] = adata.obs["predicted_subclass"].astype(str) == adata.obs["subclass"].astype(str)
     return adata
