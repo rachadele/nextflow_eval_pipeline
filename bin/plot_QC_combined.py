@@ -56,11 +56,11 @@ def parse_arguments():
         known_args, _ = parser.parse_known_args()
         return known_args
     
-def is_correct(adata, ref_keys, mapping_df):
-   # adata.obs = map_valid_labels(adata.obs, ref_keys = ref_keys, mapping_df = mapping_df) 
-    # change to string type
-    adata.obs["correct"] = adata.obs["predicted_subclass"].astype(str) == adata.obs["subclass"].astype(str)
-    return adata
+
+def is_correct(adata, level="subclass"):
+  # change to string type
+  adata.obs["correct_"+level] = adata.obs["predicted_"+level].astype(str) == adata.obs[level].astype(str)
+  return adata
 
 def read_query(query_path, gene_mapping, predicted_meta):
 
@@ -81,14 +81,6 @@ def read_query(query_path, gene_mapping, predicted_meta):
     columns_to_drop = [col for col in query.obs.columns if col.endswith("_y")]
     query.obs.drop(columns=columns_to_drop, inplace=True)
     return query
-
-
-def is_outlier(query, metric: str, nmads=3):
-    M = query.obs[metric]
-    outlier = (M < np.median(M) - nmads * median_abs_deviation(M)) | (
-        np.median(M) + nmads * median_abs_deviation(M) < M
-    )
-    return outlier
 
 
 def qc_preprocess(query):
@@ -250,7 +242,8 @@ def main():
         if not predicted_meta:
             raise ValueError(f"No predicted meta file found for sample {sample_id}")
         query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
-        query = is_correct(query, ref_keys, mapping_df)
+        for key in ref_keys:
+            query = is_correct(query, level=key)
         all_query_samples[str(sample_id)] = query
 
 
@@ -294,7 +287,7 @@ def main():
     # Count occurrences
     celltype_counts_correct = (
         query.obs
-        .groupby(["subclass", "correct"])
+        .groupby(["subclass", "correct_subclass"])
         .size()                             # count cells per (sample, subclass)
         .unstack(fill_value=0)              # pivot cell types into columns
         .reset_index()                      # make sample_name a column
@@ -314,7 +307,7 @@ def main():
     # correct by outlier composition
     correct_outlier_counts = (
         query.obs
-        .groupby(["correct"])[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier","predicted_doublet"]]
+        .groupby(["correct_subclass"])[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier","predicted_doublet"]]
         .sum()
         .astype(int)
     )
@@ -331,7 +324,7 @@ def main():
     
     
     sample_correct_counts = (
-        query.obs.groupby(["sample_id","correct"])
+        query.obs.groupby(["sample_id","correct_subclass"])
         .size()
         .unstack(fill_value=0)
         .reset_index()
