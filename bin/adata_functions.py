@@ -985,7 +985,23 @@ def is_outlier(query, metric: str, nmads=3):
     )
     return outlier
 
+
+def get_lm(query, nmads=5, scale="normal"):
+    # Assume dataset is an AnnData object
+    # Fit linear model: log10(n_genes_per_cell) ~ log10(counts_per_cell)
+    lm_model = ols(formula='log1p_n_genes_by_counts ~ log1p_total_counts', data=query.obs).fit()
+    # Calculate residuals
+    residuals = lm_model.resid
+    # If data is normally distributed, this is similar to std 
+    mad_residuals = median_abs_deviation(residuals, scale=scale)
+    # Intercept adjustment (add for upper bound, subtract for lower bound)
+    intercept_adjustment = np.median(residuals) + nmads * mad_residuals
+    return {
+        "model": lm_model,
+        "intercept_adjustment": intercept_adjustment
+    }
     
+     
 def get_qc_metrics(query, nmads):
     query.var["mito"] = query.var["feature_name"].str.startswith(("MT", "mt", "Mt"))
     query.var["ribo"] = query.var["feature_name"].str.startswith(("RP", "Rp", "rp"))
