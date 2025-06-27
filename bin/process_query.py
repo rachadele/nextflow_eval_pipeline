@@ -88,10 +88,30 @@ def get_qc_metrics(query, nmads):
     for metric, col_name in metrics.items():
         query.obs[col_name] = is_outlier(query, metric, nmads)
     
-    query.obs["counts_outlier"] = query.obs["outlier_total_counts"] | query.obs["outlier_n_genes_by_counts"]
+   # query.obs["counts_outlier"] = query.obs["outlier_total_counts"] | query.obs["outlier_n_genes_by_counts"]
  
-    return query
 
+
+    lm_dict = get_lm(query, nmads=nmads)
+    intercept = lm_dict["model"].params[0]
+    slope = lm_dict["model"].params[1]
+    
+
+    query.obs["counts_outlier"] = (
+        query.obs["log1p_n_genes_by_counts"] < (query.obs["log1p_total_counts"] * slope + (intercept - lm_dict["intercept_adjustment"]))
+        ) | (
+        query.obs["log1p_n_genes_by_counts"] > (query.obs["log1p_total_counts"] * slope + (intercept + lm_dict["intercept_adjustment"]))
+        ) | (
+        query.obs["umi_outlier"] ) | (query.obs["genes_outlier"])
+        
+
+    query.obs["total_outlier"] = (
+        query.obs["counts_outlier"] | query.obs["outlier_mito"] | query.obs["outlier_ribo"] | query.obs["outlier_hb"] | query.obs["predicted_doublet"]
+    )
+    
+    query.obs["non_outlier"] = ~query.obs["total_outlier"]
+
+    return query
 
 
 def main():
