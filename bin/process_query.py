@@ -49,69 +49,7 @@ def parse_arguments():
     known_args, _ = parser.parse_known_args()
     return known_args
 
-def is_outlier(adata, metric: str, nmads=6):
-    M = adata.obs[metric]
-    outlier = (M < np.median(M) - nmads * median_abs_deviation(M)) | (
-        np.median(M) + nmads * median_abs_deviation(M) < M
-    )
-    return outlier
-  
-def map_genes(query, gene_mapping):
-    # Check if the "feature_name" column exists in query.var
-    if "feature_name" not in query.var.columns:
-        # Merge gene_mapping with query.var based on the index
-        query.var = query.var.merge(gene_mapping["OFFICIAL_SYMBOL"], left_index=True, right_index=True, how="left")
-        # Rename the merged column to "feature_name"
-        query.var.rename(columns={"OFFICIAL_SYMBOL": "feature_name"}, inplace=True)
-    return query
 
-
-def get_qc_metrics(query, nmads):
-    query.var["mito"] = query.var["feature_name"].str.startswith(("MT", "mt", "Mt"))
-    query.var["ribo"] = query.var["feature_name"].str.startswith(("RP", "Rp", "rp"))
-    query.var["hb"] = query.var["feature_name"].str.startswith(("HB", "Hb","hb"))
-    # fill NaN values with False
-    query.var["mito"].fillna(False, inplace=True)
-    query.var["ribo"].fillna(False, inplace=True)
-    query.var["hb"].fillna(False, inplace=True) 
-
-    sc.pp.calculate_qc_metrics(query, qc_vars=["mito", "ribo", "hb"], log1p=True, inplace=True, percent_top=[20], use_raw=False)
-
-    metrics = {
-        "log1p_total_counts": "outlier_total_counts",
-        "log1p_n_genes_by_counts": "outlier_n_genes_by_counts",
-        "pct_counts_mito": "outlier_mito",
-        "pct_counts_ribo": "outlier_ribo",
-        "pct_counts_hb": "outlier_hb"
-        }
-    
-    for metric, col_name in metrics.items():
-        query.obs[col_name] = is_outlier(query, metric, nmads)
-    
-   # query.obs["counts_outlier"] = query.obs["outlier_total_counts"] | query.obs["outlier_n_genes_by_counts"]
- 
-
-
-    lm_dict = get_lm(query, nmads=nmads)
-    intercept = lm_dict["model"].params[0]
-    slope = lm_dict["model"].params[1]
-    
-
-    query.obs["counts_outlier"] = (
-        query.obs["log1p_n_genes_by_counts"] < (query.obs["log1p_total_counts"] * slope + (intercept - lm_dict["intercept_adjustment"]))
-        ) | (
-        query.obs["log1p_n_genes_by_counts"] > (query.obs["log1p_total_counts"] * slope + (intercept + lm_dict["intercept_adjustment"]))
-        ) | (
-        query.obs["umi_outlier"] ) | (query.obs["genes_outlier"])
-        
-
-    query.obs["total_outlier"] = (
-        query.obs["counts_outlier"] | query.obs["outlier_mito"] | query.obs["outlier_ribo"] | query.obs["outlier_hb"] | query.obs["predicted_doublet"]
-    )
-    
-    query.obs["non_outlier"] = ~query.obs["total_outlier"]
-
-    return query
 
 
 def main():
@@ -152,6 +90,7 @@ def main():
   query.obs.index = range(query.n_obs)
   
   sc.pp.scrublet(query, batch_key=None)
+  #scrublet_score_distribution(query, save=f"{os.path.basename(query_path).replace('.h5ad', '_scrublet_score_distribution.png')}")
   query = get_qc_metrics(query, nmads)
   raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw") 
   query.write_h5ad(f"{raw_query_name}.h5ad")
