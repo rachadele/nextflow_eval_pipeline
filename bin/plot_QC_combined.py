@@ -92,14 +92,6 @@ def is_outlier(query, metric: str, nmads=3):
 
 
 def qc_preprocess(query):
-    # check if any sample_id has fewer than 30 associated cells
-   # sample_counts = query.obs["sample_id"].value_counts()
-   # if (sample_counts < 30).any():
-       # batch_key=None
-  #  else:
-    #    batch_key="sample_id"
-   # sc.pp.scrublet(query, batch_key=batch_key)
-    # log normalize, comput neighbors and umap
     sc.pp.normalize_total(query, target_sum=1e4)
     sc.pp.log1p(query)
     sc.pp.highly_variable_genes(query, n_top_genes=2000, subset=False)
