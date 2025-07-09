@@ -96,11 +96,11 @@ def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_pr
     # Return final indices
     return final_idx
 
-def relabel(adata, relabel_path, join_key="", sep="\t"):
+def relabel(adata, relabel_path, join_key=None, sep="\t"):
     # Read the relabel table from the file
     relabel_df = pd.read_csv(relabel_path, sep=sep)  # Adjust the separator as needed
     # Take the first column as the join key
-    if join_key=="":
+    if join_key is None:
         join_key = relabel_df.columns[0]
     # Ensure the join_key is in both the AnnData object and the relabel DataFrame
     if join_key not in adata.obs.columns:
