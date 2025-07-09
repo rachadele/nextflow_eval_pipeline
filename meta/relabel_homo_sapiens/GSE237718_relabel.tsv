@@ -5,4 +5,4 @@ In	GABAergic	GABAergic	GABAergic
 Ast	Astrocyte	Glia	Non-neuron
 Mic	Microglia	CNS macrophage	Non-neuron
 OPC	OPC	Glia	Non-neuron
-Vascu	Vascular	Non-neuron	Non-neuron
+Vascu	VLMC	Stromal	Non-neuron

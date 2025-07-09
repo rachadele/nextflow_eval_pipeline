@@ -41,7 +41,7 @@ Endo.Arterial	Endothelial	Vascular	Non-neuron
 Fibroblast	Stromal	Stromal	Non-neuron
 Microglia	Microglia	CNS macrophage	Non-neuron
 Mural.Pericyte	Pericyte	Mural	Non-neuron
-Mural.SMC	Mural	Mural	Non-neuron
+Mural.SMC	SMC	Mural	Non-neuron
 Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
 OPC	OPC	Glia	Non-neuron
-T_Cell	Non-neuron	Non-neuron	Non-neuron
+T_Cell	T cell	Immune	Non-neuron
