@@ -38,7 +38,7 @@ import yaml
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
-    parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
+    parser.add_argument('--census_version', type=str, default='2025-01-30', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--subsample_ref', type=int, default=50)
     parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
@@ -106,6 +106,7 @@ def main():
 
     refs = adata_functions.get_census(
         organism=organism,
+        organ="brain",
         subsample=subsample_ref,
         split_column=split_column,
         census_version=census_version,
