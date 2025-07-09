@@ -19,7 +19,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
 import subprocess
-
+from scipy.stats import median_abs_deviation
+from statsmodels.formula.api import ols
 
 def setup(organism="homo_sapiens", version="2024-07-01"):
     organism=organism.replace(" ", "_") 
@@ -1011,7 +1012,7 @@ def get_qc_metrics(query, nmads):
     query.var["ribo"].fillna(False, inplace=True)
     query.var["hb"].fillna(False, inplace=True) 
 
-    sc.pp.calculate_qc_metrics(query, qc_vars=["mito", "ribo", "hb"], log1p=True, inplace=True, percent_top=[20], use_raw=True)
+    sc.pp.calculate_qc_metrics(query, qc_vars=["mito", "ribo", "hb"], log1p=True, inplace=True, percent_top=[20])
 
     metrics = {
         "log1p_total_counts": "umi_outlier",
