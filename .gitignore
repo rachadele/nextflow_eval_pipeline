@@ -31,4 +31,5 @@ new_homo_sapiens/
 sctransform_sample_subsets_bothnorm/
 sctransform_sample_subsets_dataset_id_only_hsap/
 sctransform_sample_subsets_dataset_id_only_mmus/
-mmus/hsap
+mmus
+hsap
