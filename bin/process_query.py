@@ -29,7 +29,6 @@ import os
 import re
 from scipy.stats import median_abs_deviation
 
-
 # Function to parse command line arguments
 def parse_arguments():
   parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")

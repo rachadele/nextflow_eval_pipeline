@@ -24,8 +24,7 @@ from PIL import Image
 import io
 import os
 import math
-from scipy.stats import median_abs_deviation
-from statsmodels.formula.api import ols
+
 
 # make these the new defaults
 #/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203506/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203506_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
@@ -175,7 +174,7 @@ def plot_ct_umap(query, outdir):
     subclass_colors = dict(zip(all_subclasses, color_palette))
     os.makedirs(outdir, exist_ok=True)
 
-    for col in ["predicted_subclass", "subclass", "correct", "sample_id"]:
+    for col in ["predicted_subclass", "subclass", "correct_subclass", "sample_id"]:
         sc.pl.umap(
             query,
             color=col,
