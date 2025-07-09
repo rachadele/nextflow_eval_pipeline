@@ -355,7 +355,7 @@ process runMultiQC {
         tuple val(study_name), val(method), val(ref_name), path(qc_dir)
 
     output:
-        tuple val(study_name), path("multiqc_report.html"), emit: multiqc_html
+        tuple val(study_name), val(method), val(ref_name), path("multiqc_report.html"), emit: multiqc_html
 
     script:
     """
@@ -363,6 +363,24 @@ process runMultiQC {
     """
 }
 
+process collect_multiqc_dirs {
+     publishDir (
+        "${params.outdir}/multiqc_results", mode: 'copy'
+    )
+
+    input:
+        tuple val(study_name), val(method), val(ref_name), path(multiqc_report)
+
+    output:
+        path "**multiqc.html"
+
+    script:
+    """
+    cp ${multiqc_report} ${study_name}_${method}_${ref_name}_multiqc.html
+    """
+
+
+}
 // Workflow definition
 workflow {
 
@@ -508,6 +526,8 @@ workflow {
     multiqc_channel = plotQC_combined.out.qc_result
     runMultiQC(multiqc_channel)
 
+    // collect multiqc reports and rename them
+    collect_multiqc_dirs(runMultiQC.out.multiqc_html)
 
     save_params_to_file()
 }
