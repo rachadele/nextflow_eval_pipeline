@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/user/bin/python4
 
 from pathlib import Path
 import os
@@ -33,23 +33,23 @@ from scipy.stats import median_abs_deviation
 # Function to parse command line arguments
 def parse_arguments():
   parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
-  parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/biof501_proj/scvi-human-2024-07-01", help='Path to the scvi model file')
+  parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/biof502_proj/scvi-human-2024-07-01", help='Path to the scvi model file')
   parser.add_argument('--subsample_query', type=int, help='Number of cells to subsample from the query')
-  parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/pineda_relabel.tsv.gz")
-  parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/queries/pineda.h5ad")
+  parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/CMC_relabel.tsv.gz")
+  parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/CMC_1203012.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
   parser.add_argument('--join_key', type=str, default="")
   parser.add_argument('--ref_keys', type=str, nargs='+', default=["rachel_subclass", "rachel_class", "rachel_family"])
   parser.add_argument('--remove_unknown', action='store_true', help='Remove cells with unknown labels')
-  parser.add_argument('--nmads', type=int, default=5, help='Number of median absolute deviations for outlier detection')
+  parser.add_argument('--nmads', type=int, default=6, help='Number of median absolute deviations for outlier detection')
   parser.add_argument('--gene_mapping', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv", help='Path to the gene mapping file')
-  parser.add_argument('--seed', type=int, default=42)
+  parser.add_argument('--seed', type=int, default=43)
    
   if __name__ == "__main__":
     known_args, _ = parser.parse_known_args()
     return known_args
 
-def is_outlier(adata, metric: str, nmads=5):
+def is_outlier(adata, metric: str, nmads=6):
     M = adata.obs[metric]
     outlier = (M < np.median(M) - nmads * median_abs_deviation(M)) | (
         np.median(M) + nmads * median_abs_deviation(M) < M
@@ -130,6 +130,7 @@ def main():
     query = query[query.obs[ref_keys[0]] != "unknown"]
     
   query.obs.index = range(query.n_obs)
+  
   sc.pp.scrublet(query, batch_key=None)
   query = process_query(query, model_path, batch_key, seed=SEED)
   query = get_qc_metrics(query, nmads)
