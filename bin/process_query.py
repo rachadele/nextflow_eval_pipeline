@@ -29,68 +29,25 @@ import os
 import re
 from scipy.stats import median_abs_deviation
 
-
 # Function to parse command line arguments
 def parse_arguments():
   parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
-  parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/biof502_proj/scvi-human-2024-07-01", help='Path to the scvi model file')
+  parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/e7/e4c5e0911b55a5e93e0f416042b0e9/scvi-mus_musculus-2024-07-01", help='Path to the scvi model file')
   parser.add_argument('--subsample_query', type=int, help='Number of cells to subsample from the query')
-  parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/CMC_relabel.tsv.gz")
-  parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/CMC_1203012.h5ad")
+  parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/GSE152715.2_relabel.tsv")
+  parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_false_sample_split_true/mus_musculus/GSE152715.2_1052353.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
-  parser.add_argument('--join_key', type=str, default="")
-  parser.add_argument('--ref_keys', type=str, nargs='+', default=["rachel_subclass", "rachel_class", "rachel_family"])
+  parser.add_argument('--join_key', type=str, default=None)
+  parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family", "global"])
   parser.add_argument('--remove_unknown', action='store_true', help='Remove cells with unknown labels')
-  parser.add_argument('--nmads', type=int, default=6, help='Number of median absolute deviations for outlier detection')
+  parser.add_argument('--nmads', type=int, default=5, help='Number of median absolute deviations for outlier detection')
   parser.add_argument('--gene_mapping', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/gemma_genes.tsv", help='Path to the gene mapping file')
-  parser.add_argument('--seed', type=int, default=43)
+  parser.add_argument('--seed', type=int, default=42)
    
   if __name__ == "__main__":
     known_args, _ = parser.parse_known_args()
     return known_args
 
-def is_outlier(adata, metric: str, nmads=6):
-    M = adata.obs[metric]
-    outlier = (M < np.median(M) - nmads * median_abs_deviation(M)) | (
-        np.median(M) + nmads * median_abs_deviation(M) < M
-    )
-    return outlier
-  
-def map_genes(query, gene_mapping):
-    # Check if the "feature_name" column exists in query.var
-    if "feature_name" not in query.var.columns:
-        # Merge gene_mapping with query.var based on the index
-        query.var = query.var.merge(gene_mapping["OFFICIAL_SYMBOL"], left_index=True, right_index=True, how="left")
-        # Rename the merged column to "feature_name"
-        query.var.rename(columns={"OFFICIAL_SYMBOL": "feature_name"}, inplace=True)
-    return query
-
-
-def get_qc_metrics(query, nmads):
-    query.var["mito"] = query.var["feature_name"].str.startswith(("MT", "mt", "Mt"))
-    query.var["ribo"] = query.var["feature_name"].str.startswith(("RP", "Rp", "rp"))
-    query.var["hb"] = query.var["feature_name"].str.startswith(("HB", "Hb","hb"))
-    # fill NaN values with False
-    query.var["mito"].fillna(False, inplace=True)
-    query.var["ribo"].fillna(False, inplace=True)
-    query.var["hb"].fillna(False, inplace=True) 
-
-    sc.pp.calculate_qc_metrics(query, qc_vars=["mito", "ribo", "hb"], log1p=True, inplace=True, percent_top=[20], use_raw=False)
-
-    metrics = {
-        "log1p_total_counts": "outlier_total_counts",
-        "log1p_n_genes_by_counts": "outlier_n_genes_by_counts",
-        "pct_counts_mito": "outlier_mito",
-        "pct_counts_ribo": "outlier_ribo",
-        "pct_counts_hb": "outlier_hb"
-        }
-    
-    for metric, col_name in metrics.items():
-        query.obs[col_name] = is_outlier(query, metric, nmads)
-    
-    query.obs["counts_outlier"] = query.obs["outlier_total_counts"] | query.obs["outlier_n_genes_by_counts"]
- 
-    return query
 
 
 
@@ -132,8 +89,13 @@ def main():
   query.obs.index = range(query.n_obs)
   
   sc.pp.scrublet(query, batch_key=None)
-  query = process_query(query, model_path, batch_key, seed=SEED)
+  #scrublet_score_distribution(query, save=f"{os.path.basename(query_path).replace('.h5ad', '_scrublet_score_distribution.png')}")
   query = get_qc_metrics(query, nmads)
+  raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw") 
+  query.write_h5ad(f"{raw_query_name}.h5ad")
+
+  query = process_query(query, model_path, batch_key, seed=SEED)
+
   new_query_name = os.path.basename(query_path).replace(".h5ad","_processed")
   query.write_h5ad(f"{new_query_name}.h5ad")
   
