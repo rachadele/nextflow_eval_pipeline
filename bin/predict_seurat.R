@@ -11,18 +11,17 @@ set.seed(123)
 
 
 parser <- ArgumentParser(description = "Process Seurat objects and transfer labels.")
-#parser$add_argument("--batch_key", type="character", help="Key for integrating dataset", default="sample")
 parser$add_argument("--integration_method", type="character", help="Integration method of query and reference", default="pcaproject")
-parser$add_argument("--ref_keys", type="character", nargs="*", help="List of reference keys to pass to query_transfer", default=c("subclass", "class","family","global"))
+parser$add_argument("--ref_keys", type="character", nargs="*", help="List of reference keys to pass to query_transfer", default=c("subclass", "class","family"))
 parser$add_argument("--dims", type="integer", help="Number of dimensions", default=50)
 parser$add_argument("--max.features", type="integer", help="Maximum number of features", default=200)
-parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=5)
+parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=10)
 parser$add_argument("--k.score", type="integer", help="?", default=30)
 parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label transfer prediction scores", default=0)
-parser$add_argument("--ref_path", type="character", help="path to references", default="/space/grp/rschwartz/rschwartz/hs_nf_results/3f/360d86ce9fcedb9ffe518a0a1fb90d/whole_cortex.rds")
-parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/hs_nf_results/3a/48b09b36aece477cd81d80559c3932/rosmap_R7944883_processed.rds")
+parser$add_argument("--ref_path", type="character", help="path to references", default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/e1/d770134021e6a187b69360d25dbcbd/Human_Multiple_Cortical_Areas_SMART-seq.rds")
+parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/92/5946603814884a8e13fadbe0041163/GSE180670_1036084_processed.rds")
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=50)
-parser$add_argument("--normalization_method", type="character", help="Normalization method", default="LogNormalize")
+parser$add_argument("--normalization_method", type="character", help="Normalization method", default="SCT")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
 
 
@@ -70,10 +69,31 @@ transfer_multiple_labels <- function(
         reference.reduction="pca") # use precomputed PCA from seurat_processing step
 
 
+# need to fix this 
     k.weight = min(k.weight, floor(nrow(anchors@anchors) / k.score ))
+
     key = ref_keys[1] # assumes keys are ordered
-    #change the k.weight back to 50 or dynamically set ?
-    predictions <- TransferData(anchorset = anchors, refdata=key, reference=reference, weight.reduction=reduction, k.weight = k.weight)
+
+    predictions <- tryCatch({
+    
+        TransferData(anchorset = anchors, refdata=key, reference=reference, weight.reduction=reduction, k.weight = k.weight)
+
+        }, error = function(e) {
+        
+        message("Error in TransferData: ", e$message)
+        # Extract k.weight suggestion (e.g., "less than 27") from error message
+        match <- regmatches(e$message, regexec("less than ([0-9]+)", e$message))
+        k.weight.new <- as.integer(match[[1]][2]) - 1 # Decrease by 1 to ensure it is less than the suggested value
+        message("Adjusting k.weight to: ", k.weight.new)
+        # Retry TransferData with the corrected k.weight
+        TransferData(
+            anchorset = anchors,
+            refdata = key,
+            reference = reference,
+            weight.reduction = reduction,
+            k.weight = k.weight.new
+        )
+    })   
     return(predictions)
 
 }
