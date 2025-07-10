@@ -122,11 +122,10 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
     ref_keys=["rachel_subclass","rachel_class","rachel_family"], original_celltypes=None, seed=42):
     
     brain_cell_subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
-    # Assuming get_seurat is defined to return an AnnData object
     adata = cellxgene_census.get_anndata(
         census=census,
         organism=organism,
-        obs_value_filter=obs_filter,  # Ensure this is constructed correctly
+     #   obs_value_filter=obs_filter,  don't need this
         obs_column_names=cell_columns,
         obs_coords=brain_cell_subsampled_ids,
         var_value_filter = "nnz > 10",
@@ -161,17 +160,18 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
     for split_value in unique_values:
         # Filter the brain observations based on the split value
         filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
-        collection_name = data[data[split_column] == split_value]['collection_name'].values[0]
-        if collection_name == "HVS: Human variation study":
+        collection_names = data[data[split_column] == split_value]['collection_name'].unique()
+        if split_column == "dataset_id" and "HVS: Human variation study" in collection_names:
             # send stderr message
-            warnings.warn(f"Skipping {split_value} due to collection name 'HVS: Human variation study'.")
+            print(f"Skipping {split_value} due to collection name 'HVS: Human variation study'.")
             continue
         if len(filtered_ids) < 1000:
-            print(f"Skipping {split_value} due to insufficient cells ({len(filtered_ids)} < 50).")
+            print(f"Skipping {split_value} due to insufficient cells ({len(filtered_ids)} < 1000).")
             continue
-        obs_filter = f"{split_column} == '{split_value}'"
+       # obs_filter = f"{split_column} == '{split_value}'"
+       # don't need this since we're subsampling the extact cell coordinates
                 
-        adata = extract_data(data, filtered_ids, subsample, organism, census, obs_filter, 
+        adata = extract_data(data, filtered_ids, subsample, organism, census, 
                              cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, 
                              ref_keys=ref_keys, 
                              original_celltypes = original_celltypes, 
