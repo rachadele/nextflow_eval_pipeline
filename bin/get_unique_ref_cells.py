@@ -32,14 +32,13 @@ import yaml
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
-    parser.add_argument('--census_version', type=str, default='2025-01-30', help='Census version (e.g., 2024-07-01)')
+    parser.add_argument('--census_version', type=str, default='2025=-01-30', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
-        "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
-        "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
-        "Molecular and spatial signatures of mouse brain aging at single-cell resolution"
+        "Transcriptomic cytoarchitecture reveals principles of human neocortex organization",
+        "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas",
+        "Molecular and cellular evolution of the primate dorsolateral prefrontal cortex",
+        "HVS: Human variation study"
     ]) 
-    parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])
     parser.add_argument('--organ', type=str, default="brain")
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -51,15 +50,16 @@ def main():
   # Set organism and census_version from arguments
   organism = args.organism
   census_version = args.census_version
+  ref_collections=args.ref_collections
   os.makedirs(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_info/{census_version}", exist_ok=True)
   
   #ref_collections = args.ref_collections
   organ = args.organ
   if organism == "mus_musculus":
-          original_celltypes = get_original_celltypes(columns_file=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}/original_celltype_columns.tsv",
+    original_celltypes = get_original_celltypes(columns_file=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}/original_celltype_columns.tsv",
                                                       author_annotations_path=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}") 
   else:
-      original_celltypes = None
+    original_celltypes = None
           
   census = cellxgene_census.open_soma(census_version=census_version)
   dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
@@ -68,9 +68,6 @@ def main():
   
   cellxgene_obs = cellxgene_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
   cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
-
-  unique_ref_cells = cellxgene_obs[["cell_type","cell_type_ontology_term_id","collection_name"]].value_counts().reset_index()
-  unique_ref_cells.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_info/{census_version}/{organism}_all_celltypes.tsv", sep="\t", index=False)
   # add author_cell_type to obs
   # this will enable proper relabeling and subsampling
   # need to add it back in after getting ids
@@ -78,10 +75,10 @@ def main():
 
   if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
       cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
-      cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
+      cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "collection_name","cell_type_ontology_term_id"]].value_counts().reset_index()
       cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_info/{census_version}/{organism}_cell_type_info.tsv", sep="\t", index=False)
   else:
-      cell_type_info = cellxgene_obs_filtered[["cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
+      cell_type_info = cellxgene_obs_filtered[["cell_type", "dataset_title", "collection_name","cell_type_ontology_term_id"]].value_counts().reset_index()
       cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_info/{census_version}/{organism}_cell_type_info.tsv", sep="\t", index=False)
 
 if __name__ == "__main__":
