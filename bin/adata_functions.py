@@ -118,16 +118,15 @@ def relabel(adata, relabel_path, join_key=None, sep="\t"):
 
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
-    obs_filter=None, cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
+    cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
     ref_keys=["rachel_subclass","rachel_class","rachel_family"], original_celltypes=None, seed=42):
     
-    brain_cell_subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
+    subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
     adata = cellxgene_census.get_anndata(
         census=census,
         organism=organism,
-     #   obs_value_filter=obs_filter,  don't need this
         obs_column_names=cell_columns,
-        obs_coords=brain_cell_subsampled_ids,
+        obs_coords=subsampled_ids,
         var_value_filter = "nnz > 10",
         obs_embeddings=["scvi"])
    
@@ -159,6 +158,7 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
     
     for split_value in unique_values:
         # Filter the brain observations based on the split value
+        
         filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
         collection_names = data[data[split_column] == split_value]['collection_name'].unique()
         if split_column == "dataset_id" and "HVS: Human variation study" in collection_names:
@@ -170,7 +170,7 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
             continue
        # obs_filter = f"{split_column} == '{split_value}'"
        # don't need this since we're subsampling the extact cell coordinates
-                
+        print(f"Processing {split_value} with {len(filtered_ids)} cells.")
         adata = extract_data(data, filtered_ids, subsample, organism, census, 
                              cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, 
                              ref_keys=ref_keys, 
@@ -296,7 +296,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     adata = extract_data(
         cellxgene_obs_filtered, filtered_ids,
         subsample=subsample, organism=organism,
-        census=census, obs_filter=None,
+        census=census,
         cell_columns=cell_columns, 
         dataset_info=dataset_info, dims=dims,
         relabel_path=relabel_path, 
