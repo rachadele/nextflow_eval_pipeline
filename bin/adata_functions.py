@@ -82,6 +82,8 @@ def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_pr
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
     # Perform the left join to update the metadata
     obs = obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
+    # this line ensures that only cells in the relabel # file are kept in the obs
+    # filteres out ambiguous cells
     celltypes = obs[ref_keys[0]].unique()
     final_idx = []
     for celltype in celltypes:
@@ -179,8 +181,8 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
     return refs
 
 
-def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv", 
-                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations"):
+def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30/original_celltype_columns.tsv", 
+                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30"):
     original_celltype_columns = pd.read_csv(columns_file, sep="\t", low_memory=False)
 
     original_celltypes = {}
@@ -196,7 +198,6 @@ def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow
             original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
             
     for dataset_title, obs in original_celltypes.items():
-        #original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
         original_celltypes[dataset_title]["new_observation_joinid"] = original_celltypes[dataset_title]["observation_joinid"].apply(lambda x: f"{dataset_title}_{x}")
     
         # concat all original_celltypes
@@ -267,7 +268,10 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # need to add it back in after getting ids
     if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
-    
+    #write files
+        #cellxgene_obs_filtered.to_csv("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30_all_obs.tsv",sep="\t",index=False)
+        cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
+        cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}_cell_type_info.tsv", sep="\t", index=False)
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
         cellxgene_obs_filtered, split_column=split_column,
