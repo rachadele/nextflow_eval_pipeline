@@ -26,7 +26,6 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -resume \
                     --remove_unknown \
                     --normalization_method "$normalization_method" \
-                    --outdir_prefix "mus_musculus/subsample_query_100/old_refs" \
                     -process.executor "slurm"
             done
         done
