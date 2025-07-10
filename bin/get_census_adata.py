@@ -37,15 +37,15 @@ import yaml
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
-    parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
+    parser.add_argument('--organism', type=str, default='homo_sapiens', help='Organism name (e.g., homo_sapiens)')
     parser.add_argument('--census_version', type=str, default='2025-01-30', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--subsample_ref', type=int, default=50)
-    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
+    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
-        "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
-        "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
-        "Molecular and spatial signatures of mouse brain aging at single-cell resolution"
+        "Transcriptomic cytoarchitecture reveals principles of human neocortex organization",
+        "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas",
+        "Molecular and cellular evolution of the primate dorsolateral prefrontal cortex",
+        "HVS: Human variation study"
     ]) 
     parser.add_argument('--split_column', type=str, default="dataset_id")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])
