@@ -1,29 +1,29 @@
 cell_type	subclass	class	family
-L2/3-6 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
-pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic
-VIP GABAergic cortical interneuron	VIP	CGE	GABAergic
-sst GABAergic cortical interneuron	SST	MGE	GABAergic
 astrocyte of the cerebral cortex	Astrocyte	Glia	Non-neuron
-lamp5 GABAergic cortical interneuron	LAMP5	CGE	GABAergic
-microglial cell	Microglia	CNS macrophage	Non-neuron
-L2/3 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-oligodendrocyte precursor cell	OPC	Glia	Non-neuron
-corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
-sncg GABAergic cortical interneuron	SNCG	CGE	GABAergic
 astrocyte	Astrocyte	Glia	Non-neuron
-near-projecting glutamatergic cortical neuron	L5/6 NP	deep layer non-IT	Glutamatergic
-L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic
+B cell	B cell	Immune	Non-neuron
 chandelier pvalb GABAergic cortical interneuron	Chandelier	MGE	GABAergic
 endothelial cell	Endothelial	Vascular	Non-neuron
-L5 extratelencephalic projecting glutamatergic cortical neuron	L5 ET	deep layer non-IT	Glutamatergic
-L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-pericyte	Pericyte	Mural	Non-neuron
-vascular leptomeningeal cell	VLMC	Stromal	Non-neuron
-L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
 cerebral cortex endothelial cell	Endothelial	Vascular	Non-neuron
-smooth muscle cell	SMC	Mural	Non-neuron
+L2/3-6 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic
+L2/3 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic
+L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L2/3-6 IT	L2/3-6 IT	Glutamatergic
+L5 extratelencephalic projecting glutamatergic cortical neuron	L5 ET	deep layer non-IT	Glutamatergic
+near-projecting glutamatergic cortical neuron	L5/6 NP	deep layer non-IT	Glutamatergic
 L5/6 near-projecting glutamatergic neuron of the primary motor cortex	L5/6 NP	deep layer non-IT	Glutamatergic
-T cell	T cell	Immune	Non-neuron
+corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
+L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
+L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic
+lamp5 GABAergic cortical interneuron	LAMP5	CGE	GABAergic
 macrophage	Macrophage	CNS macrophage	Non-neuron
-B cell	B cell	Immune	Non-neuron
+microglial cell	Microglia	CNS macrophage	Non-neuron
+oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
+oligodendrocyte precursor cell	OPC	Glia	Non-neuron
+pericyte	Pericyte	Mural	Non-neuron
+pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic
+smooth muscle cell	SMC	Mural	Non-neuron
+sncg GABAergic cortical interneuron	SNCG	CGE	GABAergic
+sst GABAergic cortical interneuron	SST	MGE	GABAergic
+T cell	T cell	Immune	Non-neuron
+VIP GABAergic cortical interneuron	VIP	CGE	GABAergic
+vascular leptomeningeal cell	VLMC	Stromal	Non-neuron
