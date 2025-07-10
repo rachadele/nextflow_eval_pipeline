@@ -156,10 +156,19 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
     # Get unique split values from the specified column
     unique_values = data[split_column].unique()
     refs = {}
-
+    # don't use Human Variation Study splits
+    
     for split_value in unique_values:
         # Filter the brain observations based on the split value
         filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
+        collection_name = data[data[split_column] == split_value]['collection_name'].values[0]
+        if collection_name == "HVS: Human variation study":
+            # send stderr message
+            warnings.warn(f"Skipping {split_value} due to collection name 'HVS: Human variation study'.")
+            continue
+        if len(filtered_ids) < 1000:
+            print(f"Skipping {split_value} due to insufficient cells ({len(filtered_ids)} < 50).")
+            continue
         obs_filter = f"{split_column} == '{split_value}'"
                 
         adata = extract_data(data, filtered_ids, subsample, organism, census, obs_filter, 
@@ -270,8 +279,8 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
     #write files
         #cellxgene_obs_filtered.to_csv("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30_all_obs.tsv",sep="\t",index=False)
-        cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
-        cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}_cell_type_info.tsv", sep="\t", index=False)
+     #   cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
+       # cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}_cell_type_info.tsv", sep="\t", index=False)
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
         cellxgene_obs_filtered, split_column=split_column,
