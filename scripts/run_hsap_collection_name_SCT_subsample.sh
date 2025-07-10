@@ -23,7 +23,6 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --batch_correct true \
                     -resume \
                     --normalization_method "$normalization_method" \
-                    --outdir_prefix "homo_sapiens/subsample_100/SCT" \
                     --subsample_query "$subsample_query"                 
             done
         done
