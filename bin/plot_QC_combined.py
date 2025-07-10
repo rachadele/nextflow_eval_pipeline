@@ -102,6 +102,8 @@ def plot_joint_umap(query, outdir):
         "pct_counts_mito": "outlier_mito",
         "pct_counts_ribo": "outlier_ribo",
         "pct_counts_hb": "outlier_hb",
+        "log1p_n_genes_by_counts": "genes_outlier",
+        "log1p_total_counts": "umi_outlier",
     }
     
     data = query.obs
