@@ -20,7 +20,7 @@ import scvi
 import adata_functions
 from adata_functions import *
 import seaborn as sns
-import json
+homo_sapiens/sampleimport json
 import argparse
 import os
 import json
