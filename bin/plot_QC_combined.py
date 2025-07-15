@@ -102,12 +102,12 @@ def plot_joint_umap(query, outdir):
         "pct_counts_mito": "outlier_mito",
         "pct_counts_ribo": "outlier_ribo",
         "pct_counts_hb": "outlier_hb",
-       # "log1p_total_counts": "umi_outlier",
     }
     
     data = query.obs
     images = []
-    sns.set_context("talk", font_scale=2)  # "talk" or "poster" are good presets
+    sns.set_context("talk", font_scale=1.5)  # "talk" or "poster" are good presets
+
 
     for yval, hue in metrics.items():
         fig_joint = sns.jointplot(
