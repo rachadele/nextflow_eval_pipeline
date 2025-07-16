@@ -347,12 +347,13 @@ def process_query(query, model_file_path, batch_key="sample", seed=42):
 
 def map_valid_labels(query, ref_keys, mapping_df):
     # deal with differing levels of granularity
+    # Loop over each reference label (e.g., "celltype", "subclass", "class", etc.)
     for key in ref_keys:
-        print(key)
+        # Get all unique labels in the query at this level (e.g., all unique 'subclass' values)
         original=query[key].unique()
-        print(original)
-        for og in original:
-            # get the highest level in the hierarchy 
+        for og in original: # For each original label at this level
+            # Get the highest level in the hierarchy 
+            # Search for columns in mapping_df where this label appears in *any* column
             matching_cols = mapping_df.columns[mapping_df.apply(lambda col: og in col.values, axis=0)]
             print(f"Matching columns for {og}: {matching_cols}")
             if len(matching_cols) == 0:
