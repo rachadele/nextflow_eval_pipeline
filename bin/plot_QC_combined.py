@@ -98,7 +98,7 @@ def qc_preprocess(query):
 def plot_joint_umap(query, outdir):
     x_metric = "log1p_n_genes_by_counts"
     metrics = {
-        "log1p_total_counts": "counts_outlier",
+        "log1p_total_counts": ["counts_outlier", "umi_outlier", "genes_outlier"],
         "pct_counts_mito": "outlier_mito",
         "pct_counts_ribo": "outlier_ribo",
         "pct_counts_hb": "outlier_hb",
@@ -106,45 +106,43 @@ def plot_joint_umap(query, outdir):
     
     data = query.obs
     images = []
-    sns.set_context("talk", font_scale=1.5)  # "talk" or "poster" are good presets
+    for yval, hues in metrics.items():
+        for hue in (hues if isinstance(hues, list) else [hues]):
+            fig_joint = sns.jointplot(
+                data=data,
+                x=x_metric,
+                y=yval,
+                hue=hue,
+                kind="scatter"
+            )
+        
+        
+            umap_fig = sc.pl.umap(
+            query,
+            color=hue,
+            use_raw=False,
+            save=None,
+            show=False,
+            title=f"{hue}",
+            ncols=1,
+            legend_loc="upper right",
+            return_fig=True
+            ) 
 
 
-    for yval, hue in metrics.items():
-        fig_joint = sns.jointplot(
-            data=data,
-            x=x_metric,
-            y=yval,
-            hue=hue,
-            kind="scatter"
-        )
+            joint_buf = io.BytesIO()
+            fig_joint.savefig(joint_buf, format="png", bbox_inches='tight')
+            plt.close(fig_joint.fig) 
         
+            umap_buf = io.BytesIO()
+            umap_fig.savefig(umap_buf, format="png", bbox_inches='tight')
+            plt.close(umap_fig)
         
-        umap_fig = sc.pl.umap(
-        query,
-        color=hue,
-        use_raw=False,
-        save=None,
-        show=False,
-        title=f"{hue}",
-        ncols=1,
-        legend_loc="upper right",
-        return_fig=True
-        ) 
-
-
-        joint_buf = io.BytesIO()
-        fig_joint.savefig(joint_buf, format="png", bbox_inches='tight')
-        plt.close(fig_joint.fig) 
+            joint_buf.seek(0)
+            images.append(Image.open(joint_buf))
         
-        umap_buf = io.BytesIO()
-        umap_fig.savefig(umap_buf, format="png", bbox_inches='tight')
-        plt.close(umap_fig)
-        
-        joint_buf.seek(0)
-        images.append(Image.open(joint_buf))
-        
-        umap_buf.seek(0)
-        images.append(Image.open(umap_buf))
+            umap_buf.seek(0)
+            images.append(Image.open(umap_buf))
     
     scale = 0.5  # Resize to 50%
     resized_images = [img.resize((int(img.width * scale), int(img.height * scale))) for img in images]
