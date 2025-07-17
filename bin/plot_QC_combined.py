@@ -24,15 +24,6 @@ from PIL import Image
 import io
 import os
 import math
-
-
-# make these the new defaults
-#/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203506/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203506_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
-#/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203507/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203507_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
-#/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/homo_sapiens/sample/SCT/ref_50_query_null_cutoff_0_refsplit_dataset_id/scvi/PTSDBrainomics_1203508/Dissection_Angular_gyrus_AnG/predicted_meta/PTSDBrainomics_1203508_Dissection_Angular_gyrus_AnG.predictions.0.0.tsv
-#/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203506.h5ad
-#/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203507.h5ad
-#/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/PTSDBrainomics_1203508.h5ad
 #get original files
 # Function to parse command line arguments
 def parse_arguments():
@@ -175,7 +166,7 @@ def plot_ct_umap(query, outdir):
     subclass_colors = dict(zip(all_subclasses, color_palette))
     os.makedirs(outdir, exist_ok=True)
 
-    for col in ["predicted_subclass", "subclass", "correct_subclass", "sample_id"]:
+    for col in ["predicted_subclass", "subclass", "correct_subclass", "sample_id", "predicted_doublet"]:
         sc.pl.umap(
             query,
             color=col,
@@ -188,6 +179,33 @@ def plot_ct_umap(query, outdir):
         out_path = os.path.join(outdir, f"{col}_umap_mqc.png") 
         plt.savefig(out_path, bbox_inches='tight')
         plt.close()
+
+
+
+def plot_upset_by_group(obs, outlier_cols, group_col, outdir):
+    os.makedirs(outdir, exist_ok=True)
+    obs = obs.copy()
+    obs["membership"] = obs[outlier_cols].apply(lambda row: tuple(c for c in outlier_cols if row[c]), axis=1)
+
+    if group_col:
+        for group in sorted(obs[group_col].unique()):
+            counts = obs[obs[group_col] == group]["membership"].value_counts()
+            if counts.empty:
+                continue
+    else:   
+        group_col = "study"
+        group = "all"
+        counts = obs["membership"].value_counts()
+        if counts.empty:
+            return
+    data = from_memberships(counts.index, data=counts.values)
+    plt.figure(figsize=(8, 4))
+    UpSet(data, show_counts=True).plot()
+    plt.suptitle(f"{group_col} = {group}")
+    plt.tight_layout()
+    plt.savefig(os.path.join(outdir, f"{group_col}_{group}_upset_mqc.png"))
+    plt.close()
+
 
 def main():
     # Parse command line arguments
@@ -294,25 +312,6 @@ def main():
     )
     celltype_counts_correct.to_csv(os.path.join(study_name,"celltype_counts_correct_mqc.tsv"), sep="\t", index=False)
 
-    ## make a table of counts by outliers
-    # count all combinations + non-outliers
-    celltype_outlier_counts = (
-        query.obs
-        .groupby("subclass")[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier","predicted_doublet"]]
-        .sum()
-        .astype(int)
-    )
-    celltype_outlier_counts.to_csv(os.path.join(study_name, "celltype_outlier_counts_mqc.tsv"), sep="\t", index=True)
- 
-    # correct by outlier composition
-    correct_outlier_counts = (
-        query.obs
-        .groupby(["correct_subclass"])[["counts_outlier", "outlier_mito", "outlier_ribo", "outlier_hb", "non_outlier","predicted_doublet"]]
-        .sum()
-        .astype(int)
-    )
-    correct_outlier_counts.to_csv(os.path.join(study_name,"correct_outlier_counts_mqc.tsv"), sep="\t", index=True)
-    
     predicted_vs_actual_counts = (
         query.obs
         .groupby(["subclass", "predicted_subclass"])
@@ -332,6 +331,17 @@ def main():
     sample_correct_counts.to_csv(os.path.join(study_name,"sample_correct_counts_mqc.tsv"), sep="\t", index=False)
     
     
+   outlier_cols = [
+        "counts_outlier", 
+        "umi_outlier", 
+        "genes_outlier",
+        "outlier_mito", 
+        "outlier_ribo", 
+        "outlier_hb", 
+        "predicted_doublet"
+    ]
+    plot_upset_by_group(query_combined.obs, outlier_cols, None, study_name)
+ 
 if __name__ == "__main__":
     main()
  
