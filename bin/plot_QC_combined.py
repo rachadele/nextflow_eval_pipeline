@@ -332,6 +332,7 @@ def main():
     
     
    outlier_cols = [
+        "non_outlier",
         "counts_outlier", 
         "umi_outlier", 
         "genes_outlier",
