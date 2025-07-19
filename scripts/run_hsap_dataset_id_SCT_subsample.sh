@@ -21,9 +21,10 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --subset_type sample \
                     -work-dir hsap \
                     --batch_correct true \
-                    -resume \
                     --normalization_method "$normalization_method" \
-                    --subsample_query "$subsample_query"                 
+                    --subsample_query "$subsample_query" \
+                    -process.executor local \
+                    -resume                 
             done
         done
     done

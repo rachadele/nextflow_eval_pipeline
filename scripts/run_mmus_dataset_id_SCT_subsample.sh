@@ -26,6 +26,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -resume \
                     --remove_unknown \
                     --normalization_method "$normalization_method" \
+                    -process.executor local
                    
             done
         done
