@@ -702,60 +702,6 @@ def plot_confusion_matrix(query_name, ref_name, key, confusion_data, output_dir)
     #os.makedirs(os.path.join(output_dir, new_query_name, new_ref_name), exist_ok=True)  # Create the directory if it doesn't exist
     plt.savefig(os.path.join(output_dir,f"{key}_confusion.png"))
     plt.close() 
-
-def plot_roc_curves(metrics, title="ROC Curves for All Keys and Classes", save_path=None):
-    """
-    Plots ROC curves for each class at each key level from the metrics dictionary on the same figure.
-    
-    Parameters:
-    metrics (dict): A dictionary with structure metrics[key][class_label] = {tpr, fpr, auc, optimal_threshold}.
-    title (str): The title of the plot.
-    save_path (str, optional): The file path to save the plot. If None, the plot is not saved.
-    """
-    fig, ax = plt.subplots(figsize=(10, 8))  # Create a figure and axis
-
-    # Create a subplot for each key
-    for key in metrics:
-        for class_label in metrics[key]:
-
-            if isinstance(metrics[key][class_label], dict):
-                if all(k in metrics[key][class_label] for k in ["tpr", "fpr", "auc"]):
-                    tpr = metrics[key][class_label]["tpr"]
-                    fpr = metrics[key][class_label]["fpr"]
-                    roc_auc = metrics[key][class_label]["auc"]
-
-                    # Find the index of the optimal threshold
-                    optimal_idx = np.argmax(tpr - fpr)
-                    optimal_fpr = fpr[optimal_idx]
-                    optimal_tpr = tpr[optimal_idx]
-
-                    # Plot the ROC curve for the current class
-                    #plt.plot(fpr, tpr, lw=2, label=f"Class {class_label} (AUC = {roc_auc:.3f})")
-                 #   curve = RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, estimator_name=class_label) #drop_intermediate=False)
-                   # curve.plot(ax=ax)  # Add to the shared axis
-                    
-                    ax.step(fpr, tpr, where='post', lw=2, label=f"{key}: {class_label} (AUC = {roc_auc:.3f})")
-
-                    # Plot the optimal threshold as a point
-                    ax.scatter(optimal_fpr, optimal_tpr, color='red', marker='o') 
-                          #  label=f"Optimal Threshold (Class {class_label})")
-                    
-    # Plot the reference line (random classifier)
-    ax.plot([0, 1], [0, 1], 'k--', lw=2, label="Random Classifier")
-
-    # Add title, labels, legend, and grid
-    ax.set_title(title, fontsize=16)
-    ax.set_xlabel('False Positive Rate', fontsize = 15)
-    ax.set_ylabel('True Positive Rate', fontsize = 15)
-    ax.legend(loc='lower right', bbox_to_anchor=(1.05, 0), fontsize='medium', borderaxespad=0)
-    ax.grid(True)
-
-    # Adjust layout and save the plot if a path is provided
-    plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, bbox_inches='tight')
-        print(f"Plot saved to {save_path}")
-        plt.close()
     
     
 def combine_f1_scores(class_metrics, ref_keys):
@@ -799,169 +745,6 @@ def combine_f1_scores(class_metrics, ref_keys):
 
 
 
-def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5], acronym_mapping=None):
-    """
-    Plot horizontally stacked heatmaps for label-level F1 scores for each query across multiple keys with variable widths,
-    shared y-axis labels, a shared color bar, and a title for the query.
-
-    Parameters:
-        all_f1_scores (dict): Dictionary with keys as reference names and values as DataFrames containing F1 scores.
-        threshold (float): Threshold value to display in plot titles.
-        outpath (str): Directory to save the generated heatmaps.
-        widths (list of float): Proportional widths for subplots. If None, defaults to equal widths.
-    """
-    sns.set(style="whitegrid")
-    os.makedirs(outpath, exist_ok=True)
-
-    # Determine global F1 score range
-    all_scores = pd.concat([df['f1_score'] for df in all_f1_scores.values()])
-    vmin, vmax = all_scores.min(), all_scores.max()
-    
-    # Initialize an empty set to store unique queries
-    queries = set() 
-    keys = list(all_f1_scores.keys()) # get levels of hierarchy
-    for key, df in all_f1_scores.items():
-        queries.update(df['query'].unique())  # add unique queries to the set
-    queries = sorted(queries) # sort queries
-
-    if widths is None:
-        widths = [1] * len(keys)  # Equal widths by default for each level
-
-    for query in queries:
-        # Create a figure with variable subplot widths
-        fig, axes = plt.subplots(
-            nrows=1,
-            ncols=len(keys),
-            figsize=(sum(widths) * 15, 8),
-            gridspec_kw={'width_ratios': widths},
-            constrained_layout=True
-        )
-
-        # Add a figure title for the query
-        fig.suptitle(f'Class-level F1 for Query: {query}\nThreshold = {threshold:.2f}', fontsize=25, y=1.1)
-
-        if len(keys) == 1:
-            axes = [axes]  # Ensure axes is always iterable
-
-        for i, key in enumerate(keys):
-            if key not in all_f1_scores:
-                continue
-            
-            df = all_f1_scores[key]
-            query_df = df[df['query'] == query]
-
-            # Pivot DataFrame to create the heatmap
-            pivot_df = query_df.pivot_table(index='reference_acronym', columns='label', values='f1_score')
-            mask = pivot_df.isnull() | (pivot_df == "nan")
-
-            sns.heatmap(
-                pivot_df,
-                annot=True,
-                cmap='YlOrRd',
-                cbar=i == len(keys) - 1,  # Add cbar only for the last subplot
-                cbar_kws={'label': 'F1 Score'} if i == len(keys) - 1 else None,
-                mask=mask,
-                ax=axes[i],
-                linewidths=0.5,
-                annot_kws={"size": 8},
-                vmin=vmin,  # Use global vmin
-                vmax=vmax   # Use global vmax
-            )
-
-            for i, key in enumerate(keys):
-                axes[i].set_title(f'{key}', fontsize=25)
-                
-                # Set x-axis tick labels and rotation
-                axes[i].set_xticklabels(axes[i].get_xticklabels(), rotation=90, fontsize=20)
-
-                # Only add y-axis labels to the leftmost subplot
-                if i == 0:
-                    axes[i].set_ylabel('Reference', fontsize=25)
-                    axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=20)  # Set font size for y-axis labels
-                    if acronym_mapping:
-                        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
-                        axes[i].text(
-                            0.1, 0.5, legend_text,  # Position text to the left of the subplot
-                            fontsize=14,
-                            verticalalignment='center',
-                            horizontalalignment='right',
-                            transform=axes[i].transAxes,  # Use subplot's coordinate system
-                            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
-                        )
-                else:
-                    axes[i].set_ylabel("", fontsize=11)
-                    axes[i].set_yticks([])  # Remove y-axis labels for other subplots
-                    # Save the figure
-        plt.savefig(os.path.join(outpath, f'f1_heatmaps_{query}_threshold_{threshold:.2f}.png'), bbox_inches='tight')
-        plt.close()
-
-
-def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys, acronym_mapping=None):
-    """
-    Plot one heatmap for each level of the hierarchy with references as rows and queries as columns.
-
-    Parameters:
-        weighted_f1_data (pd.DataFrame): DataFrame containing F1 scores with columns:
-                                         'level', 'reference', 'query', 'weighted_f1'.
-        threshold (float): Threshold value to display in plot titles.
-        outpath (str): Directory to save the heatmaps.
-        levels (list): List of levels to plot (e.g., ['Rachel_class', 'Rachel_subclass', 'Rachel_family']).
-        ref_keys (list): List of reference keys to ensure consistent ordering of rows.
-    """
-    sns.set(style="whitegrid")
-    os.makedirs(outpath, exist_ok=True)
-
-    for level in ref_keys:
-        # Filter data for the current level
-        level_data = weighted_f1_data[weighted_f1_data['key'] == level]
-
-        # Pivot the data for heatmap
-        pivot_f1 = level_data.pivot_table(
-            index='reference_acronym',
-            columns='query',
-            values='weighted_f1'
-        )
-
-        # Define color map limits
-        vmin = weighted_f1_data['weighted_f1'].min()
-        vmax = weighted_f1_data['weighted_f1'].max()
-
-        # Create the heatmap
-        plt.figure(figsize=(20, 15))
-        sns.heatmap(
-            pivot_f1,
-            annot=True,
-            cmap='YlOrRd',
-            cbar_kws={'label': 'Weighted F1 Score'},
-            fmt='.3f',
-            annot_kws={"size": 15},
-            vmin=vmin,
-            vmax=vmax
-        )
-
-        # Add title and axis labels
-        plt.title(f'Weighted F1 Scores for {level}\nThreshold = {threshold:.2f}', fontsize=25)
-        plt.ylabel('Reference', fontsize=25)
-        plt.xlabel('Query', fontsize=25)
-        plt.xticks(rotation=90, ha='right', fontsize=25)
-        plt.yticks(fontsize=25, rotation=90)
-        
-        if acronym_mapping:
-            # Add an annotation box with the acronym legend
-            legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
-            plt.gcf().text(
-                0.85, 0.5, legend_text, 
-                fontsize=14, 
-                verticalalignment='center', 
-                bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
-            )
-        
-        plt.tight_layout()
-        # Save the heatmap
-        plt.savefig(os.path.join(outpath, f'{level}_weighted_f1_heatmap_threshold_{threshold:.2f}.png'))
-        plt.close()
-
-    
  
 def split_anndata_by_obs(adata, obs_key="dataset_title"):
     """
@@ -1135,4 +918,106 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
     os.makedirs(outdir, exist_ok=True)
     scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
 
- 
+
+    
+def classify_by_entropy(class_probs, class_labels, quantile):
+    
+    if quantile == 0:
+        # If quantile is 0, return the most probable class for each cell
+        predictions = class_labels[np.argmax(class_probs, axis=1)]
+        return predictions
+    # class_probs: (n_cells, n_classes), rows sum to 1
+    entropies = entropy(class_probs.T, base=2)  # or base=np.e
+    # Use a cutoff, e.g., 90th percentile of low entropy = confident
+    cutoff = np.quantile(entropies, 1-quantile) # top 10% entropy are unknown
+   # entropies = entropy(class_probs.T, base=2)  # or base=np.e
+    predictions = np.where(entropies <= cutoff, class_labels[np.argmax(class_probs, axis=1)], "unknown")
+    return predictions
+
+def plot_entropy_distribution(class_probs, class_labels, entropies, predictions, cutoff):
+    df = pd.DataFrame({
+        "predicted_class": predictions,
+        "max_prob": np.max(class_probs, axis=1),
+        "entropy": entropies,
+    })
+    
+    # histogram of max probabilities
+    # facet by predicted class
+    sns.histplot(
+        data=df,
+        x="entropy",
+        hue="predicted_class",
+        multiple="layer",
+        bins=50,
+        kde=False,
+        palette="tab20"  # optional for better class separation
+    )
+
+    plt.axvline(cutoff, color='red', linestyle='--', label=f'Cutoff: {cutoff:.3f}')
+    plt.xlabel("Entropy of Probabilities")
+    plt.ylabel("Cell Count")
+    plt.tight_layout()
+    
+
+
+def plot_max_prob_hist_by_gap(class_probs, cutoff, quantile=0.1):
+    """
+    Plot max predicted probabilities histogram colored by known/unknown classification.
+
+    Args:
+        probs (np.array): (n_cells, n_classes), normalized probabilities.
+        cutoff (float): confidence gap cutoff.
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    max_probs = sorted_probs[:, 0]
+
+    unknown_mask = gaps < cutoff
+    known_mask = ~unknown_mask
+
+    plt.figure(figsize=(8, 5))
+    plt.hist(max_probs[known_mask], bins=50, alpha=0.7, label=f'Known (gap < {cutoff:.3f})', color='blue', density=False)
+    plt.hist(max_probs[unknown_mask], bins=50, alpha=0.7, label=f'Unknown (gap > {cutoff:.3f})', color='red', density=False)
+    plt.text(0.05, 0.95, f'Quantile: {quantile}', fontsize=12, ha='left', va='top', transform=plt.gca().transAxes)
+    plt.xlabel('Max predicted probability')
+    plt.ylabel('Count')
+    plt.title('Max Probability Distribution by Confidence Gap Classification')
+    plt.legend()
+    plt.savefig('max_prob_hist_by_gap.png')
+    plt.close()
+    
+def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
+    """
+    Compute confidence gap cutoff at given quantile.
+
+    Args:
+        probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        quantile (float): quantile for cutoff.
+
+    Returns:
+        float: confidence gap cutoff.
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    cutoff = np.quantile(gaps, quantile)
+    return cutoff
+    
+def classify_by_gap(class_probs, class_labels, cutoff):
+    """
+    Classify cells as 'known' or 'unknown' based on confidence gap.
+
+    Args:
+        class_probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        class_labels (list): list of class labels.
+        cutoff (float): confidence gap cutoff.
+
+    Returns:
+        np.array: array of predicted classes ('known' or 'unknown').
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    
+    # Classify based on gap
+    predictions = np.where(gaps < cutoff, "unknown", class_labels[np.argmax(class_probs, axis=1)])
+    
+    return predictions
