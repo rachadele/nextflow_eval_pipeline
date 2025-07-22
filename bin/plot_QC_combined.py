@@ -49,9 +49,14 @@ def parse_arguments():
         return known_args
     
 
-def is_correct(adata, level="subclass"):
-  # change to string type
-  adata.obs["correct_"+level] = adata.obs["predicted_"+level].astype(str) == adata.obs[level].astype(str)
+def is_correct(adata, ref_keys, mapping_df):
+  # get correctness of predictions by mapping predicted labels to valid labels at appropriate granularity
+  # return original object with additional columns for correctness
+  # keep original predicted labels for clarity
+  adata_copy = map_valid_labels(adata, ref_keys, mapping_df) 
+  for level in ref_keys:
+    adata_copy.obs["correct_"+level] = adata_copy.obs["predicted_"+level].astype(str) == adata_copy.obs[level].astype(str)
+    adata["correct_"+level] = adata_copy.obs["correct_"+level]
   return adata
 
 def read_query(query_path, gene_mapping, predicted_meta):
@@ -271,8 +276,8 @@ def main():
         if not predicted_meta:
             raise ValueError(f"No predicted meta file found for sample {sample_id}")
         query = read_query(query_path, gene_mapping, predicted_meta=assigned_celltypes)
-        for key in ref_keys:
-            query = is_correct(query, level=key)
+        # must do by sample individually
+        query = is_correct(query, ref_keys, mapping_df)
         all_query_samples[str(sample_id)] = query
 
 
