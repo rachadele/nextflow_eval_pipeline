@@ -8,7 +8,7 @@ CA1-ProS	CA1-ProS	Hippocampal neuron	Glutamatergic	Neuron
 CA2-IG-FC	CA2-IG-FC	Hippocampal neuron	Glutamatergic	Neuron
 CA3	CA3	Hippocampal neuron	Glutamatergic	Neuron
 CR	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
-CT SUB	CT	deep layer non-IT	Glutamatergic	Neuron
+CT SUB	L6 CT	deep layer non-IT	Glutamatergic	Neuron
 DG	DG	Hippocampal neuron	Glutamatergic	Neuron
 Endothelial	Endothelial	Vascular	Non-neuron	Non-neuron
 Endo	Endothelial	Vascular	Non-neuron	Non-neuron
