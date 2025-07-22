@@ -91,6 +91,9 @@ def main():
     cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
     cellxgene_obs_filtered = cellxgene_obs[cellxgene_obs['collection_name'].isin(ref_collections)] 
 
+    # write to table
+    cellxgene_obs_filtered.to_csv(os.path.join("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_info",census_version, "cellxgene_obs_filtered.tsv"), sep="\t", index=False)
+    
     organism_name_mapping = {
         "homo_sapiens": "Homo sapiens",
         "mus_musculus": "Mus musculus"
