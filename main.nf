@@ -217,11 +217,11 @@ process classifyAll {
 // extract study name fromquery_name
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
 
-    // Publish files matching the 'confusion**' pattern
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
+    //// Publish files matching the 'confusion**' pattern
+    //publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
 
-    // Publish files matching the 'pr_curves**' pattern
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
+    //// Publish files matching the 'pr_curves**' pattern
+    //publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
 
     // Publish files matching the 'predicted_meta**' pattern
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "predicted_meta**", mode: 'copy'
@@ -348,39 +348,27 @@ process plotQC_combined {
 process runMultiQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     publishDir (
-        "${params.outdir}/${method}/${study_name}/${ref_name}/multiqc", mode: 'copy'
+        "${params.outdir}/multiqc_results", mode: 'copy', pattern: "**multiqc_report.html"
     )
 
     input:
         tuple val(study_name), val(method), val(ref_name), path(qc_dir)
 
     output:
-        tuple val(study_name), val(method), val(ref_name), path("multiqc_report.html"), emit: multiqc_html
-
+        tuple val(study_name), val(method), val(ref_name), path("**multiqc_report.html"), emit: multiqc_html
+    
     script:
+
     """
-    multiqc ${qc_dir} -d --config ${params.multiqc_config}
+    # Combine base config with dynamic title
+    cp ${params.multiqc_config} new_config.yaml
+    echo 'title: "${census_version} ${study_name} ${method} ${ref_name} ${params.cutoff}"' >> new_config.yaml
+
+    multiqc ${qc_dir} --config new_config.yaml
     """
 }
 
-process collect_multiqc_dirs {
-     publishDir (
-        "${params.outdir}/multiqc_results", mode: 'copy'
-    )
 
-    input:
-        tuple val(study_name), val(method), val(ref_name), path(multiqc_report)
-
-    output:
-        path "**multiqc.html"
-
-    script:
-    """
-    cp ${multiqc_report} ${study_name}_${method}_${ref_name}_multiqc.html
-    """
-
-
-}
 // Workflow definition
 workflow {
 
@@ -526,8 +514,6 @@ workflow {
     multiqc_channel = plotQC_combined.out.qc_result
     runMultiQC(multiqc_channel)
 
-    // collect multiqc reports and rename them
-    collect_multiqc_dirs(runMultiQC.out.multiqc_html)
 
     save_params_to_file()
 }
