@@ -218,7 +218,7 @@ process classifyAll {
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
 
     //// Publish files matching the 'confusion**' pattern
-    //publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
 
     //// Publish files matching the 'pr_curves**' pattern
     //publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
