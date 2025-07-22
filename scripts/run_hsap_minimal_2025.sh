@@ -8,7 +8,7 @@ subsample_query=100
 ref_split_values=("dataset_id")
 cutoff_values=(0)
 normalization_method="SCT"
-census_versions = ("2025-01-30", "2024-07-30")
+census_versions=("2025-01-30")
 
 # Loop over parameter combinations
 for subsample_ref in "${subsample_ref_values[@]}"; do
