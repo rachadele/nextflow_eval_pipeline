@@ -14,45 +14,15 @@ custom_data:
     file_format: 'tsv'
     plot_type: 'barplot'
 
-  celltype_outlier_composition:
-    section_name: 'Cell type outlier composition'
-    description: >
-    Composition per sample of predicted outliers:
-      outlier_mito = mitochondrial outliers;
-      outlier_ribo = ribosomal outliers;
-      outlier_hb = hemoglobin outliers;
-      counts_outlier = outlier of log1p_n_genes ~ log1p_n_counts;
-      predicted_doublet = doublets predicted by sc.pp.scrublet;
-    file_format: 'tsv'
-    plot_type: 'barplot'
-
-  correct_outlier_composition:
-    section_name: 'Correct vs incorrect outlier composition'
-    description: >
-    Composition per sample of predicted outliers:
-      outlier_mito = mitochondrial outliers;
-      outlier_ribo = ribosomal outliers;
-      outlier_hb = hemoglobin outliers;
-      counts_outlier = outlier of log1p_n_genes ~ log1p_n_counts;
-      predicted_doublet = doublets predicted by sc.pp.scrublet;
-    file_format: 'tsv'
-    plot_type: 'barplot'
-
   sample_correct_composition:
     section_name: 'Sample composition'
     description: 'Composition per sample of correctly predicted cells'
     file_format: 'tsv'
     plot_type: 'barplot'
 
-  sample_outlier_composition:
-    section_name: 'Sample outlier composition'
-    description: >
-      Composition per sample of predicted outliers:
-        outlier_mito = mitochondrial outliers;
-        outlier_ribo = ribosomal outliers;
-        outlier_hb = hemoglobin outliers;
-        counts_outlier = outlier of log1p_n_genes ~ log1p_n_counts;
-        predicted_doublet = doublets predicted by sc.pp.scrublet;
+  sample_celltype_composition:
+    section_name: 'Sample cell type composition'
+    description: 'Composition per sample of cell types'
     file_format: 'tsv'
     plot_type: 'barplot'
 
@@ -77,11 +47,6 @@ sp:
   celltype_correct_composition:
     fn: "*celltype_counts_correct_mqc.tsv"
   
-  celltype_outlier_composition:
-    fn: "*celltype_outlier_counts_mqc.tsv"
-
-  correct_outlier_composition:
-    fn: "*correct_outlier_counts_mqc.tsv"
 
   actual_vs_predicted:
     fn: "*actual_vs_predicted_mqc.tsv"
@@ -89,14 +54,14 @@ sp:
   sample_correct_composition:
     fn: "*sample_counts_correct_mqc.tsv"
 
-  sample_outlier_composition:
-    fn: "*sample_outlier_counts_mqc.tsv"
+  sample_celltype_composition:
+    fn: "*sample_celltype_counts_mqc.tsv"
 
 
 custom_content:
   order:
-    - celltype_correct_composition
-    - celltype_outlier_composition
     - actual_vs_predicted
-    - correct_outlier_composition
+    - celltype_correct_composition
+    - sample_correct_composition
+    - sample_celltype_composition
     - markers_heatmap
