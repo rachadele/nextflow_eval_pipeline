@@ -151,21 +151,22 @@ def main():
     
     # Classify cells and evaluate
     query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
-    query = map_valid_labels(query, ref_keys, mapping_df)  
 
     outdir = os.path.join("predicted_meta")
     os.makedirs(outdir, exist_ok=True)
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
     
     # map valid labels for given query granularity and evaluate
+    query = map_valid_labels(query, ref_keys, mapping_df)  
+
     class_metrics = eval(query, ref_keys, mapping_df)
     #class_metrics = update_classification_report(class_metrics, ref_keys)
 
     # Plot confusion matrices
-    for key in ref_keys:
-        outdir = os.path.join("confusion")
-        os.makedirs(outdir, exist_ok=True)
-        plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
+    #for key in ref_keys:
+        #outdir = os.path.join("confusion")
+        #os.makedirs(outdir, exist_ok=True)
+        #plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
 
     # Collect F1 scores
     f1_data = []
