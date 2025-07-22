@@ -24,6 +24,8 @@ from PIL import Image
 import io
 import os
 import math
+from upsetplot import UpSet, from_memberships
+
 #get original files
 # Function to parse command line arguments
 def parse_arguments():
@@ -182,6 +184,7 @@ def plot_ct_umap(query, outdir):
 
 
 
+
 def plot_upset_by_group(obs, outlier_cols, group_col, outdir):
     os.makedirs(outdir, exist_ok=True)
     obs = obs.copy()
@@ -190,6 +193,13 @@ def plot_upset_by_group(obs, outlier_cols, group_col, outdir):
     if group_col:
         for group in sorted(obs[group_col].unique()):
             counts = obs[obs[group_col] == group]["membership"].value_counts()
+            data = from_memberships(counts.index, data=counts.values)
+            plt.figure(figsize=(8, 4))
+            UpSet(data, show_counts=True).plot()
+            plt.suptitle(f"{group_col} = {group}")
+            plt.tight_layout()
+            plt.savefig(os.path.join(outdir, f"{group}_upset_mqc.png"))
+            plt.close()
             if counts.empty:
                 continue
     else:   
@@ -198,13 +208,14 @@ def plot_upset_by_group(obs, outlier_cols, group_col, outdir):
         counts = obs["membership"].value_counts()
         if counts.empty:
             return
-    data = from_memberships(counts.index, data=counts.values)
-    plt.figure(figsize=(8, 4))
-    UpSet(data, show_counts=True).plot()
-    plt.suptitle(f"{group_col} = {group}")
-    plt.tight_layout()
-    plt.savefig(os.path.join(outdir, f"{group_col}_{group}_upset_mqc.png"))
-    plt.close()
+        data = from_memberships(counts.index, data=counts.values)
+        plt.figure(figsize=(8, 4))
+        UpSet(data, show_counts=True).plot()
+        plt.suptitle(f"{group_col} = {group}")
+        plt.tight_layout()
+        plt.savefig(os.path.join(outdir, f"{group}_upset_mqc.png"))
+        plt.close()
+    
 
 
 def main():
@@ -329,9 +340,17 @@ def main():
         .reset_index()
     )
     sample_correct_counts.to_csv(os.path.join(study_name,"sample_correct_counts_mqc.tsv"), sep="\t", index=False)
+   
+    sample_celltype_counts = (
+        query.obs.groupby(["sample_id","subclass"])
+        .size()
+        .unstack(fill_value=0)
+        .reset_index()
+    )
+    sample_celltype_counts.to_csv(os.path.join(study_name,"sample_celltype_counts_mqc.tsv"), sep="\t", index=False)
+   
     
-    
-   outlier_cols = [
+    outlier_cols = [
         "non_outlier",
         "counts_outlier", 
         "umi_outlier", 
@@ -340,8 +359,9 @@ def main():
         "outlier_ribo", 
         "outlier_hb", 
         "predicted_doublet"
-    ]
-    plot_upset_by_group(query_combined.obs, outlier_cols, None, study_name)
+    ] 
+   
+    plot_upset_by_group(query.obs, outlier_cols, None, study_name)
  
 if __name__ == "__main__":
     main()
