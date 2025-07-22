@@ -235,7 +235,7 @@ process classifyAll {
     tuple val(method), path("f1_results/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in f1_results
     path "confusion/**"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
-    path "pr_curves/*png"
+   // path "pr_curves/*png"
 
     script:
     ref_name = ref_path.getName().split('\\.')[0]
@@ -362,7 +362,7 @@ process runMultiQC {
     """
     # Combine base config with dynamic title
     cp ${params.multiqc_config} new_config.yaml
-    echo 'title: "${census_version} ${study_name} ${method} ${ref_name} ${params.cutoff}"' >> new_config.yaml
+    echo 'title: "${params.census_version} ${study_name} ${method} ${ref_name} ${params.cutoff}"' >> new_config.yaml
 
     multiqc ${qc_dir} --config new_config.yaml
     """
