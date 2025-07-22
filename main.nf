@@ -218,7 +218,7 @@ process classifyAll {
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
 
     //// Publish files matching the 'confusion**' pattern
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
+   // publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
 
     //// Publish files matching the 'pr_curves**' pattern
     //publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
@@ -233,7 +233,7 @@ process classifyAll {
 
     output:
     tuple val(method), path("f1_results/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in f1_results
-    path "confusion/**"
+   // path "confusion/**"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
    // path "pr_curves/*png"
 
