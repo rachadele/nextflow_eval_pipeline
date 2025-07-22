@@ -38,13 +38,13 @@ from collections import defaultdict
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
   #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/1f/0e8727953db2a605a64da16d45558a/GSE247339.2_1051970.obs.relabel.tsv")
-    parser.add_argument('--ref_name', type=str, default="Single-cell_RNA-seq_for_all_cortical__hippocampal_regions_SMART-Seq_v4") #nargs ="+")
-    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family","global"])
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/70/e01ffd3e44041673370e367f2157ac/lim_H5109Cin.obs.relabel.tsv")
+    parser.add_argument('--ref_name', type=str, default="Human_Multiple_Cortical_Areas_SMART-seq") #nargs ="+")
+    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family"])
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
-    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/ea/138292b60359b9af1ea855fe7bd2d1/GSE247339.2_1051970_Single-cell_RNA-seq_for_all_cortical__hippocampal_regions_SMART-Seq_v4.prob.df.tsv")
-    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse.tsv")
-    parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/sctransform_sample_subsets_dataset_id_only_mmus/4c/a6f8162bef802cde2d962242a858ce/refs/ref_region.yaml")
+    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/70/e01ffd3e44041673370e367f2157ac/lim_H5109Cin_Human_Multiple_Cortical_Areas_SMART-seq_prediction_scores_seurat.tsv")
+    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
+    parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/06/03e7ac72a1ef3b67ce6a357eebd8c3/refs/ref_region.yaml")
 
     
     if __name__ == "__main__":
@@ -96,56 +96,56 @@ def main():
 
     os.makedirs("pr_curves", exist_ok=True)
     
-    pr_metrics = pr_analysis(prob_df, query, key=ref_keys[0], mapping_df = mapping_df)
-    if not pr_metrics:
-        print("No PR metrics to plot")
-        fig, ax = plt.subplots(figsize=(5, 5))  # Create a small dummy figure
-        fig.savefig(os.path.join("pr_curves", f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
-        plt.close(fig)  # Close to free memory
-    else:    
-        # if pr metrics is not empty:
-        _, ax = plt.subplots(figsize=(10, 15))
-        plt.rcParams.update({'font.size': 20})
+    #pr_metrics = pr_analysis(prob_df, query, key=ref_keys[0], mapping_df = mapping_df)
+    #if not pr_metrics:
+        #print("No PR metrics to plot")
+        #fig, ax = plt.subplots(figsize=(5, 5))  # Create a small dummy figure
+        #fig.savefig(os.path.join("pr_curves", f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
+        #plt.close(fig)  # Close to free memory
+    #else:    
+        ## if pr metrics is not empty:
+        #_, ax = plt.subplots(figsize=(10, 15))
+        #plt.rcParams.update({'font.size': 20})
         
-        f_scores = np.linspace(0.2, 0.8, num=4)
-        lines, labels = [], []
-        for f_score in f_scores:
-            x = np.linspace(0.01, 1)
-            y = f_score * x / (2 * x - f_score)
-            (l,) = plt.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
-            plt.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
+        #f_scores = np.linspace(0.2, 0.8, num=4)
+        #lines, labels = [], []
+        #for f_score in f_scores:
+            #x = np.linspace(0.01, 1)
+            #y = f_score * x / (2 * x - f_score)
+            #(l,) = plt.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
+            #plt.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
             
-        class_labels= pr_metrics["recall"].keys()
+        #class_labels= pr_metrics["recall"].keys()
         
-        # transform to array
-        class_labels = np.array(list(class_labels))
-        # make colors for each class
-        colors = sns.color_palette("husl", len(class_labels))
-        for class_label, color in zip(class_labels, colors):
+        ## transform to array
+        #class_labels = np.array(list(class_labels))
+        ## make colors for each class
+        #colors = sns.color_palette("husl", len(class_labels))
+        #for class_label, color in zip(class_labels, colors):
 
-            display = PrecisionRecallDisplay(recall=pr_metrics["recall"][class_label], 
-                                            precision=pr_metrics["precision"][class_label], 
-                                            average_precision=pr_metrics["average_precision"][class_label])
-            display.plot(ax=ax, name=f"Precision-recall for class {class_label}", color=color)
-            avg_prec = pr_metrics["average_precision"][class_label]
-            opt_thresh = pr_metrics["optimal_threshold"][class_label]
-            # get position of class label
-            class_idx = np.where(class_labels == class_label)[0][0]
-        # plt.annotate(f"Optimal threshold for {class_label}={opt_thresh:.2f}", 
-            #           xy=(0.6, 0.2 + class_idx * 0.05), fontsize=12, color=color)
+            #display = PrecisionRecallDisplay(recall=pr_metrics["recall"][class_label], 
+                                            #precision=pr_metrics["precision"][class_label], 
+                                            #average_precision=pr_metrics["average_precision"][class_label])
+            #display.plot(ax=ax, name=f"Precision-recall for class {class_label}", color=color)
+            #avg_prec = pr_metrics["average_precision"][class_label]
+            #opt_thresh = pr_metrics["optimal_threshold"][class_label]
+            ## get position of class label
+            #class_idx = np.where(class_labels == class_label)[0][0]
+        ## plt.annotate(f"Optimal threshold for {class_label}={opt_thresh:.2f}", 
+            ##           xy=(0.6, 0.2 + class_idx * 0.05), fontsize=12, color=color)
 
-        # Add the legend
-        handles, labels = display.ax_.get_legend_handles_labels()
-        handles.extend([l])
-        labels.extend(["iso-f1 curves"])
-        ax.legend(handles=handles, labels=labels, loc="best", bbox_to_anchor=(1.3, 1), borderaxespad=0., fontsize =12)
+        ## Add the legend
+        #handles, labels = display.ax_.get_legend_handles_labels()
+        #handles.extend([l])
+        #labels.extend(["iso-f1 curves"])
+        #ax.legend(handles=handles, labels=labels, loc="best", bbox_to_anchor=(1.3, 1), borderaxespad=0., fontsize =12)
 
-        ax.set_xlabel('Recall', fontsize=16)
-        ax.set_ylabel('Precision', fontsize=16)
-        ax.set_title(f"Precision-Recall Curve for {query_name} vs {ref_name}", fontsize=18)
+        #ax.set_xlabel('Recall', fontsize=16)
+        #ax.set_ylabel('Precision', fontsize=16)
+        #ax.set_title(f"Precision-Recall Curve for {query_name} vs {ref_name}", fontsize=18)
 
-        plt.savefig(os.path.join("pr_curves",f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
-        plt.close()
+        #plt.savefig(os.path.join("pr_curves",f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
+        #plt.close()
 
          
     
@@ -162,10 +162,10 @@ def main():
     #class_metrics = update_classification_report(class_metrics, ref_keys)
 
     # Plot confusion matrices
-    for key in ref_keys:
-        outdir = os.path.join("confusion")
-        os.makedirs(outdir, exist_ok=True)
-        plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
+    #for key in ref_keys:
+        #outdir = os.path.join("confusion")
+        #os.makedirs(outdir, exist_ok=True)
+        #plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
 
     # Collect F1 scores
     f1_data = []
