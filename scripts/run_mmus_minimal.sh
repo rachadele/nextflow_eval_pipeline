@@ -4,7 +4,7 @@ set -e  # Exit on error
 
 # Define parameter values
 subsample_ref_values=(500)
-census_versions = ("2025-01-30", "2024-07-30")
+census_versions=("2025-01-30")
 subsample_query=100
 ref_split_values=("dataset_id")
 cutoff_values=(0)
