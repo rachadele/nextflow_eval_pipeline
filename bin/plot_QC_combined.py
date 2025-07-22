@@ -290,11 +290,10 @@ def main():
         query.var = query.var.merge(gene_mapping["OFFICIAL_SYMBOL"], left_index=True, right_index=True, how="left")
         query.var.rename(columns={"OFFICIAL_SYMBOL": "feature_name"}, inplace=True)
 
+
     # print to std err
     #query.obs.index = query.obs["cell_id"]
     query.raw = query.copy()
-    
-
     query=qc_preprocess(query)
     
     query.obs["non_outlier"] = ~(

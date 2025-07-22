@@ -164,10 +164,10 @@ def main():
     #class_metrics = update_classification_report(class_metrics, ref_keys)
 
     # Plot confusion matrices
-    #for key in ref_keys:
-        #outdir = os.path.join("confusion")
-        #os.makedirs(outdir, exist_ok=True)
-        #plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
+    for key in ref_keys:
+        outdir = os.path.join("confusion")
+        os.makedirs(outdir, exist_ok=True)
+        plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
 
     # Collect F1 scores
     f1_data = []
