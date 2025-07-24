@@ -53,10 +53,11 @@ def is_correct(adata, ref_keys, mapping_df):
   # get correctness of predictions by mapping predicted labels to valid labels at appropriate granularity
   # return original object with additional columns for correctness
   # keep original predicted labels for clarity
-  adata_copy = map_valid_labels(adata, ref_keys, mapping_df) 
+  adata_copy = adata.copy()
+  adata_copy.obs = map_valid_labels(adata.obs, ref_keys, mapping_df) 
   for level in ref_keys:
     adata_copy.obs["correct_"+level] = adata_copy.obs["predicted_"+level].astype(str) == adata_copy.obs[level].astype(str)
-    adata["correct_"+level] = adata_copy.obs["correct_"+level]
+    adata.obs["correct_"+level] = adata_copy.obs["correct_"+level]
   return adata
 
 def read_query(query_path, gene_mapping, predicted_meta):
@@ -73,7 +74,6 @@ def read_query(query_path, gene_mapping, predicted_meta):
     else:
         query.obs.index = query.obs.index.astype(int)
         query.obs = query.obs.merge(predicted_meta, left_index=True, right_index=True, how="left", suffixes=("", "_y"))
-
         
     columns_to_drop = [col for col in query.obs.columns if col.endswith("_y")]
     query.obs.drop(columns=columns_to_drop, inplace=True)
@@ -267,9 +267,6 @@ def main():
     for query_path in query_paths:
         # Extract sample name from query path
         sample_id = os.path.basename(query_path).split("_")[1]
-       # sample_id = os.path.basename(query_path).split("_")[1].split(".")[0]
-
-        # print to std err
         if not sample_id:
             raise ValueError(f"Sample ID could not be extracted from query path: {query_path}")
         assigned_celltypes = predicted_meta.get(sample_id, []) 
