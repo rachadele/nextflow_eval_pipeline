@@ -768,7 +768,12 @@ def split_anndata_by_obs(adata, obs_key="dataset_title"):
 
   
 def map_genes(query, gene_mapping):
-    # Check if the "feature_name" column exists in query.var
+    # Drop rows with missing values in the relevant columns
+    gene_mapping = gene_mapping.dropna(subset=["ENSEMBL_ID", "OFFICIAL_SYMBOL"])
+    # Set the index of gene_mapping to "ENSEMBL_ID" and ensure it's unique
+    gene_mapping = gene_mapping.drop_duplicates(subset="ENSEMBL_ID")
+    gene_mapping.set_index("ENSEMBL_ID", inplace=True)
+        # Check if the "feature_name" column exists in query.var
     if "feature_name" not in query.var.columns:
         # Merge gene_mapping with query.var based on the index
         query.var = query.var.merge(gene_mapping["OFFICIAL_SYMBOL"], left_index=True, right_index=True, how="left")
