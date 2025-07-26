@@ -93,7 +93,7 @@ def qc_preprocess(query):
 
 
 
-def plot_joint_umap(query, outdir):
+def plot_joint_umap(query, outdir, sample_id=None):
     x_metric = "log1p_n_genes_by_counts"
     metrics = {
         "log1p_total_counts": ["counts_outlier", "umi_outlier", "genes_outlier"],
@@ -159,8 +159,7 @@ def plot_joint_umap(query, outdir):
         y_offset = row * img_height
         combined_img.paste(img, (x_offset, y_offset))
 
-    os.makedirs(outdir, exist_ok=True)
-    out_path = f"{outdir}/outliers_mqc.png"
+    out_path = os.path.join(outdir,f"{sample_id}_outliers_mqc.png")
     combined_img.save(out_path)
 
 def plot_ct_umap(query, outdir):
@@ -308,9 +307,9 @@ def main():
         sample_query = query[query.obs["sample_id"] == sample_id]
         
        # sample_query = get_qc_metrics(sample_query, nmads=args.nmads)
-        outdir = os.path.join(study_name, sample_id)
+        outdir = study_name
         os.makedirs(outdir, exist_ok=True)
-        plot_joint_umap(sample_query, outdir=outdir)
+        plot_joint_umap(sample_query, outdir=outdir, sample_id=sample_id)
    
     
     plot_ct_umap(query, outdir=study_name)
