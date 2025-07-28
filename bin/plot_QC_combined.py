@@ -18,8 +18,8 @@ import argparse
 import os
 import json
 from types import SimpleNamespace
-import adata_functions
-from adata_functions import *
+import utils
+from utils import *
 from PIL import Image
 import io
 import os

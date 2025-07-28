@@ -5,7 +5,7 @@ set -e  # Exit on error
 # Define parameter values
 subsample_ref_values=(500)
 census_versions=("2025-01-30")
-subsample_query=100
+#subsample_query=100
 ref_split_values=("dataset_id")
 cutoff_values=(0)
 normalization_method="SCT"
@@ -21,15 +21,16 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -profile conda \
                     --cutoff "$cutoff" \
                     --subset_type sample \
-                    -work-dir hsap \
+                    -work-dir mmus_minimal \
                     --batch_correct true \
                     --normalization_method "$normalization_method" \
-                    --subsample_query "$subsample_query" \
                     -process.executor slurm \
 					--census_version "$census_version" \
                     -resume \
-					--outdir_prefix "$census_version/mus_musculus/minimal" # Specify output directory
-				done
+                    --remove_unknown false \
+					--outdir_prefix "$census_version/mus_musculus/minimal/keep_unknown" # Specify output directory
+				    #--subsample_query "$subsample_query" \
+                done
             done
         done
     done

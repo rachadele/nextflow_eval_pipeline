@@ -14,8 +14,8 @@ from scipy.sparse import csr_matrix
 import warnings
 import cellxgene_census.experimental
 from sklearn.ensemble import RandomForestClassifier
-import adata_functions
-from adata_functions import *
+import utils
+from utils import *
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, auc
 from sklearn.preprocessing import label_binarize
@@ -24,8 +24,8 @@ import seaborn as sns
 import json
 import argparse
 import yaml
-import adata_functions
-from adata_functions import *
+import utils
+from utils import *
 
 
 # Function to parse command line arguments

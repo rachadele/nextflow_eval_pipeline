@@ -374,7 +374,7 @@ workflow {
 
     Channel.fromPath(params.queries_adata)
     .set { query_paths_adata }
-
+    
     Channel.fromPath(params.relabel_q)
     .set { relabel_q_paths }
 
@@ -407,7 +407,7 @@ workflow {
         def query_key = query_name.split('_')[0]
         [query_key, query_name, query_path]
     }
- 
+
     combined_query_paths_adata = query_paths_adata
         .combine(relabel_q_paths, by: 0) // Match query_key
         .map { query_key, query_name, query_path, relabel_q_path ->
