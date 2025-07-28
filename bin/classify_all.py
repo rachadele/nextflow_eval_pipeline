@@ -154,13 +154,13 @@ def main():
 
     outdir = os.path.join("predicted_meta")
     os.makedirs(outdir, exist_ok=True)
-    query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
-    
-    
 
     # map valid labels for given query granularity and evaluate
     query = map_valid_labels(query, ref_keys, mapping_df)  
     class_metrics = eval(query, ref_keys, mapping_df)
+    
+    query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
+
     #class_metrics = update_classification_report(class_metrics, ref_keys)
 
     # Plot confusion matrices
