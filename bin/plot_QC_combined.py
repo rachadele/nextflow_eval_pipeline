@@ -54,7 +54,7 @@ def is_correct(adata, ref_keys, mapping_df):
   # return original object with additional columns for correctness
   # keep original predicted labels for clarity
   adata_copy = adata.copy()
-  adata_copy.obs = map_valid_labels(adata.obs, ref_keys, mapping_df) 
+#  adata_copy.obs = map_valid_labels(adata.obs, ref_keys, mapping_df) 
   for level in ref_keys:
     adata_copy.obs["correct_"+level] = adata_copy.obs["predicted_"+level].astype(str) == adata_copy.obs[level].astype(str)
     adata.obs["correct_"+level] = adata_copy.obs["correct_"+level]
