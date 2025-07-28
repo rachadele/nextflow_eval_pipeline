@@ -11,7 +11,7 @@
         "Molecular and spatial signatures of mouse brain aging at single-cell resolution",
         "Tabula Muris Senis"
     ],
-    "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/mmus_queries_author_true_sample_split_true/h5ad/*h5ad",
+    "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true/h5ad/**h5ad",
     "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv",
     "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv",
     "ref_keys": [

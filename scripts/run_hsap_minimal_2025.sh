@@ -6,7 +6,7 @@ set -e  # Exit on error
 subsample_ref_values=(500)
 subsample_query=100
 ref_split_values=("dataset_id")
-cutoff_values=(0)
+cutoff_values=(0 0.5)
 normalization_method="SCT"
 census_versions=("2025-01-30")
 

@@ -17,8 +17,8 @@ import warnings
 import cellxgene_census
 import cellxgene_census.experimental
 import scvi
-import adata_functions
-from adata_functions import *
+import utils
+from utils import *
 import seaborn as sns
 import argparse
 import os

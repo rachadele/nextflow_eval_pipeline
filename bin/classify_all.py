@@ -16,8 +16,8 @@ import cellxgene_census
 import cellxgene_census.experimental
 import scvi
 from sklearn.ensemble import RandomForestClassifier
-import adata_functions
-from adata_functions import *
+import utils
+from utils import *
 from pathlib import Path
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split

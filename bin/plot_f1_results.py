@@ -14,8 +14,8 @@ import warnings
 import cellxgene_census
 import cellxgene_census.experimental
 import scvi
-#import adata_functions
-#from adata_functions import *
+#import utils
+#from utils import *
 from pathlib import Path
 import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
