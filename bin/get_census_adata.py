@@ -103,7 +103,7 @@ def main():
     else:
         original_celltypes = None
 
-    refs = adata_functions.get_census(
+    refs = utils.get_census(
         organism=organism,
         organ="brain",
         subsample=subsample_ref,
