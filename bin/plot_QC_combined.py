@@ -53,11 +53,11 @@ def is_correct(adata, ref_keys, mapping_df):
   # get correctness of predictions by mapping predicted labels to valid labels at appropriate granularity
   # return original object with additional columns for correctness
   # keep original predicted labels for clarity
-  adata_copy = adata.copy()
+  #adata_copy = adata.copy()
 #  adata_copy.obs = map_valid_labels(adata.obs, ref_keys, mapping_df) 
   for level in ref_keys:
-    adata_copy.obs["correct_"+level] = adata_copy.obs["predicted_"+level].astype(str) == adata_copy.obs[level].astype(str)
-    adata.obs["correct_"+level] = adata_copy.obs["correct_"+level]
+    adata.obs["correct_"+level] = adata.obs["predicted_"+level].astype(str) == adata.obs[level].astype(str)
+    #adata.obs["correct_"+level] = adata_copy.obs["correct_"+level]
   return adata
 
 def read_query(query_path, gene_mapping, predicted_meta):
