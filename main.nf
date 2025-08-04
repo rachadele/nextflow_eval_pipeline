@@ -377,7 +377,6 @@ workflow {
     
     Channel.fromPath(params.relabel_q)
     .set { relabel_q_paths }
-
     // Call the setup process to download the model
     model_path = runSetup(params.organism, params.census_version)
      
@@ -390,10 +389,8 @@ workflow {
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
     // Convert h5ad files to rds files
-     refProcessSeurat(ref_paths_adata)
-     refProcessSeurat.out.ref_paths_seurat.set { ref_paths_seurat }
-
-
+    refProcessSeurat(ref_paths_adata)
+    refProcessSeurat.out.ref_paths_seurat.set { ref_paths_seurat }
 
     // Get query name from file (including region, eg. Lim_Cingulate)
     relabel_q_paths = relabel_q_paths.map { relabel_q_path -> 
