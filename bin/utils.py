@@ -243,11 +243,18 @@ def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="
     )
     return cellxgene_census.get_obs(census, organism, value_filter=value_filter)
 
-def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
+def get_census(census_version="2024-07-01", 
+               organism="homo_sapiens", 
+               subsample=5, 
+               split_column="dataset_id", 
+               dims=50, 
+               organ="brain",
+               tissue=None, 
+               assay=None,
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
                relabel_path="../meta/census_map_human.tsv", 
                seed=42, 
-               ref_keys=["rachel_subclass","rachel_class","rachel_family"],
+               ref_keys=["subclass","class","family"],
                original_celltypes=None):
 
     census = cellxgene_census.open_soma(census_version=census_version)
@@ -257,6 +264,12 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     cellxgene_obs = cellxgene_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
     cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
     cellxgene_obs_filtered = cellxgene_obs[cellxgene_obs['collection_name'].isin(ref_collections)] 
+
+    if assay:
+        cellxgene_obs_filtered = cellxgene_obs_filtered[cellxgene_obs_filtered["assay"].isin(assay)]
+    if tissue:
+        cellxgene_obs_filtered = cellxgene_obs_filtered[cellxgene_obs_filtered["tissue"].isin(tissue)]
+        
 
     # Adjust organism naming for compatibility
     organism_name_mapping = {
@@ -277,10 +290,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # need to add it back in after getting ids
     if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
-    #write files
-        #cellxgene_obs_filtered.to_csv("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30_all_obs.tsv",sep="\t",index=False)
-     #   cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
-       # cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}_cell_type_info.tsv", sep="\t", index=False)
+    
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
         cellxgene_obs_filtered, split_column=split_column,
@@ -303,7 +313,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
         ref_keys=ref_keys, seed = seed, 
         original_celltypes=original_celltypes
     )
-    refs["whole cortex"] = adata
+    refs["aggregate"] = adata
     for name, ref in refs.items():
         dataset_title = name.replace(" ", "_")
         for col in ref.obs.columns:

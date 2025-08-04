@@ -37,23 +37,28 @@ import yaml
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
-    parser.add_argument('--organism', type=str, default='homo_sapiens', help='Organism name (e.g., homo_sapiens)')
+    parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
     parser.add_argument('--census_version', type=str, default='2025-01-30', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--subsample_ref', type=int, default=50)
-    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
-        "Transcriptomic cytoarchitecture reveals principles of human neocortex organization",
-        "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas",
-        "Molecular and cellular evolution of the primate dorsolateral prefrontal cortex",
-        "HVS: Human variation study"
+        "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
+        "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
+        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
+        "Tabula Muris Senis",
+        "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging"
     ]) 
-    parser.add_argument('--split_column', type=str, default="dataset_id")
-    parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])
     parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--organ', type=str, default="brain")
+    parser.add_argument('--assay', type=str, nargs = "+", help="Assays to subset from referenc (unnecessary)", default=None)
+    parser.add_argument('--tissue', type=str, nargs="+", default = "cortex", help = "tissues to pull from (different from organ, this can select for more specific brain regions)")
+    parser.add_argument('--subsample', type=int, help="Number of cells per cell type to subsample from reference", default=50)
+    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/author_cell_annotations/rename_cells_mmus_author.tsv")
+    parser.add_argument('--original_celltype_columns', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30/original_celltype_columns.tsv")
+    parser.add_argument('--author_annotations_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30")
+    parser.add_argument('--split_column', type=str, default="dataset_id")
+    parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family","global"])
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
-        
      
 def create_ref_region_yaml(refs, outdir):
     ref_names = list(refs.keys())
@@ -96,16 +101,23 @@ def main():
     split_column = args.split_column
     ref_keys = args.ref_keys
     SEED = args.seed
-
+    tissue = args.tissue
+    assay = args.assay
+    
+    
+    
+    
     if organism == "mus_musculus":
-        original_celltypes = get_original_celltypes(columns_file=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}/original_celltype_columns.tsv",
-                                                    author_annotations_path=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}") 
+        original_celltypes = get_original_celltypes(columns_file=args.original_celltype_columns,
+                                                    author_annotations_path= args.author_annotations_path) 
     else:
         original_celltypes = None
 
     refs = utils.get_census(
         organism=organism,
-        organ="brain",
+        organ=organ,
+        tissue=tissue,
+        assay=assay,
         subsample=subsample_ref,
         split_column=split_column,
         census_version=census_version,
@@ -139,34 +151,9 @@ def main():
             .replace(";", "")
             .replace("&", "")
         )
-        #if organism == "mus_musculus": 
-            #ref.obs["new_dataset_title"] = ref.obs["dataset_title"].apply(lambda x:x.replace(" ", "_")
-                                                                            #.replace("\\/", "_")
-                                                                            #.replace("(", "")
-                                                                            #.replace(")", "")
-                                                                            #.replace("\\", "")
-                                                                            #.replace("'", "")
-                                                                            #.replace(":", "")
-                                                                            #.replace(";", "")
-                                                                            #.replace("&", "")
-                                                                        #)
-            #if new_dataset_title in original_celltypes.keys():
-                #og_obs = original_celltypes[new_dataset_title]
-                #ref.obs["new_observation_joinid"] = ref.obs["new_dataset_title"].astype(str) + "_" + ref.obs["observation_joinid"].astype(str)
-                ## merge left, only keep leftmost observation_joinid
-                ## instead of merging, create a dict and map using new_observation_joinid
-                #mapping = dict(zip(og_obs["new_observation_joinid"], og_obs["author_cell_type"]))
-                #ref.obs["author_cell_type"] = ref.obs["new_observation_joinid"].map(mapping)
-                #ref.obs[["subclass","cell_type","author_cell_type","dataset_title"]].value_counts().reset_index().to_csv(f"refs/{ref_name}_new_celltypes.tsv", sep="\t", index=False)
-
-                #refs[ref_name] = ref
-            
+                
         ref.write(os.path.join(outdir, f"{new_dataset_title}.h5ad"))
-        ref.obs.to_csv(os.path.join(outdir, f"{new_dataset_title}.obs.tsv"), sep="\t")
-
-  #  if organism == "mus_musculus":
-
-   #    replace_ambiguous_cells(refs, ambiguous_celltypes)
+        ref.obs.to_csv(os.path.join(outdir, f"{new_dataset_title}.obs.tsv"), sep="\t") 
         
     for ref_name, ref in refs.items():
         sc.pp.neighbors(ref, use_rep="scvi")

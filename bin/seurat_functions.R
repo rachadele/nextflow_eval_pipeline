@@ -919,17 +919,17 @@ get_census <- function(organism="homo_sapiens", census_version="2024-07-01", sub
       "disease","dataset_id","development_stage",
       "soma_joinid")
       refs <- list()
-      #everything except whole cortex
+      #everything except aggregate
       refs <- split_and_extract_data(brain_obs_filtered, split_column=split_column, subsample, organism, census, cell_columns, dataset_info, 
         relabel_path=relabel_path, dims=dims)
       filtered_ids = brain_obs_filtered$soma_joinid
-      #whole cortex
+      #aggregate
       seurat_obj <- extract_data(brain_obs_filtered, filtered_ids, subsample, organism, census, obs_filter=NULL, 
         cell_columns, dataset_info, relabel_path,
         dims=dims) 
-      refs[["whole cortex"]] <- seurat_obj
+      refs[["aggregate"]] <- seurat_obj
 
-     # names(refs) <- c("whole cortex", unique(brain_obs_filtered$tissue))
+     # names(refs) <- c("aggregate", unique(brain_obs_filtered$tissue))
     lapply(names(refs), function(x){
       dataset_title <- gsub(" ","_",x)
       #p <- DimPlot(refs[[x]], group.by=c("subclass","assay","tissue","dataset_title"),ncol=2, pt.size=2) +
