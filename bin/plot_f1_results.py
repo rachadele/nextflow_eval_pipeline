@@ -204,7 +204,8 @@ def main():
     f1_df["reference"] = f1_df["reference"].str.replace("_", " ")
  
     acronym_mapping_ref = f1_df[["reference", "reference_acronym"]].drop_duplicates().set_index("reference")["reference_acronym"].to_dict()
-     plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference_acronym", facet="key", 
+    
+    plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="reference_acronym", facet="key", 
                       acronym_mapping = acronym_mapping_ref)
     plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="study", facet="key", 
                       acronym_mapping = None)

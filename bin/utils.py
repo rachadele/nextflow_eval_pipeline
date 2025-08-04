@@ -265,11 +265,17 @@ def get_census(census_version="2024-07-01",
     cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
     cellxgene_obs_filtered = cellxgene_obs[cellxgene_obs['collection_name'].isin(ref_collections)] 
 
+
+    # check if tissue or assay strings overlap with available tissues/assays
     if assay:
-        cellxgene_obs_filtered = cellxgene_obs_filtered[cellxgene_obs_filtered["assay"].isin(assay)]
+        cellxgene_obs_filtered = cellxgene_obs_filtered[
+            cellxgene_obs_filtered["assay"].str.contains('|'.join(assay), case=False, na=False)
+        ]
     if tissue:
-        cellxgene_obs_filtered = cellxgene_obs_filtered[cellxgene_obs_filtered["tissue"].isin(tissue)]
-        
+        cellxgene_obs_filtered = cellxgene_obs_filtered[
+            cellxgene_obs_filtered["tissue"].str.contains('|'.join(tissue), case=False, na=False)
+        ]
+
 
     # Adjust organism naming for compatibility
     organism_name_mapping = {
