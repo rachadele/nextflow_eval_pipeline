@@ -201,7 +201,8 @@ def main():
         f1_df = pd.concat([temp_df, f1_df], ignore_index=True)
     #need to flatten all_f1_scores into data frame
     f1_df["reference_acronym"] = f1_df["reference"].apply(make_acronym)
-    f1_df["study"] = f1_df["query"].str.replace(".", "_").str.split("_").str[0]
+    
+    #f1_df["study"] = f1_df["query"].str.split("_").str[0]
     f1_df["reference"] = f1_df["reference"].str.replace("_", " ")
  
     acronym_mapping_ref = f1_df[["reference", "reference_acronym"]].drop_duplicates().set_index("reference")["reference_acronym"].to_dict()
