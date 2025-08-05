@@ -249,7 +249,8 @@ process classifyAll {
         --cutoff ${params.cutoff} \\
         --probs ${probs_path} \\
         --mapping_file ${params.relabel_r} \\
-        --ref_region_mapping ${ref_region_mapping}
+        --ref_region_mapping ${ref_region_mapping} \\
+        --study_name ${study_name}
     """ 
 }
 
