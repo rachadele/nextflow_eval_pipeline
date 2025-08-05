@@ -51,11 +51,12 @@ def parse_arguments():
     parser.add_argument('--assay', type=str, nargs = "+", help="Assays to subset from referenc (unnecessary)", default=None)
     parser.add_argument('--tissue', type=str, nargs="+", default = "cortex", help = "tissues to pull from (different from organ, this can select for more specific brain regions)")
     parser.add_argument('--subsample', type=int, help="Number of cells per cell type to subsample from reference", default=50)
-    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/cell_annotation_cortex.nf/meta/author_cell_annotations/rename_cells_mmus_author.tsv")
+    parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
     parser.add_argument('--original_celltype_columns', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30/original_celltype_columns.tsv")
     parser.add_argument('--author_annotations_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30")
     parser.add_argument('--split_column', type=str, default="dataset_id")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family","global"])
+    parser.add_argument('--subsample_ref', type=int, default=5, help="Number of cells per cell type to subsample from reference")
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
@@ -94,6 +95,7 @@ def main():
 
     # Set organism and census_version from arguments
     organism = args.organism
+    organ = args.organ
     census_version = args.census_version
     subsample_ref = args.subsample_ref
     relabel_path = args.relabel_path
@@ -103,10 +105,7 @@ def main():
     SEED = args.seed
     tissue = args.tissue
     assay = args.assay
-    
-    
-    
-    
+ 
     if organism == "mus_musculus":
         original_celltypes = get_original_celltypes(columns_file=args.original_celltype_columns,
                                                     author_annotations_path= args.author_annotations_path) 

@@ -107,10 +107,14 @@ process getCensusAdata {
 
     script:
     ref_keys = params.ref_keys.join(' ')
+    tissue = params.tissue ? params.tissue.join(' ') : null
     """
     # Run the python script to generate the files
     python $projectDir/bin/get_census_adata.py \\
         --organism ${params.organism} \\
+        ${params.organ ? "--organ ${params.organ}" : ''} \\ 
+        ${tissue ? "--tissue ${tissue}" : ''} \\
+        ${params.assay ? "--assay ${params.assay}" : ''} \\
         --census_version ${params.census_version} \\
         --subsample_ref ${params.subsample_ref} \\
         --relabel_path ${params.relabel_r} \\

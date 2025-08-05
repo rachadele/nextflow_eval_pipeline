@@ -268,10 +268,17 @@ def get_census(census_version="2024-07-01",
 
     # check if tissue or assay strings overlap with available tissues/assays
     if assay:
+        # transform assay to list if it's a string
+        if isinstance(assay, str):
+            assay = [assay]
         cellxgene_obs_filtered = cellxgene_obs_filtered[
             cellxgene_obs_filtered["assay"].str.contains('|'.join(assay), case=False, na=False)
         ]
+        
     if tissue:
+        # transform tissue to list if it's a string
+        if isinstance(tissue, str):
+            tissue = [tissue]
         cellxgene_obs_filtered = cellxgene_obs_filtered[
             cellxgene_obs_filtered["tissue"].str.contains('|'.join(tissue), case=False, na=False)
         ]
