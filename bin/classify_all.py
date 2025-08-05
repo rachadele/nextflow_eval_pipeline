@@ -45,7 +45,7 @@ def parse_arguments():
     parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/70/e01ffd3e44041673370e367f2157ac/lim_H5109Cin_Human_Multiple_Cortical_Areas_SMART-seq_prediction_scores_seurat.tsv")
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/06/03e7ac72a1ef3b67ce6a357eebd8c3/refs/ref_region.yaml")
-
+    parser.add_argument('--study_name', type=str, default="lim")
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -73,6 +73,7 @@ def main():
     ref_keys = args.ref_keys
     cutoff = args.cutoff
     ref_region_mapping = args.ref_region_mapping
+    study_name = args.study_name
 
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
@@ -178,6 +179,7 @@ def main():
             #if label not in ["macro avg", "micro avg", "weighted avg", "accuracy"]:
                 f1_data.append({
                     'query': query_name,
+                    'study': study_name,
                     'reference': ref_name,
                     'label': label,
                     'f1_score': metrics['f1_score'],
