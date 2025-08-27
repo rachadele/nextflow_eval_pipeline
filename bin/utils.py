@@ -593,78 +593,49 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
 def eval(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
-    for key in ref_keys: 
-       #threshold = kwargs.get('threshold', True)  # Or some other default value    
-        class_labels = query[key].unique()
-        pred_classes = query[f"predicted_{key}"].unique()
-        true_labels= query[key].astype(str)
-        predicted_labels = query["predicted_" + key].astype(str)
-        labels = list(set(class_labels).union(set(pred_classes)))
 
-    # Calculate accuracy and confusion matrix after removing "unknown" labels
-        accuracy = accuracy_score(true_labels, predicted_labels)
-        # Add accuracy to classification report
-        class_metrics[key]["accuracy"] = accuracy
-        
-        ## Calculate accuracy for each label
-              
-        conf_matrix = confusion_matrix(
-            true_labels, predicted_labels, 
-            labels=labels
-        )
+    for key in ref_keys:     
+        true_labels = query[key].astype(str)
+        predicted_labels = query[f"predicted_{key}"].astype(str)
+        labels = list(set(true_labels).union(set(predicted_labels)))
+
+        # Overall accuracy
+        class_metrics[key]["accuracy"] = accuracy_score(true_labels, predicted_labels)
+
+        # Confusion matrix
         class_metrics[key]["confusion"] = {
-            "matrix": conf_matrix,
+            "matrix": confusion_matrix(true_labels, predicted_labels, labels=labels),
             "labels": labels
-            #"accuracy": accuracy
         }
-            # Compute per-label precision, recall, F1-score, and support
+
+        # Per-label metrics (single call)
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
-        support_proportions = support / np.sum(support)
+        support_proportions = support / support.sum() if support.sum() > 0 else np.zeros_like(support)
 
-        # Compute weighted average metrics
-        avg_precision, avg_recall, avg_f1, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="weighted", zero_division=np.nan
-        )
-
-        # Compute per-label accuracy and store all metrics
-        label_metrics = {}
-        for i, label in enumerate(labels):
-            label_mask = true_labels == label
-
-            # Handle case where there are no true instances
-            # if label mask is all False
-            if not label_mask.any():
-                label_accuracy = "nan"
-                precision[i] = "nan"
-                recall[i] = "nan"
-                f1[i] = "nan"
-                label_accuracy = "nan"
-                support_proportions[i] = "nan"
-
-            else:
-                label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
-
-            label_metrics[label] = {
-                "accuracy": label_accuracy,
+        class_metrics[key]["label_metrics"] = {
+            label: {
                 "precision": precision[i],
                 "recall": recall[i],
                 "f1_score": f1[i],
-                "support": support_proportions[i]
-            } 
+                "support": support_proportions[i],
+            }
+            for i, label in enumerate(labels)
+        }
 
-        # Store per-label metrics
-        class_metrics[key]["label_metrics"] = label_metrics
-
-        # Store weighted averages
+        # Weighted averages (single call)
+        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="weighted", zero_division=np.nan
+        )
         class_metrics[key]["weighted_metrics"] = {
-            "precision": avg_precision,
-            "recall": avg_recall,
-            "f1_score": avg_f1
-        } 
+            "precision": avg_p,
+            "recall": avg_r,
+            "f1_score": avg_f,
+        }
 
     return class_metrics
+
 
 def update_classification_report(class_metrics, ref_keys):
     #for query_name, query in class_metrics.items():
