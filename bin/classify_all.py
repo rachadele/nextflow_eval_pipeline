@@ -95,60 +95,7 @@ def main():
     strain = get_unique_value(query, 'strain')
     age = get_unique_value(query, 'age')
 
-    os.makedirs("pr_curves", exist_ok=True)
-    
-    #pr_metrics = pr_analysis(prob_df, query, key=ref_keys[0], mapping_df = mapping_df)
-    #if not pr_metrics:
-        #print("No PR metrics to plot")
-        #fig, ax = plt.subplots(figsize=(5, 5))  # Create a small dummy figure
-        #fig.savefig(os.path.join("pr_curves", f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
-        #plt.close(fig)  # Close to free memory
-    #else:    
-        ## if pr metrics is not empty:
-        #_, ax = plt.subplots(figsize=(10, 15))
-        #plt.rcParams.update({'font.size': 20})
-        
-        #f_scores = np.linspace(0.2, 0.8, num=4)
-        #lines, labels = [], []
-        #for f_score in f_scores:
-            #x = np.linspace(0.01, 1)
-            #y = f_score * x / (2 * x - f_score)
-            #(l,) = plt.plot(x[y >= 0], y[y >= 0], color="gray", alpha=0.2)
-            #plt.annotate("f1={0:0.1f}".format(f_score), xy=(0.9, y[45] + 0.02))
-            
-        #class_labels= pr_metrics["recall"].keys()
-        
-        ## transform to array
-        #class_labels = np.array(list(class_labels))
-        ## make colors for each class
-        #colors = sns.color_palette("husl", len(class_labels))
-        #for class_label, color in zip(class_labels, colors):
-
-            #display = PrecisionRecallDisplay(recall=pr_metrics["recall"][class_label], 
-                                            #precision=pr_metrics["precision"][class_label], 
-                                            #average_precision=pr_metrics["average_precision"][class_label])
-            #display.plot(ax=ax, name=f"Precision-recall for class {class_label}", color=color)
-            #avg_prec = pr_metrics["average_precision"][class_label]
-            #opt_thresh = pr_metrics["optimal_threshold"][class_label]
-            ## get position of class label
-            #class_idx = np.where(class_labels == class_label)[0][0]
-        ## plt.annotate(f"Optimal threshold for {class_label}={opt_thresh:.2f}", 
-            ##           xy=(0.6, 0.2 + class_idx * 0.05), fontsize=12, color=color)
-
-        ## Add the legend
-        #handles, labels = display.ax_.get_legend_handles_labels()
-        #handles.extend([l])
-        #labels.extend(["iso-f1 curves"])
-        #ax.legend(handles=handles, labels=labels, loc="best", bbox_to_anchor=(1.3, 1), borderaxespad=0., fontsize =12)
-
-        #ax.set_xlabel('Recall', fontsize=16)
-        #ax.set_ylabel('Precision', fontsize=16)
-        #ax.set_title(f"Precision-Recall Curve for {query_name} vs {ref_name}", fontsize=18)
-
-        #plt.savefig(os.path.join("pr_curves",f"{query_name}_{ref_name}_pr_curve.png"), bbox_inches='tight')
-        #plt.close()
-
-         
+    os.makedirs("pr_curves", exist_ok=True) 
     
     # Classify cells and evaluate
     query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
