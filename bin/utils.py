@@ -591,7 +591,7 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def eval(query, ref_keys, mapping_df):
+def get_class_metrics(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
     for key in ref_keys:     
