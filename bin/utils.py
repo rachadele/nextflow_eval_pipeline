@@ -591,7 +591,7 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def eval_sample_predictions(query, ref_keys, mapping_df):
+def eval_sample_predictionts(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
     for key in ref_keys:     
@@ -612,7 +612,7 @@ def eval_sample_predictions(query, ref_keys, mapping_df):
         class_metrics[key]["nmi"] = normalized_mutual_info_score(true_labels, predicted_labels, average_method='arithmetic')
         class_metrics[key]["ari"] = adjusted_rand_score(true_labels, predicted_labels)
 
-        # Per-label metrics (single call)
+        # Per-label metrics
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
@@ -629,11 +629,21 @@ def eval_sample_predictions(query, ref_keys, mapping_df):
             for i, label in enumerate(labels)
         }
 
-        # Weighted averages (single call)
+        # Weighted averages
         avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
             true_labels, predicted_labels, average="weighted", zero_division=np.nan
         )
         class_metrics[key]["weighted_metrics"] = {
+            "precision": avg_p,
+            "recall": avg_r,
+            "f1_score": avg_f,
+        }
+        
+        # Macro averages
+        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="macro", zero_division=np.nan
+        )
+        class_metrics[key]["macro_metrics"] = {
             "precision": avg_p,
             "recall": avg_r,
             "f1_score": avg_f,
