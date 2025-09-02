@@ -232,7 +232,7 @@ process classifyAll {
     val ref_region_mapping
 
     output:
-    tuple val(method), path("label_transfer_metrics/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in label_transfer_metrics
+    tuple val(method), path("label_transfer_metrics/*summary.scores.tsv"), emit: f1_score_channel  // Match TSV files in label_transfer_metrics
     path "confusion/**"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
    // path "pr_curves/*png"
@@ -275,7 +275,7 @@ process plotF1ResultsAdata{
     script:
     
     """
-    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+    python $projectDir/bin/plot_results_summary.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
 }
@@ -301,7 +301,7 @@ process plotF1ResultsSeurat{
     script:
     
     """
-    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+    python $projectDir/bin/plot_results_summary.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
 }
