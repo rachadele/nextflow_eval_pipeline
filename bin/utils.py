@@ -591,7 +591,7 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def get_class_metrics(query, ref_keys, mapping_df):
+def eval_sample_predictions(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
     for key in ref_keys:     
@@ -608,6 +608,10 @@ def get_class_metrics(query, ref_keys, mapping_df):
             "labels": labels
         }
 
+        # NMI, ARI between cell type labels
+        class_metrics[key]["nmi"] = normalized_mutual_info_score(true_labels, predicted_labels, average_method='arithmetic')
+        class_metrics[key]["ari"] = adjusted_rand_score(true_labels, predicted_labels)
+
         # Per-label metrics (single call)
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
@@ -620,6 +624,7 @@ def get_class_metrics(query, ref_keys, mapping_df):
                 "recall": recall[i],
                 "f1_score": f1[i],
                 "support": support_proportions[i],
+                "accuracy": accuracy_score(true_labels == label, predicted_labels == label)
             }
             for i, label in enumerate(labels)
         }
