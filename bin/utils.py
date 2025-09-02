@@ -835,6 +835,16 @@ def get_qc_metrics(query, nmads):
 
     return query
 
+def qc_preprocess(query, target_sum=1e4, n_top_genes=2000, n_neighbors=10, n_pcs=30, resolution=0.3):
+    sc.pp.normalize_total(query, target_sum=target_sum)
+    sc.pp.log1p(query)
+    sc.pp.highly_variable_genes(query, n_top_genes=n_top_genes, subset=False)
+    sc.pp.pca(query)
+    sc.pp.neighbors(query, n_neighbors=n_neighbors, n_pcs=n_pcs)
+    sc.tl.umap(query)
+    sc.tl.leiden(query, resolution=resolution)
+    
+    return query
 
 def map_celltype_hierarchy(query, markers_file):
     # Load the markers table
