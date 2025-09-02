@@ -531,7 +531,8 @@ workflow.onComplete {
     Success     : ${workflow.success}
     workDir     : ${workflow.workDir}
     Config files: ${workflow.configFiles}
-    exit status : ${workflow.exitStatus}
+    Exit status : ${workflow.exitStatus}
+    Output directory : ${params.outdir}
 
     --------------------------------------------------------------------------------
     ================================================================================
