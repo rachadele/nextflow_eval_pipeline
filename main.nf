@@ -215,7 +215,7 @@ process predictSeurat {
 process classifyAll {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 // extract study name fromquery_name
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "label_transfer_metrics**", mode: 'copy'
 
     //// Publish files matching the 'confusion**' pattern
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
@@ -232,7 +232,7 @@ process classifyAll {
     val ref_region_mapping
 
     output:
-    tuple val(method), path("f1_results/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in f1_results
+    tuple val(method), path("label_transfer_metrics/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in label_transfer_metrics
     path "confusion/**"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
    // path "pr_curves/*png"
