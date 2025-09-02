@@ -167,7 +167,7 @@ def main():
 
     outdir = "label_transfer_metrics"
     os.makedirs(outdir, exist_ok=True)
-    df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.f1.scores.tsv"), sep="\t", index=False)
+    df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.summary.scores.tsv"), sep="\t", index=False)
     
 if __name__ == "__main__":
     main()
