@@ -165,7 +165,7 @@ def main():
         df[field] = value if value is not None else np.nan
 
 
-    outdir = "f1_results"
+    outdir = "label_transfer_metrics"
     os.makedirs(outdir, exist_ok=True)
     df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.f1.scores.tsv"), sep="\t", index=False)
     
