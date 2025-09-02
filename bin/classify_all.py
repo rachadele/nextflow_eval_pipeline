@@ -105,7 +105,7 @@ def main():
 
     # map valid labels for given query granularity and evaluate
     query = map_valid_labels(query, ref_keys, mapping_df)  
-    class_metrics = eval_sample_predictions(query, ref_keys, mapping_df)
+    class_metrics = evaluate_sample_predictions(query, ref_keys, mapping_df)
     
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
 
@@ -122,6 +122,11 @@ def main():
     for key in ref_keys:
         label_metrics = class_metrics[key]["label_metrics"]
         weighted_metrics = class_metrics[key]["weighted_metrics"]
+        macro_metrics = class_metrics[key]["macro_metrics"]
+        nmi = class_metrics[key]["nmi"]
+        ari = class_metrics[key]["ari"]
+        overall_accuracy = class_metrics[key]["overall_accuracy"]
+        
         for label, metrics in label_metrics.items():
             #if label not in ["macro avg", "micro avg", "weighted avg", "accuracy"]:
                 f1_data.append({
@@ -137,14 +142,18 @@ def main():
                     'weighted_f1': weighted_metrics.get('f1_score', None),
                     'weighted_precision': weighted_metrics.get('precision', None),
                     'weighted_recall': weighted_metrics.get('recall', None),
+                    # add macro averages
+                    'macro_f1': macro_metrics.get('f1_score', None),
+                    'macro_precision': macro_metrics.get('precision', None),
+                    'macro_recall': macro_metrics.get('recall', None),
+                    'nmi': nmi,
+                    'ari': ari,
+                    'overall_accuracy': overall_accuracy,
                     'key': key,
                     'cutoff': cutoff,
-                    'ref_region': ref_region,
+                    'ref_region': ref_region
                 }
         )
-                
-    #celltype_precisions = class_metrics["precision"]
-    #celltype_recalls = class_metrics["recall"]
 
     # Save F1 scores to a file
     df = pd.DataFrame(f1_data)

@@ -591,7 +591,7 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def eval_sample_predictionts(query, ref_keys, mapping_df):
+def evaluate_sample_predictions(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
     for key in ref_keys:     
@@ -600,7 +600,7 @@ def eval_sample_predictionts(query, ref_keys, mapping_df):
         labels = list(set(true_labels).union(set(predicted_labels)))
 
         # Overall accuracy
-        class_metrics[key]["accuracy"] = accuracy_score(true_labels, predicted_labels)
+        class_metrics[key]["overall_accuracy"] = accuracy_score(true_labels, predicted_labels)
 
         # Confusion matrix
         class_metrics[key]["confusion"] = {
