@@ -80,18 +80,6 @@ def read_query(query_path, gene_mapping, predicted_meta):
     return query
 
 
-def qc_preprocess(query):
-    sc.pp.normalize_total(query, target_sum=1e4)
-    sc.pp.log1p(query)
-    sc.pp.highly_variable_genes(query, n_top_genes=2000, subset=False)
-    sc.pp.pca(query)
-    sc.pp.neighbors(query, n_neighbors=10, n_pcs=30)
-    sc.tl.umap(query)
-    sc.tl.leiden(query, resolution=0.3)
-    
-    return query
-
-
 
 def plot_joint_umap(query, outdir, sample_id=None):
     x_metric = "log1p_n_genes_by_counts"
