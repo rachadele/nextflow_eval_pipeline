@@ -89,7 +89,12 @@ def main():
  
     
   query.obs.index = range(query.n_obs)
+ 
+  # Get QC metrics ( mitochondrial, ribosomal, and hemoglobin percentages and outliers by median absolute deviation)
   query = get_qc_metrics(query, nmads)
+  # qc preprocessing ( normalization, log transformation, highly variable genes, PCA, neighbors, UMAP, leiden clustering)
+  #query = qc_preprocessing(query)
+  
   raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw") 
   query.write_h5ad(f"{raw_query_name}.h5ad")
 

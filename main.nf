@@ -219,7 +219,7 @@ process predictSeurat {
 process classifyAll {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 // extract study name fromquery_name
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "label_transfer_metrics**", mode: 'copy'
 
     //// Publish files matching the 'confusion**' pattern
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
@@ -236,7 +236,7 @@ process classifyAll {
     val ref_region_mapping
 
     output:
-    tuple val(method), path("f1_results/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in f1_results
+    tuple val(method), path("label_transfer_metrics/*summary.scores.tsv"), emit: f1_score_channel  // Match TSV files in label_transfer_metrics
     path "confusion/**"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
    // path "pr_curves/*png"
@@ -279,7 +279,7 @@ process plotF1ResultsAdata{
     script:
     
     """
-    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+    python $projectDir/bin/plot_results_summary.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
 }
@@ -305,7 +305,7 @@ process plotF1ResultsSeurat{
     script:
     
     """
-    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+    python $projectDir/bin/plot_results_summary.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
 }
@@ -535,7 +535,8 @@ workflow.onComplete {
     Success     : ${workflow.success}
     workDir     : ${workflow.workDir}
     Config files: ${workflow.configFiles}
-    exit status : ${workflow.exitStatus}
+    Exit status : ${workflow.exitStatus}
+    Output directory : ${params.outdir}
 
     --------------------------------------------------------------------------------
     ================================================================================
