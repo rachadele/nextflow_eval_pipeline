@@ -46,6 +46,7 @@ def parse_arguments():
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/06/03e7ac72a1ef3b67ce6a357eebd8c3/refs/ref_region.yaml")
     parser.add_argument('--study_name', type=str, default="lim")
+    parser.add_argument('--use_gap', action='store_true', help="Use gap analysis for classification")
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -74,7 +75,10 @@ def main():
     cutoff = args.cutoff
     ref_region_mapping = args.ref_region_mapping
     study_name = args.study_name
-
+    if args.use_gap:
+        use_gap = True
+    
+    
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
     ref_region=ref_region_mapping[ref_name]
@@ -98,7 +102,7 @@ def main():
     os.makedirs("pr_curves", exist_ok=True) 
     
     # Classify cells and evaluate
-    query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df)
+    query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df, use_gap=use_gap)
 
     outdir = os.path.join("predicted_meta")
     os.makedirs(outdir, exist_ok=True)
