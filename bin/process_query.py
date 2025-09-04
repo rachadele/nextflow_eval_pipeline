@@ -14,8 +14,8 @@ import warnings
 import cellxgene_census
 import cellxgene_census.experimental
 from sklearn.ensemble import RandomForestClassifier
-import adata_functions
-from adata_functions import *
+import utils
+from utils import *
 from pathlib import Path
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -32,10 +32,10 @@ from scipy.stats import median_abs_deviation
 # Function to parse command line arguments
 def parse_arguments():
   parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
-  parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/e7/e4c5e0911b55a5e93e0f416042b0e9/scvi-mus_musculus-2024-07-01", help='Path to the scvi model file')
+  parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus_minimal/37/d213ce21d8108fd3557e7ffa40b041/scvi-mus_musculus-2025-01-30", help='Path to the scvi model file')
   parser.add_argument('--subsample_query', type=int, help='Number of cells to subsample from the query')
-  parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/GSE152715.2_relabel.tsv")
-  parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_false_sample_split_true/mus_musculus/GSE152715.2_1052353.h5ad")
+  parser.add_argument('--relabel_path', type=str, default="//space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/GSE247339.2_relabel.tsv")
+  parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true/h5ad/GSE247339.2/GSE247339.2_1051970_GSM7887408.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
   parser.add_argument('--join_key', type=str, default=None)
   parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family", "global"])
@@ -69,28 +69,32 @@ def main():
   ref_keys = args.ref_keys
   nmads = args.nmads
   query = ad.read_h5ad(query_path)
-  gene_mapping_path = args.gene_mapping
-  gene_mapping = pd.read_csv(gene_mapping_path, sep="\t", header=0)
-  # Drop rows with missing values in the relevant columns
-  gene_mapping = gene_mapping.dropna(subset=["ENSEMBL_ID", "OFFICIAL_SYMBOL"])
-  # Set the index of gene_mapping to "ENSEMBL_ID" and ensure it's unique
-  gene_mapping = gene_mapping.drop_duplicates(subset="ENSEMBL_ID")
-  gene_mapping.set_index("ENSEMBL_ID", inplace=True)
-  query = map_genes(query, gene_mapping)
-  query = relabel(query,relabel_path=relabel_path, join_key=join_key,sep="\t")
-
+  
   if subsample_query:
-    query= query[np.random.choice(query.n_obs, size=subsample_query, replace=False), :] if query.n_obs > subsample_query else query
+    query = query[np.random.choice(query.n_obs, size=subsample_query, replace=False), :] if query.n_obs > subsample_query else query
     query.obs.index = query.obs.index.astype(str)
  
+  sc.pp.scrublet(query, batch_key=None)
+  #sc.pp.scrublet.scrublet_score_distribution(query, save=f"{os.path.basename(query_path).replace('.h5ad', '_scrublet_score_distribution.png')}")
+
+  gene_mapping_path = args.gene_mapping
+  gene_mapping = pd.read_csv(gene_mapping_path, sep="\t", header=0)
+
+  query = map_genes(query, gene_mapping)
+  
+  query = relabel(query,relabel_path=relabel_path, join_key=join_key,sep="\t")
+
   if args.remove_unknown:
     query = query[query.obs[ref_keys[0]] != "unknown"]
+ 
     
   query.obs.index = range(query.n_obs)
-  
-  sc.pp.scrublet(query, batch_key=None)
-  #scrublet_score_distribution(query, save=f"{os.path.basename(query_path).replace('.h5ad', '_scrublet_score_distribution.png')}")
+ 
+  # Get QC metrics ( mitochondrial, ribosomal, and hemoglobin percentages and outliers by median absolute deviation)
   query = get_qc_metrics(query, nmads)
+  # qc preprocessing ( normalization, log transformation, highly variable genes, PCA, neighbors, UMAP, leiden clustering)
+  #query = qc_preprocessing(query)
+  
   raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw") 
   query.write_h5ad(f"{raw_query_name}.h5ad")
 

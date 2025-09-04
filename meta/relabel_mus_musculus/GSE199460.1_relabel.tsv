@@ -7,8 +7,8 @@ Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Astrocytes	Astrocyte	Glia	Non-neuron	Non-neuron
 Choroid Plexus Cells	Glia	Glia	Non-neuron	Non-neuron
 DCs.1	Immune	Immune	Non-neuron	Non-neuron
-B Cells	Immune	Immune	Non-neuron	Non-neuron
-Neuroblasts	Neuron	Neuron	Neuron	Neuron
+B Cells	B cell	Immune	Non-neuron	Non-neuron
+Neuroblasts	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 DCs.2	Immune	Immune	Non-neuron	Non-neuron
 Ependymal Cells	Ependymal	Glia	Non-neuron	Non-neuron
 Neutrophils	Immune	Immune	Non-neuron	Non-neuron
