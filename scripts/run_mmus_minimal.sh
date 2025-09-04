@@ -28,7 +28,8 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
 					--census_version "$census_version" \
                     -resume \
                     --remove_unknown false \
-					--outdir_prefix "$census_version/mus_musculus/minimal/keep_unknown" # Specify output directory
+					--outdir_prefix "$census_version/mus_musculus/minimal/keep_unknown" \
+                    --use_gap true
 				    #--subsample_query "$subsample_query" \
                 done
             done

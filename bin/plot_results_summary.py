@@ -209,7 +209,23 @@ def main():
                       acronym_mapping = acronym_mapping_ref)
     plot_distribution(f1_df, var="weighted_f1",outdir="dists", split="study", facet="key", 
                       acronym_mapping = None)
+    
+    # plot NMI and ARI
+    plot_distribution(f1_df, var="nmi", outdir="dists", split="reference_acronym", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
+    plot_distribution(f1_df, var="nmi", outdir="dists", split="study", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
+    plot_distribution(f1_df, var="ari", outdir="dists", split="reference_acronym", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
+    plot_distribution(f1_df, var="ari", outdir="dists", split="study", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
 
+
+    # plot macro f1
+    plot_distribution(f1_df, var="macro_f1", outdir="dists", split="reference_acronym", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
+    plot_distribution(f1_df, var="macro_f1", outdir="dists", split="study", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
 
 if __name__ == "__main__":
     main()

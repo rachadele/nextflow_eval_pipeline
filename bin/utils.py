@@ -564,25 +564,24 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=T
     return query
 
 def classify_raw(class_probs, class_labels, cutoff=0.1):
-   """
-   Classify cells based on raw probabilities without gap analysis.
-   """ 
-   #predictions = []
-    if cutoff > 0:
-        # Find the class with the maximum probability for each cell
-        max_class_indices = np.argmax(class_probs, axis=1)  # Get the index of the max probability
-        max_class_probs = np.max(class_probs, axis=1)  # Get the max probability
-        
-        # Set predicted classes to "unknown" if the max probability does not meet the threshold
-        predictions = [
-            class_labels[i] if prob > cutoff else "unknown"
-            for i, prob in zip(max_class_indices, max_class_probs)
-        ]
-    else:
-        # Direct prediction without threshold filtering
-        predictions = class_labels[np.argmax(class_probs, axis=1)]
-   
-   return predictions
+  """
+  Classify cells based on raw probabilities without gap analysis.
+  """ 
+  #predictions = []
+  if cutoff > 0:
+    max_class_indices = np.argmax(class_probs, axis=1)  # Get the index of the max probability
+    max_class_probs = np.max(class_probs, axis=1)  # Get the max probability
+
+    # Set predicted classes to "unknown" if the max probability does not meet the threshold
+    predictions = [
+        class_labels[i] if prob > cutoff else "unknown"
+        for i, prob in zip(max_class_indices, max_class_probs)
+    ]
+  else:
+    # Direct prediction without threshold filtering
+    predictions = class_labels[np.argmax(class_probs, axis=1)]
+
+  return predictions
 
 def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
     """
