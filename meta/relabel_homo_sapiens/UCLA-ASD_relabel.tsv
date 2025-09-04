@@ -2,7 +2,7 @@ cell_type	subclass	class	family
 Astro	Astrocyte	Glia	Non-neuron
 Chandelier	Chandelier	MGE	GABAergic
 Endo	Endothelial	Vascular	Non-neuron
-Immune	Non-neuron	Non-neuron	Non-neuron
+Immune	Immune	Immune	Non-neuron
 L2/3_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 L4_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 L5_ET	L5 ET	deep layer non-IT	Glutamatergic
@@ -20,7 +20,7 @@ OPC	OPC	Glia	Non-neuron
 Pax6	LAMP5	CGE	GABAergic
 PC	Pericyte	Mural	Non-neuron
 Pvalb	PVALB	MGE	GABAergic
-SMC	Mural	Mural	Non-neuron
+SMC	SMC	Mural	Non-neuron
 Sncg	SNCG	CGE	GABAergic
 Sst	SST	MGE	GABAergic
 Sst_Chodl	SST	MGE	GABAergic

@@ -82,6 +82,8 @@ def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_pr
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
     # Perform the left join to update the metadata
     obs = obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
+    # this line ensures that only cells in the relabel # file are kept in the obs
+    # filteres out ambiguous cells
     celltypes = obs[ref_keys[0]].unique()
     final_idx = []
     for celltype in celltypes:
@@ -116,17 +118,15 @@ def relabel(adata, relabel_path, join_key=None, sep="\t"):
 
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
-    obs_filter=None, cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
+    cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
     ref_keys=["rachel_subclass","rachel_class","rachel_family"], original_celltypes=None, seed=42):
     
-    brain_cell_subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
-    # Assuming get_seurat is defined to return an AnnData object
+    subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
     adata = cellxgene_census.get_anndata(
         census=census,
         organism=organism,
-        obs_value_filter=obs_filter,  # Ensure this is constructed correctly
         obs_column_names=cell_columns,
-        obs_coords=brain_cell_subsampled_ids,
+        obs_coords=subsampled_ids,
         var_value_filter = "nnz > 10",
         obs_embeddings=["scvi"])
    
@@ -154,13 +154,24 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
     # Get unique split values from the specified column
     unique_values = data[split_column].unique()
     refs = {}
-
+    # don't use Human Variation Study splits
+    
     for split_value in unique_values:
         # Filter the brain observations based on the split value
+        
         filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
-        obs_filter = f"{split_column} == '{split_value}'"
-                
-        adata = extract_data(data, filtered_ids, subsample, organism, census, obs_filter, 
+        collection_names = data[data[split_column] == split_value]['collection_name'].unique()
+        if split_column == "dataset_id" and "HVS: Human variation study" in collection_names:
+            # send stderr message
+            print(f"Skipping {split_value} due to collection name 'HVS: Human variation study'.")
+            continue
+        if len(filtered_ids) < 1000:
+            print(f"Skipping {split_value} due to insufficient cells ({len(filtered_ids)} < 1000).")
+            continue
+       # obs_filter = f"{split_column} == '{split_value}'"
+       # don't need this since we're subsampling the extact cell coordinates
+        print(f"Processing {split_value} with {len(filtered_ids)} cells.")
+        adata = extract_data(data, filtered_ids, subsample, organism, census, 
                              cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, 
                              ref_keys=ref_keys, 
                              original_celltypes = original_celltypes, 
@@ -179,8 +190,8 @@ def split_and_extract_data(data, split_column, subsample=500, organism=None, cen
     return refs
 
 
-def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/original_celltype_columns.tsv", 
-                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations"):
+def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30/original_celltype_columns.tsv", 
+                           author_annotations_path="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30"):
     original_celltype_columns = pd.read_csv(columns_file, sep="\t", low_memory=False)
 
     original_celltypes = {}
@@ -196,7 +207,6 @@ def get_original_celltypes(columns_file="/space/grp/rschwartz/rschwartz/nextflow
             original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
             
     for dataset_title, obs in original_celltypes.items():
-        #original_celltypes[dataset_title]["new_dataset_title"] = dataset_title
         original_celltypes[dataset_title]["new_observation_joinid"] = original_celltypes[dataset_title]["observation_joinid"].apply(lambda x: f"{dataset_title}_{x}")
     
         # concat all original_celltypes
@@ -267,7 +277,10 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # need to add it back in after getting ids
     if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
-    
+    #write files
+        #cellxgene_obs_filtered.to_csv("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30_all_obs.tsv",sep="\t",index=False)
+     #   cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
+       # cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}_cell_type_info.tsv", sep="\t", index=False)
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
         cellxgene_obs_filtered, split_column=split_column,
@@ -283,7 +296,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     adata = extract_data(
         cellxgene_obs_filtered, filtered_ids,
         subsample=subsample, organism=organism,
-        census=census, obs_filter=None,
+        census=census,
         cell_columns=cell_columns, 
         dataset_info=dataset_info, dims=dims,
         relabel_path=relabel_path, 
@@ -334,12 +347,13 @@ def process_query(query, model_file_path, batch_key="sample", seed=42):
 
 def map_valid_labels(query, ref_keys, mapping_df):
     # deal with differing levels of granularity
+    # Loop over each reference label (e.g., "celltype", "subclass", "class", etc.)
     for key in ref_keys:
-        print(key)
+        # Get all unique labels in the query at this level (e.g., all unique 'subclass' values)
         original=query[key].unique()
-        print(original)
-        for og in original:
-            # get the highest level in the hierarchy 
+        for og in original: # For each original label at this level
+            # Get the highest level in the hierarchy 
+            # Search for columns in mapping_df where this label appears in *any* column
             matching_cols = mapping_df.columns[mapping_df.apply(lambda col: og in col.values, axis=0)]
             print(f"Matching columns for {og}: {matching_cols}")
             if len(matching_cols) == 0:
@@ -577,80 +591,66 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def eval(query, ref_keys, mapping_df):
+def evaluate_sample_predictions(query, ref_keys, mapping_df):
     class_metrics = defaultdict(lambda: defaultdict(dict))
-    for key in ref_keys: 
-       #threshold = kwargs.get('threshold', True)  # Or some other default value    
-        class_labels = query[key].unique()
-        pred_classes = query[f"predicted_{key}"].unique()
-        true_labels= query[key].astype(str)
-        predicted_labels = query["predicted_" + key].astype(str)
-        labels = list(set(class_labels).union(set(pred_classes)))
 
-    # Calculate accuracy and confusion matrix after removing "unknown" labels
-        accuracy = accuracy_score(true_labels, predicted_labels)
-        # Add accuracy to classification report
-        class_metrics[key]["accuracy"] = accuracy
-        
-        ## Calculate accuracy for each label
-              
-        conf_matrix = confusion_matrix(
-            true_labels, predicted_labels, 
-            labels=labels
-        )
+    for key in ref_keys:     
+        true_labels = query[key].astype(str)
+        predicted_labels = query[f"predicted_{key}"].astype(str)
+        labels = list(set(true_labels).union(set(predicted_labels)))
+
+        # Overall accuracy
+        class_metrics[key]["overall_accuracy"] = accuracy_score(true_labels, predicted_labels)
+
+        # Confusion matrix
         class_metrics[key]["confusion"] = {
-            "matrix": conf_matrix,
+            "matrix": confusion_matrix(true_labels, predicted_labels, labels=labels),
             "labels": labels
-            #"accuracy": accuracy
         }
-            # Compute per-label precision, recall, F1-score, and support
+
+        # NMI, ARI between cell type labels
+        class_metrics[key]["nmi"] = normalized_mutual_info_score(true_labels, predicted_labels, average_method='arithmetic')
+        class_metrics[key]["ari"] = adjusted_rand_score(true_labels, predicted_labels)
+
+        # Per-label metrics
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
-        support_proportions = support / np.sum(support)
+        support_proportions = support / support.sum() if support.sum() > 0 else np.zeros_like(support)
 
-        # Compute weighted average metrics
-        avg_precision, avg_recall, avg_f1, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="weighted", zero_division=np.nan
-        )
-
-        # Compute per-label accuracy and store all metrics
-        label_metrics = {}
-        for i, label in enumerate(labels):
-            label_mask = true_labels == label
-
-            # Handle case where there are no true instances
-            # if label mask is all False
-            if not label_mask.any():
-                label_accuracy = "nan"
-                precision[i] = "nan"
-                recall[i] = "nan"
-                f1[i] = "nan"
-                label_accuracy = "nan"
-                support_proportions[i] = "nan"
-
-            else:
-                label_accuracy = accuracy_score(true_labels[label_mask], predicted_labels[label_mask])
-
-            label_metrics[label] = {
-                "accuracy": label_accuracy,
+        class_metrics[key]["label_metrics"] = {
+            label: {
                 "precision": precision[i],
                 "recall": recall[i],
                 "f1_score": f1[i],
-                "support": support_proportions[i]
-            } 
+                "support": support_proportions[i],
+                "accuracy": accuracy_score(true_labels == label, predicted_labels == label)
+            }
+            for i, label in enumerate(labels)
+        }
 
-        # Store per-label metrics
-        class_metrics[key]["label_metrics"] = label_metrics
-
-        # Store weighted averages
+        # Weighted averages
+        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="weighted", zero_division=np.nan
+        )
         class_metrics[key]["weighted_metrics"] = {
-            "precision": avg_precision,
-            "recall": avg_recall,
-            "f1_score": avg_f1
-        } 
+            "precision": avg_p,
+            "recall": avg_r,
+            "f1_score": avg_f,
+        }
+        
+        # Macro averages
+        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="macro", zero_division=np.nan
+        )
+        class_metrics[key]["macro_metrics"] = {
+            "precision": avg_p,
+            "recall": avg_r,
+            "f1_score": avg_f,
+        }
 
     return class_metrics
+
 
 def update_classification_report(class_metrics, ref_keys):
     #for query_name, query in class_metrics.items():
@@ -688,60 +688,6 @@ def plot_confusion_matrix(query_name, ref_name, key, confusion_data, output_dir)
     #os.makedirs(os.path.join(output_dir, new_query_name, new_ref_name), exist_ok=True)  # Create the directory if it doesn't exist
     plt.savefig(os.path.join(output_dir,f"{key}_confusion.png"))
     plt.close() 
-
-def plot_roc_curves(metrics, title="ROC Curves for All Keys and Classes", save_path=None):
-    """
-    Plots ROC curves for each class at each key level from the metrics dictionary on the same figure.
-    
-    Parameters:
-    metrics (dict): A dictionary with structure metrics[key][class_label] = {tpr, fpr, auc, optimal_threshold}.
-    title (str): The title of the plot.
-    save_path (str, optional): The file path to save the plot. If None, the plot is not saved.
-    """
-    fig, ax = plt.subplots(figsize=(10, 8))  # Create a figure and axis
-
-    # Create a subplot for each key
-    for key in metrics:
-        for class_label in metrics[key]:
-
-            if isinstance(metrics[key][class_label], dict):
-                if all(k in metrics[key][class_label] for k in ["tpr", "fpr", "auc"]):
-                    tpr = metrics[key][class_label]["tpr"]
-                    fpr = metrics[key][class_label]["fpr"]
-                    roc_auc = metrics[key][class_label]["auc"]
-
-                    # Find the index of the optimal threshold
-                    optimal_idx = np.argmax(tpr - fpr)
-                    optimal_fpr = fpr[optimal_idx]
-                    optimal_tpr = tpr[optimal_idx]
-
-                    # Plot the ROC curve for the current class
-                    #plt.plot(fpr, tpr, lw=2, label=f"Class {class_label} (AUC = {roc_auc:.3f})")
-                 #   curve = RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, estimator_name=class_label) #drop_intermediate=False)
-                   # curve.plot(ax=ax)  # Add to the shared axis
-                    
-                    ax.step(fpr, tpr, where='post', lw=2, label=f"{key}: {class_label} (AUC = {roc_auc:.3f})")
-
-                    # Plot the optimal threshold as a point
-                    ax.scatter(optimal_fpr, optimal_tpr, color='red', marker='o') 
-                          #  label=f"Optimal Threshold (Class {class_label})")
-                    
-    # Plot the reference line (random classifier)
-    ax.plot([0, 1], [0, 1], 'k--', lw=2, label="Random Classifier")
-
-    # Add title, labels, legend, and grid
-    ax.set_title(title, fontsize=16)
-    ax.set_xlabel('False Positive Rate', fontsize = 15)
-    ax.set_ylabel('True Positive Rate', fontsize = 15)
-    ax.legend(loc='lower right', bbox_to_anchor=(1.05, 0), fontsize='medium', borderaxespad=0)
-    ax.grid(True)
-
-    # Adjust layout and save the plot if a path is provided
-    plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, bbox_inches='tight')
-        print(f"Plot saved to {save_path}")
-        plt.close()
     
     
 def combine_f1_scores(class_metrics, ref_keys):
@@ -785,169 +731,6 @@ def combine_f1_scores(class_metrics, ref_keys):
 
 
 
-def plot_label_f1_heatmaps(all_f1_scores, threshold, outpath, widths=[1,0.8,0.5], acronym_mapping=None):
-    """
-    Plot horizontally stacked heatmaps for label-level F1 scores for each query across multiple keys with variable widths,
-    shared y-axis labels, a shared color bar, and a title for the query.
-
-    Parameters:
-        all_f1_scores (dict): Dictionary with keys as reference names and values as DataFrames containing F1 scores.
-        threshold (float): Threshold value to display in plot titles.
-        outpath (str): Directory to save the generated heatmaps.
-        widths (list of float): Proportional widths for subplots. If None, defaults to equal widths.
-    """
-    sns.set(style="whitegrid")
-    os.makedirs(outpath, exist_ok=True)
-
-    # Determine global F1 score range
-    all_scores = pd.concat([df['f1_score'] for df in all_f1_scores.values()])
-    vmin, vmax = all_scores.min(), all_scores.max()
-    
-    # Initialize an empty set to store unique queries
-    queries = set() 
-    keys = list(all_f1_scores.keys()) # get levels of hierarchy
-    for key, df in all_f1_scores.items():
-        queries.update(df['query'].unique())  # add unique queries to the set
-    queries = sorted(queries) # sort queries
-
-    if widths is None:
-        widths = [1] * len(keys)  # Equal widths by default for each level
-
-    for query in queries:
-        # Create a figure with variable subplot widths
-        fig, axes = plt.subplots(
-            nrows=1,
-            ncols=len(keys),
-            figsize=(sum(widths) * 15, 8),
-            gridspec_kw={'width_ratios': widths},
-            constrained_layout=True
-        )
-
-        # Add a figure title for the query
-        fig.suptitle(f'Class-level F1 for Query: {query}\nThreshold = {threshold:.2f}', fontsize=25, y=1.1)
-
-        if len(keys) == 1:
-            axes = [axes]  # Ensure axes is always iterable
-
-        for i, key in enumerate(keys):
-            if key not in all_f1_scores:
-                continue
-            
-            df = all_f1_scores[key]
-            query_df = df[df['query'] == query]
-
-            # Pivot DataFrame to create the heatmap
-            pivot_df = query_df.pivot_table(index='reference_acronym', columns='label', values='f1_score')
-            mask = pivot_df.isnull() | (pivot_df == "nan")
-
-            sns.heatmap(
-                pivot_df,
-                annot=True,
-                cmap='YlOrRd',
-                cbar=i == len(keys) - 1,  # Add cbar only for the last subplot
-                cbar_kws={'label': 'F1 Score'} if i == len(keys) - 1 else None,
-                mask=mask,
-                ax=axes[i],
-                linewidths=0.5,
-                annot_kws={"size": 8},
-                vmin=vmin,  # Use global vmin
-                vmax=vmax   # Use global vmax
-            )
-
-            for i, key in enumerate(keys):
-                axes[i].set_title(f'{key}', fontsize=25)
-                
-                # Set x-axis tick labels and rotation
-                axes[i].set_xticklabels(axes[i].get_xticklabels(), rotation=90, fontsize=20)
-
-                # Only add y-axis labels to the leftmost subplot
-                if i == 0:
-                    axes[i].set_ylabel('Reference', fontsize=25)
-                    axes[i].set_yticklabels(axes[i].get_yticklabels(), fontsize=20)  # Set font size for y-axis labels
-                    if acronym_mapping:
-                        legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
-                        axes[i].text(
-                            0.1, 0.5, legend_text,  # Position text to the left of the subplot
-                            fontsize=14,
-                            verticalalignment='center',
-                            horizontalalignment='right',
-                            transform=axes[i].transAxes,  # Use subplot's coordinate system
-                            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
-                        )
-                else:
-                    axes[i].set_ylabel("", fontsize=11)
-                    axes[i].set_yticks([])  # Remove y-axis labels for other subplots
-                    # Save the figure
-        plt.savefig(os.path.join(outpath, f'f1_heatmaps_{query}_threshold_{threshold:.2f}.png'), bbox_inches='tight')
-        plt.close()
-
-
-def plot_f1_heatmaps_by_level(weighted_f1_data, threshold, outpath, ref_keys, acronym_mapping=None):
-    """
-    Plot one heatmap for each level of the hierarchy with references as rows and queries as columns.
-
-    Parameters:
-        weighted_f1_data (pd.DataFrame): DataFrame containing F1 scores with columns:
-                                         'level', 'reference', 'query', 'weighted_f1'.
-        threshold (float): Threshold value to display in plot titles.
-        outpath (str): Directory to save the heatmaps.
-        levels (list): List of levels to plot (e.g., ['Rachel_class', 'Rachel_subclass', 'Rachel_family']).
-        ref_keys (list): List of reference keys to ensure consistent ordering of rows.
-    """
-    sns.set(style="whitegrid")
-    os.makedirs(outpath, exist_ok=True)
-
-    for level in ref_keys:
-        # Filter data for the current level
-        level_data = weighted_f1_data[weighted_f1_data['key'] == level]
-
-        # Pivot the data for heatmap
-        pivot_f1 = level_data.pivot_table(
-            index='reference_acronym',
-            columns='query',
-            values='weighted_f1'
-        )
-
-        # Define color map limits
-        vmin = weighted_f1_data['weighted_f1'].min()
-        vmax = weighted_f1_data['weighted_f1'].max()
-
-        # Create the heatmap
-        plt.figure(figsize=(20, 15))
-        sns.heatmap(
-            pivot_f1,
-            annot=True,
-            cmap='YlOrRd',
-            cbar_kws={'label': 'Weighted F1 Score'},
-            fmt='.3f',
-            annot_kws={"size": 15},
-            vmin=vmin,
-            vmax=vmax
-        )
-
-        # Add title and axis labels
-        plt.title(f'Weighted F1 Scores for {level}\nThreshold = {threshold:.2f}', fontsize=25)
-        plt.ylabel('Reference', fontsize=25)
-        plt.xlabel('Query', fontsize=25)
-        plt.xticks(rotation=90, ha='right', fontsize=25)
-        plt.yticks(fontsize=25, rotation=90)
-        
-        if acronym_mapping:
-            # Add an annotation box with the acronym legend
-            legend_text = "\n".join([f"{k}: {v}" for k, v in acronym_mapping.items()])
-            plt.gcf().text(
-                0.85, 0.5, legend_text, 
-                fontsize=14, 
-                verticalalignment='center', 
-                bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.1')
-            )
-        
-        plt.tight_layout()
-        # Save the heatmap
-        plt.savefig(os.path.join(outpath, f'{level}_weighted_f1_heatmap_threshold_{threshold:.2f}.png'))
-        plt.close()
-
-    
  
 def split_anndata_by_obs(adata, obs_key="dataset_title"):
     """
@@ -971,7 +754,12 @@ def split_anndata_by_obs(adata, obs_key="dataset_title"):
 
   
 def map_genes(query, gene_mapping):
-    # Check if the "feature_name" column exists in query.var
+    # Drop rows with missing values in the relevant columns
+    gene_mapping = gene_mapping.dropna(subset=["ENSEMBL_ID", "OFFICIAL_SYMBOL"])
+    # Set the index of gene_mapping to "ENSEMBL_ID" and ensure it's unique
+    gene_mapping = gene_mapping.drop_duplicates(subset="ENSEMBL_ID")
+    gene_mapping.set_index("ENSEMBL_ID", inplace=True)
+        # Check if the "feature_name" column exists in query.var
     if "feature_name" not in query.var.columns:
         # Merge gene_mapping with query.var based on the index
         query.var = query.var.merge(gene_mapping["OFFICIAL_SYMBOL"], left_index=True, right_index=True, how="left")
@@ -1017,9 +805,9 @@ def get_qc_metrics(query, nmads):
     metrics = {
         "log1p_total_counts": "umi_outlier",
         "log1p_n_genes_by_counts": "genes_outlier",
-        "pct_counts_mito": "outlier_mito",
-        "pct_counts_ribo": "outlier_ribo",
-        "pct_counts_hb": "outlier_hb",
+        "pct_counts_mito": "mito_outlier",
+        "pct_counts_ribo": "ribo_outlier",
+        "pct_counts_hb": "hb_outlier",
     }
     
     for metric, col_name in metrics.items():
@@ -1034,18 +822,29 @@ def get_qc_metrics(query, nmads):
         query.obs["log1p_n_genes_by_counts"] < (query.obs["log1p_total_counts"] * slope + (intercept - lm_dict["intercept_adjustment"]))
         ) | (
         query.obs["log1p_n_genes_by_counts"] > (query.obs["log1p_total_counts"] * slope + (intercept + lm_dict["intercept_adjustment"]))
-        ) | (
-        query.obs["umi_outlier"] ) | (query.obs["genes_outlier"])
+        ) #| (
+       # query.obs["umi_outlier"] ) | (query.obs["genes_outlier"])
         
 
     query.obs["total_outlier"] = (
-        query.obs["counts_outlier"] | query.obs["outlier_mito"] | query.obs["outlier_ribo"] | query.obs["outlier_hb"] | query.obs["predicted_doublet"]
+        query.obs["counts_outlier"] | query.obs["mito_outlier"] | query.obs["ribo_outlier"] | query.obs["hb_outlier"] 
+        | query.obs["predicted_doublet"] | query.obs["genes_outlier"] | query.obs["umi_outlier"]
     )
     
     query.obs["non_outlier"] = ~query.obs["total_outlier"]
 
     return query
 
+def qc_preprocess(query, target_sum=1e4, n_top_genes=2000, n_neighbors=10, n_pcs=30, resolution=0.3):
+    sc.pp.normalize_total(query, target_sum=target_sum)
+    sc.pp.log1p(query)
+    sc.pp.highly_variable_genes(query, n_top_genes=n_top_genes, subset=False)
+    sc.pp.pca(query)
+    sc.pp.neighbors(query, n_neighbors=n_neighbors, n_pcs=n_pcs)
+    sc.tl.umap(query)
+    sc.tl.leiden(query, resolution=resolution)
+    
+    return query
 
 def map_celltype_hierarchy(query, markers_file):
     # Load the markers table
@@ -1121,4 +920,106 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
     os.makedirs(outdir, exist_ok=True)
     scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
 
- 
+
+    
+def classify_by_entropy(class_probs, class_labels, quantile):
+    
+    if quantile == 0:
+        # If quantile is 0, return the most probable class for each cell
+        predictions = class_labels[np.argmax(class_probs, axis=1)]
+        return predictions
+    # class_probs: (n_cells, n_classes), rows sum to 1
+    entropies = entropy(class_probs.T, base=2)  # or base=np.e
+    # Use a cutoff, e.g., 90th percentile of low entropy = confident
+    cutoff = np.quantile(entropies, 1-quantile) # top 10% entropy are unknown
+   # entropies = entropy(class_probs.T, base=2)  # or base=np.e
+    predictions = np.where(entropies <= cutoff, class_labels[np.argmax(class_probs, axis=1)], "unknown")
+    return predictions
+
+def plot_entropy_distribution(class_probs, class_labels, entropies, predictions, cutoff):
+    df = pd.DataFrame({
+        "predicted_class": predictions,
+        "max_prob": np.max(class_probs, axis=1),
+        "entropy": entropies,
+    })
+    
+    # histogram of max probabilities
+    # facet by predicted class
+    sns.histplot(
+        data=df,
+        x="entropy",
+        hue="predicted_class",
+        multiple="layer",
+        bins=50,
+        kde=False,
+        palette="tab20"  # optional for better class separation
+    )
+
+    plt.axvline(cutoff, color='red', linestyle='--', label=f'Cutoff: {cutoff:.3f}')
+    plt.xlabel("Entropy of Probabilities")
+    plt.ylabel("Cell Count")
+    plt.tight_layout()
+    
+
+
+def plot_max_prob_hist_by_gap(class_probs, cutoff, quantile=0.1):
+    """
+    Plot max predicted probabilities histogram colored by known/unknown classification.
+
+    Args:
+        probs (np.array): (n_cells, n_classes), normalized probabilities.
+        cutoff (float): confidence gap cutoff.
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    max_probs = sorted_probs[:, 0]
+
+    unknown_mask = gaps < cutoff
+    known_mask = ~unknown_mask
+
+    plt.figure(figsize=(8, 5))
+    plt.hist(max_probs[known_mask], bins=50, alpha=0.7, label=f'Known (gap < {cutoff:.3f})', color='blue', density=False)
+    plt.hist(max_probs[unknown_mask], bins=50, alpha=0.7, label=f'Unknown (gap > {cutoff:.3f})', color='red', density=False)
+    plt.text(0.05, 0.95, f'Quantile: {quantile}', fontsize=12, ha='left', va='top', transform=plt.gca().transAxes)
+    plt.xlabel('Max predicted probability')
+    plt.ylabel('Count')
+    plt.title('Max Probability Distribution by Confidence Gap Classification')
+    plt.legend()
+    plt.savefig('max_prob_hist_by_gap.png')
+    plt.close()
+    
+def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
+    """
+    Compute confidence gap cutoff at given quantile.
+
+    Args:
+        probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        quantile (float): quantile for cutoff.
+
+    Returns:
+        float: confidence gap cutoff.
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    cutoff = np.quantile(gaps, quantile)
+    return cutoff
+    
+def classify_by_gap(class_probs, class_labels, cutoff):
+    """
+    Classify cells as 'known' or 'unknown' based on confidence gap.
+
+    Args:
+        class_probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        class_labels (list): list of class labels.
+        cutoff (float): confidence gap cutoff.
+
+    Returns:
+        np.array: array of predicted classes ('known' or 'unknown').
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    
+    # Classify based on gap
+    predictions = np.where(gaps < cutoff, "unknown", class_labels[np.argmax(class_probs, axis=1)])
+    
+    return predictions

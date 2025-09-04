@@ -215,13 +215,13 @@ process predictSeurat {
 process classifyAll {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 // extract study name fromquery_name
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "f1_results**", mode: 'copy'
+    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "label_transfer_metrics**", mode: 'copy'
 
-    // Publish files matching the 'confusion**' pattern
+    //// Publish files matching the 'confusion**' pattern
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "confusion**", mode: 'copy'
 
-    // Publish files matching the 'pr_curves**' pattern
-    publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
+    //// Publish files matching the 'pr_curves**' pattern
+    //publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "pr_curves**", mode: 'copy'
 
     // Publish files matching the 'predicted_meta**' pattern
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "predicted_meta**", mode: 'copy'
@@ -232,10 +232,10 @@ process classifyAll {
     val ref_region_mapping
 
     output:
-    tuple val(method), path("f1_results/*f1.scores.tsv"), emit: f1_score_channel  // Match TSV files in f1_results
+    tuple val(method), path("label_transfer_metrics/*summary.scores.tsv"), emit: f1_score_channel  // Match TSV files in label_transfer_metrics
     path "confusion/**"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
-    path "pr_curves/*png"
+   // path "pr_curves/*png"
 
     script:
     ref_name = ref_path.getName().split('\\.')[0]
@@ -249,7 +249,8 @@ process classifyAll {
         --cutoff ${params.cutoff} \\
         --probs ${probs_path} \\
         --mapping_file ${params.relabel_r} \\
-        --ref_region_mapping ${ref_region_mapping}
+        --ref_region_mapping ${ref_region_mapping} \\
+        --study_name ${study_name}
     """ 
 }
 
@@ -274,7 +275,7 @@ process plotF1ResultsAdata{
     script:
     
     """
-    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+    python $projectDir/bin/plot_results_summary.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
 }
@@ -300,7 +301,7 @@ process plotF1ResultsSeurat{
     script:
     
     """
-    python $projectDir/bin/plot_f1_results.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
+    python $projectDir/bin/plot_results_summary.py --ref_keys ${ref_keys} --cutoff ${cutoff} --f1_results ${f1_scores}
  
     """ 
 }
@@ -348,48 +349,35 @@ process plotQC_combined {
 process runMultiQC {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     publishDir (
-        "${params.outdir}/${method}/${study_name}/${ref_name}/multiqc", mode: 'copy'
+        "${params.outdir}/multiqc_results", mode: 'copy', pattern: "**multiqc_report.html"
     )
 
     input:
         tuple val(study_name), val(method), val(ref_name), path(qc_dir)
 
     output:
-        tuple val(study_name), val(method), val(ref_name), path("multiqc_report.html"), emit: multiqc_html
-
+        tuple val(study_name), val(method), val(ref_name), path("**multiqc_report.html"), emit: multiqc_html
+    
     script:
+
     """
-    multiqc ${qc_dir} -d --config ${params.multiqc_config}
+    # Combine base config with dynamic title
+    cp ${params.multiqc_config} new_config.yaml
+    echo 'title: "${params.census_version} ${study_name} ${method} ${ref_name} ${params.cutoff}"' >> new_config.yaml
+
+    multiqc ${qc_dir} --config new_config.yaml
     """
 }
 
-process collect_multiqc_dirs {
-     publishDir (
-        "${params.outdir}/multiqc_results", mode: 'copy'
-    )
 
-    input:
-        tuple val(study_name), val(method), val(ref_name), path(multiqc_report)
-
-    output:
-        path "**multiqc.html"
-
-    script:
-    """
-    cp ${multiqc_report} ${study_name}_${method}_${ref_name}_multiqc.html
-    """
-
-
-}
 // Workflow definition
 workflow {
 
     Channel.fromPath(params.queries_adata)
     .set { query_paths_adata }
-
+    
     Channel.fromPath(params.relabel_q)
     .set { relabel_q_paths }
-
     // Call the setup process to download the model
     model_path = runSetup(params.organism, params.census_version)
      
@@ -402,10 +390,8 @@ workflow {
     .set { ref_paths_adata }
     getCensusAdata.out.ref_region_mapping.set { ref_region_mapping }
     // Convert h5ad files to rds files
-     refProcessSeurat(ref_paths_adata)
-     refProcessSeurat.out.ref_paths_seurat.set { ref_paths_seurat }
-
-
+    refProcessSeurat(ref_paths_adata)
+    refProcessSeurat.out.ref_paths_seurat.set { ref_paths_seurat }
 
     // Get query name from file (including region, eg. Lim_Cingulate)
     relabel_q_paths = relabel_q_paths.map { relabel_q_path -> 
@@ -419,7 +405,7 @@ workflow {
         def query_key = query_name.split('_')[0]
         [query_key, query_name, query_path]
     }
- 
+
     combined_query_paths_adata = query_paths_adata
         .combine(relabel_q_paths, by: 0) // Match query_key
         .map { query_key, query_name, query_path, relabel_q_path ->
@@ -526,8 +512,6 @@ workflow {
     multiqc_channel = plotQC_combined.out.qc_result
     runMultiQC(multiqc_channel)
 
-    // collect multiqc reports and rename them
-    collect_multiqc_dirs(runMultiQC.out.multiqc_html)
 
     save_params_to_file()
 }
@@ -547,7 +531,8 @@ workflow.onComplete {
     Success     : ${workflow.success}
     workDir     : ${workflow.workDir}
     Config files: ${workflow.configFiles}
-    exit status : ${workflow.exitStatus}
+    Exit status : ${workflow.exitStatus}
+    Output directory : ${params.outdir}
 
     --------------------------------------------------------------------------------
     ================================================================================

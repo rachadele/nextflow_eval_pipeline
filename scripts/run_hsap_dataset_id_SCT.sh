@@ -22,9 +22,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -work-dir hsap \
                     --batch_correct true \
                     -resume \
-                    --normalization_method "$normalization_method" #\
-                    #--outdir_prefix "new_homo_sapiens/sample/SCT"
-                
+                    --normalization_method "$normalization_method" #\                
 
             done
         done

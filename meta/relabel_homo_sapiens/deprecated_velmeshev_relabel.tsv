@@ -5,7 +5,7 @@ IN-SV2C	LAMP5	CGE	GABAergic
 IN-VIP	VIP	CGE	GABAergic
 L2/3	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 L4	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L5/6	L5/6 NP	deep-layer non IT	Glutamatergic
+L5/6	L5/6 NP	deep layer non-IT	Glutamatergic
 L5/6-CC	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 Neu-mat	Glutamatergic	Glutamatergic	Glutamatergic
 Neu-NRGN-I	Glutamatergic	Glutamatergic	Glutamatergic
