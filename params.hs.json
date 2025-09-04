@@ -1,0 +1,18 @@
+{
+    "organism": "homo_sapiens",
+    "census_version": "2024-07-01",
+    "cutoff": 0,
+    "seed": 42,
+    "ref_collections": [
+        "Transcriptomic cytoarchitecture reveals principles of human neocortex organization",
+        "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"
+    ],
+    "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_homo_sapiens/*_relabel.tsv",
+    "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv",
+    "queries_adata": "/space/grp/rschwartz/rschwartz/evaluation_data_wrangling/pipeline_queries_hsap/sample_subsets/*h5ad",
+    "ref_keys": [
+        "subclass",
+        "class",
+        "family"
+    ]
+}
