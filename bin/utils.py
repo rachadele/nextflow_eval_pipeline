@@ -535,7 +535,10 @@ def check_column_ties(probabilities, class_labels):
     
     return tie_rows, tie_columns
 
-def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
+def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=True):
+    """
+    Wrapper function to classify cells based on probabilities. Can use gap analysis or raw probabilities.
+    """
     class_metrics = {}
     
     # Only use the first ref_key
@@ -546,24 +549,13 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
     class_labels = probabilities.columns.values  # Class labels are the column names
     class_probs = probabilities.values  # Probabilities as a numpy array
     
-    predicted_classes = []
-    
-    if cutoff > 0:
-        # Find the class with the maximum probability for each cell
-        max_class_indices = np.argmax(class_probs, axis=1)  # Get the index of the max probability
-        max_class_probs = np.max(class_probs, axis=1)  # Get the max probability
-        
-        # Set predicted classes to "unknown" if the max probability does not meet the threshold
-        predicted_classes = [
-            class_labels[i] if prob > cutoff else "unknown"
-            for i, prob in zip(max_class_indices, max_class_probs)
-        ]
+    if use_gap:
+        predictions = classify_by_gap(class_probs, class_labels, cutoff=cutoff)
     else:
-        # Direct prediction without threshold filtering
-        predicted_classes = class_labels[np.argmax(class_probs, axis=1)]
+        predictions = classify_raw(class_probs, class_labels, cutoff=cutoff)
     
     # Store predictions and confidence in `query`
-    query["predicted_" + key] = predicted_classes
+    query["predicted_" + key] = predictions
     query["confidence"] = np.max(class_probs, axis=1)  # Store max probability as confidence
     
     # Aggregate predictions (you can keep this logic as needed)
@@ -571,6 +563,64 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
     
     return query
 
+def classify_raw(class_probs, class_labels, cutoff=0.1):
+   """
+   Classify cells based on raw probabilities without gap analysis.
+   """ 
+   #predictions = []
+    if cutoff > 0:
+        # Find the class with the maximum probability for each cell
+        max_class_indices = np.argmax(class_probs, axis=1)  # Get the index of the max probability
+        max_class_probs = np.max(class_probs, axis=1)  # Get the max probability
+        
+        # Set predicted classes to "unknown" if the max probability does not meet the threshold
+        predictions = [
+            class_labels[i] if prob > cutoff else "unknown"
+            for i, prob in zip(max_class_indices, max_class_probs)
+        ]
+    else:
+        # Direct prediction without threshold filtering
+        predictions = class_labels[np.argmax(class_probs, axis=1)]
+   
+   return predictions
+
+def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
+    """
+    Compute confidence gap cutoff at given quantile.
+
+    Args:
+        probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        quantile (float): quantile for cutoff.
+
+    Returns:
+        float: confidence gap cutoff.
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    cutoff = np.quantile(gaps, quantile)
+    return cutoff
+    
+def classify_by_gap(class_probs, class_labels, cutoff=0.1): # gap must be 0.1 or higher
+    # potentially normalize probabilities ? already between 0 and 1 but the distribution will differ based on type of classifier
+    """
+    Classify cells as a predicted type or 'unknown' based on confidence gap.
+
+    Args:
+        class_probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        class_labels (list): list of class labels.
+        cutoff (float): confidence gap cutoff.
+
+    Returns:
+        np.array: array of predicted classes ('known' or 'unknown').
+    """
+    
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    
+    # Classify based on gap
+    predictions = np.where(gaps < cutoff, "unknown", class_labels[np.argmax(class_probs, axis=1)])
+    
+    return predictions
 
 def aggregate_preds(query, ref_keys, mapping_df):
     preds = np.array(query["predicted_" + ref_keys[0]])
@@ -988,38 +1038,3 @@ def plot_max_prob_hist_by_gap(class_probs, cutoff, quantile=0.1):
     plt.savefig('max_prob_hist_by_gap.png')
     plt.close()
     
-def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
-    """
-    Compute confidence gap cutoff at given quantile.
-
-    Args:
-        probs (np.array): shape (n_cells, n_classes), normalized probabilities.
-        quantile (float): quantile for cutoff.
-
-    Returns:
-        float: confidence gap cutoff.
-    """
-    sorted_probs = -np.sort(-class_probs, axis=1)
-    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
-    cutoff = np.quantile(gaps, quantile)
-    return cutoff
-    
-def classify_by_gap(class_probs, class_labels, cutoff):
-    """
-    Classify cells as 'known' or 'unknown' based on confidence gap.
-
-    Args:
-        class_probs (np.array): shape (n_cells, n_classes), normalized probabilities.
-        class_labels (list): list of class labels.
-        cutoff (float): confidence gap cutoff.
-
-    Returns:
-        np.array: array of predicted classes ('known' or 'unknown').
-    """
-    sorted_probs = -np.sort(-class_probs, axis=1)
-    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
-    
-    # Classify based on gap
-    predictions = np.where(gaps < cutoff, "unknown", class_labels[np.argmax(class_probs, axis=1)])
-    
-    return predictions

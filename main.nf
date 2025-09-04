@@ -250,7 +250,9 @@ process classifyAll {
         --probs ${probs_path} \\
         --mapping_file ${params.relabel_r} \\
         --ref_region_mapping ${ref_region_mapping} \\
-        --study_name ${study_name}
+        --study_name ${study_name} \\
+        --method ${method} \\
+        ${params.use_gap ? '--use_gap' : ''}
     """ 
 }
 
