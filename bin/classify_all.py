@@ -77,7 +77,8 @@ def main():
     study_name = args.study_name
     if args.use_gap:
         use_gap = True
-    
+    else:
+        use_gap = False 
     
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
@@ -102,7 +103,7 @@ def main():
     os.makedirs("pr_curves", exist_ok=True) 
     
     # Classify cells and evaluate
-    query = classify_cells(query, ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df, use_gap=use_gap)
+    query = classify_cells(query=query, ref_keys=ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df, use_gap=use_gap)
 
     outdir = os.path.join("predicted_meta")
     os.makedirs(outdir, exist_ok=True)
