@@ -226,6 +226,13 @@ def main():
                       acronym_mapping = acronym_mapping_ref)
     plot_distribution(f1_df, var="macro_f1", outdir="dists", split="study", facet="key",
                       acronym_mapping = acronym_mapping_ref)
+    
+    
+    # plot accuracy
+    plot_distribution(f1_df, var="overall_accuracy", outdir="dists", split="reference_acronym", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
+    plot_distribution(f1_df, var="overall_accuracy", outdir="dists", split="study", facet="key",
+                      acronym_mapping = acronym_mapping_ref)
 
 if __name__ == "__main__":
     main()
