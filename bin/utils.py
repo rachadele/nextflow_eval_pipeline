@@ -689,13 +689,13 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
         }
         
         # Macro averages
-        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+        macro_p, macro_r, macro_f, _ = precision_recall_fscore_support(
             true_labels, predicted_labels, average="macro", zero_division=np.nan
         )
         class_metrics[key]["macro_metrics"] = {
-            "precision": avg_p,
-            "recall": avg_r,
-            "f1_score": avg_f,
+            "precision": macro_p,
+            "recall": macro_r,
+            "f1_score": macro_f,
         }
 
     return class_metrics
