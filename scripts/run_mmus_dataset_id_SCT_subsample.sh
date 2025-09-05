@@ -24,7 +24,8 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -work-dir mmus \
                     --batch_correct true \
                     -resume \
-                    --remove_unknown \
+                    --remove_unknown true \
+                    --use_gap false \
                     --normalization_method "$normalization_method" \
                     -process.executor local
                    
