@@ -38,14 +38,14 @@ from collections import defaultdict
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
   #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/70/e01ffd3e44041673370e367f2157ac/lim_H5109Cin.obs.relabel.tsv")
-    parser.add_argument('--ref_name', type=str, default="Human_Multiple_Cortical_Areas_SMART-seq") #nargs ="+")
-    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family"])
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/2025-01-30/mus_musculus/100/dataset_id/SCT/gap_false/ref_50_cutoff_0/scvi/GSE152715.2/whole_cortex/GSE152715.2_1052248_GSM4624685/probs/GSE152715.2_1052248_GSM4624685.obs.relabel.tsv")
+    parser.add_argument('--ref_name', type=str, default="whole_cortex") #nargs ="+")
+    parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family","global"])
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
-    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/70/e01ffd3e44041673370e367f2157ac/lim_H5109Cin_Human_Multiple_Cortical_Areas_SMART-seq_prediction_scores_seurat.tsv")
+    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/2025-01-30/mus_musculus/100/dataset_id/SCT/gap_false/ref_50_cutoff_0/scvi/GSE152715.2/whole_cortex/GSE152715.2_1052248_GSM4624685/probs/probs/GSE152715.2_1052248_GSM4624685_whole_cortex.prob.df.tsv")
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
-    parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/06/03e7ac72a1ef3b67ce6a357eebd8c3/refs/ref_region.yaml")
-    parser.add_argument('--study_name', type=str, default="lim")
+    parser.add_argument('--ref_region_mapping', type=str, default="")
+    parser.add_argument('--study_name', type=str, default="GSE152715.2")
     parser.add_argument('--use_gap', action='store_true', help="Use gap analysis for classification")
     
     if __name__ == "__main__":
