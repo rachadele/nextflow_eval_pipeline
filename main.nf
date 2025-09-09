@@ -36,6 +36,7 @@ process save_params_to_file {
     subset_type: ${params.subset_type}
     batch_correct: ${params.batch_correct}
     nmads: ${params.nmads}
+    use_gap: ${params.use_gap}
     EOF
     """
 }
@@ -60,7 +61,7 @@ process runSetup {
 
 process mapQuery {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-    
+    publishDir "${params.outdir}/processed_adata", pattern: "**_processed.h5ad", mode: "copy" 
     input:
     val model_path
     tuple val(query_name), val(relabel_q), val(query_file), val(batch_key)
@@ -125,7 +126,8 @@ process getCensusAdata {
 
 process queryProcessSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
-
+    publishDir "${params.outdir}/processed_seurat", pattern: "**_processed.rds", mode: "copy"
+    
     input:
     path h5ad_file
 
@@ -166,6 +168,8 @@ process refProcessSeurat {
 }
 
 process rfPredict {
+    publishDir path: "${params.outdir}/scvi/${study_name}/${ref_name}/${query_name}/probs", pattern: "**tsv", mode: "copy"
+
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
     input:
@@ -176,6 +180,10 @@ process rfPredict {
     tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*tsv"), emit: probs_channel
 
     script:
+    
+    ref_name = ref_path.getName().split('\\.h5ad')[0]
+    query_name = query_path.getName().split('\\_processed.h5ad')[0]
+    study_name = query_name.split('_')[0] // Extract study name from query name
     """
     python $projectDir/bin/predict_scvi.py --query_path ${query_path} --ref_path ${ref_path} --ref_keys ${ref_keys}        
  
@@ -214,7 +222,7 @@ process predictSeurat {
 
 process classifyAll {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-// extract study name fromquery_name
+// extract study name from query_name
     publishDir path: "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", pattern: "label_transfer_metrics**", mode: 'copy'
 
     //// Publish files matching the 'confusion**' pattern

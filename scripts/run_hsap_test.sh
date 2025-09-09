@@ -4,34 +4,34 @@ set -e  # Exit on error
 
 # Define parameter values
 subsample_ref_values=(500)
-census_versions=("2025-01-30")
-#subsample_query=100
+subsample_query=100
 ref_split_values=("dataset_id")
-cutoff_values=(0.1)
+cutoff_values=(0 0.5)
 normalization_method="SCT"
+census_versions=("2025-01-30")
+
 # Loop over parameter combinations
 for subsample_ref in "${subsample_ref_values[@]}"; do
     for ref_split in "${ref_split_values[@]}"; do
         for cutoff in "${cutoff_values[@]}"; do
 			for census_version in "${census_versions[@]}"; do
                 echo "Running: subsample_ref=$subsample_ref, ref_split=$ref_split, cutoff=$cutoff, normalization_method=$normalization_method"
-                nextflow main.nf -params-file /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/params.mm.json \
+                nextflow main.nf -params-file /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/params.hs.json \
                     --subsample_ref "$subsample_ref" \
                     --ref_split "$ref_split" \
                     -profile conda \
                     --cutoff "$cutoff" \
                     --subset_type sample \
-                    -work-dir mmus_minimal \
+                    -work-dir hsap \
                     --batch_correct true \
                     --normalization_method "$normalization_method" \
+                    --subsample_query "$subsample_query" \
                     -process.executor slurm \
 					--census_version "$census_version" \
+                    --use_gap false \
                     -resume \
-                    --remove_unknown true \
-					--outdir_prefix "$census_version/mus_musculus/minimal/keep_unknown" \
-                    --use_gap true
-				    #--subsample_query "$subsample_query" \
-                done
-            done
+					--outdir_prefix "$census_version/homo_sapiens/tests/remove_unknown/gap_false" # Specify output directory
+				done
+			done
         done
     done
