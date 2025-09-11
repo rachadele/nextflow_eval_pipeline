@@ -61,7 +61,7 @@ process runSetup {
 
 process mapQuery {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-    publishDir "${params.outdir}/processed_adata", pattern: "**_processed.h5ad", mode: "copy" 
+    //publishDir "${params.outdir}/processed_adata", pattern: "**_processed.h5ad", mode: "copy" 
     input:
     val model_path
     tuple val(query_name), val(relabel_q), val(query_file), val(batch_key)
@@ -126,7 +126,7 @@ process getCensusAdata {
 
 process queryProcessSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
-    publishDir "${params.outdir}/processed_seurat", pattern: "**_processed.rds", mode: "copy"
+   // publishDir "${params.outdir}/processed_seurat", pattern: "**_processed.rds", mode: "copy"
     
     input:
     path h5ad_file
@@ -168,7 +168,7 @@ process refProcessSeurat {
 }
 
 process rfPredict {
-    publishDir path: "${params.outdir}/scvi/${study_name}/${ref_name}/${query_name}/probs", pattern: "**tsv", mode: "copy"
+   // publishDir path: "${params.outdir}/scvi/${study_name}/${ref_name}/${query_name}/probs", pattern: "**tsv", mode: "copy"
 
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
@@ -194,7 +194,6 @@ process rfPredict {
 
 process predictSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
-
 
     input:
     tuple val(query_path), val(ref_path)
