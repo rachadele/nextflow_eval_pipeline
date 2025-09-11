@@ -25,8 +25,9 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --batch_correct true \
                     -resume \
                     --remove_unknown \
+                    --use_gap true \
                     --normalization_method "$normalization_method" \
-                    --outdir_prefix "tests/2025-01-30/mus_musculus/use-new-census-2" \
+                    --outdir_prefix "tests/2025-01-30/mus_musculus/threshold-decision-boundary-test/gap_true" \
                     -process.executor "slurm"
             done
         done

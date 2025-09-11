@@ -24,7 +24,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --batch_correct true \
                     -resume \
                     --remove_unknown \
-                    --normalization_method "$normalization_method" \
+                    --normalization_method "$normalization_method"
             done
         done
     done
