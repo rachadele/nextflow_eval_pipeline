@@ -321,17 +321,12 @@ def process_query(query, model_file_path, batch_key="sample", seed=42):
     if not isinstance(query, ad.AnnData):
         raise ValueError("Input must be an AnnData object.")
 
-    # Assign ensembl_id to var
-    #query.var["ensembl_id"] = query.var["feature_id"]
     if "feature_id" in query.var.columns:
         query.var.set_index("feature_id", inplace=True)
 
     query.obs["n_counts"] = query.X.sum(axis=1)
     query.obs["joinid"] = list(range(query.n_obs))
     query.obs["batch"] = query.obs[batch_key]
-
-    # Filter out missing HGNC features
-    #query = query[:, query.var["feature_name"].notnull().values].copy()
 
     # Prepare the query AnnData for scVI
     scvi.model.SCVI.prepare_query_anndata(query, model_file_path)
