@@ -23,6 +23,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -work-dir mmus \
                     --batch_correct true \
                     -resume \
+                    --use_gap false \
                     --remove_unknown \
                     --normalization_method "$normalization_method"
             done
