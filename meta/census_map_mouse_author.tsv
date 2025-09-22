@@ -1,6 +1,5 @@
 author_cell_type	subclass	class	family	global
 Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
-astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 Astro	Astrocyte	Glia	Non-neuron	Non-neuron
 Astro-1	Astrocyte	Glia	Non-neuron	Non-neuron
 Astro-2	Astrocyte	Glia	Non-neuron	Non-neuron
@@ -64,7 +63,6 @@ Prog/IP	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 NP PPP	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
 NP SUB	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
 Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Olig-2	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Olig-1	Oligodendrocyte	Glia	Non-neuron	Non-neuron
@@ -91,7 +89,6 @@ InN-Sst-1	SST	MGE	GABAergic	Neuron
 InN-Sst-2	SST	MGE	GABAergic	Neuron
 Sst Chodl	SST	MGE	GABAergic	Neuron
 SUB-ProS	SUB-ProS	Hippocampal neuron	Glutamatergic	Neuron
-T cell	T cell	Immune	Non-neuron	Non-neuron
 Vip	VIP	CGE	GABAergic	Neuron
 InN-Vip	VIP	CGE	GABAergic	Neuron
 VLMC	VLMC	Stromal	Non-neuron	Non-neuron
