@@ -59,6 +59,8 @@ def main():
   random.seed(SEED)         # For `random`
   np.random.seed(SEED)      # For `numpy`
   scvi.settings.seed = SEED # For `scvi`
+ # Use a dedicated RNG for reproducibility
+  #rng = np.random.default_rng(SEED) 
   # Set organism and census_version from arguments
   model_path = args.model_path
   subsample_query = args.subsample_query

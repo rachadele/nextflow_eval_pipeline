@@ -28,8 +28,9 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --subsample_query "$subsample_query" \
                     -process.executor slurm \
 					--census_version "$census_version" \
+                    --use_gap false \
                     -resume \
-					--outdir_prefix "$census_version/homo_sapiens/minimal" # Specify output directory
+					--outdir_prefix "$census_version/homo_sapiens/tests/remove_unknown/gap_false" # Specify output directory
 				done
 			done
         done

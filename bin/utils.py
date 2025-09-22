@@ -321,17 +321,12 @@ def process_query(query, model_file_path, batch_key="sample", seed=42):
     if not isinstance(query, ad.AnnData):
         raise ValueError("Input must be an AnnData object.")
 
-    # Assign ensembl_id to var
-    #query.var["ensembl_id"] = query.var["feature_id"]
     if "feature_id" in query.var.columns:
         query.var.set_index("feature_id", inplace=True)
 
     query.obs["n_counts"] = query.X.sum(axis=1)
     query.obs["joinid"] = list(range(query.n_obs))
     query.obs["batch"] = query.obs[batch_key]
-
-    # Filter out missing HGNC features
-    #query = query[:, query.var["feature_name"].notnull().values].copy()
 
     # Prepare the query AnnData for scVI
     scvi.model.SCVI.prepare_query_anndata(query, model_file_path)
@@ -535,7 +530,29 @@ def check_column_ties(probabilities, class_labels):
     
     return tie_rows, tie_columns
 
-def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
+
+def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
+    """
+    Compute confidence gap cutoff at given quantile.
+
+    Args:
+        probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        quantile (float): quantile for cutoff.
+
+    Returns:
+        float: confidence gap cutoff.
+    """
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    cutoff = np.quantile(gaps, quantile)
+    return cutoff
+
+
+
+def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=False):
+    """
+    Wrapper function to classify cells based on probabilities. Can use gap analysis or raw probabilities.
+    """
     class_metrics = {}
     
     # Only use the first ref_key
@@ -546,24 +563,13 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
     class_labels = probabilities.columns.values  # Class labels are the column names
     class_probs = probabilities.values  # Probabilities as a numpy array
     
-    predicted_classes = []
-    
-    if cutoff > 0:
-        # Find the class with the maximum probability for each cell
-        max_class_indices = np.argmax(class_probs, axis=1)  # Get the index of the max probability
-        max_class_probs = np.max(class_probs, axis=1)  # Get the max probability
-        
-        # Set predicted classes to "unknown" if the max probability does not meet the threshold
-        predicted_classes = [
-            class_labels[i] if prob > cutoff else "unknown"
-            for i, prob in zip(max_class_indices, max_class_probs)
-        ]
+    if use_gap:
+        predictions = classify_by_gap(class_probs, class_labels, cutoff=cutoff)
     else:
-        # Direct prediction without threshold filtering
-        predicted_classes = class_labels[np.argmax(class_probs, axis=1)]
+        predictions = classify_raw(class_probs, class_labels, cutoff=cutoff)
     
     # Store predictions and confidence in `query`
-    query["predicted_" + key] = predicted_classes
+    query["predicted_" + key] = predictions
     query["confidence"] = np.max(class_probs, axis=1)  # Store max probability as confidence
     
     # Aggregate predictions (you can keep this logic as needed)
@@ -571,6 +577,49 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df):
     
     return query
 
+
+def classify_raw(class_probs, class_labels, cutoff=0):
+  """
+  Classify cells based on raw probabilities without gap analysis.
+  """ 
+  predictions = []
+  if cutoff > 0:
+    max_class_indices = np.argmax(class_probs, axis=1)  # Get the index of the max probability
+    max_class_probs = np.max(class_probs, axis=1)  # Get the max probability
+
+    # Set predicted classes to "unknown" if the max probability does not meet the threshold
+    predictions = [
+        class_labels[i] if prob > cutoff else "unknown"
+        for i, prob in zip(max_class_indices, max_class_probs)
+    ]
+  else:
+    # Direct prediction without threshold filtering
+    predictions = class_labels[np.argmax(class_probs, axis=1)]
+
+  return predictions
+
+    
+def classify_by_gap(class_probs, class_labels, cutoff=0.1): # gap must be 0.1 or higher
+    # potentially normalize probabilities ? already between 0 and 1 but the distribution will differ based on type of classifier
+    """
+    Classify cells as a predicted type or 'unknown' based on confidence gap.
+
+    Args:
+        class_probs (np.array): shape (n_cells, n_classes), normalized probabilities.
+        class_labels (list): list of class labels.
+        cutoff (float): confidence gap cutoff.
+
+    Returns:
+        np.array: array of predicted classes ('known' or 'unknown').
+    """
+    predictions = []
+    sorted_probs = -np.sort(-class_probs, axis=1)
+    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
+    
+    # Classify based on gap
+    predictions = np.where(gaps < cutoff, "unknown", class_labels[np.argmax(class_probs, axis=1)])
+    
+    return predictions
 
 def aggregate_preds(query, ref_keys, mapping_df):
     preds = np.array(query["predicted_" + ref_keys[0]])
@@ -640,13 +689,13 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
         }
         
         # Macro averages
-        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+        macro_p, macro_r, macro_f, _ = precision_recall_fscore_support(
             true_labels, predicted_labels, average="macro", zero_division=np.nan
         )
         class_metrics[key]["macro_metrics"] = {
-            "precision": avg_p,
-            "recall": avg_r,
-            "f1_score": avg_f,
+            "precision": macro_p,
+            "recall": macro_r,
+            "f1_score": macro_f,
         }
 
     return class_metrics
@@ -688,70 +737,7 @@ def plot_confusion_matrix(query_name, ref_name, key, confusion_data, output_dir)
     #os.makedirs(os.path.join(output_dir, new_query_name, new_ref_name), exist_ok=True)  # Create the directory if it doesn't exist
     plt.savefig(os.path.join(output_dir,f"{key}_confusion.png"))
     plt.close() 
-    
-    
-def combine_f1_scores(class_metrics, ref_keys):
-   # metrics = class_metrics
-    # Dictionary to store DataFrames for each key
-    all_f1_scores = {}
-    #cutoff = class_metrics["cutoff"]
-    # Iterate over each key in ref_keys
-    for key in ref_keys:
-        # Create a list to store F1 scores for each query-ref combo
-        f1_data = [] 
-        # Iterate over all query-ref combinations
-        for query_name in class_metrics:
-            for ref_name in class_metrics[query_name]:
-                # Extract the classification report for the current query-ref-key combination
-                classification_report = class_metrics[query_name][ref_name][key]["classification_report"]
-                # Extract F1 scores for each label
-                if classification_report:
-                    for label, metrics in classification_report.items():
-                        if label not in ["macro avg","micro avg","weighted avg","accuracy"]:
-                         #   if isinstance(metrics, dict) and 'f1-score' in metrics:
-                                f1_data.append({
-                                    'query': query_name,
-                                    'reference': ref_name,
-                                    'label': label,
-                                    'f1_score': metrics['f1-score'],                         
-                                    'macro_f1': classification_report.get('macro avg', {}).get('f1-score', None),
-                                    'micro_f1': classification_report.get('micro avg', {}).get('f1-score', None),
-                                    'weighted_f1': classification_report.get('weighted avg', {}).get('f1-score', None), #,
-                                    'precision': metrics['precision'],
-                                    'recall': metrics['recall']        
-                                })
-
-        # Create DataFrame for the current key
-        df = pd.DataFrame(f1_data)
-
-        # Store the DataFrame in the dictionary for the current key
-        all_f1_scores[key] = df
-
-    return all_f1_scores
-
-
-
- 
-def split_anndata_by_obs(adata, obs_key="dataset_title"):
-    """
-    Split an AnnData object into multiple AnnData objects based on unique values in an obs key.
-
-    Parameters:
-    - adata: AnnData object to split.
-    - obs_key: Key in `adata.obs` on which to split the data.
-
-    Returns:
-    - A dictionary where keys are unique values in `obs_key` and values are corresponding AnnData subsets.
-    """
-    # Dictionary comprehension to create a separate AnnData for each unique value in obs_key
-    split_data = {
-        value: adata[adata.obs[obs_key] == value].copy() 
-        for value in adata.obs[obs_key].unique()
-    }
-    
-    return split_data
-
-
+     
   
 def map_genes(query, gene_mapping):
     # Drop rows with missing values in the relevant columns
@@ -766,6 +752,7 @@ def map_genes(query, gene_mapping):
         # Rename the merged column to "feature_name"
         query.var.rename(columns={"OFFICIAL_SYMBOL": "feature_name"}, inplace=True)
     return query
+
 
 def is_outlier(query, metric: str, nmads=3):
     M = query.obs[metric]
@@ -988,38 +975,3 @@ def plot_max_prob_hist_by_gap(class_probs, cutoff, quantile=0.1):
     plt.savefig('max_prob_hist_by_gap.png')
     plt.close()
     
-def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
-    """
-    Compute confidence gap cutoff at given quantile.
-
-    Args:
-        probs (np.array): shape (n_cells, n_classes), normalized probabilities.
-        quantile (float): quantile for cutoff.
-
-    Returns:
-        float: confidence gap cutoff.
-    """
-    sorted_probs = -np.sort(-class_probs, axis=1)
-    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
-    cutoff = np.quantile(gaps, quantile)
-    return cutoff
-    
-def classify_by_gap(class_probs, class_labels, cutoff):
-    """
-    Classify cells as 'known' or 'unknown' based on confidence gap.
-
-    Args:
-        class_probs (np.array): shape (n_cells, n_classes), normalized probabilities.
-        class_labels (list): list of class labels.
-        cutoff (float): confidence gap cutoff.
-
-    Returns:
-        np.array: array of predicted classes ('known' or 'unknown').
-    """
-    sorted_probs = -np.sort(-class_probs, axis=1)
-    gaps = sorted_probs[:, 0] - sorted_probs[:, 1]
-    
-    # Classify based on gap
-    predictions = np.where(gaps < cutoff, "unknown", class_labels[np.argmax(class_probs, axis=1)])
-    
-    return predictions

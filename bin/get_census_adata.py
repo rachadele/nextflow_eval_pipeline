@@ -21,10 +21,6 @@ from sklearn.ensemble import RandomForestClassifier
 import utils
 from utils import *
 from pathlib import Path
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, auc
-from sklearn.preprocessing import label_binarize
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
@@ -139,35 +135,10 @@ def main():
             .replace(";", "")
             .replace("&", "")
         )
-        #if organism == "mus_musculus": 
-            #ref.obs["new_dataset_title"] = ref.obs["dataset_title"].apply(lambda x:x.replace(" ", "_")
-                                                                            #.replace("\\/", "_")
-                                                                            #.replace("(", "")
-                                                                            #.replace(")", "")
-                                                                            #.replace("\\", "")
-                                                                            #.replace("'", "")
-                                                                            #.replace(":", "")
-                                                                            #.replace(";", "")
-                                                                            #.replace("&", "")
-                                                                        #)
-            #if new_dataset_title in original_celltypes.keys():
-                #og_obs = original_celltypes[new_dataset_title]
-                #ref.obs["new_observation_joinid"] = ref.obs["new_dataset_title"].astype(str) + "_" + ref.obs["observation_joinid"].astype(str)
-                ## merge left, only keep leftmost observation_joinid
-                ## instead of merging, create a dict and map using new_observation_joinid
-                #mapping = dict(zip(og_obs["new_observation_joinid"], og_obs["author_cell_type"]))
-                #ref.obs["author_cell_type"] = ref.obs["new_observation_joinid"].map(mapping)
-                #ref.obs[["subclass","cell_type","author_cell_type","dataset_title"]].value_counts().reset_index().to_csv(f"refs/{ref_name}_new_celltypes.tsv", sep="\t", index=False)
-
-                #refs[ref_name] = ref
             
         ref.write(os.path.join(outdir, f"{new_dataset_title}.h5ad"))
         ref.obs.to_csv(os.path.join(outdir, f"{new_dataset_title}.obs.tsv"), sep="\t")
 
-  #  if organism == "mus_musculus":
-
-   #    replace_ambiguous_cells(refs, ambiguous_celltypes)
-        
     for ref_name, ref in refs.items():
         sc.pp.neighbors(ref, use_rep="scvi")
         sc.tl.umap(ref)
