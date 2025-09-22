@@ -37,7 +37,6 @@ def parse_arguments():
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
         "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
         "Tabula Muris Senis",
-        "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging",
         "Molecular and spatial signatures of mouse brain aging at single-cell resolution"
     ]) 
     parser.add_argument('--organ', type=str, default="brain")
@@ -65,7 +64,7 @@ def main():
   census = cellxgene_census.open_soma(census_version=census_version)
   dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
   dataset_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_info/{census_version}/{organism}_dataset_info.tsv", sep="\t", index=False)
-  cellxgene_obs = adata_functions.get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
+  cellxgene_obs = utils.get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
   
   cellxgene_obs = cellxgene_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
   cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
