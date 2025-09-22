@@ -45,13 +45,11 @@ L6b/CT ENT	L6b	deep layer non-IT	Glutamatergic	Neuron
 L6b CTX	L6b	deep layer non-IT	Glutamatergic	Neuron
 Lamp5	LAMP5	CGE	GABAergic	Neuron
 InN-Lamp5	LAMP5	CGE	GABAergic	Neuron
-macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Macro	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Micro-PVM	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Meis2	Meis2	GABAergic	GABAergic	Neuron
 Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
-microglial cell	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Micro-2	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Micro-3	Microglia	CNS macrophage	Non-neuron	Non-neuron
