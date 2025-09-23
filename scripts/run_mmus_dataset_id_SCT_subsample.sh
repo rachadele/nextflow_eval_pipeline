@@ -25,7 +25,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --batch_correct true \
                     -resume \
                     --remove_unknown true \
-                    --use_gap true \
+                    --use_gap false \
                     --normalization_method "$normalization_method" \
                     -process.executor slurm
                    
