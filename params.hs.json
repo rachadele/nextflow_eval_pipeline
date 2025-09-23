@@ -5,8 +5,7 @@
     "seed": 42,
     "ref_collections": [
         "Transcriptomic cytoarchitecture reveals principles of human neocortex organization",
-        "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas",
-        "Molecular and cellular evolution of the primate dorsolateral prefrontal cortex"
+        "SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"
     ],
     "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_homo_sapiens/*_relabel.tsv",
     "relabel_r": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv",
