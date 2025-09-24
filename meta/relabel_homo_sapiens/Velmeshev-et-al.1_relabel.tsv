@@ -1,6 +1,6 @@
 cell_type	subclass	class	family
-SMC	SMC	Mural	Non-neuron
-Immune	Immune	Immune	Non-neuron
+SMC	Mural	Mural	Non-neuron
+Immune	Non-neuron	Non-neuron	Non-neuron
 Micro	Microglia	CNS macrophage	Non-neuron
 VLMC	VLMC	Stromal	Non-neuron
 Chandelier	Chandelier	MGE	GABAergic
