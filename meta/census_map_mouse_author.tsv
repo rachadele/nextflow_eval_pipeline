@@ -1,93 +1,83 @@
 author_cell_type	subclass	class	family	global
-Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
-Astro	Astrocyte	Glia	Non-neuron	Non-neuron
-Astro-1	Astrocyte	Glia	Non-neuron	Non-neuron
-Astro-2	Astrocyte	Glia	Non-neuron	Non-neuron
-CA1-ProS	CA1-ProS	Hippocampal neuron	Glutamatergic	Neuron
-CA2-IG-FC	CA2-IG-FC	Hippocampal neuron	Glutamatergic	Neuron
-CA3	CA3	Hippocampal neuron	Glutamatergic	Neuron
+Prog/IP	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+neural stem cell	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+neuroepithelial stem cell	Neuroepithelial stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Vip	VIP	CGE	GABAergic	Neuron
+Pvalb	PVALB	MGE	GABAergic	Neuron
+Sst	SST	MGE	GABAergic	Neuron
+Lamp5	LAMP5	CGE	GABAergic	Neuron
+Sncg	SNCG	CGE	GABAergic	Neuron
+Sst_Cbln4	SST	MGE	GABAergic	Neuron
+Sst Chodl	SST	MGE	GABAergic	Neuron
 CR	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
-CT SUB	L6 CT	deep layer non-IT	Glutamatergic	Neuron
-DG	DG	Hippocampal neuron	Glutamatergic	Neuron
-Endothelial	Endothelial	Vascular	Non-neuron	Non-neuron
-Endo	Endothelial	Vascular	Non-neuron	Non-neuron
-Endo-1	Endothelial	Vascular	Non-neuron	Non-neuron
-Endo-3	Endothelial	Vascular	Non-neuron	Non-neuron
-Endo-2	Endothelial	Vascular	Non-neuron	Non-neuron
-Epen	Ependymal	Glia	Non-neuron	Non-neuron
-L4	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L5 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2/3 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L6 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L4/5 IT CTX	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2/3 IT CTX	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L6 IT CTX	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L5 IT CTX	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2/3 IT PPP	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L3 IT ENT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2/3 IT ENTl	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L5/6 IT TPE-ENT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2 IT ENTl	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2/3 IT RHP	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L2 IT ENTm	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L6 IT ENTl	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L5 ET	L5 ET	deep layer non-IT	Glutamatergic	Neuron
-L5 PT CTX	L5 ET	deep layer non-IT	Glutamatergic	Neuron
-L5 PPP	L5 ET	deep layer non-IT	Glutamatergic	Neuron
-L5/6 NP	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
-L5/6 NP CTX	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
+L5 IT	L4/5 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2/3 IT	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
 L6 CT	L6 CT	deep layer non-IT	Glutamatergic	Neuron
-L6 CT CTX	L6 CT	deep layer non-IT	Glutamatergic	Neuron
-L6 IT Car3	L6 IT Car3	L2/3-6 IT	Glutamatergic	Neuron
-Car3	L6 IT Car3	L2/3-6 IT	Glutamatergic	Neuron
+L6 IT	L6 IT	L2/3-6 IT	Glutamatergic	Neuron
+L5/6 NP	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
+L5 ET	L5 ET	deep layer non-IT	Glutamatergic	Neuron
 L6b	L6b	deep layer non-IT	Glutamatergic	Neuron
+SUB-ProS	SUB-ProS	Hippocampal neuron	Glutamatergic	Neuron
+L4	L4/5 IT	L2/3-6 IT	Glutamatergic	Neuron
+Car3	L6 IT Car3	L2/3-6 IT	Glutamatergic	Neuron
+CT SUB	CT	deep layer non-IT	Glutamatergic	Neuron
+DG	DG	Hippocampal neuron	Glutamatergic	Neuron
+CA3	CA3	Hippocampal neuron	Glutamatergic	Neuron
+CA2-IG-FC	CA2-IG-FC	Hippocampal neuron	Glutamatergic	Neuron
+L3 IT ENT	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2/3 IT CTX	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2/3 IT PPP	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2/3 IT ENTl	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2 IT ENTl	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2 IT ENTm	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L2/3 IT RHP	L2/3 IT	L2/3-6 IT	Glutamatergic	Neuron
+L4/5 IT CTX	L4/5 IT	L2/3-6 IT	Glutamatergic	Neuron
+L5 IT CTX	L4/5 IT	L2/3-6 IT	Glutamatergic	Neuron
+L5 PT CTX	L5 ET	deep layer non-IT	Glutamatergic	Neuron
+L5/6 IT TPE-ENT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
+L5 PPP	L5 ET	deep layer non-IT	Glutamatergic	Neuron
+L5/6 NP CTX	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
+NP PPP	NP	deep layer non-IT	Glutamatergic	Neuron
+NP SUB	NP	deep layer non-IT	Glutamatergic	Neuron
+L6 CT CTX	L6 CT	deep layer non-IT	Glutamatergic	Neuron
+L6 IT CTX	L6 IT	L2/3-6 IT	Glutamatergic	Neuron
+L6 IT ENTl	L6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L6b/CT ENT	L6b	deep layer non-IT	Glutamatergic	Neuron
 L6b CTX	L6b	deep layer non-IT	Glutamatergic	Neuron
-Lamp5	LAMP5	CGE	GABAergic	Neuron
-InN-Lamp5	LAMP5	CGE	GABAergic	Neuron
-Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
-Macro	Macrophage	CNS macrophage	Non-neuron	Non-neuron
-Micro-PVM	Macrophage	CNS macrophage	Non-neuron	Non-neuron
-Meis2	Meis2	GABAergic	GABAergic	Neuron
-Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Micro-2	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Micro-3	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Micro-1	Microglia	CNS macrophage	Non-neuron	Non-neuron
-MSN-D1-1	MSN	GABAergic	GABAergic	Neuron
-MSN-D2	MSN	GABAergic	GABAergic	Neuron
-MSN-D1-2	MSN	GABAergic	GABAergic	Neuron
-Prog/IP	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
-NP PPP	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
-NP SUB	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
-Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Olig-2	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Olig-1	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Olig-3	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-OPC	OPC	Glia	Non-neuron	Non-neuron
-Peri	Pericyte	Mural	Non-neuron	Non-neuron
-Peri-1	Pericyte	Mural	Non-neuron	Non-neuron
-Peri-2	Pericyte	Mural	Non-neuron	Non-neuron
-SMC-Peri	Pericyte	Mural	Non-neuron	Non-neuron
-Pvalb	PVALB	MGE	GABAergic	Neuron
-InN-Pvalb-1	PVALB	MGE	GABAergic	Neuron
-InN-Pvalb-3	PVALB	MGE	GABAergic	Neuron
-InN-Pvalb-2	PVALB	MGE	GABAergic	Neuron
-SMC	SMC	Mural	Non-neuron	Non-neuron
-Sncg	SNCG	CGE	GABAergic	Neuron
-Sst_Nr2f2	SST	MGE	GABAergic	Neuron
-Sst_Chodl	SST	MGE	GABAergic	Neuron
-Sst_Cbln4	SST	MGE	GABAergic	Neuron
-Sst_Clstn2	SST	MGE	GABAergic	Neuron
-Sst_Nmbr	SST	MGE	GABAergic	Neuron
-Sst	SST	MGE	GABAergic	Neuron
-Chodl	SST	MGE	GABAergic	Neuron
-InN-Sst-1	SST	MGE	GABAergic	Neuron
-InN-Sst-2	SST	MGE	GABAergic	Neuron
-Sst Chodl	SST	MGE	GABAergic	Neuron
-SUB-ProS	SUB-ProS	Hippocampal neuron	Glutamatergic	Neuron
-Vip	VIP	CGE	GABAergic	Neuron
-InN-Vip	VIP	CGE	GABAergic	Neuron
+CA1-ProS	CA1-ProS	Hippocampal neuron	Glutamatergic	Neuron
+L4 RSP-ACA	L4 RSP-ACA	L4 IT/ET	Glutamatergic	Neuron
+Astro	Astrocyte	Glia	Non-neuron	Non-neuron
+astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+Endo	Endothelial	Vascular	Non-neuron	Non-neuron
+endothelial cell	Endothelial	Vascular	Non-neuron	Non-neuron
+ependymal cell	Ependymal	Glia	Non-neuron	Non-neuron
 VLMC	VLMC	Stromal	Non-neuron	Non-neuron
-Vlmc	VLMC	Stromal	Non-neuron	Non-neuron
+Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
+Micro-PVM	Macrophage	CNS macrophage	Non-neuron	Non-neuron
+macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
+microglial cell	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Homeostatic1	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Homeostatic2	Microglia	CNS macrophage	Non-neuron	Non-neuron
+WAM	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Activated	Microglia	CNS macrophage	Non-neuron	Non-neuron
+IRM	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Oligo1a	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Oligo2b	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Oligo1c	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Oligo1b	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+ARO	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Oligo2a	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+IRO	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+OPC	OPC	Glia	Non-neuron	Non-neuron
+oligodendrocyte precursor cell	OPC	Glia	Non-neuron	Non-neuron
+Peri	Pericyte	Mural	Non-neuron	Non-neuron
+brain pericyte	Pericyte	Mural	Non-neuron	Non-neuron
+SMC-Peri	Pericyte	Mural	Non-neuron	Non-neuron
+SMC	Smooth muscle cell	Mural	Non-neuron	Non-neuron
+CD8-positive, alpha-beta T cell	T cell	Immune	Non-neuron	Non-neuron
+T cell	T cell	Immune	Non-neuron	Non-neuron
+mature NK T cell	T cell	Immune	Non-neuron	Non-neuron

@@ -4,12 +4,12 @@ SST	SST	MGE	GABAergic	Neuron
 L5/6	L5/6 NP	deep layer non-IT	Glutamatergic	Neuron
 Gad2+ Progen	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 IP	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
-SPN	MSN	Neuron	Neuron	Neuron
+SPN	Neuron	Neuron	Neuron	Neuron
 NSC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 LGE	GABAergic	GABAergic	GABAergic	Neuron
-SMC	SMC	Mural	Non-neuron	Non-neuron
+SMC	Smooth muscle cell	Mural	Non-neuron	Non-neuron
 VIP	VIP	CGE	GABAergic	Neuron
-Radial Glia	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Radial Glia	Neuroepithelial stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 OPC	OPC	Glia	Non-neuron	Non-neuron
 Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron

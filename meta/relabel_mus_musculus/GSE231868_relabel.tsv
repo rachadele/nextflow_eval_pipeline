@@ -3,7 +3,7 @@ Cortical or hippocampal glutamatergic neuron	Glutamatergic	Glutamatergic	Glutama
 Forebrain GABAergic neuron	GABAergic	GABAergic	GABAergic	Neuron
 Others	unknown	unknown	unknown	unknown
 Neuronal intermediate progenitor	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
-Forebrain GABAergic neuroblast	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
-Forebrain glioblast	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Forebrain GABAergic neuroblast	GABAergic	GABAergic	GABAergic	Neuron
+Forebrain glioblast	Neuroepithelial stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 Cajal-Retzius neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
-Forebrain glutamatergic neuroblast	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Forebrain glutamatergic neuroblast	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
