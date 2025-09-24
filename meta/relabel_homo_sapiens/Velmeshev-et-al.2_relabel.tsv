@@ -1,6 +1,6 @@
 cell_type	subclass	class	family
-Immune	Immune	Immune	Non-neuron
-SMC	SMC	Mural	Non-neuron
+SMC	Mural	Mural	Non-neuron
+Immune	Non-neuron	Non-neuron	Non-neuron
 Micro	Microglia	CNS macrophage	Non-neuron
 VLMC	VLMC	Stromal	Non-neuron
 Chandelier	Chandelier	MGE	GABAergic
@@ -16,12 +16,12 @@ Lamp5	LAMP5	CGE	GABAergic
 L5_ET	L5 ET	deep layer non-IT	Glutamatergic
 L5/6_NP	L5/6 NP	deep layer non-IT	Glutamatergic
 L4_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-OPC	OPC	Glia	Non-neuron
-Sst	SST	MGE	GABAergic
 L6_IT_Car3	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-Vip	VIP	CGE	GABAergic
+Sst	SST	MGE	GABAergic
+OPC	OPC	Glia	Non-neuron
 Lamp5_Lhx6	LAMP5	CGE	GABAergic
 L6_CT	L6 CT	deep layer non-IT	Glutamatergic
+Vip	VIP	CGE	GABAergic
 L5_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
 Endo	Endothelial	Vascular	Non-neuron
 Sst_Chodl	SST	MGE	GABAergic
