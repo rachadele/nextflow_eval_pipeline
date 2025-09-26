@@ -1,0 +1,14 @@
+cell_type	subclass	class	family	global
+Ex Newborn	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+In	GABAergic	GABAergic	GABAergic	Neuron
+RG OPC	OPC	Glia	Non-neuron	Non-neuron
+RG Early	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Ex Deep Layer	deep layer non-IT	deep layer non-IT	Glutamatergic	Neuron
+IPC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+In Unclassified	GABAergic	GABAergic	GABAergic	Neuron
+RG Unclassified	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+RG Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
+Ex Upper Layer	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
+RG Late	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Ex Unclassified	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
+Mu	Mural	Mural	Non-neuron	Non-neuron
