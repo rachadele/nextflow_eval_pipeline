@@ -82,7 +82,7 @@ if (batch_correct) {
         )
         assay <- "integrated"
         if (normalization_method == "LogNormalize") {
-            sceasy_serat <- sceasy_seurat %>% ScaleData(assay=assay)
+            sceasy_seurat <- sceasy_seurat %>% ScaleData(assay=assay)
         }
     }
 }
