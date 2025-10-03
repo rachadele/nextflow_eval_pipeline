@@ -76,7 +76,7 @@ oligodendrocyte precursor cell	OPC	OPC	Non-neuron	Non-neuron
 Peri	Pericyte	Vascular	Non-neuron	Non-neuron
 brain pericyte	Pericyte	Vascular	Non-neuron	Non-neuron
 SMC-Peri	Pericyte	Vascular	Non-neuron	Non-neuron
-SMC	Smooth muscle cell	Vascular	Non-neuron	Non-neuron
+SMC	SMC	Vascular	Non-neuron	Non-neuron
 CD8-positive, alpha-beta T cell	T cell	Immune	Non-neuron	Non-neuron
 T cell	T cell	Immune	Non-neuron	Non-neuron
 mature NK T cell	T cell	Immune	Non-neuron	Non-neuron
