@@ -1,12 +1,12 @@
 cell_type	subclass	class	family	global
 Exc. neuron	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
-Astro1	Astrocyte	Glia	Non-neuron	Non-neuron
+Astro1	Astrocyte	Astrocyte	Non-neuron	Non-neuron
 Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Interneuron	GABAergic	GABAergic	GABAergic	Neuron
-Astro2	Astrocyte	Glia	Non-neuron	Non-neuron
-Olig1	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Olig2	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-OPC	OPC	Glia	Non-neuron	Non-neuron
+Astro2	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+Olig1	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
+Olig2	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
+OPC	OPC	OPC	Non-neuron	Non-neuron
 Endothelial	Endothelial	Vascular	Non-neuron	Non-neuron
-Pericyte	Pericyte	Mural	Non-neuron	Non-neuron
-Leptomeningeal	VLMC	Stromal	Non-neuron	Non-neuron
+Pericyte	Pericyte	Vascular	Non-neuron	Non-neuron
+Leptomeningeal	VLMC	Vascular	Non-neuron	Non-neuron

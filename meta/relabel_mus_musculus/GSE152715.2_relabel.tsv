@@ -7,11 +7,11 @@ IP	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 SPN	Neuron	Neuron	Neuron	Neuron
 NSC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
 LGE	GABAergic	GABAergic	GABAergic	Neuron
-SMC	Smooth muscle cell	Mural	Non-neuron	Non-neuron
+SMC	SMC	Vascular	Non-neuron	Non-neuron
 VIP	VIP	CGE	GABAergic	Neuron
-Radial Glia	Neuroepithelial stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
-Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
-OPC	OPC	Glia	Non-neuron	Non-neuron
+Radial Glia	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Astrocyte	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+OPC	OPC	OPC	Non-neuron	Non-neuron
 Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Ependymal	Ependymal	Glia	Non-neuron	Non-neuron
