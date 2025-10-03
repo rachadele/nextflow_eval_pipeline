@@ -8,13 +8,11 @@ subsample_query=100
 ref_split_values=("dataset_id")
 cutoff_values=(0 0.5)
 normalization_method="SCT"
-census_versions=("2025-01-30")
 
 # Loop over parameter combinations
 for subsample_ref in "${subsample_ref_values[@]}"; do
     for ref_split in "${ref_split_values[@]}"; do
         for cutoff in "${cutoff_values[@]}"; do
-			for census_version in "${census_versions[@]}"; do
                 echo "Running: subsample_ref=$subsample_ref, ref_split=$ref_split, cutoff=$cutoff, normalization_method=$normalization_method"
                 nextflow main.nf -params-file /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/params.hs.json \
                     --subsample_ref "$subsample_ref" \
@@ -27,11 +25,9 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --normalization_method "$normalization_method" \
                     --subsample_query "$subsample_query" \
                     -process.executor slurm \
-					--census_version "$census_version" \
-                    --use_gap false \
-                    -resume \
-					--outdir_prefix "$census_version/homo_sapiens/tests/remove_unknown/gap_false" # Specify output directory
-				done
+                    --use_gap true \
+                    -resume 
+                done
 			done
         done
     done
