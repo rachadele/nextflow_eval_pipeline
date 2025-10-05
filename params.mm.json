@@ -1,6 +1,6 @@
 {
     "organism": "mus_musculus",
-    "census_version": "2024-07-30",
+    "census_version": "2024-07-01",
     "cutoff": 0,
     "seed": 42,
     "ref_collections": [
