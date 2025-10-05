@@ -1,18 +1,18 @@
-cell_type	subclass	class	family
-Choroid Plexus	Vascular	Vascular	Non-neuron
-Mural 1	Mural	Vascular	Non-neuron
-Ependymal	Ependymal	Vascular	Non-neuron
-Mural 2	Mural	Vascular	Non-neuron
-Mural 3	Mural	Vascular	Non-neuron
-Reln+ Neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic
-Unknown	unknown	unknown	unknown
-NPC	Neural stem cell	Neuroglioblast	Neuroglioblast
-Immature Oligodendrocyte	OPC	OPC	Non-neuron
-Macrophage	Macrophage	CNS macrophage	Non-neuron
-Mature Oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Non-neuron
-Astrocyte	Astrocyte	Astrocyte	Non-neuron
-Neuron	Neuron	Neuron	Neuron
-Endothelial Cells	Endothelial	Vascular	Non-neuron
-Oligodendrocyte Progenitor	OPC	OPC	Non-neuron
-Microglia	Microglia	CNS macrophage	Non-neuron
-Fibroblast	Vascular	Vascular	Non-neuron
+cell_type	subclass	class	family	global
+Mature Oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
+Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
+Astrocyte	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
+Oligodendrocyte Progenitor	OPC	OPC	Non-neuron	Non-neuron
+Mural 2	Mural	Vascular	Non-neuron	Non-neuron
+Mural 1	Mural	Vascular	Non-neuron	Non-neuron
+Mural 3	Mural	Vascular	Non-neuron	Non-neuron
+Choroid Plexus	Vascular	Vascular	Non-neuron	Non-neuron
+Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
+Immature Oligodendrocyte	OPC	OPC	Non-neuron	Non-neuron
+NPC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+Fibroblast	Vascular	Vascular	Non-neuron	Non-neuron
+Reln+ Neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
+Ependymal	Ependymal	Vascular	Non-neuron	Non-neuron
+Unknown	unknown	unknown	unknown	unknown
+Neuron	Neuron	Neuron	Neuron	Neuron
