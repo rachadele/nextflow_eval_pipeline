@@ -13,7 +13,7 @@ normalization_method="SCT"
 for subsample_ref in "${subsample_ref_values[@]}"; do
     for ref_split in "${ref_split_values[@]}"; do
         for cutoff in "${cutoff_values[@]}"; do
-                echo "Running: subsample_ref=$subsample_ref, ref_split=$ref_split, cutoff=$cutoff, normalization_method=$normalization_method"
+                echo "Running: subsample_ref=$subsample_ref, ref_split=$ref_split, cutoff=$cutoff, normalization_method=$normalization_method, subsample_query=$subsample_query"
                 nextflow main.nf -params-file /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/params.hs.json \
                     --subsample_ref "$subsample_ref" \
                     --ref_split "$ref_split" \
