@@ -94,15 +94,16 @@ process mapQuery {
 process getCensusAdata {
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
-    publishDir "${params.outdir}", pattern: "**obs.tsv", mode: "copy"
-    publishDir "${params.outdir}/refs", pattern: "**_umap.png", mode: "copy"
+    //publishDir "${params.outdir}/refs/scvi", pattern: "**obs.tsv", mode: "copy"
+    publishDir "${params.outdir}/refs/scvi", pattern: "**_umap.png", mode: "copy"
+    publishDir "${params.outdir}/refs/scvi", pattern: "**.h5ad", mode: "copy"
 
     input:
     val ref_collections
 
     output:
     path "refs/*.h5ad", emit: ref_paths_adata
-    path "**obs.tsv"
+   // path "**obs.tsv"
     path "**_umap.png"
     path "refs/*yaml", emit: ref_region_mapping
 
@@ -146,7 +147,7 @@ process queryProcessSeurat {
 
 process refProcessSeurat {
     conda '/home/rschwartz/anaconda3/envs/r4.3'
-
+    publishDir "${params.outdir}/refs/seurat", pattern: "**.rds", mode: "copy"
     input:
     path h5ad_file
 
