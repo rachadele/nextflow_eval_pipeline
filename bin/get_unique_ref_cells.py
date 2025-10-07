@@ -31,13 +31,11 @@ import yaml
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
     parser.add_argument('--organism', type=str, default='mus_musculus', help='Organism name (e.g., homo_sapiens)')
-    parser.add_argument('--census_version', type=str, default='2025-01-30', help='Census version (e.g., 2024-07-01)')
+    parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
-        "Tabula Muris Senis",
-        "Molecular and spatial signatures of mouse brain aging at single-cell resolution"
+        "Tabula Muris Senis"
     ]) 
     parser.add_argument('--organ', type=str, default="brain")
     if __name__ == "__main__":
