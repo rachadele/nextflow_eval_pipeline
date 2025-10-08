@@ -1,0 +1,202 @@
+author_cell_type	cell_type	dataset_title	collection_name	cell_type_ontology_term_id	count
+L4/5 IT CTX	L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023048	275960
+L6 CT CTX	L6 corticothalamic-projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023042	148752
+L2/3 IT CTX	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	127961
+L5 IT	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	105637
+L6 IT CTX	L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023050	78297
+L2/3 IT	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	66893
+L6 CT	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	62674
+DG	hippocampal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0002608	58948
+L5 IT CTX	L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023048	58190
+L2/3 IT PPP	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	46476
+Sst	sst GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023017	45467
+Vip	VIP GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023016	43684
+Lamp5	lamp5 GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023011	42144
+L5/6 NP CTX	L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023043	31703
+Pvalb	pvalb GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023018	30461
+Car3	corticothalamic-projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023013	22457
+L6 IT	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	22034
+Oligo	oligodendrocyte	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000128	21549
+L6b/CT ENT	L6b glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023038	20269
+Astro	astrocyte	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000127	18905
+L5 PT CTX	L5 extratelencephalic projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023041	17260
+Vip	GABAergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000617	15961
+CA1-ProS	pyramidal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000598	15897
+Sst	GABAergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000617	15733
+L6b CTX	L6b glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023038	15050
+Pvalb	GABAergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000617	14706
+Sncg	sncg GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023015	13877
+L3 IT ENT	L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023047	13362
+microglial cell	microglial cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000129	13268
+Lamp5	GABAergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000617	12656
+L5/6 NP	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	12475
+Olig-2	oligodendrocyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000128	9763
+L4/5 IT CTX	L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023048	9648
+Oligo	oligodendrocyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000128	8987
+Macrophage	macrophage	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000235	8408
+ExN-L6-2	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	7186
+L5 ET	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	6643
+L2/3 IT ENTl	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	6433
+L6b	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	5801
+CT SUB	cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0008031	5769
+L5/6 IT TPE-ENT	L5 extratelencephalic projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023041	5749
+Vip	VIP GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023016	5735
+L2/3 IT CTX	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	5482
+Astro-1	astrocyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000127	5456
+L6 CT CTX	L6 corticothalamic-projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023042	5343
+ExN-L2/3-1	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	5179
+Sst	sst GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023017	5101
+OPC	oligodendrocyte precursor cell	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0002453	5097
+L4 RSP-ACA	pyramidal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000598	4593
+MSN-D1-1	medium spiny neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:1001474	4571
+L2 IT ENTl	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	4568
+Olig-1	oligodendrocyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000128	4533
+Lamp5	lamp5 GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023011	4430
+L6 IT CTX	L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023050	4316
+MSN-D2	medium spiny neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:1001474	4196
+SUB-ProS	glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000679	4187
+ExN-L6-1	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	4015
+Olig-3	oligodendrocyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000128	3958
+Astro	astrocyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000127	3899
+Pvalb	pvalb GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023018	3581
+Endo	endothelial cell	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000115	3483
+L5 IT CTX	L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023048	3311
+OPC	oligodendrocyte precursor cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0002453	3291
+L2/3 IT RHP	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	3096
+ExN-L2/3-2	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	3003
+ExN-L5-2	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	2903
+NP PPP	L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023043	2612
+Sncg	GABAergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000617	2594
+ExN-L5-1	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	2580
+DG	hippocampal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0002608	2474
+VLMC	leptomeningeal cell	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000708	2404
+ExN-Olf	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	2269
+endothelial cell	endothelial cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000115	2232
+L2 IT ENTm	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	2225
+oligodendrocyte	oligodendrocyte	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000128	2094
+L5/6 NP CTX	L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023043	2029
+Sst Chodl	sst chodl GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023121	1961
+NP SUB	L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023043	1870
+L5 PT CTX	L5 extratelencephalic projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023041	1738
+ExN-L5-3	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	1720
+CA1-ProS	pyramidal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000598	1704
+L6b CTX	L6b glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023038	1686
+CA3	hippocampal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0002608	1675
+ExN-L6-3	neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000540	1662
+L2/3 IT PPP	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	1497
+Peri	pericyte	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000669	1450
+Sncg	sncg GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023015	1419
+Astro-2	astrocyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000127	1315
+Micro-2	microglial cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000129	1278
+L6 IT ENTl	L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023050	1211
+Car3	corticothalamic-projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023013	1187
+L5 PPP	L5 extratelencephalic projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023041	1183
+Micro-3	microglial cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000129	1110
+MSN-D1-2	medium spiny neuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:1001474	1080
+Astro	astrocyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000127	963
+Endo	endothelial cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000115	960
+Micro-PVM	central nervous system macrophage	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000878	955
+Micro-1	microglial cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000129	953
+InN-Pvalb-1	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	874
+L6 IT Car3	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	720
+InN-Sst-1	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	702
+InN-Sst-2	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	690
+L6b/CT ENT	L6b glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023038	662
+InN-Vip	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	622
+L3 IT ENT	L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023047	593
+astrocyte	astrocyte	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000127	592
+InN-Olf-1	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	578
+InN-Lamp5	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	542
+InN-Pvalb-3	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	538
+brain pericyte	brain pericyte	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:2000043	484
+neuron	neuron	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000540	484
+SUB-ProS	glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000679	471
+InN-Calb2-1	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	406
+InN-Pvalb-2	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	391
+L5/6 IT TPE-ENT	L5 extratelencephalic projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023041	352
+Vlmc	vascular leptomeningeal cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:4023051	350
+L2/3 IT ENTl	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	344
+Epen	cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000000	339
+CA2-IG-FC	hippocampal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0002608	328
+CA3	hippocampal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0002608	322
+oligodendrocyte precursor cell	oligodendrocyte precursor cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0002453	312
+macrophage	macrophage	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000235	312
+SMC-Peri	pericyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000669	288
+L4	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	285
+CR	Cajal-Retzius cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000695	277
+Pvalb	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	270
+Sst Chodl	sst chodl GABAergic cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023121	265
+InN-Olf-2	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	260
+L4 RSP-ACA	pyramidal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000598	256
+NP SUB	L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023043	253
+interneuron	interneuron	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000099	240
+Oligo	oligodendrocyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000128	229
+InN-Lhx6	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	223
+Vip	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	195
+Endo-1	endothelial cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000115	193
+Endo	endothelial cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000115	193
+L2 IT ENTl	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	191
+Micro-PVM	central nervous system macrophage	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000878	177
+Peri-1	pericyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000669	172
+Endo-3	endothelial cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000115	169
+Macro	macrophage	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000235	169
+CT SUB	cortical interneuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0008031	158
+VLMC	vascular leptomeningeal cell (Mmus)	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023056	152
+neuroepithelial stem cell	neuroepithelial stem cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0002259	151
+NP PPP	L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023043	142
+L2/3 IT RHP	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	134
+Prog/IP	GABAergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000617	132
+Meis2	meis2 expressing cortical GABAergic cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023065	130
+SMC-Peri	pericyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000669	121
+VLMC	vascular leptomeningeal cell (Mmus)	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023056	116
+Prog/IP	unknown	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	unknown	114
+Peri-2	pericyte	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000669	109
+InN-Calb2-2	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	108
+T cell	T cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000084	107
+CD8-positive, alpha-beta T cell	CD8-positive, alpha-beta T cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000625	104
+medium spiny neuron	medium spiny neuron	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:1001474	103
+neural stem cell	neural stem cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000047	97
+L2/3	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	94
+L6a1	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	80
+L6 IT ENTl	L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023050	78
+Ndnf	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	78
+Sst_Nr2f2	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	69
+T cell	T cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000084	67
+InN-Chat	inhibitory interneuron	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000498	65
+L5a2	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	59
+Micro	microglial cell	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000129	55
+ependymal cell	ependymal cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000065	55
+Bergmann glial cell	Bergmann glial cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000644	54
+Astrocyte	astrocyte	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000127	50
+L5 PPP	L5 extratelencephalic projecting glutamatergic cortical neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023041	49
+SMC	smooth muscle cell	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000192	47
+L5a	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	43
+Oligodendrocyte	oligodendrocyte	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000128	42
+L2 IT ENTm	L2/3-6 intratelencephalic projecting glutamatergic neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023040	42
+Sst_Chodl	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	40
+L6b	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	39
+Endo-2	endothelial cell	BrainAgingSpatialAtlas_snRNAseq	Molecular and spatial signatures of mouse brain aging at single-cell resolution	CL:0000115	39
+CR	Cajal-Retzius cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0000695	38
+Sst_Cbln4	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	38
+L5b	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	35
+L6a2	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	27
+OPC	oligodendrocyte precursor cell	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0002453	24
+Microglia	microglial cell	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000129	22
+Endothelial	endothelial cell	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000115	21
+Meis2	meis2 expressing cortical GABAergic cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:4023065	20
+CA2-IG-FC	hippocampal neuron	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation	CL:0002608	19
+mature NK T cell	mature NK T cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	Tabula Muris Senis	CL:0000814	17
+CR	glutamatergic neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	CL:0000679	16
+Sst_Clstn2	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	14
+Th	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	14
+L5b1	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	13
+L6a	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	12
+L2/3_Syt10	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	12
+L5b2	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	12
+Unknown	unknown	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	unknown	10
+Sst_Nmbr	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	10
+L5a1	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	10
+Sst	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	7
+L5	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	6
+L5_Chrna6	glutamatergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000679	3
+Chodl	GABAergic neuron	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	Adult mouse cortical cell taxonomy revealed by single cell transcriptomics	CL:0000617	2
