@@ -10,7 +10,7 @@ Mural 3	Mural	Vascular	Non-neuron	Non-neuron
 Choroid Plexus	Vascular	Vascular	Non-neuron	Non-neuron
 Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 Immature Oligodendrocyte	OPC	OPC	Non-neuron	Non-neuron
-NPC	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+NPC	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 Fibroblast	Vascular	Vascular	Non-neuron	Non-neuron
 Reln+ Neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 Ependymal	Ependymal	Vascular	Non-neuron	Non-neuron

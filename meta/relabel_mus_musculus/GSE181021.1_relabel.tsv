@@ -6,6 +6,6 @@ Endo	Endothelial	Vascular	Non-neuron	Non-neuron
 OPC	OPC	OPC	Non-neuron	Non-neuron
 Astro	Astrocyte	Astrocyte	Non-neuron	Non-neuron
 Inhib	GABAergic	GABAergic	GABAergic	Neuron
-NB	Neural stem cell	Neuroglioblast	Neuroglioblast	Neuroglioblast
+NB	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
 NFO	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
