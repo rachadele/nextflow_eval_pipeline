@@ -35,3 +35,8 @@ mmus
 hsap
 meta/census_info/
 mmus_minimal/
+params.hs.json
+params.mm.json
+scripts/run_hsap_dataset_id_SCT_subsample.sh
+scripts/run_hsap_test.sh
+scripts/run_mmus_dataset_id_SCT_subsample.sh
