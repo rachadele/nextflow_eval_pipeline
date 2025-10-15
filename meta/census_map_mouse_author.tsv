@@ -10,9 +10,9 @@ microglial cell	Microglia	CNS macrophage	Non-neuron	Non-neuron
 oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
 oligodendrocyte precursor cell	OPC	OPC	Non-neuron	Non-neuron
 brain pericyte	Pericyte	Vascular	Non-neuron	Non-neuron
-CD8-positive, alpha-beta T cell	T cell	Leukocyte	Non-neuron	Non-neuron
-T cell	T cell	Leukocyte	Non-neuron	Non-neuron
-mature NK T cell	T cell	Leukocyte	Non-neuron	Non-neuron
+CD8-positive, alpha-beta T cell	Leukocyte	Leukocyte	Non-neuron	Non-neuron
+T cell	Leukocyte	Leukocyte	Non-neuron	Non-neuron
+mature NK T cell	Leukocyte	Leukocyte	Non-neuron	Non-neuron
 Prog/IP	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 Vip	VIP	CGE	GABAergic	Neuron
 Pvalb	PVALB	MGE	GABAergic	Neuron
