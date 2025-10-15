@@ -2,7 +2,7 @@ cell_type	subclass	class	family
 lamp5 GABAergic cortical interneuron	LAMP5	CGE	GABAergic
 vip GABAergic cortical interneuron	VIP	CGE	GABAergic
 sncg GABAergic cortical interneuron	SNCG	CGE	GABAergic
-caudal ganglionic eminence derived GABAergic cortical interneuron	CGE	CGE	GABAergic
+caudal ganglionic eminence derived GABAergic cortical interneuron	PAX6	CGE	GABAergic
 pvalb GABAergic cortical interneuron	PVALB	MGE	GABAergic
 sst GABAergic cortical interneuron	SST	MGE	GABAergic
 chandelier pvalb GABAergic cortical interneuron	Chandelier	MGE	GABAergic
