@@ -1,3 +1,4 @@
+author_cell_type	subclass	class	family	global
 neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 neuroepithelial stem cell	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 astrocyte	Astrocyte	Astrocyte	Non-neuron	Non-neuron
@@ -32,18 +33,6 @@ Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Oligo	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
 Peri	Pericyte	Vascular	Non-neuron	Non-neuron
 SMC	SMC	Vascular	Non-neuron	Non-neuron
-Homeostatic1	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Homeostatic2	Microglia	CNS macrophage	Non-neuron	Non-neuron
-WAM	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Activated	Microglia	CNS macrophage	Non-neuron	Non-neuron
-IRM	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Oligo1a	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-Oligo2b	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-Oligo1c	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-Oligo1b	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-ARO	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-Oligo2a	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-IRO	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
 Sst Chodl	SST	MGE	GABAergic	Neuron
 CR	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 SUB-ProS	SUB-ProS	Hippocampal neuron	Glutamatergic	Neuron
