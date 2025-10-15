@@ -1,14 +1,14 @@
 author_cell_type	subclass	class	family	global
 neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 neuroepithelial stem cell	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
-astrocyte	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 endothelial cell	Endothelial	Vascular	Non-neuron	Non-neuron
 ependymal cell	Ependymal	Vascular	Non-neuron	Non-neuron
 Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 microglial cell	Microglia	CNS macrophage	Non-neuron	Non-neuron
-oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-oligodendrocyte precursor cell	OPC	OPC	Non-neuron	Non-neuron
+oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+oligodendrocyte precursor cell	OPC	Glia	Non-neuron	Non-neuron
 brain pericyte	Pericyte	Vascular	Non-neuron	Non-neuron
 CD8-positive, alpha-beta T cell	Leukocyte	Leukocyte	Non-neuron	Non-neuron
 T cell	Leukocyte	Leukocyte	Non-neuron	Non-neuron
@@ -26,11 +26,11 @@ L6 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L5/6 NP	NP	deep layer non-IT	Glutamatergic	Neuron
 L5 ET	L5 ET	deep layer non-IT	Glutamatergic	Neuron
 L6b	L6b	deep layer non-IT	Glutamatergic	Neuron
-Astro	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+Astro	Astrocyte	Glia	Non-neuron	Non-neuron
 Endo	Endothelial	Vascular	Non-neuron	Non-neuron
 VLMC	VLMC	Vascular	Non-neuron	Non-neuron
 Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Oligo	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
+Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
 Peri	Pericyte	Vascular	Non-neuron	Non-neuron
 SMC	SMC	Vascular	Non-neuron	Non-neuron
 Sst Chodl	SST	MGE	GABAergic	Neuron
