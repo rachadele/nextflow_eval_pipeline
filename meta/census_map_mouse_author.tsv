@@ -21,7 +21,7 @@ Lamp5	LAMP5	CGE	GABAergic	Neuron
 Sncg	SNCG	CGE	GABAergic	Neuron
 L5 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L2/3 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
-L6 CT	L6 CT	deep layer non-IT	Glutamatergic	Neuron
+L6 CT	CT	deep layer non-IT	Glutamatergic	Neuron
 L6 IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L5/6 NP	NP	deep layer non-IT	Glutamatergic	Neuron
 L5 ET	L5 ET	deep layer non-IT	Glutamatergic	Neuron
@@ -56,7 +56,7 @@ L5 PPP	L5 ET	deep layer non-IT	Glutamatergic	Neuron
 L5/6 NP CTX	NP	deep layer non-IT	Glutamatergic	Neuron
 NP PPP	NP	deep layer non-IT	Glutamatergic	Neuron
 NP SUB	NP	deep layer non-IT	Glutamatergic	Neuron
-L6 CT CTX	L6 CT	deep layer non-IT	Glutamatergic	Neuron
+L6 CT CTX	CT	deep layer non-IT	Glutamatergic	Neuron
 L6 IT CTX	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L6 IT ENTl	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
 L6b/CT ENT	L6b	deep layer non-IT	Glutamatergic	Neuron
