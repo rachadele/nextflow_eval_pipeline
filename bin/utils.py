@@ -123,6 +123,7 @@ def aggregate_subclass_labels(query, mapping_df, ref_keys):
     
     # reordering of ref keys, not necessary
     ref_keys = [col for col in mapping_df.columns if col in ref_keys]
+    
     for higher_level_key in ref_keys[1:]:  # Skip the first (most granular) level
         # Get mapping from subclass to higher-level class
         mapping = mapping_df.set_index(ref_keys[0])[higher_level_key].to_dict()
