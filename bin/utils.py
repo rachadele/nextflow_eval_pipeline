@@ -99,22 +99,41 @@ def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_pr
     # Return final indices
     return final_idx
 
-def relabel(adata, relabel_path, join_key=None, sep="\t"):
+def relabel(query, relabel_path, join_key=None, sep="\t"):
     # Read the relabel table from the file
     relabel_df = pd.read_csv(relabel_path, sep=sep)  # Adjust the separator as needed
     # Take the first column as the join key
     if join_key is None:
         join_key = relabel_df.columns[0]
     # Ensure the join_key is in both the AnnData object and the relabel DataFrame
-    if join_key not in adata.obs.columns:
+    if join_key not in query.columns:
         raise ValueError(f"{join_key} not found in AnnData object observations.")
     if join_key not in relabel_df.columns:
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
     # Left join = only cell types in relabel file are kept 
-    adata.obs = adata.obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
-    columns_to_drop = [col for col in adata.obs.columns if col.endswith('_y')]
-    adata.obs.drop(columns=columns_to_drop, inplace=True)
-    return adata
+    query = query.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
+    columns_to_drop = [col for col in query.columns if col.endswith('_y')]
+    query.drop(columns=columns_to_drop, inplace=True)
+    return query
+
+
+def aggregate_subclass_labels(query, mapping_df, ref_keys):
+    # aggregate subclasses based on mapping file
+    query.index = query.index.astype(int)
+    
+    # reordering of ref keys, not necessary
+    ref_keys = [col for col in mapping_df.columns if col in ref_keys]
+    for higher_level_key in ref_keys[1:]:  # Skip the first (most granular) level
+        # Get mapping from subclass to higher-level class
+        mapping = mapping_df.set_index(ref_keys[0])[higher_level_key].to_dict()
+
+        # Assign higher-level labels based on mapping
+        query[higher_level_key] = query[ref_keys[0]].map(mapping)
+
+        # Fill NA values with original subclass labels to account for subclass labels at higher levels
+        query[higher_level_key] = query[higher_level_key].fillna(query[ref_keys[0]])
+ 
+    return query 
 
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
