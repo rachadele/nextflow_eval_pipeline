@@ -3,8 +3,8 @@ Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
 Macrophages	Macrophage	CNS macrophage	Non-neuron	Non-neuron
 T Cells	Leukocyte	Leukocyte	Non-neuron	Non-neuron
 Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
-Oligodendrocytes	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-Astrocytes	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+Astrocytes	Astrocyte	Glia	Non-neuron	Non-neuron
 Choroid Plexus Cells	Vascular	Vascular	Non-neuron	Non-neuron
 DCs.1	Leukocyte	Leukocyte	Non-neuron	Non-neuron
 B Cells	Leukocyte	Leukocyte	Non-neuron	Non-neuron
