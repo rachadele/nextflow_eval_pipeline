@@ -86,6 +86,7 @@ process mapQuery {
                             --seed ${params.seed} \\
                             --nmads ${params.nmads} \\
                             --gene_mapping ${params.gene_mapping} \\
+                            --mapping_file ${params.relabel_r}
                             ${params.remove_unknown ? '--remove_unknown' : ''}
     """
 
