@@ -1,11 +1,11 @@
-cell_type	subclass	class	family	global
-D1	GABAergic	GABAergic	GABAergic	Neuron
-D2	GABAergic	GABAergic	GABAergic	Neuron
-Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Endo	Endothelial	Vascular	Non-neuron	Non-neuron
-OPC	OPC	Glia	Non-neuron	Non-neuron
-Astro	Astrocyte	Glia	Non-neuron	Non-neuron
-Inhib	GABAergic	GABAergic	GABAergic	Neuron
-NB	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
-Micro	Microglia	CNS macrophage	Non-neuron	Non-neuron
-NFO	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+cell_type	subclass
+D1	GABAergic
+D2	GABAergic
+Oligo	Oligodendrocyte
+Endo	Endothelial
+OPC	OPC
+Astro	Astrocyte
+Inhib	GABAergic
+NB	Neural stem cell
+Micro	Microglia
+NFO	Oligodendrocyte
