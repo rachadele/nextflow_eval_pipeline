@@ -1,19 +1,19 @@
-cell_type	subclass	class	family	global
-Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Macrophages	Macrophage	CNS macrophage	Non-neuron	Non-neuron
-T Cells	Leukocyte	Leukocyte	Non-neuron	Non-neuron
-Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
-Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Astrocytes	Astrocyte	Glia	Non-neuron	Non-neuron
-Choroid Plexus Cells	Vascular	Vascular	Non-neuron	Non-neuron
-DCs.1	Leukocyte	Leukocyte	Non-neuron	Non-neuron
-B Cells	Leukocyte	Leukocyte	Non-neuron	Non-neuron
-Neuroblasts	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
-DCs.2	Leukocyte	Leukocyte	Non-neuron	Non-neuron
-Ependymal Cells	Ependymal	Vascular	Non-neuron	Non-neuron
-Neutrophils	Non-neuron	Non-neuron	Non-neuron	Non-neuron
-Pericytes	Pericyte	Vascular	Non-neuron	Non-neuron
-Fibroblasts	Vascular	Vascular	Non-neuron	Non-neuron
-pDCs	Leukocyte	Leukocyte	Non-neuron	Non-neuron
-Neurons	Neuron	Neuron	Neuron	Neuron
-Unknown	unknown	unknown	unknown	unknown
+cell_type	subclass
+Microglia	Microglia
+Macrophages	Macrophage
+T Cells	Leukocyte
+Endothelial Cells	Endothelial
+Oligodendrocytes	Oligodendrocyte
+Astrocytes	Astrocyte
+Choroid Plexus Cells	Vascular
+DCs.1	Leukocyte
+B Cells	Leukocyte
+Neuroblasts	Neural stem cell
+DCs.2	Leukocyte
+Ependymal Cells	Ependymal
+Neutrophils	Non-neuron
+Pericytes	Pericyte
+Fibroblasts	Vascular
+pDCs	Leukocyte
+Neurons	Neuron
+Unknown	unknown

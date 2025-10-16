@@ -1,18 +1,18 @@
-cell_type	subclass	class	family	global
-Mature Oligodendrocyte	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-Endothelial Cells	Endothelial	Vascular	Non-neuron	Non-neuron
-Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
-Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
-Oligodendrocyte Progenitor	OPC	Glia	Non-neuron	Non-neuron
-Mural 2	Vascular	Vascular	Non-neuron	Non-neuron
-Mural 1	Vascular	Vascular	Non-neuron	Non-neuron
-Mural 3	Vascular	Vascular	Non-neuron	Non-neuron
-Choroid Plexus	Vascular	Vascular	Non-neuron	Non-neuron
-Macrophage	Macrophage	CNS macrophage	Non-neuron	Non-neuron
-Immature Oligodendrocyte	OPC	Glia	Non-neuron	Non-neuron
-NPC	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
-Fibroblast	Vascular	Vascular	Non-neuron	Non-neuron
-Reln+ Neuron	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
-Ependymal	Ependymal	Vascular	Non-neuron	Non-neuron
-Unknown	unknown	unknown	unknown	unknown
-Neuron	Neuron	Neuron	Neuron	Neuron
+cell_type	subclass
+Mature Oligodendrocyte	Oligodendrocyte
+Endothelial Cells	Endothelial
+Astrocyte	Astrocyte
+Microglia	Microglia
+Oligodendrocyte Progenitor	OPC
+Mural 2	Vascular
+Mural 1	Vascular
+Mural 3	Vascular
+Choroid Plexus	Vascular
+Macrophage	Macrophage
+Immature Oligodendrocyte	OPC
+NPC	Neural stem cell
+Fibroblast	Vascular
+Reln+ Neuron	Cajal-Retzius cell
+Ependymal	Ependymal
+Unknown	unknown
+Neuron	Neuron
