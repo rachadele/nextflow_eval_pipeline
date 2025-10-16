@@ -3,7 +3,7 @@ Excitatory	Glutamatergic	Glutamatergic	Glutamatergic	Neuron
 Endo	Endothelial	Vascular	Non-neuron	Non-neuron
 Inhibitory	GABAergic	GABAergic	GABAergic	Neuron
 Oligo	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-Astro	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+Astro	Astrocyte	Glia	Non-neuron	Non-neuron
 Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
-NF Oligo	Oligodendrocyte	Oligodendrocyte	Non-neuron	Non-neuron
-OPC	OPC	OPC	Non-neuron	Non-neuron
+NF Oligo	Oligodendrocyte	Glia	Non-neuron	Non-neuron
+OPC	OPC	Glia	Non-neuron	Non-neuron

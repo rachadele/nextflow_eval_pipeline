@@ -4,12 +4,12 @@ CA3	CA3	Hippocampal neuron	Glutamatergic	Neuron
 Subiculum	SUB-ProS	Hippocampal neuron	Glutamatergic	Neuron
 Dentate Gyrus	DG	Hippocampal neuron	Glutamatergic	Neuron
 SST	SST	MGE	GABAergic	Neuron
-Astrocyte	Astrocyte	Astrocyte	Non-neuron	Non-neuron
+Astrocyte	Astrocyte	Glia	Non-neuron	Non-neuron
 Int. Progenitor	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
 VIP	VIP	CGE	GABAergic	Neuron
-Radial Glia	Glia	Neural stem cell	Non-neuron	Non-neuron
+Radial Glia	Neural stem cell	Neural stem cell	Non-neuron	Non-neuron
 NSC	Neural stem cell	Neural stem cell	Neural stem cell	Neural stem cell
-OPC	OPC	OPC	Non-neuron	Non-neuron
+OPC	OPC	Glia	Non-neuron	Non-neuron
 Cajal	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 SMC	SMC	Vascular	Non-neuron	Non-neuron
 Microglia	Microglia	CNS macrophage	Non-neuron	Non-neuron
