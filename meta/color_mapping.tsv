@@ -1,46 +1,41 @@
 subclass
-class
-family
-global
+LAMP5
+GABAergic
 Neural stem cell
+VIP
+SNCG
 Astrocyte
 Non-neuron
+PAX6
 Endothelial
 Vascular
+PVALB
 Ependymal
+SST
 Macrophage
 CNS macrophage
-Microglia
-Oligodendrocyte
-OPC
-Pericyte
-T cell
-Leukocyte
-VIP
-CGE
-GABAergic
-Neuron
-PVALB
-MGE
-SST
-LAMP5
-SNCG
+Chandelier
 L2/3-6 IT
 Glutamatergic
-L6 CT
-deep layer non-IT
-L5/6 NP
+Microglia
 L5 ET
+deep layer non-IT
+Oligodendrocyte
+L5/6 NP
+OPC
+L6 CT
+Pericyte
+Leukocyte
 L6b
+Neuron
 VLMC
+CT
+NP
 SMC
 Cajal-Retzius cell
 SUB-ProS
 Hippocampal neuron
-CT
 DG
 CA3
 CA2-IG-FC
-NP
 CA1-ProS
-Glia
