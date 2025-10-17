@@ -33,7 +33,7 @@ Micro	Microglia	Microglia	CNS macrophage	Non-neuron
 Oligo	Oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Non-neuron
 Peri	Pericyte	Vascular	Vascular	Non-neuron
 SMC	SMC	Vascular	Vascular	Non-neuron
-Sst Chodl	SST	MGE	GABAergic	Neuron
+Sst Chodl	SST	SST	GABAergic	Neuron
 CR	Cajal-Retzius cell	Cajal-Retzius cell	Glutamatergic	Neuron
 SUB-ProS	SUB-ProS	Hippocampal neuron	Glutamatergic	Neuron
 Car3	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Neuron
