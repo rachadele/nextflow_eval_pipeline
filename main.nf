@@ -81,12 +81,12 @@ process mapQuery {
                             --relabel_path ${relabel_q} \\
                             --query_path ${query_file} \\
                             --batch_key ${batch_key} \\
-                            ${params.subsample_query != null ? "--subsample_query ${params.subsample_query}" : ""} \
+                            ${params.subsample_query != null ? "--subsample_query ${params.subsample_query}" : ""} \\
                             --ref_keys ${ref_keys} \\
                             --seed ${params.seed} \\
                             --nmads ${params.nmads} \\
                             --gene_mapping ${params.gene_mapping} \\
-                            --mapping_file ${params.relabel_r}
+                            --mapping_file ${params.relabel_r} \\
                             ${params.remove_unknown ? '--remove_unknown' : ''}
     """
 
