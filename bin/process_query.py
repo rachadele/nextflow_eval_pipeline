@@ -35,7 +35,7 @@ def parse_arguments():
   parser.add_argument('--model_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus_minimal/37/d213ce21d8108fd3557e7ffa40b041/scvi-mus_musculus-2025-01-30", help='Path to the scvi model file')
   parser.add_argument('--subsample_query', type=int, help='Number of cells to subsample from the query')
   parser.add_argument('--relabel_path', type=str, default="//space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/GSE247339.2_relabel.tsv")
-  parser.add_argument('--mapping_df', type=str, default = None)
+  parser.add_argument('--mapping_file', type=str, default = None)
   parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true/h5ad/GSE247339.2/GSE247339.2_1051970_GSM7887408.h5ad")
   parser.add_argument('--batch_key', type=str, default="sample")
   parser.add_argument('--join_key', type=str, default=None)
@@ -71,7 +71,7 @@ def main():
   join_key = args.join_key
   ref_keys = args.ref_keys
   nmads = args.nmads
-  mapping_df = pd.read_csv(args.mapping_df,sep="\t")
+  mapping_df = pd.read_csv(args.mapping_file,sep="\t")
 
   query = ad.read_h5ad(query_path)
   
@@ -87,8 +87,8 @@ def main():
   query = map_genes(query, gene_mapping)
   
   # relabel and aggregate cell types into higher level classes
-  query.obs = relabel(query=uery.obs, relabel_path=relabel_path, join_key=join_key,sep="\t")
-  query.obs = aggregate_subclass_labels(query=query.obs, mapping_df=mapping_df, ref_keys=ref_keys)
+  query = relabel(query=query, relabel_path=relabel_path, join_key=join_key,sep="\t")
+  query = aggregate_subclass_labels(query=query, mapping_df=mapping_df, ref_keys=ref_keys)
   
   
   if args.remove_unknown:
