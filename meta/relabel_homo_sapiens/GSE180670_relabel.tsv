@@ -1,6 +1,6 @@
-cell_type	subclass	class	family
-MOLs	Oligodendrocyte	Glia	Non-neuron
-iOLs	OPC	Glia	Non-neuron
-CRYAB+ OLs	Oligodendrocyte	Glia	Non-neuron
-stressed OLs	Oligodendrocyte	Glia	Non-neuron
-EIF5+ glial cells	Oligodendrocyte	Glia	Non-neuron
+cell_type	subclass
+MOLs	Oligodendrocyte
+iOLs	OPC
+CRYAB+ OLs	Oligodendrocyte
+stressed OLs	Oligodendrocyte
+EIF5+ glial cells	Oligodendrocyte
