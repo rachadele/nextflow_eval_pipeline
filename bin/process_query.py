@@ -88,7 +88,7 @@ def main():
   
   # relabel and aggregate cell types into higher level classes
   query = relabel(query=query, relabel_path=relabel_path, join_key=join_key,sep="\t")
-  query = aggregate_subclass_labels(query=query, mapping_df=mapping_df, ref_keys=ref_keys)
+  query.obs = aggregate_labels(query=query.obs, mapping_df=mapping_df, ref_keys=ref_keys, predicted=False)
   
   
   if args.remove_unknown:

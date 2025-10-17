@@ -118,24 +118,23 @@ def relabel(query, relabel_path, join_key=None, sep="\t"):
     return query
 
 
-def aggregate_subclass_labels(query, mapping_df, ref_keys):
-    # takes full adata
-    # aggregate subclasses based on mapping file
-    query.obs.index = query.obs.index.astype(int)
-    
-    # reordering of ref keys, not necessary
-    ref_keys = [col for col in mapping_df.columns if col in ref_keys]
-    
-    for higher_level_key in ref_keys[1:]:  # Skip the first (most granular) level
-        # Get mapping from subclass to higher-level class
-        mapping = mapping_df.set_index(ref_keys[0])[higher_level_key].to_dict()
 
-        # Assign higher-level labels based on mapping
-        query.obs[higher_level_key] = query.obs[ref_keys[0]].map(mapping)
-
-        # Fill NA values with original subclass labels to account for subclass labels already at higher levels
-        query.obs[higher_level_key] = query.obs[higher_level_key].fillna(query.obs[ref_keys[0]])
-
+def aggregate_labels(query: pd.DataFrame, mapping_df: pd.DataFrame, ref_keys: list, predicted=False):
+    """
+    Aggregate subclass labels or predicted labels to higher levels using mapping_df.
+    If predicted=True, operates on columns like 'predicted_subclass', otherwise on obs columns.
+    """
+    query.index = query.index.astype(int)
+    for i in range(1, len(ref_keys)):
+        lower_key = ref_keys[i-1]
+        higher_level_key = ref_keys[i]
+        mapping = mapping_df.set_index(lower_key)[higher_level_key].to_dict()
+        if predicted:
+            query["predicted_" + higher_level_key] = query["predicted_" + lower_key].map(mapping)
+            query["predicted_" + higher_level_key] = query["predicted_" + higher_level_key].fillna(query["predicted_" + lower_key])
+        else:
+            query[higher_level_key] = query[lower_key].map(mapping)
+            query[higher_level_key] = query[higher_level_key].fillna(query[lower_key])
     return query
 
 
@@ -571,7 +570,7 @@ def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
 
 
 
-def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=False):
+def classify_cells(query: pd.DataFrame, ref_keys: list, cutoff: float, probabilities: pd.DataFrame, mapping_df: pd.DataFrame, use_gap: bool = False):
     """
     Wrapper function to classify cells based on probabilities. Can use gap analysis or raw probabilities.
     """
@@ -581,7 +580,7 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=F
     key = ref_keys[0]
     class_metrics[key] = {}
 
-    # Extract the class labels and probabilities (DataFrame structure)
+    # Extract the class labels and probabilities (array structure)
     class_labels = probabilities.columns.values  # Class labels are the column names
     class_probs = probabilities.values  # Probabilities as a numpy array
     
@@ -594,8 +593,8 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=F
     query["predicted_" + key] = predictions
     query["confidence"] = np.max(class_probs, axis=1)  # Store max probability as confidence
     
-    # Aggregate predictions (you can keep this logic as needed)
-    query = aggregate_preds(query, ref_keys, mapping_df)
+    # Aggregate predictions 
+    query = aggregate_labels(query=query, ref_keys=ref_keys, mapping_df=mapping_df, predicted=True)
     
     return query
 
