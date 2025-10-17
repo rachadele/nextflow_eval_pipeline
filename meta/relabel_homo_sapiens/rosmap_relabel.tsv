@@ -1,45 +1,45 @@
-Subcluster	subclass	class	family
-In0	GABAergic	GABAergic	GABAergic
-In1	GABAergic	GABAergic	GABAergic
-In10	GABAergic	GABAergic	GABAergic
-In11	GABAergic	GABAergic	GABAergic
-In2	GABAergic	GABAergic	GABAergic
-In3	GABAergic	GABAergic	GABAergic
-In4	GABAergic	GABAergic	GABAergic
-In5	GABAergic	GABAergic	GABAergic
-In6	GABAergic	GABAergic	GABAergic
-In7	GABAergic	GABAergic	GABAergic
-In8	GABAergic	GABAergic	GABAergic
-In9	GABAergic	GABAergic	GABAergic
-Ex0	Glutamatergic	Glutamatergic	Glutamatergic
-Ex1	Glutamatergic	Glutamatergic	Glutamatergic
-Ex11	Glutamatergic	Glutamatergic	Glutamatergic
-Ex12	Glutamatergic	Glutamatergic	Glutamatergic
-Ex14	Glutamatergic	Glutamatergic	Glutamatergic
-Ex2	Glutamatergic	Glutamatergic	Glutamatergic
-Ex3	Glutamatergic	Glutamatergic	Glutamatergic
-Ex4	Glutamatergic	Glutamatergic	Glutamatergic
-Ex5	Glutamatergic	Glutamatergic	Glutamatergic
-Ex6	Glutamatergic	Glutamatergic	Glutamatergic
-Ex7	Glutamatergic	Glutamatergic	Glutamatergic
-Ex8	Glutamatergic	Glutamatergic	Glutamatergic
-Ex9	Glutamatergic	Glutamatergic	Glutamatergic
-Ast0	Astrocyte	Glia	Non-neuron
-Ast1	Astrocyte	Glia	Non-neuron
-Ast2	Astrocyte	Glia	Non-neuron
-Ast3	Astrocyte	Glia	Non-neuron
-End1	Endothelial	Vascular	Non-neuron
-End2	Endothelial	Vascular	Non-neuron
-Mic0	Microglia	CNS macrophage	Non-neuron
-Mic1	Microglia	CNS macrophage	Non-neuron
-Mic2	Microglia	CNS macrophage	Non-neuron
-Mic3	Microglia	CNS macrophage	Non-neuron
-Oli0	Oligodendrocyte	Glia	Non-neuron
-Oli1	Oligodendrocyte	Glia	Non-neuron
-Oli3	Oligodendrocyte	Glia	Non-neuron
-Oli4	Oligodendrocyte	Glia	Non-neuron
-Oli5	Oligodendrocyte	Glia	Non-neuron
-Opc0	OPC	Glia	Non-neuron
-Opc1	OPC	Glia	Non-neuron
-Opc2	OPC	Glia	Non-neuron
-Per	Pericyte	Vascular	Non-neuron
+Subcluster	subclass
+In0	GABAergic
+In1	GABAergic
+In10	GABAergic
+In11	GABAergic
+In2	GABAergic
+In3	GABAergic
+In4	GABAergic
+In5	GABAergic
+In6	GABAergic
+In7	GABAergic
+In8	GABAergic
+In9	GABAergic
+Ex0	Glutamatergic
+Ex1	Glutamatergic
+Ex11	Glutamatergic
+Ex12	Glutamatergic
+Ex14	Glutamatergic
+Ex2	Glutamatergic
+Ex3	Glutamatergic
+Ex4	Glutamatergic
+Ex5	Glutamatergic
+Ex6	Glutamatergic
+Ex7	Glutamatergic
+Ex8	Glutamatergic
+Ex9	Glutamatergic
+Ast0	Astrocyte
+Ast1	Astrocyte
+Ast2	Astrocyte
+Ast3	Astrocyte
+End1	Endothelial
+End2	Endothelial
+Mic0	Microglia
+Mic1	Microglia
+Mic2	Microglia
+Mic3	Microglia
+Oli0	Oligodendrocyte
+Oli1	Oligodendrocyte
+Oli3	Oligodendrocyte
+Oli4	Oligodendrocyte
+Oli5	Oligodendrocyte
+Opc0	OPC
+Opc1	OPC
+Opc2	OPC
+Per	Pericyte

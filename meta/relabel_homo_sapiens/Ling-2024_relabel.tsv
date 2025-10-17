@@ -1,25 +1,25 @@
-cell_type	subclass	class	family
-astrocyte_Fibrous	Astrocyte	Glia	Non-neuron
-NA	unknown	unknown	unknown
-glutamatergic_L5IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-gabaergic_LAMP5	LAMP5	CGE	GABAergic
-gabaergic_SNCG	SNCG	CGE	GABAergic
-gabaergic_SSTCHODL	SST	MGE	GABAergic
-gabaergic_SST	SST	MGE	GABAergic
-gabaergic_VIP	VIP	CGE	GABAergic
-glutamatergic_L23IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-glutamatergic_L6IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-glutamatergic_L6ITCar3	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-polydendrocyte	OPC	Glia	Non-neuron
-endothelia	Endothelial	Vascular	Non-neuron
-microglia	Microglia	CNS macrophage	Non-neuron
-astrocyte_Protoplasmic	Astrocyte	Glia	Non-neuron
-glutamatergic_L4IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-glutamatergic_L5ET	L5 ET	deep layer non-IT	Glutamatergic
-gabaergic_PVALB	PVALB	MGE	GABAergic
-oligodendrocyte	Oligodendrocyte	Glia	Non-neuron
-gabaergic_MEIS2	GABAergic	GABAergic	GABAergic
-glutamatergic_L56NP	L5/6 NP	deep layer non-IT	Glutamatergic
-glutamatergic_L6b	L6b	deep layer non-IT	Glutamatergic
-glutamatergic_L6CT	L6 CT	deep layer non-IT	Glutamatergic
-astrocyte_Interlaminar	Astrocyte	Glia	Non-neuron
+cell_type	subclass
+astrocyte_Fibrous	Astrocyte
+NA	unknown
+glutamatergic_L5IT	L2/3-6 IT
+gabaergic_LAMP5	LAMP5
+gabaergic_SNCG	SNCG
+gabaergic_SSTCHODL	SST
+gabaergic_SST	SST
+gabaergic_VIP	VIP
+glutamatergic_L23IT	L2/3-6 IT
+glutamatergic_L6IT	L2/3-6 IT
+glutamatergic_L6ITCar3	L2/3-6 IT
+polydendrocyte	OPC
+endothelia	Endothelial
+microglia	Microglia
+astrocyte_Protoplasmic	Astrocyte
+glutamatergic_L4IT	L2/3-6 IT
+glutamatergic_L5ET	L5 ET
+gabaergic_PVALB	PVALB
+oligodendrocyte	Oligodendrocyte
+gabaergic_MEIS2	GABAergic
+glutamatergic_L56NP	L5/6 NP
+glutamatergic_L6b	L6b
+glutamatergic_L6CT	L6 CT
+astrocyte_Interlaminar	Astrocyte
