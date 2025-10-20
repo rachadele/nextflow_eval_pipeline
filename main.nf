@@ -472,8 +472,8 @@ workflow {
     //view both
 
     //// Plot distributions from filtered file paths
-    plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
-    plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
+   // plotF1ResultsAdata(params.ref_keys.join(' '), params.cutoff, f1_scores_adata)
+   // plotF1ResultsSeurat(params.ref_keys.join(' '), params.cutoff, f1_scores_seurat)
 
     raw_queries_adata.map { query_path ->
         def query_name = query_path.getName().split('_raw.h5ad')[0]
