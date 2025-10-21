@@ -708,11 +708,12 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             "recall": avg_r,
             "f1_score": avg_f,
         }
-        
-        # Macro averages
-        macro_p, macro_r, macro_f, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="macro", zero_division=np.nan
-        )
+
+        # Macro averages (exclude cell types with zero support)
+        nonzero_indices = np.where(support > 0)[0]
+        macro_p = np.nanmean(precision[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
+        macro_r = np.nanmean(recall[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
+        macro_f = np.nanmean(f1[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
         class_metrics[key]["macro_metrics"] = {
             "precision": macro_p,
             "recall": macro_r,
