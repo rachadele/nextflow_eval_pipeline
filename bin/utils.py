@@ -719,6 +719,16 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             "recall": macro_r,
             "f1_score": macro_f,
         }
+        
+        # Micro averages (global counts)
+        micro_p, micro_r, micro_f, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="micro", zero_division=np.nan
+        )
+        class_metrics[key]["micro_metrics"] = {
+            "precision": micro_p,
+            "recall": micro_r,
+            "f1_score": micro_f,
+        }
 
     return class_metrics
 
