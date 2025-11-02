@@ -1,14 +1,12 @@
 {
     "organism": "mus_musculus",
-    "census_version": "2024-07-30",
+    "census_version": "2024-07-01",
     "cutoff": 0,
     "seed": 42,
     "ref_collections": [
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
-        "Tabula Muris Senis",
-        "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging"
+        "Tabula Muris Senis"
     ],
     "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true/h5ad/**h5ad",
     "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv",
@@ -19,5 +17,5 @@
         "family",
         "global"
     ],
-    "use_gap": true
+    "use_gap": false
 }

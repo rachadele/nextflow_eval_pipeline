@@ -151,6 +151,10 @@ def main():
                     'macro_f1': macro_metrics.get('f1_score', None),
                     'macro_precision': macro_metrics.get('precision', None),
                     'macro_recall': macro_metrics.get('recall', None),
+                    # add micro averages
+                    'micro_f1': class_metrics[key]["micro_metrics"].get('f1_score', None),
+                    'micro_precision': class_metrics[key]["micro_metrics"].get('precision', None),
+                    'micro_recall': class_metrics[key]["micro_metrics"].get('recall', None),
                     'nmi': nmi,
                     'ari': ari,
                     'overall_accuracy': overall_accuracy,

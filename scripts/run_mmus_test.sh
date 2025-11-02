@@ -14,7 +14,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
     for ref_split in "${ref_split_values[@]}"; do
         for cutoff in "${cutoff_values[@]}"; do
                 echo "Running: subsample_ref=$subsample_ref, ref_split=$ref_split, cutoff=$cutoff, normalization_method=$normalization_method"
-                nextflow main.nf -params-file /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/params.mm.test.json \
+                nextflow main.nf -params-file /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/params.mm.json \
                     --subsample_query "$subsample_query" \
                     --subsample_ref "$subsample_ref" \
                     --ref_split "$ref_split" \
@@ -25,9 +25,8 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --batch_correct true \
                     -resume \
                     --remove_unknown \
-                    --use_gap true \
+                    --use_gap false \
                     --normalization_method "$normalization_method" \
-                    --outdir_prefix "tests/2025-01-30/mus_musculus/threshold-decision-boundary-test/gap_true" \
                     -process.executor "slurm"
             done
         done

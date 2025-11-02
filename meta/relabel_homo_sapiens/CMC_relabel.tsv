@@ -1,28 +1,28 @@
-cell_type	subclass	class	family
-Astro	Astrocyte	Glia	Non-neuron
-Chandelier	Chandelier	MGE	GABAergic
-Endo	Endothelial	Vascular	Non-neuron
-Immune	Non-neuron	Non-neuron	Non-neuron
-L2/3_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L4_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L5_ET	L5 ET	deep layer non-IT	Glutamatergic
-L5_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L5/6_NP	L5/6 NP	deep layer non-IT	Glutamatergic
-L6_CT	L6 CT	deep layer non-IT	Glutamatergic
-L6_IT	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L6_IT_Car3	L2/3-6 IT	L2/3-6 IT	Glutamatergic
-L6b	L6b	deep layer non-IT	Glutamatergic
-Lamp5	LAMP5	CGE	GABAergic
-Lamp5_Lhx6	LAMP5	CGE	GABAergic
-Micro	Microglia	CNS macrophage	Non-neuron
-Oligo	Oligodendrocyte	Glia	Non-neuron
-OPC	OPC	Glia	Non-neuron
-Pax6	LAMP5	CGE	GABAergic
-PC	Pericyte	Mural	Non-neuron
-Pvalb	PVALB	MGE	GABAergic
-SMC	Mural	Mural	Non-neuron
-Sncg	SNCG	CGE	GABAergic
-Sst	SST	MGE	GABAergic
-Sst_Chodl	SST	MGE	GABAergic
-Vip	VIP	CGE	GABAergic
-VLMC	VLMC	Stromal	Non-neuron
+cell_type	subclass
+Astro	Astrocyte
+Chandelier	Chandelier
+Endo	Endothelial
+Immune	Non-neuron
+L2/3_IT	L2/3-6 IT
+L4_IT	L2/3-6 IT
+L5_ET	L5 ET
+L5_IT	L2/3-6 IT
+L5/6_NP	L5/6 NP
+L6_CT	L6 CT
+L6_IT	L2/3-6 IT
+L6_IT_Car3	L2/3-6 IT
+L6b	L6b
+Lamp5	LAMP5
+Lamp5_Lhx6	LAMP5
+Micro	Microglia
+Oligo	Oligodendrocyte
+OPC	OPC
+Pax6	PAX6
+PC	Pericyte
+Pvalb	PVALB
+SMC	Vascular
+Sncg	SNCG
+Sst	SST
+Sst_Chodl	SST
+Vip	VIP
+VLMC	VLMC

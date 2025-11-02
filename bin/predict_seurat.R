@@ -11,15 +11,16 @@ set.seed(123)
 
 
 parser <- ArgumentParser(description = "Process Seurat objects and transfer labels.")
+
 parser$add_argument("--integration_method", type="character", help="Integration method of query and reference", default="pcaproject")
-parser$add_argument("--ref_keys", type="character", nargs="*", help="List of reference keys to pass to query_transfer", default=c("subclass", "class","family"))
+parser$add_argument("--ref_keys", type="character", nargs="*", help="List of reference keys to pass to query_transfer", default=c("subclass", "class", "family"))
 parser$add_argument("--dims", type="integer", help="Number of dimensions", default=50)
 parser$add_argument("--max.features", type="integer", help="Maximum number of features", default=200)
 parser$add_argument("--k.anchor", type="integer", help="Number of anchors", default=10)
 parser$add_argument("--k.score", type="integer", help="?", default=30)
 parser$add_argument("--cutoff", type="numeric", help="Cutoff threshold for label transfer prediction scores", default=0)
-parser$add_argument("--ref_path", type="character", help="path to references", default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/e1/d770134021e6a187b69360d25dbcbd/Human_Multiple_Cortical_Areas_SMART-seq.rds")
-parser$add_argument("--query_path", type="character", help="path to query", default = "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/92/5946603814884a8e13fadbe0041163/GSE180670_1036084_processed.rds")
+parser$add_argument("--ref_path", type="character", help="path to references", default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/5a/63c1d6a04533847974ca79ff1c78d6/Human_Multiple_Cortical_Areas_SMART-seq.rds")
+parser$add_argument("--query_path", type="character", help="path to query", default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/hsap/f8/d34f68aa04073bd5acabfdf0c2a78a/GSE180670_1036084_processed.rds")
 parser$add_argument("--k.weight", type="integer", help="k.weight", default=50)
 parser$add_argument("--normalization_method", type="character", help="Normalization method", default="SCT")
 parser$add_argument("--nfeatures", type="integer", help="Number of variable features to use for dim reduction", default=2000)
@@ -82,18 +83,32 @@ transfer_multiple_labels <- function(
         
         message("Error in TransferData: ", e$message)
         # Extract k.weight suggestion (e.g., "less than 27") from error message
-        match <- regmatches(e$message, regexec("less than ([0-9]+)", e$message))
-        k.weight.new <- as.integer(match[[1]][2]) - 1 # Decrease by 1 to ensure it is less than the suggested value
-        message("Adjusting k.weight to: ", k.weight.new)
-        # Retry TransferData with the corrected k.weight
-        TransferData(
-            anchorset = anchors,
-            refdata = key,
-            reference = reference,
-            weight.reduction = reduction,
-            k.weight = k.weight.new
-        )
-    })   
+        # this only works if the error message format is consistent
+        # check if the error message contains "less than"
+        if (grepl("less than", e$message)) {
+            match <- regmatches(e$message, regexec("less than ([0-9]+)", e$message))
+            k.weight.new <- as.integer(match[[1]][2]) - 1 # Decrease by 1 to ensure it is less than the suggested value
+            message("Adjusting k.weight to: ", k.weight.new)
+            # Retry TransferData with the corrected k.weight
+            TransferData(
+                anchorset = anchors,
+                refdata = key,
+                reference = reference,
+                weight.reduction = reduction,
+                k.weight = k.weight.new
+            )
+        } else {
+            message("Unable to adjust k.weight from error message. Setting k.weight to FALSE.")
+            # set k.weight to FALSE
+            TransferData(
+                anchorset = anchors,
+                refdata = key,
+                reference = reference,
+                weight.reduction = reduction,
+                k.weight = FALSE
+            )
+        }
+    })
     return(predictions)
 
 }

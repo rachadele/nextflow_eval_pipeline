@@ -1,0 +1,189 @@
+cell_type	dataset_title	collection_name	cell_type_ontology_term_id	count
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023040	335127
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023040	317492
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	166467
+oligodendrocyte	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0000128	81521
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	78731
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	76433
+pvalb GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023018	60052
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	58492
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	57226
+oligodendrocyte	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0000128	56465
+vip GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023016	53592
+vip GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023016	50645
+pvalb GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023018	46220
+oligodendrocyte	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000128	45918
+sst GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023017	42684
+astrocyte of the cerebral cortex	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0002605	40973
+lamp5 GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023011	40012
+L2/3 intratelencephalic projecting glutamatergic neuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4030059	35993
+sst GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023017	32570
+astrocyte of the cerebral cortex	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0002605	29894
+lamp5 GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023011	29487
+astrocyte	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000127	23359
+glutamatergic neuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000679	21841
+microglial cell	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0000129	20275
+microglial cell	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0000129	17385
+oligodendrocyte precursor cell	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0002453	16016
+oligodendrocyte precursor cell	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:0002453	15931
+corticothalamic-projecting glutamatergic cortical neuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023013	15452
+sst GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	14511
+sst GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	14382
+corticothalamic-projecting glutamatergic cortical neuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023013	13707
+sst GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	13688
+sst GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	13464
+sncg GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023015	13369
+pvalb GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	12816
+sncg GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023015	11040
+near-projecting glutamatergic cortical neuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023012	10911
+pvalb GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	10724
+pvalb GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	10447
+L6b glutamatergic cortical neuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023038	10414
+sst GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	10156
+near-projecting glutamatergic cortical neuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023012	10095
+vip GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	10017
+vip GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	10016
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	9775
+oligodendrocyte precursor cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0002453	9302
+pvalb GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	9050
+chandelier pvalb GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023036	8902
+corticothalamic-projecting glutamatergic cortical neuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023013	8731
+oligodendrocyte	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	8426
+vip GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	8342
+vip GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	8153
+oligodendrocyte	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	7861
+L6b glutamatergic cortical neuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023038	7645
+microglial cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000129	7556
+oligodendrocyte	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	7442
+sst GABAergic cortical interneuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023017	7087
+endothelial cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000115	6866
+lamp5 GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	6729
+pvalb GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	6599
+vip GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	6247
+vip GABAergic cortical interneuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023016	6047
+lamp5 GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	5971
+oligodendrocyte	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	5949
+corticothalamic-projecting glutamatergic cortical neuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023013	5878
+chandelier pvalb GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023036	5333
+lamp5 GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	5310
+oligodendrocyte	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	5267
+astrocyte of the cerebral cortex	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002605	5004
+pvalb GABAergic cortical interneuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023018	4949
+corticothalamic-projecting glutamatergic cortical neuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023013	4924
+caudal ganglionic eminence derived GABAergic cortical interneuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023070	4806
+L2/3-6 intratelencephalic projecting glutamatergic neuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023040	4778
+astrocyte of the cerebral cortex	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002605	4703
+L6b glutamatergic cortical neuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	4390
+caudal ganglionic eminence derived GABAergic cortical interneuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023070	4216
+L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023050	4206
+near-projecting glutamatergic cortical neuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	4141
+L6b glutamatergic cortical neuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	4084
+lamp5 GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	4054
+pericyte	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000669	4030
+astrocyte of the cerebral cortex	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002605	3832
+L5 extratelencephalic projecting glutamatergic cortical neuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	3826
+vip GABAergic cortical interneuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	3533
+L6b glutamatergic cortical neuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	3531
+lamp5 GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	3468
+corticothalamic-projecting glutamatergic cortical neuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023013	3431
+near-projecting glutamatergic cortical neuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	3273
+lamp5 GABAergic cortical interneuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023011	3236
+astrocyte of the cerebral cortex	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002605	3210
+oligodendrocyte precursor cell	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	2978
+astrocyte of the cerebral cortex	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002605	2820
+pvalb GABAergic cortical interneuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	2800
+oligodendrocyte precursor cell	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	2724
+L6b glutamatergic cortical neuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	2598
+L6 corticothalamic-projecting glutamatergic cortical neuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023042	2556
+microglial cell	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	2477
+lamp5 GABAergic cortical interneuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	2434
+inhibitory interneuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000498	2399
+sst GABAergic cortical interneuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	2358
+near-projecting glutamatergic cortical neuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	2356
+sst GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023017	2323
+L5 extratelencephalic projecting glutamatergic cortical neuron	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023041	2303
+vascular leptomeningeal cell	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023051	2295
+oligodendrocyte precursor cell	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	2264
+sncg GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023015	2249
+pvalb GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023018	2175
+L6 corticothalamic-projecting glutamatergic cortical neuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023042	2150
+sncg GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023015	2138
+smooth muscle cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000192	2106
+unknown	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	unknown	1985
+oligodendrocyte	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	1930
+chandelier pvalb GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023036	1889
+microglial cell	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	1856
+sncg GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023015	1821
+corticothalamic-projecting glutamatergic cortical neuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023013	1811
+sncg GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023015	1767
+L6b glutamatergic cortical neuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023038	1739
+microglial cell	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	1712
+L6b glutamatergic cortical neuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	1698
+vascular leptomeningeal cell	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023051	1692
+near-projecting glutamatergic cortical neuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	1565
+near-projecting glutamatergic cortical neuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	1509
+chandelier pvalb GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023036	1425
+L5 extratelencephalic projecting glutamatergic cortical neuron	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:4023041	1323
+microglial cell	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	1304
+oligodendrocyte precursor cell	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	1281
+cerebral cortex endothelial cell	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:1001602	1278
+caudal ganglionic eminence derived GABAergic cortical interneuron	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	1250
+microglial cell	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	1224
+L5/6 near-projecting glutamatergic neuron of the primary motor cortex	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023043	1215
+chandelier pvalb GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023036	1198
+astrocyte	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000127	1187
+oligodendrocyte precursor cell	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	1141
+vip GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023016	1131
+chandelier pvalb GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023036	1096
+L6b glutamatergic cortical neuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	1080
+L5 extratelencephalic projecting glutamatergic cortical neuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	1073
+chandelier pvalb GABAergic cortical interneuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023036	1008
+cerebral cortex endothelial cell	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)	SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas	CL:1001602	998
+T cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000084	885
+caudal ganglionic eminence derived GABAergic cortical interneuron	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	877
+caudal ganglionic eminence derived GABAergic cortical interneuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	820
+lamp5 GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023011	819
+near-projecting glutamatergic cortical neuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	816
+sncg GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023015	816
+oligodendrocyte precursor cell	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	773
+macrophage	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000235	760
+microglial cell	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	750
+near-projecting glutamatergic cortical neuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023012	706
+vascular leptomeningeal cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023051	680
+caudal ganglionic eminence derived GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	617
+corticothalamic-projecting glutamatergic cortical neuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023013	552
+chandelier pvalb GABAergic cortical interneuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023036	548
+L5 extratelencephalic projecting glutamatergic cortical neuron	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	451
+L5 extratelencephalic projecting glutamatergic cortical neuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	330
+caudal ganglionic eminence derived GABAergic cortical interneuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	325
+L6b glutamatergic cortical neuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023038	296
+L5 extratelencephalic projecting glutamatergic cortical neuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	295
+L5 extratelencephalic projecting glutamatergic cortical neuron	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:4023041	256
+caudal ganglionic eminence derived GABAergic cortical interneuron	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	243
+erythroid lineage cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000764	239
+cerebral cortex endothelial cell	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:1001602	165
+L5 extratelencephalic projecting glutamatergic cortical neuron	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	158
+L5 extratelencephalic projecting glutamatergic cortical neuron	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023041	155
+cerebral cortex endothelial cell	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:1001602	141
+chandelier pvalb GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023036	137
+vascular leptomeningeal cell	Dissection: Anterior cingulate cortex (ACC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	113
+vascular leptomeningeal cell	Dissection: Primary somatosensory cortex (S1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	107
+cerebral cortex endothelial cell	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:1001602	102
+cerebral cortex endothelial cell	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:1001602	97
+cerebral cortex endothelial cell	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:1001602	94
+vascular leptomeningeal cell	Dissection: Primary visual cortex(V1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	92
+vascular leptomeningeal cell	Dissection: Angular gyrus (AnG)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	89
+vascular leptomeningeal cell	Dissection: Primary auditory cortex(A1)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	86
+myeloid cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000763	81
+endothelial cell	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000115	70
+caudal ganglionic eminence derived GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023070	66
+B cell	Single-nucleus transcriptome data from the dlPFC	Molecular and cellular evolution of the primate dorsolateral prefrontal cortex	CL:0000236	53
+sncg GABAergic cortical interneuron	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023015	50
+pericyte	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000669	32
+oligodendrocyte	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000128	13
+vascular leptomeningeal cell	Human Multiple Cortical Areas SMART-seq	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	11
+astrocyte of the cerebral cortex	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002605	10
+microglial cell	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0000129	8
+vascular leptomeningeal cell	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:4023051	3
+oligodendrocyte precursor cell	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:0002453	3
+cerebral cortex endothelial cell	Dissection: Dorsolateral prefrontal cortex (DFC)	Transcriptomic cytoarchitecture reveals principles of human neocortex organization	CL:1001602	3

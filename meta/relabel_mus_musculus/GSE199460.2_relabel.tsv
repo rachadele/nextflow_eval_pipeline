@@ -1,6 +1,6 @@
-cell_type	subclass	class	family	global
-cap venous	Endothelial	Vascular	Non-neuron	Non-neuron
-cap arterial	Endothelial	Vascular	Non-neuron	Non-neuron
-interferon	Endothelial	Vascular	Non-neuron	Non-neuron
-arterial	Endothelial	Vascular	Non-neuron	Non-neuron
-venous	Endothelial	Vascular	Non-neuron	Non-neuron
+cell_type	subclass
+cap venous	Endothelial
+cap arterial	Endothelial
+interferon	Endothelial
+arterial	Endothelial
+venous	Endothelial

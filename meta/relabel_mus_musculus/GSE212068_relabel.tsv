@@ -1,8 +1,8 @@
-cell_type	subclass	class	family	global
-Neurons_1	Neuron	Neuron	Neuron	Neuron
-Astrocytes	Astrocyte	Glia	Non-neuron	Non-neuron
-Oligodendrocytes	Oligodendrocyte	Glia	Non-neuron	Non-neuron
-OPC	OPC	Glia	Non-neuron	Non-neuron
-Microglia, Macrophages	CNS macrophage	CNS macrophage	Non-neuron	Non-neuron
-Neurons_2	Neuron	Neuron	Neuron	Neuron
-Non-neuronal cells	Non-neuron	Non-neuron	Non-neuron	Non-neuron
+cell_type	subclass
+Neurons_1	Neuron
+Astrocytes	Astrocyte
+Oligodendrocytes	Oligodendrocyte
+OPC	OPC
+Microglia, Macrophages	CNS macrophage
+Neurons_2	Neuron
+Non-neuronal cells	Non-neuron
