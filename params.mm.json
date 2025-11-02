@@ -5,8 +5,7 @@
     "seed": 42,
     "ref_collections": [
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
-        "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
-        "Tabula Muris Senis"
+        "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types"
     ],
     "queries_adata": "/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true/h5ad/**h5ad",
     "relabel_q": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/relabel_mus_musculus/*_relabel.tsv",
