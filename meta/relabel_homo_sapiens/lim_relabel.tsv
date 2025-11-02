@@ -36,8 +36,8 @@ Astro_2	Astrocyte
 Astro_3	Astrocyte
 Astro_4	Astrocyte
 Endothelial	Endothelial
-Ependymal_1	Glia
-Ependymal_2	Glia
+Ependymal_1	Vascular
+Ependymal_2	Vascular
 Microglia_1	Microglia
 oligo_1	Oligodendrocyte
 oligo_10	Oligodendrocyte
