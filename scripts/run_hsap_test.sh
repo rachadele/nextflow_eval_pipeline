@@ -6,7 +6,7 @@ set -e  # Exit on error
 subsample_ref_values=(500)
 subsample_query=100
 ref_split_values=("dataset_id")
-cutoff_values=(0 0.5)
+cutoff_values=(0)
 normalization_method="SCT"
 
 # Loop over parameter combinations
@@ -30,4 +30,3 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                 done
 			done
         done
-    done

@@ -1,6 +1,6 @@
 {
     "organism": "homo_sapiens",
-    "census_version": "2025-01-30",
+    "census_version": "2024-07-01",
     "cutoff": 0,
     "seed": 42,
     "ref_collections": [
