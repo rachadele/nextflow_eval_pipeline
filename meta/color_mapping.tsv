@@ -1,54 +1,41 @@
 subclass
-Neural stem cell
-Neuroglioblast
-Neuroepithelial stem cell
-VIP
-CGE
-GABAergic
-Neuron
-PVALB
-MGE
-SST
 LAMP5
+GABAergic
+Neural stem cell
+VIP
 SNCG
-Cajal-Retzius cell
-Glutamatergic
-L4/5 IT
+Astrocyte
+Non-neuron
+PAX6
+Endothelial
+Vascular
+PVALB
+Ependymal
+SST
+Macrophage
+CNS macrophage
+Chandelier
 L2/3-6 IT
-L2/3 IT
-L6 CT
-deep layer non-IT
-L6 IT
-L6 IT Car3
-L5/6 NP
+Glutamatergic
+Microglia
 L5 ET
+deep layer non-IT
+Oligodendrocyte
+L5/6 NP
+OPC
+L6 CT
+Pericyte
+Leukocyte
 L6b
+Neuron
+VLMC
+CT
+NP
+SMC
+Cajal-Retzius cell
 SUB-ProS
 Hippocampal neuron
-CT
 DG
 CA3
 CA2-IG-FC
-NP
 CA1-ProS
-L4 RSP-ACA
-L4 IT/ET
-Astrocyte
-Glia
-Non-neuron
-Endothelial
-Vascular
-Ependymal
-VLMC
-Stromal
-Macrophage
-CNS macrophage
-Microglia
-Oligodendrocyte
-OPC
-Pericyte
-Mural
-Smooth muscle cell
-T cell
-Immune
-unknown

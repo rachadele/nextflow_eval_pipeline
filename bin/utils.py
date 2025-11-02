@@ -99,22 +99,43 @@ def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_pr
     # Return final indices
     return final_idx
 
-def relabel(adata, relabel_path, join_key=None, sep="\t"):
+def relabel(query, relabel_path, join_key=None, sep="\t"):
+    # takes full adata and returns full adata
     # Read the relabel table from the file
     relabel_df = pd.read_csv(relabel_path, sep=sep)  # Adjust the separator as needed
     # Take the first column as the join key
     if join_key is None:
         join_key = relabel_df.columns[0]
     # Ensure the join_key is in both the AnnData object and the relabel DataFrame
-    if join_key not in adata.obs.columns:
+    if join_key not in query.obs.columns:
         raise ValueError(f"{join_key} not found in AnnData object observations.")
     if join_key not in relabel_df.columns:
         raise ValueError(f"{join_key} not found in relabel DataFrame.")
-    # Left join = only cell types in relabel file are kept 
-    adata.obs = adata.obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
-    columns_to_drop = [col for col in adata.obs.columns if col.endswith('_y')]
-    adata.obs.drop(columns=columns_to_drop, inplace=True)
-    return adata
+    # Left join = only cell types in relabel file are kept
+    query.obs = query.obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
+    columns_to_drop = [col for col in query.obs.columns if col.endswith('_y')]
+    query.obs.drop(columns=columns_to_drop, inplace=True)
+    return query
+
+
+
+def aggregate_labels(query: pd.DataFrame, mapping_df: pd.DataFrame, ref_keys: list, predicted=False):
+    """
+    Aggregate subclass labels or predicted labels to higher levels using mapping_df.
+    If predicted=True, operates on columns like 'predicted_subclass', otherwise on obs columns.
+    """
+    query.index = query.index.astype(int)
+    for i in range(1, len(ref_keys)):
+        lower_key = ref_keys[i-1]
+        higher_level_key = ref_keys[i]
+        mapping = mapping_df.set_index(lower_key)[higher_level_key].to_dict()
+        if predicted:
+            query["predicted_" + higher_level_key] = query["predicted_" + lower_key].map(mapping)
+            query["predicted_" + higher_level_key] = query["predicted_" + higher_level_key].fillna(query["predicted_" + lower_key])
+        else:
+            query[higher_level_key] = query[lower_key].map(mapping)
+            query[higher_level_key] = query[higher_level_key].fillna(query[lower_key])
+    return query
 
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
@@ -549,7 +570,7 @@ def compute_confidence_gap_cutoff(class_probs, quantile=0.1):
 
 
 
-def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=False):
+def classify_cells(query: pd.DataFrame, ref_keys: list, cutoff: float, probabilities: pd.DataFrame, mapping_df: pd.DataFrame, use_gap: bool = False):
     """
     Wrapper function to classify cells based on probabilities. Can use gap analysis or raw probabilities.
     """
@@ -559,7 +580,7 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=F
     key = ref_keys[0]
     class_metrics[key] = {}
 
-    # Extract the class labels and probabilities (DataFrame structure)
+    # Extract the class labels and probabilities (array structure)
     class_labels = probabilities.columns.values  # Class labels are the column names
     class_probs = probabilities.values  # Probabilities as a numpy array
     
@@ -572,8 +593,8 @@ def classify_cells(query, ref_keys, cutoff, probabilities, mapping_df, use_gap=F
     query["predicted_" + key] = predictions
     query["confidence"] = np.max(class_probs, axis=1)  # Store max probability as confidence
     
-    # Aggregate predictions (you can keep this logic as needed)
-    query = aggregate_preds(query, ref_keys, mapping_df)
+    # Aggregate predictions 
+    query = aggregate_labels(query=query, ref_keys=ref_keys, mapping_df=mapping_df, predicted=True)
     
     return query
 
@@ -687,15 +708,26 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             "recall": avg_r,
             "f1_score": avg_f,
         }
-        
-        # Macro averages
-        macro_p, macro_r, macro_f, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="macro", zero_division=np.nan
-        )
+
+        # Macro averages (exclude cell types with zero support)
+        nonzero_indices = np.where(support > 0)[0]
+        macro_p = np.nanmean(precision[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
+        macro_r = np.nanmean(recall[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
+        macro_f = np.nanmean(f1[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
         class_metrics[key]["macro_metrics"] = {
             "precision": macro_p,
             "recall": macro_r,
             "f1_score": macro_f,
+        }
+        
+        # Micro averages (global counts)
+        micro_p, micro_r, micro_f, _ = precision_recall_fscore_support(
+            true_labels, predicted_labels, average="micro", zero_division=np.nan
+        )
+        class_metrics[key]["micro_metrics"] = {
+            "precision": micro_p,
+            "recall": micro_r,
+            "f1_score": micro_f,
         }
 
     return class_metrics

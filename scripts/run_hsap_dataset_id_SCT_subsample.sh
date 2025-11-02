@@ -24,6 +24,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --normalization_method "$normalization_method" \
                     --subsample_query "$subsample_query" \
                     -process.executor slurm \
+                    --use_gap false \
                     -resume                 
             done
         done

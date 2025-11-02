@@ -1,8 +1,8 @@
-cell_type	subclass	class	family
-Olig	Oligodendrocyte	Glia	Non-neuron
-Ex	Glutamatergic	Glutamatergic	Glutamatergic
-In	GABAergic	GABAergic	GABAergic
-Ast	Astrocyte	Glia	Non-neuron
-Mic	Microglia	CNS macrophage	Non-neuron
-OPC	OPC	Glia	Non-neuron
-Vascu	Vascular	Non-neuron	Non-neuron
+cell_type	subclass
+Olig	Oligodendrocyte
+Ex	Glutamatergic
+In	GABAergic
+Ast	Astrocyte
+Mic	Microglia
+OPC	OPC
+Vascu	Vascular
