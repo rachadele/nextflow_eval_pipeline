@@ -34,6 +34,7 @@ import yaml
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Download model file based on organism, census version, and tree file.")
     parser.add_argument('--organism', type=str, default='homo_sapiens', help='Organism name (e.g., homo_sapiens)')
+    parser.add_argument('--organ', type=str, default='brain', help='Organ/tissue name (e.g., brain)')
     parser.add_argument('--census_version', type=str, default='2025-01-30', help='Census version (e.g., 2024-07-01)')
     parser.add_argument('--subsample_ref', type=int, default=50)
     parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
@@ -86,12 +87,14 @@ def main():
     # Set organism and census_version from arguments
     organism = args.organism
     census_version = args.census_version
+
     subsample_ref = args.subsample_ref
     relabel_path = args.relabel_path
     ref_collections = args.ref_collections
     split_column = args.split_column
     ref_keys = args.ref_keys
     SEED = args.seed
+    organ = args.organ
 
     if organism == "mus_musculus":
         original_celltypes = get_original_celltypes(columns_file=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}/original_celltype_columns.tsv",
@@ -101,7 +104,7 @@ def main():
 
     refs = utils.get_census(
         organism=organism,
-        organ="brain",
+        organ=organ,
         subsample=subsample_ref,
         split_column=split_column,
         census_version=census_version,
