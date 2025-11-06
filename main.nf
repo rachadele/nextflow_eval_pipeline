@@ -120,6 +120,7 @@ process getCensusAdata {
         --split_column ${params.ref_split} \\
         --ref_collections ${ref_collections} \\
         --ref_keys ${ref_keys} \\
+        --organ ${organ} \\
         --seed ${params.seed}
 
     # After running the python script, all .h5ad files will be saved in the refs/ directory inside a work directory
