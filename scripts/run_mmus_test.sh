@@ -22,7 +22,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --cutoff "$cutoff" \
                     --subset_type sample \
                     -work-dir mmus \
-                    --outdir mmus_new_queries \
+                    --outdir_prefix mmus_new \
                     --batch_correct true \
                     -resume \
                     --remove_unknown \
