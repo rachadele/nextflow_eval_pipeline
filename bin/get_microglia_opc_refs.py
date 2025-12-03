@@ -33,6 +33,7 @@ def parse_arguments():
     parser.add_argument('--split_column', type=str, default="dataset_id")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family","global"])
     parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--ref_cell_type', type=str, default="CNS macrophage", help="Cell type to filter for reference (e.g., 'CNS macrophage')")
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
@@ -103,6 +104,7 @@ def main():
     split_column = args.split_column
     ref_keys = args.ref_keys
     SEED = args.seed
+    ref_cell_type = args.ref_cell_type
 
     if organism == "mus_musculus":
         original_celltypes = get_original_celltypes(columns_file=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}/original_celltype_columns.tsv",
@@ -124,16 +126,22 @@ def main():
     )
 
     # Filter to CNS macrophage after author label mapping
-    if "family" in adata.obs.columns:
-        cns_mac_ref = adata[adata.obs["family"] == "CNS macrophage"].copy()
-    else:
-        raise ValueError("'family' column not found in AnnData obs after label mapping.")
+    if ref_cell_type == "CNS macrophage":
+        if "family" in adata.obs.columns:
+            ref_ct_subset = adata[adata.obs["family"] == ref_cell_type].copy()
+        else:
+            raise ValueError("'family' column not found in AnnData obs after label mapping.")
+    elif ref_cell_type == "OPC":
+        ref_ct_subset = adata[adata.obs["class"] == ref_cell_type].copy()  
+        
 
-    print("finished fetching microglia/macrophage reference")
+    # make naming dynamic
+    
+    
     outdir = "refs"
     os.makedirs(outdir, exist_ok=True)
-    cns_mac_ref.write(os.path.join(outdir, "microglia_macrophage_reference.h5ad"))
-    cns_mac_ref.obs.to_csv(os.path.join(outdir, "microglia_macrophage_reference.obs.tsv"), sep="\t")
+    ref_ct_subset.write(os.path.join(outdir, f"{ref_cell_type.lower()}_reference.h5ad"))
+    ref_ct_subset.obs.to_csv(os.path.join(outdir, f"{ref_cell_type.lower()}_reference.obs.tsv"), sep="\t")
 
       
 if __name__ == "__main__":
