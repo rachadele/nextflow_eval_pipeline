@@ -38,14 +38,14 @@ from collections import defaultdict
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
   #  parser.add_argument('--census_version', type=str, default='2024-07-01', help='Census version (e.g., 2024-07-01)')
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/2025-01-30/mus_musculus/100/dataset_id/SCT/gap_false/ref_50_cutoff_0/scvi/GSE152715.2/whole_cortex/GSE152715.2_1052248_GSM4624685/probs/GSE152715.2_1052248_GSM4624685.obs.relabel.tsv")
-    parser.add_argument('--ref_name', type=str, default="whole_cortex") #nargs ="+")
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/GSE247339.2_1051974_GSM7887403_CNS_macrophage.obs.relabel.tsv")
+    parser.add_argument('--ref_name', type=str, default="cns_macrophage") #nargs ="+")
     parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family","global"])
     parser.add_argument('--cutoff', type=float, default=0, help = "Cutoff threshold for positive classification")
-    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/2025-01-30/mus_musculus/100/dataset_id/SCT/gap_false/ref_50_cutoff_0/scvi/GSE152715.2/whole_cortex/GSE152715.2_1052248_GSM4624685/probs/probs/GSE152715.2_1052248_GSM4624685_whole_cortex.prob.df.tsv")
-    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
-    parser.add_argument('--ref_region_mapping', type=str, default="")
-    parser.add_argument('--study_name', type=str, default="GSE152715.2")
+    parser.add_argument('--probs', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/bin/probs/GSE247339.2_1051974_GSM7887403_CNS_macrophage_cns_macrophage_reference.prob.df.tsv")
+    parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_mouse_author.tsv")
+    parser.add_argument('--ref_region_mapping', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/mmus/35/62a9866dca8fcabf35350a2da4d515/refs/ref_region.yaml")
+    parser.add_argument('--study_name', type=str, default="GSE247339.2")
     parser.add_argument('--use_gap', action='store_true', help="Use gap analysis for classification")
     
     if __name__ == "__main__":
@@ -82,8 +82,8 @@ def main():
     
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
-    ref_region=ref_region_mapping[ref_name]
     
+    ref_region=ref_region_mapping.get(ref_name, "unknown")
     prob_df = pd.read_csv(args.probs, sep="\t")
     mapping_df = pd.read_csv(args.mapping_file, sep="\t")
     query_name = os.path.basename(query_path).replace(".obs.relabel.tsv", "")
@@ -100,7 +100,7 @@ def main():
     strain = get_unique_value(query, 'strain')
     age = get_unique_value(query, 'age')
 
-    os.makedirs("pr_curves", exist_ok=True) 
+    #os.makedirs("pr_curves", exist_ok=True) 
     
     # Classify cells and evaluate
     query = classify_cells(query=query, ref_keys=ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df, use_gap=use_gap)
@@ -141,7 +141,8 @@ def main():
                     'label': label,
                     'f1_score': metrics['f1_score'],
                     'accuracy': metrics['accuracy'],
-                    'precision': metrics['precision'],
+   
+                     'precision': metrics['precision'],
                     'recall': metrics['recall'],
                     'support': metrics['support'],
                     'weighted_f1': weighted_metrics.get('f1_score', None),

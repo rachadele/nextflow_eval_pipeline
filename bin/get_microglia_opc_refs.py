@@ -140,7 +140,7 @@ def main():
     
     outdir = "refs"
     os.makedirs(outdir, exist_ok=True)
-    ct_name = ref_cell_type.lower().replace(" ", "_")
+    ct_name = ref_cell_type.replace(" ", "_")
     ref_ct_subset.write(os.path.join(outdir, f"{ct_name}_reference.h5ad"))
     ref_ct_subset.obs.to_csv(os.path.join(outdir, f"{ct_name}_reference.obs.tsv"), sep="\t")
 
