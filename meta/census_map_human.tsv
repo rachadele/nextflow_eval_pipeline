@@ -12,12 +12,12 @@ near-projecting glutamatergic cortical neuron	L5/6 NP	deep layer non-IT	Glutamat
 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
 L6 corticothalamic-projecting glutamatergic cortical neuron	L6 CT	deep layer non-IT	Glutamatergic
 L6b glutamatergic cortical neuron	L6b	deep layer non-IT	Glutamatergic
-oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Non-neuron
-oligodendrocyte precursor cell	OPC	OPC	Non-neuron
-astrocyte	Astrocyte	Astrocyte	Non-neuron
-astrocyte of the cerebral cortex	Astrocyte	Astrocyte	Non-neuron
-microglial cell	Microglia	Microglia	Non-neuron
-vascular leptomeningeal cell	VLMC	Vascular	Non-neuron
-pericyte	Pericyte	Vascular	Non-neuron
-cerebral cortex endothelial cell	Endothelial	Vascular	Non-neuron
-endothelial cell	Endothelial	Vascular	Non-neuron
+oligodendrocyte	Oligodendrocyte	Oligodendrocyte	Oligodendrocyte
+oligodendrocyte precursor cell	OPC	OPC	OPC
+astrocyte	Astrocyte	Astrocyte	Astrocyte
+astrocyte of the cerebral cortex	Astrocyte	Astrocyte	Astrocyte
+microglial cell	Microglia	Microglia	Microglia
+vascular leptomeningeal cell	VLMC	Vascular	Vascular
+pericyte	Pericyte	Vascular	Vascular
+cerebral cortex endothelial cell	Endothelial	Vascular	Vascular
+endothelial cell	Endothelial	Vascular	Vascular
