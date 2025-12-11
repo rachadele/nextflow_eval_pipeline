@@ -28,6 +28,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     --normalization_method "$normalization_method" \
                     -process.executor slurm \
                     --use_gap false \
+                    --outdir_prefix 2024-07-01/mmus_new_tabulamuris/100/dataset_id/SCT/gap_false \
                 
             done
         done
