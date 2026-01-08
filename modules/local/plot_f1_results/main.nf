@@ -1,6 +1,7 @@
 process PLOT_F1_RESULTS_SCVI {
     label 'process_low'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+    publishDir "${params.outdir}/scvi", mode: 'copy'
 
     input:
     val ref_keys
@@ -22,6 +23,7 @@ process PLOT_F1_RESULTS_SCVI {
 process PLOT_F1_RESULTS_SEURAT {
     label 'process_low'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+    publishDir "${params.outdir}/seurat", mode: 'copy'
 
     input:
     val ref_keys
