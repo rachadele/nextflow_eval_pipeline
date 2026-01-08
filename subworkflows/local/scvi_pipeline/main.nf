@@ -6,8 +6,8 @@
 ----------------------------------------------------------------------------------------
 */
 
-include { RF_PREDICT   } from '../../../modules/local/rf_predict/main'
-include { CLASSIFY_ALL } from '../../../modules/local/classify_all/main'
+include { RF_PREDICT   } from "$projectDir/modules/local/rf_predict/main"
+include { CLASSIFY_ALL } from "$projectDir/modules/local/classify_all/main"
 
 workflow SCVI_PIPELINE {
     take:

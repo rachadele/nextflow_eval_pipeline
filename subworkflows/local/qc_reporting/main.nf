@@ -6,8 +6,8 @@
 ----------------------------------------------------------------------------------------
 */
 
-include { PLOT_QC_COMBINED } from '../../../modules/local/plot_qc_combined/main'
-include { MULTIQC          } from '../../../modules/local/multiqc/main'
+include { PLOT_QC_COMBINED } from "$projectDir/modules/local/plot_qc_combined/main"
+include { MULTIQC          } from "$projectDir/modules/local/multiqc/main"
 
 workflow QC_REPORTING {
     take:
