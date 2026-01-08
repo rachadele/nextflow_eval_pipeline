@@ -3,7 +3,7 @@ set -e
 
 # Run human test pipeline
 nextflow run main.nf \
-    -profile conda,test_hsap \
+    -profile conda \
+    -params-file params.hs.json \
     -work-dir hsap \
-    -resume \
-    "$@"
+    -resume

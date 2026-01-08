@@ -1,5 +1,6 @@
 process SAVE_PARAMS {
     label 'process_low'
+    publishDir "${params.outdir}", mode: 'copy'
 
     output:
     path "params.yaml"

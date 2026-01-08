@@ -1,6 +1,7 @@
 process PLOT_QC_COMBINED {
     label 'process_medium'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+    publishDir "${params.outdir}/${method}/${study_name}/${ref_name}/qc_plots", mode: 'copy'
 
     input:
     tuple val(study_name), val(method), val(ref_name), val(samples)

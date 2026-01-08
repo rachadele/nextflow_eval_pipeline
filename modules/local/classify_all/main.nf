@@ -1,6 +1,7 @@
 process CLASSIFY_ALL {
     label 'process_medium'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+    publishDir "${params.outdir}/${method}/${study_name}/${ref_name}/${query_name}", mode: 'copy'
 
     input:
     val ref_keys

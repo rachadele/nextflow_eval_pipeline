@@ -17,12 +17,12 @@ nextflow.enable.dsl = 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { SAVE_PARAMS        } from './modules/local/save_params/main'
-include { MAP_QUERY          } from './modules/local/map_query/main'
-include { PREPARE_REFERENCES } from './subworkflows/local/prepare_references/main'
-include { SCVI_PIPELINE      } from './subworkflows/local/scvi_pipeline/main'
-include { SEURAT_PIPELINE    } from './subworkflows/local/seurat_pipeline/main'
-include { QC_REPORTING       } from './subworkflows/local/qc_reporting/main'
+include { SAVE_PARAMS        } from "$projectDir/modules/local/save_params/main"
+include { MAP_QUERY          } from "$projectDir/modules/local/map_query/main"
+include { PREPARE_REFERENCES } from "$projectDir/subworkflows/local/prepare_references/main"
+include { SCVI_PIPELINE      } from "$projectDir/subworkflows/local/scvi_pipeline/main"
+include { SEURAT_PIPELINE    } from "$projectDir/subworkflows/local/seurat_pipeline/main"
+include { QC_REPORTING       } from "$projectDir/subworkflows/local/qc_reporting/main"
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,7 @@
 process REF_PROCESS_SEURAT {
     label 'process_high'
     conda '/home/rschwartz/anaconda3/envs/r4.3'
+    publishDir "${params.outdir}/refs/seurat", mode: 'copy', pattern: "**.rds"
 
     input:
     path h5ad_file
