@@ -6,9 +6,9 @@
 ----------------------------------------------------------------------------------------
 */
 
-include { QUERY_PROCESS_SEURAT } from '../../../modules/local/query_process_seurat/main'
-include { PREDICT_SEURAT       } from '../../../modules/local/predict_seurat/main'
-include { CLASSIFY_ALL         } from '../../../modules/local/classify_all/main'
+include { QUERY_PROCESS_SEURAT } from "$projectDir/modules/local/query_process_seurat/main"
+include { PREDICT_SEURAT       } from "$projectDir/modules/local/predict_seurat/main"
+include { CLASSIFY_ALL         } from "$projectDir/modules/local/classify_all/main"
 
 workflow SEURAT_PIPELINE {
     take:

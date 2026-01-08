@@ -6,9 +6,9 @@
 ----------------------------------------------------------------------------------------
 */
 
-include { RUN_SETUP           } from '../../../modules/local/run_setup/main'
-include { GET_CENSUS_ADATA    } from '../../../modules/local/get_census_adata/main'
-include { REF_PROCESS_SEURAT  } from '../../../modules/local/ref_process_seurat/main'
+include { RUN_SETUP           } from "$projectDir/modules/local/run_setup/main"
+include { GET_CENSUS_ADATA    } from "$projectDir/modules/local/get_census_adata/main"
+include { REF_PROCESS_SEURAT  } from "$projectDir/modules/local/ref_process_seurat/main"
 
 workflow PREPARE_REFERENCES {
     take:
