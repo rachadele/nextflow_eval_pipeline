@@ -9,14 +9,14 @@ process CLASSIFY_ALL {
     val ref_region_mapping
 
     output:
-    tuple val(method), path("label_transfer_metrics/*summary.scores.tsv"), emit: f1_score_channel
-    path "confusion/**"
+    tuple val(method), path("**summary.scores.tsv"), emit: f1_score_channel
+    path "confusion/"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv"), emit: predicted_meta_channel
 
     script:
-    def ref_name = ref_path.getName().split('\\.')[0]
-    def query_name = query_path.getName().split('\\.obs.relabel.tsv')[0]
-    def study_name = query_name.split('_')[0]
+    ref_name = ref_path.getName().split('\\.')[0]
+    query_name = query_path.getName().split('\\.obs.relabel.tsv')[0]
+    study_name = query_name.split('_')[0]
     """
     python $projectDir/bin/classify_all.py \\
         --query_path ${query_path} \\

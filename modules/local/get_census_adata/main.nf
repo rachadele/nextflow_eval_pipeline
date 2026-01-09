@@ -12,7 +12,7 @@ process GET_CENSUS_ADATA {
     path "refs/*yaml"        , emit: ref_region_mapping
 
     script:
-    def ref_keys = params.ref_keys.join(' ')
+    ref_keys = params.ref_keys.join(' ')
     """
     python $projectDir/bin/get_census_adata.py \\
         --organism ${params.organism} \\
