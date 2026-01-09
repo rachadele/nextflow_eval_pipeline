@@ -13,8 +13,8 @@ process PLOT_QC_COMBINED {
     path "**.txt"
 
     script:
-    def predicted_meta_list = samples.collect { it[1] }.join(" ")
-    def query_path_list = samples.collect { it[2] }.join(" ")
+    predicted_meta_list = samples.collect { it[1] }.join(" ")
+    query_path_list = samples.collect { it[2] }.join(" ")
     """
     python $projectDir/bin/plot_QC_combined.py \\
         --query_paths ${query_path_list} \\

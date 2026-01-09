@@ -6,4 +6,5 @@ nextflow run main.nf \
     -profile conda \
     -params-file params.mm.json \
     -work-dir mmus \
+    --outdir_prefix mmus_test \
     -resume 

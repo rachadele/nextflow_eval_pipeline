@@ -10,9 +10,9 @@ process RF_PREDICT {
     tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*tsv"), emit: probs_channel
 
     script:
-    def ref_name = ref_path.getName().split('\\.h5ad')[0]
-    def query_name = query_path.getName().split('\\_processed.h5ad')[0]
-    def study_name = query_name.split('_')[0]
+    ref_name = ref_path.getName().split('\\.h5ad')[0]
+    query_name = query_path.getName().split('\\_processed.h5ad')[0]
+    study_name = query_name.split('_')[0]
     """
     python $projectDir/bin/predict_scvi.py \\
         --query_path ${query_path} \\
