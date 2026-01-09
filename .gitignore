@@ -34,3 +34,5 @@ scripts/*
 *tsv.gz
 *.rds
 *tsv
+.github/
+.claude/
