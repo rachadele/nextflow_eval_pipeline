@@ -686,14 +686,13 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
-        support_proportions = support / support.sum() if support.sum() > 0 else np.zeros_like(support)
 
         class_metrics[key]["label_metrics"] = {
             label: {
                 "precision": precision[i],
                 "recall": recall[i],
                 "f1_score": f1[i],
-                "support": support_proportions[i],
+                "support": support[i],
                 "accuracy": accuracy_score(true_labels == label, predicted_labels == label)
             }
             for i, label in enumerate(labels)
@@ -730,6 +729,7 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             "f1_score": micro_f,
         }
 
+    # get total cell count for the sample
     return class_metrics
 
 
