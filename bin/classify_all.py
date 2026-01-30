@@ -114,16 +114,17 @@ def main():
     
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
 
-    #class_metrics = update_classification_report(class_metrics, ref_keys)
-
     # Plot confusion matrices
     for key in ref_keys:
         outdir = os.path.join("confusion")
         os.makedirs(outdir, exist_ok=True)
         plot_confusion_matrix(query_name, ref_name, key, class_metrics[key]["confusion"], output_dir=outdir)
 
-    # Collect F1 scores
-    f1_data = []
+    # get total cell count for the sample
+    total_cell_count = query.shape[0]
+    
+    # Collect per-label classification metrics
+    metrics_records = []
     for key in ref_keys:
         label_metrics = class_metrics[key]["label_metrics"]
         weighted_metrics = class_metrics[key]["weighted_metrics"]
@@ -131,10 +132,10 @@ def main():
         nmi = class_metrics[key]["nmi"]
         ari = class_metrics[key]["ari"]
         overall_accuracy = class_metrics[key]["overall_accuracy"]
-        
+            # get total cell count for the sample
         for label, metrics in label_metrics.items():
             #if label not in ["macro avg", "micro avg", "weighted avg", "accuracy"]:
-                f1_data.append({
+                metrics_records.append({
                     'query': query_name,
                     'study': study_name,
                     'reference': ref_name,
@@ -160,12 +161,13 @@ def main():
                     'overall_accuracy': overall_accuracy,
                     'key': key,
                     'cutoff': cutoff,
-                    'ref_region': ref_region
+                    'ref_region': ref_region,
+                    'total_cell_count': total_cell_count
                 }
         )
 
-    # Save F1 scores to a file
-    df = pd.DataFrame(f1_data)
+    # Save classification metrics to a file
+    df = pd.DataFrame(metrics_records)
     
     fields_dict = {'disease': disease, 'sex': sex, 'dev_stage': dev_stage, 
                    'query_region': query_region, 
