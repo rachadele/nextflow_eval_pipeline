@@ -65,7 +65,7 @@ def subsample_and_save(dataset_path, n_cells=1000):
 # Subsample x cells from each cell type if there are n>x cells present
 #ensures equal representation of cell types in reference
 def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv", 
-                    ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42):
+                    ref_keys=["subclass","class","family"], seed=42):
     random.seed(seed)         # For `random`
     np.random.seed(seed)      # For `numpy`
     scvi.settings.seed = seed # For `scvi`
@@ -140,7 +140,7 @@ def aggregate_labels(query: pd.DataFrame, mapping_df: pd.DataFrame, ref_keys: li
 
 def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
     cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
-    ref_keys=["rachel_subclass","rachel_class","rachel_family"], original_celltypes=None, seed=42):
+    ref_keys=["subclass","class","family"], original_celltypes=None, seed=42):
     
     subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
     adata = cellxgene_census.get_anndata(
@@ -171,7 +171,7 @@ def extract_data(data, filtered_ids, subsample=10, organism=None, census=None,
 
 def split_and_extract_data(data, split_column, subsample=500, organism=None, census=None, 
                            cell_columns=None, dataset_info=None, dims=20, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv",
-                           ref_keys=["rachel_subclass","rachel_class","rachel_family"], seed=42, original_celltypes=None):
+                           ref_keys=["subclass","class","family"], seed=42, original_celltypes=None):
     # Get unique split values from the specified column
     unique_values = data[split_column].unique()
     refs = {}
@@ -268,7 +268,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
                ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
                relabel_path="../meta/census_map_human.tsv", 
                seed=42, 
-               ref_keys=["rachel_subclass","rachel_class","rachel_family"],
+               ref_keys=["subclass","class","family"],
                original_celltypes=None):
 
     census = cellxgene_census.open_soma(census_version=census_version)
@@ -400,7 +400,7 @@ def rfc_pred(ref, query, ref_keys, seed):
     Parameters:
     - ref: Reference data with labels.
     - query: Query data for prediction.
-    - ref_keys: List of ordered keys from most granular to highest level (e.g., ["rachel_subclass", "rachel_class", "rachel_family"]).
+    - ref_keys: List of ordered keys from most granular to highest level (e.g., ["subclass", "class", "family"]).
     - tree: Dictionary representing the hierarchy of classes.
     
     Returns:
