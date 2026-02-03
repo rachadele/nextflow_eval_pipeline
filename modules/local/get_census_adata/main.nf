@@ -1,7 +1,8 @@
 process GET_CENSUS_ADATA {
     label 'process_high'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
-    publishDir "${params.outdir}/refs/scvi", mode: 'copy'
+    publishDir "${params.outdir}/refs/scvi", mode: 'copy', pattern: "**_umap.png"
+    publishDir "${params.outdir}/refs/scvi", mode: 'copy', pattern: "refs/*yaml"
 
     input:
     val ref_collections
