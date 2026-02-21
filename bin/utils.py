@@ -729,7 +729,7 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             "f1_score": micro_f,
         }
 
-    # get total cell count for the sample
+
     return class_metrics
 
 
