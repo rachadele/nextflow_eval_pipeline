@@ -21,15 +21,13 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -profile conda \
                     --cutoff "$cutoff" \
                     --subset_type sample \
-                    -work-dir mmus \
+
                     --batch_correct true \
                     -resume \
                     --remove_unknown true \
                     --normalization_method "$normalization_method" \
                     -process.executor slurm \
-                    --use_gap false \
-                    --outdir_prefix 2024-07-01/mmus_new_tabulamuris/100/dataset_id/SCT/gap_false \
-                
+                    --use_gap false                 
             done
         done
     done

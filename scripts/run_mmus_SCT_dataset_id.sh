@@ -20,7 +20,7 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -profile conda \
                     --cutoff "$cutoff" \
                     --subset_type sample \
-                    -work-dir mmus \
+
                     --batch_correct true \
                     -resume \
                     --use_gap false \
