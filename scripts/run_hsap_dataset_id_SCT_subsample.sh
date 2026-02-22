@@ -19,7 +19,6 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -profile conda \
                     --cutoff "$cutoff" \
                     --subset_type sample \
-                    -work-dir hsap \
                     --batch_correct true \
                     --normalization_method "$normalization_method" \
                     --subsample_query "$subsample_query" \
