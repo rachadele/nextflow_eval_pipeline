@@ -142,6 +142,16 @@ def main():
         ref.write(os.path.join(outdir, f"{new_dataset_title}.h5ad"))
         ref.obs.to_csv(os.path.join(outdir, f"{new_dataset_title}.obs.tsv"), sep="\t")
 
+        # Write per-label reference cell counts for downstream ref_support tracking
+        ref_counts_records = []
+        for key in ref_keys:
+            if key in ref.obs.columns:
+                for label, count in ref.obs[key].value_counts().items():
+                    ref_counts_records.append({'key': key, 'label': label, 'ref_support': int(count)})
+        pd.DataFrame(ref_counts_records).to_csv(
+            os.path.join(outdir, f"{new_dataset_title}.ref_counts.tsv"), sep="\t", index=False
+        )
+
     for ref_name, ref in refs.items():
         sc.pp.neighbors(ref, use_rep="scvi")
         sc.tl.umap(ref)

@@ -24,6 +24,7 @@ workflow PREPARE_REFERENCES {
     GET_CENSUS_ADATA(ref_collections)
 
     ref_paths_adata = GET_CENSUS_ADATA.out.ref_paths_adata.flatten()
+    ref_counts      = GET_CENSUS_ADATA.out.ref_counts_adata.flatten()
     ref_region_mapping = GET_CENSUS_ADATA.out.ref_region_mapping
 
     // Process references for Seurat
@@ -35,4 +36,5 @@ workflow PREPARE_REFERENCES {
     ref_paths_adata    = ref_paths_adata
     ref_paths_seurat   = ref_paths_seurat
     ref_region_mapping = ref_region_mapping
+    ref_counts         = ref_counts
 }

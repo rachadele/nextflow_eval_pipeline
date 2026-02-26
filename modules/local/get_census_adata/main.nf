@@ -8,9 +8,10 @@ process GET_CENSUS_ADATA {
     val ref_collections
 
     output:
-    path "refs/*.h5ad"       , emit: ref_paths_adata
+    path "refs/*.h5ad"              , emit: ref_paths_adata
+    path "refs/*.ref_counts.tsv"    , emit: ref_counts_adata
     path "**_umap.png"
-    path "refs/*yaml"        , emit: ref_region_mapping
+    path "refs/*yaml"               , emit: ref_region_mapping
 
     script:
     ref_keys = params.ref_keys.join(' ')

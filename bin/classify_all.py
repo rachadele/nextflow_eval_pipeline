@@ -46,6 +46,7 @@ def parse_arguments():
     parser.add_argument('--mapping_file', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--ref_region_mapping', type=str, default="")
     parser.add_argument('--study_name', type=str, default="GSE152715.2")
+    parser.add_argument('--ref_counts', type=str, default=None, help="TSV with ref label counts per key (columns: key, label, ref_support)")
     parser.add_argument('--use_gap', action='store_true', help="Use gap analysis for classification")
     
     if __name__ == "__main__":
@@ -80,6 +81,16 @@ def main():
     else:
         use_gap = False 
     
+    # Load ref_counts for ref_support lookup (key -> label -> count)
+    if args.ref_counts:
+        ref_counts_df = pd.read_csv(args.ref_counts, sep="\t")
+        ref_counts_lookup = {
+            key: grp.set_index('label')['ref_support'].to_dict()
+            for key, grp in ref_counts_df.groupby('key')
+        }
+    else:
+        ref_counts_lookup = {}
+
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
     ref_region=ref_region_mapping[ref_name]
@@ -145,6 +156,7 @@ def main():
                     'precision': metrics['precision'],
                     'recall': metrics['recall'],
                     'support': metrics['support'],
+                    'ref_support': ref_counts_lookup.get(key, {}).get(label, 0),
                     'weighted_f1': weighted_metrics.get('f1_score', None),
                     'weighted_precision': weighted_metrics.get('precision', None),
                     'weighted_recall': weighted_metrics.get('recall', None),
