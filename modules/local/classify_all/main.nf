@@ -6,7 +6,7 @@ process CLASSIFY_ALL {
 
     input:
     val ref_keys
-    tuple val(method), path(query_path), path(ref_path), path(probs_path)
+    tuple val(method), path(query_path), path(ref_path), path(probs_path), path(ref_counts_path)
     val ref_region_mapping
 
     output:
@@ -25,6 +25,7 @@ process CLASSIFY_ALL {
         --ref_keys ${ref_keys} \\
         --cutoff ${params.cutoff} \\
         --probs ${probs_path} \\
+        --ref_counts ${ref_counts_path} \\
         --mapping_file ${params.relabel_r} \\
         --ref_region_mapping ${ref_region_mapping} \\
         --study_name ${study_name} \\

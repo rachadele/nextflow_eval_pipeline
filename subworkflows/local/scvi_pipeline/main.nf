@@ -15,6 +15,7 @@ workflow SCVI_PIPELINE {
     ref_paths_adata
     ref_keys
     ref_region_mapping
+    ref_counts
 
     main:
     // Combine queries with references
@@ -23,10 +24,21 @@ workflow SCVI_PIPELINE {
     // Run RF prediction on SCVI embeddings
     RF_PREDICT(combos_adata, ref_keys)
 
-    // Prepare channel for classification
-    adata_probs_channel = RF_PREDICT.out.probs_channel.map { query_path, ref_path, probs_path ->
-        ["scvi", query_path, ref_path, probs_path]
+    // Key ref_counts by ref name for joining
+    ref_counts_keyed = ref_counts.map { tsv ->
+        [tsv.getName().replace('.ref_counts.tsv', ''), tsv]
     }
+
+    // Prepare channel for classification, joining ref_counts by ref name
+    adata_probs_channel = RF_PREDICT.out.probs_channel
+        .map { query_path, ref_path, probs_path ->
+            def ref_name = ref_path.toString().split('/').last().replace('.h5ad', '')
+            [ref_name, query_path, ref_path, probs_path]
+        }
+        .combine(ref_counts_keyed, by: 0)
+        .map { ref_name, query_path, ref_path, probs_path, ref_counts_path ->
+            ["scvi", query_path, ref_path, probs_path, ref_counts_path]
+        }
 
     // Classify and compute metrics
     CLASSIFY_ALL(ref_keys, adata_probs_channel, ref_region_mapping)
