@@ -683,9 +683,16 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
         class_metrics[key]["ari"] = adjusted_rand_score(true_labels, predicted_labels)
 
         # Per-label metrics
+
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
+        # Set recall and f1 to NaN where support is 0
+        zero_support = support == 0
+        recall = recall.copy()
+        f1 = f1.copy()
+        recall[zero_support] = np.nan
+        f1[zero_support] = np.nan
 
         class_metrics[key]["label_metrics"] = {
             label: {
