@@ -19,14 +19,13 @@ for subsample_ref in "${subsample_ref_values[@]}"; do
                     -profile conda \
                     --cutoff "$cutoff" \
                     --subset_type sample \
-                    -work-dir hsap \
                     --batch_correct true \
                     --normalization_method "$normalization_method" \
                     --subsample_query "$subsample_query" \
                     -process.executor slurm \
                     --use_gap false \
                     --outdir_prefix 2024-07-01/homo_sapiens_new/100/dataset_id/SCT/gap_false \
-                    -resume                 
+                    -resume mighty_shirley            
             done
         done
     done

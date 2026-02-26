@@ -82,7 +82,8 @@ workflow {
         processed_queries_adata,
         PREPARE_REFERENCES.out.ref_paths_adata,
         params.ref_keys.join(' '),
-        PREPARE_REFERENCES.out.ref_region_mapping
+        PREPARE_REFERENCES.out.ref_region_mapping,
+        PREPARE_REFERENCES.out.ref_counts
     )
 
     // Run Seurat pipeline
@@ -90,7 +91,8 @@ workflow {
         processed_queries_adata,
         PREPARE_REFERENCES.out.ref_paths_seurat,
         params.ref_keys.join(' '),
-        PREPARE_REFERENCES.out.ref_region_mapping
+        PREPARE_REFERENCES.out.ref_region_mapping,
+        PREPARE_REFERENCES.out.ref_counts
     )
 
     // Combine predicted metadata from both methods
