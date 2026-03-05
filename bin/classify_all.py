@@ -143,6 +143,7 @@ def main():
         nmi = class_metrics[key]["nmi"]
         ari = class_metrics[key]["ari"]
         overall_accuracy = class_metrics[key]["overall_accuracy"]
+        predicted_counts = query[f"predicted_{key}"].value_counts().to_dict()
             # get total cell count for the sample
         for label, metrics in label_metrics.items():
             #if label not in ["macro avg", "micro avg", "weighted avg", "accuracy"]:
@@ -156,6 +157,7 @@ def main():
                     'precision': metrics['precision'],
                     'recall': metrics['recall'],
                     'support': metrics['support'],
+                    'predicted_support': predicted_counts.get(label, 0),
                     'ref_support': ref_counts_lookup.get(key, {}).get(label, 0),
                     'weighted_f1': weighted_metrics.get('f1_score', None),
                     'weighted_precision': weighted_metrics.get('precision', None),
