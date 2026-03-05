@@ -87,7 +87,13 @@ def main():
   query = map_genes(query, gene_mapping)
   
   # relabel and aggregate cell types into higher level classes
-  query = relabel(query=query, relabel_path=relabel_path, join_key=join_key,sep="\t")
+  query = relabel(query=query, relabel_path=relabel_path, join_key=join_key, sep="\t")
+  nan_mask = query.obs['subclass'].isna()
+  if nan_mask.any():
+      raise ValueError(
+          f"relabeling produced NaN in 'subclass' for {nan_mask.sum()} cells. "
+          f"Check that all cell type labels in the query are covered by {relabel_path}."
+      )
   query.obs = aggregate_labels(query=query.obs, mapping_df=mapping_df, ref_keys=ref_keys, predicted=False)
   
   
@@ -102,7 +108,9 @@ def main():
   # qc preprocessing ( normalization, log transformation, highly variable genes, PCA, neighbors, UMAP, leiden clustering)
   #query = qc_preprocessing(query)
   
-  raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw") 
+  raw_query_name = os.path.basename(query_path).replace(".h5ad","_raw")
+  for col in query.obs.select_dtypes(include=['object', 'category']).columns:
+      query.obs[col] = query.obs[col].astype(str)
   query.write_h5ad(f"{raw_query_name}.h5ad")
 
   query = process_query(query, model_path, batch_key, seed=SEED)
