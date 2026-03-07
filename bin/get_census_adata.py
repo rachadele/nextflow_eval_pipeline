@@ -39,7 +39,7 @@ def parse_arguments():
     parser.add_argument('--subsample_ref', type=int, default=50)
     parser.add_argument('--relabel_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/census_map_human.tsv")
     parser.add_argument('--ref_collections', type=str, nargs = '+', default = [
-        "Population-scale cross-disorder atlas of the human prefrontal cortex at single-cell resolution"
+        "Molecular and cellular evolution of the primate dorsolateral prefrontal cortex"
     ]) 
     parser.add_argument('--split_column', type=str, default="dataset_id")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])

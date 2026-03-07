@@ -298,10 +298,6 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
     # need to add it back in after getting ids
     if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
         cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
-    #write files
-        #cellxgene_obs_filtered.to_csv("/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2025-01-30_all_obs.tsv",sep="\t",index=False)
-     #   cell_type_info = cellxgene_obs_filtered[["author_cell_type", "cell_type", "dataset_title", "cell_type_ontology_term_id"]].value_counts().reset_index()
-       # cell_type_info.to_csv(f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}_cell_type_info.tsv", sep="\t", index=False)
     # Get individual datasets and embeddings
     refs = split_and_extract_data(
         cellxgene_obs_filtered, split_column=split_column,
