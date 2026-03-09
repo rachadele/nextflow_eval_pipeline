@@ -16,5 +16,5 @@
         "family",
         "global"
     ],
-    "outdir_prefix": "2024-07-01/homo_sapiens_new/100/dataset_id/SCT/gap_false"
+    "subsample_ref": 100
 }
