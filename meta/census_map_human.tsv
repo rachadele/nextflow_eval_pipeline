@@ -25,9 +25,9 @@ VIP GABAergic cortical interneuron	VIP	VIP	GABAergic	GABAergic
 L2/3 intratelencephalic projecting glutamatergic neuron	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Glutamatergic
 L5/6 near-projecting glutamatergic neuron of the primary motor cortex	L5/6 NP	deep layer non-IT	Glutamatergic	Glutamatergic
 L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex	L2/3-6 IT	L2/3-6 IT	Glutamatergic	Glutamatergic
-inhibitory interneuron	GABAergic	GABAergic	GABAergic	GABAergic
+inhibitory interneuron	VIP	VIP	GABAergic	GABAergic
 macrophage	Macrophage	Immune	Immune	Non-neuron
-myeloid cell	Myeloid	Vascular	Vascular	Non-neuron
+myeloid cell	Myeloid	Immune	Immune	Non-neuron
 smooth muscle cell	SMC	Vascular	Vascular	Non-neuron
 B cell	B Cell	Immune	Immune	Non-neuron
 erythroid lineage cell	Erythroid	Vascular	Vascular	Non-neuron
