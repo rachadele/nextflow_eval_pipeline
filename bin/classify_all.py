@@ -121,7 +121,7 @@ def main():
 
     # map valid labels for given query granularity and evaluate
     query = map_valid_labels(query, ref_keys, mapping_df)  
-    class_metrics = evaluate_sample_predictions(query, ref_keys, mapping_df)
+    class_metrics = evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=ref_counts_lookup)
     
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
 

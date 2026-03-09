@@ -657,13 +657,22 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def evaluate_sample_predictions(query, ref_keys, mapping_df):
+def evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=None):
+    if ref_counts_lookup is None:
+        ref_counts_lookup = {}
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
-    for key in ref_keys:     
+    for key in ref_keys:
         true_labels = query[key].astype(str)
         predicted_labels = query[f"predicted_{key}"].astype(str)
         labels = list(set(true_labels).union(set(predicted_labels)))
+
+        # Labels present in the reference (ref_support > 0)
+        key_ref_counts = ref_counts_lookup.get(key, {})
+        if key_ref_counts:
+            ref_supported = {lbl for lbl, cnt in key_ref_counts.items() if cnt > 0}
+        else:
+            ref_supported = set(labels)  # fallback: treat all labels as supported
 
         # Overall accuracy
         class_metrics[key]["overall_accuracy"] = accuracy_score(true_labels, predicted_labels)
@@ -679,20 +688,22 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
         class_metrics[key]["ari"] = adjusted_rand_score(true_labels, predicted_labels)
 
         # Per-label metrics
-
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
-        # Set recall and f1 to NaN where support is 0
-        zero_support = support == 0
+        # Set to NaN where query support == 0 OR ref support == 0
+        no_ref_support_mask = np.array([lbl not in ref_supported for lbl in labels])
+        nan_mask = (support == 0) | no_ref_support_mask
+        precision_arr = precision.copy()
         recall = recall.copy()
         f1 = f1.copy()
-        recall[zero_support] = np.nan
-        f1[zero_support] = np.nan
+        precision_arr[nan_mask] = np.nan
+        recall[nan_mask] = np.nan
+        f1[nan_mask] = np.nan
 
         class_metrics[key]["label_metrics"] = {
             label: {
-                "precision": precision[i],
+                "precision": precision_arr[i],
                 "recall": recall[i],
                 "f1_score": f1[i],
                 "support": support[i],
@@ -701,37 +712,29 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             for i, label in enumerate(labels)
         }
 
-        # Weighted averages
-        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="weighted", zero_division=np.nan
-        )
-        class_metrics[key]["weighted_metrics"] = {
-            "precision": avg_p,
-            "recall": avg_r,
-            "f1_score": avg_f,
-        }
+        # For aggregate metrics: ref-supported AND nonzero query support
+        agg_labels = [lbl for lbl, m, s in zip(labels, no_ref_support_mask, support)
+                      if not m and s > 0]
 
-        # Macro averages (exclude cell types with zero support)
-        nonzero_indices = np.where(support > 0)[0]
-        macro_p = np.nanmean(precision[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
-        macro_r = np.nanmean(recall[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
-        macro_f = np.nanmean(f1[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
-        class_metrics[key]["macro_metrics"] = {
-            "precision": macro_p,
-            "recall": macro_r,
-            "f1_score": macro_f,
-        }
-        
-        # Micro averages (global counts)
-        micro_p, micro_r, micro_f, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="micro", zero_division=np.nan
-        )
-        class_metrics[key]["micro_metrics"] = {
-            "precision": micro_p,
-            "recall": micro_r,
-            "f1_score": micro_f,
-        }
+        # Weighted, macro, micro averages (same label filter for all three)
+        if agg_labels:
+            avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+                true_labels, predicted_labels, labels=agg_labels, average="weighted", zero_division=np.nan
+            )
+            macro_p, macro_r, macro_f, _ = precision_recall_fscore_support(
+                true_labels, predicted_labels, labels=agg_labels, average="macro", zero_division=np.nan
+            )
+            micro_p, micro_r, micro_f, _ = precision_recall_fscore_support(
+                true_labels, predicted_labels, labels=agg_labels, average="micro", zero_division=np.nan
+            )
+        else:
+            avg_p = avg_r = avg_f = np.nan
+            macro_p = macro_r = macro_f = np.nan
+            micro_p = micro_r = micro_f = np.nan
 
+        class_metrics[key]["weighted_metrics"] = {"precision": avg_p, "recall": avg_r, "f1_score": avg_f}
+        class_metrics[key]["macro_metrics"] = {"precision": macro_p, "recall": macro_r, "f1_score": macro_f}
+        class_metrics[key]["micro_metrics"] = {"precision": micro_p, "recall": micro_r, "f1_score": micro_f}
 
     return class_metrics
 
