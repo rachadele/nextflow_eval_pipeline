@@ -172,7 +172,7 @@ nextflow run main.nf -profile conda,test_mmus
 A Random Forest classifier trained on latent embeddings from a pre-trained single-cell variational autoencoder (scVI) model from CellXGene Census.
 
 ### Seurat Label Transfer
-A Gaussian kernel trained on dual PCA projection of reference and query datasets using the Seurat package.
+Reference and query are each normalized (SCTransform or LogNormalize) and PCA-reduced independently. If the reference contains multiple batches, they are integrated via `FindIntegrationAnchors` / `IntegrateData` before PCA. The query is then projected into the reference PCA space (`pcaproject`), transfer anchors are identified with `FindTransferAnchors`, and per-cell label probability scores are computed with `TransferData` using a Gaussian kernel.
 
 ---
 
