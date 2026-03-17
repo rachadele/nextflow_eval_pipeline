@@ -15,6 +15,8 @@ process GET_CENSUS_ADATA {
 
     script:
     ref_keys = params.ref_keys.join(' ')
+    def author_annotations_arg = params.author_annotations_path ? "--author_annotations_path ${params.author_annotations_path}" : ""
+    def original_celltype_columns_arg = params.original_celltype_columns ? "--original_celltype_columns ${params.original_celltype_columns}" : ""
     """
     python $projectDir/bin/get_census_adata.py \\
         --organism ${params.organism} \\
@@ -25,6 +27,8 @@ process GET_CENSUS_ADATA {
         --ref_collections ${ref_collections} \\
         --ref_keys ${ref_keys} \\
         --organ ${params.organ} \\
-        --seed ${params.seed}
+        --seed ${params.seed} \\
+        ${author_annotations_arg} \\
+        ${original_celltype_columns_arg}
     """
 }

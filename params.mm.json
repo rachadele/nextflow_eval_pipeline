@@ -17,5 +17,7 @@
         "family",
         "global"
     ],
-    "use_gap": false
+    "use_gap": false,
+    "author_annotations_path": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2024-07-01",
+    "original_celltype_columns": "/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/2024-07-01/original_celltype_columns.tsv"
 }
