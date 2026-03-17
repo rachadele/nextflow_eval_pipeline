@@ -62,41 +62,35 @@ def subsample_and_save(dataset_path, n_cells=1000):
     subsampled_dataset.write_h5ad(output_path)
     print(f"Saved to {output_path}")
     
+CELL_COLUMNS = [
+    "assay", "cell_type", "tissue",
+    "tissue_general", "suspension_type",
+    "disease", "dataset_id", "development_stage",
+    "soma_joinid", "observation_joinid"
+]
+
 # Subsample x cells from each cell type if there are n>x cells present
-#ensures equal representation of cell types in reference
-def subsample_cells(data, filtered_ids, subsample=500, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv", 
+# ensures equal representation of cell types in reference
+def subsample_cells(obs, subsample=500, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv",
                     ref_keys=["subclass","class","family"], seed=42):
-    random.seed(seed)         # For `random`
-    np.random.seed(seed)      # For `numpy`
-    scvi.settings.seed = seed # For `scvi`
-    
-    # Filter data based on filtered_ids
-    obs = data[data['soma_joinid'].isin(filtered_ids)]
-    relabel_df = pd.read_csv(relabel_path, sep='\t')  # Adjust the separator as needed
-    # Take the first column as the join key
+    random.seed(seed)
+    np.random.seed(seed)
+    scvi.settings.seed = seed
+
+    relabel_df = pd.read_csv(relabel_path, sep='\t')
     join_key = relabel_df.columns[0]
-    # Ensure the join_key is in both the AnnData object and the relabel DataFrame
     if join_key not in obs.columns:
-        raise ValueError(f"{join_key} not found in AnnData object observations.")
-    if join_key not in relabel_df.columns:
-        raise ValueError(f"{join_key} not found in relabel DataFrame.")
-    # Perform the left join to update the metadata
+        raise ValueError(f"{join_key} not found in obs.")
     obs = obs.merge(relabel_df, on=join_key, how='left', suffixes=(None, "_y"))
-    # this line ensures that only cells in the relabel # file are kept in the obs
-    # filteres out ambiguous cells
     celltypes = obs[ref_keys[0]].unique()
     final_idx = []
     for celltype in celltypes:
         celltype_ids = obs[obs[ref_keys[0]] == celltype]['soma_joinid'].values
-        # Sample if there are enough observations, otherwise take all
         if len(celltype_ids) > subsample:
             subsampled_cell_idx = random.sample(list(celltype_ids), subsample)
         else:
             subsampled_cell_idx = celltype_ids.tolist()
-        # Append subsampled indices to final list
         final_idx.extend(subsampled_cell_idx)
-
-    # Return final indices
     return final_idx
 
 def relabel(query, relabel_path, join_key=None, sep="\t"):
@@ -138,76 +132,56 @@ def aggregate_labels(query: pd.DataFrame, mapping_df: pd.DataFrame, ref_keys: li
     return query
 
 
-def extract_data(data, filtered_ids, subsample=10, organism=None, census=None, 
-    cell_columns=None, dataset_info=None, dims=20, relabel_path="biof501_proj/meta/relabel/census_map_human.tsv'", 
-    ref_keys=["subclass","class","family"], original_celltypes=None, seed=42):
-    
-    subsampled_ids = subsample_cells(data, filtered_ids, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
+def extract_ref(obs, census, organism, dataset_info, subsample=500,
+                relabel_path="biof501_proj/meta/relabel/census_map_human.tsv",
+                ref_keys=["subclass","class","family"], original_celltypes=None, seed=42):
+    subsampled_ids = subsample_cells(obs, subsample, relabel_path=relabel_path, ref_keys=ref_keys, seed=seed)
     adata = cellxgene_census.get_anndata(
         census=census,
         organism=organism,
-        obs_column_names=cell_columns,
+        obs_column_names=CELL_COLUMNS,
         obs_coords=subsampled_ids,
-        var_value_filter = "nnz > 10",
+        var_value_filter="nnz > 10",
         obs_embeddings=["scvi"])
-   
-    # Filter the AnnData object to include only the specified cell types 
+
     sc.pp.filter_genes(adata, min_cells=3)
     sc.pp.filter_genes(adata, min_counts=200)
 
     print("Subsampling successful.")
-    newmeta = adata.obs.merge(dataset_info, on="dataset_id", suffixes=(None,"y"))
+    newmeta = adata.obs.merge(dataset_info, on="dataset_id", suffixes=(None, "y"))
     adata.obs = newmeta
-    
-    # before relabeling, need to map back to author types using new_observation_joinid
-    # huge pain in the ass
-    # only do this if original celltypes passed
-    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty: 
+
+    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
         adata.obs = map_author_labels(adata.obs, original_celltypes)
-    # Assuming relabel_wrapper is defined
     adata = relabel(adata, relabel_path=relabel_path, sep='\t')
-    # Convert all columns in adata.obs to factors (categorical type in pandas)
     return adata
 
-def split_and_extract_data(data, split_column, subsample=500, organism=None, census=None, 
-                           cell_columns=None, dataset_info=None, dims=20, relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv",
-                           ref_keys=["subclass","class","family"], seed=42, original_celltypes=None):
-    # Get unique split values from the specified column
-    unique_values = data[split_column].unique()
+
+def split_refs(obs, split_column, census, organism, dataset_info, subsample=500,
+               relabel_path="/biof501_proj/meta/relabel/census_map_human.tsv",
+               ref_keys=["subclass","class","family"], original_celltypes=None, seed=42):
     refs = {}
-    # don't use Human Variation Study splits
-    
-    for split_value in unique_values:
-        # Filter the brain observations based on the split value
-        
-        filtered_ids = data[data[split_column] == split_value]['soma_joinid'].values
-        collection_names = data[data[split_column] == split_value]['collection_name'].unique()
+    for split_value in obs[split_column].unique():
+        split_obs = obs[obs[split_column] == split_value]
+        collection_names = split_obs['collection_name'].unique()
         if split_column == "dataset_id" and "HVS: Human variation study" in collection_names:
-            # send stderr message
             print(f"Skipping {split_value} due to collection name 'HVS: Human variation study'.")
             continue
-        if len(filtered_ids) < 1000:
-            print(f"Skipping {split_value} due to insufficient cells ({len(filtered_ids)} < 1000).")
+        if len(split_obs) < 1000:
+            print(f"Skipping {split_value} due to insufficient cells ({len(split_obs)} < 1000).")
             continue
-       # obs_filter = f"{split_column} == '{split_value}'"
-       # don't need this since we're subsampling the extact cell coordinates
-        print(f"Processing {split_value} with {len(filtered_ids)} cells.")
-        adata = extract_data(data, filtered_ids, subsample, organism, census, 
-                             cell_columns, dataset_info, dims=dims, relabel_path=relabel_path, 
-                             ref_keys=ref_keys, 
-                             original_celltypes = original_celltypes, 
-                             seed=seed)
+        print(f"Processing {split_value} with {len(split_obs)} cells.")
+        adata = extract_ref(split_obs, census=census, organism=organism, dataset_info=dataset_info,
+                            subsample=subsample, relabel_path=relabel_path, ref_keys=ref_keys,
+                            original_celltypes=original_celltypes, seed=seed)
         dataset_titles = adata.obs['dataset_title'].unique()
-
-        if split_column == "tissue": 
+        if split_column == "tissue":
             name_to_use = split_value
         elif split_column == "dataset_id":
             name_to_use = dataset_titles[0]
         else:
             name_to_use = split_value
-
         refs[name_to_use] = adata
-
     return refs
 
 
@@ -264,70 +238,50 @@ def get_filtered_obs(census, organism, organ="brain", is_primary=True, disease="
     )
     return cellxgene_census.get_obs(census, organism, value_filter=value_filter)
 
-def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", dims=50, organ="brain",
-               ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization"," SEA-AD: Seattle Alzheimer’s Disease Brain Cell Atlas"],
-               relabel_path="../meta/census_map_human.tsv", 
-               seed=42, 
+
+def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5, split_column="dataset_id", organ="brain",
+               ref_collections=["Transcriptomic cytoarchitecture reveals principles of human neocortex organization", "SEA-AD: Seattle Alzheimer's Disease Brain Cell Atlas"],
+               relabel_path="../meta/census_map_human.tsv",
+               seed=42,
                ref_keys=["subclass","class","family"],
                original_celltypes=None):
 
-    census = cellxgene_census.open_soma(census_version=census_version)
-    dataset_info = census.get("census_info").get("datasets").read().concat().to_pandas()
-    cellxgene_obs = get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
-    
-    cellxgene_obs = cellxgene_obs.merge(dataset_info, on="dataset_id", suffixes=(None,"_y"))
-    cellxgene_obs.drop(columns=['soma_joinid_y'], inplace=True)
-    cellxgene_obs_filtered = cellxgene_obs[cellxgene_obs['collection_name'].isin(ref_collections)] 
-
-    # Adjust organism naming for compatibility
     organism_name_mapping = {
         "homo_sapiens": "Homo sapiens",
         "mus_musculus": "Mus musculus"
     }
-    organism = organism_name_mapping.get(organism, organism)
+    organism_query = organism_name_mapping.get(organism, organism)
 
-    cell_columns = [
-        "assay", "cell_type", "tissue",
-        "tissue_general", "suspension_type",
-        "disease", "dataset_id", "development_stage",
-        "soma_joinid","observation_joinid"
-    ]
-    
-    # add author_cell_type to obs
-    # this will enable proper relabeling and subsampling
-    # need to add it back in after getting ids
-    if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
-        cellxgene_obs_filtered = map_author_labels(cellxgene_obs_filtered, original_celltypes)
-    # Get individual datasets and embeddings
-    refs = split_and_extract_data(
-        cellxgene_obs_filtered, split_column=split_column,
-        subsample=subsample, organism=organism,
-        census=census, cell_columns=cell_columns,
-        dataset_info=dataset_info, dims=dims,
-        relabel_path=relabel_path,
-        ref_keys=ref_keys, seed=seed, 
-        original_celltypes=original_celltypes
-    )
-    # Get embeddings for all data together
-    filtered_ids = cellxgene_obs_filtered['soma_joinid'].values
-    adata = extract_data(
-        cellxgene_obs_filtered, filtered_ids,
-        subsample=subsample, organism=organism,
-        census=census,
-        cell_columns=cell_columns, 
-        dataset_info=dataset_info, dims=dims,
-        relabel_path=relabel_path, 
-        ref_keys=ref_keys, seed = seed, 
-        original_celltypes=original_celltypes
-    )
-    refs["whole cortex"] = adata
-    for name, ref in refs.items():
-        dataset_title = name.replace(" ", "_")
-        for col in ref.obs.columns:
-            if ref.obs[col].dtype.name =='category':
-    # Convert to Categorical and remove unused categories
-                ref.obs[col] = pd.Categorical(ref.obs[col].cat.remove_unused_categories())
-     
+    with cellxgene_census.open_soma(census_version=census_version) as census:
+        dataset_info = census["census_info"]["datasets"].read().concat().to_pandas()
+        obs = get_filtered_obs(census, organism, organ=organ, is_primary=True, disease="normal")
+        obs = obs.merge(dataset_info, on="dataset_id", suffixes=(None, "_y"))
+        obs.drop(columns=[c for c in obs.columns if c.endswith("_y")], inplace=True)
+        obs = obs[obs["collection_name"].isin(ref_collections)]
+
+        if isinstance(original_celltypes, pd.DataFrame) and not original_celltypes.empty:
+            obs = map_author_labels(obs, original_celltypes)
+
+        refs = split_refs(
+            obs, split_column=split_column,
+            census=census, organism=organism_query,
+            dataset_info=dataset_info, subsample=subsample,
+            relabel_path=relabel_path, ref_keys=ref_keys,
+            original_celltypes=original_celltypes, seed=seed
+        )
+
+        refs["whole cortex"] = extract_ref(
+            obs, census=census, organism=organism_query,
+            dataset_info=dataset_info, subsample=subsample,
+            relabel_path=relabel_path, ref_keys=ref_keys,
+            original_celltypes=original_celltypes, seed=seed
+        )
+
+        for name, ref in refs.items():
+            for col in ref.obs.columns:
+                if ref.obs[col].dtype.name == 'category':
+                    ref.obs[col] = pd.Categorical(ref.obs[col].cat.remove_unused_categories())
+
     return refs
 
 

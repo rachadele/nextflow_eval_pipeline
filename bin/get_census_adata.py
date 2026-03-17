@@ -44,6 +44,10 @@ def parse_arguments():
     parser.add_argument('--split_column', type=str, default="dataset_id")
     parser.add_argument('--ref_keys', type=str, nargs="+", default=["subclass","class","family"])
     parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--author_annotations_path', type=str, default=None,
+                        help='Path to directory of per-dataset author cell type obs TSVs')
+    parser.add_argument('--original_celltype_columns', type=str, default=None,
+                        help='Path to TSV mapping dataset_title to author cell type column name')
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
         return known_args
@@ -93,9 +97,11 @@ def main():
     SEED = args.seed
     organ = args.organ
 
-    if organism == "mus_musculus":
-        original_celltypes = get_original_celltypes(columns_file=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}/original_celltype_columns.tsv",
-                                                    author_annotations_path=f"/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/meta/author_cell_annotations/{census_version}") 
+    if args.author_annotations_path and args.original_celltype_columns:
+        original_celltypes = get_original_celltypes(
+            columns_file=args.original_celltype_columns,
+            author_annotations_path=args.author_annotations_path,
+        )
     else:
         original_celltypes = None
 
