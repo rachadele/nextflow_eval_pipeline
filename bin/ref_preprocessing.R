@@ -24,7 +24,6 @@ dims = args$dims
 batch_key = args$batch_key
 n_features = args$nfeatures
 h5ad_file = args$h5ad_file
-integration_method = args$integration_method
 batch_correct = args$batch_correct
 sceasy_seurat <- sceasy::convertFormat(h5ad_file, from="anndata", to="seurat")
 k.anchor = args$k.anchor
