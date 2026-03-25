@@ -36,6 +36,8 @@ def parse_arguments():
     parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/cpsc545_proj/mapped_queries/velmeshev/whole_cortex/subsample_1000/query_mapped.h5ad")
     parser.add_argument('--ref_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/refs/whole_cortex.h5ad") #nargs ="+")
     parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family"])
+    parser.add_argument('--n_neighbors', type=int, default=15,
+                        help="Number of neighbors for kNN classifier")
 
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -66,20 +68,19 @@ def main():
     ref = ad.read_h5ad(ref_path, backed="r")
     ref_name = os.path.basename(ref_path).replace(".h5ad", "")
 
-    # Run classification and ROC analysis
-    probs = rfc_pred(ref=ref, query=query, ref_keys=ref_keys, seed=SEED)
-    
-    # eventually make this a data frame and save to disk, then make ROC another script
-    
-    probabilities = probs[ref_keys[0]]['probabilities']
-    class_labels = probs[ref_keys[0]]['class_labels']
-
-    # Create a DataFrame
-    prob_df = pd.DataFrame(probabilities, columns=class_labels)
-    #save data frame to inteim probs/ dir
-    outdir="probs"
+    # Run both classifiers on the same loaded data
+    outdir = "probs"
     os.makedirs(outdir, exist_ok=True)
-    prob_df.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.prob.df.tsv"),sep="\t", index=False,)
+
+    for classifier, probs in [
+        ("rf",  rfc_pred(ref=ref, query=query, ref_keys=ref_keys, seed=SEED)),
+        ("knn", knn_pred(ref=ref, query=query, ref_keys=ref_keys, n_neighbors=args.n_neighbors)),
+    ]:
+        prob_df = pd.DataFrame(
+            probs[ref_keys[0]]['probabilities'],
+            columns=probs[ref_keys[0]]['class_labels']
+        )
+        prob_df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.{classifier}.prob.df.tsv"), sep="\t", index=False)
     query.obs.to_csv(f"{query_name}.obs.relabel.tsv", index=False, sep="\t")
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-process RF_PREDICT {
+process SCVI_PREDICT {
     label 'process_medium'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
@@ -7,7 +7,7 @@ process RF_PREDICT {
     val ref_keys
 
     output:
-    tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*tsv"), emit: probs_channel
+    tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*.rf.prob.df.tsv"), path("probs/*.knn.prob.df.tsv"), emit: probs_channel
 
     script:
     ref_name = ref_path.getName().split('\\.h5ad')[0]
@@ -17,6 +17,7 @@ process RF_PREDICT {
     python $projectDir/bin/predict_scvi.py \\
         --query_path ${query_path} \\
         --ref_path ${ref_path} \\
-        --ref_keys ${ref_keys}
+        --ref_keys ${ref_keys} \\
+        --n_neighbors ${params.knn_n_neighbors}
     """
 }

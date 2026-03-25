@@ -11,6 +11,7 @@ import anndata as ad
 import scvi
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import *
 from sklearn.preprocessing import label_binarize
@@ -377,6 +378,38 @@ def rfc_pred(ref, query, ref_keys, seed):
         "accuracy": base_score
     }
     
+    return probabilities
+
+
+def knn_pred(ref, query, ref_keys, n_neighbors=15):
+    """
+    Fit a KNeighborsClassifier at the most granular level and aggregate probabilities for higher levels.
+
+    Parameters:
+    - ref: Reference data with labels.
+    - query: Query data for prediction.
+    - ref_keys: List of ordered keys from most granular to highest level.
+    - n_neighbors: Number of neighbors for kNN.
+
+    Returns:
+    - probabilities: Dictionary with probabilities for each level of the hierarchy.
+    """
+    probabilities = {}
+    granular_key = ref_keys[0]
+
+    knn = KNeighborsClassifier(n_neighbors=n_neighbors, weights='distance')
+    knn.fit(ref.obsm["scvi"], ref.obs[granular_key].values)
+    probs_granular = knn.predict_proba(query.obsm["scvi"])
+    class_labels_granular = knn.classes_
+    query.obs[granular_key] = query.obs[granular_key].astype(str)
+    base_score = knn.score(query.obsm["scvi"], query.obs[granular_key].values)
+
+    probabilities[granular_key] = {
+        "probabilities": probs_granular,
+        "class_labels": class_labels_granular,
+        "accuracy": base_score
+    }
+
     return probabilities
 
 

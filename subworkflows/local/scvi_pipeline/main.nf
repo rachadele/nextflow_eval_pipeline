@@ -2,11 +2,11 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     SCVI_PIPELINE subworkflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    SCVI-based Random Forest prediction pipeline
+    SCVI-based prediction pipeline (Random Forest and kNN classifiers)
 ----------------------------------------------------------------------------------------
 */
 
-include { RF_PREDICT   } from "$projectDir/modules/local/rf_predict/main"
+include { SCVI_PREDICT } from "$projectDir/modules/local/scvi_predict/main"
 include { CLASSIFY_ALL } from "$projectDir/modules/local/classify_all/main"
 
 workflow SCVI_PIPELINE {
@@ -21,23 +21,26 @@ workflow SCVI_PIPELINE {
     // Combine queries with references
     combos_adata = processed_queries_adata.combine(ref_paths_adata)
 
-    // Run RF prediction on SCVI embeddings
-    RF_PREDICT(combos_adata, ref_keys)
+    // Run both RF and kNN prediction in a single process per query-ref pair
+    SCVI_PREDICT(combos_adata, ref_keys)
 
     // Key ref_counts by ref name for joining
     ref_counts_keyed = ref_counts.map { tsv ->
         [tsv.getName().replace('.ref_counts.tsv', ''), tsv]
     }
 
-    // Prepare channel for classification, joining ref_counts by ref name
-    adata_probs_channel = RF_PREDICT.out.probs_channel
-        .map { query_path, ref_path, probs_path ->
+    // Split the two prob files into separate channel entries, one per classifier
+    adata_probs_channel = SCVI_PREDICT.out.probs_channel
+        .map { query_path, ref_path, rf_probs, knn_probs ->
             def ref_name = ref_path.toString().split('/').last().replace('.h5ad', '')
-            [ref_name, query_path, ref_path, probs_path]
+            [ref_name, query_path, ref_path, rf_probs, knn_probs]
         }
         .combine(ref_counts_keyed, by: 0)
-        .map { ref_name, query_path, ref_path, probs_path, ref_counts_path ->
-            ["scvi", query_path, ref_path, probs_path, ref_counts_path]
+        .flatMap { ref_name, query_path, ref_path, rf_probs, knn_probs, ref_counts_path ->
+            [
+                ["scvi_rf",  query_path, ref_path, rf_probs,  ref_counts_path],
+                ["scvi_knn", query_path, ref_path, knn_probs, ref_counts_path]
+            ]
         }
 
     // Classify and compute metrics
