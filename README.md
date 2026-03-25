@@ -18,8 +18,9 @@ A Nextflow DSL2 pipeline for benchmarking automated cell type annotation methods
 
 Single-cell RNA sequencing (scRNA-seq) provides crucial insights into cell-type-specific gene expression, particularly in the context of disease. However, meta-analysis of scRNA-seq datasets remains challenging due to inconsistent and often absent cell-type annotations across publicly available repositories, such as the Gene Expression Omnibus (GEO).
 
-This pipeline benchmarks two prominent cell type annotation strategies:
+This pipeline benchmarks three cell type annotation strategies:
 - **SCVI + Random Forest**: A Random Forest classifier trained on cell embeddings using single-cell variational inference (scVI)
+- **SCVI + kNN**: A k-Nearest Neighbors classifier trained on the same scVI embeddings
 - **Seurat Label Transfer**: A Gaussian kernel trained on PCA projection of query onto reference datasets
 
 Reference data comprises 2 studies, 10 brain regions, 12 individual dissections, and 3 levels of cell type granularity from CellXGene Census.
@@ -42,7 +43,7 @@ nextflow_eval_pipeline/
 │   ├── run_setup/          # Download SCVI model
 │   ├── get_census_adata/   # Fetch Census reference data
 │   ├── map_query/          # Process queries through SCVI
-│   ├── rf_predict/         # SCVI Random Forest prediction
+│   ├── scvi_predict/       # SCVI RF + kNN prediction
 │   ├── predict_seurat/     # Seurat label transfer
 │   ├── classify_all/       # Compute metrics
 │   └── ...
@@ -130,7 +131,8 @@ nextflow run main.nf -profile conda,test_mmus
 | `--subsample_query` | Total cells in query (null = all) | `null` |
 | `--normalization_method` | Seurat normalization | `SCT` |
 | `--cutoff` | Probability threshold | `0` |
-| `--use_gap` | Use gap-based thresholding | `true` |
+| `--use_gap` | Use gap-based thresholding | `false` |
+| `--knn_n_neighbors` | Neighbors for kNN classifier | `15` |
 | `--outdir` | Output directory | Computed from params |
 
 ### Configuration Files
@@ -148,11 +150,16 @@ nextflow run main.nf -profile conda,test_mmus
 ├── refs/
 │   ├── scvi/           # SCVI reference data (.h5ad)
 │   └── seurat/         # Seurat reference data (.rds)
-├── scvi/
+├── scvi_rf/
 │   └── <study>/<ref>/<query>/
 │       ├── label_transfer_metrics/   # F1 scores
 │       ├── confusion/                # Confusion matrices
 │       └── predicted_meta/           # Predictions
+├── scvi_knn/
+│   └── <study>/<ref>/<query>/
+│       ├── label_transfer_metrics/
+│       ├── confusion/
+│       └── predicted_meta/
 ├── seurat/
 │   └── <study>/<ref>/<query>/
 │       ├── label_transfer_metrics/
@@ -170,6 +177,9 @@ nextflow run main.nf -profile conda,test_mmus
 
 ### SCVI + Random Forest
 A Random Forest classifier trained on latent embeddings from a pre-trained single-cell variational autoencoder (scVI) model from CellXGene Census.
+
+### SCVI + kNN
+A k-Nearest Neighbors classifier (distance-weighted, default k=15) trained on the same scVI embeddings. Both RF and kNN run in a single process per query-ref pair, loading data once and outputting separate probability files.
 
 ### Seurat Label Transfer
 A Gaussian kernel trained on dual PCA projection of reference and query datasets using the Seurat package.
