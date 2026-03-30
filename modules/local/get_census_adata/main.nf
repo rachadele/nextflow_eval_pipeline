@@ -1,6 +1,7 @@
 process GET_CENSUS_ADATA {
     label 'process_high'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
+    storeDir "/cosmos/data/nextflow-eval-pipeline/results/cache/refs/${params.organism}/${params.census_version}/${params.organ}/${params.ref_split}/sub_${params.subsample_ref}"
     publishDir "${params.outdir}/refs/scvi", mode: 'copy', pattern: "**_umap.png"
     publishDir "${params.outdir}/refs/scvi", mode: 'copy', pattern: "refs/*yaml"
 
