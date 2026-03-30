@@ -122,8 +122,8 @@ nextflow run main.nf -profile conda,test_mmus
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `--organism` | Species (`homo_sapiens` or `mus_musculus`) | `homo_sapiens` |
-| `--census_version` | CellXGene Census version | `2025-01-30` |
+| `--organism` | Species (`homo_sapiens` or `mus_musculus`) | `null` |
+| `--census_version` | CellXGene Census version | `null` |
 | `--ref_collections` | Reference collections from Census | See config |
 | `--ref_keys` | Label hierarchy levels | `["subclass", "class", "family", "global"]` |
 | `--subsample_ref` | Cells per type in reference | `500` |
