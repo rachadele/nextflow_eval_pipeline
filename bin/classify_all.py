@@ -2,6 +2,8 @@
 #!/user/bin/python3
 
 import os
+import signal
+signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 import numpy as np
 import pandas as pd
 import scvi
