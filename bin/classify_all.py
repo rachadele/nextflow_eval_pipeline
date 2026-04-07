@@ -4,6 +4,8 @@
 from pathlib import Path
 import os
 import sys
+import signal
+signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 import scanpy as sc
 import numpy as np
 import pandas as pd
