@@ -79,7 +79,7 @@ def main():
     #save data frame to inteim probs/ dir
     outdir="probs"
     os.makedirs(outdir, exist_ok=True)
-    prob_df.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.prob.df.tsv"),sep="\t", index=False,)
+    prob_df.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.prob.df.tsv.gz"),sep="\t", index=False, compression='gzip')
     query.obs.to_csv(f"{query_name}.obs.relabel.tsv", index=False, sep="\t")
 
 if __name__ == "__main__":

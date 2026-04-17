@@ -7,7 +7,7 @@ process RF_PREDICT {
     val ref_keys
 
     output:
-    tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*tsv"), emit: probs_channel
+    tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*tsv.gz"), emit: probs_channel
 
     script:
     ref_name = ref_path.getName().split('\\.h5ad')[0]

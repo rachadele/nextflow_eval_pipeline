@@ -123,7 +123,7 @@ def main():
     query = map_valid_labels(query, ref_keys, mapping_df)  
     class_metrics = evaluate_sample_predictions(query, ref_keys, mapping_df)
     
-    query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv"), index=False, sep="\t")
+    query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv.gz"), index=False, sep="\t", compression='gzip')
 
     # Plot confusion matrices
     for key in ref_keys:
@@ -192,7 +192,7 @@ def main():
 
     outdir = "label_transfer_metrics"
     os.makedirs(outdir, exist_ok=True)
-    df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.summary.scores.tsv"), sep="\t", index=False)
+    df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.summary.scores.tsv.gz"), sep="\t", index=False, compression='gzip')
     
 if __name__ == "__main__":
     main()
