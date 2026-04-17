@@ -141,5 +141,5 @@ prediction_scores <- prediction_scores %>%
   rename_with(~ gsub("Cajal Retzius", "Cajal-Retzius", .))
 
 
-write.table(prediction_scores, file=paste0(query_name,"_",ref_name,"_prediction_scores_seurat.tsv"), sep="\t", row.names=FALSE)
+write.table(prediction_scores, file=gzfile(paste0(query_name,"_",ref_name,"_prediction_scores_seurat.tsv.gz")), sep="\t", row.names=FALSE)
 write.table(query@meta.data, file=paste0(query_name,".obs.relabel.tsv"), row.names=FALSE, sep= "\t")

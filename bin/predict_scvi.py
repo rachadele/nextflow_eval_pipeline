@@ -80,7 +80,7 @@ def main():
             probs[ref_keys[0]]['probabilities'],
             columns=probs[ref_keys[0]]['class_labels']
         )
-        prob_df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.{classifier}.prob.df.tsv"), sep="\t", index=False)
+        prob_df.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.{classifier}.prob.df.tsv.gz"), sep="\t", index=False, compression='gzip')
     query.obs.to_csv(f"{query_name}.obs.relabel.tsv", index=False, sep="\t")
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ process PREDICT_SEURAT {
     val ref_keys
 
     output:
-    tuple path("*obs.relabel.tsv"), val(ref_path), path("*prediction_scores_seurat.tsv"), emit: pred_scores_channel
+    tuple path("*obs.relabel.tsv"), val(ref_path), path("*prediction_scores_seurat.tsv.gz"), emit: pred_scores_channel
 
     script:
     """

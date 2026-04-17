@@ -7,7 +7,7 @@ process SCVI_PREDICT {
     val ref_keys
 
     output:
-    tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*.rf.prob.df.tsv"), path("probs/*.knn.prob.df.tsv"), emit: probs_channel
+    tuple path("*obs.relabel.tsv"), val(ref_path), path("probs/*.rf.prob.df.tsv.gz"), path("probs/*.knn.prob.df.tsv.gz"), emit: probs_channel
 
     script:
     ref_name = ref_path.getName().split('\\.h5ad')[0]
