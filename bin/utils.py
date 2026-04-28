@@ -363,7 +363,7 @@ def rfc_pred(ref, query, ref_keys, seed):
     granular_key = ref_keys[0]
     
     # Initialize and fit the RandomForestClassifier at the most granular level
-    rfc = RandomForestClassifier(class_weight='balanced', random_state=seed)
+    rfc = RandomForestClassifier(class_weight='balanced', random_state=seed, n_jobs=-1)
     rfc.fit(ref.obsm["scvi"], ref.obs[granular_key].values)
     # Predict probabilities at e most granular level
     probs_granular = rfc.predict_proba(query.obsm["scvi"])
