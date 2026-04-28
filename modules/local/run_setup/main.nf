@@ -1,5 +1,5 @@
 process RUN_SETUP {
-    label 'process_medium'
+    label 'process_low'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
 
     input:
