@@ -30,7 +30,6 @@ mus_musculus/
 mmus
 hsap
 meta/census_info/
-params*
 scripts/*
 *tsv.gz
 *.rds
