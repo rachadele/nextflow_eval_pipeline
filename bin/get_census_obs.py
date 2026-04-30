@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import cellxgene_census
-import pandas as pd
 import argparse
 
 def parse_arguments():

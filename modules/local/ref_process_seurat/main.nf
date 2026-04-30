@@ -1,6 +1,7 @@
 process REF_PROCESS_SEURAT {
     label 'process_high'
     conda '/home/rschwartz/anaconda3/envs/r4.3'
+    storeDir "/cosmos/data/nextflow-eval-pipeline/results/cache/refs_seurat/${params.organism}/${params.census_version}/${params.organ}/${params.ref_split}/sub_${params.subsample_ref}/${params.normalization_method}/dims_${params.dims}/feat_${params.nfeatures}/batch_${params.batch_correct}"
     //publishDir "${params.outdir}/refs/seurat", mode: 'copy', pattern: "**.rds"
 
     input:
