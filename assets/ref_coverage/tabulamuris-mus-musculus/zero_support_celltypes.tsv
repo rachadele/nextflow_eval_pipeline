@@ -1,0 +1,72 @@
+level	label	dataset
+class	Cajal-Retzius cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	Hippocampal neuron	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	Hippocampal neuron	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+class	L2/3-6 IT	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	LAMP5	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	Leukocyte	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+class	Leukocyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+class	Leukocyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+class	Microglia	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+class	Microglia	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+class	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+class	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+class	OPC	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+class	OPC	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+class	OPC	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+class	PVALB	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	SNCG	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	SST	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	VIP	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+class	deep layer non-IT	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+family	GABAergic	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+family	Glutamatergic	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+family	Leukocyte	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+family	Leukocyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+family	Leukocyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+family	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+family	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+family	OPC	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+family	OPC	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+family	OPC	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+global	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+global	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+global	Neuron	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	CA1-ProS	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	CA1-ProS	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	CA2-IG-FC	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	CA2-IG-FC	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	CA3	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	CA3	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	CT	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	Cajal-Retzius cell	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	DG	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	DG	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	Ependymal	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	Ependymal	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+subclass	Ependymal	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+subclass	L2/3-6 IT	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	L5 ET	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	L6b	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	LAMP5	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	Leukocyte	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	Leukocyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+subclass	Leukocyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+subclass	Microglia	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+subclass	Microglia	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+subclass	NP	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+subclass	Neural stem cell	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+subclass	OPC	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	OPC	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+subclass	OPC	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+subclass	PVALB	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	Pericyte	Single-cell RNA-seq for all cortical & hippocampal regions (10x)
+subclass	Pericyte	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)
+subclass	SMC	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	SNCG	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	SST	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	SUB-ProS	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	SUB-ProS	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types
+subclass	VIP	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2
+subclass	VLMC	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2

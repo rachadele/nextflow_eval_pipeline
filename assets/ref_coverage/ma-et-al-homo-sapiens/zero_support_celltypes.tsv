@@ -1,0 +1,89 @@
+level	label	dataset
+class	Chandelier	Human Multiple Cortical Areas SMART-seq
+class	Immune	Dissection: Angular gyrus (AnG)
+class	Immune	Dissection: Anterior cingulate cortex (ACC)
+class	Immune	Dissection: Dorsolateral prefrontal cortex (DFC)
+class	Immune	Dissection: Primary auditory cortex(A1)
+class	Immune	Dissection: Primary somatosensory cortex (S1)
+class	Immune	Dissection: Primary visual cortex(V1)
+class	Immune	Human Multiple Cortical Areas SMART-seq
+class	Immune	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+class	Immune	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+class	PAX6	Single-nucleus transcriptome data from the dlPFC
+class	SNCG	Human Multiple Cortical Areas SMART-seq
+class	SNCG	Single-nucleus transcriptome data from the dlPFC
+family	Immune	Dissection: Angular gyrus (AnG)
+family	Immune	Dissection: Anterior cingulate cortex (ACC)
+family	Immune	Dissection: Dorsolateral prefrontal cortex (DFC)
+family	Immune	Dissection: Primary auditory cortex(A1)
+family	Immune	Dissection: Primary somatosensory cortex (S1)
+family	Immune	Dissection: Primary visual cortex(V1)
+family	Immune	Human Multiple Cortical Areas SMART-seq
+family	Immune	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+family	Immune	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	B Cell	Dissection: Angular gyrus (AnG)
+subclass	B Cell	Dissection: Anterior cingulate cortex (ACC)
+subclass	B Cell	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	B Cell	Dissection: Primary auditory cortex(A1)
+subclass	B Cell	Dissection: Primary somatosensory cortex (S1)
+subclass	B Cell	Dissection: Primary visual cortex(V1)
+subclass	B Cell	Human Multiple Cortical Areas SMART-seq
+subclass	B Cell	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	B Cell	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Chandelier	Human Multiple Cortical Areas SMART-seq
+subclass	Erythroid	Dissection: Angular gyrus (AnG)
+subclass	Erythroid	Dissection: Anterior cingulate cortex (ACC)
+subclass	Erythroid	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	Erythroid	Dissection: Primary auditory cortex(A1)
+subclass	Erythroid	Dissection: Primary somatosensory cortex (S1)
+subclass	Erythroid	Dissection: Primary visual cortex(V1)
+subclass	Erythroid	Human Multiple Cortical Areas SMART-seq
+subclass	Erythroid	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Erythroid	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Macrophage	Dissection: Angular gyrus (AnG)
+subclass	Macrophage	Dissection: Anterior cingulate cortex (ACC)
+subclass	Macrophage	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	Macrophage	Dissection: Primary auditory cortex(A1)
+subclass	Macrophage	Dissection: Primary somatosensory cortex (S1)
+subclass	Macrophage	Dissection: Primary visual cortex(V1)
+subclass	Macrophage	Human Multiple Cortical Areas SMART-seq
+subclass	Macrophage	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Macrophage	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Myeloid	Dissection: Angular gyrus (AnG)
+subclass	Myeloid	Dissection: Anterior cingulate cortex (ACC)
+subclass	Myeloid	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	Myeloid	Dissection: Primary auditory cortex(A1)
+subclass	Myeloid	Dissection: Primary somatosensory cortex (S1)
+subclass	Myeloid	Dissection: Primary visual cortex(V1)
+subclass	Myeloid	Human Multiple Cortical Areas SMART-seq
+subclass	Myeloid	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Myeloid	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	PAX6	Single-nucleus transcriptome data from the dlPFC
+subclass	Pericyte	Dissection: Angular gyrus (AnG)
+subclass	Pericyte	Dissection: Anterior cingulate cortex (ACC)
+subclass	Pericyte	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	Pericyte	Dissection: Primary auditory cortex(A1)
+subclass	Pericyte	Dissection: Primary somatosensory cortex (S1)
+subclass	Pericyte	Dissection: Primary visual cortex(V1)
+subclass	Pericyte	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Pericyte	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	SMC	Dissection: Angular gyrus (AnG)
+subclass	SMC	Dissection: Anterior cingulate cortex (ACC)
+subclass	SMC	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	SMC	Dissection: Primary auditory cortex(A1)
+subclass	SMC	Dissection: Primary somatosensory cortex (S1)
+subclass	SMC	Dissection: Primary visual cortex(V1)
+subclass	SMC	Human Multiple Cortical Areas SMART-seq
+subclass	SMC	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	SMC	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	SNCG	Human Multiple Cortical Areas SMART-seq
+subclass	SNCG	Single-nucleus transcriptome data from the dlPFC
+subclass	T Cell	Dissection: Angular gyrus (AnG)
+subclass	T Cell	Dissection: Anterior cingulate cortex (ACC)
+subclass	T Cell	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	T Cell	Dissection: Primary auditory cortex(A1)
+subclass	T Cell	Dissection: Primary somatosensory cortex (S1)
+subclass	T Cell	Dissection: Primary visual cortex(V1)
+subclass	T Cell	Human Multiple Cortical Areas SMART-seq
+subclass	T Cell	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	T Cell	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)

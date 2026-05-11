@@ -1,0 +1,29 @@
+label	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	aggregated
+Astrocyte	592.0	18905.0	3899.0	963.0	24359.0
+CA1-ProS	0.0	0.0	15897.0	1704.0	17601.0
+CA2-IG-FC	0.0	0.0	328.0	19.0	347.0
+CA3	0.0	0.0	1675.0	322.0	1997.0
+CT	0.0	62674.0	154521.0	5501.0	222696.0
+Cajal-Retzius cell	0.0	16.0	277.0	38.0	331.0
+DG	0.0	0.0	58948.0	2474.0	61422.0
+Endothelial	2232.0	3483.0	960.0	193.0	6868.0
+Ependymal	55.0	0.0	0.0	0.0	55.0
+L2/3-6 IT	0.0	194564.0	645985.0	27175.0	867724.0
+L5 ET	0.0	6643.0	18443.0	1787.0	26873.0
+L6b	0.0	5801.0	35319.0	2348.0	43468.0
+LAMP5	0.0	12656.0	42144.0	4430.0	59230.0
+Leukocyte	188.0	0.0	0.0	0.0	188.0
+Macrophage	312.0	8408.0	955.0	177.0	9852.0
+Microglia	13268.0	55.0	0.0	0.0	13323.0
+NP	0.0	12475.0	36185.0	2424.0	51084.0
+Neural stem cell	248.0	246.0	0.0	0.0	494.0
+OPC	312.0	0.0	0.0	0.0	312.0
+Oligodendrocyte	2094.0	21549.0	8987.0	229.0	32859.0
+PVALB	0.0	14706.0	30461.0	3581.0	48748.0
+Pericyte	484.0	1450.0	0.0	0.0	1934.0
+SMC	0.0	47.0	288.0	121.0	456.0
+SNCG	0.0	2594.0	13877.0	1419.0	17890.0
+SST	0.0	15733.0	47428.0	5366.0	68527.0
+SUB-ProS	0.0	0.0	4187.0	471.0	4658.0
+VIP	0.0	15961.0	43684.0	5735.0	65380.0
+VLMC	0.0	2404.0	152.0	116.0	2672.0

@@ -1,0 +1,13 @@
+level	label	dataset
+class	Chandelier	Human Multiple Cortical Areas SMART-seq
+class	SNCG	Human Multiple Cortical Areas SMART-seq
+subclass	Chandelier	Human Multiple Cortical Areas SMART-seq
+subclass	Pericyte	Dissection: Angular gyrus (AnG)
+subclass	Pericyte	Dissection: Anterior cingulate cortex (ACC)
+subclass	Pericyte	Dissection: Dorsolateral prefrontal cortex (DFC)
+subclass	Pericyte	Dissection: Primary auditory cortex(A1)
+subclass	Pericyte	Dissection: Primary somatosensory cortex (S1)
+subclass	Pericyte	Dissection: Primary visual cortex(V1)
+subclass	Pericyte	Whole Taxonomy - DLPFC: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	Pericyte	Whole Taxonomy - MTG: Seattle Alzheimer's Disease Atlas (SEA-AD)
+subclass	SNCG	Human Multiple Cortical Areas SMART-seq

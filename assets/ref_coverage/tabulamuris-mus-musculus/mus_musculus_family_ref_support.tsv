@@ -1,0 +1,10 @@
+label	All - A single-cell transcriptomic atlas characterizes ageing tissues in the mouse - Smart-seq2	An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types	Single-cell RNA-seq for all cortical & hippocampal regions (10x)	Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)	aggregated
+Astrocyte	592.0	18905.0	3899.0	963.0	24359.0
+CNS macrophage	13580.0	8463.0	955.0	177.0	23175.0
+GABAergic	0.0	61650.0	177594.0	20531.0	259775.0
+Glutamatergic	0.0	282173.0	971765.0	44263.0	1298201.0
+Leukocyte	188.0	0.0	0.0	0.0	188.0
+Neural stem cell	248.0	246.0	0.0	0.0	494.0
+OPC	312.0	0.0	0.0	0.0	312.0
+Oligodendrocyte	2094.0	21549.0	8987.0	229.0	32859.0
+Vascular	2771.0	7384.0	1400.0	430.0	11985.0
