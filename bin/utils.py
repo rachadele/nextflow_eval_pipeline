@@ -270,7 +270,7 @@ def get_census(census_version="2024-07-01", organism="homo_sapiens", subsample=5
             original_celltypes=original_celltypes, seed=seed
         )
 
-        refs["whole cortex"] = extract_ref(
+        refs["aggregated"] = extract_ref(
             obs, census=census, organism=organism_query,
             dataset_info=dataset_info, subsample=subsample,
             relabel_path=relabel_path, ref_keys=ref_keys,

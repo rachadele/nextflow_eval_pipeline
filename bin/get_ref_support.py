@@ -76,7 +76,7 @@ STRIP_PREFIXES = [
 SHORT_NAMES = {
     "Human Multiple Cortical Areas SMART-seq": "Human MTG SMART-seq",
     "Single-nucleus transcriptome data from the dlPFC": "snRNA dlPFC",
-    "whole cortex": "Whole Cortex",
+    "aggregated": "Aggregated",
     "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types": "Mouse MOp atlas",
     "Single-cell RNA-seq for all cortical & hippocampal regions (SMART-Seq v4)": "Mouse ctx+hpc SMART-seq",
     "Single-cell RNA-seq for all cortical & hippocampal regions (10x)": "Mouse ctx+hpc 10x",

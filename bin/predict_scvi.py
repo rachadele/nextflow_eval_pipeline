@@ -11,8 +11,8 @@ import argparse
 # Function to parse command line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Classify cells given 1 ref and 1 query")
-    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/cpsc545_proj/mapped_queries/velmeshev/whole_cortex/subsample_1000/query_mapped.h5ad")
-    parser.add_argument('--ref_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/refs/whole_cortex.h5ad") #nargs ="+")
+    parser.add_argument('--query_path', type=str, default="/space/grp/rschwartz/rschwartz/cpsc545_proj/mapped_queries/velmeshev/aggregated/subsample_1000/query_mapped.h5ad")
+    parser.add_argument('--ref_path', type=str, default="/space/grp/rschwartz/rschwartz/nextflow_eval_pipeline/refs/aggregated.h5ad") #nargs ="+")
     parser.add_argument('--ref_keys', type=str, nargs='+', default=["subclass", "class", "family"])
 
     if __name__ == "__main__":

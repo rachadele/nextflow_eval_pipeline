@@ -159,10 +159,10 @@ def main():
                     grp = subsample_obs(grp, subsample_ref, primary_key)
                 for label, count in grp[key].value_counts().items():
                     records.append({"ref_name": ref_name, "label": label, "ref_support": int(count)})
-            # Whole cortex: subsample from all obs combined
-            whole = subsample_obs(obs, subsample_ref, primary_key) if subsample_ref and primary_key in obs.columns else obs
-            for label, count in whole[key].value_counts().items():
-                records.append({"ref_name": "whole cortex", "label": label, "ref_support": int(count)})
+            # Aggregated: subsample from all obs combined
+            aggregated = subsample_obs(obs, subsample_ref, primary_key) if subsample_ref and primary_key in obs.columns else obs
+            for label, count in aggregated[key].value_counts().items():
+                records.append({"ref_name": "aggregated", "label": label, "ref_support": int(count)})
             if not records:
                 continue
             pivot = (
