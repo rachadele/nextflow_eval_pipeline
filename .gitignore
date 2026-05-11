@@ -34,6 +34,7 @@ scripts/*
 *tsv.gz
 *.rds
 *tsv
+!assets/ref_coverage/**/*.tsv
 .github/
 .claude/
 2024-07-01/
