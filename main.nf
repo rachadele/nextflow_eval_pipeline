@@ -101,10 +101,12 @@ workflow {
     )
 
     // Generate QC reports
-    QC_REPORTING(
-        predicted_meta_combined,
-        raw_queries_adata
-    )
+    if (!params.skip_qc_reporting) {
+        QC_REPORTING(
+            predicted_meta_combined,
+            raw_queries_adata
+        )
+    }
 
     // Save parameters
     SAVE_PARAMS()
