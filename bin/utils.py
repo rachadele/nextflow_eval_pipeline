@@ -611,8 +611,8 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def flatten_ref_counts(ref_counts_lookup):
-    """Union ref-support counts across tiers, keyed by label alone.
+def flatten_ref_counts(ref_counts_lookup, ref_keys):
+    """Resolve each label's ref-support count at its own native tier.
 
     map_valid_labels() can substitute a coarser-tier prediction into a finer
     tier's predicted_<key> column when a query label only resolves at that
@@ -620,18 +620,25 @@ def flatten_ref_counts(ref_counts_lookup):
     under a different tier in ref_counts_lookup than the nominal key being
     evaluated, so a per-key lookup silently reports ref_support=0 for it even
     though it has genuine support in the reference at its native tier.
+
+    `ref_keys` must be ordered finest -> coarsest (e.g. subclass, class,
+    family, global). For each label we take the count from the finest tier
+    where it's actually present, rather than summing across tiers -- a label
+    that has already rolled up to a fixed point (e.g. family == global for a
+    top-level lineage) would otherwise be double-counted across those tiers.
     """
     flat = {}
-    for tier_counts in ref_counts_lookup.values():
-        for lbl, cnt in tier_counts.items():
-            flat[lbl] = flat.get(lbl, 0) + cnt
+    for key in ref_keys:
+        for lbl, cnt in ref_counts_lookup.get(key, {}).items():
+            if lbl not in flat:
+                flat[lbl] = cnt
     return flat
 
 
 def evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=None):
     if ref_counts_lookup is None:
         ref_counts_lookup = {}
-    flat_ref_counts = flatten_ref_counts(ref_counts_lookup)
+    flat_ref_counts = flatten_ref_counts(ref_counts_lookup, ref_keys)
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
     for key in ref_keys:

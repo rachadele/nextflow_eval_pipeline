@@ -67,7 +67,7 @@ def main():
         }
     else:
         ref_counts_lookup = {}
-    flat_ref_counts = flatten_ref_counts(ref_counts_lookup)
+    flat_ref_counts = flatten_ref_counts(ref_counts_lookup, ref_keys)
 
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
