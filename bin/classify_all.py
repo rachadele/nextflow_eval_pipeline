@@ -67,6 +67,7 @@ def main():
         }
     else:
         ref_counts_lookup = {}
+    flat_ref_counts = flatten_ref_counts(ref_counts_lookup)
 
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
@@ -135,7 +136,7 @@ def main():
                     'recall': metrics['recall'],
                     'support': metrics['support'],
                     'predicted_support': predicted_counts.get(label, 0),
-                    'ref_support': ref_counts_lookup.get(key, {}).get(label, 0),
+                    'ref_support': flat_ref_counts.get(label, 0),
                     'weighted_f1': weighted_metrics.get('f1_score', None),
                     'weighted_precision': weighted_metrics.get('precision', None),
                     'weighted_recall': weighted_metrics.get('recall', None),

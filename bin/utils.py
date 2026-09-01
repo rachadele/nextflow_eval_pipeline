@@ -611,9 +611,27 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
+def flatten_ref_counts(ref_counts_lookup):
+    """Union ref-support counts across tiers, keyed by label alone.
+
+    map_valid_labels() can substitute a coarser-tier prediction into a finer
+    tier's predicted_<key> column when a query label only resolves at that
+    coarser level. The substituted label's real reference support then lives
+    under a different tier in ref_counts_lookup than the nominal key being
+    evaluated, so a per-key lookup silently reports ref_support=0 for it even
+    though it has genuine support in the reference at its native tier.
+    """
+    flat = {}
+    for tier_counts in ref_counts_lookup.values():
+        for lbl, cnt in tier_counts.items():
+            flat[lbl] = flat.get(lbl, 0) + cnt
+    return flat
+
+
 def evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=None):
     if ref_counts_lookup is None:
         ref_counts_lookup = {}
+    flat_ref_counts = flatten_ref_counts(ref_counts_lookup)
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
     for key in ref_keys:
@@ -621,10 +639,10 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=N
         predicted_labels = query[f"predicted_{key}"].astype(str)
         labels = list(set(true_labels).union(set(predicted_labels)))
 
-        # Labels present in the reference (ref_support > 0)
-        key_ref_counts = ref_counts_lookup.get(key, {})
-        if key_ref_counts:
-            ref_supported = {lbl for lbl, cnt in key_ref_counts.items() if cnt > 0}
+        # Labels present in the reference (ref_support > 0), checked across
+        # all tiers since a substituted label's real tier may differ from `key`
+        if flat_ref_counts:
+            ref_supported = {lbl for lbl in labels if flat_ref_counts.get(lbl, 0) > 0}
         else:
             ref_supported = set(labels)  # fallback: treat all labels as supported
 
