@@ -1,5 +1,5 @@
 process MULTIQC {
-    label 'process_low'
+    label 'process_medium'
     conda '/home/rschwartz/anaconda3/envs/scanpyenv'
     publishDir "${params.outdir}/${method}/${study_name}/${ref_name}", mode: 'copy', pattern: "**multiqc_report.html"
 
