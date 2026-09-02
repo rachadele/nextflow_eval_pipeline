@@ -1,8 +1,0 @@
-cell_type	subclass
-Neurons_1	Neuron
-Astrocytes	Astrocyte
-Oligodendrocytes	Oligodendrocyte
-OPC	OPC
-Microglia, Macrophages	CNS macrophage
-Neurons_2	Neuron
-Non-neuronal cells	Non-neuron
