@@ -35,6 +35,7 @@ scripts/*
 *.rds
 *tsv
 !assets/ref_coverage/**/*.tsv
+!assets/cell_type_markers.tsv
 .github/
 .claude/
 2024-07-01/
