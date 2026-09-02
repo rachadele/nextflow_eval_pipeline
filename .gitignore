@@ -34,6 +34,7 @@ scripts/*
 *tsv.gz
 *.rds
 *tsv
+!assets/cell_type_markers.tsv
 .github/
 .claude/
 2024-07-01/
