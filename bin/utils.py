@@ -914,13 +914,19 @@ def get_gene_to_celltype_map(df, organism="mus_musculus"):
     return gene_ct_dict
 
 
-def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=""):
+def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir="", cell_type_key="predicted_subclass"):
+    if cell_type_key not in query.obs.columns:
+        return
+
     # Drop vars with NaN feature names
     query = query[:, ~query.var["feature_name"].isnull()]
     query.var_names = query.var["feature_name"]
-    
+
     markers_df = pd.read_csv(markers_file, sep="\t")
     markers_df = markers_df[markers_df["organism"] == organism]
+    level = cell_type_key.replace("predicted_", "")
+    if "level" in markers_df.columns:
+        markers_df = markers_df[markers_df["level"] == level]
     ontology_mapping = markers_df.set_index("cell_type")["shortname"].to_dict()
     query.raw.var.index = query.raw.var["feature_name"]
 
@@ -931,16 +937,16 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
     valid_markers = [gene for gene in all_markers if gene in query.var_names]
     removed_markers = [gene for gene in all_markers if gene not in query.var_names]
     # Write removed markers to a text file, one per line
-    with open("removed_markers.txt", "w") as f:
+    with open(f"removed_markers_{cell_type_key}.txt", "w") as f:
         for gene in removed_markers:
             f.write(f"{gene}\n")
     # Filter raw expression matrix to match query.var_names
     expr_matrix = query.raw.X.toarray()
     expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
-    
-    avg_expr = expr_matrix.groupby(query.obs["predicted_subclass"]).mean()
+
+    avg_expr = expr_matrix.groupby(query.obs[cell_type_key]).mean()
     avg_expr = avg_expr.loc[:, valid_markers]
-    
+
     # Scale expression across genes
     scaled_expr = (avg_expr - avg_expr.mean()) / avg_expr.std()
     scaled_expr = scaled_expr.loc[:, valid_markers]
@@ -948,14 +954,23 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
 
     # Rename columns: gene -> gene (celltype)
     scaled_expr.rename(columns=gene_ct_dict, inplace=True)
-    sorted_columns = sorted(scaled_expr.columns, key=lambda x: x.split(":")[0])  
-    
+    sorted_columns = sorted(scaled_expr.columns, key=lambda x: x.split(":")[0])
+
     # Sort by the first part of the column name
     scaled_expr = scaled_expr[sorted_columns]
 
+    # Restrict to cell types present in the markers file, ordered by ontology shortname
+    # (handles cell types with no ontology mapping, e.g. nan, by falling back to the raw label)
+    overlap = list(set(markers_df["cell_type"]).intersection(scaled_expr.index))
+    sorted_cell_types = sorted(
+        overlap,
+        key=lambda x: ontology_mapping[x] if not pd.isna(ontology_mapping.get(x)) else x
+    )
+    scaled_expr = scaled_expr.loc[sorted_cell_types, :]
+
     # Save matrix
     os.makedirs(outdir, exist_ok=True)
-    scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
+    scaled_expr.to_csv(f"{outdir}/{cell_type_key}_heatmap_mqc.tsv", sep="\t")
 
 
     

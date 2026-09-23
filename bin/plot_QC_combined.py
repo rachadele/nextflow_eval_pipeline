@@ -276,7 +276,8 @@ def main():
         query.obs["predicted_doublet"]
     )
 #plot_markers(query, markers_file, organism=organism)
-    make_celltype_matrices(query, markers_file, organism=organism, outdir=study_name)
+    for level in ref_keys:
+        make_celltype_matrices(query, markers_file, organism=organism, outdir=study_name, cell_type_key=f"predicted_{level}")
     
     
     for sample_id in query.obs["sample_id"].unique():
