@@ -20,8 +20,7 @@ def parse_arguments():
         "A taxonomy of transcriptomic cell types across the isocortex and hippocampal formation",
         "An integrated transcriptomic and epigenomic atlas of mouse primary motor cortex cell types",
         "Single-cell transcriptomics characterization of oligodendrocytes and microglia in white matter aging",
-        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
-        "Tabula Muris Senis"
+        "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics"
     ]) 
     parser.add_argument('--organ', type=str, default="brain")
     if __name__ == "__main__":
