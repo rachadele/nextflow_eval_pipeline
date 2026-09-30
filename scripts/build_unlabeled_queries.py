@@ -10,8 +10,8 @@ Each h5ad gets a bool obs column `author_unlabeled`.
 
 Only samples that already have an h5ad in the source dir are used, so samples
 with zero author labels (and those under 50 labeled cells) stay out. GSE199460.2
-is always excluded: its author file covers a vascular subset only, so its
-unlabeled cells are not QC rejects.
+is included now that its Gemma labels are fixed locally. It is a CD31-selected
+endothelial study, so its unlabeled cells are not QC rejects like the others.
 
 The source dir is only read. Run with the scanpyenv python:
     /home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py
@@ -31,8 +31,8 @@ import numpy as np
 import pandas as pd
 
 GEMMA = "/space/grp/rschwartz/rschwartz/get_gemma_data.nf"
-EXCLUDED_STUDIES = {"GSE199460.2"}
-DEFAULT_STUDIES = ["GSE124952", "GSE181021.2", "GSE185454", "GSE214244.1", "GSE247339.1", "GSE247339.2"]
+EXCLUDED_STUDIES = set()
+DEFAULT_STUDIES = ["GSE124952", "GSE181021.2", "GSE185454", "GSE199460.2", "GSE214244.1", "GSE247339.1", "GSE247339.2"]
 
 
 def parse_arguments():
