@@ -2,8 +2,8 @@
 """Build mouse query h5ads that also hold author-unlabeled cells.
 
 For each study, cells that are in the Gemma mex but absent from the author CTA
-are added back with cell_type = "author_unlabeled", subsampled per sample to
---ratio unlabeled cells per labeled cell. The augmented CTA files go into a new
+are added back with cell_type = "author_unlabeled". All of them are kept, so each
+sample keeps its native unlabeled:labeled ratio. The augmented CTA files go into a new
 outdir that links to the source mex and sample metadata, and
 get_gemma_data.nf/bin/regenerate_h5ads_from_local_cta.sh builds the h5ads there.
 Each h5ad gets a bool obs column `author_unlabeled`.
@@ -14,7 +14,7 @@ is always excluded: its author file covers a vascular subset only, so its
 unlabeled cells are not QC rejects.
 
 The source dir is only read. Run with the scanpyenv python:
-    /home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py --ratio 0.5
+    /home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py
 """
 
 import argparse
@@ -39,9 +39,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--src", default=f"{GEMMA}/study_names_mouse.txt_author_true_process_samples_true")
     parser.add_argument("--dest", default=f"{GEMMA}/study_names_mouse.txt_author_true_process_samples_true_with_unlabeled")
-    parser.add_argument("--ratio", type=float, required=True, help="unlabeled:labeled cells per sample (upper bound; all unlabeled cells if fewer)")
     parser.add_argument("--studies", nargs="+", default=DEFAULT_STUDIES)
-    parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--regenerate_script", default=f"{GEMMA}/bin/regenerate_h5ads_from_local_cta.sh")
     return parser.parse_args()
 
@@ -63,7 +61,7 @@ def read_barcodes(mex_dir):
         return [line.strip() for line in f]
 
 
-def augment_study(study, src, dest, ratio, rng, inputs):
+def augment_study(study, src, dest, inputs):
     cta_path = os.path.join(src, "cell_type_assignments", f"{study}.celltypes.tsv")
     cta = pd.read_csv(cta_path, sep="\t", dtype={"sample_id": str, "cell_id": str})
     inputs[cta_path] = {"sha256": sha256(cta_path), "mtime": mtime(cta_path)}
@@ -84,12 +82,10 @@ def augment_study(study, src, dest, ratio, rng, inputs):
         if n_labeled == 0:
             print(f"  skip {study} {sample_name}: zero author labels")
             continue
-        n_keep = min(len(unlabeled), int(round(ratio * n_labeled)))
-        keep = sorted(rng.choice(len(unlabeled), size=n_keep, replace=False)) if n_keep else []
-        new_rows += [(sample_id, unlabeled[i]) for i in keep]
+        new_rows += [(sample_id, b) for b in unlabeled]
         os.symlink(mex_dir, os.path.join(dest, "mex", study, sample_name))
         tally.append({"study": study, "sample": sample_name, "n_labeled": n_labeled,
-                      "n_unlabeled_available": len(unlabeled), "n_unlabeled_included": n_keep})
+                      "n_unlabeled_available": len(unlabeled), "n_unlabeled_included": len(unlabeled)})
 
     cta["author_unlabeled"] = False
     added = pd.DataFrame(new_rows, columns=["sample_id", "cell_id"])
@@ -117,14 +113,13 @@ def main():
     if bad:
         sys.exit(f"excluded studies requested: {sorted(bad)}")
 
-    rng = np.random.default_rng(args.seed)
     for sub in ["mex", "cell_type_assignments", "metadata_standardized"]:
         os.makedirs(os.path.join(dest, sub), exist_ok=True)
 
     inputs, tally = {}, []
     for study in args.studies:
         print(f"{study}: writing augmented CTA")
-        tally += augment_study(study, src, dest, args.ratio, rng, inputs)
+        tally += augment_study(study, src, dest, inputs)
     tally = pd.DataFrame(tally)
 
     subprocess.run(["bash", args.regenerate_script, dest, *args.studies], check=True)
@@ -161,8 +156,6 @@ def main():
         "data_version": os.path.basename(src),
         "src": src,
         "dest": dest,
-        "ratio_unlabeled_to_labeled": args.ratio,
-        "seed": args.seed,
         "studies": args.studies,
         "excluded_studies": sorted(EXCLUDED_STUDIES),
         "regenerate_script": args.regenerate_script,

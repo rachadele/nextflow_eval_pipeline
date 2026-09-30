@@ -5,9 +5,7 @@
 set -euo pipefail
 cd "$(dirname "$(readlink -f "$0")")"
 
-ratio=1000000  # effectively all unlabeled cells per sample, so each sample keeps its native unlabeled:labeled ratio
-# Native ratios per study: /space/grp/rschwartz/rschwartz/mask-annotation-overlap/results/qc_labeled_vs_unlabeled/unlabeled_ratio_by_study.tsv (scripts/qc_labeled_vs_unlabeled.py, commit c859220)
-ratio_tag=native
+# The build keeps all unlabeled cells per sample (native ratios). Ratios per study: /space/grp/rschwartz/rschwartz/mask-annotation-overlap/results/qc_labeled_vs_unlabeled/unlabeled_ratio_by_study.tsv (scripts/qc_labeled_vs_unlabeled.py, commit c859220)
 cutoff=0.25
 subsample_ref=500
 subsample_query=100
@@ -16,11 +14,11 @@ normalization_method=SCT
 use_gap=false
 
 base=/cosmos/data/nextflow-eval-pipeline
-queries_dir=$base/unlabeled_queries/mouse_ratio_$ratio_tag
-outdir=$base/results/census-map-fixes_with_unlabeled_test/mus_musculus/ratio_$ratio_tag/ref_$subsample_ref/cutoff_$cutoff
+queries_dir=$base/unlabeled_queries/mouse_ratio_native
+outdir=$base/results/census-map-fixes_with_unlabeled_test/mus_musculus/ratio_native/ref_$subsample_ref/cutoff_$cutoff
 
 if [ ! -d "$queries_dir" ]; then
-    /home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py --ratio "$ratio" --dest "$queries_dir"
+    /home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py --dest "$queries_dir"
 fi
 
 nextflow main.nf -params-file params.mm.json \
