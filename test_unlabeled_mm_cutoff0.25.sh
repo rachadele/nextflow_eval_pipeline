@@ -35,6 +35,7 @@ nextflow main.nf -params-file params.mm.json \
     --remove_unknown true \
     --normalization_method "$normalization_method" \
     -process.executor slurm \
-    --use_gap "$use_gap"
+    --use_gap "$use_gap" \
+    --git_branch census-map-fixes  # reuse the reference caches built on this branch name
 
 find "$outdir" -name '*.unlabeled_unknown_rate.*.tsv.gz'
