@@ -8,10 +8,10 @@ set -e
 queries=/space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true_with_unlabeled/h5ad/**h5ad
 results=/cosmos/data/nextflow-eval-pipeline/results/census-map-fixes_with_unlabeled
 use_gap=${USE_GAP:-false}
-subsample_ref_values=(500 100 50)
+subsample_ref_values=(${SUBSAMPLE_REFS:-500 100 50})
 subsample_query=100
 ref_split_values=("dataset_id")
-cutoff_values=(0 0.05 0.1 0.15 0.2 0.25 0.5 0.75)
+cutoff_values=(${CUTOFFS:-0 0.05 0.1 0.15 0.2 0.25 0.5 0.75})
 normalization_method="SCT"
 
 for subsample_ref in "${subsample_ref_values[@]}"; do
