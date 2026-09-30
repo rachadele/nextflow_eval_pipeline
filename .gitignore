@@ -32,6 +32,8 @@ hsap
 meta/census_info/
 params*
 scripts/*
+!scripts/*.py
+!scripts/*.sh
 *tsv.gz
 *.rds
 *tsv
