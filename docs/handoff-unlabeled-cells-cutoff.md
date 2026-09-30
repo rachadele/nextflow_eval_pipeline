@@ -17,7 +17,7 @@ Put some unlabeled cells back into the benchmark queries with a sentinel ground 
 ## Proposed design
 
 1. **Build augmented query h5ads in a separate dir** so the current queries and results stay untouched. For each study, write a CTA file that adds a row per unlabeled barcode (in the mex but absent from the author file) with `cell_type = "author_unlabeled"`. Then run `get_gemma_data.nf/bin/regenerate_h5ads_from_local_cta.sh` against a copy of the outdir holding those CTA files, for example `get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true_with_unlabeled/`. Add an obs column `author_unlabeled` (bool) so the downstream code can split cells without relying on the label string.
-2. **Choose which unlabeled cells to include.** Exclude GSE199460.2, where the author file covers only a vascular subset, so its unlabeled cells are not QC rejects. Also exclude samples with zero author labels: 2 in GSE185454, 1 in GSE199460.2 and 2 each in GSE247339.1/.2. Either include all unlabeled cells in the remaining samples or subsample them to a fixed ratio against labeled cells per sample. GSE247339 would otherwise be about 70% junk and could distort SCVI/SCT normalisation.
+2. **Choose which unlabeled cells to include.** Exclude GSE199460.2, where the author file covers only a vascular subset, so its unlabeled cells are not QC rejects. Also exclude samples with zero author labels: 2 in GSE185454, 1 in GSE199460.2 and 2 each in GSE247339.1/.2. All unlabeled cells in the remaining samples are included, so each sample keeps its native unlabeled:labeled ratio (see `mask-annotation-overlap/results/qc_labeled_vs_unlabeled/unlabeled_ratio_by_study.tsv`). GSE247339 is then about 60-70% near-empty droplets, which could distort SCVI/SCT normalisation.
 3. **Relabel tables.** Map `author_unlabeled` to itself at every level (subclass, class, family, global) in `meta/relabel_mus_musculus/*_relabel.tsv`, or have `classify_all.py` pass it through.
 4. **Metrics.** Keep `author_unlabeled` cells out of the F1/precision/recall calculations, so existing metrics don't change. Add a separate output per study, sample, method, ref and cutoff: the fraction of unlabeled cells predicted "unknown" vs the fraction of labeled cells predicted "unknown". Also record per-cell UMIs and genes, so a QC floor can be scored on the same cells.
 5. **Run.** Sweep `cutoff` over the usual values (0 up to 0.75) for scvi-knn/rf and Seurat on the mouse refs. Work on the `census-map-fixes` worktree (`nextflow_eval_pipeline-worktrees/census-map-fixes`, see `run_mmus_sweep_census_fixes.sh` for the current mouse sweep). Write to a new outdir so the existing census-fix sweep results are not overwritten.
@@ -26,7 +26,7 @@ Put some unlabeled cells back into the benchmark queries with a sentinel ground 
 
 - Does any step (SCT, SCVI preprocessing, `process_query`) filter cells by minimum genes or UMIs? If so, many GSE247339 unlabeled cells drop out before classification, and that filter is itself a cutoff worth reporting.
 - Probability cutoff, QC floor, or both? The user's goal is to mask all unlabeled cells. Earlier they suggested tuning nmads, so report both.
-- Include all unlabeled cells or subsample them? Pick the ratio before running and record it in the run manifest.
+- Resolved: include all unlabeled cells per sample (native ratios). There is no ratio parameter.
 
 ## Status
 
@@ -44,7 +44,7 @@ Code changes are in place in the `census-map-fixes` worktree, uncommitted. Nothi
 - `bin/process_query.py` randomly subsamples to `subsample_query` cells per sample (100 in the sweep; line 69 on this branch, line 59 before the edit), then runs scrublet (line 72). Scrublet filters `min_genes=3` on an internal copy only (scanpy 1.10.4 `_scrublet/__init__.py:191-192`). Cells under 3 genes stay in, with NaN `predicted_doublet`. `--remove_unknown` (line 92) drops only ground truth `"unknown"`. `get_qc_metrics` (line 99, `utils.py:831`) adds per-sample MAD flags (`umi_outlier`, `genes_outlier`, `counts_outlier`, `total_outlier`, nmads=5) and drops nothing. `utils.process_query` (`utils.py:290`) subsets genes to the scVI model's genes (`prepare_query_anndata`, line 304). It drops no cells.
 - Seurat: `bin/seurat_preprocessing.R:23-36` converts with sceasy and runs SCTransform + PCA. It does not filter. The `min.features = 200` filter in `seurat_functions.R:13` (`process_sample`) and the MAD filters (`filter_valid_cells`, line 265) never run on the query path.
 - `bin/classify_all.py` drops nothing. `utils.classify_raw` (line 585) and `classify_by_gap` (line 606) turn low-confidence cells into `"unknown"` one cell at a time.
-- So the probability cutoff is the only thing that sends cells to "unknown". The MAD flags are stored and can serve as a QC floor offline. One risk: a near-empty GSE247339 barcode can have zero counts in the scVI model genes after line 304, and SCTransform may fail on a cell with zero UMIs. If QUERY_PROCESS_SEURAT fails on those samples, lower the ratio or drop zero-count cells in the build script.
+- So the probability cutoff is the only thing that sends cells to "unknown". The MAD flags are stored and can serve as a QC floor offline. One risk: a near-empty GSE247339 barcode can have zero counts in the scVI model genes after line 304, and SCTransform may fail on a cell with zero UMIs. If QUERY_PROCESS_SEURAT fails on those samples, drop zero-count cells in the build script.
 
 **How does a ground truth missing from the relabel tables behave?** `utils.relabel` (`utils.py:97-113`) left-joins on `cell_type`. An unmapped label gets NaN `subclass`, and `process_query.py:83-89` raises a ValueError. So without a change, `author_unlabeled` would crash MAP_QUERY. `aggregate_labels` (`utils.py:117-133`) fills higher levels from the lower label when the census map lacks it (line 132), so a label set at subclass passes through class/family/global unchanged. `map_valid_labels` skips labels absent from the census map (`utils.py:326`). `classify_all.py` never checks ground-truth labels against the relabel tables.
 
@@ -52,7 +52,7 @@ Code changes are in place in the `census-map-fixes` worktree, uncommitted. Nothi
 
 **Probability cutoff vs QC floor:** report both. Each per-cell output row holds the prediction, confidence, UMIs, genes and MAD flags, so one sweep scores both.
 
-**Ratio:** `--ratio` in the build script is required and has no default. Choose it before building. It goes into `manifest.json`.
+**Ratio:** the build script has no ratio or seed parameter. It keeps every unlabeled barcode per sample.
 
 ### Files changed (worktree)
 
@@ -66,15 +66,15 @@ Known side effect: QC_REPORTING left-joins predictions onto the raw h5ad, so unl
 
 ### Build script behaviour
 
-`scripts/build_unlabeled_queries.py` only reads the source dir. It uses only samples that already have an h5ad there, which drops the zero-label and under-50 samples. It also skips any sample with zero author labels and refuses GSE199460.2. Per sample it draws `min(n_unlabeled, round(ratio * n_labeled))` unlabeled barcodes (seed 42). It writes `<study>.celltypes.tsv` with the extra rows and an `author_unlabeled` column, and symlinks the source mex sample dirs and `metadata_standardized/<study>` into the new dir. It then calls `regenerate_h5ads_from_local_cta.sh`, casts `obs["author_unlabeled"]` to bool, and checks that each h5ad's labeled count equals the source h5ad's `n_obs`. It writes `unlabeled_tally.tsv` and `manifest.json` (input sha256 and mtimes, output h5ad sha256, ratio, seed, git commit, timestamp). It refuses to run if the destination is not empty.
+`scripts/build_unlabeled_queries.py` only reads the source dir. It uses only samples that already have an h5ad there, which drops the zero-label and under-50 samples. It also skips any sample with zero author labels and refuses GSE199460.2. Per sample it adds every unlabeled barcode. It writes `<study>.celltypes.tsv` with the extra rows and an `author_unlabeled` column, and symlinks the source mex sample dirs and `metadata_standardized/<study>` into the new dir. It then calls `regenerate_h5ads_from_local_cta.sh`, casts `obs["author_unlabeled"]` to bool, and checks that each h5ad's labeled count equals the source h5ad's `n_obs`. It writes `unlabeled_tally.tsv` and `manifest.json` (input sha256 and mtimes, output h5ad sha256, git commit, timestamp). It refuses to run if the destination is not empty.
 
 ### Commands
 
-(a) Build the augmented h5ads (pick the ratio first; 0.5 is only an example):
+(a) Build the augmented h5ads (all unlabeled cells per sample):
 
 ```bash
 cd /space/grp/rschwartz/rschwartz/nextflow_eval_pipeline-worktrees/census-map-fixes
-/home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py --ratio 0.5
+/home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py
 # output: /space/grp/rschwartz/rschwartz/get_gemma_data.nf/study_names_mouse.txt_author_true_process_samples_true_with_unlabeled/
 ```
 
