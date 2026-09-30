@@ -21,6 +21,10 @@ if [ ! -d "$queries_dir" ]; then
     /home/rschwartz/anaconda3/envs/scanpyenv/bin/python scripts/build_unlabeled_queries.py --dest "$queries_dir"
 fi
 
+# symlink the cosmos results into the worktree (gitignored)
+mkdir -p "$outdir"
+ln -sfn "$base/results/census-map-fixes_with_unlabeled_test" results_unlabeled_test
+
 nextflow main.nf -params-file params.mm.json \
     --queries_adata "$queries_dir/h5ad/**h5ad" \
     --outdir "$outdir" \
