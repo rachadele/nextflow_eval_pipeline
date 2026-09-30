@@ -13,6 +13,7 @@ process CLASSIFY_ALL {
     tuple val(method), path("**summary.scores.tsv.gz"), emit: f1_score_channel
     path "confusion/"
     tuple val(method), path("${query_path}"), path("${ref_path}"), path("predicted_meta/**tsv.gz"), emit: predicted_meta_channel
+    path "unlabeled_qc/**tsv.gz", optional: true, emit: unlabeled_qc
 
     script:
     ref_name = ref_path.getName().split('\\.')[0]
