@@ -179,7 +179,14 @@ nextflow run main.nf -profile conda,test_mmus
 
 ### Author-unlabeled cells
 
-If a query h5ad has a bool `author_unlabeled` obs column, `process_query.py` keeps all unlabeled cells of each sample on top of the subsampled labeled cells (ground truth `author_unlabeled`). `classify_all.py` writes a per-cell table and the fraction called "unknown" at the cutoff to `unlabeled_qc/`, then drops these cells from F1, confusion, NMI and ARI. QC plots keep them, with predicted labels shown as `unscored`. Build such queries with `scripts/build_unlabeled_queries.py`; `scripts/test_unlabeled_mm_cutoff0.25.sh` runs a mouse test at cutoff 0.25. See `docs/handoff-unlabeled-cells-cutoff.md`.
+Authors usually label only some of the cells in a sample. The rest are "author-unlabeled", and many are low quality. This option tests whether a probability cutoff labels such cells "unknown" without hurting the cells that do have labels.
+
+1. `scripts/build_unlabeled_queries.py` builds query h5ads that contain both the labeled and the unlabeled cells of each sample. A bool obs column `author_unlabeled` marks the unlabeled ones, and their cell type is `author_unlabeled`.
+2. `process_query.py` first subsamples the labeled cells to `--subsample_query`, as it does without this option. It then subsamples the unlabeled cells so the sample keeps the ratio of unlabeled to labeled cells it had in the full data. For example, a sample with 1,000 labeled and 500 unlabeled cells and `--subsample_query 100` ends up with 100 labeled and 50 unlabeled cells.
+3. `classify_all.py` classifies all cells. For the unlabeled cells it writes the prediction for each cell and the fraction called "unknown" at the cutoff to `unlabeled_qc/`. These cells are then dropped, so F1, confusion matrices, NMI and ARI use labeled cells only.
+4. QC plots keep the unlabeled cells and show their predicted labels as `unscored`.
+
+`scripts/test_unlabeled_mm_cutoff0.25.sh` runs a mouse test at cutoff 0.25. See `docs/handoff-unlabeled-cells-cutoff.md`.
 
 ---
 
