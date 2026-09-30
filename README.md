@@ -179,10 +179,10 @@ nextflow run main.nf -profile conda,test_mmus
 
 ### Author-unlabeled cells
 
-Authors usually label only some of the cells in a sample. The rest are "author-unlabeled", and many are low quality. This option tests whether a probability cutoff labels such cells "unknown" without hurting the cells that do have labels.
+Authors usually label only some of the cells in a sample. The rest are "author-unlabeled", and many are low quality. There is no flag for this. The pipeline handles these cells whenever a query h5ad has an `author_unlabeled` column. The goal is to test whether a probability cutoff labels such cells "unknown" without hurting the cells that do have labels. Without the column, the pipeline behaves as before.
 
 1. `scripts/build_unlabeled_queries.py` builds query h5ads that contain both the labeled and the unlabeled cells of each sample. A bool obs column `author_unlabeled` marks the unlabeled ones, and their cell type is `author_unlabeled`.
-2. `process_query.py` first subsamples the labeled cells to `--subsample_query`, as it does without this option. It then subsamples the unlabeled cells so the sample keeps the ratio of unlabeled to labeled cells it had in the full data. For example, a sample with 1,000 labeled and 500 unlabeled cells and `--subsample_query 100` ends up with 100 labeled and 50 unlabeled cells.
+2. `process_query.py` first subsamples the labeled cells to `--subsample_query`, as it does for any query. It then subsamples the unlabeled cells so the sample keeps the ratio of unlabeled to labeled cells it had in the full data. For example, a sample with 1,000 labeled and 500 unlabeled cells and `--subsample_query 100` ends up with 100 labeled and 50 unlabeled cells.
 3. `classify_all.py` classifies all cells. For the unlabeled cells it writes the prediction for each cell and the fraction called "unknown" at the cutoff to `unlabeled_qc/`. These cells are then dropped, so F1, confusion matrices, NMI and ARI use labeled cells only.
 4. QC plots keep the unlabeled cells and show their predicted labels as `unscored`.
 
