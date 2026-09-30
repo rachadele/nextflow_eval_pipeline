@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+cd "$(dirname "$(readlink -f "$0")")/.."
 subsample_ref_values=(500 100 50)
 subsample_query=100
 ref_split_values=("dataset_id")

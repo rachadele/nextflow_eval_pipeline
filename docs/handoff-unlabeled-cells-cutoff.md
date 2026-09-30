@@ -20,7 +20,7 @@ Put some unlabeled cells back into the benchmark queries with a sentinel ground 
 2. **Choose which unlabeled cells to include.** GSE199460.2 is included now that its Gemma labels are fixed locally (it was excluded while Gemma held 283 wrong labels). It is a CD31-selected endothelial study (one class, Endothelial), so its unlabeled cells are not QC rejects like the others. Exclude samples with zero author labels: 2 in GSE185454 and 2 each in GSE247339.1/.2. All unlabeled cells in the remaining samples are included, so each sample keeps its native unlabeled:labeled ratio (see `mask-annotation-overlap/results/qc_labeled_vs_unlabeled/unlabeled_ratio_by_study.tsv`). GSE247339 is then about 60-70% near-empty droplets, which could distort SCVI/SCT normalisation.
 3. **Relabel tables.** Map `author_unlabeled` to itself at every level (subclass, class, family, global) in `meta/relabel_mus_musculus/*_relabel.tsv`, or have `classify_all.py` pass it through.
 4. **Metrics.** Keep `author_unlabeled` cells out of the F1/precision/recall calculations, so existing metrics don't change. Add a separate output per study, sample, method, ref and cutoff: the fraction of unlabeled cells predicted "unknown" vs the fraction of labeled cells predicted "unknown". Also record per-cell UMIs and genes, so a QC floor can be scored on the same cells.
-5. **Run.** Sweep `cutoff` over the usual values (0 up to 0.75) for scvi-knn/rf and Seurat on the mouse refs. Work on the `census-map-fixes` worktree (`nextflow_eval_pipeline-worktrees/census-map-fixes`, see `run_mmus_sweep_census_fixes.sh` for the current mouse sweep). Write to a new outdir so the existing census-fix sweep results are not overwritten.
+5. **Run.** Sweep `cutoff` over the usual values (0 up to 0.75) for scvi-knn/rf and Seurat on the mouse refs. Work on the `census-map-fixes` worktree (`nextflow_eval_pipeline-worktrees/census-map-fixes`, see `scripts/run_mmus_sweep_census_fixes.sh` for the current mouse sweep). Write to a new outdir so the existing census-fix sweep results are not overwritten.
 
 ## Open questions to settle before running
 
@@ -34,7 +34,7 @@ Nothing has been built or run yet. The six-study sc-annotation-pipeline QC run (
 
 ## Progress (2026-09-29)
 
-Code changes are in place in the `census-map-fixes` worktree, uncommitted. Nothing has been built or run. `params.mm.json` and `run_mmus_sweep_census_fixes.sh` were left alone.
+Code changes are in place in the `census-map-fixes` worktree, uncommitted. Nothing has been built or run. `params.mm.json` and `scripts/run_mmus_sweep_census_fixes.sh` were left alone.
 
 ### Answers to the open questions
 
