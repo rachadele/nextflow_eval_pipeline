@@ -56,6 +56,7 @@ nextflow_eval_pipeline/
 ├── meta/
 │   ├── mappings/           # Census maps, markers, colors
 │   └── relabel_*/          # Dataset relabeling files
+├── scripts/                # Sweep runners, unlabeled-query builder, unlabeled-cell test
 ├── tests/                  # Test runner scripts
 ├── docs/                   # Documentation
 └── assets/                 # Static assets (MultiQC config)
@@ -133,11 +134,15 @@ nextflow run main.nf -profile conda,test_mmus
 | `--cutoff` | Probability threshold | `0` |
 | `--use_gap` | Use gap-based thresholding | `false` |
 | `--knn_n_neighbors` | Neighbors for kNN classifier | `15` |
+| `--seed` | Random seed for subsampling | `42` |
+| `--nmads` | MAD threshold for QC outlier flags | `5` |
+| `--git_branch` | Branch name used in `outdir` and the reference cache path (override to reuse caches from another branch) | current branch |
 | `--outdir` | Output directory | Computed from params |
 
 ### Configuration Files
 
 - `conf/params.config` - Edit default parameters
+- `params.hs.json`, `params.mm.json` - Human and mouse run settings (`-params-file`)
 - `conf/base.config` - Modify resource allocations
 - `conf/test_*.config` - Customize test runs
 
@@ -152,9 +157,10 @@ nextflow run main.nf -profile conda,test_mmus
 │   └── seurat/         # Seurat reference data (.rds)
 ├── scvi_rf/
 │   └── <study>/<ref>/<query>/
-│       ├── label_transfer_metrics/   # F1 scores
+│       ├── label_transfer_metrics/   # F1 scores (.tsv.gz)
 │       ├── confusion/                # Confusion matrices
-│       └── predicted_meta/           # Predictions
+│       ├── predicted_meta/           # Predictions (.tsv.gz)
+│       └── unlabeled_qc/             # Only when queries hold author_unlabeled cells
 ├── scvi_knn/
 │   └── <study>/<ref>/<query>/
 │       ├── label_transfer_metrics/
@@ -170,6 +176,10 @@ nextflow run main.nf -profile conda,test_mmus
 ├── params.yaml               # Run parameters
 └── trace.txt                 # Execution trace
 ```
+
+### Author-unlabeled cells
+
+If a query h5ad has a bool `author_unlabeled` obs column, `process_query.py` keeps all unlabeled cells of each sample on top of the subsampled labeled cells (ground truth `author_unlabeled`). `classify_all.py` writes a per-cell table and the fraction called "unknown" at the cutoff to `unlabeled_qc/`, then drops these cells from F1, confusion, NMI and ARI. QC plots keep them, with predicted labels shown as `unscored`. Build such queries with `scripts/build_unlabeled_queries.py`; `scripts/test_unlabeled_mm_cutoff0.25.sh` runs a mouse test at cutoff 0.25. See `docs/handoff-unlabeled-cells-cutoff.md`.
 
 ---
 
@@ -193,7 +203,3 @@ A Gaussian kernel trained on dual PCA projection of reference and query datasets
 - Abdulla, S., et al. "CZ CELL×GENE Discover: A Single-Cell Data Platform." bioRxiv, 2023.
 - Pasquini, G., et al. "Automated methods for cell type annotation on scRNA-seq data." Computational and Structural Biotechnology Journal, 2021.
 - Lotfollahi, M., et al. "The Future of Rapid and Automated Single-Cell Data Analysis Using Reference Mapping." Cell, 2024.
-
----
-
-![workflow DAG](dag.png)
