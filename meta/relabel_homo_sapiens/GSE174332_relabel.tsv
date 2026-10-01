@@ -1,0 +1,23 @@
+cell_type	subclass
+In.SST_NPYneg	SST
+Ex.L3_L5	L2/3-6 IT
+T_Cell	T Cell
+Ex.L5	L5 ET
+Oligodendrocyte	Oligodendrocyte
+Ex.L5b_UMN_PT	L5 ET
+Ex.L5b_UMN_CT	L5 ET
+Astrocyte	Astrocyte
+In.SST_NPYpos	SST
+In.Chandelier_PVALB	Chandelier
+In.Rosehip	GABAergic
+In.5HT3aR_VIPneg	GABAergic
+Endothelial	Endothelial
+OPC	OPC
+Ex.L5_L6	L5/6 NP
+Ex.L2_L3	L2/3-6 IT
+Mural	Vascular
+Microglia	Microglia
+In.Basket_PVALB	PVALB
+Ex.L6b	L6b
+Fibroblast	Vascular
+In.5HT3aR_VIPpos	VIP

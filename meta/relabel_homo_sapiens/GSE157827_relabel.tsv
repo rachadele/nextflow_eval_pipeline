@@ -1,0 +1,7 @@
+cell_type	subclass
+Astro	Astrocyte
+Endo	Endothelial
+Excit	Glutamatergic
+Inhit	GABAergic
+Mic	Microglia
+Oligo	Oligodendrocyte
