@@ -186,7 +186,7 @@ Authors usually label only some of the cells in a sample. The rest are "author-u
 3. `classify_all.py` classifies all cells. For the unlabeled cells it writes the prediction for each cell and the fraction called "unknown" at the cutoff to `unlabeled_qc/`. These cells are then dropped, so F1, confusion matrices, NMI and ARI use labeled cells only.
 4. QC plots keep the unlabeled cells and show their predicted labels as `unscored`.
 
-`scripts/test_unlabeled_mm_cutoff0.25.sh` runs a mouse test at cutoff 0.25. See `docs/handoff-unlabeled-cells-cutoff.md`.
+`scripts/test_unlabeled_mm.sh` runs the mouse test for the cutoff given as its argument (default 0.25). See `docs/handoff-unlabeled-cells-cutoff.md`.
 
 ---
 
