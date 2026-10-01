@@ -9,7 +9,7 @@ so setting all predicted_<key> to "unknown" for those cells and rescoring with u
 gives what CLASSIFY_ALL would have written. Author-unlabeled cells are not in the predictions files (they are
 dropped before scoring); their unknown rate comes from *.unlabeled_cells.0.0.tsv.gz the same way.
 Writes rebuilt_metrics.tsv (one row per method, query, reference, key, cutoff), rebuilt_unlabeled_unknown.tsv,
-rebuilt_per_label.tsv (subclass counts per query and cutoff: true cells, predicted cells, correct cells, true cells called unknown, and the
+rebuilt_label_metrics.tsv.gz (F1, precision, recall, support and predicted support per label, every key, query and cutoff), rebuilt_per_label.tsv (subclass counts per query and cutoff: true cells, predicted cells, correct cells, true cells called unknown, and the
 unlabeled cells whose top prediction is that label, with how many of them are unknown) and manifest.json to --outdir. With --validate <cutoff dir of a real run at that cutoff> it also writes
 validation.tsv comparing the rebuilt weighted F1, accuracy, NMI and ARI with that run's summary.scores files.
 """
@@ -55,7 +55,7 @@ def one(task):
     pred = pd.read_csv(pred_path, sep="\t")
     cells = pd.read_csv(cells_path, sep="\t")
     cells = cells[cells["author_unlabeled"].astype(str) == "True"]
-    rows, urows, lrows = [], [], []
+    rows, urows, lrows, labrows = [], [], [], []
     for c in args.cutoffs:
         q = pred.copy()
         unk = (q["confidence"] <= c).values
@@ -69,6 +69,11 @@ def one(task):
                  "weighted_f1": m[k]["weighted_metrics"].get("f1_score"), "macro_f1": m[k]["macro_metrics"].get("f1_score"),
                  "overall_accuracy": m[k]["overall_accuracy"], "nmi": m[k]["nmi"], "ari": m[k]["ari"]}
             rows.append(r)
+            pc = q[f"predicted_{k}"].astype(str).value_counts()
+            for lab, lm in m[k]["label_metrics"].items():
+                labrows.append({"method": method, "study": study, "reference": ref, "query": query, "key": k, "cutoff": c,
+                                "label": lab, "f1_score": lm["f1_score"], "precision": lm["precision"], "recall": lm["recall"],
+                                "support": lm["support"], "predicted_support": int(pc.get(lab, 0))})
         true, pr = q["subclass"].astype(str), q["predicted_subclass"].astype(str)
         n_true, n_pred, tp = true.value_counts(), pr.value_counts(), true[true == pr].value_counts()
         n_tunk = true[pr == "unknown"].value_counts()
@@ -80,7 +85,7 @@ def one(task):
                           "n_unlabeled_pred": int(n_upred.get(lab, 0)), "n_unlabeled_pred_unknown": int(n_uunk.get(lab, 0))})
         urows.append({"method": method, "study": study, "reference": ref, "query": query, "cutoff": c,
                       "n_unlabeled": len(cells), "n_unlabeled_unknown": int((cells["confidence"] <= c).sum())})
-    return rows, urows, lrows
+    return rows, urows, lrows, labrows
 
 
 tasks = []
@@ -95,16 +100,18 @@ if args.limit:
     tasks = tasks[:args.limit]
 print(len(tasks), "queries x", len(args.cutoffs), "cutoffs", flush=True)
 
-rows, urows, lrows = [], [], []
+rows, urows, lrows, labrows = [], [], [], []
 with ProcessPoolExecutor(args.workers) as ex:
-    for i, (r, u, l) in enumerate(ex.map(one, tasks)):
-        rows += r; urows += u; lrows += l
+    for i, (r, u, l, lab) in enumerate(ex.map(one, tasks)):
+        rows += r; urows += u; lrows += l; labrows += lab
         if i % 50 == 0: print(i, "done", flush=True)
 os.makedirs(OUT, exist_ok=True)
 res = pd.DataFrame(rows)
 res.to_csv(f"{OUT}/rebuilt_metrics.tsv", sep="\t", index=False)
 pd.DataFrame(urows).to_csv(f"{OUT}/rebuilt_unlabeled_unknown.tsv", sep="\t", index=False)
 pd.DataFrame(lrows).to_csv(f"{OUT}/rebuilt_per_label.tsv", sep="\t", index=False)
+labres = pd.DataFrame(labrows)
+labres.to_csv(f"{OUT}/rebuilt_label_metrics.tsv.gz", sep="\t", index=False, compression="gzip")
 
 val = None
 if args.validate:
@@ -125,6 +132,21 @@ if args.validate:
     val.to_csv(f"{OUT}/validation.tsv", sep="\t", index=False)
     print(f"validation at cutoff {cut}: {len(val)} rows of {len(res[res['cutoff'] == cut])} rebuilt")
     print(val[[f"{s}_absdiff" for s in SCORES]].describe().loc[["count", "max", "mean"]].round(6).to_string())
+    # per-label metrics (every key): rebuilt label_metrics vs the real run's summary.scores rows
+    LAB = ["f1_score", "precision", "recall", "support", "predicted_support"]
+    rl = []
+    for m in METHODS:
+        for p in glob.glob(f"{args.validate}/{m}/*/*/*/label_transfer_metrics/*.summary.scores.tsv.gz"):
+            rl.append(pd.read_csv(p, sep="\t", usecols=["query", "reference", "key", "label"] + LAB).assign(method=m))
+    rl = pd.concat(rl)
+    lb = labres[labres["cutoff"] == cut].merge(rl, on=["method", "reference", "query", "key", "label"], how="outer",
+                                               suffixes=("", "_real"), indicator=True)
+    print(f"per-label rows at cutoff {cut}: both={int((lb['_merge'] == 'both').sum())}, rebuilt only={int((lb['_merge'] == 'left_only').sum())}, real only={int((lb['_merge'] == 'right_only').sum())}")
+    bo = lb[lb["_merge"] == "both"].copy()
+    for c_ in LAB:
+        bo[f"{c_}_absdiff"] = (bo[c_].astype(float) - bo[f"{c_}_real"].astype(float)).abs()
+    bo.drop(columns="_merge").to_csv(f"{OUT}/validation_labels.tsv", sep="\t", index=False)
+    print(bo[[f"{c_}_absdiff" for c_ in LAB]].describe().loc[["count", "max", "mean"]].round(6).to_string())
 
 git = lambda *a: subprocess.run(["git", "-C", ROOT, *a], capture_output=True, text=True).stdout.strip()
 json.dump({"timestamp": datetime.datetime.now().isoformat(timespec="seconds"), "script": os.path.abspath(__file__),
