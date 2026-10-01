@@ -1,12 +1,15 @@
 #!/bin/bash
-# Test: mouse, cutoff 0.25, queries augmented with author-unlabeled cells.
+# Test: mouse, queries augmented with author-unlabeled cells. Usage: scripts/test_unlabeled_mm.sh [cutoff] (default 0.25).
+# Cutoff 0 keeps every cell's top prediction and its confidence, so other cutoffs can be rebuilt offline.
 # Builds the augmented h5ads (skipped if already built), then runs one nextflow job.
-# Everything goes to cosmos. Run from the worktree root, inside tmux.
+# Everything goes to cosmos. Run inside tmux; the log goes to logs/.
 set -euo pipefail
-cd "$(dirname "$(readlink -f "$0")")"
+cd "$(dirname "$(readlink -f "$0")")/.."
+mkdir -p logs
+exec > >(tee "logs/test_unlabeled_mm_cutoff${1:-0.25}.log") 2>&1
 
 # The build keeps all unlabeled cells per sample (native ratios). Ratios per study: /space/grp/rschwartz/rschwartz/mask-annotation-overlap/results/qc_labeled_vs_unlabeled/unlabeled_ratio_by_study.tsv (scripts/qc_labeled_vs_unlabeled.py, commit c859220)
-cutoff=0.25
+cutoff=${1:-0.25}
 subsample_ref=500
 subsample_query=100
 ref_split=dataset_id
