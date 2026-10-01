@@ -65,6 +65,12 @@ def read_query(query_path, gene_mapping, predicted_meta):
         
     columns_to_drop = [col for col in query.obs.columns if col.endswith("_y")]
     query.obs.drop(columns=columns_to_drop, inplace=True)
+    # author_unlabeled cells stay in the QC plots but have no predicted_meta rows (classify_all.py scores them separately)
+    if "author_unlabeled" in query.obs.columns:
+        unscored = (query.obs["author_unlabeled"].astype(str).str.lower() == "true").values
+        for col in predicted_meta.columns:
+            if col.startswith("predicted_") and col in query.obs.columns and query.obs[col].dtype == object:
+                query.obs[col] = query.obs[col].where(~unscored, "unscored")
     return query
 
 
@@ -276,7 +282,8 @@ def main():
         query.obs["predicted_doublet"]
     )
 #plot_markers(query, markers_file, organism=organism)
-    make_celltype_matrices(query, markers_file, organism=organism, outdir=study_name)
+    for level in ref_keys:
+        make_celltype_matrices(query, markers_file, organism=organism, outdir=study_name, cell_type_key=f"predicted_{level}")
     
     
     for sample_id in query.obs["sample_id"].unique():

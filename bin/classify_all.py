@@ -25,6 +25,7 @@ def parse_arguments():
     parser.add_argument('--study_name', type=str, default="GSE152715.2")
     parser.add_argument('--ref_counts', type=str, default=None, help="TSV with ref label counts per key (columns: key, label, ref_support)")
     parser.add_argument('--use_gap', action='store_true', help="Use gap analysis for classification")
+    parser.add_argument('--method', type=str, default=None, help="Classification method (scvi_rf, scvi_knn, seurat)")
     
     if __name__ == "__main__":
         known_args, _ = parser.parse_known_args()
@@ -38,7 +39,35 @@ def get_unique_value(df, column, default=None):
         else:
             return default
 
-    
+
+def write_unlabeled_unknown_rates(query, is_unlabeled, key, query_name, study_name, ref_name, method, cutoff, use_gap):
+    """Per-cell predictions and QC for labeled vs author_unlabeled cells, and the fraction of each called "unknown"."""
+    outdir = "unlabeled_qc"
+    os.makedirs(outdir, exist_ok=True)
+    qc_cols = ["sample_id", "cell_id", "cell_type", key, f"predicted_{key}", "confidence",
+               "total_counts", "n_genes_by_counts", "nCount_RNA", "nFeature_RNA", "pct_counts_mito",
+               "umi_outlier", "genes_outlier", "counts_outlier", "predicted_doublet", "total_outlier"]
+    cells = query[[c for c in qc_cols if c in query.columns]].copy()
+    cells.insert(0, "author_unlabeled", is_unlabeled.values)
+    cells["predicted_unknown"] = query[f"predicted_{key}"].astype(str) == "unknown"
+    cells.to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.unlabeled_cells.{cutoff}.tsv.gz"), sep="\t", index=False, compression="gzip")
+
+    records = []
+    for group, grp in cells.groupby("author_unlabeled"):
+        records.append({
+            'query': query_name, 'study': study_name, 'reference': ref_name, 'method': method,
+            'cutoff': cutoff, 'use_gap': use_gap, 'key': key,
+            'group': "author_unlabeled" if group else "labeled",
+            'n_cells': len(grp),
+            'n_unknown': int(grp["predicted_unknown"].sum()),
+            'frac_unknown': grp["predicted_unknown"].mean(),
+            'frac_mad_outlier': grp["total_outlier"].astype(str).str.lower().eq("true").mean() if "total_outlier" in grp else np.nan,
+            'median_total_counts': grp["total_counts"].median() if "total_counts" in grp else np.nan,
+            'median_n_genes': grp["n_genes_by_counts"].median() if "n_genes_by_counts" in grp else np.nan,
+        })
+    pd.DataFrame(records).to_csv(os.path.join(outdir, f"{query_name}_{ref_name}.unlabeled_unknown_rate.{cutoff}.tsv.gz"), sep="\t", index=False, compression="gzip")
+
+
 def main():
     SEED = 42
     random.seed(SEED)         # For `random`
@@ -67,6 +96,7 @@ def main():
         }
     else:
         ref_counts_lookup = {}
+    flat_ref_counts = flatten_ref_counts(ref_counts_lookup, ref_keys)
 
     # Load data
     ref_region_mapping = yaml.load(open(ref_region_mapping), Loader=yaml.FullLoader)
@@ -93,12 +123,18 @@ def main():
     # Classify cells and evaluate
     query = classify_cells(query=query, ref_keys=ref_keys, cutoff=cutoff, probabilities=prob_df, mapping_df=mapping_df, use_gap=use_gap)
 
+    # author_unlabeled cells are scored separately and kept out of all metrics and predictions below
+    if "author_unlabeled" in query.columns:
+        is_unlabeled = query["author_unlabeled"].astype(str).str.lower() == "true"
+        write_unlabeled_unknown_rates(query, is_unlabeled, ref_keys[0], query_name, study_name, ref_name, args.method, cutoff, use_gap)
+        query = query[~is_unlabeled].reset_index(drop=True)
+
     outdir = os.path.join("predicted_meta")
     os.makedirs(outdir, exist_ok=True)
 
     # map valid labels for given query granularity and evaluate
     query = map_valid_labels(query, ref_keys, mapping_df)  
-    class_metrics = evaluate_sample_predictions(query, ref_keys, mapping_df)
+    class_metrics = evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=ref_counts_lookup)
     
     query.to_csv(os.path.join(outdir,f"{query_name}_{ref_name}.predictions.{cutoff}.tsv.gz"), index=False, sep="\t", compression='gzip')
 
@@ -135,7 +171,7 @@ def main():
                     'recall': metrics['recall'],
                     'support': metrics['support'],
                     'predicted_support': predicted_counts.get(label, 0),
-                    'ref_support': ref_counts_lookup.get(key, {}).get(label, 0),
+                    'ref_support': flat_ref_counts.get(label, 0),
                     'weighted_f1': weighted_metrics.get('f1_score', None),
                     'weighted_precision': weighted_metrics.get('precision', None),
                     'weighted_recall': weighted_metrics.get('recall', None),

@@ -55,7 +55,17 @@ def main():
 
   query = ad.read_h5ad(query_path)
   
-  if subsample_query:
+  if subsample_query and "author_unlabeled" in query.obs.columns:
+    # draw labeled cells exactly as below so they match runs without author_unlabeled cells,
+    # then add author_unlabeled cells at the sample's unlabeled:labeled ratio
+    is_unlabeled = (query.obs["author_unlabeled"].astype(str).str.lower() == "true").values
+    labeled, unlabeled = query[~is_unlabeled], query[is_unlabeled]
+    labeled = labeled[np.random.choice(labeled.n_obs, size=subsample_query, replace=False), :] if labeled.n_obs > subsample_query else labeled
+    n_unlabeled = min(unlabeled.n_obs, int(round(labeled.n_obs * unlabeled.n_obs / max(query.n_obs - unlabeled.n_obs, 1))))
+    unlabeled = unlabeled[np.random.choice(unlabeled.n_obs, size=n_unlabeled, replace=False), :]
+    query = ad.concat([labeled, unlabeled], merge="same")
+    query.obs.index = query.obs.index.astype(str)
+  elif subsample_query:
     query = query[np.random.choice(query.n_obs, size=subsample_query, replace=False), :] if query.n_obs > subsample_query else query
     query.obs.index = query.obs.index.astype(str)
  
@@ -68,6 +78,8 @@ def main():
   
   # relabel and aggregate cell types into higher level classes
   query = relabel(query=query, relabel_path=relabel_path, join_key=join_key, sep="\t")
+  # sentinel ground truth for cells the authors did not label; passes through every level
+  query.obs.loc[query.obs["cell_type"] == "author_unlabeled", ref_keys[0]] = "author_unlabeled"
   nan_mask = query.obs['subclass'].isna()
   if nan_mask.any():
       raise ValueError(

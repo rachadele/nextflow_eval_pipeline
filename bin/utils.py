@@ -11,6 +11,7 @@ import anndata as ad
 import scvi
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import *
 from sklearn.preprocessing import label_binarize
@@ -380,6 +381,38 @@ def rfc_pred(ref, query, ref_keys, seed):
     return probabilities
 
 
+def knn_pred(ref, query, ref_keys, n_neighbors=15):
+    """
+    Fit a KNeighborsClassifier at the most granular level and aggregate probabilities for higher levels.
+
+    Parameters:
+    - ref: Reference data with labels.
+    - query: Query data for prediction.
+    - ref_keys: List of ordered keys from most granular to highest level.
+    - n_neighbors: Number of neighbors for kNN.
+
+    Returns:
+    - probabilities: Dictionary with probabilities for each level of the hierarchy.
+    """
+    probabilities = {}
+    granular_key = ref_keys[0]
+
+    knn = KNeighborsClassifier(n_neighbors=n_neighbors, weights='distance')
+    knn.fit(ref.obsm["scvi"], ref.obs[granular_key].values)
+    probs_granular = knn.predict_proba(query.obsm["scvi"])
+    class_labels_granular = knn.classes_
+    query.obs[granular_key] = query.obs[granular_key].astype(str)
+    base_score = knn.score(query.obsm["scvi"], query.obs[granular_key].values)
+
+    probabilities[granular_key] = {
+        "probabilities": probs_granular,
+        "class_labels": class_labels_granular,
+        "accuracy": base_score
+    }
+
+    return probabilities
+
+
 def roc_analysis(probabilities, query, key):
     optimal_thresholds = {}
     metrics={}
@@ -611,13 +644,47 @@ def aggregate_preds(query, ref_keys, mapping_df):
 
     return query
 
-def evaluate_sample_predictions(query, ref_keys, mapping_df):
+def flatten_ref_counts(ref_counts_lookup, ref_keys):
+    """Resolve each label's ref-support count at its own native tier.
+
+    map_valid_labels() can substitute a coarser-tier prediction into a finer
+    tier's predicted_<key> column when a query label only resolves at that
+    coarser level. The substituted label's real reference support then lives
+    under a different tier in ref_counts_lookup than the nominal key being
+    evaluated, so a per-key lookup silently reports ref_support=0 for it even
+    though it has genuine support in the reference at its native tier.
+
+    `ref_keys` must be ordered finest -> coarsest (e.g. subclass, class,
+    family, global). For each label we take the count from the finest tier
+    where it's actually present, rather than summing across tiers -- a label
+    that has already rolled up to a fixed point (e.g. family == global for a
+    top-level lineage) would otherwise be double-counted across those tiers.
+    """
+    flat = {}
+    for key in ref_keys:
+        for lbl, cnt in ref_counts_lookup.get(key, {}).items():
+            if lbl not in flat:
+                flat[lbl] = cnt
+    return flat
+
+
+def evaluate_sample_predictions(query, ref_keys, mapping_df, ref_counts_lookup=None):
+    if ref_counts_lookup is None:
+        ref_counts_lookup = {}
+    flat_ref_counts = flatten_ref_counts(ref_counts_lookup, ref_keys)
     class_metrics = defaultdict(lambda: defaultdict(dict))
 
-    for key in ref_keys:     
+    for key in ref_keys:
         true_labels = query[key].astype(str)
         predicted_labels = query[f"predicted_{key}"].astype(str)
         labels = list(set(true_labels).union(set(predicted_labels)))
+
+        # Labels present in the reference (ref_support > 0), checked across
+        # all tiers since a substituted label's real tier may differ from `key`
+        if flat_ref_counts:
+            ref_supported = {lbl for lbl in labels if flat_ref_counts.get(lbl, 0) > 0}
+        else:
+            ref_supported = set(labels)  # fallback: treat all labels as supported
 
         # Overall accuracy
         class_metrics[key]["overall_accuracy"] = accuracy_score(true_labels, predicted_labels)
@@ -633,20 +700,22 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
         class_metrics[key]["ari"] = adjusted_rand_score(true_labels, predicted_labels)
 
         # Per-label metrics
-
         precision, recall, f1, support = precision_recall_fscore_support(
             true_labels, predicted_labels, labels=labels, zero_division=np.nan
         )
-        # Set recall and f1 to NaN where support is 0
-        zero_support = support == 0
+        # Set to NaN where query support == 0 OR ref support == 0
+        no_ref_support_mask = np.array([lbl not in ref_supported for lbl in labels])
+        nan_mask = (support == 0) | no_ref_support_mask
+        precision_arr = precision.copy()
         recall = recall.copy()
         f1 = f1.copy()
-        recall[zero_support] = np.nan
-        f1[zero_support] = np.nan
+        precision_arr[nan_mask] = np.nan
+        recall[nan_mask] = np.nan
+        f1[nan_mask] = np.nan
 
         class_metrics[key]["label_metrics"] = {
             label: {
-                "precision": precision[i],
+                "precision": precision_arr[i],
                 "recall": recall[i],
                 "f1_score": f1[i],
                 "support": support[i],
@@ -655,37 +724,29 @@ def evaluate_sample_predictions(query, ref_keys, mapping_df):
             for i, label in enumerate(labels)
         }
 
-        # Weighted averages
-        avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="weighted", zero_division=np.nan
-        )
-        class_metrics[key]["weighted_metrics"] = {
-            "precision": avg_p,
-            "recall": avg_r,
-            "f1_score": avg_f,
-        }
+        # For aggregate metrics: ref-supported AND nonzero query support
+        agg_labels = [lbl for lbl, m, s in zip(labels, no_ref_support_mask, support)
+                      if not m and s > 0]
 
-        # Macro averages (exclude cell types with zero support)
-        nonzero_indices = np.where(support > 0)[0]
-        macro_p = np.nanmean(precision[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
-        macro_r = np.nanmean(recall[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
-        macro_f = np.nanmean(f1[nonzero_indices]) if len(nonzero_indices) > 0 else np.nan
-        class_metrics[key]["macro_metrics"] = {
-            "precision": macro_p,
-            "recall": macro_r,
-            "f1_score": macro_f,
-        }
-        
-        # Micro averages (global counts)
-        micro_p, micro_r, micro_f, _ = precision_recall_fscore_support(
-            true_labels, predicted_labels, average="micro", zero_division=np.nan
-        )
-        class_metrics[key]["micro_metrics"] = {
-            "precision": micro_p,
-            "recall": micro_r,
-            "f1_score": micro_f,
-        }
+        # Weighted, macro, micro averages (same label filter for all three)
+        if agg_labels:
+            avg_p, avg_r, avg_f, _ = precision_recall_fscore_support(
+                true_labels, predicted_labels, labels=agg_labels, average="weighted", zero_division=np.nan
+            )
+            macro_p, macro_r, macro_f, _ = precision_recall_fscore_support(
+                true_labels, predicted_labels, labels=agg_labels, average="macro", zero_division=np.nan
+            )
+            micro_p, micro_r, micro_f, _ = precision_recall_fscore_support(
+                true_labels, predicted_labels, labels=agg_labels, average="micro", zero_division=np.nan
+            )
+        else:
+            avg_p = avg_r = avg_f = np.nan
+            macro_p = macro_r = macro_f = np.nan
+            micro_p = micro_r = micro_f = np.nan
 
+        class_metrics[key]["weighted_metrics"] = {"precision": avg_p, "recall": avg_r, "f1_score": avg_f}
+        class_metrics[key]["macro_metrics"] = {"precision": macro_p, "recall": macro_r, "f1_score": macro_f}
+        class_metrics[key]["micro_metrics"] = {"precision": micro_p, "recall": micro_r, "f1_score": micro_f}
 
     return class_metrics
 
@@ -853,13 +914,19 @@ def get_gene_to_celltype_map(df, organism="mus_musculus"):
     return gene_ct_dict
 
 
-def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=""):
+def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir="", cell_type_key="predicted_subclass"):
+    if cell_type_key not in query.obs.columns:
+        return
+
     # Drop vars with NaN feature names
     query = query[:, ~query.var["feature_name"].isnull()]
     query.var_names = query.var["feature_name"]
-    
+
     markers_df = pd.read_csv(markers_file, sep="\t")
     markers_df = markers_df[markers_df["organism"] == organism]
+    level = cell_type_key.replace("predicted_", "")
+    if "level" in markers_df.columns:
+        markers_df = markers_df[markers_df["level"] == level]
     ontology_mapping = markers_df.set_index("cell_type")["shortname"].to_dict()
     query.raw.var.index = query.raw.var["feature_name"]
 
@@ -870,16 +937,16 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
     valid_markers = [gene for gene in all_markers if gene in query.var_names]
     removed_markers = [gene for gene in all_markers if gene not in query.var_names]
     # Write removed markers to a text file, one per line
-    with open("removed_markers.txt", "w") as f:
+    with open(f"removed_markers_{cell_type_key}.txt", "w") as f:
         for gene in removed_markers:
             f.write(f"{gene}\n")
     # Filter raw expression matrix to match query.var_names
     expr_matrix = query.raw.X.toarray()
     expr_matrix = pd.DataFrame(expr_matrix, index=query.obs.index, columns=query.raw.var.index)
-    
-    avg_expr = expr_matrix.groupby(query.obs["predicted_subclass"]).mean()
+
+    avg_expr = expr_matrix.groupby(query.obs[cell_type_key]).mean()
     avg_expr = avg_expr.loc[:, valid_markers]
-    
+
     # Scale expression across genes
     scaled_expr = (avg_expr - avg_expr.mean()) / avg_expr.std()
     scaled_expr = scaled_expr.loc[:, valid_markers]
@@ -887,14 +954,23 @@ def make_celltype_matrices(query, markers_file, organism="mus_musculus", outdir=
 
     # Rename columns: gene -> gene (celltype)
     scaled_expr.rename(columns=gene_ct_dict, inplace=True)
-    sorted_columns = sorted(scaled_expr.columns, key=lambda x: x.split(":")[0])  
-    
+    sorted_columns = sorted(scaled_expr.columns, key=lambda x: x.split(":")[0])
+
     # Sort by the first part of the column name
     scaled_expr = scaled_expr[sorted_columns]
 
+    # Restrict to cell types present in the markers file, ordered by ontology shortname
+    # (handles cell types with no ontology mapping, e.g. nan, by falling back to the raw label)
+    overlap = list(set(markers_df["cell_type"]).intersection(scaled_expr.index))
+    sorted_cell_types = sorted(
+        overlap,
+        key=lambda x: ontology_mapping[x] if not pd.isna(ontology_mapping.get(x)) else x
+    )
+    scaled_expr = scaled_expr.loc[sorted_cell_types, :]
+
     # Save matrix
     os.makedirs(outdir, exist_ok=True)
-    scaled_expr.to_csv(f"{outdir}/heatmap_mqc.tsv", sep="\t")
+    scaled_expr.to_csv(f"{outdir}/{cell_type_key}_heatmap_mqc.tsv", sep="\t")
 
 
     

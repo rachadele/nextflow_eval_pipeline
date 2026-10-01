@@ -31,6 +31,8 @@ mmus
 hsap
 meta/census_info/
 scripts/*
+!scripts/*.py
+!scripts/*.sh
 *tsv.gz
 *.rds
 *tsv
@@ -39,3 +41,4 @@ scripts/*
 .claude/
 2024-07-01/
 ma-et-al/
+results_unlabeled_test

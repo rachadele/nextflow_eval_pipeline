@@ -18,8 +18,9 @@ A Nextflow DSL2 pipeline for benchmarking automated cell type annotation methods
 
 Single-cell RNA sequencing (scRNA-seq) provides crucial insights into cell-type-specific gene expression, particularly in the context of disease. However, meta-analysis of scRNA-seq datasets remains challenging due to inconsistent and often absent cell-type annotations across publicly available repositories, such as the Gene Expression Omnibus (GEO).
 
-This pipeline benchmarks two prominent cell type annotation strategies:
+This pipeline benchmarks three cell type annotation strategies:
 - **SCVI + Random Forest**: A Random Forest classifier trained on cell embeddings using single-cell variational inference (scVI)
+- **SCVI + kNN**: A k-Nearest Neighbors classifier trained on the same scVI embeddings
 - **Seurat Label Transfer**: A Gaussian kernel trained on PCA projection of query onto reference datasets
 
 Reference data comprises 2 studies, 10 brain regions, 12 individual dissections, and 3 levels of cell type granularity from CellXGene Census.
@@ -42,7 +43,7 @@ nextflow_eval_pipeline/
 │   ├── run_setup/          # Download SCVI model
 │   ├── get_census_adata/   # Fetch Census reference data
 │   ├── map_query/          # Process queries through SCVI
-│   ├── rf_predict/         # SCVI Random Forest prediction
+│   ├── scvi_predict/       # SCVI RF + kNN prediction
 │   ├── predict_seurat/     # Seurat label transfer
 │   ├── classify_all/       # Compute metrics
 │   └── ...
@@ -55,6 +56,7 @@ nextflow_eval_pipeline/
 ├── meta/
 │   ├── mappings/           # Census maps, markers, colors
 │   └── relabel_*/          # Dataset relabeling files
+├── scripts/                # Sweep runners, unlabeled-query builder, unlabeled-cell test
 ├── tests/                  # Test runner scripts
 ├── docs/                   # Documentation
 └── assets/                 # Static assets (MultiQC config)
@@ -130,12 +132,17 @@ nextflow run main.nf -profile conda,test_mmus
 | `--subsample_query` | Total cells in query (null = all) | `null` |
 | `--normalization_method` | Seurat normalization | `SCT` |
 | `--cutoff` | Probability threshold | `0` |
-| `--use_gap` | Use gap-based thresholding | `true` |
+| `--use_gap` | Use gap-based thresholding | `false` |
+| `--knn_n_neighbors` | Neighbors for kNN classifier | `15` |
+| `--seed` | Random seed for subsampling | `42` |
+| `--nmads` | MAD threshold for QC outlier flags | `5` |
+| `--git_branch` | Branch name used in `outdir` and the reference cache path (override to reuse caches from another branch) | current branch |
 | `--outdir` | Output directory | Computed from params |
 
 ### Configuration Files
 
 - `conf/params.config` - Edit default parameters
+- `params.hs.json`, `params.mm.json` - Human and mouse run settings (`-params-file`)
 - `conf/base.config` - Modify resource allocations
 - `conf/test_*.config` - Customize test runs
 
@@ -148,11 +155,17 @@ nextflow run main.nf -profile conda,test_mmus
 ├── refs/
 │   ├── scvi/           # SCVI reference data (.h5ad)
 │   └── seurat/         # Seurat reference data (.rds)
-├── scvi/
+├── scvi_rf/
 │   └── <study>/<ref>/<query>/
-│       ├── label_transfer_metrics/   # F1 scores
+│       ├── label_transfer_metrics/   # F1 scores (.tsv.gz)
 │       ├── confusion/                # Confusion matrices
-│       └── predicted_meta/           # Predictions
+│       ├── predicted_meta/           # Predictions (.tsv.gz)
+│       └── unlabeled_qc/             # Only when queries hold author_unlabeled cells
+├── scvi_knn/
+│   └── <study>/<ref>/<query>/
+│       ├── label_transfer_metrics/
+│       ├── confusion/
+│       └── predicted_meta/
 ├── seurat/
 │   └── <study>/<ref>/<query>/
 │       ├── label_transfer_metrics/
@@ -164,12 +177,26 @@ nextflow run main.nf -profile conda,test_mmus
 └── trace.txt                 # Execution trace
 ```
 
+### Author-unlabeled cells
+
+Authors usually label only some of the cells in a sample. The rest are "author-unlabeled", and many are low quality. There is no flag for this. The pipeline handles these cells whenever a query h5ad has an `author_unlabeled` column. The goal is to test whether a probability cutoff labels such cells "unknown" without hurting the cells that do have labels. Without the column, the pipeline behaves as before.
+
+1. `scripts/build_unlabeled_queries.py` builds query h5ads that contain both the labeled and the unlabeled cells of each sample. A bool obs column `author_unlabeled` marks the unlabeled ones, and their cell type is `author_unlabeled`.
+2. `process_query.py` first subsamples the labeled cells to `--subsample_query`, as it does for any query. It then subsamples the unlabeled cells so the sample keeps the ratio of unlabeled to labeled cells it had in the full data. For example, a sample with 1,000 labeled and 500 unlabeled cells and `--subsample_query 100` ends up with 100 labeled and 50 unlabeled cells.
+3. `classify_all.py` classifies all cells. For the unlabeled cells it writes the prediction for each cell and the fraction called "unknown" at the cutoff to `unlabeled_qc/`. These cells are then dropped, so F1, confusion matrices, NMI and ARI use labeled cells only.
+4. QC plots keep the unlabeled cells and show their predicted labels as `unscored`.
+
+`scripts/test_unlabeled_mm.sh` runs the mouse test for the cutoff given as its argument (default 0.25). See `docs/handoff-unlabeled-cells-cutoff.md`.
+
 ---
 
 ## Methods
 
 ### SCVI + Random Forest
 A Random Forest classifier trained on latent embeddings from a pre-trained single-cell variational autoencoder (scVI) model from CellXGene Census.
+
+### SCVI + kNN
+A k-Nearest Neighbors classifier (distance-weighted, default k=15) trained on the same scVI embeddings. Both RF and kNN run in a single process per query-ref pair, loading data once and outputting separate probability files.
 
 ### Seurat Label Transfer
 Reference and query are each normalized (SCTransform or LogNormalize) and PCA-reduced independently. If the reference contains multiple batches, they are integrated via `FindIntegrationAnchors` / `IntegrateData` before PCA. The query is then projected into the reference PCA space (`pcaproject`), transfer anchors are identified with `FindTransferAnchors`, and per-cell label probability scores are computed with `TransferData` using a Gaussian kernel.
@@ -183,7 +210,3 @@ Reference and query are each normalized (SCTransform or LogNormalize) and PCA-re
 - Abdulla, S., et al. "CZ CELL×GENE Discover: A Single-Cell Data Platform." bioRxiv, 2023.
 - Pasquini, G., et al. "Automated methods for cell type annotation on scRNA-seq data." Computational and Structural Biotechnology Journal, 2021.
 - Lotfollahi, M., et al. "The Future of Rapid and Automated Single-Cell Data Analysis Using Reference Mapping." Cell, 2024.
-
----
-
-![workflow DAG](dag.png)
